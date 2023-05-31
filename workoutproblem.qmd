@@ -1,0 +1,111 @@
+---
+title: Strength of Materials Problem Workout
+format: html
+filters:
+  - shinylive
+---
+
+To scaffold your learning in this example, we have provided a free body diagram for you and a repeat of the problem statement.
+
+A city planner is installing a new traffic light. Light A weighs 65 lb, while lights B and C weigh 50 lb each. The post at O has a hollow circular cross-section with an outer diameter of 5 inches and a wall thickness of 0.2 inches. It will be made from aluminum alloy with a tensile yield stress of 35 ksi and a compressive yield stress of 20 ksi. A factor of safety of 2 is required with respect to yield. You may ignore the weight of the post.
+
+![Figure 1: Three traffic light installation with loads](images/FBD%20sample%20problem.png){fig-alt="Picture with three distinct traffic lights oriented along the same horizontal beam. Moving from left to right of the image, the first light A is at the end of the beam, the second light B is 4 ft from A, the third light C is 4 ft from light B, and light C is 7 ft from where the horizontal beam meets the vertical post (called post O). The free body diagram includes a downforce force acting on light A with a value of 65 pounds, a downward force acting on light B with a value of 50 points, a downward force acting on light C with a value of 50 pounds, and a reaction Moment M and Force N at the post at O."}
+
+Please work through the problem step by step showing your math in the interactive interface here.
+
+``` {shinylive-python}
+#| standalone: true
+#| viewerHeight: 420
+#| components: [viewer]
+from shiny import App, render, ui, reactive
+from sympy import solve, Eq
+from sympy.abc import F,M
+from sympy.parsing.sympy_parser import parse_expr
+
+app_ui = ui.page_fluid(
+   ui.head_content(
+        ui.tags.script(
+            src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+        ),
+        ui.tags.script(
+            "if (window.MathJax) MathJax.Hub.Queue(['Typeset', MathJax.Hub]);"
+        ),
+    ),
+   
+   # ui.layout_sidebar(
+   #    ui.panel_main( 
+   #      ui.markdown("Use equilibrium equations to find the internal reaction forces:\$$\Sigma F_y=0$$"), 
+   #      ui.input_text("forces","Please write the right side of the equation",placeholder="Enter math for RHS"), 
+   #      ui.markdown("Use equilibrium equeations to find the internal reaction moment:\$$\Sigma M_O=0$$"),
+   #      ui.input_text("moments","Please write the right side of the equation",placeholder="Enter math for RHS"), 
+   #      ui.input_action_button("typesetMath", "Update (Typeset) Equations", class_="btn-primary"), 
+   #      ui.input_action_button("solveEquations", "Solve Equations", class_="btn-success")
+   #      ),
+   #    ui.panel_sidebar(ui.output_ui("dyn_ui_forces"),
+   # ui.output_ui("dyn_ui_moments"),
+   # ui.output_ui("ui_typeset"),
+   # ui.output_ui("ui_solutions"),
+   # ui.output_ui("ui_typesetSolutions")
+   # ),
+   # ),
+  
+  
+
+   ui.markdown("Use equilibrium equations to find the internal reaction forces:\$$\Sigma F_y=0$$"),
+   ui.output_ui("dyn_ui_forces"),
+   ui.input_text("forces","Please write the right side of the equation",placeholder="Enter math for RHS"),
+   ui.markdown("Use equilibrium equeations to find the internal reaction moment:\$$\Sigma M_O=0$$"),
+   ui.output_ui("dyn_ui_moments"),
+   ui.input_text("moments","Please write the right side of the equation",placeholder="Enter math for RHS"),
+   ui.output_ui("ui_typeset"),
+   ui.input_action_button("typesetMath", "See Updated Equations", class_="btn-secondary"),
+  ui.input_action_button("solveEquations", "Solve Equations", class_="btn-success"),
+   ui.output_ui("ui_solutions"),
+   ui.output_ui("ui_typesetSolutions")
+     
+)
+
+def server(input, output, session):
+    @output
+    @render.ui
+    def dyn_ui_forces():
+      mystring_forces="$$ F_y="+input.forces()+"$$"
+      mystring_forces=mystring_forces.replace("*", "\\times")
+      return ui.markdown(mystring_forces)
+    
+    @output
+    @render.ui
+    def dyn_ui_moments():
+        mystring_moments="$$ M_O="+input.moments()+"$$"
+        mystring_moments=mystring_moments.replace("*", "\\times")
+        return ui.markdown(mystring_moments)
+      
+    @output
+    @render.ui
+    @reactive.event(input.typesetMath, ignore_none=False)
+    def ui_typeset():
+        return ui.tags.script(
+            "if (window.MathJax) MathJax.Hub.Queue(['Typeset', MathJax.Hub]);"
+        )
+    
+    @output
+    @render.ui
+    @reactive.event(input.solveEquations, ignore_none=False)
+    def ui_solutions():
+      solvedForces=solve(Eq(F,parse_expr(input.forces())),F) 
+      solvedMoments=solve(Eq(M,parse_expr(input.moments())),M)
+      mystring_solvedForces="$$ F_O="+str(solvedForces[0])+"$$" 
+      mystring_solvedMoments="$$ M_O="+str(solvedMoments[0])+"$$" 
+      return ui.markdown(mystring_solvedForces),ui.markdown(mystring_solvedMoments)
+    
+      
+    @output
+    @render.ui
+    @reactive.event(input.solveEquations, ignore_none=False)
+    def ui_typesetSolutions():
+        return ui.tags.script(
+            "if (window.MathJax) MathJax.Hub.Queue(['Typeset', MathJax.Hub]);"
+        )
+      
+app = App(app_ui, server)
+```
