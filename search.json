@@ -1,17 +1,10 @@
 [
   {
-    "objectID": "intro.html",
-    "href": "intro.html",
-    "title": "1  Strength of Materials Problem Workout",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "deformsbook",
     "section": "",
-    "text": "To scaffold your learning in this example, we have provided a free body diagram for you and a repeat of the problem statement.\nA city planner is installing a new traffic light. Light A weighs 65 lb, while lights B and C weigh 50 lb each. The post at O has a hollow circular cross-section with an outer diameter of 5 inches and a wall thickness of 0.2 inches. It will be made from aluminum alloy with a tensile yield stress of 35 ksi and a compressive yield stress of 20 ksi. A factor of safety of 2 is required with respect to yield. You may ignore the weight of the post.\n\n\n\nFigure 1: Three traffic light installation with loads\n\n\nPlease work through the problem step by step showing your math in the interactive interface here.\n#| standalone: true\n#| viewerHeight: 420\n#| components: [viewer]\nfrom shiny import App, render, ui, reactive\nfrom sympy import solve, Eq\nfrom sympy.abc import F,M\nfrom sympy.parsing.sympy_parser import parse_expr\n\napp_ui = ui.page_fluid(\n   ui.head_content(\n        ui.tags.script(\n            src=\"https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML\"\n        ),\n        ui.tags.script(\n            \"if (window.MathJax) MathJax.Hub.Queue(['Typeset', MathJax.Hub]);\"\n        ),\n    ),\n   \n   # ui.layout_sidebar(\n   #    ui.panel_main( \n   #      ui.markdown(\"Use equilibrium equations to find the internal reaction forces:\\$$\\Sigma F_y=0$$\"), \n   #      ui.input_text(\"forces\",\"Please write the right side of the equation\",placeholder=\"Enter math for RHS\"), \n   #      ui.markdown(\"Use equilibrium equeations to find the internal reaction moment:\\$$\\Sigma M_O=0$$\"),\n   #      ui.input_text(\"moments\",\"Please write the right side of the equation\",placeholder=\"Enter math for RHS\"), \n   #      ui.input_action_button(\"typesetMath\", \"Update (Typeset) Equations\", class_=\"btn-primary\"), \n   #      ui.input_action_button(\"solveEquations\", \"Solve Equations\", class_=\"btn-success\")\n   #      ),\n   #    ui.panel_sidebar(ui.output_ui(\"dyn_ui_forces\"),\n   # ui.output_ui(\"dyn_ui_moments\"),\n   # ui.output_ui(\"ui_typeset\"),\n   # ui.output_ui(\"ui_solutions\"),\n   # ui.output_ui(\"ui_typesetSolutions\")\n   # ),\n   # ),\n  \n  \n\n   ui.markdown(\"Use equilibrium equations to find the internal reaction forces:\\$$\\Sigma F_y=0$$\"),\n   ui.output_ui(\"dyn_ui_forces\"),\n   ui.input_text(\"forces\",\"Please write the right side of the equation\",placeholder=\"Enter math for RHS\"),\n   ui.markdown(\"Use equilibrium equeations to find the internal reaction moment:\\$$\\Sigma M_O=0$$\"),\n   ui.output_ui(\"dyn_ui_moments\"),\n   ui.input_text(\"moments\",\"Please write the right side of the equation\",placeholder=\"Enter math for RHS\"),\n   ui.output_ui(\"ui_typeset\"),\n   ui.input_action_button(\"typesetMath\", \"See Updated Equations\", class_=\"btn-secondary\"),\n  ui.input_action_button(\"solveEquations\", \"Solve Equations\", class_=\"btn-success\"),\n   ui.output_ui(\"ui_solutions\"),\n   ui.output_ui(\"ui_typesetSolutions\")\n     \n)\n\ndef server(input, output, session):\n    @output\n    @render.ui\n    def dyn_ui_forces():\n      mystring_forces=\"$$ F_y=\"+input.forces()+\"$$\"\n      mystring_forces=mystring_forces.replace(\"*\", \"\\\\times\")\n      return ui.markdown(mystring_forces)\n    \n    @output\n    @render.ui\n    def dyn_ui_moments():\n        mystring_moments=\"$$ M_O=\"+input.moments()+\"$$\"\n        mystring_moments=mystring_moments.replace(\"*\", \"\\\\times\")\n        return ui.markdown(mystring_moments)\n      \n    @output\n    @render.ui\n    @reactive.event(input.typesetMath, ignore_none=False)\n    def ui_typeset():\n        return ui.tags.script(\n            \"if (window.MathJax) MathJax.Hub.Queue(['Typeset', MathJax.Hub]);\"\n        )\n    \n    @output\n    @render.ui\n    @reactive.event(input.solveEquations, ignore_none=False)\n    def ui_solutions():\n      solvedForces=solve(Eq(F,parse_expr(input.forces())),F) \n      solvedMoments=solve(Eq(M,parse_expr(input.moments())),M)\n      mystring_solvedForces=\"$$ F_O=\"+str(solvedForces[0])+\"$$\" \n      mystring_solvedMoments=\"$$ M_O=\"+str(solvedMoments[0])+\"$$\" \n      return ui.markdown(mystring_solvedForces),ui.markdown(mystring_solvedMoments)\n    \n      \n    @output\n    @render.ui\n    @reactive.event(input.solveEquations, ignore_none=False)\n    def ui_typesetSolutions():\n        return ui.tags.script(\n            \"if (window.MathJax) MathJax.Hub.Queue(['Typeset', MathJax.Hub]);\"\n        )\n      \napp = App(app_ui, server)"
-  },
-  {
-    "objectID": "summary.html",
-    "href": "summary.html",
-    "title": "2  Summary",
-    "section": "",
-    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2"
+    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\n\n1 + 1\n\n[1] 2"
   },
   {
     "objectID": "workoutproblem.html",
@@ -26,5 +19,12 @@
     "title": "2  Workout Example Solution",
     "section": "2.1 Worked Out Solution",
     "text": "2.1 Worked Out Solution\nThis demonstrates a worked out solution to the problem. The best way to begin is by drawing a free body diagram.\n\n\n\nFigure 3: Three traffic light installation with loads\n\n\nUse equilibrium equations to find the internal loads:\n\\[\n\\Sigma F_y=0: N-65-50-50=0\\\\\n\\] \\[N=165~lbs\n\\]\n\\[\n\\Sigma M_O=0: -M+(50\\times7)+(50\\times11)+(65\\times15)=0\n\\\\\\] \\[\nM=1875~lb\\cdot ft=22500~lb\\cdot in\n\\]\nNow, determine the cross-sectional properties:\n\\[\nA=\\pi(r_0^2-r_i^2)=\\pi(2.5^2-2.3^2)=3.02~in^2\n\\\\\nI=\n\\frac{\\pi}{4}\n(r_0^4-r_i^4)=\\frac{\\pi}{4}(2.5^4-2.3^4)=8.70~in^4\n\\]\nCalculate stress due to normal force:\n\\[\n\\sigma_n=\\frac{F}{A}=\\frac{-165~lbs}{3.02~in^2}=-54.7~psi\n\\]\nCalculate maximum stress due to bending moment (will have same magnitude in both tension and compression):\n\\[\n\\sigma_m=\\pm\\frac{M_c}{I}=\\pm\\frac{22500\\times2.5}{8.70}=\\pm6460~psi\n\\]\nDetermine combined tensile stress: \\(\\sigma_T=-54.7+6460=6410~psi\\)\nDetermine combined compressive stress: \\(\\sigma_T=-54.7-6460=-6520~psi\\)"
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "3  Summary",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2"
   }
 ]
