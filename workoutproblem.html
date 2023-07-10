@@ -184,7 +184,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 <p>To scaffold your learning in this example, we have provided a free body diagram for you and a repeat of the problem statement.</p>
-<p>A city planner is installing a new traffic light. Light A weighs 65 lb, while lights B and C weigh 50 lb each. The post at O has a hollow circular cross-section with an outer diameter of 5 inches and a wall thickness of 0.2 inches. It will be made from aluminum alloy with a tensile yield stress of 35 ksi and a compressive yield stress of 20 ksi. A factor of safety of 2 is required with respect to yield. You may ignore the weight of the post.</p>
+<p>A city planner is installing a new traffic light. Light A weighs 65 lb, while lights B and C weigh 50 lb each. The post at O has a hollow circular cross-section with an outer diameter of 5 inches and a wall thickness of 0.2 inches. Please calculate the magnitude of the maximum combined stress in the post. You may ignore the weight of the post.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/FBD sample problem.png" class="img-fluid figure-img" alt="Picture with three distinct traffic lights oriented along the same horizontal beam. Moving from left to right of the image, the first light A is at the end of the beam, the second light B is 4 ft from A, the third light C is 4 ft from light B, and light C is 7 ft from where the horizontal beam meets the vertical post (called post O). The free body diagram includes a downforce force acting on light A with a value of 65 pounds, a downward force acting on light B with a value of 50 points, a downward force acting on light C with a value of 50 pounds, and a reaction Moment M and Force N at the post at O."></p>
@@ -362,7 +362,12 @@ eqnbank_newline = {
 
 
 working_equations_solver=reactive.Value([])
+working_equations_latex_render=reactive.Value([])
 working_symbols=reactive.Value([])
+
+feedback_equations=reactive.Value([])
+feedback_solns=reactive.Value([])
+feedback_syms=reactive.Value([])
 
 NumForcesY=reactive.Value(2)
 F1y=reactive.Value("")
@@ -484,6 +489,7 @@ def server(input, output, session):
         req(eqns_keys)
         lookup_eqns = [eqnbank_newline[key] for key in eqns_keys]
         mystring_eqns = "".join(lookup_eqns)
+        feedback_equations.set(lookup_eqns)
 
         return [
             ui.markdown(mystring_eqns),
@@ -1009,12 +1015,14 @@ def server(input, output, session):
         }
         
         working_eqns_latex = [eqnbank_working_latex[key] for key in eqns_keys]
+        working_equations_latex_render.set(working_eqns_latex)
         working_eqns_solver = [eqnbank_working_solver[key] for key in eqns_keys]
         
         temp_working_equations_solver = "#".join(working_eqns_solver)
         temp_working_equations_solver = temp_working_equations_solver.replace("Eq","Wrap_clash")
         temp_working_equations_solver = temp_working_equations_solver.replace("E","E_clash")
         temp_working_equations_solver = temp_working_equations_solver.replace("I","I_clash")
+        temp_working_equations_solver = temp_working_equations_solver.replace("N","N_clash")
         temp_working_equations_solver = temp_working_equations_solver.replace("Wrap_clash","Eq")
         working_eqns_solver = temp_working_equations_solver.split("#")
         
@@ -1028,6 +1036,7 @@ def server(input, output, session):
         working_syms = [symbank_working[key] for key in eqns_keys]
         mystring_working_eqns = "".join(working_eqns_latex)
         mystring_working_eqns = mystring_working_eqns.replace("*","\\times")
+        feedback_syms.set(working_syms)
         working_equations_solver.set(working_eqns_solver)
 
         working_syms_only=[]
@@ -1039,7 +1048,8 @@ def server(input, output, session):
                 except:
                     temp2=k.replace("I","I_clash")
                     temp3=temp2.replace("E","E_clash")
-                    working_syms_only.append(temp3)
+                    temp4=temp3.replace("N","N_clash")
+                    working_syms_only.append(temp4)
         working_syms_only=list(dict.fromkeys(working_syms_only))
         working_symbols.set(working_syms_only)
         
@@ -1060,6 +1070,7 @@ def server(input, output, session):
         
         tab_StaticsSumFy = ui.nav(
                 str(StaticsSumFy.inline_math),
+                #ui.markdown(working_equations_latex_render["Equilibrium Forces in Y"]),
                 ui.input_numeric("NumForcesY","How many terms do you want?",value=NumForcesY(),min=2,max=5),
                 ui.input_text("F1y","\(F_{y_1}=\)", value=F1y(),placeholder="Please type in variable or value"),
                 ui.input_text("F2y","\(F_{y_2}=\)", value=F2y(),placeholder="Please type in variable or value"),
@@ -1196,6 +1207,7 @@ def server(input, output, session):
         num_working_equations=len(working_equations_solver())
         num_working_symbols=len(working_symbols())
         string_working_symbols= "\\\\("+"\\\\),\\\\(".join(working_symbols())+"\\\\)"
+        string_working_symbols=string_working_symbols.replace("N_clash","N")
         string_working_symbols=string_working_symbols.replace("I_clash","I")
         string_working_symbols=string_working_symbols.replace("E_clash","E")
         string_working_symbols=string_working_symbols.replace("delta","\delta")
@@ -1235,7 +1247,11 @@ def server(input, output, session):
         mystring_answers=mystring_answers.replace("sigma","\sigma")
         mystring_answers=mystring_answers.replace("E_clash","E")
         mystring_answers=mystring_answers.replace("I_clash","I")
+        mystring_answers=mystring_answers.replace("N_clash","N")
+        #feedback_solns.set(mystring_answers)
         return [ui.markdown(f"Your solution is {mystring_answers}"),
+                ui.input_text("answer","Answer:",placeholder="Please type in your answer"),
+                ui.input_action_button("feedback", "Check answer and show feedback"),
                 ui.tags.script(
                 "if (window.MathJax) MathJax.Hub.Queue(['Typeset', MathJax.Hub]);"
                 )]
@@ -1360,8 +1376,35 @@ def server(input, output, session):
             else:
                  pass
 
+                
+    @reactive.Effect
+    @reactive.event(input.feedback)
+    def _():
+        inst_eqns=[eqnbank_newline[key] for key in ["Equilibrium Forces in Y", "Equilibrium Moments about O","Stress Equation", "Area of a Tube","Moment of Inertia of a Tube", "Bending Stress from a Moment","Compatability Equation 1"]]
+        inst_soln="6520"
+        inst_unknowns=["N","M_o","\sigma_b", "\sigma_l","A_{tube}","I_{tube}","\sigma_{max}"]
+        attempt_equations=feedback_equations()
+        attempt_soln=input.answer()
+        attempt_unknowns=feedback_syms()
+        missing_inst_eqns=set(inst_eqns).difference(attempt_equations)
+        extra_student_eqns=set(attempt_equations).difference(inst_eqns)
+        
+        if inst_soln==attempt_soln:
+          feedback_message=ui.markdown("Congratulations! You are correct, great work.")
+        else:
+          feedback_message=ui.markdown(f"This feedback is the list method -- checking your selected equations and associated parameters with instructor provided equations and unknowns. In this check, the instructor used these equations which you did not use {missing_inst_eqns} and you used these equations that the instructor did not use {extra_student_eqns}. This may help you think through any errors in your logic or could just be an indicator that you are approaching the problem differently which could still be correct. Further, looking at the unknown variables in each solution, you used these unknowns in your system of equations {attempt_unknowns} and the instructor used the following unknowns {inst_unknowns}. Again, this may help you think through possible errors in your logic or could just be an indicator that you used a different naming convention and/or are approaching the problem differently which could still be correct.")
+        
+        m = ui.modal(
+            feedback_message, ui.tags.script(
+                "if (window.MathJax) MathJax.Hub.Queue(['Typeset', MathJax.Hub]);"
+                ),
+            title="Feedback on your solution",
+            easy_close=True,
+            footer=None,
+        )
+        ui.modal_show(m)
+                
 app = App(app_ui, server)
-
 
 
 </code></pre>
