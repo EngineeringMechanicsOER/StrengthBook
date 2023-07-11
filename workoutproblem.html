@@ -369,12 +369,37 @@ feedback_equations=reactive.Value([])
 feedback_solns=reactive.Value([])
 feedback_syms=reactive.Value([])
 
+working_SumFx_render=reactive.Value("")
+working_SumFy_render=reactive.Value("")
+working_SumM_render=reactive.Value("")
+working_StressEqn_render=reactive.Value("")
+working_BendingStress_render=reactive.Value("")
+working_AxialDeform_render=reactive.Value("")
+working_ThermalDeform_render=reactive.Value("")
+working_AreaTube_render=reactive.Value("")
+working_Itube_render=reactive.Value("")
+working_Compatability1_render=reactive.Value("")
+working_Compatability2_render=reactive.Value("")
+
+working_SumFx_string=reactive.Value("")
+working_SumFy_string=reactive.Value("")
+working_SumM_string=reactive.Value("")
+working_StressEqn_string=reactive.Value("")
+working_BendingStress_string=reactive.Value("")
+working_AxialDeform_string=reactive.Value("")
+working_ThermalDeform_string=reactive.Value("")
+working_AreaTube_string=reactive.Value("")
+working_Itube_string=reactive.Value("")
+working_Compatability1_string=reactive.Value("")
+working_Compatability2_string=reactive.Value("")
+
 NumForcesY=reactive.Value(2)
 F1y=reactive.Value("")
 F2y=reactive.Value("")
 F3y=reactive.Value("")
 F4y=reactive.Value("")
 F5y=reactive.Value("")
+Equil_latex=reactive.Value("")
 
 NumForcesX=reactive.Value(2)
 F1x=reactive.Value("")
@@ -1015,7 +1040,17 @@ def server(input, output, session):
         }
         
         working_eqns_latex = [eqnbank_working_latex[key] for key in eqns_keys]
-        working_equations_latex_render.set(working_eqns_latex)
+        working_SumFx_render.set(eqnbank_working_latex["Equilibrium Forces in X"])
+        working_SumFy_render.set(eqnbank_working_latex["Equilibrium Forces in Y"])
+        working_SumM_render.set(eqnbank_working_latex["Equilibrium Moments about O"])
+        working_StressEqn_render.set(eqnbank_working_latex["Stress Equation"])
+        working_BendingStress_render.set(eqnbank_working_latex["Bending Stress from a Moment"])
+        working_AxialDeform_render.set(eqnbank_working_latex["Axial Deformation by Force"])
+        working_ThermalDeform_render.set(eqnbank_working_latex["Axial Deformation by Thermal"])
+        working_AreaTube_render.set(eqnbank_working_latex["Area of a Tube"])
+        working_Itube_render.set(eqnbank_working_latex["Moment of Inertia of a Tube"])
+        working_Compatability1_render.set(eqnbank_working_latex["Compatability Equation 1"])
+        working_Compatability2_render.set(eqnbank_working_latex["Compatability Equation 2"])
         working_eqns_solver = [eqnbank_working_solver[key] for key in eqns_keys]
         
         temp_working_equations_solver = "#".join(working_eqns_solver)
@@ -1067,10 +1102,10 @@ def server(input, output, session):
         tab_Instructions = ui.nav(
             "Instructions",ui.markdown("Please choose the equations you would like to use in this problem. As you do, tabs will load here which allow you to browse between active equations and define the necessary parameters or variables to set up your solution. As you fill in parameters and variables, the working palette will change to reflect what values you are plugging in and will give you a running update of the number of equations you have relative to the number of unknowns you have. A solve equations button will be available for when you are ready to solve and the system will provide the solution to your system of equations. &lt;br&gt; &lt;br&gt; Note: You may put in simple math into the blanks (e.g., 3*4 instead of 12) which can be helpful in specifying Moment values or performing unit conversions in place. At this time, you may not mix and match this math with variables (e.g., typing in 5x in the blank will not parse the 5 as a number and the x as a variable) &lt;br&gt; &lt;br&gt; Key issues still needing development include: support for units?, **FEEDBACK**, choosing a solution value from the solution set, parameterized problem statement values...") 
         )
-        
+    
         tab_StaticsSumFy = ui.nav(
                 str(StaticsSumFy.inline_math),
-                #ui.markdown(working_equations_latex_render["Equilibrium Forces in Y"]),
+                ui.markdown(working_SumFy_string()),
                 ui.input_numeric("NumForcesY","How many terms do you want?",value=NumForcesY(),min=2,max=5),
                 ui.input_text("F1y","\(F_{y_1}=\)", value=F1y(),placeholder="Please type in variable or value"),
                 ui.input_text("F2y","\(F_{y_2}=\)", value=F2y(),placeholder="Please type in variable or value"),
@@ -1081,6 +1116,7 @@ def server(input, output, session):
         
         tab_StaticsSumFx = ui.nav(
                 str(StaticsSumFx.inline_math),
+                ui.markdown(working_SumFx_string()),
                 ui.input_numeric("NumForcesX","How many terms do you want?",value=NumForcesX(),min=2,max=5),
                 ui.input_text("F1x","\(F_{x_1}=\)", value=F1x(),placeholder="Please type in variable or value"),
                 ui.input_text("F2x","\(F_{x_2}=\)", value=F2x(),placeholder="Please type in variable or value"),
@@ -1091,6 +1127,7 @@ def server(input, output, session):
         
         tab_StaticsSumM = ui.nav(
                 str(StaticsSumM.inline_math),
+                ui.markdown(working_SumM_string()),
                 ui.input_numeric("NumMoments","How many terms do you want?",value=NumMoments(),min=2,max=5),
                 ui.input_text("M1","\(M_1=\)", value=M1(),placeholder="Please type in variables, values, or numeric math (e.g., (3*4))"),
                 ui.input_text("M2","\(M_2=\)", value=M2(),placeholder="Please type in variables, values, or numeric math (e.g., (3*4))"),
@@ -1101,6 +1138,7 @@ def server(input, output, session):
         
         tab_StressEqn = ui.nav(
                 str(StressEqn.inline_math),
+                ui.markdown(working_StressEqn_string()),
                 ui.input_text("sigma","\(\sigma\)", value=axial_stress_sigma(),placeholder="Please type in variables or values"),
                 ui.input_text("force","\(F\)", value=axial_stress_force(),placeholder="Please type in variables or values"),
                 ui.input_text("area","\(A\)", value=axial_stress_area(),placeholder="Please type in variables or values"),
@@ -1108,6 +1146,7 @@ def server(input, output, session):
         
         tab_BendingStress = ui.nav(
                 str(BendingStress.inline_math),
+                ui.markdown(working_BendingStress_string()),
                 ui.input_text("bendingstress_sigma_b","\(\sigma_b\)", value=bending_stress_sigma(), placeholder="Please type in variables or values"),
                 ui.input_text("bendingstress_M","\(M\)", value=bending_stress_M(), placeholder="Please type in variables or values"),
                 ui.input_text("bendingstress_y","\(y\)", value=bending_stress_y(), placeholder="Please type in variables or values"),
@@ -1116,6 +1155,7 @@ def server(input, output, session):
         
         tab_AxialDeform = ui.nav(
                 str(AxialDeform.inline_math),
+                ui.markdown(working_AxialDeform_string()),
                 ui.input_text("axial_delta_l","\(\delta_l\)", value=axial_delta_l(), placeholder="Please type in variables or values"),
                 ui.input_text("axial_P","\(P\)", value=axial_P(), placeholder="Please type in variables or values"),
                 ui.input_text("axial_L","\(L\)", value=axial_L(), placeholder="Please type in variables or values"),
@@ -1125,6 +1165,7 @@ def server(input, output, session):
         
         tab_ThermalDeform = ui.nav(
                 str(ThermalDeform.inline_math),
+                ui.markdown(working_ThermalDeform_string()),
                 ui.input_text("thermal_delta_t","\(\delta_t\)", value=thermal_delta_t(), placeholder="Please type in variables or values"),
                 ui.input_text("thermal_alpha","\(\\alpha\)", value=thermal_alpha(), placeholder="Please type in variables or values"),
                 ui.input_text("thermal_Delta_T","\(\Delta T\)", value=thermal_Delta_T(), placeholder="Please type in variables or values"),
@@ -1133,6 +1174,7 @@ def server(input, output, session):
         
         tab_AreaTube = ui.nav(
                 str(AreaTube.inline_math),
+                ui.markdown(working_AreaTube_string()),
                 ui.input_text("A_tube","\(A_{tube}=\)", value=area_tube_A_tube(), placeholder="Please type in variables or values"),
                 ui.input_text("Ar_o","\(r_o=\)", value=area_tube_Ar_o(), placeholder="Please type in variables or values"),
                 ui.input_text("Ar_i","\(r_i\)", value=area_tube_Ar_i(), placeholder="Please type in variables or values")
@@ -1140,6 +1182,7 @@ def server(input, output, session):
         
         tab_ITube = ui.nav(
                 str(ITube.inline_math),
+                ui.markdown(working_Itube_string()),
                 ui.input_text("I_tube","\(I_{tube}=\)", value=I_tube_I_tube(), placeholder="Please type in variables or values"),
                 ui.input_text("Ir_o","\(r_o=\)", value=I_tube_Ir_o(), placeholder="Please type in variables or values"),
                 ui.input_text("Ir_i","\(r_i\)", value=i_tube_Ir_i(), placeholder="Please type in variables or values"),
@@ -1147,6 +1190,7 @@ def server(input, output, session):
         
         tab_Compatability1 = ui.nav(
                 str(Compatability1.inline_math),
+                ui.markdown(working_Compatability1_string()),
                 ui.input_numeric("Compatability1_NumLHS","How many 'a' terms do you want?",value=Compatability1_NumLHS(),min=1,max=5),
                 ui.input_numeric("Compatability1_NumRHS","How many 'b' terms do you want?",value=Compatability1_NumRHS(),min=1,max=5),
                 ui.input_text("a_1","\(a_1=\)", value=Compatability1_a_1(),placeholder="Please type in variable or value"),
@@ -1163,6 +1207,7 @@ def server(input, output, session):
         
         tab_Compatability2 = ui.nav(
                 str(Compatability2.inline_math),
+                ui.markdown(working_Compatability2_string()),
                 ui.input_numeric("Compatability2_NumLHS","How many 'c' terms do you want?",value=Compatability2_NumLHS(),min=1,max=5),
                 ui.input_numeric("Compatability2_NumRHS","How many 'd' terms do you want?",value=Compatability2_NumRHS(),min=1,max=5),
                 ui.input_text("c_1","\(c_1=\)", value=Compatability2_c_1(),placeholder="Please type in variable or value"),
@@ -1236,7 +1281,7 @@ def server(input, output, session):
         for k in working_symbols():
             try: 
                 temp=solve_eqns[0][parse_expr(k)]
-                temp2="$$"+k+"="+str(temp)+"$$"
+                temp2="$$"+k+"="+str(round(temp,2))+"$$"
                 answers.append(temp2)
             except:
                 pass
@@ -1261,12 +1306,25 @@ def server(input, output, session):
 
      #   active_eqn_tab.set(input.mytab())
     
+    
     @reactive.Effect
     def _():
 
         input.selected_eqns()
         active_eqn_tab.set(input.mytab())
         
+        working_SumFx_render()
+        working_SumFy_render()
+        working_SumM_render()
+        working_StressEqn_render()
+        working_BendingStress_render()
+        working_AxialDeform_render()
+        working_ThermalDeform_render()
+        working_AreaTube_render()
+        working_Itube_render()
+        working_Compatability1_render()
+        working_Compatability2_render()
+                
         with reactive.isolate():
             if "Equilibrium Forces in Y" in input.selected_eqns(): 
                 NumForcesY.set(input.NumForcesY())
@@ -1275,6 +1333,7 @@ def server(input, output, session):
                 F3y.set(input.F3y())
                 F4y.set(input.F4y())
                 F5y.set(input.F5y())
+                working_SumFy_string.set(str(working_SumFy_render()))
             else:
                  pass             
     
@@ -1285,6 +1344,7 @@ def server(input, output, session):
                 F3x.set(input.F3x())
                 F4x.set(input.F4x())
                 F5x.set(input.F5x())
+                working_SumFx_string.set(str(working_SumFx_render()))
             else:
                  pass
                               
@@ -1295,6 +1355,7 @@ def server(input, output, session):
                 M3.set(input.M3())
                 M4.set(input.M4())
                 M5.set(input.M5())
+                working_SumM_string.set(str(working_SumM_render()))
             else:
                  pass
                 
@@ -1302,6 +1363,7 @@ def server(input, output, session):
                 axial_stress_sigma.set(input.sigma())
                 axial_stress_force.set(input.force())
                 axial_stress_area.set(input.area())
+                working_StressEqn_string.set(str(working_StressEqn_render()))
             else:
                  pass
             
@@ -1311,6 +1373,7 @@ def server(input, output, session):
                 axial_L.set(input.axial_L())
                 axial_A.set(input.axial_A())
                 axial_E.set(input.axial_E())
+                working_AxialDeform_string.set(str(working_AxialDeform_render()))
             else:
                  pass
             
@@ -1319,6 +1382,7 @@ def server(input, output, session):
                 thermal_alpha.set(input.thermal_alpha())
                 thermal_Delta_T.set(input.thermal_Delta_T())
                 thermal_L.set(input.thermal_L())
+                working_ThermalDeform_string.set(str(working_ThermalDeform_render()))
             else:
                  pass
     
@@ -1326,6 +1390,7 @@ def server(input, output, session):
                 area_tube_A_tube.set(input.A_tube())
                 area_tube_Ar_o.set(input.Ar_o())
                 area_tube_Ar_i.set(input.Ar_i())
+                working_AreaTube_string.set(str(working_AreaTube_render()))
             else:
                  pass
     
@@ -1333,6 +1398,7 @@ def server(input, output, session):
                 I_tube_I_tube.set(input.I_tube())
                 I_tube_Ir_o.set(input.Ir_o())
                 i_tube_Ir_i.set(input.Ir_i())
+                working_Itube_string.set(str(working_Itube_render()))
             else:
                  pass
     
@@ -1341,6 +1407,7 @@ def server(input, output, session):
                 bending_stress_M.set(input.bendingstress_M())
                 bending_stress_y.set(input.bendingstress_y())
                 bending_stress_I.set(input.bendingstress_I())
+                working_BendingStress_string.set(str(working_BendingStress_render()))
             else:
                  pass
     
@@ -1357,6 +1424,7 @@ def server(input, output, session):
                 Compatability1_b_3.set(input.b_3())
                 Compatability1_b_4.set(input.b_4())
                 Compatability1_b_5.set(input.b_5())
+                working_Compatability1_string.set(str(working_Compatability1_render()))
             else:
                  pass
     
@@ -1373,6 +1441,7 @@ def server(input, output, session):
                 Compatability2_d_3.set(input.d_3())
                 Compatability2_d_4.set(input.d_4())
                 Compatability2_d_5.set(input.d_5())
+                working_Compatability2_string.set(str(working_Compatability2_render()))
             else:
                  pass
 
