@@ -1281,7 +1281,7 @@ def server(input, output, session):
         for k in working_symbols():
             try: 
                 temp=solve_eqns[0][parse_expr(k)]
-                temp2="$$"+k+"="+str(round(temp,2))+"$$"
+                temp2="$$"+k+"="+f'{temp:.2f}'+"$$"
                 answers.append(temp2)
             except:
                 pass
