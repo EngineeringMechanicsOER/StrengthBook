@@ -1297,6 +1297,7 @@ def server(input, output, session):
         return [ui.markdown(f"Your solution is {mystring_answers}"),
                 ui.input_text("answer","Answer:",placeholder="Please type in your answer"),
                 ui.input_action_button("feedback", "Check answer and show feedback"),
+                ui.download_button("download2", "Download PNG"),
                 ui.tags.script(
                 "if (window.MathJax) MathJax.Hub.Queue(['Typeset', MathJax.Hub]);"
                 )]
@@ -1472,6 +1473,24 @@ def server(input, output, session):
             footer=None,
         )
         ui.modal_show(m)
+        
+    @session.download(filename="image.png")
+    def download2():
+        fig, ax = plt.subplots()
+        ax.text(.2, .6, r'an equation: $E=mc^2$', fontsize=15)
+        fig = plt.figure()
+        ax = fig.add_subplot()
+        #fig.subplots_adjust(top=0.85)
+
+
+        # Set both x- and y-axis limits to [0, 10] instead of default [0, 1]
+        ax.axis([0, 10, 0, 10])
+
+        ax.text(2, 6, r'an equation:$E=mc^2$', fontsize=15)
+
+        with io.BytesIO() as buf:
+            plt.savefig(buf, format="png")
+            yield buf.getvalue()
                 
 app = App(app_ui, server)
 
