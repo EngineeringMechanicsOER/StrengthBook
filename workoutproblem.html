@@ -1476,17 +1476,22 @@ def server(input, output, session):
         
     @session.download(filename="image.png")
     def download2():
-        fig, ax = plt.subplots()
-        ax.text(.2, .6, r'an equation: $E=mc^2$', fontsize=15)
-        ax = fig.add_subplot()
+        #fig, ax = plt.subplots()
+        #ax.text(.2, .6, r'an equation: $E=mc^2$', fontsize=15)
+        #ax = fig.add_subplot()
         #fig.subplots_adjust(top=0.85)
 
 
         # Set both x- and y-axis limits to [0, 10] instead of default [0, 1]
-        ax.axis([0, 10, 0, 10])
+        #ax.axis([0, 10, 0, 10])
 
-        ax.text(2, 6, r'an equation:$E=mc^2$', fontsize=15)
-
+        #ax.text(2, 6, r'an equation:$E=mc^2$', fontsize=15)
+        x = np.random.uniform(size=input.num_points())
+        y = np.random.uniform(size=input.num_points())
+        plt.figure()
+        plt.scatter(x, y)
+        plt.title(input.title())
+        
         with io.BytesIO() as buf:
             plt.savefig(buf, format="png")
             yield buf.getvalue()
