@@ -44,9 +44,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <meta name="shinylive:serviceworker_dir" content=".">
-<script src="site_libs/quarto-contrib/shinylive-0.1.2/shinylive/load-shinylive-sw.js" type="module"></script>
-<script src="site_libs/quarto-contrib/shinylive-0.1.2/shinylive/run-python-blocks.js" type="module"></script>
-<link href="site_libs/quarto-contrib/shinylive-0.1.2/shinylive/shinylive.css" rel="stylesheet">
+<script src="site_libs/quarto-contrib/shinylive-0.1.5/shinylive/load-shinylive-sw.js" type="module"></script>
+<script src="site_libs/quarto-contrib/shinylive-0.1.5/shinylive/run-python-blocks.js" type="module"></script>
+<link href="site_libs/quarto-contrib/shinylive-0.1.5/shinylive/shinylive.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/shinylive-quarto-css/shinylive-quarto.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
@@ -197,7 +197,14 @@ ul.task-list li input[type="checkbox"] {
 #| components: [viewer]
 
 
+#| standalone: true
+#| viewerHeight: 600
+#| components: [viewer]
 
+
+import io
+import numpy as np
+import matplotlib.pyplot as plt
 from shiny import App, render, ui, reactive, req
 from sympy import solve, Eq, Symbol
 from sympy.parsing.sympy_parser import parse_expr
@@ -471,6 +478,8 @@ Compatability2_d_5=reactive.Value("")
 
 active_eqn_tab=reactive.Value("Instructions")
 
+prob_statement="To scaffold your learning in this example, we have provided a free body diagram for you and a repeat of the problem statement. A city planner is installing a new traffic light. Light A weighs 65 lb, while lights B and C weigh 50 lb each. The post at O has a hollow circular cross-section with an outer diameter of 5 inches and a wall thickness of 0.2 inches. Please calculate the magnitude of the maximum combined stress in the post. You may ignore the weight of the post."
+
 app_ui = ui.page_fluid(
     ui.head_content(
         ui.tags.script(
@@ -482,17 +491,19 @@ app_ui = ui.page_fluid(
     ),
     ui.panel_title("Interactive Problem Solving Environment"),
         ui.row(
-            ui.markdown("Your Equation Workspace"),
-            ui.column(3,ui.output_ui("dyn_eqns"),style='margin-bottom:30 px;border-right:1px solid;'),
-            ui.column(9,ui.output_ui("dyn_working_eqns"),ui.output_text("txt")),
-        ),
-        ui.row(ui.output_ui("ui_equation_bookkeeping")),
-        #ui.row(ui.input_action_button(
-        #            "solveEquations", "Solve Equations", class_="btn-success", width="240px", style='margin-bottom:10px')
-        #      ),
-        ui.output_ui("ui_solutions"),
+            ui.column(6,
+                ui.markdown("**Problem Statement**"),
+                ui.markdown(prob_statement),
+                ui.output_image("prob_figure"),
+                ),
+            ui.column(6,ui.output_ui("dyn_ui_nav")),
+            ),
+        #ui.row(
+        #    ui.output_ui("dyn_ui_nav"),
+        #    ),
         ui.row(
-            ui.column(8,ui.output_ui("dyn_ui_nav")),
+            ui.markdown("**Your Equation Workspace**"),
+            #ui.column(6,ui.output_ui("dyn_ui_nav")),
             ui.column(4,
                 ui.navset_tab_card(
                     ui.nav("Equation Bank",
@@ -501,7 +512,16 @@ app_ui = ui.page_fluid(
                     ),
                 ),
             ),
+            ui.column(2,ui.output_ui("dyn_eqns"),style='border-right:1px solid;'),
+            ui.column(4,ui.output_ui("dyn_working_eqns"),ui.output_text("txt")),
         ),
+        ui.row(
+          ui.output_ui("ui_equation_bookkeeping")
+        ),
+        #ui.row(ui.input_action_button(
+        #            "solveEquations", "Solve Equations", class_="btn-success", width="240px", style='margin-bottom:10px')
+        #      ),
+        ui.output_ui("ui_solutions"),
 )
 
 
@@ -1105,7 +1125,7 @@ def server(input, output, session):
     
         tab_StaticsSumFy = ui.nav(
                 str(StaticsSumFy.inline_math),
-                ui.markdown(working_SumFy_string()),
+                #ui.markdown(working_SumFy_string()),
                 ui.input_numeric("NumForcesY","How many terms do you want?",value=NumForcesY(),min=2,max=5),
                 ui.input_text("F1y","\(F_{y_1}=\)", value=F1y(),placeholder="Please type in variable or value"),
                 ui.input_text("F2y","\(F_{y_2}=\)", value=F2y(),placeholder="Please type in variable or value"),
@@ -1116,7 +1136,7 @@ def server(input, output, session):
         
         tab_StaticsSumFx = ui.nav(
                 str(StaticsSumFx.inline_math),
-                ui.markdown(working_SumFx_string()),
+                #ui.markdown(working_SumFx_string()),
                 ui.input_numeric("NumForcesX","How many terms do you want?",value=NumForcesX(),min=2,max=5),
                 ui.input_text("F1x","\(F_{x_1}=\)", value=F1x(),placeholder="Please type in variable or value"),
                 ui.input_text("F2x","\(F_{x_2}=\)", value=F2x(),placeholder="Please type in variable or value"),
@@ -1127,7 +1147,7 @@ def server(input, output, session):
         
         tab_StaticsSumM = ui.nav(
                 str(StaticsSumM.inline_math),
-                ui.markdown(working_SumM_string()),
+                #ui.markdown(working_SumM_string()),
                 ui.input_numeric("NumMoments","How many terms do you want?",value=NumMoments(),min=2,max=5),
                 ui.input_text("M1","\(M_1=\)", value=M1(),placeholder="Please type in variables, values, or numeric math (e.g., (3*4))"),
                 ui.input_text("M2","\(M_2=\)", value=M2(),placeholder="Please type in variables, values, or numeric math (e.g., (3*4))"),
@@ -1138,7 +1158,7 @@ def server(input, output, session):
         
         tab_StressEqn = ui.nav(
                 str(StressEqn.inline_math),
-                ui.markdown(working_StressEqn_string()),
+                #ui.markdown(working_StressEqn_string()),
                 ui.input_text("sigma","\(\sigma\)", value=axial_stress_sigma(),placeholder="Please type in variables or values"),
                 ui.input_text("force","\(F\)", value=axial_stress_force(),placeholder="Please type in variables or values"),
                 ui.input_text("area","\(A\)", value=axial_stress_area(),placeholder="Please type in variables or values"),
@@ -1146,7 +1166,7 @@ def server(input, output, session):
         
         tab_BendingStress = ui.nav(
                 str(BendingStress.inline_math),
-                ui.markdown(working_BendingStress_string()),
+                #ui.markdown(working_BendingStress_string()),
                 ui.input_text("bendingstress_sigma_b","\(\sigma_b\)", value=bending_stress_sigma(), placeholder="Please type in variables or values"),
                 ui.input_text("bendingstress_M","\(M\)", value=bending_stress_M(), placeholder="Please type in variables or values"),
                 ui.input_text("bendingstress_y","\(y\)", value=bending_stress_y(), placeholder="Please type in variables or values"),
@@ -1155,7 +1175,7 @@ def server(input, output, session):
         
         tab_AxialDeform = ui.nav(
                 str(AxialDeform.inline_math),
-                ui.markdown(working_AxialDeform_string()),
+                #ui.markdown(working_AxialDeform_string()),
                 ui.input_text("axial_delta_l","\(\delta_l\)", value=axial_delta_l(), placeholder="Please type in variables or values"),
                 ui.input_text("axial_P","\(P\)", value=axial_P(), placeholder="Please type in variables or values"),
                 ui.input_text("axial_L","\(L\)", value=axial_L(), placeholder="Please type in variables or values"),
@@ -1165,7 +1185,7 @@ def server(input, output, session):
         
         tab_ThermalDeform = ui.nav(
                 str(ThermalDeform.inline_math),
-                ui.markdown(working_ThermalDeform_string()),
+                #ui.markdown(working_ThermalDeform_string()),
                 ui.input_text("thermal_delta_t","\(\delta_t\)", value=thermal_delta_t(), placeholder="Please type in variables or values"),
                 ui.input_text("thermal_alpha","\(\\alpha\)", value=thermal_alpha(), placeholder="Please type in variables or values"),
                 ui.input_text("thermal_Delta_T","\(\Delta T\)", value=thermal_Delta_T(), placeholder="Please type in variables or values"),
@@ -1174,7 +1194,7 @@ def server(input, output, session):
         
         tab_AreaTube = ui.nav(
                 str(AreaTube.inline_math),
-                ui.markdown(working_AreaTube_string()),
+                #ui.markdown(working_AreaTube_string()),
                 ui.input_text("A_tube","\(A_{tube}=\)", value=area_tube_A_tube(), placeholder="Please type in variables or values"),
                 ui.input_text("Ar_o","\(r_o=\)", value=area_tube_Ar_o(), placeholder="Please type in variables or values"),
                 ui.input_text("Ar_i","\(r_i\)", value=area_tube_Ar_i(), placeholder="Please type in variables or values")
@@ -1182,7 +1202,7 @@ def server(input, output, session):
         
         tab_ITube = ui.nav(
                 str(ITube.inline_math),
-                ui.markdown(working_Itube_string()),
+                #ui.markdown(working_Itube_string()),
                 ui.input_text("I_tube","\(I_{tube}=\)", value=I_tube_I_tube(), placeholder="Please type in variables or values"),
                 ui.input_text("Ir_o","\(r_o=\)", value=I_tube_Ir_o(), placeholder="Please type in variables or values"),
                 ui.input_text("Ir_i","\(r_i\)", value=i_tube_Ir_i(), placeholder="Please type in variables or values"),
@@ -1190,7 +1210,7 @@ def server(input, output, session):
         
         tab_Compatability1 = ui.nav(
                 str(Compatability1.inline_math),
-                ui.markdown(working_Compatability1_string()),
+                #ui.markdown(working_Compatability1_string()),
                 ui.input_numeric("Compatability1_NumLHS","How many 'a' terms do you want?",value=Compatability1_NumLHS(),min=1,max=5),
                 ui.input_numeric("Compatability1_NumRHS","How many 'b' terms do you want?",value=Compatability1_NumRHS(),min=1,max=5),
                 ui.input_text("a_1","\(a_1=\)", value=Compatability1_a_1(),placeholder="Please type in variable or value"),
@@ -1207,7 +1227,7 @@ def server(input, output, session):
         
         tab_Compatability2 = ui.nav(
                 str(Compatability2.inline_math),
-                ui.markdown(working_Compatability2_string()),
+                #ui.markdown(working_Compatability2_string()),
                 ui.input_numeric("Compatability2_NumLHS","How many 'c' terms do you want?",value=Compatability2_NumLHS(),min=1,max=5),
                 ui.input_numeric("Compatability2_NumRHS","How many 'd' terms do you want?",value=Compatability2_NumRHS(),min=1,max=5),
                 ui.input_text("c_1","\(c_1=\)", value=Compatability2_c_1(),placeholder="Please type in variable or value"),
@@ -1297,7 +1317,6 @@ def server(input, output, session):
         return [ui.markdown(f"Your solution is {mystring_answers}"),
                 ui.input_text("answer","Answer:",placeholder="Please type in your answer"),
                 ui.input_action_button("feedback", "Check answer and show feedback"),
-                ui.download_button("download2", "Download PNG"),
                 ui.tags.script(
                 "if (window.MathJax) MathJax.Hub.Queue(['Typeset', MathJax.Hub]);"
                 )]
@@ -1314,17 +1333,18 @@ def server(input, output, session):
         input.selected_eqns()
         active_eqn_tab.set(input.mytab())
         
-        working_SumFx_render()
-        working_SumFy_render()
-        working_SumM_render()
-        working_StressEqn_render()
-        working_BendingStress_render()
-        working_AxialDeform_render()
-        working_ThermalDeform_render()
-        working_AreaTube_render()
-        working_Itube_render()
-        working_Compatability1_render()
-        working_Compatability2_render()
+        
+        #working_SumFx_render():
+        #working_SumFy_render()
+        #working_SumM_render()
+        #working_StressEqn_render()
+        #working_BendingStress_render()
+        #working_AxialDeform_render()
+        #working_ThermalDeform_render()
+        #working_AreaTube_render()
+        #working_Itube_render()
+        #working_Compatability1_render()
+        #working_Compatability2_render()
                 
         with reactive.isolate():
             if "Equilibrium Forces in Y" in input.selected_eqns(): 
@@ -1474,29 +1494,18 @@ def server(input, output, session):
         )
         ui.modal_show(m)
         
-    @session.download(filename="image.png")
-    def download2():
-        #fig, ax = plt.subplots()
-        #ax.text(.2, .6, r'an equation: $E=mc^2$', fontsize=15)
-        #ax = fig.add_subplot()
-        #fig.subplots_adjust(top=0.85)
+    @output
+    @render.image
+    def prob_figure():
+        from pathlib import Path
 
-
-        # Set both x- and y-axis limits to [0, 10] instead of default [0, 1]
-        #ax.axis([0, 10, 0, 10])
-
-        #ax.text(2, 6, r'an equation:$E=mc^2$', fontsize=15)
-        x = np.random.uniform(size=input.num_points())
-        y = np.random.uniform(size=input.num_points())
-        plt.figure()
-        plt.scatter(x, y)
-        plt.title(input.title())
-        
-        with io.BytesIO() as buf:
-            plt.savefig(buf, format="png")
-            yield buf.getvalue()
-                
+        dir = Path(__file__).resolve().parent
+        img: ImgData = {"src": str(dir / "FBD_problem.png"), "width": "487px", "height": "232px", "fig-alt": "Picture with three distinct traffic lights oriented along the same horizontal beam. Moving from left to right of the image, the first light A is at the end of the beam, the second light B is 4 ft from A, the third light C is 4 ft from light B, and light C is 7 ft from where the horizontal beam meets the vertical post (called post O). The free body diagram includes a downforce force acting on light A with a value of 65 pounds, a downward force acting on light B with a value of 50 points, a downward force acting on light C with a value of 50 pounds, and a reaction Moment M and Force N at the post at O."}
+        return img
+    
 app = App(app_ui, server)
+
+
 
 
 </code></pre>
