@@ -1705,7 +1705,7 @@ S_{\text {min }}=\frac{M_{\text {max }}}{\sigma_{\text {allow }}} \\
 <h2 class="unnumbered anchored" data-anchor-id="chapter-questions">Chapter questions</h2>
 <p>*Note: The following chapter questions do not correspond with the contents of chapter 11. They are included as a way of visually representing what a finalized chapter <strong><em>could</em></strong> look like.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-43-contents" aria-controls="callout-43" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-43-contents" aria-controls="callout-43" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1714,7 +1714,7 @@ Question 1
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-43" class="callout-43-contents callout-collapse collapse">
+<div id="callout-43" class="callout-43-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>Two steel circular rods are firmly welded together and attached between two walls. A single moment of 2 kN-m is applied in the middle of the first rod. What is the moment reaction at the left wall? Assume G<sub>steel</sub> = 77 GPa.</p>
 <p><strong>[Kurt Gramoll example problem below]</strong></p>
@@ -1749,15 +1749,27 @@ Solution
 <p><strong>Compatibility</strong></p>
 <p>The rotation angle at point C is the same but in an opposite direction for segments AC and CD. (Note that you could also use point B.)</p>
 <p><span class="math display">\[
-\frac{E y}{\rho}=\frac{M y}{I}
+\theta_{AC}=-\theta_{CD}
+\]</span></p>
+<p><span class="math display">\[
+\frac{T_{AB}*L}{G*J_{AB}}+\frac{T_{BC}*L}{G*J_{BC}}=-\frac{T_{CD}*L}{G*J_{CD}}
+\]</span></p>
+<p><span class="math display">\[
+\frac{T_{AB}}{J_{AB}}+\frac{T_{BC}}{J_{BC}}=-\frac{T_{CD}}{J_{CD}}
 \]</span></p>
 <p>Polar moment of inertia for each bar</p>
 <p><span class="math display">\[
-\frac{E y}{\rho}=\frac{M y}{I}
+J_{AB}=J_{BC}=\frac{\pi r^4}{2}=\frac{\pi 1^4}{2}=1.571~\mathrm{cm^4}
+\]</span> <span class="math display">\[
+J_{CD}=\frac{\pi r^4}{2}=\frac{\pi (0.75)^4}{2}=0.4970~\mathrm{cm^4}
 \]</span></p>
 <p>Combining equations</p>
 <p><span class="math display">\[
-\frac{E y}{\rho}=\frac{M y}{I}
+\frac{T_A}{1.571}+\frac{T_A-2}{1.571}=-\frac{T_a-2}{0.4970}
+\]</span> <span class="math display">\[
+3.285 T_A=5.297
+\]</span> <span class="math display">\[
+T_A=1.612~\mathrm{kN\cdot m}
 \]</span></p>
 </div>
 </div>
@@ -1766,7 +1778,7 @@ Solution
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-45-contents" aria-controls="callout-45" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-45-contents" aria-controls="callout-45" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1775,7 +1787,7 @@ Question 2
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-45" class="callout-45-contents callout-collapse collapse">
+<div id="callout-45" class="callout-45-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <p>What is the maximum moment for the loading shown?</p>
 <p><strong>[Kurt Gramoll example problem below]</strong></p>
@@ -1803,19 +1815,33 @@ Solution
 </div>
 <p>Full structure</p>
 <p><span class="math display">\[
-\frac{E y}{\rho}=\frac{M y}{I}
-\]</span></p>
-<p>First beam section</p>
+\Sigma{M_C}=0
+\]</span> <span class="math display">\[
+26(9-6.5)-B_y(5)+13(9-(13*2/3))=0
+\]</span> <span class="math display">\[
+B_y=13.87~\mathrm{kip}
+\]</span> <span class="math display">\[
+\Sigma{F_y}=0
+\]</span> <span class="math display">\[
+C_y=26+13-13.87=25.13~\mathrm{kip}
+\]</span> First beam section</p>
 <p><span class="math display">\[
-\frac{E y}{\rho}=\frac{M y}{I}
+V_1=-2 x-0.5 x \frac{2x}{13}=-2x-\frac{x^2}{13}
+\]</span> <span class="math display">\[
+M_1=-2 x \frac{x}{2} -(0.5 x \frac{2x}{13}) \frac{x}{3}=-x^2-\frac{x^3}{39}
 \]</span></p>
 <p>Second beam section</p>
 <p><span class="math display">\[
-\frac{E y}{\rho}=\frac{M y}{I}
+V_2=13.87-2x-\frac{x^2}{13}
+\]</span> <span class="math display">\[
+M_2=13.87 (x-4)-x^2-\frac{x^3}{39}=-55.48+13.87 x-x^2-\frac{x^3}{39}
 \]</span></p>
 <p>Third beam section</p>
 <p><span class="math display">\[
-\frac{E y}{\rho}=\frac{M y}{I}
+V_3=13.87+25.13-2x-\frac{x^2}{13}=39-2x-\frac{x^2}{13}
+\]</span></p>
+<p><span class="math display">\[
+M_3=13.87 (x-4)+25.13 (x-9) -x^2 -\frac{x^3}{39}=-281.7+39x-x^2-\frac{x^3}{39}
 \]</span></p>
 <p>Shear and moment diagram plot using equations.</p>
 <p>Max at x = 9</p>
