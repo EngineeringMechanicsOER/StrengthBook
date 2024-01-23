@@ -17,17 +17,17 @@ editor: visual
 
 ## Introduction {.unnumbered}
 
-<details open>
+<details>
 
 <summary>Click to expand</summary>
 
-We now know how to calculate both the bending stress (@sec-bending-loads) and shear stress (@sec-shear-loads) in a beam. In this chapter we'll consider the deformation of a beam subjected to bending and shear stresses. Under load, beams deflect from their original position (@fig-11.1). Some amount of deflection is unavoidable, but it is usually desirable to limit deflection as much as possible. Although deflection often doesn't pose a safety risk (unless the allowable stress of the beam is also exceeded) too much deflection can render a beam unfit for purpose.
+We now know how to calculate both the bending stress (@sec-bending-loads) and shear stress (@sec-shear-loads) in a beam. In this chapter we'll consider the deformation of a beam subjected to bending and shear stresses. Under load, beams deflect from their original position (@figure11.1). Some amount of deflection is unavoidable, but it is usually desirable to limit deflection as much as possible. Although deflection often doesn't pose a safety risk (unless the allowable stress of the beam is also exceeded) too much deflection can render a beam unfit for purpose.
 
-![A model bridge showing severe deflection along its span (left). Although the bridge hasn't broken, there is too much deflection for the application. The deflection in a hockey stick during a shot (right). In this application the deflection is helpful as it stores and releases energy during the shot.](images/11.1%20new.png){#fig-11.1 fig-align="center" width="500"}
+![A model bridge showing severe deflection along its span (left). Although the bridge hasn't broken, there is too much deflection for the application. The deflection in a hockey stick during a shot (right). In this application the deflection is helpful as it stores and releases energy during the shot.](images/CH11%20PNGs/11.1.png){#figure11.1 fig-align="center"}
 
-Idealized sketches showing the shape of the deflected beam are a helpful visual aid. This deflected shape is known as the elastic curve (@fig-11.2). Sketches of the elastic curve provide a quick visual reference of how the beam will deflect and can be used to check that our numerical answers are realistic.
+Idealized sketches showing the shape of the deflected beam are a helpful visual aid. This deflected shape is known as the elastic curve (@figure11.2). Sketches of the elastic curve provide a quick visual reference of how the beam will deflect and can be used to check that our numerical answers are realistic.
 
-![Two example beams showing the undeflected position of the centerline (dotted line) and the deflected position of the elastic curve (solid line).](images/11.2.png){#fig-11.2 fig-align="center" width="552"}
+![Two example beams showing the undeflected position of the centerline (dotted line) and the deflected position of the elastic curve (solid line).](images/CH11%20PNGs/11.2.png){#figure11.2 fig-align="center"}
 
 In section 5.3 we learned to calculate deformation due to axial load $\left(\Delta L=\frac{F L}{A E}\right)$. In section 6.2 we learned to calculate deformation due to torsional load $\left(\varnothing=\frac{T L}{J G}\right)$. Note that both types of deformation depend on:
 
@@ -107,23 +107,23 @@ Note that each successive integral introduces a constant of integration which we
 
 -   At a fixed support the slope $\left(\frac{\partial y}{\partial x}\right)$ is zero
 
-@fig-11.3 illustrates these boundary conditions. Once the constants of integration are known, we can define equations for the slope and deflection of the beam in terms of distance $(x)$ along the beam and calculate the slope and deflection at any value of $x$. See [Example 11.1](#example-11.1) and [Example 11.2](#example-11.2) to see this process applied to a simply supported beam and a cantilever beam respectively.
+@figure11.3 illustrates these boundary conditions. Once the constants of integration are known, we can define equations for the slope and deflection of the beam in terms of distance $(x)$ along the beam and calculate the slope and deflection at any value of $x$. See [Example 11.1](#example-11.1) and [Example 11.2](#example-11.2) to see this process applied to a simply supported beam and a cantilever beam respectively.
 
-![At pin and roller supports, the deflection is zero but the slope is not. At a fixed support, both the slope and deflection are zero. For a statically determinate beam in equilibrium we will always have two boundary conditions.](images/11.3%20new.png){#fig-11.3 fig-align="center" width="574"}
+![At pin and roller supports, the deflection is zero but the slope is not. At a fixed support, both the slope and deflection are zero. For a statically determinate beam in equilibrium we will always have two boundary conditions.](images/CH11%20PNGs/11.3.png){#figure11.3 fig-align="center"}
 
 ::: {#example-11.1 .callout-note collapse="true" icon="false"}
 ## Example 11.1
 
-A simply supported beam of length L = 10 m is subjected to a uniform distributed load of w = 20 kN/m. Determine the equation of the elastic curve and use this to find the deflection of the beam at the midpoint, x = 5 m. Assume E = 200 GPa and I = 350 x 10^6^ mm^4^. 
+A simply supported beam of length L = 10 m is subjected to a uniform distributed load of w = 20 kN/m. Determine the equation of the elastic curve and use this to find the deflection of the beam at the midpoint, x = 5 m. Assume E = 200 GPa and I = 350 x 10^6^ mm^4^.
 
-![](images/Example%2011.1.png){fig-align="center" width="250"}
+![](images/CH11%20PNGs/example11.1-1.png){fig-align="center" width="247"}
 
 ::: {.callout-note collapse="true" icon="false"}
 ## Solution
 
 Sketch a free body diagram of the beam and use equilibrium equations to solve for the reaction forces at the supports:
 
-![](images/Example%2011.1%20solution%201.png){fig-align="center" width="351"}
+![](images/CH11%20PNGs/example11.1-2.png){fig-align="center" width="351"}
 
 $$
 \begin{aligned} & \sum M_A=0: \quad-\omega L\left(\frac{L}{2}\right)+B L=0 \quad \rightarrow \quad B=\frac{\omega L}{2} \\ & \sum F y=0: \quad A-\omega L+\frac{\omega L}{2}=0 \rightarrow A=\frac{\omega L}{2} \\ & \end{aligned}
@@ -131,7 +131,7 @@ $$
 
 Cut a cross-section through the beam at distance x and draw a free body diagram of everything to the left of the cut, including the internal loads. Use equilibrium to determine an equation for the internal bending moment, M, as a function of x:
 
-![](images/example%2011.1%20solution%202.png){fig-align="center" width="628"}
+![](images/CH11%20PNGs/example11.1-3.png){fig-align="center"}
 
 $$
 \begin{gathered} \sum M_A=0: M+w x\left(\frac{x}{2}\right)-\frac{w L}{2}(x)=0 \\ M =\frac{w L x}{2}-\frac{w x^2}{2}=E I \frac{\partial^2 y}{\partial x^2}\end{gathered}
@@ -176,16 +176,16 @@ $$
 ::: {#example-11.2 .callout-note collapse="true" icon="false"}
 ## Example 11.2
 
-A cantilever beam of length L = 8 ft is subjected to a linear distributed load where w~0~ = 30 kip/ft. Determine the equation of the elastic curve and use this to find the deflection of the beam at the free end. Assume E = 29 x 10^6^ psi and I = 375 in.^4^. 
+A cantilever beam of length L = 8 ft is subjected to a linear distributed load where w~0~ = 30 kip/ft. Determine the equation of the elastic curve and use this to find the deflection of the beam at the free end. Assume E = 29 x 10^6^ psi and I = 375 in.^4^.
 
-![](images/Example%2011.2.png){fig-align="center" width="250"}
+![](images/CH11%20PNGs/example11.2-1.png){fig-align="center" width="249"}
 
 ::: {.callout-note collapse="true" icon="false"}
 ## Solution
 
 Cut a cross-section through the beam at distance x and draw a free body diagram of everything to the left of the cut, including the internal loads. This diagram won't include any of the reactions at the fixed support so there's no need to solve for these first. Use equilibrium to determine an equation for the internal bending moment, M, as a function of x. Then integrate this equation twice:
 
-![](images/example%2011.2%20solution.png){fig-align="center" width="700"}
+![](images/CH11%20PNGs/example11.2-2.png){fig-align="center"}
 
 $$
 \begin{gathered} \sum M_x=0: \quad M+\frac{w_0 x^2}{2 L}\left(\frac{x}{3}\right)=0 \\ M=-\frac{w_0 x^3}{6 L}=E I \frac{\partial^2 y}{\partial x^2} \\ -\frac{w_0 x^4}{24 L}+C_1=E I \frac{\partial y}{\partial x} \\ -\frac{w_0 x^5}{120 L}+C_1 x+C_2=EIy\end{gathered}
@@ -250,16 +250,14 @@ A simply supported beam is subjected to a distributed load of w = 20 kN/m as sho
 
 Then determine the deflection at x = 5m. Assume E = 200 GPa and I = 394 x 10^6^ mm^4^.
 
-![](images/Example%2011.3.png){fig-align="center" width="261"}
-
- 
+![](images/CH11%20PNGs/example11.3-1.png){fig-align="center" width="257"}
 
 ::: {.callout-note collapse="true" icon="false"}
 ## Solution
 
 Sketch a free body diagram of the beam, and use equilibrium equations to solve for the reaction forces at the supports:
 
-![](images/example%2011.3%20solution%201a.png){fig-align="center" width="241"}
+![](images/CH11%20PNGs/example11.3-2.png){fig-align="center" width="240"}
 
 $$
 \begin{aligned} & \sum M_A=0: \quad -(120 \times 3)+(B+9)=0 \quad \rightarrow \quad B=40 \mathrm{~kN} \\ & \sum F y=0: \quad A-120+40=0 \quad \rightarrow \quad A=80 \mathrm{~kN}\end{aligned}
@@ -267,7 +265,7 @@ $$
 
 Cut a cross-section in the first loading region at distance x~1~. Draw a free body diagram of everything to the left of this cut, including the internal loads. Use equilibrium to determine an equation for the internal bending moment, M~1~, as a function of x~1~. Then integrate this equation twice:
 
-![](images/example%2011.3%20solution%201b.png){fig-align="center" width="526"}
+![](images/CH11%20PNGs/example11.3-3.png){fig-align="center"}
 
 $$
 \begin{gathered}  \sum M_x=0: \quad M_1+20 x_1\left(\frac{x_1}{2}\right)-80 x_1=0 \\  M_1=80 x_1-10 x_1^2=E I \frac{\partial^2 y_1}{\partial x_1^2} \\  \frac{80 x_1^2}{2}-\frac{10 x_1^3}{3}+c_1=E I \frac{\partial y_1}{\partial x_1} \\ \frac{80 x_1^3}{6}-\frac{10 x_1^4}{12}+C_1 x_1+c_2=E I y_1\end{gathered}
@@ -277,7 +275,7 @@ These equations are valid from 0 **≤** x~1~ **≤** 6m.
 
 Set these equations aside and cut a cross-section in the second loading region at distance x~2~. Draw a free body diagram of everything to the left of this cut, including the internal loads. Use equilibrium to determine an equation for the internal bending moment, M~2~, as a function of x~2~. Then integrate this equation twice:
 
-![](images/example%2011.3%20solution%201c.png){fig-align="center" width="521"}
+![](images/CH11%20PNGs/example11.3-4.png){fig-align="center"}
 
 $$
 \begin{gathered}  \Sigma M_x=0: \quad M_2+120\left(x_2-3\right)-80 x_2=0 \\  M_2  =80 x_2-120 x_2+360 \\  M_2 =360-40 x_2=E I \frac{\partial^2 y_2}{\partial x_2^2} \\  360 x_2-\frac{40 x_2^2}{2}+c_3=E I \frac{\partial y_2}{\partial x_2} \\  \frac{360 x_2^2}{2}-\frac{40 x_2^3}{6}+c_3 x_3+c_4  =E I y_2\end{gathered}
@@ -300,8 +298,20 @@ $$
 Substitute in C~4~ = -9C~3~ - 9720 and C~1~ = 720 + C~3~
 
 $$
-\begin{gathered}1800+6\left(720+c_3\right)=5040+6 c_3+c_4 \\1800+4320+6 c_3=5040+6 c_3+c_4 \\6120-5040=c_4 \\c_4=1080 \\\\\end{gathered}\\ \begin{gathered}c_4=-9 c_3-4720 \\c_3=\frac{-1080-9720}{9} \\c_3=-1200 \\\\\end{gathered}\\\begin{gathered}c_1=720+c_3=720-1200 \\c_1=-480\end{gathered}
-$$ Substitute constants into deflection equations:
+\begin{gathered}
+1800+6\left(720+c_3\right)=5040+6 c_3+c_4 \\
+1800+4320+6 c_3=5040+6 c_3+c_4 \\
+6120-5040=c_4 \\
+c_4=1080 \\\\
+c_4=-9 c_3-4720 \\
+c_3=\frac{-1080-9720}{9} \\
+c_3=-1200 \\\\
+c_1=720+c_3=720-1200 \\
+c_1=-480
+\end{gathered}
+$$
+
+Substitute constants into deflection equations:
 
 $$
 \begin{aligned}y_1 & =\frac{1}{E I}\left[\frac{80 x_1^3}{6}-\frac{10 x_1^4}{12}-480 x_1\right] \\y_2 & =\frac{1}{E I}\left[\frac{360 x_2^2}{2}-\frac{40 x_2^3}{6}+1200 x_3+1080\right]\end{aligned}
@@ -337,9 +347,9 @@ $$
 :::
 :::
 
-It is not required that we make both cuts from the left. In some cases it may be easier to make one cut from the left and the other from the right. Consider the simple beam in @fig-11.4. When making a cut in the region not under the distributed load, a free body diagram to the left of the cut has many more forces than a free body diagram of the right side.
+It is not required that we make both cuts from the left. In some cases it may be easier to make one cut from the left and the other from the right. Consider the simple beam in @figure11.4. When making a cut in the region not under the distributed load, a free body diagram to the left of the cut has many more forces than a free body diagram of the right side.
 
-![Simple beam showing two options for finding the internal bending moment. Note that the moment equation will be much simpler if we draw the right hand side of the cut.](images/11.4%20new.png){#fig-11.4 fig-align="center" width="513"}
+![Simple beam showing two options for finding the internal bending moment. Note that the moment equation will be much simpler if we draw the right hand side of the cut.](images/CH11%20PNGs/11.4.png){#figure11.4 fig-align="center" width="448"}
 
 The moment equation will be much simpler if we draw the right hand side of the cut. This in turn simplifies the integrations and the math involved in finding the constants of integration. We must however make one change to our continuity conditions if we measure distance x~2~ from the right. When making both cuts from the left we said that at point C the slope and deflection from calculated from equation 1 must be the same as those calculated from equation 2.
 
@@ -350,13 +360,13 @@ y_{1} & =y_{2}
 \end{aligned}
 $$
 
-When measuring distance x~2~ from the right, it is still true at point C that \[math\] as the deflection is still downwards regardless of whether we measure our horizontal distance from the left or right. The magnitude of the slope will also be the same at point C regardless of which equation we use to calculate it. However, the direction of rotation of the slope will change from counter-clockwise to clockwise due to us changing the coordinate system (@fig-11.5). Thus our second boundary condition must become
+When measuring distance x~2~ from the right, it is still true at point C that \[math\] as the deflection is still downwards regardless of whether we measure our horizontal distance from the left or right. The magnitude of the slope will also be the same at point C regardless of which equation we use to calculate it. However, the direction of rotation of the slope will change from counter-clockwise to clockwise due to us changing the coordinate system (@figure11.5). Thus our second boundary condition must become
 
 $$
 \left(\frac{d y}{d x}\right)_{1}=-\left(\frac{d y}{d x}\right)_{2}
 $$
 
-![Depending on which side of the cut we draw, the deflection at point C will have the same magnitude and direction. The slope at point C will have the same magnitude but opposite directions if we make one cut from the left and the other from the right.](images/11.5.png){#fig-11.5 fig-align="center" width="667"}
+![Depending on which side of the cut we draw, the deflection at point C will have the same magnitude and direction. The slope at point C will have the same magnitude but opposite directions if we make one cut from the left and the other from the right.](images/CH11%20PNGs/11.5.png){#figure11.5 fig-align="center"}
 
 This negative sign is vitally important, and we will not get the correct answer if we forget to include it. [Example 11.3](#example-11.3b) has been reworked below, this time with one cut made from the right hand side instead. Compare to the previous solution to see the differences.
 
@@ -367,7 +377,7 @@ A simply supported beam is subjected to a distributed load of w = 20 kN/m as sho
 
 Then determine the deflection at x = 5m. Assume E = 200 GPa and I = 394 x 10^6^ mm4.
 
-![](images/Example%2011.3.png){fig-align="center" width="269"}
+![](images/CH11%20PNGs/example11.3v2-1.png){fig-align="center" width="270"}
 
 ::: {.callout-note collapse="true" icon="false"}
 ## Solution
@@ -380,7 +390,7 @@ $$
 
 Make second cut from right-hand-side. Draw a free body diagram and use equilibrium to determine an equation for the internal bending moment, M~2~, as a function of x~2~. Then integrate this equation twice.
 
-![](images/example%2011.3%20solution%202.png){fig-align="center" width="185"}
+![](images/CH11%20PNGs/example11.3v2-2.png){fig-align="center" width="227"}
 
 $$
 \begin{gathered}  \sum M_x=0: \quad 40 x_2-M_2=0 \\  M_2=40 x_2=EI\frac{\partial^2 y_2}{\partial x_2{ }^2} \\  \frac{40 x_2^2}{2}+c_3=EI \frac{\partial y_2}{\partial x_2} \\  \frac{40 x_2^3}{6}+c_3 x_2+c_4=E I y_2 \\  \end{gathered}
@@ -512,9 +522,9 @@ See [Example 11.4](#example-11.4) for a demonstration of how to find the deflect
 ::: {#example-11.4 .callout-note collapse="true" icon="false"}
 ## Example 11.4
 
-A cantilever beam from [Example 11.2](#example-11.2) is repeated here. Length L = 8 ft is subjected to a linear distributed load where w~0~ = 30 kip/ft. Determine the equation of the elastic curve and use this to find the deflection of the beam at the free end. 
+A cantilever beam from [Example 11.2](#example-11.2) is repeated here. Length L = 8 ft is subjected to a linear distributed load where w~0~ = 30 kip/ft. Determine the equation of the elastic curve and use this to find the deflection of the beam at the free end.
 
-![](images/Example%2011.4.png){fig-align="center" width="278"}
+![](images/CH11%20PNGs/example11.4-1.png){fig-align="center" width="281"}
 
 ::: {.callout-note collapse="true" icon="false"}
 ## Solution
@@ -595,13 +605,13 @@ $$
 
 It should be apparent from the previous sections that finding deflection using the method of integration can become quite complicated and time-consuming if there are multiple loads. In such cases, the method of superposition is a good alternative.
 
-Beams are typically loaded in a relatively small number of standard configurations, and the deflection behavior of a beam subjected to one of these standard loads is very well understood. A subset of beam deflections have been included in Appendix C. @fig-11.6 shows an example of the information provided for one such beam.
+Beams are typically loaded in a relatively small number of standard configurations, and the deflection behavior of a beam subjected to one of these standard loads is very well understood. A subset of beam deflections have been included in Appendix C. @figure11.6 shows an example of the information provided for one such beam.
 
-![Appendix C contains some standard loading configurations along with a sketch of the elastic curve, equations for the maximum deflection and maximum slope, and the general equation of the elastic curve.](images/11.9%20graphics/11.6.png){#fig-11.6 fig-align="center" width="831"}
+![Appendix C contains some standard loading configurations along with a sketch of the elastic curve, equations for the maximum deflection and maximum slope, and the general equation of the elastic curve.](images/CH11%20PNGs/11.6.png){#figure11.6 fig-align="center"}
 
-This can be useful even for more complex loading. When multiple loads act on a beam, the effect of each load on the deflection of the beam may be considered independently. Thus, even for loading more complex than the loads in Appendix C, it may be possible to simplify the problem by considering each load separately and calculating the deflection caused at a point by each load (@fig-11.7). These deflections can then be added together to find the overall deflection at that point. We must of course calculate the deflection at the same point for each load in order to add them together. See [Example 11.5](#example-11.5) for a demonstration.
+This can be useful even for more complex loading. When multiple loads act on a beam, the effect of each load on the deflection of the beam may be considered independently. Thus, even for loading more complex than the loads in Appendix C, it may be possible to simplify the problem by considering each load separately and calculating the deflection caused at a point by each load (@figure11.7). These deflections can then be added together to find the overall deflection at that point. We must of course calculate the deflection at the same point for each load in order to add them together. See [Example 11.5](#example-11.5) for a demonstration.
 
-![Although Appendix C doesn't contain a cantilever beam with both a distributed load and a concentrated load, it does contain cantilever beams with each load separately. We may find the combined deflection by finding the deflection of each load separately and adding them together.](images/11.9%20graphics/11.7.png){#fig-11.7 fig-align="center" width="757"}
+![Although Appendix C doesn't contain a cantilever beam with both a distributed load and a concentrated load, it does contain cantilever beams with each load separately. We may find the combined deflection by finding the deflection of each load separately and adding them together.](images/CH11%20PNGs/11.7.png){#figure11.7 fig-align="center"}
 
 $$
 \begin{aligned} y_w = - \frac{wL^4}{8EI} \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad &\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad y_F=-\frac{FL^3}{3EI} \\ y_{max}=-&\frac{wL^4}{8EI} - \frac{FL^3}{3EI} \end{aligned}
@@ -610,18 +620,18 @@ $$
 ::: {#example-11.5 .callout-note collapse="true" icon="false"}
 ## Example 11.5
 
-A simply supported beam is subjected to a distributed load w = 10 kN/m and a concentrated load F = 50 kN. If distance a = 6 m and b = 2 m, determine the deflection at the midpoint of the beam (x = 4 m). 
+A simply supported beam is subjected to a distributed load w = 10 kN/m and a concentrated load F = 50 kN. If distance a = 6 m and b = 2 m, determine the deflection at the midpoint of the beam (x = 4 m).
 
-Assume E = 210 GPa and I = 275 x 10^6^ mm^4^. 
+Assume E = 210 GPa and I = 275 x 10^6^ mm^4^.
 
-![](images/11.9%20graphics/example%2011.5.png){fig-align="center" width="272"}
+![](images/CH11%20PNGs/example11.5-1.png){fig-align="center" width="268"}
 
 ::: {.callout-note collapse="true" icon="false"}
 ## Solution
 
 Consider each load separately. We'll start with the distributed load (although this can be done in any order).
 
-![](images/11.9%20graphics/example%2011.5%20solutiona.png){fig-align="center" width="357"}
+![](images/CH11%20PNGs/example11.5-2.png){fig-align="center" width="366"}
 
 From Appendix C we can see that the maximum deflection for this load occurs at the center of the beam, which is the point we're interested in.
 
@@ -631,7 +641,7 @@ $$
 
 Now consider the concentrated load
 
-![](images/11.9%20graphics/example%2011.5%20solutionb.png){fig-align="center" width="364"}
+![](images/CH11%20PNGs/example11.5%20copy%202.png){fig-align="center" width="360"}
 
 Here the maximum deflection does not occur at the center of the beam. We can use the elastic curve equation for x \< a to find the deflection at x = 4 m when the load is applied at a = 6 m.
 
@@ -684,20 +694,20 @@ In section 11.1 we cut a cross-section and found the internal bending moment as 
 ::: {#example-11.6 .callout-note collapse="true" icon="false"}
 ## Example 11.6
 
-A propped cantilever beam of length L = 6 ft is subjected to a linear distributed load where w~0~ = 20 kips/ft. Determine the reactions at supports A and B. 
+A propped cantilever beam of length L = 6 ft is subjected to a linear distributed load where w~0~ = 20 kips/ft. Determine the reactions at supports A and B.
 
-![](images/11.9%20graphics/example%2011.6.png){fig-align="center" width="292"}
+![](images/CH11%20PNGs/example11.6-1.png){fig-align="center" width="286"}
 
 ::: {.callout-note collapse="true" icon="false"}
 ## Solution
 
 A free body diagram of the beam shows that we have 4 unknowns and only 3 equilibrium equations. We can solve $\sum F_x=0$ to find $B_x = 0$, but that still leaves us with 3 unknowns and 2 equations.
 
-![](images/11.9%20graphics/example%2011.6%20solution.png){fig-align="center" width="470"}
+![](images/CH11%20PNGs/example11.6-2.png){fig-align="center" width="463"}
 
 Cut a cross-section and determine the internal bending moment in terms of distance x and redundant force A~y~. Set this equation equal to $EI\frac{\partial^2 y}{\partial x^2}$ and integrate twice:
 
-![](images/11.9%20graphics/example%2011.6%20solutiona.png){fig-align="center" width="800"}
+![](images/CH11%20PNGs/example11.6-3.png){fig-align="center"}
 
 $$
 \begin{gathered} \sum M_x=0: \quad M+\frac{w_0 x^2}{2 L}\left(\frac{x}{3}\right)-A_y x=0 \\ M=A_y x-\frac{w_0 x^3}{6 L}=EI \frac{\partial^2 y}{\partial x^2} \\ \frac{A_y x^2}{2}-\frac{w_0 x^4}{24 L}+c_1=E I \frac{\partial y}{\partial x} \\ \frac{A_y x^3}{6}-\frac{w_0 x^5}{120 L}+c_1 x+c_2=E I y\end{gathered}
@@ -717,7 +727,7 @@ $$
 
 We can now reach a numerical answer and find the other reactions by equilibrium.
 
-![](images/11.9%20graphics/example%2011.6%20solutionb.png){fig-align="center" width="332"}
+![](images/CH11%20PNGs/example11.6-4.png){fig-align="center" width="330"}
 
 $$
 \begin{aligned} & A_y=\frac{20 \times 6}{10}=12 \text { kips } \\ \\ & \sum F_y=0: \quad 12-60+B_y=0 \quad \rightarrow \quad B y=48 \text { kips } \\ &  \sum M_A=0: \quad (10 \times 4)+\left(48+6\right)-M_B=0 \quad \rightarrow \quad M_B=48 \text{ kip·ft} \\ & \end{aligned}
@@ -742,9 +752,9 @@ Then replace the redundant reaction and determine the deflection due to this rea
 ::: {#example-11.7 .callout-note collapse="true" icon="false"}
 ## Example 11.7
 
-The propped cantilever beam of [Example 11.6](#example-11.6) is shown again here. If length L = 6 ft is subjected to a linear distributed load where w~0~ = 20 kips/ft. Determine the reactions at supports A and B. 
+The propped cantilever beam of [Example 11.6](#example-11.6) is shown again here. If length L = 6 ft is subjected to a linear distributed load where w~0~ = 20 kips/ft. Determine the reactions at supports A and B.
 
-![](images/11.9%20graphics/example%2011.7.png){fig-align="center" width="350"}
+![](images/CH11%20PNGs/example11.7-1.png){fig-align="center" width="351"}
 
 ::: {.callout-note collapse="true" icon="false"}
 ## Solution
@@ -753,7 +763,7 @@ As demonstrated in Example 11.6, this problem is statically indeterminate.
 
 This time, let's remove redundant support A~y~ and use Appendix C to find the deflection at point A.
 
-![](images/11.9%20graphics/example%2011.7%20solution%201a.png){fig-align="center" width="350"}
+![](images/CH11%20PNGs/example11.7-2.png){fig-align="center" width="354"}
 
 $$
 y_{A_1}=-\frac{w_0 L^4}{30 E I}
@@ -761,7 +771,7 @@ $$
 
 Now replace A~y~ and use Appendix C to find the deflection at point A caused by A~y~.
 
-![](images/11.9%20graphics/example%2011.7%20solution1b.png){fig-align="center" width="350"}
+![](images/CH11%20PNGs/example11.7-3.png){fig-align="center" width="350"}
 
 $$
 y_{A_2}=\frac{A_{y L}{ }^3}{3 E I}
@@ -792,14 +802,14 @@ It is possible to remove a moment reaction in order to leave a simply supported 
 
 The propped cantilever beam of Example 11.6 is shown again here. If length L = 6 ft is subjected to a linear distributed load where w~0~ = 20 kips/ft. Determine the reactions at supports A and B.
 
-![](images/11.9%20graphics/example%2011.7.png){fig-align="center" width="350"}
+![](images/CH11%20PNGs/example11.7v2-1.png){fig-align="center" width="351"}
 
 ::: {.callout-note collapse="true" icon="false"}
 ## Solution
 
 This time we'll remove the moment reaction at B to leave a simply supported beam.
 
-![](images/11.9%20graphics/example%2011.7%20solution%202a.png){fig-align="center" width="350"}
+![](images/CH11%20PNGs/example11.7v2-2.png){fig-align="center" width="348"}
 
 Finding the deflection at B would not help as it would simply be zero. Instead, use Appendix C to find the slope at B.
 
@@ -809,7 +819,7 @@ $$
 
 Now replace the moment reaction at B and use Appendix C to find the slope at B due to this moment.
 
-![](images/11.9%20graphics/example%2011.7%20solution%202a%20copy.png){fig-align="center" width="350"}
+![](images/CH11%20PNGs/example11.7v2-3.png){fig-align="center" width="358"}
 
 $$
 \theta_B=-\frac{M_B L}{3 E I}
@@ -879,7 +889,7 @@ Since $I=\frac{b h^{3}}{12}$ and $c=\frac{h}{2}$ we were able to determine the r
 
 To meet the minimum required shear stress we will use $\tau=\frac{V Q}{I t}$. Using the method of section 10.1, it can be shown for a rectangle (@fig-11.8) that $Q=y A=\frac{h}{4} \frac{b h}{2}=\frac{b h^{2}}{8}$. Since $I=\frac{b h^{3}}{12}$ and $\mathrm{t}=\mathrm{b}$, we can re-write the shear stress equation to find the maximum shear stress in a rectangular cross-section as $\tau_{\max }=\frac{V \frac{b h^{2}}{8}}{\frac{b h^{3}}{12} b}=\frac{12 V b h^{2}}{8 b^{2} h^{3}}=\frac{12 V}{8 b h}=\frac{3}{2} \frac{V}{A}$.
 
-![Rectangular cross-section showing the dimensions used for calculating the section modulus (S) and first moment of area (Q).](images/11.9%20graphics/11.8.png){#fig-11.8 fig-align="center" width="341"}
+![Rectangular cross-section showing the dimensions used for calculating the section modulus (S) and first moment of area (Q).](images/CH11%20PNGs/11.8.png){#figure11.8 fig-align="center" width="346"}
 
 Thus we may set $\tau_{\max }=\frac{3}{2} \frac{V}{A}$ and solve for the required dimensions to not exceed the maximum allowable shear stress.
 
@@ -890,20 +900,20 @@ We now have three different dimensions---one required to not exceed the maximum 
 ::: {#example-11.8 .callout-note collapse="true" icon="false"}
 ## Example 11.8
 
-The simply supported wooden beam (E = 1700 ksi) of length L = 12 ft is subjected to a uniform distributed load of w = 1.5 kips/ft. 
+The simply supported wooden beam (E = 1700 ksi) of length L = 12 ft is subjected to a uniform distributed load of w = 1.5 kips/ft.
 
-Assume the beam has an allowable bending stress of 900 psi, an allowable shear stress of 180 psi, and the deflection is limited to beam span / 240. 
+Assume the beam has an allowable bending stress of 900 psi, an allowable shear stress of 180 psi, and the deflection is limited to beam span / 240.
 
-The beam has a rectangular cross-section where h = 1.5b. Determine the minimum required dimensions of the beam's cross-section to meet these specifications. Give your answer rounded up to the nearest inch to allow for realistic manufacturing tolerances. 
+The beam has a rectangular cross-section where h = 1.5b. Determine the minimum required dimensions of the beam's cross-section to meet these specifications. Give your answer rounded up to the nearest inch to allow for realistic manufacturing tolerances.
 
-![](images/11.9%20graphics/example%2011.8.png){fig-align="center" width="464"}
+![](images/CH11%20PNGs/example11.8-1.png){fig-align="center" width="467"}
 
 ::: {.callout-note collapse="true" icon="false"}
 ## Solution
 
 Start by drawing shear force and bending moment diagrams to determine the maximum internal loads:
 
-![](images/11.9%20graphics/example%2011.8%20solution.png){fig-align="center" width="417"}
+![](images/CH11%20PNGs/example11.8-2.png){fig-align="center" width="418"}
 
 V~max~ = 9 kips
 
@@ -964,20 +974,20 @@ Steel W beams rarely fail due to shear stress, but shear must still be checked. 
 ::: {#example-11.9 .callout-note collapse="true" icon="false"}
 ## Example 11.9
 
-A steel (E = 210 GPa) W-beam of length L = 10 m will need to support the load shown, where w = 5 kN/m and F = 100 kN. 
+A steel (E = 210 GPa) W-beam of length L = 10 m will need to support the load shown, where w = 5 kN/m and F = 100 kN.
 
-Assume the beam has an allowable bending stress of 150 MPa, an allowable shear stress of 100 MPa, and the maximum deflection is limited to 40 mm. 
+Assume the beam has an allowable bending stress of 150 MPa, an allowable shear stress of 100 MPa, and the maximum deflection is limited to 40 mm.
 
-Select the lightest weight W-beam from Appendix A that meets these specifications. 
+Select the lightest weight W-beam from Appendix A that meets these specifications.
 
-![](images/11.9%20graphics/example%2011.9.png){fig-align="center" width="350"}
+![](images/CH11%20PNGs/example11.9-1.png){fig-align="center" width="351"}
 
 ::: {.callout-note collapse="true" icon="false"}
 ## Solution
 
 Load is symmetric, so each support will hold half the load. Draw shear force and bending moment diagrams to find the maximum internal loads.
 
-![](images/11.9%20graphics/example%2011.9%20solution.png){fig-align="center" width="342"}
+![](images/CH11%20PNGs/example11.9-2.png){fig-align="center" width="342"}
 
 V~max~ = 75 kN
 
@@ -1062,7 +1072,7 @@ W610 x 101
 
 </details>
 
-## Section wrap-up {.unnumbered}
+## Summary {.unnumbered}
 
 <details>
 
@@ -1136,19 +1146,19 @@ $$
 
 \*Note: The following chapter questions do not correspond with the contents of chapter 11. They are included as a way of visually representing what a finalized chapter ***could*** look like.
 
-::: {.callout-note collapse="false" icon="false"}
+::: {.callout-note collapse="true" icon="false"}
 ## Question 1
 
 Two steel circular rods are firmly welded together and attached between two walls. A single moment of 2 kN-m is applied in the middle of the first rod. What is the moment reaction at the left wall? Assume G~steel~ = 77 GPa.
 
 **\[Kurt Gramoll example problem below\]**
 
-![](images/Kurt%20test%20problem1pt1.png){fig-align="center" width="276"}
+![](images/CH11%20Kurt/Kurt%20-%2011.1-1.png){fig-align="center" width="277"}
 
 ::: {.callout-note collapse="true" icon="false"}
 ## Solution
 
-![](images/Kurt%20test%20problem1pt2.png){fig-align="center" width="345"}
+![](images/CH11%20Kurt/Kurt%20-%2011.1-2.png){fig-align="center" width="343"}
 
 **Equilibrium**
 
@@ -1167,108 +1177,70 @@ T~CD~ = T~A~ - 2
 The rotation angle at point C is the same but in an opposite direction for segments AC and CD. (Note that you could also use point B.)
 
 $$
-\theta_{AC}=-\theta_{CD}
-$$
-
-$$
-\frac{T_{AB}*L}{G*J_{AB}}+\frac{T_{BC}*L}{G*J_{BC}}=-\frac{T_{CD}*L}{G*J_{CD}}
-$$
-
-$$
-\frac{T_{AB}}{J_{AB}}+\frac{T_{BC}}{J_{BC}}=-\frac{T_{CD}}{J_{CD}}
+\frac{E y}{\rho}=\frac{M y}{I}
 $$
 
 Polar moment of inertia for each bar
 
 $$
-J_{AB}=J_{BC}=\frac{\pi r^4}{2}=\frac{\pi 1^4}{2}=1.571~\mathrm{cm^4}
-$$ $$
-J_{CD}=\frac{\pi r^4}{2}=\frac{\pi (0.75)^4}{2}=0.4970~\mathrm{cm^4}
+\frac{E y}{\rho}=\frac{M y}{I}
 $$
 
 Combining equations
 
 $$
-\frac{T_A}{1.571}+\frac{T_A-2}{1.571}=-\frac{T_a-2}{0.4970}
-$$ $$
-3.285 T_A=5.297
-$$ $$
-T_A=1.612~\mathrm{kN\cdot m}
+\frac{E y}{\rho}=\frac{M y}{I}
 $$
 :::
 :::
 
-::: {.callout-note collapse="false" icon="false"}
+::: {.callout-note collapse="true" icon="false"}
 ## Question 2
 
 What is the maximum moment for the loading shown?
 
 **\[Kurt Gramoll example problem below\]**
 
-![](images/example%202%20q.png){fig-align="center" width="361"}
+![](images/CH11%20Kurt/Kurt%20test%20problems%20landscape.png){fig-align="center" width="369"}
 
 ::: {.callout-note collapse="true" icon="false"}
 ## Solution
 
-![](images/Kurt%20example%20pt1.png){fig-align="left" width="238"}
+![](images/CH11%20Kurt/Kurt%20test%20problems%20copy.png){fig-align="center" width="370"}
 
 Full structure
 
 $$
-\Sigma{M_C}=0
-$$ 
-$$
-26(9-6.5)-B_y(5)+13(9-(13*2/3))=0
-$$ 
-$$
-B_y=13.87~\mathrm{kip}
-$$ 
-$$
-\Sigma{F_y}=0
-$$  
-$$
-C_y=26+13-13.87=25.13~\mathrm{kip}
+\frac{E y}{\rho}=\frac{M y}{I}
 $$
 
 First beam section
 
-![](images/Kurt%20example%20pt2.png){fig-align="left" width="115"}
+![](images/CH11%20Kurt/Kurt%20test%20problems%20copy%202.png){fig-align="center" width="366"}
 
 $$
-V_1=-2 x-0.5 x \frac{2x}{13}=-2x-\frac{x^2}{13}
-$$ 
-
-$$
-M_1=-2 x \frac{x}{2} -(0.5 x \frac{2x}{13}) \frac{x}{3}=-x^2-\frac{x^3}{39}
+\frac{E y}{\rho}=\frac{M y}{I}
 $$
 
 Second beam section
 
-![](images/Kurt%20example%20pt3.png){fig-align="left" width="189"}
+![](images/CH11%20Kurt/Kurt%20test%20problems%20copy%203.png){fig-align="center" width="363"}
 
 $$
-V_2=13.87-2x-\frac{x^2}{13}
-$$ 
-
-$$
-M_2=13.87 (x-4)-x^2-\frac{x^3}{39}=-55.48+13.87 x-x^2-\frac{x^3}{39}
+\frac{E y}{\rho}=\frac{M y}{I}
 $$
 
 Third beam section
 
-![](images/Kurt%20example%20pt4.png){fig-align="left" width="250"}
+![](images/CH11%20Kurt/Kurt%20test%20problems%20copy%204.png){fig-align="center" width="362"}
 
 $$
-V_3=13.87+25.13-2x-\frac{x^2}{13}=39-2x-\frac{x^2}{13}
-$$
-
-$$
-M_3=13.87 (x-4)+25.13 (x-9) -x^2 -\frac{x^3}{39}=-281.7+39x-x^2-\frac{x^3}{39}
+\frac{E y}{\rho}=\frac{M y}{I}
 $$
 
 Shear and moment diagram plot using equations.
 
-![](images/Kurt%20example%20pt5.png){fig-align="left" width="281"}
+![](images/CH11%20Kurt/Kurt%20test%20problems%20copy%205.png){fig-align="center" width="357"}
 
 M~max~ at x = 9 m
 
