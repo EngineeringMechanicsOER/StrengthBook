@@ -1,0 +1,79 @@
+---
+format: html
+editor: visual
+---
+
+# Demo Chapter
+
+## Learning Objectives
+
+-   List
+-   Of
+-   Learning
+-   Objectives
+
+Introduction to chapter
+
+## Section X.1
+
+Text about this topic
+
+::: {.callout-warning collapse="true" icon="false"}
+## Derivation
+
+Can explain derivation here. Can insert equations and images. Equations can be single/multiple lines:
+
+$$ \begin{align*} & M=\int_{A} y dF = \int_{A} y(\sigma dA) = \int_{A} y(\frac{y}{c}\sigma_{max})dA\\ & M=\frac{\sigma_{max}}{c}\int_{A}y^2dA \end{align*} $$
+
+Or can be in-line with text $M=\int_{A}ydF$
+
+Can box/color important results:
+
+$$ \boxed{ \colorbox{lightgray}{$\displaystyle \sigma_{max}=\frac{Mc}{I}$} } $$
+:::
+
+Could then repeat the final result outside of the derivation.
+
+$$ \boxed{ \colorbox{lightgray}{$\displaystyle \sigma_{max}=\frac{Mc}{I}$} } $$
+
+And some more text leading into an example. Can have different colors for derivations/examples/learning objectives etc.
+
+::: {.callout-tip collapse="true" icon="false"}
+## Example X.1
+
+The support column will be subjected to a compressive force F = 65 kips.
+
+\(a\) The diameter of the column is 4 inches. Determine the average normal stress in the column.
+
+\(b\) The column is to be made of concrete with an allowable compressive stress of 4 ksi. For the same force F = 65 kips, determine the required diameter of the column so that the average normal stress does not exceed 4 ksi.
+
+![Support column subjected to compressive force.](images/Example%201.1.1.png){width="200"}
+
+Can even nest parts.
+
+::: {.callout-tip collapse="true" icon="false"}
+## Solution
+
+\(a\) Cut a cross-section through the column and draw a free body diagram. Although it is clear in this case that the internal load will be 65 kips, it is best to get in the habit of writing out equilibrium equations.
+
+![Cross-section through column showing internal normal force.](images/Example%201.1.2.png){width="200"}
+
+$$ 𝚺F_y=0:  N-65=0 $$
+
+The column has a circular cross-section of area $A=\pi(2)^2=4\pi$
+
+The average normal stress can now be found from:
+
+$$ \sigma=\frac{N}{A}=\frac{65}{4\pi}=5.71\:ksi $$
+
+\(b\) Use the average normal stress equation again, but this time the stress is known to be 4 ksi. The loading has not changed so the internal normal force will still be 65 kips.
+
+$$ \sigma=\frac{N}{A}➔A=\frac{N}{\sigma}=\frac{65}{4}=16.25\:in.^2 $$
+
+Since $A=𝛑r^2$ we can find $r=\sqrt{\frac{A}{\pi}}=\sqrt{\frac{16.25}{\pi}}=2.27\:in.$
+
+Then $d=2r=2*2.27=4.55\:in.$
+
+Note that this is the minimum required diameter to ensure the average normal stress does not exceed 4 ksi. If the diameter is any smaller than this, the stress will exceed the 4 ksi limit.
+:::
+:::
