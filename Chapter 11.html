@@ -254,7 +254,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#superposition" id="toc-superposition" class="nav-link" data-scroll-target="#superposition"><span class="header-section-number">11.3</span> Superposition</a></li>
   <li><a href="#statically-indeterminate-deflection" id="toc-statically-indeterminate-deflection" class="nav-link" data-scroll-target="#statically-indeterminate-deflection"><span class="header-section-number">11.4</span> Statically Indeterminate Deflection</a></li>
   <li><a href="#intermediate-beam-design" id="toc-intermediate-beam-design" class="nav-link" data-scroll-target="#intermediate-beam-design"><span class="header-section-number">11.5</span> Intermediate Beam design</a></li>
-  <li><a href="#section-wrap-up" id="toc-section-wrap-up" class="nav-link" data-scroll-target="#section-wrap-up">Section wrap-up</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   <li><a href="#chapter-questions" id="toc-chapter-questions" class="nav-link" data-scroll-target="#chapter-questions">Chapter questions</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
@@ -301,22 +301,22 @@ Learning Objectives
 </div>
 <section id="introduction" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="introduction">Introduction</h2>
-<details open="">
+<details>
 <summary>
 Click to expand
 </summary>
-<p>We now know how to calculate both the bending stress (<a href="Chapter 9.html"><span>Chapter&nbsp;9</span></a>) and shear stress (<a href="Chapter 10.html"><span>Chapter&nbsp;10</span></a>) in a beam. In this chapter we’ll consider the deformation of a beam subjected to bending and shear stresses. Under load, beams deflect from their original position (<a href="#fig-11.1">Figure&nbsp;<span>11.1</span></a>). Some amount of deflection is unavoidable, but it is usually desirable to limit deflection as much as possible. Although deflection often doesn’t pose a safety risk (unless the allowable stress of the beam is also exceeded) too much deflection can render a beam unfit for purpose.</p>
-<div id="fig-11.1" class="quarto-figure quarto-figure-center anchored">
+<p>We now know how to calculate both the bending stress (<a href="Chapter 9.html"><span>Chapter&nbsp;9</span></a>) and shear stress (<a href="Chapter 10.html"><span>Chapter&nbsp;10</span></a>) in a beam. In this chapter we’ll consider the deformation of a beam subjected to bending and shear stresses. Under load, beams deflect from their original position (<span class="citation" data-cites="figure11.1">@figure11.1</span>). Some amount of deflection is unavoidable, but it is usually desirable to limit deflection as much as possible. Although deflection often doesn’t pose a safety risk (unless the allowable stress of the beam is also exceeded) too much deflection can render a beam unfit for purpose.</p>
+<div id="figure11.1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="images/11.1 new.png" class="img-fluid figure-img" width="500"></p>
-<figcaption class="figure-caption">Figure&nbsp;11.1: A model bridge showing severe deflection along its span (left). Although the bridge hasn’t broken, there is too much deflection for the application. The deflection in a hockey stick during a shot (right). In this application the deflection is helpful as it stores and releases energy during the shot.</figcaption>
+<p><img src="images/CH11 PNGs/11.1.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">A model bridge showing severe deflection along its span (left). Although the bridge hasn’t broken, there is too much deflection for the application. The deflection in a hockey stick during a shot (right). In this application the deflection is helpful as it stores and releases energy during the shot.</figcaption>
 </figure>
 </div>
-<p>Idealized sketches showing the shape of the deflected beam are a helpful visual aid. This deflected shape is known as the elastic curve (<a href="#fig-11.2">Figure&nbsp;<span>11.2</span></a>). Sketches of the elastic curve provide a quick visual reference of how the beam will deflect and can be used to check that our numerical answers are realistic.</p>
-<div id="fig-11.2" class="quarto-figure quarto-figure-center anchored">
+<p>Idealized sketches showing the shape of the deflected beam are a helpful visual aid. This deflected shape is known as the elastic curve (<span class="citation" data-cites="figure11.2">@figure11.2</span>). Sketches of the elastic curve provide a quick visual reference of how the beam will deflect and can be used to check that our numerical answers are realistic.</p>
+<div id="figure11.2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="images/11.2.png" class="img-fluid figure-img" width="552"></p>
-<figcaption class="figure-caption">Figure&nbsp;11.2: Two example beams showing the undeflected position of the centerline (dotted line) and the deflected position of the elastic curve (solid line).</figcaption>
+<p><img src="images/CH11 PNGs/11.2.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Two example beams showing the undeflected position of the centerline (dotted line) and the deflected position of the elastic curve (solid line).</figcaption>
 </figure>
 </div>
 <p>In section 5.3 we learned to calculate deformation due to axial load <span class="math inline">\(\left(\Delta L=\frac{F L}{A E}\right)\)</span>. In section 6.2 we learned to calculate deformation due to torsional load <span class="math inline">\(\left(\varnothing=\frac{T L}{J G}\right)\)</span>. Note that both types of deformation depend on:</p>
@@ -376,11 +376,11 @@ M(x)=E I \frac{\partial^{2} y}{\partial x^{2}} \\
 <li><p>At any support the deflection <span class="math inline">\((y)\)</span> is zero</p></li>
 <li><p>At a fixed support the slope <span class="math inline">\(\left(\frac{\partial y}{\partial x}\right)\)</span> is zero</p></li>
 </ul>
-<p><a href="#fig-11.3">Figure&nbsp;<span>11.3</span></a> illustrates these boundary conditions. Once the constants of integration are known, we can define equations for the slope and deflection of the beam in terms of distance <span class="math inline">\((x)\)</span> along the beam and calculate the slope and deflection at any value of <span class="math inline">\(x\)</span>. See <a href="#example-11.1">Example 11.1</a> and <a href="#example-11.2">Example 11.2</a> to see this process applied to a simply supported beam and a cantilever beam respectively.</p>
-<div id="fig-11.3" class="quarto-figure quarto-figure-center anchored">
+<p><span class="citation" data-cites="figure11.3">@figure11.3</span> illustrates these boundary conditions. Once the constants of integration are known, we can define equations for the slope and deflection of the beam in terms of distance <span class="math inline">\((x)\)</span> along the beam and calculate the slope and deflection at any value of <span class="math inline">\(x\)</span>. See <a href="#example-11.1">Example 11.1</a> and <a href="#example-11.2">Example 11.2</a> to see this process applied to a simply supported beam and a cantilever beam respectively.</p>
+<div id="figure11.3" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="images/11.3 new.png" class="img-fluid figure-img" width="574"></p>
-<figcaption class="figure-caption">Figure&nbsp;11.3: At pin and roller supports, the deflection is zero but the slope is not. At a fixed support, both the slope and deflection are zero. For a statically determinate beam in equilibrium we will always have two boundary conditions.</figcaption>
+<p><img src="images/CH11 PNGs/11.3.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">At pin and roller supports, the deflection is zero but the slope is not. At a fixed support, both the slope and deflection are zero. For a statically determinate beam in equilibrium we will always have two boundary conditions.</figcaption>
 </figure>
 </div>
 <div id="example-11.1" class="callout callout-style-default callout-note no-icon callout-titled">
@@ -395,10 +395,10 @@ Example 11.1
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>A simply supported beam of length L = 10 m is subjected to a uniform distributed load of w = 20 kN/m. Determine the equation of the elastic curve and use this to find the deflection of the beam at the midpoint, x = 5 m. Assume E = 200 GPa and I = 350 x 10<sup>6</sup> mm<sup>4</sup>.&nbsp;</p>
+<p>A simply supported beam of length L = 10 m is subjected to a uniform distributed load of w = 20 kN/m. Determine the equation of the elastic curve and use this to find the deflection of the beam at the midpoint, x = 5 m. Assume E = 200 GPa and I = 350 x 10<sup>6</sup> mm<sup>4</sup>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/Example 11.1.png" class="img-fluid figure-img" width="250"></p>
+<p><img src="images/CH11 PNGs/example11.1-1.png" class="img-fluid figure-img" width="247"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
@@ -416,7 +416,7 @@ Solution
 <p>Sketch a free body diagram of the beam and use equilibrium equations to solve for the reaction forces at the supports:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/Example 11.1 solution 1.png" class="img-fluid figure-img" width="351"></p>
+<p><img src="images/CH11 PNGs/example11.1-2.png" class="img-fluid figure-img" width="351"></p>
 </figure>
 </div>
 <p><span class="math display">\[
@@ -425,7 +425,7 @@ Solution
 <p>Cut a cross-section through the beam at distance x and draw a free body diagram of everything to the left of the cut, including the internal loads. Use equilibrium to determine an equation for the internal bending moment, M, as a function of x:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/example 11.1 solution 2.png" class="img-fluid figure-img" width="628"></p>
+<p><img src="images/CH11 PNGs/example11.1-3.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 <p><span class="math display">\[
@@ -484,10 +484,10 @@ Example 11.2
 </div>
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>A cantilever beam of length L = 8 ft is subjected to a linear distributed load where w<sub>0</sub> = 30 kip/ft. Determine the equation of the elastic curve and use this to find the deflection of the beam at the free end. Assume E = 29 x 10<sup>6</sup> psi and I = 375 in.<sup>4</sup>.&nbsp;</p>
+<p>A cantilever beam of length L = 8 ft is subjected to a linear distributed load where w<sub>0</sub> = 30 kip/ft. Determine the equation of the elastic curve and use this to find the deflection of the beam at the free end. Assume E = 29 x 10<sup>6</sup> psi and I = 375 in.<sup>4</sup>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/Example 11.2.png" class="img-fluid figure-img" width="250"></p>
+<p><img src="images/CH11 PNGs/example11.2-1.png" class="img-fluid figure-img" width="249"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
@@ -505,7 +505,7 @@ Solution
 <p>Cut a cross-section through the beam at distance x and draw a free body diagram of everything to the left of the cut, including the internal loads. This diagram won’t include any of the reactions at the fixed support so there’s no need to solve for these first. Use equilibrium to determine an equation for the internal bending moment, M, as a function of x. Then integrate this equation twice:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/example 11.2 solution.png" class="img-fluid figure-img" width="700"></p>
+<p><img src="images/CH11 PNGs/example11.2-2.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 <p><span class="math display">\[
@@ -582,10 +582,9 @@ Example 11.3
 <p>Then determine the deflection at x = 5m. Assume E = 200 GPa and I = 394 x 10<sup>6</sup> mm<sup>4</sup>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/Example 11.3.png" class="img-fluid figure-img" width="261"></p>
+<p><img src="images/CH11 PNGs/example11.3-1.png" class="img-fluid figure-img" width="257"></p>
 </figure>
 </div>
-<p>&nbsp;</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -601,7 +600,7 @@ Solution
 <p>Sketch a free body diagram of the beam, and use equilibrium equations to solve for the reaction forces at the supports:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/example 11.3 solution 1a.png" class="img-fluid figure-img" width="241"></p>
+<p><img src="images/CH11 PNGs/example11.3-2.png" class="img-fluid figure-img" width="240"></p>
 </figure>
 </div>
 <p><span class="math display">\[
@@ -610,7 +609,7 @@ Solution
 <p>Cut a cross-section in the first loading region at distance x<sub>1</sub>. Draw a free body diagram of everything to the left of this cut, including the internal loads. Use equilibrium to determine an equation for the internal bending moment, M<sub>1</sub>, as a function of x<sub>1</sub>. Then integrate this equation twice:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/example 11.3 solution 1b.png" class="img-fluid figure-img" width="526"></p>
+<p><img src="images/CH11 PNGs/example11.3-3.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 <p><span class="math display">\[
@@ -620,7 +619,7 @@ Solution
 <p>Set these equations aside and cut a cross-section in the second loading region at distance x<sub>2</sub>. Draw a free body diagram of everything to the left of this cut, including the internal loads. Use equilibrium to determine an equation for the internal bending moment, M<sub>2</sub>, as a function of x<sub>2</sub>. Then integrate this equation twice:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/example 11.3 solution 1c.png" class="img-fluid figure-img" width="521"></p>
+<p><img src="images/CH11 PNGs/example11.3-4.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 <p><span class="math display">\[
@@ -637,8 +636,19 @@ Solution
 \]</span></p>
 <p>Substitute in C<sub>4</sub> = -9C<sub>3</sub> - 9720 and C<sub>1</sub> = 720 + C<sub>3</sub></p>
 <p><span class="math display">\[
-\begin{gathered}1800+6\left(720+c_3\right)=5040+6 c_3+c_4 \\1800+4320+6 c_3=5040+6 c_3+c_4 \\6120-5040=c_4 \\c_4=1080 \\\\\end{gathered}\\ \begin{gathered}c_4=-9 c_3-4720 \\c_3=\frac{-1080-9720}{9} \\c_3=-1200 \\\\\end{gathered}\\\begin{gathered}c_1=720+c_3=720-1200 \\c_1=-480\end{gathered}
-\]</span> Substitute constants into deflection equations:</p>
+\begin{gathered}
+1800+6\left(720+c_3\right)=5040+6 c_3+c_4 \\
+1800+4320+6 c_3=5040+6 c_3+c_4 \\
+6120-5040=c_4 \\
+c_4=1080 \\\\
+c_4=-9 c_3-4720 \\
+c_3=\frac{-1080-9720}{9} \\
+c_3=-1200 \\\\
+c_1=720+c_3=720-1200 \\
+c_1=-480
+\end{gathered}
+\]</span></p>
+<p>Substitute constants into deflection equations:</p>
 <p><span class="math display">\[
 \begin{aligned}y_1 &amp; =\frac{1}{E I}\left[\frac{80 x_1^3}{6}-\frac{10 x_1^4}{12}-480 x_1\right] \\y_2 &amp; =\frac{1}{E I}\left[\frac{360 x_2^2}{2}-\frac{40 x_2^3}{6}+1200 x_3+1080\right]\end{aligned}
 \]</span></p>
@@ -679,11 +689,11 @@ y_1=-15.9~mm
 </div>
 </div>
 </div>
-<p>It is not required that we make both cuts from the left. In some cases it may be easier to make one cut from the left and the other from the right. Consider the simple beam in <a href="#fig-11.4">Figure&nbsp;<span>11.4</span></a>. When making a cut in the region not under the distributed load, a free body diagram to the left of the cut has many more forces than a free body diagram of the right side.</p>
-<div id="fig-11.4" class="quarto-figure quarto-figure-center anchored">
+<p>It is not required that we make both cuts from the left. In some cases it may be easier to make one cut from the left and the other from the right. Consider the simple beam in <span class="citation" data-cites="figure11.4">@figure11.4</span>. When making a cut in the region not under the distributed load, a free body diagram to the left of the cut has many more forces than a free body diagram of the right side.</p>
+<div id="figure11.4" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="images/11.4 new.png" class="img-fluid figure-img" width="513"></p>
-<figcaption class="figure-caption">Figure&nbsp;11.4: Simple beam showing two options for finding the internal bending moment. Note that the moment equation will be much simpler if we draw the right hand side of the cut.</figcaption>
+<p><img src="images/CH11 PNGs/11.4.png" class="img-fluid figure-img" width="448"></p>
+<figcaption class="figure-caption">Simple beam showing two options for finding the internal bending moment. Note that the moment equation will be much simpler if we draw the right hand side of the cut.</figcaption>
 </figure>
 </div>
 <p>The moment equation will be much simpler if we draw the right hand side of the cut. This in turn simplifies the integrations and the math involved in finding the constants of integration. We must however make one change to our continuity conditions if we measure distance x<sub>2</sub> from the right. When making both cuts from the left we said that at point C the slope and deflection from calculated from equation 1 must be the same as those calculated from equation 2.</p>
@@ -693,14 +703,14 @@ y_1=-15.9~mm
 y_{1} &amp; =y_{2}
 \end{aligned}
 \]</span></p>
-<p>When measuring distance x<sub>2</sub> from the right, it is still true at point C that [math] as the deflection is still downwards regardless of whether we measure our horizontal distance from the left or right. The magnitude of the slope will also be the same at point C regardless of which equation we use to calculate it. However, the direction of rotation of the slope will change from counter-clockwise to clockwise due to us changing the coordinate system (<a href="#fig-11.5">Figure&nbsp;<span>11.5</span></a>). Thus our second boundary condition must become</p>
+<p>When measuring distance x<sub>2</sub> from the right, it is still true at point C that [math] as the deflection is still downwards regardless of whether we measure our horizontal distance from the left or right. The magnitude of the slope will also be the same at point C regardless of which equation we use to calculate it. However, the direction of rotation of the slope will change from counter-clockwise to clockwise due to us changing the coordinate system (<span class="citation" data-cites="figure11.5">@figure11.5</span>). Thus our second boundary condition must become</p>
 <p><span class="math display">\[
 \left(\frac{d y}{d x}\right)_{1}=-\left(\frac{d y}{d x}\right)_{2}
 \]</span></p>
-<div id="fig-11.5" class="quarto-figure quarto-figure-center anchored">
+<div id="figure11.5" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="images/11.5.png" class="img-fluid figure-img" width="667"></p>
-<figcaption class="figure-caption">Figure&nbsp;11.5: Depending on which side of the cut we draw, the deflection at point C will have the same magnitude and direction. The slope at point C will have the same magnitude but opposite directions if we make one cut from the left and the other from the right.</figcaption>
+<p><img src="images/CH11 PNGs/11.5.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Depending on which side of the cut we draw, the deflection at point C will have the same magnitude and direction. The slope at point C will have the same magnitude but opposite directions if we make one cut from the left and the other from the right.</figcaption>
 </figure>
 </div>
 <p>This negative sign is vitally important, and we will not get the correct answer if we forget to include it. <a href="#example-11.3b">Example 11.3</a> has been reworked below, this time with one cut made from the right hand side instead. Compare to the previous solution to see the differences.</p>
@@ -720,7 +730,7 @@ Example 11.3 (reworked)
 <p>Then determine the deflection at x = 5m. Assume E = 200 GPa and I = 394 x 10<sup>6</sup> mm4.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/Example 11.3.png" class="img-fluid figure-img" width="269"></p>
+<p><img src="images/CH11 PNGs/example11.3v2-1.png" class="img-fluid figure-img" width="270"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
@@ -742,7 +752,7 @@ Solution
 <p>Make second cut from right-hand-side. Draw a free body diagram and use equilibrium to determine an equation for the internal bending moment, M<sub>2</sub>, as a function of x<sub>2</sub>. Then integrate this equation twice.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/example 11.3 solution 2.png" class="img-fluid figure-img" width="185"></p>
+<p><img src="images/CH11 PNGs/example11.3v2-2.png" class="img-fluid figure-img" width="227"></p>
 </figure>
 </div>
 <p><span class="math display">\[
@@ -881,10 +891,10 @@ Example 11.4
 </div>
 <div id="callout-17" class="callout-17-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>A cantilever beam from <a href="#example-11.2">Example 11.2</a> is repeated here. Length L = 8 ft is subjected to a linear distributed load where w<sub>0</sub> = 30 kip/ft. Determine the equation of the elastic curve and use this to find the deflection of the beam at the free end.&nbsp;</p>
+<p>A cantilever beam from <a href="#example-11.2">Example 11.2</a> is repeated here. Length L = 8 ft is subjected to a linear distributed load where w<sub>0</sub> = 30 kip/ft. Determine the equation of the elastic curve and use this to find the deflection of the beam at the free end.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/Example 11.4.png" class="img-fluid figure-img" width="278"></p>
+<p><img src="images/CH11 PNGs/example11.4-1.png" class="img-fluid figure-img" width="281"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
@@ -983,18 +993,18 @@ Step-by-step: Deflection by Integration of Load Equation
 Click to expand
 </summary>
 <p>It should be apparent from the previous sections that finding deflection using the method of integration can become quite complicated and time-consuming if there are multiple loads. In such cases, the method of superposition is a good alternative.</p>
-<p>Beams are typically loaded in a relatively small number of standard configurations, and the deflection behavior of a beam subjected to one of these standard loads is very well understood. A subset of beam deflections have been included in Appendix C. <a href="#fig-11.6">Figure&nbsp;<span>11.6</span></a> shows an example of the information provided for one such beam.</p>
-<div id="fig-11.6" class="quarto-figure quarto-figure-center anchored">
+<p>Beams are typically loaded in a relatively small number of standard configurations, and the deflection behavior of a beam subjected to one of these standard loads is very well understood. A subset of beam deflections have been included in Appendix C. <span class="citation" data-cites="figure11.6">@figure11.6</span> shows an example of the information provided for one such beam.</p>
+<div id="figure11.6" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="images/11.9 graphics/11.6.png" class="img-fluid figure-img" width="831"></p>
-<figcaption class="figure-caption">Figure&nbsp;11.6: Appendix C contains some standard loading configurations along with a sketch of the elastic curve, equations for the maximum deflection and maximum slope, and the general equation of the elastic curve.</figcaption>
+<p><img src="images/CH11 PNGs/11.6.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Appendix C contains some standard loading configurations along with a sketch of the elastic curve, equations for the maximum deflection and maximum slope, and the general equation of the elastic curve.</figcaption>
 </figure>
 </div>
-<p>This can be useful even for more complex loading. When multiple loads act on a beam, the effect of each load on the deflection of the beam may be considered independently. Thus, even for loading more complex than the loads in Appendix C, it may be possible to simplify the problem by considering each load separately and calculating the deflection caused at a point by each load (<a href="#fig-11.7">Figure&nbsp;<span>11.7</span></a>). These deflections can then be added together to find the overall deflection at that point. We must of course calculate the deflection at the same point for each load in order to add them together. See <a href="#example-11.5">Example 11.5</a> for a demonstration.</p>
-<div id="fig-11.7" class="quarto-figure quarto-figure-center anchored">
+<p>This can be useful even for more complex loading. When multiple loads act on a beam, the effect of each load on the deflection of the beam may be considered independently. Thus, even for loading more complex than the loads in Appendix C, it may be possible to simplify the problem by considering each load separately and calculating the deflection caused at a point by each load (<span class="citation" data-cites="figure11.7">@figure11.7</span>). These deflections can then be added together to find the overall deflection at that point. We must of course calculate the deflection at the same point for each load in order to add them together. See <a href="#example-11.5">Example 11.5</a> for a demonstration.</p>
+<div id="figure11.7" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="images/11.9 graphics/11.7.png" class="img-fluid figure-img" width="757"></p>
-<figcaption class="figure-caption">Figure&nbsp;11.7: Although Appendix C doesn’t contain a cantilever beam with both a distributed load and a concentrated load, it does contain cantilever beams with each load separately. We may find the combined deflection by finding the deflection of each load separately and adding them together.</figcaption>
+<p><img src="images/CH11 PNGs/11.7.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Although Appendix C doesn’t contain a cantilever beam with both a distributed load and a concentrated load, it does contain cantilever beams with each load separately. We may find the combined deflection by finding the deflection of each load separately and adding them together.</figcaption>
 </figure>
 </div>
 <p><span class="math display">\[
@@ -1012,11 +1022,11 @@ Example 11.5
 </div>
 <div id="callout-21" class="callout-21-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>A simply supported beam is subjected to a distributed load w = 10 kN/m and a concentrated load F = 50 kN. If distance a = 6 m and b = 2 m, determine the deflection at the midpoint of the beam (x = 4 m).&nbsp;</p>
-<p>Assume E = 210 GPa and I = 275 x 10<sup>6</sup> mm<sup>4</sup>.&nbsp;</p>
+<p>A simply supported beam is subjected to a distributed load w = 10 kN/m and a concentrated load F = 50 kN. If distance a = 6 m and b = 2 m, determine the deflection at the midpoint of the beam (x = 4 m).</p>
+<p>Assume E = 210 GPa and I = 275 x 10<sup>6</sup> mm<sup>4</sup>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/11.9 graphics/example 11.5.png" class="img-fluid figure-img" width="272"></p>
+<p><img src="images/CH11 PNGs/example11.5-1.png" class="img-fluid figure-img" width="268"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
@@ -1034,7 +1044,7 @@ Solution
 <p>Consider each load separately. We’ll start with the distributed load (although this can be done in any order).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/11.9 graphics/example 11.5 solutiona.png" class="img-fluid figure-img" width="357"></p>
+<p><img src="images/CH11 PNGs/example11.5-2.png" class="img-fluid figure-img" width="366"></p>
 </figure>
 </div>
 <p>From Appendix C we can see that the maximum deflection for this load occurs at the center of the beam, which is the point we’re interested in.</p>
@@ -1044,7 +1054,7 @@ Solution
 <p>Now consider the concentrated load</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/11.9 graphics/example 11.5 solutionb.png" class="img-fluid figure-img" width="364"></p>
+<p><img src="images/CH11 PNGs/example11.5 copy 2.png" class="img-fluid figure-img" width="360"></p>
 </figure>
 </div>
 <p>Here the maximum deflection does not occur at the center of the beam. We can use the elastic curve equation for x &lt; a to find the deflection at x = 4 m when the load is applied at a = 6 m.</p>
@@ -1123,10 +1133,10 @@ Example 11.6
 </div>
 <div id="callout-25" class="callout-25-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>A propped cantilever beam of length L = 6 ft is subjected to a linear distributed load where w<sub>0</sub> = 20 kips/ft. Determine the reactions at supports A and B.&nbsp;</p>
+<p>A propped cantilever beam of length L = 6 ft is subjected to a linear distributed load where w<sub>0</sub> = 20 kips/ft. Determine the reactions at supports A and B.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/11.9 graphics/example 11.6.png" class="img-fluid figure-img" width="292"></p>
+<p><img src="images/CH11 PNGs/example11.6-1.png" class="img-fluid figure-img" width="286"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
@@ -1144,13 +1154,13 @@ Solution
 <p>A free body diagram of the beam shows that we have 4 unknowns and only 3 equilibrium equations. We can solve <span class="math inline">\(\sum F_x=0\)</span> to find <span class="math inline">\(B_x = 0\)</span>, but that still leaves us with 3 unknowns and 2 equations.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/11.9 graphics/example 11.6 solution.png" class="img-fluid figure-img" width="470"></p>
+<p><img src="images/CH11 PNGs/example11.6-2.png" class="img-fluid figure-img" width="463"></p>
 </figure>
 </div>
 <p>Cut a cross-section and determine the internal bending moment in terms of distance x and redundant force A<sub>y</sub>. Set this equation equal to <span class="math inline">\(EI\frac{\partial^2 y}{\partial x^2}\)</span> and integrate twice:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/11.9 graphics/example 11.6 solutiona.png" class="img-fluid figure-img" width="800"></p>
+<p><img src="images/CH11 PNGs/example11.6-3.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 <p><span class="math display">\[
@@ -1167,7 +1177,7 @@ Solution
 <p>We can now reach a numerical answer and find the other reactions by equilibrium.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/11.9 graphics/example 11.6 solutionb.png" class="img-fluid figure-img" width="332"></p>
+<p><img src="images/CH11 PNGs/example11.6-4.png" class="img-fluid figure-img" width="330"></p>
 </figure>
 </div>
 <p><span class="math display">\[
@@ -1212,10 +1222,10 @@ Example 11.7
 </div>
 <div id="callout-28" class="callout-28-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The propped cantilever beam of <a href="#example-11.6">Example 11.6</a> is shown again here. If length L = 6 ft is subjected to a linear distributed load where w<sub>0</sub> = 20 kips/ft. Determine the reactions at supports A and B.&nbsp;</p>
+<p>The propped cantilever beam of <a href="#example-11.6">Example 11.6</a> is shown again here. If length L = 6 ft is subjected to a linear distributed load where w<sub>0</sub> = 20 kips/ft. Determine the reactions at supports A and B.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/11.9 graphics/example 11.7.png" class="img-fluid figure-img" width="350"></p>
+<p><img src="images/CH11 PNGs/example11.7-1.png" class="img-fluid figure-img" width="351"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
@@ -1234,7 +1244,7 @@ Solution
 <p>This time, let’s remove redundant support A<sub>y</sub> and use Appendix C to find the deflection at point A.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/11.9 graphics/example 11.7 solution 1a.png" class="img-fluid figure-img" width="350"></p>
+<p><img src="images/CH11 PNGs/example11.7-2.png" class="img-fluid figure-img" width="354"></p>
 </figure>
 </div>
 <p><span class="math display">\[
@@ -1243,7 +1253,7 @@ y_{A_1}=-\frac{w_0 L^4}{30 E I}
 <p>Now replace A<sub>y</sub> and use Appendix C to find the deflection at point A caused by A<sub>y</sub>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/11.9 graphics/example 11.7 solution1b.png" class="img-fluid figure-img" width="350"></p>
+<p><img src="images/CH11 PNGs/example11.7-3.png" class="img-fluid figure-img" width="350"></p>
 </figure>
 </div>
 <p><span class="math display">\[
@@ -1294,7 +1304,7 @@ Example 11.7 (reworked)
 <p>The propped cantilever beam of Example 11.6 is shown again here. If length L = 6 ft is subjected to a linear distributed load where w<sub>0</sub> = 20 kips/ft. Determine the reactions at supports A and B.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/11.9 graphics/example 11.7.png" class="img-fluid figure-img" width="350"></p>
+<p><img src="images/CH11 PNGs/example11.7v2-1.png" class="img-fluid figure-img" width="351"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
@@ -1312,7 +1322,7 @@ Solution
 <p>This time we’ll remove the moment reaction at B to leave a simply supported beam.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/11.9 graphics/example 11.7 solution 2a.png" class="img-fluid figure-img" width="350"></p>
+<p><img src="images/CH11 PNGs/example11.7v2-2.png" class="img-fluid figure-img" width="348"></p>
 </figure>
 </div>
 <p>Finding the deflection at B would not help as it would simply be zero. Instead, use Appendix C to find the slope at B.</p>
@@ -1322,7 +1332,7 @@ Solution
 <p>Now replace the moment reaction at B and use Appendix C to find the slope at B due to this moment.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/11.9 graphics/example 11.7 solution 2a copy.png" class="img-fluid figure-img" width="350"></p>
+<p><img src="images/CH11 PNGs/example11.7v2-3.png" class="img-fluid figure-img" width="358"></p>
 </figure>
 </div>
 <p><span class="math display">\[
@@ -1404,11 +1414,11 @@ Click to expand
 S_{\min }=\frac{M_{\max }}{\sigma_{\text {allow }}}=\frac{I}{c}
 \]</span></p>
 <p>Since <span class="math inline">\(I=\frac{b h^{3}}{12}\)</span> and <span class="math inline">\(c=\frac{h}{2}\)</span> we were able to determine the required dimensions to meet the minimum required section modulus. The equation <span class="math inline">\(S=\frac{I}{c}\)</span> will simplify to <span class="math inline">\(S=\frac{\frac{b h^{3}}{12}}{\frac{h}{2}}=\frac{2 b h^{3}}{12 h}=\frac{b h^{2}}{6}\)</span> for a rectangle.</p>
-<p>To meet the minimum required shear stress we will use <span class="math inline">\(\tau=\frac{V Q}{I t}\)</span>. Using the method of section 10.1, it can be shown for a rectangle (<a href="#fig-11.8">Figure&nbsp;<span>11.8</span></a>) that <span class="math inline">\(Q=y A=\frac{h}{4} \frac{b h}{2}=\frac{b h^{2}}{8}\)</span>. Since <span class="math inline">\(I=\frac{b h^{3}}{12}\)</span> and <span class="math inline">\(\mathrm{t}=\mathrm{b}\)</span>, we can re-write the shear stress equation to find the maximum shear stress in a rectangular cross-section as <span class="math inline">\(\tau_{\max }=\frac{V \frac{b h^{2}}{8}}{\frac{b h^{3}}{12} b}=\frac{12 V b h^{2}}{8 b^{2} h^{3}}=\frac{12 V}{8 b h}=\frac{3}{2} \frac{V}{A}\)</span>.</p>
-<div id="fig-11.8" class="quarto-figure quarto-figure-center anchored">
+<p>To meet the minimum required shear stress we will use <span class="math inline">\(\tau=\frac{V Q}{I t}\)</span>. Using the method of section 10.1, it can be shown for a rectangle (<span class="quarto-unresolved-ref">?fig-11.8</span>) that <span class="math inline">\(Q=y A=\frac{h}{4} \frac{b h}{2}=\frac{b h^{2}}{8}\)</span>. Since <span class="math inline">\(I=\frac{b h^{3}}{12}\)</span> and <span class="math inline">\(\mathrm{t}=\mathrm{b}\)</span>, we can re-write the shear stress equation to find the maximum shear stress in a rectangular cross-section as <span class="math inline">\(\tau_{\max }=\frac{V \frac{b h^{2}}{8}}{\frac{b h^{3}}{12} b}=\frac{12 V b h^{2}}{8 b^{2} h^{3}}=\frac{12 V}{8 b h}=\frac{3}{2} \frac{V}{A}\)</span>.</p>
+<div id="figure11.8" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="images/11.9 graphics/11.8.png" class="img-fluid figure-img" width="341"></p>
-<figcaption class="figure-caption">Figure&nbsp;11.8: Rectangular cross-section showing the dimensions used for calculating the section modulus (S) and first moment of area (Q).</figcaption>
+<p><img src="images/CH11 PNGs/11.8.png" class="img-fluid figure-img" width="346"></p>
+<figcaption class="figure-caption">Rectangular cross-section showing the dimensions used for calculating the section modulus (S) and first moment of area (Q).</figcaption>
 </figure>
 </div>
 <p>Thus we may set <span class="math inline">\(\tau_{\max }=\frac{3}{2} \frac{V}{A}\)</span> and solve for the required dimensions to not exceed the maximum allowable shear stress.</p>
@@ -1426,12 +1436,12 @@ Example 11.8
 </div>
 <div id="callout-35" class="callout-35-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The simply supported wooden beam (E = 1700 ksi) of length L = 12 ft is subjected to a uniform distributed load of w = 1.5 kips/ft.&nbsp;</p>
-<p>Assume the beam has an allowable bending stress of 900 psi, an allowable shear stress of 180 psi, and the deflection is limited to beam span / 240.&nbsp;</p>
-<p>The beam has a rectangular cross-section where h = 1.5b. Determine the minimum required dimensions of the beam’s cross-section to meet these specifications. Give your answer rounded up to the nearest inch to allow for realistic manufacturing tolerances.&nbsp;</p>
+<p>The simply supported wooden beam (E = 1700 ksi) of length L = 12 ft is subjected to a uniform distributed load of w = 1.5 kips/ft.</p>
+<p>Assume the beam has an allowable bending stress of 900 psi, an allowable shear stress of 180 psi, and the deflection is limited to beam span / 240.</p>
+<p>The beam has a rectangular cross-section where h = 1.5b. Determine the minimum required dimensions of the beam’s cross-section to meet these specifications. Give your answer rounded up to the nearest inch to allow for realistic manufacturing tolerances.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/11.9 graphics/example 11.8.png" class="img-fluid figure-img" width="464"></p>
+<p><img src="images/CH11 PNGs/example11.8-1.png" class="img-fluid figure-img" width="467"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
@@ -1449,7 +1459,7 @@ Solution
 <p>Start by drawing shear force and bending moment diagrams to determine the maximum internal loads:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/11.9 graphics/example 11.8 solution.png" class="img-fluid figure-img" width="417"></p>
+<p><img src="images/CH11 PNGs/example11.8-2.png" class="img-fluid figure-img" width="418"></p>
 </figure>
 </div>
 <p>V<sub>max</sub> = 9 kips</p>
@@ -1517,12 +1527,12 @@ Example 11.9
 </div>
 <div id="callout-38" class="callout-38-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>A steel (E = 210 GPa) W-beam of length L = 10 m will need to support the load shown, where w = 5 kN/m and F = 100 kN.&nbsp;</p>
-<p>Assume the beam has an allowable bending stress of 150 MPa, an allowable shear stress of 100 MPa, and the maximum deflection is limited to 40 mm.&nbsp;</p>
-<p>Select the lightest weight W-beam from Appendix A that meets these specifications.&nbsp;</p>
+<p>A steel (E = 210 GPa) W-beam of length L = 10 m will need to support the load shown, where w = 5 kN/m and F = 100 kN.</p>
+<p>Assume the beam has an allowable bending stress of 150 MPa, an allowable shear stress of 100 MPa, and the maximum deflection is limited to 40 mm.</p>
+<p>Select the lightest weight W-beam from Appendix A that meets these specifications.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/11.9 graphics/example 11.9.png" class="img-fluid figure-img" width="350"></p>
+<p><img src="images/CH11 PNGs/example11.9-1.png" class="img-fluid figure-img" width="351"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
@@ -1540,7 +1550,7 @@ Solution
 <p>Load is symmetric, so each support will hold half the load. Draw shear force and bending moment diagrams to find the maximum internal loads.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/11.9 graphics/example 11.9 solution.png" class="img-fluid figure-img" width="342"></p>
+<p><img src="images/CH11 PNGs/example11.9-2.png" class="img-fluid figure-img" width="342"></p>
 </figure>
 </div>
 <p>V<sub>max</sub> = 75 kN</p>
@@ -1628,8 +1638,8 @@ Step-by-step: Intermediate Beam Design
 </div>
 </details>
 </section>
-<section id="section-wrap-up" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="section-wrap-up">Section wrap-up</h2>
+<section id="summary" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="summary">Summary</h2>
 <details>
 <summary>
 Click to expand
@@ -1706,7 +1716,7 @@ S_{\text {min }}=\frac{M_{\text {max }}}{\sigma_{\text {allow }}} \\
 <h2 class="unnumbered anchored" data-anchor-id="chapter-questions">Chapter questions</h2>
 <p>*Note: The following chapter questions do not correspond with the contents of chapter 11. They are included as a way of visually representing what a finalized chapter <strong><em>could</em></strong> look like.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-43-contents" aria-controls="callout-43" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-43-contents" aria-controls="callout-43" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1715,13 +1725,13 @@ Question 1
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-43" class="callout-43-contents callout-collapse collapse show">
+<div id="callout-43" class="callout-43-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Two steel circular rods are firmly welded together and attached between two walls. A single moment of 2 kN-m is applied in the middle of the first rod. What is the moment reaction at the left wall? Assume G<sub>steel</sub> = 77 GPa.</p>
 <p><strong>[Kurt Gramoll example problem below]</strong></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/Kurt test problem1pt1.png" class="img-fluid figure-img" width="276"></p>
+<p><img src="images/CH11 Kurt/Kurt - 11.1-1.png" class="img-fluid figure-img" width="277"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
@@ -1738,7 +1748,7 @@ Solution
 <div class="callout-body-container callout-body">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/Kurt test problem1pt2.png" class="img-fluid figure-img" width="345"></p>
+<p><img src="images/CH11 Kurt/Kurt - 11.1-2.png" class="img-fluid figure-img" width="343"></p>
 </figure>
 </div>
 <p><strong>Equilibrium</strong></p>
@@ -1750,27 +1760,15 @@ Solution
 <p><strong>Compatibility</strong></p>
 <p>The rotation angle at point C is the same but in an opposite direction for segments AC and CD. (Note that you could also use point B.)</p>
 <p><span class="math display">\[
-\theta_{AC}=-\theta_{CD}
-\]</span></p>
-<p><span class="math display">\[
-\frac{T_{AB}*L}{G*J_{AB}}+\frac{T_{BC}*L}{G*J_{BC}}=-\frac{T_{CD}*L}{G*J_{CD}}
-\]</span></p>
-<p><span class="math display">\[
-\frac{T_{AB}}{J_{AB}}+\frac{T_{BC}}{J_{BC}}=-\frac{T_{CD}}{J_{CD}}
+\frac{E y}{\rho}=\frac{M y}{I}
 \]</span></p>
 <p>Polar moment of inertia for each bar</p>
 <p><span class="math display">\[
-J_{AB}=J_{BC}=\frac{\pi r^4}{2}=\frac{\pi 1^4}{2}=1.571~\mathrm{cm^4}
-\]</span> <span class="math display">\[
-J_{CD}=\frac{\pi r^4}{2}=\frac{\pi (0.75)^4}{2}=0.4970~\mathrm{cm^4}
+\frac{E y}{\rho}=\frac{M y}{I}
 \]</span></p>
 <p>Combining equations</p>
 <p><span class="math display">\[
-\frac{T_A}{1.571}+\frac{T_A-2}{1.571}=-\frac{T_a-2}{0.4970}
-\]</span> <span class="math display">\[
-3.285 T_A=5.297
-\]</span> <span class="math display">\[
-T_A=1.612~\mathrm{kN\cdot m}
+\frac{E y}{\rho}=\frac{M y}{I}
 \]</span></p>
 </div>
 </div>
@@ -1779,7 +1777,7 @@ T_A=1.612~\mathrm{kN\cdot m}
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-45-contents" aria-controls="callout-45" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-45-contents" aria-controls="callout-45" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1788,13 +1786,13 @@ Question 2
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-45" class="callout-45-contents callout-collapse collapse show">
+<div id="callout-45" class="callout-45-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>What is the maximum moment for the loading shown?</p>
 <p><strong>[Kurt Gramoll example problem below]</strong></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/example 2 q.png" class="img-fluid figure-img" width="361"></p>
+<p><img src="images/CH11 Kurt/Kurt test problems landscape.png" class="img-fluid figure-img" width="369"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
@@ -1809,64 +1807,46 @@ Solution
 </div>
 <div id="callout-44" class="callout-44-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="quarto-figure quarto-figure-left">
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/Kurt example pt1.png" class="img-fluid figure-img" width="238"></p>
+<p><img src="images/CH11 Kurt/Kurt test problems copy.png" class="img-fluid figure-img" width="370"></p>
 </figure>
 </div>
 <p>Full structure</p>
 <p><span class="math display">\[
-\Sigma{M_C}=0
-\]</span> <span class="math display">\[
-26(9-6.5)-B_y(5)+13(9-(13*2/3))=0
-\]</span> <span class="math display">\[
-B_y=13.87~\mathrm{kip}
-\]</span> <span class="math display">\[
-\Sigma{F_y}=0
-\]</span><br>
-<span class="math display">\[
-C_y=26+13-13.87=25.13~\mathrm{kip}
+\frac{E y}{\rho}=\frac{M y}{I}
 \]</span></p>
 <p>First beam section</p>
-<div class="quarto-figure quarto-figure-left">
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/Kurt example pt2.png" class="img-fluid figure-img" width="115"></p>
+<p><img src="images/CH11 Kurt/Kurt test problems copy 2.png" class="img-fluid figure-img" width="366"></p>
 </figure>
 </div>
 <p><span class="math display">\[
-V_1=-2 x-0.5 x \frac{2x}{13}=-2x-\frac{x^2}{13}
-\]</span></p>
-<p><span class="math display">\[
-M_1=-2 x \frac{x}{2} -(0.5 x \frac{2x}{13}) \frac{x}{3}=-x^2-\frac{x^3}{39}
+\frac{E y}{\rho}=\frac{M y}{I}
 \]</span></p>
 <p>Second beam section</p>
-<div class="quarto-figure quarto-figure-left">
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/Kurt example pt3.png" class="img-fluid figure-img" width="189"></p>
+<p><img src="images/CH11 Kurt/Kurt test problems copy 3.png" class="img-fluid figure-img" width="363"></p>
 </figure>
 </div>
 <p><span class="math display">\[
-V_2=13.87-2x-\frac{x^2}{13}
-\]</span></p>
-<p><span class="math display">\[
-M_2=13.87 (x-4)-x^2-\frac{x^3}{39}=-55.48+13.87 x-x^2-\frac{x^3}{39}
+\frac{E y}{\rho}=\frac{M y}{I}
 \]</span></p>
 <p>Third beam section</p>
-<div class="quarto-figure quarto-figure-left">
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/Kurt example pt4.png" class="img-fluid figure-img" width="250"></p>
+<p><img src="images/CH11 Kurt/Kurt test problems copy 4.png" class="img-fluid figure-img" width="362"></p>
 </figure>
 </div>
 <p><span class="math display">\[
-V_3=13.87+25.13-2x-\frac{x^2}{13}=39-2x-\frac{x^2}{13}
-\]</span></p>
-<p><span class="math display">\[
-M_3=13.87 (x-4)+25.13 (x-9) -x^2 -\frac{x^3}{39}=-281.7+39x-x^2-\frac{x^3}{39}
+\frac{E y}{\rho}=\frac{M y}{I}
 \]</span></p>
 <p>Shear and moment diagram plot using equations.</p>
-<div class="quarto-figure quarto-figure-left">
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/Kurt example pt5.png" class="img-fluid figure-img" width="281"></p>
+<p><img src="images/CH11 Kurt/Kurt test problems copy 5.png" class="img-fluid figure-img" width="357"></p>
 </figure>
 </div>
 <p>M<sub>max</sub> at x = 9 m</p>
