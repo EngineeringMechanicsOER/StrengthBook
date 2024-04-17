@@ -18,11 +18,11 @@ editor: visual
 
 <summary>Click to expand</summary>
 
-\[Figure 7.1 Examples of Structural Beams\]
+![Figure 7.1: Examples of structural beams](images/CH7%20PNGs/figure%207.1.png){fig-align="center"}
 
 Beams are structural members that support loads along their length. Typically, these loads are perpendicular to the axis of the beam and cause only shear and bending moments.
 
-\[Figure 7.2 Overarching book figure\]
+**\[Figure 7.2 Overarching book figure\]**
 
 As we found in previous chapters, internal forces and moments are crucial to calculating stresses and deflections. The same is true for finding stresses and deflections in beams. Due to the nature of the loadings and constraints of beams, finding internal forces requires new methods in statics. This chapter describes these methods for finding a beam's internal shear force and bending moments.
 
@@ -30,7 +30,7 @@ As we found in previous chapters, internal forces and moments are crucial to cal
 
 Before we can present methods for finding internal shear and moments of beams, we need to establish a sign convention. This way, we provide consistency and know how to interpret our results. It should be noted that anytime you start a new project or subject you should ensure that a sign convention is established.
 
-\[Figure - will be 7.3\]
+![Figure 7.3: Needs caption](images/CH7%20PNGs/figure%207.3.png){fig-align="center" width="286"}
 
 For the purposes of this book, the shear is positive when the external forces shear off as depicted in the figure above. Another way to think about it is that a positive shear is when the internal shear forces cause a clockwise rotation of the beam segment.
 
@@ -51,21 +51,53 @@ One way to find internal shear and bending forces is to cut sections and analyze
 
 Find the internal shear and bending moment at points J, K, and L in the beam pictured below.
 
-\[figure\]
+![](images/CH7%20PNGs/example%207.1%20part%201.png){fig-align="center" width="358"}
 
 The first step is to find the external reactions at the supports A and B.
 
-\[figure\]
+![](images/CH7%20PNGs/example%207.1%20part%201%202.png){fig-align="center" width="420"}
+
+$$
+\begin{aligned}
+& \sum F_x=0=A_x \\
+& \sum M_A=0=-40^k(4\mathrm{ft})-10^k(18\mathrm{ft})+B_y(20 \mathrm{ft} \\
+& B_y=17^k \uparrow \\
+& \Sigma F=0=A_y-40-10+17 \\
+& A_y=33^k \uparrow
+\end{aligned}
+$$
 
 Next, we will draw a free-body diagram of the right end of the beam from point A to J by cutting the beam at section J. The internal forces VJ and MJ are placed at the point of the cut using the positive sign convention. Note: You can assume the direction of these forces; the statics will work out the correct direction.
 
+**Section J**
+
 To find the internal shear, we will sum forces in the y-direction. This results in an internal shear force of + 33kips.
 
-\[figure\]
+![](images/CH7%20PNGs/example%207.1%20part%203.png){fig-align="center" width="139"}
+
+$$
+\begin{aligned}
+\sum F_y=0 & =33^k-V_J \\
+V_J & =33^k \\
+\sum  M_J=0 & =-33^k(2\mathrm{ft})+M_J \\
+M_J & =66 \text{ k} \cdot \mathrm{ft}
+\end{aligned}
+$$
 
 To find the internal moment, we will sum moments at point J. This results in an internal moment of +66 kip\*ft.
 
-\[figure\]
+**Section K**
+
+![](images/CH7%20PNGs/example%207.1%20part%204.png){fig-align="center" width="277"}
+
+$$
+\begin{aligned}
+\sum F_y & =0=33-40-V_k \\
+V_k & =-7^k \\
+\sum M_k & =0=-33^k(10 \mathrm{ft})+40^k(6 \mathrm{ft})+M_k \\
+M_k & =90 \text{ k} \cdot \mathrm{ft}
+\end{aligned}
+$$
 
 To find the internal shear, we will sum forces in the y-direction. This results in an internal shear force of -7 kips.
 
@@ -73,7 +105,16 @@ To find the internal moment, we will sum moments at point K. This results in an 
 
 **Section L**
 
-\[figure\]
+![](images/CH7%20PNGs/example%207.1%20part%205.png){fig-align="center" width="375"}
+
+$$
+\begin{aligned}
+\sum F_y&=0=33^k-40^k-10^k-V_L \\
+V_L & =-17^k \\
+\sum M_L & =0=-33^k(19 \mathrm{ft})+40^k(15)+10^k(1 \mathrm{ft})+M_L \\
+M_L & =17 \text{ k} \cdot \mathrm{ft}
+\end{aligned}
+$$
 
 To find the internal shear, we will sum forces in the y-direction. This results in an internal shear force of -17 kips. To find the internal moment, we will sum moments at point L. This results in an internal moment of +17 kip\*ft.
 
@@ -90,7 +131,7 @@ We can observe that the internal forces vary at different points along the lengt
 
 There is a relationship between loading, shear, and moment (and as you will see later in this text, slope and deflection) in a beam. Consider the beam below, which is subjected to a distributed load, w per unit length.
 
-\[figure\]
+![](images/CH7%20PNGs/figure%207.4.png){fig-align="center" width="372"}
 
 We will now look at a small section from that beam that has a width of Δx, shown below. We replaced the distributed load with a resultant force ΔF (this is indicated by a dashed arrow in the FBD).
 
@@ -100,29 +141,50 @@ Since we cut both sides of the beam, we replace each cut with internal shear and
 
 This FBD is in static equilibrium so we can use our equilibrium equation to sum forces in the y-direction and set it equal to zero.
 
-\[math\]
+$$
+\begin{aligned}
+\sum F_y=0 & =V-\Delta F \quad-(V+\Delta V) \\
+\Delta V & =-\Delta F
+\end{aligned}
+$$
+
+OR $$
+\Delta v=-w \Delta x
+$$
 
 Dividing both sides by Δx and then letting Δx approach zero gives us:
 
-\[math\]
+$$
+\frac{\Delta v}{\Delta x}=\frac{d v}{d x}=-w
+$$
 
 We could then rearrange this by multiplying both sides of the equation by dx.
 
-\[math\]
+$$
+d v=-w d x
+$$
 
 Now we can integrate between any two points A and B on the beam:
 
-\[math\]
+$$
+\underbrace{\Delta v}_{\substack{\text{change in} \\ \text{shear}}}=\int\underbrace{-w d x}_{\substack{\text{area under} \\ \text {loading curve}}} \text{ Equation 11.1}
+$$
 
 Equation 11.1 is valid for distributed loads and not when there is a discontinuity in the shear diagram that is caused by concentrated loads. This relationship should only be used between concentrated loads.
 
 ### Relationship between Shear and Moment
 
-\[figure\]
+![](images/CH7%20PNGs/figure%207.5.png){fig-align="center" width="199"}
 
 Let's go back to the FBD of the small section of the beam subjected to a distributed load. We can apply another static equilibrium equation, summing moments about point C:
 
-\[math\]
+$$
+\begin{aligned}
+\sum M_c=0 & =-M-V(\Delta x)+\Delta F\left(\frac{1}{2} \Delta x\right)+(M+\Delta M) \\
+\Delta M & =M+V \Delta x-(w \Delta x)\left(\frac{1}{2} \Delta x\right)-M \\
+\Delta M & =V \Delta x-\frac{1}{2} w \Delta x^2
+\end{aligned}
+$$
 
 Dividing both sides by Δx and then letting Δx approach zero gives us:
 
@@ -142,7 +204,7 @@ Similar to equation 11.1, equation 11.2 is not valid at points where a concentra
 
 In a basic sense, the relationship between load, shear, and moment can be described in the figure below.
 
-\[figure\]
+![Figure 7.6: Relationship between load, shear, and moment](images/CH7%20PNGs/figure%205.6.png){fig-align="center" width="197" height="101"}
 
 We can combine these relationships with what we know about derivatives and integrals from our calculus course. Here are some items of note:
 
@@ -177,29 +239,29 @@ The easy relationship between load, shear, and moment allows us to build complet
 ::: {.callout-note collapse="true" icon="false"}
 ## Example 7.2
 
-\[figure\]
+![](images/CH7%20PNGs/example%207.2%20part%201.png){fig-align="center" width="316"}
 
 The first step is to draw a FBD of the beam being sure to change the supports to the correct external reaction forces, as shown below.
 
-\[figure\]
+![](images/CH7%20PNGs/example%207.2%20part%202.png){fig-align="center" width="399"}
 
 We will then use static equilibrium equations to solve for the magnitude of the support reactions.
 
 \[math\]
 
-\[figure\]
+![](images/CH7%20PNGs/example%207.2%20part%203.png){fig-align="center" width="399"}
 
 Now we will cut a cross-section within the loading region we are concerned with. When choosing sections be sure to cut within the uniform load and between loads and reactions. For this example, we will need to cut three sections to get the complete shear and moment diagram. These sections are depicted with the green lines. We will then use equilibrium equations to find the internal shear force as a function of x, V(x).
 
 **Section between A and C**
 
-\[figure\]
+![](images/CH7%20PNGs/example%207.2%20part%204.png){fig-align="center" width="265"}
 
 \[math\]
 
 \*\*Good Gut Check\*\* Notice that you can give a quick check on your statics as V(x) is the derivative of M(x). For polynomials, this is a quick test to see if your equations make sense.
 
-\[figure\]
+![](images/CH7%20PNGs/example%207.2%20part%205.png){fig-align="center" width="389"}
 
 We can plot our V(x) and M(x) equations on an axis from x = 0 to x = 6ft. Notice how we draw the shear diagram directly below the beam and the moment diagram directly below the shear. These three (load, shear, and moment) share the same x-axis, whereas the vertical axis for the Shear (V) and Moment (M) diagrams have different units and possibly different scales.
 
@@ -207,21 +269,21 @@ Drawing the shear and moment diagrams directly below the beam is good practice s
 
 **Section between C and D**
 
-\[figure\]
+![](images/CH7%20PNGs/example%207.2%20part%206.png){fig-align="center" width="318"}
 
 \[math\]
 
-\[figure\]
+![](images/CH7%20PNGs/example%207.2%20part%207.png){fig-align="center" width="410"}
 
 Again, we can add the section from C to D using our V(x) and M(x) equations. You will notice that since there are no applied loads on the beam from C to D, the shear diagram is constant. This means that the moment diagram is linear between x = 6 and x = 8 ft.
 
 **Section** **between D and B**
 
-\[figure\]
+![](images/CH7%20PNGs/example%207.2%20part%208.png){fig-align="center" width="398"}
 
 \[math\]
 
-\[figure\]
+![](images/CH7%20PNGs/example%207.2%20part%209.png){fig-align="center" width="405"}
 
 Finally, we will graph the V(x) and M(x) equations we obtained from point D to point B (x = 8 to x = 10 ft).
 
@@ -229,7 +291,7 @@ We now have complete shear and moment diagrams. Be sure that you label your axis
 
 These diagrams are used in the design of the beam and its components.
 
-\[figure\]
+![](images/CH7%20PNGs/example%207.2%20part%2010.png){fig-align="center" width="402"}
 
 \*\*Good Gut Check\*\* We can see that in this example, the entire length of the beam is subjected to positive moment. Going back to our sign convention from the beginning of this chapter, a positive moment indicates a concave up behavior. When we look at the beam and the external loads it makes sense as the beam will want to bend concave up between supports, as shown in the figure.
 :::
@@ -247,9 +309,9 @@ When the loading is relatively simple, consisting of concentrated forces, concen
 ::: {#example-7.3 .callout-note collapse="true" icon="false"}
 ## Example 7.3: Draw the shear and moment for the beam shown.
 
-\[figure\]
+![](images/CH7%20PNGs/example%207.3%20part%201.png){fig-align="center" width="383"}
 
-\[figure\]
+![](images/CH7%20PNGs/example%207.3%20part%202.png){fig-align="center" width="447"}
 
 The first step is to draw a FBD of the beam, being sure to change the supports to the correct external reaction forces, as shown below.
 
@@ -259,29 +321,29 @@ We will then use static equilibrium equations to solve for the magnitude of the 
 
 Now that we know the external forces, we can build the shear diagram. We will start at the leftmost point of the beam, point A.
 
-\[figure\]
+![](images/CH7%20PNGs/example%207.3%20part%203.png){fig-align="center" width="436"}
 
 The first force we encounter is at point A, the reaction force of 11kN. The force is going up, so we will do that same thing on our shear diagram.
 
 From that point, we look at the beam, and there are no forces acting between points A and C. This indicates that our shear diagram will remain constant at 11kN.
 
-\[figure\]
+![](images/CH7%20PNGs/example%207.3%20part%204.png){fig-align="center" width="433"}
 
 The 4kN/m uniformly distributed load starts at point C and goes for 6 meters until point D. The force is going down for a total of 24kN (4kN/m \* 6m). Since the load is constant from point C to D, the shear will be linear between those points. The slope of the shear diagram will be -4 and over those 6 meters will decrease the total of 24kN.
 
-\[figure\]
+![](images/CH7%20PNGs/example%207.3%20part%205.png){fig-align="center" width="434"}
 
 At point D, there is a concentrated 10kN load going down. On the shear diagram, this load will be represented by a discontinuity, jumping down by 10kN to -23kN.
 
 From that point, we look at the beam, and there are no forces acting between points D and B. This indicates that our shear diagram will remain constant at -23kN.
 
-\[figure\]
+![](images/CH7%20PNGs/example%207.3%20part%206.png){fig-align="center" width="433"}
 
 At point B, the roller support, there is an external reaction of 38kN going up. This concentrated force will cause a discontinuity in the shear diagram. From -23kN we will add 38kN to end at 15kN.
 
 From that point, we look at the beam, and there are no forces acting between points B and E. This indicates that our shear diagram will remain constant at 15kN.
 
-\[figure\]
+![](images/CH7%20PNGs/example%207.3%20part%207.png){fig-align="center" width="432"}
 
 At point E, there is a 15kN concentrated force going down. This concentrated force will cause a discontinuity in the shear diagram. From 15kN we subtract 15kN to end back at zero.
 
@@ -289,7 +351,7 @@ The shear diagram should start and end at zero. At the end of the beam, our shea
 
 Now that we have the shear diagram, we can build the moment diagram. Remember from the previous section that the internal moment is the area under the shear diagram. Our shear diagram consists of basic shapes (rectangles and triangles) so we can use geometry to find these areas.
 
-\[figure\]
+![](images/CH7%20PNGs/example%207.3%20part%208.png){fig-align="center" width="430"}
 
 Just like for the shear diagram, we will start at zero at the leftmost point of the beam, point A. Our first section from A to C is a rectangle. We will calculate the area under the shear curve to find the change in the internal moment between A and C. We will keep in mind the following three things:
 
@@ -299,7 +361,7 @@ Just like for the shear diagram, we will start at zero at the leftmost point of 
 
 -   **Shape of the Segment --** The shear diagram is constant, so the moment diagram will be linear with a slope of 11.
 
-\[figure\]
+![](images/CH7%20PNGs/example%207.3%20part%209.png){fig-align="center" width="428"}
 
 From point C to D there are two triangles, one that is on the positive side of the shear diagram and the other that is on the negative side.
 
@@ -321,7 +383,7 @@ This area is on the positive side of the shear diagram, which indicates that it 
 
 The shear diagram is linear, so the moment diagram will be parabolic that is concave down.
 
-\[figure\]
+![](images/CH7%20PNGs/example%207.3%20part%2010.png){fig-align="center" width="422"}
 
 **We can now account for the second triangle from C to D.**
 
@@ -337,7 +399,7 @@ This area is on the negative side of the shear diagram, which indicates that it 
 
 The shear diagram is linear, so the moment diagram will be parabolic that is concave down. The concavity of a parabolic function can be determined by examining whether the shear diagram is increasing or decreasing. In this example, the shear diagram is decreasing between points C and D so the parabola will be concave down.
 
-\[figure\]
+![](images/CH7%20PNGs/example%207.3%20part%2011.png){fig-align="center" width="421"}
 
 **We are now able to account for the section from D to B.**
 
@@ -353,7 +415,7 @@ This area is on the negative side of the shear diagram, which indicates that it 
 
 The shear diagram is constant, so the moment diagram will be linear with a slope of -23.
 
-\[figure\]
+![](images/CH7%20PNGs/example%207.3%20part%2012.png){fig-align="center" width="419"}
 
 **Finally, we can build our moment diagram from B to E.**
 
@@ -371,11 +433,11 @@ The shear diagram is constant, so the moment diagram will be linear with a slope
 
 At the end of the beam, our moment diagram "closes," which means that we end back at zero. Moment diagrams must start and end at zero. This is a good check that you are on the right track. If you round your reactions and areas, you might be slightly off at the end of your moment diagram.
 
-\[figure\]
+![](images/CH7%20PNGs/example%207.3%20part%2013.png){fig-align="center" width="419"}
 
 Our final product is in the figure on the left. For a complete shear and moment diagram your axis should be labeled, including units, and the pertinent values indicated on each diagram. As we mentioned earlier it is best to draw these right below the beam so it is easy to see what the internal shear and bending moment forces are in relation to a location on the beam.
 
-\[figure\]
+![](images/CH7%20PNGs/example%207.3%20part%2014.png){fig-align="center" width="365"}
 
 \*\*Good Gut Check\*\* We can see that in this example, this beam is subjected to both positive and negative moments. Remember from the beginning of this chapter that a positive moment indicates concave up bending behavior, and a negative is concave down. When we look at the beam and the external loads it makes sense as the beam will want to bend concave up between supports in the area of positive moment. The beam will then bend concave down over support B in the area of negative moment, as shown in the figure.
 :::
@@ -383,11 +445,11 @@ Our final product is in the figure on the left. For a complete shear and moment 
 ::: {#example-7.4 .callout-note collapse="true" icon="false"}
 ## Example 7.4: Draw the shear and moment for the beam shown
 
-\[figure\]
+![](images/CH7%20PNGs/example%207.4%20part%201.png){fig-align="center" width="356"}
 
 This beam a little different than other examples in this chapter as the support is a fixed end and includes a force-couple system at point C. However, the processes that we presented here still apply in this situation.
 
-\[figure\]
+![](images/CH7%20PNGs/example%207.4%20part%202.png){fig-align="center" width="438"}
 
 The first step is to draw a FBD of the beam, being sure to change the supports to the correct external reaction forces, as shown to the left. The 2 kips that acts on the arm at point B will cause a force on beam AD at the connection point, C. Additionally there will be a concentrated moment from this force that also acts at point C. The magnitude of this concentrated moment is (2kips)\*(1 ft) or 2 k\*ft counter clockwise.
 
@@ -395,7 +457,7 @@ We will then use static equilibrium equations to solve for the magnitude of the 
 
 \[math\]
 
-\[figure\]
+![](images/CH7%20PNGs/example%207.4%20part%203.png){fig-align="center" width="441"}
 
 We can now build the shear diagram. Keep in mind that the concentrated moments (at point A and C) do not contribute to the shear diagram.
 
@@ -405,7 +467,7 @@ The concentrated force at point C is 2 kips down. So we will subtract 2 kips fro
 
 At point D there is a concentrated load of 5kN down. This will bring our shear diagram to a close at zero.
 
-\[figure\]
+![](images/CH7%20PNGs/example%207.4%20part%204.png){fig-align="center" width="382"}
 
 We will build the moment diagram with the combination of the area of the shear diagram and the concentrated moments.
 
@@ -425,11 +487,11 @@ This area is on the positive side of the shear diagram, which indicates that it 
 
 The shear diagram is constant, so the moment diagram will be linear with a slope of +7.
 
-\[figure\]
+![](images/CH7%20PNGs/example%207.4%20part%205.png){fig-align="center" width="377"}
 
 At point C, there is an applied concentrated moment of 2 k\*ft counter-clockwise. This will create a discontinuity in the moment diagram by dropping down 2 (-13 -- 2 = -15).
 
-\[figure\]
+![](images/CH7%20PNGs/example%207.4%20part%206.png){fig-align="center" width="372"}
 
 **Between C and D**
 
@@ -445,7 +507,7 @@ This area is on the positive side of the shear diagram, which indicates that it 
 
 The shear diagram is constant, so the moment diagram will be linear with a slope of +5.
 
-\[figure\]
+![](images/CH7%20PNGs/example%207.4%20part%207.png){fig-align="center" width="386"}
 
 The final shear and moment diagram is in the figure to the left. You will notice that this cantilever structure with downward loads will bend concave down. This indicates that the entire beam will be in negative moment---which is what our moment diagram indicates.
 :::
