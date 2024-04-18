@@ -101,6 +101,26 @@ Two hollow pipes are welded together as shown. Pipe (1) has an outer diameter of
 
 ::: {.callout-note collapse="true" icon="false"}
 ## Solution
+
+We can calculate average normal stress using \[math\] so we will need to find the area of each pipe and the normal force in each pipe. This can be done in any order. Starting with the areas:
+
+\[math\]
+
+The internal loads can be found by cutting a cross-section through each pipe, drawing a free body diagram, and writing an equilibrium equation.
+
+\[math\]
+
+Note that we may choose to draw the internal load in either tension or compression. The answer must be compared to the free body diagram. A positive answer from the equilibrium equation indicates that the direction drawn on the free body diagram was correct. Although both answers here were positive, it can be seen in the free body diagrams that N~1~ was drawn in compression and N~2~ was drawn in tension. These positive answers indicate that the drawings are correct. N~1~ is 40 kN in compression and N~2~ is 30 kN in tension.
+
+Note also that it is acceptable to draw a free body diagram of either side of the cross-section. This will not change the result. Perhaps it would have been easier to draw the right-hand-side of section 2.
+
+\[math\]
+
+We again find that N~2~ is 30 kN in tension. You may always choose to draw either side of a cross-section. Make sure to include everything to that side of your cut, all the way to the end of the structure (e.g. do not stop at the weld).
+
+Now that the areas and internal loads are known we can calculate the internal normal stresses.
+
+\[math\]
 :::
 :::
 
@@ -138,6 +158,36 @@ Like normal force, internal shear force can be found by cutting a cross-section 
 
 ::: {.callout-note collapse="true" icon="false"}
 ## Example 2.3: Simple shear stress
+
+A bridge spans a gap of L = 150 ft. The roadway may be considered simply supported and has a rectangular cross-section of base b = 10 in. and height h = 6 in. It is subjected to a uniform distributed load of w = 200 lb/ft. Determine the magnitude of the average shear stress in the cross-section at x = 30 ft and x = 80 ft.
+
+::: {.callout-note collapse="true" icon="false"}
+## Solution
+
+Average shear stress can be calculated from \[math\]. The cross-sectional area is \[math\]
+
+The reactions at the support can be found by converting the distributed load into a statically equivalent concentrated load. This load will be equal to \[math\] and will be located at the center of the bridge. Since the loading is symmetric, each support will support half of this load, or 15000 lb each.
+
+The internal shear force can be found by cutting a cross-section through the point of interest, drawing a free body diagram, and applying equilibrium equations. Remember to include the internal loads V and M, and to again convert the distributed load into a statically equivalent concentrated load over this portion of the bridge.
+
+At x = 30 ft:
+
+\[math\]
+
+Note that an internal bending moment is also necessary in order to maintain equilibrium. We could find M by summing moments about any point, but it is not needed in order to solve this problem.
+
+The shear stress can now be calculated.
+
+\[math\]
+
+At x = 80 ft:
+
+\[math\]
+
+Note that the negative sign here simply indicates that V is acting in the opposite direction of that drawn in the free body diagram. It can be discarded here as we are calculating the magnitude of the average shear stress at each point.
+
+\[math\]
+:::
 :::
 
 Shear stresses are common in both members of a structure and also in the fasteners between members. Depending on how these connections are formed we may see multiple shear planes. It is very important to correctly identify the internal force in the body. Figure 2.4 demonstrates the difference between single and double shear configurations for a pinned joint and the effects on internal shear force. See Example 2.4 for an example where double shear occurs.
@@ -146,6 +196,18 @@ Shear stresses are common in both members of a structure and also in the fastene
 
 ::: {.callout-note collapse="true" icon="false"}
 ## Example 2.4: Shear stress with double shear
+
+A pin made of a tin alloy with an allowable shear stress of 3 ksi is used to connect a footrest to the frame of a motorcycle. When in motion, the footrest supports a load of 200 lb which is transferred to the pin. Determine the required diameter of the pin such that the stress will not exceed 5 ksi.
+
+::: {.callout-note collapse="true" icon="false"}
+## Solution
+
+Average shear stress can be calculated from \[math\]. Rearrange this equation to \[math\]. Start with a free body diagram of the pin in order to determine the internal shear force.
+
+From the diagram it should be apparent that the pin is in double shear and the maximum internal shear force in the pin is 100 lb. Thus the required cross-sectional area \[math\].
+
+Since \[math\] the required diameter is \[math\]
+:::
 :::
 
 ::: {.callout-note icon="false"}
@@ -208,6 +270,34 @@ Even if the external load remains constant, we can obtain different values for t
 
 ::: {.callout-note collapse="true" icon="false"}
 ## Example 2.5: Inclined plane
+
+A beam is formed of two structural wooden members that are glued together along an inclined plane at angle θ = 40° and subjected to a tensile force of F = 30 kN. The height of the beam is 50 mm and its thickness is 20 mm. Determine the normal and shear stresses created along the inclined plane.
+
+\[figure\]
+
+::: {.callout-note collapse="true" icon="false"}
+## Solution
+
+Begin by cutting a cross-section along the inclined plane and drawing a free body diagram. Remember to include the internal normal and shear forces perpendicular and parallel to the cross-section.
+
+\[figure\]
+
+Use equilibrium equations to determine the internal forces. It will be easiest to define axes parallel and perpendicular to the inclined plane.
+
+\[math\]
+
+With F = 30 kN and θ = 40°, these can be solved for N = 19.3 kN and V = 23.0 kN.
+
+Next, determine the cross-sectional area of the inclined plane.
+
+\[math\]
+
+With A = 0.05 m x 0.02 m = 0.001 m2 and θ = 40°, Ap = 0.00156 m2.
+
+Finally, determine the average normal stress and the average shear stress.
+
+\[math\]
+:::
 :::
 
 ::: {.callout-note icon="false"}
