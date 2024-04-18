@@ -1,0 +1,1671 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.550">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Mechanics of Deformable Bodies - 9&nbsp; Bending Loads</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./Chapter 10.html" rel="next">
+<link href="./Chapter 8.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Chapter 9.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Bending Loads</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Mechanics of Deformable Bodies</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter 1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction and Statics Review</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter 2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Stress</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter 3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Strain</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter 4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Mechanical Properties of Materials</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter 5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Axial Loading</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter 6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Torsional Loading</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter 7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Beams</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter 8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Geometric Properties</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter 9.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Bending Loads</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter 10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Shear Loads</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter 11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Beam Deflection</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter 12.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Stress Transformation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter 13.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Thin-Walled Pressure Vessels</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter 14.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Combined Loads</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter 15.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Columns</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Appendix A.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Geometric Properties of Standard Beams</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Appendix B.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Slope and Deflection Tables</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Appendix C.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Material Properties</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Appendix D.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Units and Order of Magnitude</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#bending-stress" id="toc-bending-stress" class="nav-link" data-scroll-target="#bending-stress"><span class="header-section-number">9.1</span> Bending Stress</a></li>
+  <li><a href="#beam-design-for-bending" id="toc-beam-design-for-bending" class="nav-link" data-scroll-target="#beam-design-for-bending"><span class="header-section-number">9.2</span> Beam Design for Bending</a>
+  <ul class="collapse">
+  <li><a href="#design-of-standard-steel-sections" id="toc-design-of-standard-steel-sections" class="nav-link" data-scroll-target="#design-of-standard-steel-sections"><span class="header-section-number">9.2.1</span> Design of Standard Steel Sections</a></li>
+  <li><a href="#design-of-rectangular-sections" id="toc-design-of-rectangular-sections" class="nav-link" data-scroll-target="#design-of-rectangular-sections"><span class="header-section-number">9.2.2</span> Design of Rectangular Sections</a></li>
+  </ul></li>
+  <li><a href="#unsymmetric-bendingmoment-arbitrarily-applied" id="toc-unsymmetric-bendingmoment-arbitrarily-applied" class="nav-link" data-scroll-target="#unsymmetric-bendingmoment-arbitrarily-applied"><span class="header-section-number">9.3</span> Unsymmetric Bending—Moment Arbitrarily Applied</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">9.4</span> Summary</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-bending-loads" class="quarto-section-identifier"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Bending Loads</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Learning Objectives
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Describe the bending behavior of beams.</li>
+<li>Calculate the bending stresses in beams.</li>
+<li>Select an adequate beam using the section modulus.</li>
+<li>Analyze beams subjected to unsymmetric bending.</li>
+</ul>
+</div>
+</div>
+<section id="introduction" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="introduction">Introduction</h2>
+<details>
+<summary>
+Click to expand
+</summary>
+<p>Beams are structural members that support loads along their length. Typically, these loads are perpendicular to the axis of the beam and cause only shear forces and bending moments.</p>
+<p><strong>Figure 9.1 Overarching book figure</strong>  </p>
+<p>As we found in previous chapters, internal forces and moments and section properties are crucial to calculating stresses and deflections. The same is true for finding stresses and deflections in beams. This chapter describes calculating bending stresses in beam with considerations for unsymmetric bending and beam design.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH9 PNGs/Figure 9.2.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="470"></p>
+<figcaption>Figure 9.2: Looking up at bridge beams used to support a landscaped bicycle and pedestrian bridge in Seattle.</figcaption>
+</figure>
+</div>
+</details>
+</section>
+<section id="bending-stress" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="bending-stress"><span class="header-section-number">9.1</span> Bending Stress</h2>
+<details>
+<summary>
+Click to expand
+</summary>
+<p>This section will discuss bending behavior of straight, symmetric, homogeneous beams. This section will be limited to beams that have a cross section that is symmetric with an axis and the bending moment is around an axis that is perpendicular to the axis of symmetry. Examine the initially unaltered beam depicted in Figure 9.3, characterized by a rectangular cross-section, and annotated with both horizontal and vertical grid lines.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH9 PNGs/Figure 9.3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="278"></p>
+<figcaption>Figure 9.3: An unloaded beam with a rectangular cross-section.</figcaption>
+</figure>
+</div>
+<p>Upon the application of a bending moment, the tendency emerges to deform these lines, conforming to the pattern illustrated in Figure 9.4. Observe the curvature of the horizontal lines, and note that the vertical lines, while maintaining straightness, undergo a rotation. The application of a bending moment induces stretching in the material at the bottom section of the bar and compression in the material at the top section. As a result, within the transitional zone between these two regions, there exists a surface known as the <strong>neutral surface</strong>, where the horizontal fibers of the material experience no change in length (no compression or tension). When viewed on a cross-section, the neutral surface appears as a horizontal line known as the <strong>neutral axis</strong>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH9 PNGs/Figure 9.4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="281"></p>
+<figcaption>Figure 9.4: The deformation of the beam in Figure 9.3 when subjected to a symmetric bending moment.</figcaption>
+</figure>
+</div>
+<p>We can make a similar observation when a kids toy undergoes bending as shown in Figure 9.5. This toy is subjected to a bending moment in the opposite direction of the beam in Figure 9.4, this will switch the behavior of the top and the bottom surfaces. Notice in Figure 9.5 the fibers at the top are pulled apart while the bottom surface fibers are pushed together.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH9 PNGs/Figure 9.5.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="322"></p>
+<figcaption>Figure 9.5: The distortion of a kid’s toy when undergoing bending.</figcaption>
+</figure>
+</div>
+<p>We can take this knowledge about deformations due to bending and apply it to the failure of the column in Figure 9.6. Notice that the column was fixed at the base and was subjected to a transverse force that caused failure. The fibers on the right side of the column failure point were pulled apart while the fibers on the left side of the column failure point were compressed.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH9 PNGs/Figure 9.6.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="407"></p>
+<figcaption>Figure 9.6: Column failure due to bending.</figcaption>
+</figure>
+</div>
+<p>We will make the following assumptions about deformations due to bending:</p>
+<ul>
+<li><p>There must be a neutral surface parallel to both the upper and lower surfaces, where the length remains constant.</p></li>
+<li><p>Throughout the deformation, all cross sections of the beam remain plan and perpendicular to the longitudinal axis.</p></li>
+<li><p>The cross section will keep it’s shape, we will ignore the Poisson effects discussed in Chapter 4 of this text.</p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH9 PNGs/Figure 9.7.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="327"></p>
+<figcaption>Figure 9.7: Element in beam bending.</figcaption>
+</figure>
+</div>
+<p>To understand bending stress in a beam subjected to arbitrary loads, examine a small element extracted from the beam in Figure 9.7. The derivation of the bending strain equation remains unaffected by the beam type or specific loads. Remember the fundamental definition of normal strain:</p>
+<p><span class="math display">\[
+\varepsilon=\frac{\delta}{L}
+\]</span></p>
+<p>We can use this to calculate the normal strain along AB in our beam.</p>
+<p><strong>[math]</strong></p>
+<p>Distance y is measured relative to the neutral surface and is positive above the neutral surface and negative below. Prior to bending, the line AB is the same length at all values of y.&nbsp; However, when bending occurs, the length of A’B’ varies.&nbsp; The length A’B’ experiences a reduction in length as the section moves farther above the neutral surface, and conversely, it undergoes an increasing extension below the neutral surface.&nbsp; By definition, the length of the neutral surface doesn’t change and remains the same as length AB. We can describe the lengths AB and A’B’ using the radius of curvature (ρ) and the differential angle (dθ) shown in Figure 9.7.</p>
+<p><span class="math display">\[
+\begin{gathered}
+\overline{A B}=\rho d \theta \\
+\overline{A^{\prime} B^{\prime}}=(\rho-y) d \theta
+\end{gathered}
+\]</span></p>
+<p>We can now substitute these lengths into our strain equation:</p>
+<p><span class="math display">\[
+\varepsilon=\frac{(\rho-y) d \theta-\rho d \theta}{\rho d \theta}
+\]</span></p>
+<p>Simplifying</p>
+<p><span class="math display">\[
+\begin{gathered}
+\varepsilon=\frac{\rho d \theta-y d \theta-\rho d \theta}{\rho d \theta} \\
+\varepsilon=\frac{-y d \theta}{\rho d \theta} \\
+\varepsilon=-\frac{y}{\rho}
+\end{gathered}
+\]</span></p>
+<p>This relationship shows us that the longitudinal strain, ε, varies lineraly with the distance, y, from the neutral surface. The maximum stress occurs at the outermost fibers, extreme top and bottom of the section. We call this maximum distance from the netrual surface, c.&nbsp;We can now write a relationship for the maximum absolute value of the strain, ε<sub>m</sub>.</p>
+<p><span class="math display">\[
+\begin{gathered}
+\frac{\varepsilon}{\varepsilon_{\max }}=-\frac{y / \rho}{c / \rho} \\
+\varepsilon=-\left(\frac{y}{c}\right) \varepsilon_{\max }
+\end{gathered}
+\]</span></p>
+<p>Assuming that our material behaves in a linearly elastic manner, we can use Hooke’s Law, [math], to rewrite the strain relationship above into a relationship of stresses:</p>
+<p><span class="math display">\[
+\sigma=-\left(\frac{y}{c}\right) \sigma_{\max }
+\]</span></p>
+<p>Therefore, similar to the variation in normal strain, normal stress, σ, will fluctuate from zero at the neutral surface to a maximum value, σ<sub>max</sub>, at a distance c from the neutral surface as shown in Figure 9.8.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH9 PNGs/Figure 9.8.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="338"></p>
+<figcaption>Figure 9.8: Bending stress variation.</figcaption>
+</figure>
+</div>
+<p>To determine the position of the neutral surface, we necessitate the condition where the resultant force generated by the stress distribution across the cross-sectional area is equal to zero.</p>
+<p><span class="math display">\[
+0=\int_A F_{\text {resultant }}=\int_A \sigma d A
+\]</span></p>
+<p>We can now substitute our previous relationship between stress and distance from neutral axis.</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; 0=\int_A-\left(\frac{y}{c}\right) \sigma_{\max } d A \\
+&amp; 0=-\frac{\sigma_{\max }}{c} \int_A y d A
+\end{aligned}
+\]</span></p>
+<p>Since <span class="math inline">\(-\frac{\sigma_{\max }}{c}\)</span> does not equal zero we are left with:</p>
+<p><span class="math display">\[
+0=\int_A y d A
+\]</span></p>
+<p>This integral represents the first moment of area, as discussed in Section 8.1. This equation indicates that the first moment of the cross-section about its neutral axis must be zero. Recall that the location of the centroid was determined by <span class="math inline">\(\bar{y}=\frac{\int_A y d A}{A}\)</span>. Consequently, for a member experiencing pure bending and as long as the stresses remain within the elastic range, the neutral axis traverses through the centroid of the section since <span class="math inline">\(\bar{y}\)</span> (the distance from the neutral axis to the centroid) is zero.</p>
+<p>We can ascertain the stress in the beam by setting the moment M equal to the moment produced by the stress distribution around the neutral axis.</p>
+<p><span class="math display">\[
+d M=y d F
+\]</span></p>
+<p>Since</p>
+<p><span class="math display">\[
+d F=\sigma d A
+\]</span></p>
+<p>We can write</p>
+<p><span class="math display">\[
+\begin{gathered}
+M=\int_A y d F=\int_A y(\sigma d A)=\int_A y\left(-\frac{y}{c} \sigma_{\max }\right) d A \\
+M=\frac{\sigma_{\max }}{c} \int_A y^2 d A
+\end{gathered}
+\]</span></p>
+<p>You might notice that the integral, <span class="math inline">\(\int_A y^2 d A\)</span>, represents the moment of inertia, or second moment of area, of the cross-sectional area about the neutral axis. We will denote the moment of inertia with <strong>I</strong>. This topic was covered in Section 8.2 of this text if you need a review.</p>
+<p>Rearranging the previous equation to obtain the <strong>flexure formula</strong>:</p>
+<p><span class="math display">\[
+\sigma_{\max }=\frac{M c}{I}
+\]</span></p>
+<p>Where:</p>
+<p>σ<sub>max</sub> = the maximum normal stress in the beam, note that a complete description includes magnitude, units, tension, or compression</p>
+<p>M = the internal moment calculated about the neutral axis of the cross section, determined from method of sections or shear and moment diagrams</p>
+<p>c = the perpendicular distance from the neutral axis to the point the farthest away from the neutral axis</p>
+<p>I = the moment of inertial or second moment of area about the neutral axis</p>
+<p>We know from previous derivation that:</p>
+<p><span class="math display">\[
+\sigma=-\left(\frac{y}{c}\right) \sigma_{\max }
+\]</span></p>
+<p>we can rearrange to provide the following relationship:</p>
+<p><span class="math display">\[
+\frac{\sigma_{\max }}{c}=-\frac{\sigma}{y}
+\]</span></p>
+<p>We can determine a similar flexure formula to calculate the bending stress at any point along the cross section:</p>
+<p><span class="math display">\[
+\sigma=-\frac{M y}{I}
+\]</span></p>
+<p>Similar to Chapter 2, when reporting normal stress you include if that stress is in tension or compression. During the derivation, we used a beam that was bending concave upwards. In Chapter 7 we indicated that this type of moment was considered positive. This leads to compression above the neutral axis and tension below. The inverse is true when the beam is subjected to negative bending moment as shown in Figure 9.9.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH9 PNGs/Figure 9.9.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="499"></p>
+<figcaption>Figure 9.9: Bending stress sign convention.</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Step-by-step: Calculating Bending Stress
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Determine the <strong>internal moment</strong> at the point to which you want to calculate the bending stress. If you know the point along the length of the beam that you are investigating, then you can cut a section and apply equilibrium equations to determine this moment. If you need to find the maximum bending stress then draw the moment diagram to find the maximum internal moment. (Review of this is in Chapter 7 of this text).</li>
+<li>Determine the section properties of the beam. This will require knowing the location of the <strong>centroid</strong>, <strong>neutral axis</strong>, and the <strong>moment of inertia</strong>. (Review of this is in Chapter 8 of this text or a table listing values of I for selected common shapes is in the Appendix.)</li>
+<li>Identify the specific <strong>location on the section</strong> for which you are computing the normal stress, y (or c, if you are calculating the maximum normal stress.)</li>
+<li>Ensure that the units of M, I, and y (or c) are consistent then use one of the flexure formulas to calculate bending stress. Ensure that the result contains the magnitude, units, and tension or compression.</li>
+</ol>
+</div>
+</div>
+<div id="example-9.1" class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example 9.1: Simple bending stress problem 
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>A beam with the shown cross section is subjected to a positive moment of 50 k-in. Calculate the normal stress at the top, bottom, and interface between flange and web.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH9 PNGs/Example 9.1 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="292"></p>
+</figure>
+</div>
+<p>We first start with the internal moment, this is a given in the problem statement to be +50k-in. Positive moment indicates that the beam is bending concave up, compression above the neutral axis and tension below.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH9 PNGs/Example 9.1 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="267"></p>
+</figure>
+</div>
+<p>We next need to determine the beam properties—centroid and moment of inertia. Since this is not a standard shape and the shape is not symmetric in the y direction, we will need to calculate this by hand. We cover this shape in detail in Chapter 8.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH9 PNGs/Example 9.1 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="270"></p>
+</figure>
+</div>
+<p>[table with math]</p>
+<p>[math Y bar = ]</p>
+<p>There are three parts to this problem that change the y value. We will start with calculating the stress at the top of the section, using the flexure formula:</p>
+<p><span class="math display">\[
+\sigma_{t o p}=-\frac{M y}{I}
+\]</span></p>
+<p>Before we plug in our values, we need to ensure that the units are consistent.</p>
+<ul>
+<li><p>M = 50k·in.</p></li>
+<li><p>y = 2.25 in.</p></li>
+<li><p>I = 86.0625 in.<sup>4</sup></p></li>
+</ul>
+<p>Since all units are in kips and inches, we are going to plug into our flexure formula:</p>
+<p><span class="math display">\[
+\sigma_{t o p}=-\frac{(50 k-i n)(2.25 i n)}{86.0625 i n^4}
+\]</span></p>
+<p>For a complete answer we need to include magnitude, units, and tension or compression. The magnitude is 1.31, the units will be kips/in<sup>2</sup> or ksi. To determine the tension or compression we will look at the sign of the internal moment and where along the section we are calculating the bending stress. In our example the moment is positive, and we calculate the stress at the top of the section our answer will be in compression.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH9 PNGs/Example 9.1 part 4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="268"></p>
+</figure>
+</div>
+<p><span class="math display">\[
+\sigma_{\text {top }}=1.31 \mathrm{ksi}(C)
+\]</span></p>
+<p>Note that, as long as we are careful to use the correct signs for M and y (both positive in this case), the answer will also come out with the correct sign (negative in this case which indicates compression).</p>
+<p>We will now calculate the normal stress at the bottom of the beam. The only quantity that changes is the y value – we will now use the distance from the neutral axis to the bottom of the beam (3.75 in).</p>
+<p><span class="math display">\[
+\sigma_{b t m}=-\frac{(50 k-i n)(-3.75 i n)}{86.0625 i n^4}
+\]</span></p>
+<p>The moment is positive, so the beam bends concave up, anything below the neutral axis is in tension.</p>
+<p><span class="math display">\[
+\sigma_{b t m}=2.18 \mathrm{ksi}(T)
+\]</span></p>
+<p>This again works mathematically as long as we use the correct positive sign for the M and negative sign for y (since the point of interest is below the neutral axis). The answer comes out positive, indicating tension and matching our expectation.</p>
+<p>Finally, we can calculate the normal stress at the junction of the flange and the web. We will need to find the distance from the neutral axis the flange web junction.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH9 PNGs/Example 9.1 part 5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="324"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH9 PNGs/Example 9.1 part 6.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="449"></p>
+</figure>
+</div>
+<p><span class="math display">\[
+\sigma_{F / w}=-\frac{(50 k-i n)(0.75 i n)}{86.0625 i n^4}
+\]</span></p>
+<p>Since the flange web junction is above the neutral axis and our beam is subjected to positive moment, our bending stress will be in compression.</p>
+<p><span class="math display">\[
+\sigma_{F / w}=0.44 \mathrm{ksi}(C)
+\]</span></p>
+</div>
+</div>
+</div>
+<div id="example-9.2" class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example 9.2: Bending stress problem 
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Calculate the maximum tensile and maximum compressive bending stress in the beam shown below.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH9 PNGs/Example 9.2 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="364"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH9 PNGs/Example 9.2 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="366"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH9 PNGs/Example 9.2 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="370"></p>
+</figure>
+</div>
+<p>The first step is to find the internal forces in the beam so that we can find the maximum positive and negative moments. The best way to do this is to draw the moment diagram. We did this in detail in an example problem [which one?] in Chapter 7 of this text.</p>
+<p>The moment diagram is to the left and we can see that the maximum positive moment is 37.125 kN*m and the maximum negative moment is 30 kN*m.</p>
+<p>We next need to determine the beam properties—centroid and moment of inertia. Since this is not a standard shape and the shape is not symmetric in the y direction, we will need to calculate this by hand. We cover this shape in detail in Chapter 8 [link to centroid and moment of inertia example in ch 8].</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH9 PNGs/Example 9.2 part 4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="380"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH9 PNGs/Example 9.2 part 5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="360"></p>
+</figure>
+</div>
+<p><strong>[table with math]</strong></p>
+<p>Y bar =</p>
+<p><strong>[table with math]</strong></p>
+<p>Ix =</p>
+<p>The positive bending moment will cause compression at the top of the cross-section and compression at the bottom. The negative bending moment will cause tension at the top and compression at the bottom. It’s not obvious by inspection which of these two tensile stresses will be larger, nor which of the two compressive stresses will be larger. We should calculate all four to compare.</p>
+<p>Before we plug in our values, we need to ensure that the units are consistent so we will change everything to Newtons and meters.</p>
+<ul>
+<li><p>M<sub>pos</sub> = 37.125 kN·m = 37.125 x 10<sup>3</sup> N·m</p></li>
+<li><p>M<sub>neg</sub> = 30 kN·m = 30 x 10<sup>3</sup> N·m</p></li>
+<li><p>y<sub>top</sub> = 89.43 mm = 0.08943 m</p></li>
+<li><p>y<sub>btm</sub> = 130.57 mm = 0.13057 m</p></li>
+<li><p>I<sub>x</sub> = 90,862,095 mm<sup>4</sup> = 90.862095 x 10<sup>-6</sup> m<sup>4</sup></p></li>
+</ul>
+<p>We will start with calculating the stress at the top and bottom of the section due to the maximum positive moment, using the flexure formula:</p>
+<p><span class="math display">\[
+\sigma=-\frac{M y}{I}
+\]</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH9 PNGs/Example 9.2 part 6.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="278"></p>
+</figure>
+</div>
+<p><span class="math display">\[
+\sigma_{\text{top}/pos}=-\frac{\left(37.125 \times 10^3 \mathrm{Nm}\right)(0.0893 \mathrm{~m})}{90.86 \times 10^{-6} \mathrm{~m}^4}=-36.49 \text{ MPa (C)}
+\]</span></p>
+<p><span class="math display">\[
+\sigma_{\text{btm }/\text{pos}}=-\frac{\left(37.125\times10^3{Nm}\right)(-0.13057{~m})}{90.86 \times 10^{-6} \mathrm{~m}^4}=53.35 \text{ MPa}\text{ (T)}
+\]</span></p>
+<p>Now we can do something similar for the maximum negative bending stress.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH9 PNGs/Example 9.2 part 7.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="262"></p>
+</figure>
+</div>
+<p><span class="math display">\[
+\sigma_{\text{top}/\text{neg}}=-\frac{\left(-30 \times 10^3 \mathrm{Nm}\right)(0.0893 \mathrm{~m})}{90.86 \times 10^{-6} \mathrm{~m}^4}=29.48 \text{ MPa (T)}
+\]</span></p>
+<p><span class="math display">\[
+\sigma_{\text{btm}/neg}=-\frac{\left(-30 \times 10^3 \mathrm{Nm}\right)(-0.13057\mathrm{~m})}{90.86 \times 10^{-6} \mathrm{~m}^4}=-43.11 \text{ MPa}\text{ (C)}
+\]</span></p>
+<p>The overall maximum tensile stress for this beam occurs at the bottom of the section due to positive moment, 53.35 MPa (T). The overall maximum compressive stress (43.11 MPa (C)) also occurs at the bottom of the section in a different part of the beam, but is due to the negative moment.</p>
+</div>
+</div>
+</div>
+<p>For many situations the overall largest stress would be sufficient. However, there are materials that behave differently depending on whether they are subjected to tensile or compressive stress. Concrete is a good example of this, as it is very good with compressive stresses but poor with tensile stresses. Steel rebar is placed inside concrete members to support the tensile stresses as shown in Figure 9.10. At this point in your engineering career it is good practice to report both the maximum tensile and compressive stresses at each critical point on the beam.</p>
+<p><strong>Figure 9.10 The end of the prestressed concrete beam showing the prestressing steel and rebar.</strong></p>
+</details>
+</section>
+<section id="beam-design-for-bending" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="beam-design-for-bending"><span class="header-section-number">9.2</span> Beam Design for Bending</h2>
+<details>
+<summary>
+Click to expand
+</summary>
+<p>Frequently, beam design is governed by the bending moment. In this section, we will leverage our understanding of bending stress to design beams capable of withstanding their applied internal moments. We will design two common categories of beams. We’ll start with rolled steel beams of varying cross sections. You can find a sampling of these standard shapes in Appendix A of this text. We’ll then discuss rectangular cross-sections, which are common for timber beams.</p>
+<p>A safe design requires that the allowable stress of the material used is greater than the stress due to the loading. When we design a structure, we need to know what the material properties are so that we can produce safe designs. In the flexure equation for maximum bending stress, <span class="math inline">\(\sigma_m=\frac{M_{\max } c}{I}\)</span>, there are four variables: σ<sub>m</sub>, M<sub>max</sub>, c, and I. We will start with the allowable stress of the material, σ<sub>all</sub>, and use the |M<sub>max</sub>| derived from the loading condition. What is left are section properties, I, and c.&nbsp;For standard shapes these are combined into one variable, section modulus (S):</p>
+<p><span class="math display">\[
+S=\frac{I}{c}
+\]</span></p>
+<p>We can substitute this value into the flexure formula and rearrange for S<sub>min</sub>—the minimum allowable value of the section modulus for the beam:</p>
+<p><span class="math display">\[
+S_{\text {min }}=\frac{\left|M_{\max }\right|}{\sigma_{\text {all }}}
+\]</span></p>
+<section id="design-of-standard-steel-sections" class="level3" data-number="9.2.1">
+<h3 data-number="9.2.1" class="anchored" data-anchor-id="design-of-standard-steel-sections"><span class="header-section-number">9.2.1</span> Design of Standard Steel Sections</h3>
+<p>As long as we design our beam such that its section modulus is larger than S<sub>min</sub>, the beam is guaranteed not to fail due to bending stress. Rolled steel beams tend to have relatively complex cross-sections with multiple dimensions that can be varied in order to alter its section modulus and therefore its resistance to bending stress. Designing each dimension individually would be time consuming and it would be costly to manufacture a unique beam for every loading condition. Instead, beams are mass produced in standard sizes and engineers simply select the most appropriate beam for their specific need. There will be many standard steel shapes that will satisfy this equation, meaning they will be safe. Engineering is determining which of the shapes that work you will use. Often there are many criteria that you will need to consider. In this section we will use cost to determine the shape. Steel beams are priced by their weight, the higher the weight the more expensive. To choose the most economical shape, we will choose the shape with the smallest weight (smallest cross-sectional area).</p>
+<p>There are basic structural steel shapes that have standardized cross sectional dimensions. W shapes (standing for Wide Flange) are often used for beam design as they have an efficient cross section. Figure 9.11 is a sample of the beam table in the Appendix.</p>
+<p><strong>Figure 9.11 Portion of the W Section table from Appendix A</strong></p>
+<p>Each beam has a designation that gives us quick information about the section, see figure 9.12.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH9 PNGs/Figure 9.12.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="368"></p>
+<figcaption>Figure 9.12: Description of the Shape designation in U.S. Customary Units.</figcaption>
+</figure>
+</div>
+<p>Notice in the sample beam section table in Figure 9.11 they are all W shapes and grouped by approximate height (first number). Within each height grouping the shapes are arranged from lightest to heaviest (second number) when going from the bottom to top of the height grouping. For each standard shape in this table the cross-sectional area, depth (height), flange and web dimensions, moment of inertia in the x and y directions, section modulus, in the x and y direction, and the radius of gyration in the x and y directions (this is a geometric property related to buckling, we will use this in Chapter 15 of this text) are given.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled" style=".unnumbered">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Step-by-step: Most Economical Beam Design (standard shapes)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Establish the allowable stress, σ<sub>all</sub>, value of sigma for the chosen material by referring to a table of material properties or consulting design specifications. Proceed with the following steps assuming that σ<sub>all</sub> is the same for tension and compression.</li>
+<li>Determine the maximum absolute value of the bending moment |M<sub>max</sub>| <strong>i</strong>n the beam by drawing the shear force and bending moment diagrams. (Review of this is in Chapter 7 of this text).</li>
+<li>Calculate the minimum allowable value of the section modulus using this equation: <span class="math inline">\(S_{\text {min }}=\frac{\left|M_{\max }\right|}{\sigma_{\text {all }}}\)</span></li>
+<li>For a rolled steel beam, refer to the relevant table in the Appendix. Among the accessible beam sections, focus solely on those with a section modulus surpassing the minimum value calculated in step 3, S <strong>≥</strong> S<sub>min</sub>. Start at the bottom of the table and select one beam in each height section (if applicable). Then from this short list, choose the section with the smallest weight per unit length, as it represents the most economical option for which S <strong>≥</strong> S<sub>min</sub>. It’s essential to note that this choice may not necessarily correspond to the section with the smallest S value.</li>
+</ol>
+</div>
+</div>
+<p>In certain instances, the selection of a section might be constrained by factors such as the permissible depth of the cross-section or the allowable deflection of the beam. This discussion is limited to materials that behave the same in tension and compression. If this is not the case (such as when you use concrete), then you may need to check multiple points along the length of the beam. Additionally, if the section is not symmetric about the neutral axis, the maximum tensile and compressive stresses may not occur at the point where M is max or min. Lastly, this procedure only considers bending stresses. Although bending stresses do control the design of most beams, there are instances where shear or deflection will control. We will discuss this more in Chapter 11 in this text.</p>
+<div id="example-9.3" class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example 9.3: Design  of a Standard Steel Section
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Knowing that the allowable normal stress for the steel used is 24 ksi, select the most economical wide-flange beam to support the loading shown.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH9 PNGs/Example 9.3 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="364"></p>
+</figure>
+</div>
+<p>The first step is to find the internal forces in the beam, we will start by calculating the reactions.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH9 PNGs/Example 9.3 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="365"></p>
+</figure>
+</div>
+<p>[math]</p>
+<p>Now that we have the reactions, we can build the shear diagram. We will start on the left side and go up the reaction at support A, 6.45 kips. We will continue along the beam following the loads to finish the shear diagram.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH9 PNGs/Example 9.3 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="352"></p>
+</figure>
+</div>
+<p>To build the moment diagram we will calculate the area under the curve from the shear diagram using geometry. We will calculate the area of three rectangles and two triangles.</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; A_1=(6.45)(5)=32.25 \\
+&amp; A_2=(1.55)(6)=9.3 \\
+&amp; A_3=(3.45)(3)=10.35 \\
+&amp; \frac{18}{6}=\frac{3.45}{x} \quad \therefore \text{ x}=1.15 \text{ ft, } \text{ y}=6-1.15=4.85 \text{ ft} \\
+&amp; A_4=\frac{1}{2}(1.15)(3.45)=1.98 \\
+&amp; A_5=\frac{1}{2}(4.85)(1455)=35.28 \\
+&amp;
+\end{aligned}
+\]</span></p>
+<p>From the moment diagram we can see that |M<sub>max</sub>| = 35.28 kip*ft. We will use this value and σ<sub>all</sub> = 24 ksi (given in the problem statement) to calculate the minimum section modulus needed, <em>S<sub>min</sub></em>.</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; S_\text{min}=\frac{|M_\text{max}|}{\sigma_\text{all}} \\
+&amp; S_\text{min}=\frac{(35.28\text{ kip} * \text{ft})(12\text{ in/ft)}}{24\text{ ksi}} \\
+&amp; S_\text{min}=17.64 \text{ in}^3
+\end{aligned}
+\]</span></p>
+<p>Now that we know the minimum section modulus needed for this beam, we will go to the standard beam table in Appendix A. Focusing on the S<sub>x</sub> column, we will start at the bottom of the table and choose one shape from each height section that is applicable.</p>
+<p>For our beam, the following sections will be adequate for bending:</p>
+<ul>
+<li><p>W8 x 21</p></li>
+<li><p>W10 x 19</p></li>
+<li><p>W12 x 22</p></li>
+<li><p>W14 x 22</p></li>
+</ul>
+<p>We didn’t choose any from the W4, W5, and W6 groupings because none of these beams have a section modulus greater than 17.64 in<sup>3</sup>. We also didn’t continue with groupings greater than W14 because those sections are far larger than what we need as noted by the weight (second number in the designation).</p>
+<p>Now we will choose the most economical beam by comparing the last number in the designation, as this represents the weight per foot of the beam. The most economical section for this material and loading is the <strong>W10 x 19</strong>. This beam weighs 19 lb/ft and is the lightest of the beams we identified.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="design-of-rectangular-sections" class="level3" data-number="9.2.2">
+<h3 data-number="9.2.2" class="anchored" data-anchor-id="design-of-rectangular-sections"><span class="header-section-number">9.2.2</span> Design of Rectangular Sections</h3>
+<p>Rectangular cross-sections are common for timber beams. There are only two dimensions that need to be specified, base and height. While there are standard rectangular cross-sections too (e.g., 2” x 4”) we’ll approach the design of rectangular cross-sections by assuming that one dimension scales with the other and so we only need to specify a single dimension. Rather than select from a list of standard cross-sections, we’ll specify this required dimension exactly.</p>
+<p>We can calculate the minimum section modulus as before</p>
+<p><span class="math display">\[
+S_{\text {min }}=\frac{\left|M_{\text {max }}\right|}{\sigma_{\text {all }}}
+\]</span></p>
+<p>Now set this value</p>
+<p><span class="math display">\[
+S_{\text {min }}=\frac{I}{c}
+\]</span></p>
+<p>For a rectangle</p>
+<p><span class="math display">\[
+\begin{gathered}
+I=\frac{b h^3}{12} \\
+c=\frac{h}{2}
+\end{gathered}
+\]</span></p>
+<p>So</p>
+<p><span class="math display">\[
+S_{\text {min }}=\frac{I}{c}=\frac{2 b h^3}{12 h}=\frac{b h^2}{6}
+\]</span></p>
+<p>Problems will be set up such that there is a relationship between b and h, which leaves only one unknown that can be solved for directly. This will be the minimum acceptable size for this dimension—anything larger than the calculated value will not fail due to bending stress.</p>
+<div id="example-9.4" class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example 9.4: Design of rectangular cross-section
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>A simply supported timber beam spans a gap of 10 m. It is subjected to a uniform distributed load w = 15 kN/m as shown. The beam has a rectangular cross-section and will be manufactured such that the height is 2x the base. Determine the minimum acceptable dimensions for the cross-section of this beam if the maximum allowable bending stress of the timber is 12 MPa.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH9 PNGs/Example 9.4 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="335"></p>
+</figure>
+</div>
+<p>The allowable stress is given as σ<sub>all</sub> = 12 MPa. Determine the magnitude of the maximum internal bending moment by drawing the shear force and bending moment diagrams. Since the loading is symmetric, the total applied load of 15 * 10 = 150 kN will be split evenly between the two supports. The reaction force at each support will be 75 kN.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH9 PNGs/Example 9.4 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="332"></p>
+</figure>
+</div>
+<p>The magnitude of the maximum internal bending moment |M<sub>max</sub>| = 187.5 kN*m</p>
+<p>Now we can determine the required section modulus. Be careful with the order of magnitude of the bending moment and allowable stress.</p>
+<p><span class="math display">\[
+S_\text{min}=\frac{187.5\times10^3}{12\times10^6}=0.015625 \mathrm{~m}^3
+\]</span></p>
+<p>We can use this value to determine the required dimensions of the cross-section. Recall that h = 2b for this beam.</p>
+<p><span class="math display">\[
+\begin{gathered}
+S_{\text {min }}=0.015625=\frac{b h^2}{6}=\frac{b(2 b)^2}{6}=\frac{4 b^2}{6}=\frac{2}{3} b^2 \\
+b^2=\frac{3}{2} * 0.015625=0.0234375 \\
+b=\sqrt{0.0} \overline{234375}=0.153 \mathrm{~m} \\
+b=153 \mathrm{~mm} \\
+h=2 b=2 * 151.3=306 \mathrm{~mm}
+\end{gathered}
+\]</span></p>
+<p>The minimum required dimensions to ensure this beam doesn’t fail due to bending stress are b = 153 mm and h = 306 mm.</p>
+</div>
+</div>
+</div>
+<p>For the purposes of this text, it is appropriate to give exact answers to 3 significant figures. In practice we wouldn’t generally specify the required dimension down to the mm since this is unnecessarily precise to manufacture. It is more practical to design to perhaps the nearest 10 mm, remembering to always round up. For example, we calculated the required dimension b = 153 mm. We must not round this down to 150 mm as this are below the required value, but rounding up to 160 mm would be acceptable. While not included in this problem, there would also be a factor of safety (Section 4.8) included in all designs in practice.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Step-by-step: Title?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Establish the allowable stress, σ<sub>all</sub>, value of sigma for the chosen material by referring to a table of material properties or consulting design specifications. Proceed with the following steps assuming that σ<sub>all</sub> is the same for tension and compression.</li>
+<li>Determine the maximum absolute value of the bending moment |M<sub>max</sub>| in the beam by drawing the shear force and bending moment diagrams. (Review of this is in Chapter 7 of this text).</li>
+<li>Calculate the minimum allowable value of the section modulus using this equation: <span class="math inline">\(S_{\text {min }}=\frac{\left|M_{\text {max }}\right|}{\sigma_{\text {all }}}\)</span></li>
+<li>Set this <span class="math inline">\(S_{\min }=\frac{b h^2}{6}\)</span>, substitute in the given relationship between b and h, and solve for the unknown dimension.</li>
+</ol>
+</div>
+</div>
+</section></details>
+</section>
+
+<section id="unsymmetric-bendingmoment-arbitrarily-applied" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="unsymmetric-bendingmoment-arbitrarily-applied"><span class="header-section-number">9.3</span> Unsymmetric Bending—Moment Arbitrarily Applied</h2>
+<details>
+<summary>
+Click to expand
+</summary>
+<p>Occasionally, a member may experience loading where the bending moment, M, does not align with one of the principal axes of the cross-section. In such cases, it is advisable to initially resolve the moment into components along the principal axes. Subsequently, the flexure formula can be applied to ascertain the normal stress induced by each moment component. Finally, by employing the principle of superposition, the resultant normal stress at the specific point can be determined.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH9 PNGs/Figure 9.13.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<figcaption>Figure 9.13: Moment arbitrarily applied to a rectangular cross section.</figcaption>
+</figure>
+</div>
+<p>To systematize this process, envision a beam with a rectangular cross-section subjected to a moment, <strong>M</strong>, as depicted in Figure 9.13(a). Here, <strong>M</strong> forms an angle, θ, with the maximum principal z-axis, which is the axis of maximum moment of inertia for the cross-section. It is assumed that θ is positive when directed from the positive z-axis towards the positive y-axis. We can resolve <strong>M</strong> into y and z components:</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; M_z=M \cos \theta \\
+&amp; M_y=M \sin \theta
+\end{aligned}
+\]</span></p>
+<p>We can see in Figure 9.13 (b) the components of M acting on the rectangular cross section. It is important to keep track of which side of the beam is in compression and tension when subjected to both M<sub>z</sub> and M<sub>y</sub>. We will use tensile stress as positive and compressive stress as negative. When we look at a +M<sub>z</sub> we can see that this moment causes the top of the section to be in compression and the bottom of the section to be in tension. When we inspect the section when subjected to +M<sub>y</sub>, we can see that the left side will be in tension while the right side will be in compression. Combining what we know about the sign convention with the flexure formula we can calculate the resultant normal stress at any point on the cross section using the following equation:</p>
+<p><span class="math display">\[
+\sigma=-\frac{M_z y}{I_z}+\frac{M_y z}{I_y}
+\]</span></p>
+<p>Note that for the signs to work correctly we must assign the appropriate sign to the y and z values and to the components of the bending moment. These values are measured from the coordinate system that originates at the centroid where the x axis is coming out of the page. You can also ignore all of the signs and use your spatial awareness to determine if each term is in tension or compression due to the applied moment.</p>
+<p>Previously we identified the neutral axis—a line marking points of zero stress, When the bending moment acted around the horizontal axis, the neutral axis was also horizontal and passed through the centroid of the cross-section. When the bending moment acts at an angle (θ) from the horizontal axis, the neutral axis will still pass through the centroid but it will not be horizontal. It too will be at an angle (α). We can now determine the orientation of the neutral axis, as this will commonly not coincide with the axis of bending moment. We can derive the orientation of the neutral axis by setting the previous normal stress equation equal to zero:</p>
+<p><span class="math display">\[
+0=-\frac{M_z y}{I_z}+\frac{M_y z}{I_y}
+\]</span></p>
+<p>Now we can rearrange this to solve for y.</p>
+<p><span class="math display">\[
+y=\frac{M_y I_z}{M_z I_y} z
+\]</span></p>
+<p>Now we can put this equation in terms of M by using <span class="math inline">\(M_z=M \cos \theta\)</span> and <span class="math inline">\(M_y=M \sin \theta\)</span> to obtain:</p>
+<p><span class="math display">\[
+y=\left(\frac{I_z}{I_y} \tan \theta\right) z
+\]</span></p>
+<p>Since the slope of the line is [math] where the angle α represents the angle the neutral axis forms with the z axis and can be written as:</p>
+<p><span class="math display">\[
+\tan \alpha=y / z
+\]</span></p>
+<div id="example-9.5" class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example 9.5: Unsymmetric Bending 
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>A bending moment M = 400 kip⸱in. is applied around an axis 65° above the negative z-axis as shown. Determine the bending stress at corners A, B, C, and D. Also determine the orientation of the neutral axis with respect to the z-axis.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH9 PNGs/Example 9.5 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="410"></p>
+</figure>
+</div>
+<p><strong>Solution</strong></p>
+<p>We first determine the components of the bending moment around the y- and z-axes:</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; M_y=-400 \sin \left(65^{\circ}\right)=-362.5 \text{ kip} \cdot \text {in } \\
+&amp; M_z=-400 \cos \left(65^{\circ}\right)=-322.6 \text{ kip} \cdot \text {in }
+\end{aligned}
+\]</span></p>
+<p>We’ll also need the area moment of inertia around both axes:</p>
+<p><span class="math display">\[
+\begin{gathered}
+I_y=\frac{8 * 15^3}{12}=2250 \text{ in}^4 \\
+I_z=\frac{15 * 8^3}{12}=640 \text{ in}^4
+\end{gathered}
+\]</span></p>
+<p>Now we can calculate the stress at each corner using</p>
+<p><span class="math display">\[
+\sigma=-\frac{M_z y}{I_z}+\frac{M_y z}{I_y}
+\]</span></p>
+<p>Pay close attention to the signs used for each term.</p>
+<p>A:</p>
+<p><span class="math display">\[
+\sigma_A=-\frac{-322.6 *-4}{640}+\frac{-362.5 * 7.5}{2250}=-2.02 \mathrm{ksi}-1.21 \mathrm{ksi}=-3.23 \mathrm{ksi}=3.23 \text{ ksi }(C)
+\]</span></p>
+<p>B:</p>
+<p><span class="math display">\[
+\sigma_B=-\frac{-322.6 * 4}{640}+\frac{-362.5 * 7.5}{2250}=2.02 \mathrm{ksi}-1.21 \mathrm{ksi}=0.810 \mathrm{ksi}=0.810 \text{ ksi }(T)
+\]</span></p>
+<p>C:</p>
+<p><span class="math display">\[
+\sigma_C=-\frac{-322.6 * 4}{640}+\frac{-362.5 *-7.5}{2250}=2.02 \mathrm{ksi}+1.21 \mathrm{ksi}=3.23 \mathrm{ksi}=3.23 \text{ ksi }(T)
+\]</span></p>
+<p>D:</p>
+<p><span class="math display">\[
+\sigma_D=-\frac{-322.6 *-4}{640}+\frac{-362.5 *-7.5}{2250}=-2.02 k s i+1.21 k s i=-0.810 k s i=0.810 \text{ ksi }(C)
+\]</span></p>
+<p>Note that due to the symmetry of the cross-section, the stresses at diagonally opposite corners have the same magnitude but opposite signs. This can be used to shorten the problem by only calculating the stresses at two corners (say A and B) and identifying the stresses at the opposite corners.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH9 PNGs/Example 9.5 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="308"></p>
+</figure>
+</div>
+<p>The orientation of the neutral axis is found from:</p>
+<p><span class="math display">\[
+\begin{gathered}
+\tan (\alpha)=\frac{I_z}{I_y} \tan (\theta) \\
+\alpha=\tan ^{-1}\left(\frac{640}{2250} \tan \left(65^{\circ}\right)\right)=31.4^{\circ}
+\end{gathered}
+\]</span></p>
+</div>
+</div>
+</div>
+<div id="example-9.6" class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example 9.6: Unsymmetric Bending 
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>A bending moment M = 25 kip⸱ft is applied to a W14 x 43 beam around an axis 40° above the positive z-axis as shown. Determine the maximum tensile bending stress in the section and the orientation of the neutral axis with respect to the z-axis.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH9 PNGs/Example 9.6 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="313"></p>
+</figure>
+</div>
+<p><strong>Solution</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH9 PNGs/Example 9.6 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="313"></p>
+</figure>
+</div>
+<p>The dimensions of the W14 x 43 beam can be found in Appendix A. We can also look up the area moment of inertia about both axes.</p>
+<p><span class="math display">\[
+\begin{gathered}
+I_y=45.2 \text{ in}^4 \\
+I_z=428 \text{ in}^4
+\end{gathered}
+\]</span></p>
+<p>Next determine the components of the bending moment around the y- and z-axes. Since the bending moment is given in kip⸱ft and all of the dimensions are given in inches, we’ll convert the bending moment to kip⸱in at this stage.</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; M_y=25 \sin \left(40^{\circ}\right) * 12=193 \mathrm{kip} \cdot \text { in } \\
+&amp; M_z=25 \cos \left(40^{\circ}\right) * 12=230 \mathrm{kip} \cdot \text { in }
+\end{aligned}
+\]</span></p>
+<p>The bending stress at any point can be calculated using:</p>
+<p><span class="math display">\[
+\sigma=-\frac{M_z y}{I_z}+\frac{M_y z}{I_y}
+\]</span></p>
+<p>The maximum tensile bending stress will occur at the corner where both of these terms are positive. Since both M<sub>z</sub> and My are positive, it should be apparent that the y-distance should be negative and the z-distance should be positive, so the maximum tensile bending stress will occur at the bottom left corner. At this point, <span class="math inline">\(y=-\frac{13.7}{2}=-6.85 \text{ in}\)</span> and <span class="math inline">\(z=\frac{8}{2}=4 \text{ in}\)</span>.</p>
+<p><span class="math display">\[
+\sigma=-\frac{230 *-6.85}{428}+\frac{193 * 4}{45.2}=3.68+17.1\text{ ksi}=20.8 \text{ ksi }(T)
+\]</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH9 PNGs/Example 9.6 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="304"></p>
+</figure>
+</div>
+<p>The orientation of the neutral axis is found from:</p>
+<p><span class="math display">\[
+\begin{gathered}
+\tan (\alpha)=\frac{I_z}{I_y} \tan (\theta) \\
+\alpha=\tan ^{-1}\left(\frac{428}{45.2} \tan \left(40^{\circ}\right)\right)=82.8^{\circ}
+\end{gathered}
+\]</span></p>
+</div>
+</div>
+</div>
+</details>
+</section>
+<section id="summary" class="level2" style=".unnumbered" data-number="9.4">
+<h2 style=".unnumbered" data-number="9.4" class="anchored" data-anchor-id="summary"><span class="header-section-number">9.4</span> Summary</h2>
+<details>
+<summary>
+Click to expand
+</summary>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Key takeaways
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Beams under load will experience normal stresses that vary linearly along the height of the cross section. Assuming that the material is homogenous and linear elastic, the flexure formula can be used to calculate the normal stresses. Care must be taken to ensure that bending stresses are reported with magnitude units and tension/compression.</p>
+<p>Engineers designing beams must consider the response of the beam to bending stress, amongst other criteria. We start the design process in this chapter by using the allowable stress and maximum moment to determine the minimum section modulus. This minimum section modulus is used to choose an adequate, economical beam shape. We will discuss future chapters additional criteria to design a beam.</p>
+<p>When a member experiences loading where the bending moment, M, does not align with one of the principal axes of the cross-section, a method of super position is used to determine the resultant normal stress at a specific point. We can also calculate the orientation of the of the neutral axis due to this unsymmetric loading.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Key equations
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Flexure formulas:</strong> </p>
+<p><span class="math display">\[
+\begin{gathered}
+\sigma_{\max }=\frac{M c}{I} \\
+\sigma=\frac{M y}{I}
+\end{gathered}
+\]</span></p>
+<p><strong>Unsymmetric bending—moment arbitrarily applied</strong>:</p>
+<p><span class="math display">\[
+\sigma=-\frac{M_z y}{I_z}+\frac{M_y z}{I_y}
+\]</span></p>
+<p><strong>Orientation of the neutral axis</strong>:</p>
+<p><span class="math display">\[
+\tan \alpha=\frac{I_z}{I_y} \tan \theta
+\]</span></p>
+</div>
+</div>
+</details>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./Chapter 8.html" class="pagination-link" aria-label="Geometric Properties">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Geometric Properties</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./Chapter 10.html" class="pagination-link" aria-label="Shear Loads">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Shear Loads</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
