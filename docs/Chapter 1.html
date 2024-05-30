@@ -101,6 +101,7 @@ window.Quarto = {
 };
 </script>
 
+<link rel="stylesheet" href="styles/custom.css">
 </head>
 
 <body class="nav-sidebar docked">
@@ -179,7 +180,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Chapter 6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Torsional Loading</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Torsion</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -282,17 +283,17 @@ window.Quarto = {
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#equilibrium-in-two-dimensions" id="toc-equilibrium-in-two-dimensions" class="nav-link" data-scroll-target="#equilibrium-in-two-dimensions"><span class="header-section-number">1.1</span> Equilibrium in Two Dimensions</a>
+  <li><a href="#sec-1.1" id="toc-sec-1.1" class="nav-link" data-scroll-target="#sec-1.1"><span class="header-section-number">1.1</span> Equilibrium in Two Dimensions</a>
   <ul class="collapse">
   <li><a href="#two-force-members" id="toc-two-force-members" class="nav-link" data-scroll-target="#two-force-members"><span class="header-section-number">1.1.1</span> Two Force Members</a></li>
   </ul></li>
-  <li><a href="#internal-reactions" id="toc-internal-reactions" class="nav-link" data-scroll-target="#internal-reactions"><span class="header-section-number">1.2</span> Internal Reactions</a>
+  <li><a href="#sec-1.2" id="toc-sec-1.2" class="nav-link" data-scroll-target="#sec-1.2"><span class="header-section-number">1.2</span> Internal Reactions</a>
   <ul class="collapse">
   <li><a href="#internal-reactions-at-a-connection-with-two-force-members" id="toc-internal-reactions-at-a-connection-with-two-force-members" class="nav-link" data-scroll-target="#internal-reactions-at-a-connection-with-two-force-members"><span class="header-section-number">1.2.1</span> Internal reactions at a connection with two force members</a></li>
   <li><a href="#internal-reactions-in-truss-structures" id="toc-internal-reactions-in-truss-structures" class="nav-link" data-scroll-target="#internal-reactions-in-truss-structures"><span class="header-section-number">1.2.2</span> Internal reactions in truss structures</a></li>
   <li><a href="#internal-reactions-in-continuous-bodies" id="toc-internal-reactions-in-continuous-bodies" class="nav-link" data-scroll-target="#internal-reactions-in-continuous-bodies"><span class="header-section-number">1.2.3</span> Internal reactions in continuous bodies</a></li>
   </ul></li>
-  <li><a href="#equilibrium-and-reactions-in-three-dimensions" id="toc-equilibrium-and-reactions-in-three-dimensions" class="nav-link" data-scroll-target="#equilibrium-and-reactions-in-three-dimensions"><span class="header-section-number">1.3</span> Equilibrium and Reactions in Three Dimensions</a></li>
+  <li><a href="#sec-1.3" id="toc-sec-1.3" class="nav-link" data-scroll-target="#sec-1.3"><span class="header-section-number">1.3</span> Equilibrium and Reactions in Three Dimensions</a></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   </ul>
 </nav>
@@ -302,7 +303,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-stress" class="quarto-section-identifier"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction and Statics Review</span></span></h1>
+<h1 class="title"><span id="sec-statics" class="quarto-section-identifier"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction and Statics Review</span></span></h1>
 </div>
 
 
@@ -340,7 +341,7 @@ Learning Objectives
 </div>
 <section id="introduction" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="introduction">Introduction</h2>
-<details>
+<details open="">
 <summary>
 Click to expand
 </summary>
@@ -388,8 +389,8 @@ Click to expand
 <p>Notice that while pins and fixed supports react with a force in a specific direction, both the magnitude and direction of the force are unknown until equilibrium equations are applied to solve for them. Instead of expressing the components of the unknown F in terms of the unknown θ, the reactions are normally shown as the components F<sub>x</sub> and F<sub>y</sub>. Once they are found, the overall magnitude of the force in the pin and its direction can be calculated <span class="math inline">\(\left(F=\sqrt{F_x^2+F_y^2}, \tan \theta_x=\frac{F_y}{F_x}\right)\)</span>.</p>
 </details>
 </section>
-<section id="equilibrium-in-two-dimensions" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="equilibrium-in-two-dimensions"><span class="header-section-number">1.1</span> Equilibrium in Two Dimensions</h2>
+<section id="sec-1.1" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="sec-1.1"><span class="header-section-number">1.1</span> Equilibrium in Two Dimensions</h2>
 <details>
 <summary>
 Click to expand
@@ -400,17 +401,17 @@ Click to expand
 \]</span></p>
 <p>Since there are three equations, a statically determinate problem should have no more than 3 unknowns.</p>
 <p>Example 1.1 illustrates the process of finding external reactions.</p>
-<div id="example-1.1" class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div id="example-1.1" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Example 1.1
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>A 3 ft beam is supported by a pin connection at the wall at point A and a cable at point C as shown. A load is applied 2 ft away from point A. Find the force in pin A as well as the tensile force in the cable.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -418,6 +419,18 @@ Example 1.1
 <p><img src="images/CH1 PNGs/example 1.1 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="264"></p>
 </figure>
 </div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p><strong>Step 1: Draw the FBD</strong></p>
 <p>Note that a guess needs to be made for the positive or negative sense of A<sub>x</sub> and A<sub>y</sub>, but the tensile force from a cable should always be shown to pull away from the body. The correct sense of A<sub>x</sub> and A<sub>y</sub> will be determined by obtaining positive or negative answers for the values. A positive answer means the direction was correctly assumed and a negative answer means the force should be in the opposite direction.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -429,14 +442,17 @@ Example 1.1
 <p>Starting with the moment about A will eliminate two unknowns from the equation so that tensile force T can be solved for. Then substitute the result from T into the other two equations to find A<sub>x</sub> and A<sub>y</sub>.</p>
 <p><span class="math display">\[
 \begin{aligned}
-&amp; \sum M_A=T \sin (30) * 3 ft-1200\text{ lbs }(2 ft)=0 \rightarrow T=1600 \text{ lbs} \\
-&amp; \sum F_x=-A_x-T \cos (30)=0 \rightarrow-1384.6 \text{ lbs} \\
-&amp; \sum F_y=A_y+T \sin (30)-1200 \text{ lbs}=0 \rightarrow 400 \text{ lbs}
+&amp; \sum M_A=T \sin (30^{\circ}) * 3{~ft}-1,200{~lb }*2{~ft}=0 \quad\rightarrow\quad T=1,600 {~lb} \\
+&amp; \sum F_x=-A_x-T \cos (30^{\circ})=0 \quad\rightarrow\quad A_x=-1,384.6{~lb} \\
+&amp; \sum F_y=A_y+T \sin (30^{\circ})-1200{~lb}=0 \quad\rightarrow\quad A_y= 400{~lb}
 \end{aligned}
 \]</span></p>
 <p>Since a negative answer was obtained for A<sub>x</sub>, that force actually acts in the positive x direction.</p>
-<p>The total force in pin A is then <span class="math inline">\(F_A=\sqrt{A_x^2+A_y^2}=1441 \text{ lbs}\)</span></p>
-<p><strong>Answer: T = 1600 lbs, FA = 1441 lbs</strong></p>
+<p>The total force in pin A is then <span class="math inline">\(F_A=\sqrt{A_x^2+A_y^2}=1,441{~lb}\)</span></p>
+<p><strong>Answer: T = 1,600 lb, FA = 1,441 lb</strong></p>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -450,8 +466,8 @@ Example 1.1
 </figure>
 </div>
 <p>The presence and recognition of two force members can make some otherwise statically indeterminate problems become statically determinate. This is demonstrated in Example 1.2 below.</p>
-<div id="example-1.2" class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div id="example-1.2" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -460,7 +476,7 @@ Example 1.2
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Determine the force in pin C and in pin A.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -468,6 +484,18 @@ Example 1.2
 <p><img src="images/CH1 PNGs/example 1.2 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="443"></p>
 </figure>
 </div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p><strong>Step 1: Draw the FBD</strong></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -483,25 +511,28 @@ Example 1.2
 <p><strong>Step 2: Apply equilibrium equations</strong></p>
 <p><span class="math display">\[
 \begin{aligned}
-\text{(1)}&amp; \sum M_C=-F_A \cos \left(60^{\circ}\right) \times(3 m) \sin \left(60^{\circ}\right)+F_A \sin \left(60^{\circ}\right) \times\left(4 m+3 m\left(\cos \left(60^{\circ}\right)\right)-2000 \times 2 m=0\right. \\
+\text{(1)}&amp; \sum M_C=-F_A \cos \left(60^{\circ}\right)*(3{~m}) \sin \left(60^{\circ}\right)+F_A \sin \left(60^{\circ}\right) *\left(4{~m}+3{~m}\left(\cos \left(60^{\circ}\right)\right)-2,000{~ N}*2{~m}=0\right. \\
 \text{(2)}&amp; \sum F_x=F_A \cos \left(60^{\circ}\right)+C_x=0 \\
-\text{(3)}&amp; \sum F_y=F_A \sin \left(60^{\circ}\right)-2000+C_y=0
+\text{(3)}&amp; \sum F_y=F_A \sin \left(60^{\circ}\right)-2,000{~N}+C_y=0
 \end{aligned}
 \]</span></p>
-<p>Solving (1) for F<sub>A</sub> yields F<sub>A</sub> = 1154.7 N</p>
-<p>Subbing this result into (1) and (2) yields C<sub>x</sub> = -577.4 N and C<sub>y</sub> = 1000 N</p>
+<p>Solving (1) for F<sub>A</sub> yields F<sub>A</sub> = 1,154.7 N</p>
+<p>Subbing this result into (1) and (2) yields C<sub>x</sub> = -577.4 N and C<sub>y</sub> = 1,000 N</p>
 <p><span class="math display">\[
-F_C=\sqrt{C_x^2+C_y^2}=1154.7 \mathrm{~N}
+F_C=\sqrt{C_x^2+C_y^2}=1,154.7{~N}
 \]</span></p>
-<p><strong>Answer: F<sub>A</sub> = 1155 N and F<sub>C</sub> = 1155 N</strong></p>
+<p><strong>Answer: F<sub>A</sub> = 1,155 N and F<sub>C</sub> = 1,155 N</strong></p>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
 </section></details>
 </section>
 
-<section id="internal-reactions" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="internal-reactions"><span class="header-section-number">1.2</span> Internal Reactions</h2>
+<section id="sec-1.2" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="sec-1.2"><span class="header-section-number">1.2</span> Internal Reactions</h2>
 <details>
 <summary>
 Click to expand
@@ -511,8 +542,8 @@ Click to expand
 <h3 data-number="1.2.1" class="anchored" data-anchor-id="internal-reactions-at-a-connection-with-two-force-members"><span class="header-section-number">1.2.1</span> Internal reactions at a connection with two force members</h3>
 <p>Pins that connect members can be represented on an FBD in the same way as pins that connect the structure to external supports. That is, the reaction would be drawn as the two components of the overall force. However, the connected members would be considered as separate bodies, as if the connecting pin were pulled out and the members separated. The pin reactions would then be drawn on the FBD for each separated member. Since the pin would exert equal and opposite forces on the connected members, one needs to be careful to show the reaction forces in opposite directions on the FBD’s of those members. All three equilibrium equations can be applied separately to each member so one could theoretically solve for 3 times the number of unknowns as separate FBD’s drawn.</p>
 <p>However, just as was discussed above, when one of the connected members is a two-force member, the reaction at the pin will be known to follow a line of action that goes through the points of application of the forces on the two-force member. Example 1.3 demonstrates these concepts.</p>
-<div id="example-1.3" class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div id="example-1.3" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -521,7 +552,7 @@ Example 1.3
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>A plant hanger is secured to a wall with a pin and additionally supported by a brace that is pin connected to the hanger at B and to the wall at C. Determine the external reactions at A and C as well as the reaction in the internal pin B.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -529,6 +560,18 @@ Example 1.3
 <p><img src="images/CH1 PNGs/example 1.3 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="315"></p>
 </figure>
 </div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>If we do not notice that BC is a two-force member, we would approach the problem by separating the brace from the hanger and drawing an FBD of each part separately. Notice that B<sub>x</sub> and B<sub>y</sub> are drawn in opposite directions in the two different diagrams since the pin will exert an equal and opposite force on each bar.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -544,13 +587,16 @@ Example 1.3
 <p>With the components B<sub>x</sub> and B<sub>y</sub> replaced with the resultant force F<sub>B</sub> with known direction, the number of unknowns on bar AB is reduced to 3. These unknowns can be solved for using the equilibrium equations:</p>
 <p><span class="math display">\[
 \begin{aligned}
-\text{(1)} &amp; \sum M_A=F_B\left(\frac{4}{5}\right) 3 f t-50 l b(7 f t)=0 \\
+\text{(1)} &amp; \sum M_A=F_B\left(\frac{4}{5}\right)*3{~ft}-50{~lb}*7{~ft}=0 \\
 \text{(2)} &amp; \sum F_x=-A_x+F_B\left(\frac{3}{5}\right)=0 \\
-\text{(3)} &amp; \sum F_y=A_y+F_B\left(\frac{4}{5}\right)-50 l b=0
+\text{(3)} &amp; \sum F_y=A_y+F_B\left(\frac{4}{5}\right)-50{~lb}=0
 \end{aligned}
 \]</span></p>
 <p>Solving the equations (1)-(3) yields F<sub>B</sub> = 145.8 lb, A<sub>x</sub> = 87.5 lb, and A<sub>y</sub> = -66.7 lb. Therefore, the pin force in pin B is 145.8 lb and the pin force in A is <span class="math inline">\(\mathrm{A}=\sqrt{A_x^2+A_y^2}=110 \text{ lb}\)</span>. Since BC is a two-force member, F<sub>C</sub> = F<sub>B</sub>.</p>
 <p><strong>Answer: F<sub>A</sub> = 110 lb, F<sub>B</sub> = F<sub>C</sub> = 146.8 lb</strong></p>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -560,8 +606,8 @@ Example 1.3
 <p>Truss structures are made up of only two force members. The two main methods of determining internal reactions in planar (2D) truss structures are Method of Joints and Method of Sections. In using Method of Joints, an FBD is drawn of the connecting pins (joints) within the truss. Since all the members connected at any given pin will be two-force members, the reactions can be drawn in known directions. However, since the forces all pass through the same point on the body, the moment equilibrium equation is not useful, so only the forces equilibrium equations can be used for each joint. This means that only two unknowns can be solved for at each joint. This method is most useful when the forces of all the truss members are sought or if the only forces sought are attached to a joint with only two members.</p>
 <p>To use Method of Sections, a cut is made through the truss structure and analysis is based on the FBD of the intact part of the structure that is to the left of the cut or the intact part of the structure to the right of the cut. The FBD of either given side will show the applied forces and the reaction forces from the members that were cut through. These reactions will be equal in magnitude but opposite in direction between the two sides of the cut. The side to examine is usually based on which one will not require having to find external reactions (if there is a free end to the truss) and/or which one is least complicated to deal with in terms of geometry or applied loads. All three equilibrium equations can generally be effectively applied with Method of Sections, so three unknowns can be solved for with any given cut.</p>
 <p>Example 1.4 demonstrates the use of both Method of Joints and Method of Sections to solve for forces in truss members.</p>
-<div id="example-1.4" class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div id="example-1.4" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -570,7 +616,7 @@ Example 1.4
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Determine the forces in members ED and EF. Let P<sub>1</sub> = 8 kN and P<sub>2</sub> = 12 kN.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -578,13 +624,25 @@ Example 1.4
 <p><img src="images/CH1 PNGs/example 1.4 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution - Method of Joints
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>Considering Joint E, it can be seen that since there are 4 members attached to the joint, there would be 4 unknown forces to account for. Therefore, starting with Method of Joints at E would not work. However, looking at joint D, there are only two unknowns, with one of them being member ED, so that would be a useful place to start.</p>
 <p><strong>FBD Joint D</strong></p>
 <p>Note: The triangle ECD is a right triangle, so the sin and cos of the angle at corner D can be expressed in terms of the ratios of the sides. If the angle at D is θ, then cos(θ)= <span class="math inline">\(\frac{1}{\sqrt{5}}\)</span> and sin(θ)= <span class="math inline">\(\frac{2}{\sqrt{5}}\)</span> where <span class="math inline">\(\sqrt{5}\)</span> is the hypotenuse of the triangle.</p>
 <p><span class="math display">\[
 \begin{aligned}
 \text{(1)} &amp; \sum F_x=-F_{C D}-F_{D E}\left(\frac{1}{\sqrt{5}}\right)=0 \\
-\text{(2)} &amp; \sum F_y=F_{D E}\left(\frac{2}{\sqrt{5}}\right)-12 k N=0
+\text{(2)} &amp; \sum F_y=F_{D E}\left(\frac{2}{\sqrt{5}}\right)-12{~kN}=0
 \end{aligned}
 \]</span></p>
 <div class="quarto-figure quarto-figure-center">
@@ -602,7 +660,7 @@ Example 1.4
 </div>
 <p><span class="math display">\[
 \begin{aligned}
-&amp;\sum F_x=-F_{B C}-6=0 \rightarrow F_{B C}=-6 k N\\
+&amp;\sum F_x=-F_{B C}-6=0 \quad\rightarrow\quad F_{B C}=-6{~kN}\\
 &amp;\sum F_y=F_{C E}=0
 \end{aligned}
 \]</span></p>
@@ -614,11 +672,26 @@ Example 1.4
 </div>
 <p><span class="math display">\[
 \begin{aligned}
-&amp;\sum F_y=-13.42\left(\frac{2}{\sqrt{5}}\right)-F_{B E}\left(\frac{2}{\sqrt{8}}\right)=0 \rightarrow F_{B C}=-16.98 k N\\
-&amp;\sum F_x=13.42\left(\frac{1}{\sqrt{5}}\right)--16.98\left(\frac{2}{\sqrt{8}}\right)-F_{E F}=0 \rightarrow F_{E F}=18 \mathrm{kN}
+&amp;\sum F_y=-13.42{~kN}\left(\frac{2}{\sqrt{5}}\right)-F_{B E}\left(\frac{2}{\sqrt{8}}\right)=0 \quad\rightarrow\quad F_{B C}=-16.98{~kN}\\
+&amp;\sum F_x=13.42{~kN}\left(\frac{1}{\sqrt{5}}\right)--16.98{~kN}\left(\frac{2}{\sqrt{8}}\right)-F_{E F}=0 \quad\rightarrow\quad F_{E F}=18\text{ kN}
 \end{aligned}
 \]</span></p>
-<p><strong>Answer: FDC = 6 kN (Compressive), FEF = 18 kN (Tensile)</strong></p>
+<p><strong>Answer: F<sub>DC</sub> = 6 kN (Compressive), F<sub>EF</sub> = 18 kN (Tensile)</strong></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution - Method of Sections
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>While Method of Joints can be used here, it is inefficient. We needed to draw and analyze free body diagrams of joints D, C, and E and keep track of the forces at these joints as well as whether each force was in tension or compression.</p>
 <p>Method of Sections may be used as an alternative to find force FEF. To apply Method of Sections for this problem, a cut will be made through the truss that passes vertically through members EF, BE, and BC. Once that cut is made, a choice needs to be made to draw an FBD for the intact part of the truss to the left of the cut (everything to the left of BF in this case) or the intact part of the truss to the right of the cut (everything to the right of EC in this case). Either way, the external forces on the side would need to be shown on the FBD as well as the force of each member that was cut through. This is illustrated below. Notice that the forces are drawn in opposite directions on the different sides of the cut.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -628,10 +701,13 @@ Example 1.4
 </div>
 <p>Looking at the FBD of the two cut sections, the right side section would be easiest to work with since there are no external reactions on that side. If the left side section were picked, the reactions at A and G would first need to be determined (note that FGF = Gx). All three equilibrium equations can be used with the Method of Sections. In this particular case in which only EEF is left to solve for, only the moment about B is needed to solve since the other two unknown forces both pass through B.</p>
 <p><span class="math display">\[
-\sum M_B=-P_2(3 m)+F_{E F}(2 m)=0 \rightarrow F_{E F}=18 \text{ kN}
+\sum M_B=-P_2*3{~m}+F_{E F}*2{~m}=0 \quad\rightarrow\quad F_{E F}=18{~kN}
 \]</span></p>
 <p>Once again, the forces are drawn on the FBD in the tensile direction, so the negative answer indicates a compressive force.</p>
-<p><strong>Answer: FDC = 6 kN (Compressive), FEF = 18 kN (Tensile)</strong></p>
+<p><strong>Answer: F<sub>DC</sub> = 6 kN (Compressive), F<sub>EF</sub> = 18 kN (Tensile)</strong></p>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -642,11 +718,12 @@ Example 1.4
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/CH1 PNGs/figure 1.2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="483"></p>
+<figcaption>Figure 1.2: Cross-sections showing the internal loads on a continuous body</figcaption>
 </figure>
 </div>
-<p>To determine the reactions, the FBD of the part of the beam to the left of the cut can be drawn and used, or the part of the beam to the right of the cut can be drawn and used. As was discussed with Method of Sections for trusses, the choice of which side of the cut to examine is based primarily on which side appears easiest and most efficient to analyze. Once the FBD of the cut section is drawn, the three equilibrium equations can be applied to determine the internal reactions. The determination of shear and bending moments in beams will be reviewed in more detail in Chapter 8. The focus of Example 1.5 is on the determination of the normal force, as this will be important in Chapters 2 and 3.</p>
-<div id="example-1.5" class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<p>To determine the reactions, the FBD of the part of the beam to the left of the cut can be drawn and used, or the part of the beam to the right of the cut can be drawn and used. As was discussed with Method of Sections for trusses, the choice of which side of the cut to examine is based primarily on which side appears easiest and most efficient to analyze. Once the FBD of the cut section is drawn, the three equilibrium equations can be applied to determine the internal reactions. The determination of shear and bending moments in beams will be reviewed in more detail in <a href="#sec-beams" class="quarto-xref"><span class="quarto-unresolved-ref">sec-beams</span></a>. The focus of Example 1.5 is on the determination of the normal force, as this will be important in <a href="#sec-stress" class="quarto-xref"><span class="quarto-unresolved-ref">sec-stress</span></a> and <a href="#sec-strain" class="quarto-xref"><span class="quarto-unresolved-ref">sec-strain</span></a>.</p>
+<div id="example-1.5" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -655,7 +732,7 @@ Example 1.5
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Two solid bars make up the axial assembly loaded as shown. Determine the normal force in each bar. State whether the force is tensile or compressive.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -663,6 +740,18 @@ Example 1.5
 <p><img src="images/CH1 PNGs/example 1.5 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="400"></p>
 </figure>
 </div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>Though the assembly is not a beam, determining the internal reactions will work in the same way. In this particular case, all the forces are in the normal direction (no shear force) and due to the central placement of the 60 kN force and the symmetry of the 125 kN forces, there will be also be no bending moment. Consequently, only the normal reaction force will be drawn on the FBDs.</p>
 <p>You may recall from shear and moment analysis of beams, a cut is made whenever there is a loading change. In this example, there is a loading change at B, so there will be two sections of the assembly with distinct normal reactions.</p>
 <p>Making the cut in section AB and drawing the FBD allows us to determine the normal force in section AB. Note that drawing the left section of the cut for the FBD results in avoiding needing to know the external reactions at wall C.</p>
@@ -672,7 +761,7 @@ Example 1.5
 </figure>
 </div>
 <p><span class="math display">\[
-\sum F_x=-60 k N+N_{A B}=0 \rightarrow N_{A B}=60 \text{ kN}
+\sum F_x=-60{~kN}+N_{A B}=0 \quad\rightarrow\quad N_{A B}=60{~kN}
 \]</span></p>
 <p>Making the cut in section BC and drawing the FBD allows us to determine the normal force in section BC. Once again, drawing the left section of the cut for the FBD results in avoiding needing to know the external reactions at wall C.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -681,7 +770,7 @@ Example 1.5
 </figure>
 </div>
 <p><span class="math display">\[
-\sum F_x=-60 k N+250 k N+N_{B C}=0 \rightarrow N_{B C}=-190 \text{ kN}
+\sum F_x=-60{~kN}+250{~kN}+N_{BC}=0 \quad\rightarrow\quad N_{BC}=-190{~kN}
 \]</span></p>
 <p>For both AB and BC, the internal normal force was assumed tensile in the FBD and equilibrium equation. In the case of NAB, the positive answer confirms that it is tensile. In the case of NBC, the negative answer reveals that it is compressive.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -693,11 +782,14 @@ Example 1.5
 </div>
 </div>
 </div>
+</div>
+</div>
+</div>
 </section></details>
 </section>
 
-<section id="equilibrium-and-reactions-in-three-dimensions" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="equilibrium-and-reactions-in-three-dimensions"><span class="header-section-number">1.3</span> Equilibrium and Reactions in Three Dimensions</h2>
+<section id="sec-1.3" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="sec-1.3"><span class="header-section-number">1.3</span> Equilibrium and Reactions in Three Dimensions</h2>
 <details>
 <summary>
 Click to expand
@@ -740,8 +832,8 @@ Click to expand
 <li><p>Curl your fingers in the direction of the force. If your thumb must be pointed in the positive axis direction to perform this action, the moment is counterclockwise. If your thumb must be pointed in the negative axis direction, the moment is clockwise. Typical convention designates counterclockwise rotation to be positive and clockwise to be negative.</p></li>
 </ol>
 <p>These concepts are further reviewed in Example 1.6.</p>
-<div id="example-1.6" class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div id="example-1.6" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -750,14 +842,26 @@ Example 1.6
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Determine the internal reactions at point P, located at the center of the cross-section of the rectangular bar and 1.75 ft from the fixed support, if <strong>F</strong> = -150 <strong>i</strong> - 225 <strong>j</strong> + Fz = 300 <strong>k</strong> lb.</p>
+<p>Determine the internal reactions at point P, located at the center of the cross-section of the rectangular bar and 1.75 ft from the fixed support, if <strong>F</strong> = -150<strong>i</strong> - 225<strong>j</strong> + Fz = 300<strong>k</strong> lb.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/CH1 PNGs/example 1.6 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="484"></p>
 </figure>
 </div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>To determine the internal reactions at P, a cut is made at P that is parallel to the cross section. Since the left side of the cut would include the wall but the right side of the cut would be free with no external reactions to determine, the right side section will be used.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -767,24 +871,27 @@ Example 1.6
 <p>The force reactions at P will just be equal (but opposite in direction) to the force shown since there is only one. The moment reactions can be found by taking the moments about point P.</p>
 <p>The moment about the x axis at point P is:</p>
 <p><span class="math display">\[
-\sum M_{Px} = \pm F_yz \pm F_zy = 0 = -[(225 \text{ lb})(3 \text{ in})(\frac{1 \text{ ft}}{12 \text{ in}})]+[(300 \text{ lb})(2 \text{ in})(\frac{1 \text{ ft}}{12 \text{ in}})]+M_{px} -6.25 \text{ lb ft}
+\sum M_{Px} = \pm ~F_yz \pm F_zy = 0 = -[(225{~lb})(3{~in})(\frac{1{~ft}}{12{~in}})]+[(300{~lb})(2{~in})(\frac{1{~ft}}{12{~in}})]+M_{px} -6.25{~lb·ft}
 \]</span></p>
 <p>The moment about the y axis at point P is:</p>
 <p><span class="math display">\[
-\sum M_{Py} = \pm F_xz \pm F_zx = 0 = -[(150 \text{ lb})(3 \text{ in})(\frac{1 \text{ ft}}{12 \text{ in}})]-[(300 \text{ lb})(1.25 \text{ ft})]+M_{py} -347.5 \text{ lb ft}
+\sum M_{Py} = \pm ~F_xz \pm F_zx = 0 = -[(150{~lb})(3{~in})(\frac{1{~ft}}{12{~in}})]-[(300{~lb})(1.25{~ft})]+M_{py} -347.5{~lb·ft}
 \]</span></p>
 <p>The moment about the z axis at point P is:</p>
 <p><span class="math display">\[
-\sum M_{Pz} = \pm F_xy \pm F_yx = 0 = [(150 \text{ lb})(2 \text{ in})(\frac{1 \text{ ft}}{12 \text{ in}})]-[(225 \text{ lb})(1.25 \text{ ft})]+M_{pz} -2.5 \text{ lb ft}
+\sum M_{Pz} = \pm F_xy \pm F_yx = 0 = [(150{~lb})(2{~in})(\frac{1{~ft}}{12{~in}})]-[(225{~lb})(1.25{~ft})]+M_{pz} -2.5{~lb·ft}
 \]</span></p>
 <p>The sign on the individual multiplicative terms in each equation are determined by right hand rule or visualization.</p>
 <p><strong>Answer:</strong></p>
 <p>P<sub>x</sub> = 150 lb</p>
 <p>P<sub>y</sub> = 225 lb</p>
 <p>P<sub>z</sub> = 300 lb</p>
-<p>M<sub>Px</sub> = 6.25 lb ft</p>
-<p>M<sub>Py</sub> = 348 lb ft</p>
-<p>M<sub>Pz</sub> = 2.5 lb ft</p>
+<p>M<sub>Px</sub> = 6.25 lb·ft</p>
+<p>M<sub>Py</sub> = 348 lb·ft</p>
+<p>M<sub>Pz</sub> = 2.5 lb·ft</p>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>

@@ -101,6 +101,7 @@ window.Quarto = {
 };
 </script>
 
+<link rel="stylesheet" href="styles/custom.css">
 </head>
 
 <body class="nav-sidebar docked">
@@ -179,7 +180,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Chapter 6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Torsional Loading</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Torsion</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -282,14 +283,14 @@ window.Quarto = {
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#bending-stress" id="toc-bending-stress" class="nav-link" data-scroll-target="#bending-stress"><span class="header-section-number">9.1</span> Bending Stress</a></li>
-  <li><a href="#beam-design-for-bending" id="toc-beam-design-for-bending" class="nav-link" data-scroll-target="#beam-design-for-bending"><span class="header-section-number">9.2</span> Beam Design for Bending</a>
+  <li><a href="#sec-9.1" id="toc-sec-9.1" class="nav-link" data-scroll-target="#sec-9.1"><span class="header-section-number">9.1</span> Bending Stress</a></li>
+  <li><a href="#sec-9.2" id="toc-sec-9.2" class="nav-link" data-scroll-target="#sec-9.2"><span class="header-section-number">9.2</span> Beam Design for Bending</a>
   <ul class="collapse">
   <li><a href="#design-of-standard-steel-sections" id="toc-design-of-standard-steel-sections" class="nav-link" data-scroll-target="#design-of-standard-steel-sections"><span class="header-section-number">9.2.1</span> Design of Standard Steel Sections</a></li>
   <li><a href="#design-of-rectangular-sections" id="toc-design-of-rectangular-sections" class="nav-link" data-scroll-target="#design-of-rectangular-sections"><span class="header-section-number">9.2.2</span> Design of Rectangular Sections</a></li>
   </ul></li>
-  <li><a href="#unsymmetric-bendingmoment-arbitrarily-applied" id="toc-unsymmetric-bendingmoment-arbitrarily-applied" class="nav-link" data-scroll-target="#unsymmetric-bendingmoment-arbitrarily-applied"><span class="header-section-number">9.3</span> Unsymmetric Bending—Moment Arbitrarily Applied</a></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">9.4</span> Summary</a></li>
+  <li><a href="#sec-9.3" id="toc-sec-9.3" class="nav-link" data-scroll-target="#sec-9.3"><span class="header-section-number">9.3</span> Unsymmetric Bending—Moment Arbitrarily Applied</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   </ul>
 </nav>
     </div>
@@ -335,13 +336,13 @@ Learning Objectives
 </div>
 <section id="introduction" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="introduction">Introduction</h2>
-<details>
+<details open="">
 <summary>
 Click to expand
 </summary>
 <p>Beams are structural members that support loads along their length. Typically, these loads are perpendicular to the axis of the beam and cause only shear forces and bending moments.</p>
 <p><strong>Figure 9.1 Overarching book figure</strong>  </p>
-<p>As we found in previous chapters, internal forces and moments and section properties are crucial to calculating stresses and deflections. The same is true for finding stresses and deflections in beams. This chapter describes calculating bending stresses in beam with considerations for unsymmetric bending and beam design.</p>
+<p>As we found in previous chapters, internal forces and moments and section properties are crucial to calculating stresses and deflections. The same is true for finding stresses and deflections in beams. This chapter describes calculating bending stresses in beams, such as those in Figure 9.2, with considerations for unsymmetric bending and beam design.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/CH9 PNGs/Figure 9.2.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="470"></p>
@@ -350,8 +351,8 @@ Click to expand
 </div>
 </details>
 </section>
-<section id="bending-stress" class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" data-anchor-id="bending-stress"><span class="header-section-number">9.1</span> Bending Stress</h2>
+<section id="sec-9.1" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="sec-9.1"><span class="header-section-number">9.1</span> Bending Stress</h2>
 <details>
 <summary>
 Click to expand
@@ -388,7 +389,7 @@ Click to expand
 <ul>
 <li><p>There must be a neutral surface parallel to both the upper and lower surfaces, where the length remains constant.</p></li>
 <li><p>Throughout the deformation, all cross sections of the beam remain plan and perpendicular to the longitudinal axis.</p></li>
-<li><p>The cross section will keep it’s shape, we will ignore the Poisson effects discussed in Chapter 4 of this text.</p></li>
+<li><p>The cross section will keep it’s shape, we will ignore the Poisson effects discussed in chapter 4 of this text.</p></li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -401,8 +402,10 @@ Click to expand
 \varepsilon=\frac{\delta}{L}
 \]</span></p>
 <p>We can use this to calculate the normal strain along AB in our beam.</p>
-<p><strong>[math]</strong></p>
-<p>Distance y is measured relative to the neutral surface and is positive above the neutral surface and negative below. Prior to bending, the line AB is the same length at all values of y.&nbsp; However, when bending occurs, the length of A’B’ varies.&nbsp; The length A’B’ experiences a reduction in length as the section moves farther above the neutral surface, and conversely, it undergoes an increasing extension below the neutral surface.&nbsp; By definition, the length of the neutral surface doesn’t change and remains the same as length AB. We can describe the lengths AB and A’B’ using the radius of curvature (ρ) and the differential angle (dθ) shown in Figure 9.7.</p>
+<p><span class="math display">\[
+\varepsilon=\frac{\overline{A^{\prime} B^{\prime}}-\overline{A B}}{\overline{A B}}
+\]</span></p>
+<p>Distance y is measured relative to the neutral surface and is positive above the neutral surface and negative below. Prior to bending, the line AB is the same length at all values of y. However, when bending occurs, the length of A’B’ varies. The length A’B’ experiences a reduction in length as the section moves farther above the neutral surface, and conversely, it undergoes an increasing extension below the neutral surface. By definition, the length of the neutral surface doesn’t change and remains the same as length AB. We can describe the lengths AB and A’B’ using the radius of curvature (ρ) and the differential angle (dθ) shown in Figure 9.7.</p>
 <p><span class="math display">\[
 \begin{gathered}
 \overline{A B}=\rho d \theta \\
@@ -428,7 +431,7 @@ Click to expand
 \varepsilon=-\left(\frac{y}{c}\right) \varepsilon_{\max }
 \end{gathered}
 \]</span></p>
-<p>Assuming that our material behaves in a linearly elastic manner, we can use Hooke’s Law, [math], to rewrite the strain relationship above into a relationship of stresses:</p>
+<p>Assuming that our material behaves in a linearly elastic manner, we can use Hooke’s Law, <span class="math inline">\(\sigma = E \epsilon\)</span>, to rewrite the strain relationship above into a relationship of stresses:</p>
 <p><span class="math display">\[
 \sigma=-\left(\frac{y}{c}\right) \sigma_{\max }
 \]</span></p>
@@ -454,7 +457,7 @@ Click to expand
 <p><span class="math display">\[
 0=\int_A y d A
 \]</span></p>
-<p>This integral represents the first moment of area, as discussed in Section 8.1. This equation indicates that the first moment of the cross-section about its neutral axis must be zero. Recall that the location of the centroid was determined by <span class="math inline">\(\bar{y}=\frac{\int_A y d A}{A}\)</span>. Consequently, for a member experiencing pure bending and as long as the stresses remain within the elastic range, the neutral axis traverses through the centroid of the section since <span class="math inline">\(\bar{y}\)</span> (the distance from the neutral axis to the centroid) is zero.</p>
+<p>This integral represents the first moment of area, as discussed in section 8.1. This equation indicates that the first moment of the cross-section about its neutral axis must be zero. Recall that the location of the centroid was determined by <span class="math inline">\(\bar{y}=\frac{\int_A y d A}{A}\)</span>. Consequently, for a member experiencing pure bending and as long as the stresses remain within the elastic range, the neutral axis traverses through the centroid of the section since <span class="math inline">\(\bar{y}\)</span> (the distance from the neutral axis to the centroid) is zero.</p>
 <p>We can ascertain the stress in the beam by setting the moment M equal to the moment produced by the stress distribution around the neutral axis.</p>
 <p><span class="math display">\[
 d M=y d F
@@ -476,10 +479,10 @@ M=\frac{\sigma_{\max }}{c} \int_A y^2 d A
 \sigma_{\max }=\frac{M c}{I}
 \]</span></p>
 <p>Where:</p>
-<p>σ<sub>max</sub> = the maximum normal stress in the beam, note that a complete description includes magnitude, units, tension, or compression</p>
-<p>M = the internal moment calculated about the neutral axis of the cross section, determined from method of sections or shear and moment diagrams</p>
-<p>c = the perpendicular distance from the neutral axis to the point the farthest away from the neutral axis</p>
-<p>I = the moment of inertial or second moment of area about the neutral axis</p>
+<p>σ<sub>max</sub> = the maximum normal stress in the beam, note that a complete description includes magnitude, units, tension, or compression [Pa, psi]</p>
+<p>M = the internal moment calculated about the neutral axis of the cross section, determined from method of sections or shear and moment diagrams [N·m, lb·in.]</p>
+<p>c = the perpendicular distance from the neutral axis to the point the farthest away from the neutral axis [m, in.]</p>
+<p>I = the moment of inertial or second moment of area about the neutral axis [m<sup>4</sup>, in.<sup>4</sup>]</p>
 <p>We know from previous derivation that:</p>
 <p><span class="math display">\[
 \sigma=-\left(\frac{y}{c}\right) \sigma_{\max }
@@ -492,38 +495,20 @@ M=\frac{\sigma_{\max }}{c} \int_A y^2 d A
 <p><span class="math display">\[
 \sigma=-\frac{M y}{I}
 \]</span></p>
-<p>Similar to Chapter 2, when reporting normal stress you include if that stress is in tension or compression. During the derivation, we used a beam that was bending concave upwards. In Chapter 7 we indicated that this type of moment was considered positive. This leads to compression above the neutral axis and tension below. The inverse is true when the beam is subjected to negative bending moment as shown in Figure 9.9.</p>
+<p>Similar to chapter 2, when reporting normal stress you include if that stress is in tension or compression. During the derivation, we used a beam that was bending concave upwards. In chapter 7 we indicated that this type of moment was considered positive. This leads to compression above the neutral axis and tension below. The inverse is true when the beam is subjected to negative bending moment as shown in Figure 9.9.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/CH9 PNGs/Figure 9.9.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="499"></p>
 <figcaption>Figure 9.9: Bending stress sign convention.</figcaption>
 </figure>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Step-by-step: Calculating Bending Stress
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ol type="1">
-<li>Determine the <strong>internal moment</strong> at the point to which you want to calculate the bending stress. If you know the point along the length of the beam that you are investigating, then you can cut a section and apply equilibrium equations to determine this moment. If you need to find the maximum bending stress then draw the moment diagram to find the maximum internal moment. (Review of this is in Chapter 7 of this text).</li>
-<li>Determine the section properties of the beam. This will require knowing the location of the <strong>centroid</strong>, <strong>neutral axis</strong>, and the <strong>moment of inertia</strong>. (Review of this is in Chapter 8 of this text or a table listing values of I for selected common shapes is in the Appendix.)</li>
-<li>Identify the specific <strong>location on the section</strong> for which you are computing the normal stress, y (or c, if you are calculating the maximum normal stress.)</li>
-<li>Ensure that the units of M, I, and y (or c) are consistent then use one of the flexure formulas to calculate bending stress. Ensure that the result contains the magnitude, units, and tension or compression.</li>
-</ol>
-</div>
-</div>
-<div id="example-9.1" class="callout callout-style-default callout-note no-icon callout-titled">
+<div id="example-9.1" class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example 9.1: Simple bending stress problem 
+Example 9.1
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -535,33 +520,100 @@ Example 9.1: Simple bending stress problem 
 <p><img src="images/CH9 PNGs/Example 9.1 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="292"></p>
 </figure>
 </div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>We first start with the internal moment, this is a given in the problem statement to be +50k-in. Positive moment indicates that the beam is bending concave up, compression above the neutral axis and tension below.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/CH9 PNGs/Example 9.1 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="267"></p>
 </figure>
 </div>
-<p>We next need to determine the beam properties—centroid and moment of inertia. Since this is not a standard shape and the shape is not symmetric in the y direction, we will need to calculate this by hand. We cover this shape in detail in Chapter 8.</p>
+<p>We next need to determine the beam properties—centroid and moment of inertia. Since this is not a standard shape and the shape is not symmetric in the y direction, we will need to calculate this by hand. We cover this shape in detail in chapter 8.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/CH9 PNGs/Example 9.1 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="270"></p>
 </figure>
 </div>
-<p>[table with math]</p>
-<p>[math Y bar = ]</p>
+<table class="table">
+<colgroup>
+<col style="width: 5%">
+<col style="width: 12%">
+<col style="width: 15%">
+<col style="width: 20%">
+<col style="width: 13%">
+<col style="width: 12%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Shape</th>
+<th><span class="math inline">\(A {~(in.^2})\)</span></th>
+<th><span class="math inline">\(\bar{y}{~(in.})\)</span></th>
+<th><span class="math inline">\(A\bar{y}{~(in.^3})\)</span></th>
+<th><span class="math inline">\(I_x{~(in.^4})\)</span></th>
+<th><span class="math inline">\(d_y{~(in.})\)</span></th>
+<th><span class="math inline">\(I_x+Ad_y^2{~(in.^4})\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>13.5</td>
+<td>2.25</td>
+<td>30.375</td>
+<td>22.78125</td>
+<td>1.5</td>
+<td>53.15625</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>13.5</td>
+<td>5.25</td>
+<td>70.875</td>
+<td>2.53125</td>
+<td>1.5</td>
+<td>32.90625</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><span class="math inline">\(\sum A\)</span> = 27</td>
+<td></td>
+<td><span class="math inline">\(\sum A\bar{y}\)</span> = 101.25</td>
+<td></td>
+<td></td>
+<td><span class="math inline">\(\sum I_{x}\)</span> = 86.0625</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[
+\begin{aligned}
+\bar{Y}=\frac{101.25{~in.^3}}{27{~in.^2}} &amp; =3.75{~in.}~~\text{from bottom} \\
+&amp; =2.25{~in.}~~\text{from top} \\
+\end{aligned}
+\]</span></p>
 <p>There are three parts to this problem that change the y value. We will start with calculating the stress at the top of the section, using the flexure formula:</p>
 <p><span class="math display">\[
 \sigma_{t o p}=-\frac{M y}{I}
 \]</span></p>
 <p>Before we plug in our values, we need to ensure that the units are consistent.</p>
 <ul>
-<li><p>M = 50k·in.</p></li>
-<li><p>y = 2.25 in.</p></li>
-<li><p>I = 86.0625 in.<sup>4</sup></p></li>
+<li><p><span class="math inline">\(M = 50{~kip}\cdot{in.}\)</span></p></li>
+<li><p><span class="math inline">\(y = 2.25{~in.}\)</span></p></li>
+<li><p><span class="math inline">\(I = 86.0625{~in.^4}\)</span></p></li>
 </ul>
 <p>Since all units are in kips and inches, we are going to plug into our flexure formula:</p>
 <p><span class="math display">\[
-\sigma_{t o p}=-\frac{(50 k-i n)(2.25 i n)}{86.0625 i n^4}
+\sigma_{top}=-\frac{(50{~kip}\cdot{in.})(2.25{~in.})}{86.0625{~in.}^4}=-1.31{~ksi}
 \]</span></p>
 <p>For a complete answer we need to include magnitude, units, and tension or compression. The magnitude is 1.31, the units will be kips/in<sup>2</sup> or ksi. To determine the tension or compression we will look at the sign of the internal moment and where along the section we are calculating the bending stress. In our example the moment is positive, and we calculate the stress at the top of the section our answer will be in compression.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -570,16 +622,16 @@ Example 9.1: Simple bending stress problem 
 </figure>
 </div>
 <p><span class="math display">\[
-\sigma_{\text {top }}=1.31 \mathrm{ksi}(C)
+\sigma_{top}=1.31{~ksi}~(C)
 \]</span></p>
 <p>Note that, as long as we are careful to use the correct signs for M and y (both positive in this case), the answer will also come out with the correct sign (negative in this case which indicates compression).</p>
 <p>We will now calculate the normal stress at the bottom of the beam. The only quantity that changes is the y value – we will now use the distance from the neutral axis to the bottom of the beam (3.75 in).</p>
 <p><span class="math display">\[
-\sigma_{b t m}=-\frac{(50 k-i n)(-3.75 i n)}{86.0625 i n^4}
+\sigma_{btm}=-\frac{(50{~kip}\cdot{in.})(-3.75{~in.})}{86.0625{~in.}^4}=2.18{~ksi}
 \]</span></p>
 <p>The moment is positive, so the beam bends concave up, anything below the neutral axis is in tension.</p>
 <p><span class="math display">\[
-\sigma_{b t m}=2.18 \mathrm{ksi}(T)
+\sigma_{btm}=2.18{~ksi}~(T)
 \]</span></p>
 <p>This again works mathematically as long as we use the correct positive sign for the M and negative sign for y (since the point of interest is below the neutral axis). The answer comes out positive, indicating tension and matching our expectation.</p>
 <p>Finally, we can calculate the normal stress at the junction of the flange and the web. We will need to find the distance from the neutral axis the flange web junction.</p>
@@ -594,61 +646,147 @@ Example 9.1: Simple bending stress problem 
 </figure>
 </div>
 <p><span class="math display">\[
-\sigma_{F / w}=-\frac{(50 k-i n)(0.75 i n)}{86.0625 i n^4}
+\sigma_{F / w}=-\frac{(50{~kip}\cdot{in.})(0.75{~in.})}{86.0625{~in.}^4}=-0.436{~ksi}
 \]</span></p>
 <p>Since the flange web junction is above the neutral axis and our beam is subjected to positive moment, our bending stress will be in compression.</p>
 <p><span class="math display">\[
-\sigma_{F / w}=0.44 \mathrm{ksi}(C)
+\sigma_{F/w}=0.436{~ksi}~(C)
 \]</span></p>
 </div>
 </div>
 </div>
-<div id="example-9.2" class="callout callout-style-default callout-note no-icon callout-titled">
+</div>
+</div>
+</div>
+<div id="example-9.2" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example 9.2
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Calculate the maximum tensile and maximum compressive bending stress in the beam shown below.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-1391458310.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="364"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-1969407560.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="370"></p>
+</figure>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example 9.2: Bending stress problem 
+Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Calculate the maximum tensile and maximum compressive bending stress in the beam shown below.</p>
+<p>The first step is to find the internal forces in the beam so that we can find the maximum positive and negative moments. The best way to do this is to draw the moment diagram. We did this in detail in Example 7.3.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH9 PNGs/Example 9.2 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="364"></p>
+<p><img src="images/clipboard-191172276.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="366"></p>
 </figure>
 </div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/CH9 PNGs/Example 9.2 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="366"></p>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/CH9 PNGs/Example 9.2 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="370"></p>
-</figure>
-</div>
-<p>The first step is to find the internal forces in the beam so that we can find the maximum positive and negative moments. The best way to do this is to draw the moment diagram. We did this in detail in an example problem [which one?] in Chapter 7 of this text.</p>
-<p>The moment diagram is to the left and we can see that the maximum positive moment is 37.125 kN*m and the maximum negative moment is 30 kN*m.</p>
-<p>We next need to determine the beam properties—centroid and moment of inertia. Since this is not a standard shape and the shape is not symmetric in the y direction, we will need to calculate this by hand. We cover this shape in detail in Chapter 8 [link to centroid and moment of inertia example in ch 8].</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/CH9 PNGs/Example 9.2 part 4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="380"></p>
-</figure>
-</div>
+<p>We can see that the maximum positive moment is 37.125 kN·m and the maximum negative moment is 30 kN·m.</p>
+<p>We next need to determine the beam’s geometric properties—centroid and moment of inertia. Since this is not a standard shape and the shape is not symmetric in the y direction, we will need to calculate this by hand. We covered this shape in detail in Example 8.2 [text - link to centroid and moment of inertia example in ch 8]</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/CH9 PNGs/Example 9.2 part 5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="360"></p>
 </figure>
 </div>
-<p><strong>[table with math]</strong></p>
-<p>Y bar =</p>
-<p><strong>[table with math]</strong></p>
-<p>Ix =</p>
-<p>The positive bending moment will cause compression at the top of the cross-section and compression at the bottom. The negative bending moment will cause tension at the top and compression at the bottom. It’s not obvious by inspection which of these two tensile stresses will be larger, nor which of the two compressive stresses will be larger. We should calculate all four to compare.</p>
+<p>Find centroid (<span class="math inline">\(\bar{x} = 0\)</span> due to symmetry).</p>
+<table class="table">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 26%">
+<col style="width: 24%">
+<col style="width: 39%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Shape</th>
+<th><span class="math inline">\(A{~(mm}^2)\)</span></th>
+<th><span class="math inline">\(\bar{y}{~(mm})\)</span></th>
+<th><span class="math inline">\(A\bar{y}{~(mm^3})\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>4,000</td>
+<td>20</td>
+<td>80,000</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>2,800</td>
+<td>110</td>
+<td>308,000</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>7,200</td>
+<td>200</td>
+<td>1,440,000</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><span class="math inline">\(\sum A\)</span> = 14,000</td>
+<td></td>
+<td><span class="math inline">\(\sum A\bar{y}\)</span> = 1,888,000</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math inline">\(\bar{Y}=130.6{~mm}~~\text{from bottom}\)</span></p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Shape</th>
+<th><span class="math inline">\(I_x{~(mm^4})\)</span></th>
+<th><span class="math inline">\(d_y{~(mm})\)</span></th>
+<th><span class="math inline">\(I_x+Ad_y^2{~(mm^4)}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>533,333</td>
+<td>110.57</td>
+<td>49,436,233</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>4,573,333</td>
+<td>20.57</td>
+<td>5,758,083</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>960,000</td>
+<td>69.43</td>
+<td>35,667,779</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td>I<sub>x</sub> = 90,862,095 mm<sup>4</sup></td>
+</tr>
+</tbody>
+</table>
+<p>The positive bending moment will cause compression at the top of the cross-section and tension at the bottom. The negative bending moment will cause tension at the top and compression at the bottom. It’s not obvious by inspection which of these two tensile stresses will be larger, nor which of the two compressive stresses will be larger. We should calculate all four to compare.</p>
 <p>Before we plug in our values, we need to ensure that the units are consistent so we will change everything to Newtons and meters.</p>
 <ul>
 <li><p>M<sub>pos</sub> = 37.125 kN·m = 37.125 x 10<sup>3</sup> N·m</p></li>
@@ -658,42 +796,58 @@ Example 9.2: Bending stress problem 
 <li><p>I<sub>x</sub> = 90,862,095 mm<sup>4</sup> = 90.862095 x 10<sup>-6</sup> m<sup>4</sup></p></li>
 </ul>
 <p>We will start with calculating the stress at the top and bottom of the section due to the maximum positive moment, using the flexure formula:</p>
-<p><span class="math display">\[
-\sigma=-\frac{M y}{I}
-\]</span></p>
+<p><span class="math display">\[ \sigma=-\frac{M y}{I} \]</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/CH9 PNGs/Example 9.2 part 6.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="278"></p>
 </figure>
 </div>
-<p><span class="math display">\[
-\sigma_{\text{top}/pos}=-\frac{\left(37.125 \times 10^3 \mathrm{Nm}\right)(0.0893 \mathrm{~m})}{90.86 \times 10^{-6} \mathrm{~m}^4}=-36.49 \text{ MPa (C)}
-\]</span></p>
-<p><span class="math display">\[
-\sigma_{\text{btm }/\text{pos}}=-\frac{\left(37.125\times10^3{Nm}\right)(-0.13057{~m})}{90.86 \times 10^{-6} \mathrm{~m}^4}=53.35 \text{ MPa}\text{ (T)}
-\]</span></p>
+<p><span class="math display">\[ \sigma_{top/pos}=-\frac{\left(37.125 \times 10^3{~N}\cdot{m}\right)(0.0893 {~m})}{90.86 \times 10^{-6}{~m}^4}=-36.49{~MPa~(C)} \]</span></p>
+<p><span class="math display">\[ \sigma_{btm/pos}=-\frac{\left(37.125\times10^3{~N}\cdot{m}\right)(-0.13057{~m})}{90.86 \times 10^{-6}{~m}^4}=53.35{~MPa}{~(T)} \]</span></p>
 <p>Now we can do something similar for the maximum negative bending stress.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/CH9 PNGs/Example 9.2 part 7.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="262"></p>
 </figure>
 </div>
-<p><span class="math display">\[
-\sigma_{\text{top}/\text{neg}}=-\frac{\left(-30 \times 10^3 \mathrm{Nm}\right)(0.0893 \mathrm{~m})}{90.86 \times 10^{-6} \mathrm{~m}^4}=29.48 \text{ MPa (T)}
-\]</span></p>
-<p><span class="math display">\[
-\sigma_{\text{btm}/neg}=-\frac{\left(-30 \times 10^3 \mathrm{Nm}\right)(-0.13057\mathrm{~m})}{90.86 \times 10^{-6} \mathrm{~m}^4}=-43.11 \text{ MPa}\text{ (C)}
-\]</span></p>
+<p><span class="math display">\[ \sigma_{top/neg}=-\frac{\left(-30 \times 10^3{~N}\cdot{m}\right)(0.0893{~m})}{90.86 \times 10^{-6}{~m}^4}=29.48{~MPa~(T)} \]</span></p>
+<p><span class="math display">\[ \sigma_{btm/neg}=-\frac{\left(-30 \times 10^3 \mathrm{~N}\cdot{m}\right)(-0.13057{~m})}{90.86 \times 10^{-6}{~m}^4}=-43.11{~MPa}~{(C)} \]</span></p>
 <p>The overall maximum tensile stress for this beam occurs at the bottom of the section due to positive moment, 53.35 MPa (T). The overall maximum compressive stress (43.11 MPa (C)) also occurs at the bottom of the section in a different part of the beam, but is due to the negative moment.</p>
 </div>
 </div>
 </div>
-<p>For many situations the overall largest stress would be sufficient. However, there are materials that behave differently depending on whether they are subjected to tensile or compressive stress. Concrete is a good example of this, as it is very good with compressive stresses but poor with tensile stresses. Steel rebar is placed inside concrete members to support the tensile stresses as shown in Figure 9.10. At this point in your engineering career it is good practice to report both the maximum tensile and compressive stresses at each critical point on the beam.</p>
-<p><strong>Figure 9.10 The end of the prestressed concrete beam showing the prestressing steel and rebar.</strong></p>
+</div>
+</div>
+</div>
+<p>For many situations the overall largest stress would be sufficient. However, there are materials that behave differently depending on whether they are subjected to tensile or compressive stress. Concrete is a good example of this, as it is relatively strong against compressive stresses but very weak against tensile stresses. Steel rebar is placed inside concrete members to support the tensile stresses as shown in Figure 9.10. At this point in your engineering career it is good practice to report both the maximum tensile and compressive stresses at each critical point on the beam.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/figure 9.10 (needs replacement).jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="493"></p>
+<figcaption>Figure 9.10: The end of the prestressed concrete beam showing the prestressing steel and rebar</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Step-by-step: Calculating Bending Stress
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Determine the <strong>internal moment</strong> at the point to which you want to calculate the bending stress. If you know the point along the length of the beam that you are investigating, then you can cut a section and apply equilibrium equations to determine this moment. If you need to find the maximum bending stress then draw the moment diagram to find the maximum internal moment. (Review of this is in chapter 7 of this text).</li>
+<li>Determine the section properties of the beam. This will require knowing the location of the <strong>centroid</strong>, <strong>neutral axis</strong>, and the <strong>moment of inertia</strong>. (Review of this is in Chapter 8 of this text or a table listing values of I for selected common shapes is in the Appendix.)</li>
+<li>Identify the specific <strong>location on the section</strong> for which you are computing the normal stress, y (or c, if you are calculating the maximum normal stress.)</li>
+<li>Ensure that the units of M, I, and y (or c) are consistent then use one of the flexure formulas to calculate bending stress. Ensure that the result contains the magnitude, units, and tension or compression.</li>
+</ol>
+</div>
+</div>
 </details>
 </section>
-<section id="beam-design-for-bending" class="level2" data-number="9.2">
-<h2 data-number="9.2" class="anchored" data-anchor-id="beam-design-for-bending"><span class="header-section-number">9.2</span> Beam Design for Bending</h2>
+<section id="sec-9.2" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="sec-9.2"><span class="header-section-number">9.2</span> Beam Design for Bending</h2>
 <details>
 <summary>
 Click to expand
@@ -711,45 +865,27 @@ S_{\text {min }}=\frac{\left|M_{\max }\right|}{\sigma_{\text {all }}}
 <h3 data-number="9.2.1" class="anchored" data-anchor-id="design-of-standard-steel-sections"><span class="header-section-number">9.2.1</span> Design of Standard Steel Sections</h3>
 <p>As long as we design our beam such that its section modulus is larger than S<sub>min</sub>, the beam is guaranteed not to fail due to bending stress. Rolled steel beams tend to have relatively complex cross-sections with multiple dimensions that can be varied in order to alter its section modulus and therefore its resistance to bending stress. Designing each dimension individually would be time consuming and it would be costly to manufacture a unique beam for every loading condition. Instead, beams are mass produced in standard sizes and engineers simply select the most appropriate beam for their specific need. There will be many standard steel shapes that will satisfy this equation, meaning they will be safe. Engineering is determining which of the shapes that work you will use. Often there are many criteria that you will need to consider. In this section we will use cost to determine the shape. Steel beams are priced by their weight, the higher the weight the more expensive. To choose the most economical shape, we will choose the shape with the smallest weight (smallest cross-sectional area).</p>
 <p>There are basic structural steel shapes that have standardized cross sectional dimensions. W shapes (standing for Wide Flange) are often used for beam design as they have an efficient cross section. Figure 9.11 is a sample of the beam table in the Appendix.</p>
-<p><strong>Figure 9.11 Portion of the W Section table from Appendix A</strong></p>
-<p>Each beam has a designation that gives us quick information about the section, see figure 9.12.</p>
+<p><strong>Figure 9.11: Portion of the W Section table from Appendix A</strong></p>
+<p>Each beam has a designation that gives us quick information about the section, see Figure 9.12.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/CH9 PNGs/Figure 9.12.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="368"></p>
 <figcaption>Figure 9.12: Description of the Shape designation in U.S. Customary Units.</figcaption>
 </figure>
 </div>
-<p>Notice in the sample beam section table in Figure 9.11 they are all W shapes and grouped by approximate height (first number). Within each height grouping the shapes are arranged from lightest to heaviest (second number) when going from the bottom to top of the height grouping. For each standard shape in this table the cross-sectional area, depth (height), flange and web dimensions, moment of inertia in the x and y directions, section modulus, in the x and y direction, and the radius of gyration in the x and y directions (this is a geometric property related to buckling, we will use this in Chapter 15 of this text) are given.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled" style=".unnumbered">
-<div class="callout-header d-flex align-content-center">
+<p>Notice in the sample beam section table in Figure 9.11 they are all W shapes and grouped by approximate height (first number). Within each height grouping the shapes are arranged from lightest to heaviest (second number) when going from the bottom to top of the height grouping. For each standard shape in this table the cross-sectional area, depth (height), flange and web dimensions, moment of inertia in the x and y directions, section modulus, in the x and y direction, and the radius of gyration in the x and y directions (this is a geometric property related to buckling, we will use this in chapter 15 of this text) are given.</p>
+<p>In certain instances, the selection of a section might be constrained by factors such as the permissible depth of the cross-section or the allowable deflection of the beam. This discussion is limited to materials that behave the same in tension and compression. If this is not the case (such as when you use concrete), then you may need to check multiple points along the length of the beam. Additionally, if the section is not symmetric about the neutral axis, the maximum tensile and compressive stresses may not occur at the point where M is max or min. Lastly, this procedure only considers bending stresses. Although bending stresses do control the design of most beams, there are instances where shear or deflection will control. We will discuss this more in chapter 11 in this text.</p>
+<div id="example-9.3" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Step-by-step: Most Economical Beam Design (standard shapes)
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ol type="1">
-<li>Establish the allowable stress, σ<sub>all</sub>, value of sigma for the chosen material by referring to a table of material properties or consulting design specifications. Proceed with the following steps assuming that σ<sub>all</sub> is the same for tension and compression.</li>
-<li>Determine the maximum absolute value of the bending moment |M<sub>max</sub>| <strong>i</strong>n the beam by drawing the shear force and bending moment diagrams. (Review of this is in Chapter 7 of this text).</li>
-<li>Calculate the minimum allowable value of the section modulus using this equation: <span class="math inline">\(S_{\text {min }}=\frac{\left|M_{\max }\right|}{\sigma_{\text {all }}}\)</span></li>
-<li>For a rolled steel beam, refer to the relevant table in the Appendix. Among the accessible beam sections, focus solely on those with a section modulus surpassing the minimum value calculated in step 3, S <strong>≥</strong> S<sub>min</sub>. Start at the bottom of the table and select one beam in each height section (if applicable). Then from this short list, choose the section with the smallest weight per unit length, as it represents the most economical option for which S <strong>≥</strong> S<sub>min</sub>. It’s essential to note that this choice may not necessarily correspond to the section with the smallest S value.</li>
-</ol>
-</div>
-</div>
-<p>In certain instances, the selection of a section might be constrained by factors such as the permissible depth of the cross-section or the allowable deflection of the beam. This discussion is limited to materials that behave the same in tension and compression. If this is not the case (such as when you use concrete), then you may need to check multiple points along the length of the beam. Additionally, if the section is not symmetric about the neutral axis, the maximum tensile and compressive stresses may not occur at the point where M is max or min. Lastly, this procedure only considers bending stresses. Although bending stresses do control the design of most beams, there are instances where shear or deflection will control. We will discuss this more in Chapter 11 in this text.</p>
-<div id="example-9.3" class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Example 9.3: Design  of a Standard Steel Section
+Example 9.3
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Knowing that the allowable normal stress for the steel used is 24 ksi, select the most economical wide-flange beam to support the loading shown.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -757,13 +893,33 @@ Example 9.3: Design  of a Standard Steel Section
 <p><img src="images/CH9 PNGs/Example 9.3 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="364"></p>
 </figure>
 </div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>The first step is to find the internal forces in the beam, we will start by calculating the reactions.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/CH9 PNGs/Example 9.3 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="365"></p>
 </figure>
 </div>
-<p>[math]</p>
+<p><span class="math display">\[
+\begin{aligned}
+\sum&amp; F_x =A_x =0\\
+\sum&amp; M_A =-8{~kips}(5{~ft})+5{~kips}(11{~ft})-(3\frac{kips}{ft}*6{~ft})(17{~ft})+B_y(20{~ft})=0 \\
+&amp;B_y =14.55{~kips} \\
+\sum&amp; F_y=A_y-8{~kips}+5{~kips}-(3\frac{kips}{ft})*6{~ft})+14.55{~kips}=0 \\
+&amp;A_y=6.45{~kips}
+\end{aligned}
+\]</span></p>
 <p>Now that we have the reactions, we can build the shear diagram. We will start on the left side and go up the reaction at support A, 6.45 kips. We will continue along the beam following the loads to finish the shear diagram.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -785,9 +941,9 @@ Example 9.3: Design  of a Standard Steel Section
 <p>From the moment diagram we can see that |M<sub>max</sub>| = 35.28 kip*ft. We will use this value and σ<sub>all</sub> = 24 ksi (given in the problem statement) to calculate the minimum section modulus needed, <em>S<sub>min</sub></em>.</p>
 <p><span class="math display">\[
 \begin{aligned}
-&amp; S_\text{min}=\frac{|M_\text{max}|}{\sigma_\text{all}} \\
-&amp; S_\text{min}=\frac{(35.28\text{ kip} * \text{ft})(12\text{ in/ft)}}{24\text{ ksi}} \\
-&amp; S_\text{min}=17.64 \text{ in}^3
+&amp; S_{min}=\frac{|M_\text{max}|}{\sigma_\text{all}} \\
+&amp; S_{min}=\frac{(35.28{~kip}\cdot{ft})(12\frac{in.}{ft})}{24{~ksi}} \\
+&amp; S_{min}=17.64{~in}^3
 \end{aligned}
 \]</span></p>
 <p>Now that we know the minimum section modulus needed for this beam, we will go to the standard beam table in Appendix A. Focusing on the S<sub>x</sub> column, we will start at the bottom of the table and choose one shape from each height section that is applicable.</p>
@@ -801,6 +957,27 @@ Example 9.3: Design  of a Standard Steel Section
 <p>We didn’t choose any from the W4, W5, and W6 groupings because none of these beams have a section modulus greater than 17.64 in<sup>3</sup>. We also didn’t continue with groupings greater than W14 because those sections are far larger than what we need as noted by the weight (second number in the designation).</p>
 <p>Now we will choose the most economical beam by comparing the last number in the designation, as this represents the weight per foot of the beam. The most economical section for this material and loading is the <strong>W10 x 19</strong>. This beam weighs 19 lb/ft and is the lightest of the beams we identified.</p>
 </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Step-by-step: Most Economical Beam Design (standard shapes)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Establish the allowable stress, σ<sub>all</sub>, value of sigma for the chosen material by referring to a table of material properties or consulting design specifications. Proceed with the following steps assuming that σ<sub>all</sub> is the same for tension and compression.</li>
+<li>Determine the maximum absolute value of the bending moment |M<sub>max</sub>| <strong>i</strong>n the beam by drawing the shear force and bending moment diagrams. (Review of this is in chapter 7 of this text).</li>
+<li>Calculate the minimum allowable value of the section modulus using this equation: <span class="math inline">\(S_{\text {min }}=\frac{\left|M_{\max }\right|}{\sigma_{\text {all }}}\)</span></li>
+<li>For a rolled steel beam, refer to the relevant table in the Appendix. Among the accessible beam sections, focus solely on those with a section modulus surpassing the minimum value calculated in step 3, S <strong>≥</strong> S<sub>min</sub>. Start at the bottom of the table and select one beam in each height section (if applicable). Then from this short list, choose the section with the smallest weight per unit length, as it represents the most economical option for which S <strong>≥</strong> S<sub>min</sub>. It’s essential to note that this choice may not necessarily correspond to the section with the smallest S value.</li>
+</ol>
 </div>
 </div>
 </section>
@@ -827,17 +1004,17 @@ c=\frac{h}{2}
 S_{\text {min }}=\frac{I}{c}=\frac{2 b h^3}{12 h}=\frac{b h^2}{6}
 \]</span></p>
 <p>Problems will be set up such that there is a relationship between b and h, which leaves only one unknown that can be solved for directly. This will be the minimum acceptable size for this dimension—anything larger than the calculated value will not fail due to bending stress.</p>
-<div id="example-9.4" class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div id="example-9.4" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example 9.4: Design of rectangular cross-section
+Example 9.4
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>A simply supported timber beam spans a gap of 10 m. It is subjected to a uniform distributed load w = 15 kN/m as shown. The beam has a rectangular cross-section and will be manufactured such that the height is 2x the base. Determine the minimum acceptable dimensions for the cross-section of this beam if the maximum allowable bending stress of the timber is 12 MPa.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -845,39 +1022,54 @@ Example 9.4: Design of rectangular cross-section
 <p><img src="images/CH9 PNGs/Example 9.4 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="335"></p>
 </figure>
 </div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>The allowable stress is given as σ<sub>all</sub> = 12 MPa. Determine the magnitude of the maximum internal bending moment by drawing the shear force and bending moment diagrams. Since the loading is symmetric, the total applied load of 15 * 10 = 150 kN will be split evenly between the two supports. The reaction force at each support will be 75 kN.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/CH9 PNGs/Example 9.4 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="332"></p>
 </figure>
 </div>
-<p>The magnitude of the maximum internal bending moment |M<sub>max</sub>| = 187.5 kN*m</p>
+<p>The magnitude of the maximum internal bending moment |M<sub>max</sub>| = 187.5 kN·m</p>
 <p>Now we can determine the required section modulus. Be careful with the order of magnitude of the bending moment and allowable stress.</p>
 <p><span class="math display">\[
-S_\text{min}=\frac{187.5\times10^3}{12\times10^6}=0.015625 \mathrm{~m}^3
+S_\text{min}=\frac{187.5\times10^3{~N}\cdot{m}}{12\times10^6\frac{N}{m^2}}=0.015625{~m}^3
 \]</span></p>
 <p>We can use this value to determine the required dimensions of the cross-section. Recall that h = 2b for this beam.</p>
 <p><span class="math display">\[
 \begin{gathered}
-S_{\text {min }}=0.015625=\frac{b h^2}{6}=\frac{b(2 b)^2}{6}=\frac{4 b^2}{6}=\frac{2}{3} b^2 \\
-b^2=\frac{3}{2} * 0.015625=0.0234375 \\
-b=\sqrt{0.0} \overline{234375}=0.153 \mathrm{~m} \\
-b=153 \mathrm{~mm} \\
-h=2 b=2 * 151.3=306 \mathrm{~mm}
+S_{min}=0.015625{~m^3}=\frac{b h^2}{6}=\frac{b(2 b)^2}{6}=\frac{4 b^3}{6}=\frac{2}{3} b^3 \\
+b^2=\frac{3}{2} * 0.015625{~m^3}=0.0234375{~m^3} \\
+b=~^3\sqrt{0.0234375}=0.286{~m} \\
+b=286{~mm} \\
+h=2b=2 * 286=572{~mm}
 \end{gathered}
 \]</span></p>
-<p>The minimum required dimensions to ensure this beam doesn’t fail due to bending stress are b = 153 mm and h = 306 mm.</p>
+<p>The minimum required dimensions to ensure this beam doesn’t fail due to bending stress are b = 286 mm and h = 572 mm.</p>
 </div>
 </div>
 </div>
-<p>For the purposes of this text, it is appropriate to give exact answers to 3 significant figures. In practice we wouldn’t generally specify the required dimension down to the mm since this is unnecessarily precise to manufacture. It is more practical to design to perhaps the nearest 10 mm, remembering to always round up. For example, we calculated the required dimension b = 153 mm. We must not round this down to 150 mm as this are below the required value, but rounding up to 160 mm would be acceptable. While not included in this problem, there would also be a factor of safety (Section 4.8) included in all designs in practice.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+</div>
+</div>
+</div>
+<p>For the purposes of this text, it is appropriate to give exact answers to 3 significant figures. In practice we wouldn’t generally specify the required dimension down to the mm since this is unnecessarily precise to manufacture. It is more practical to design to perhaps the nearest 10 mm, remembering to always round up. For example, we calculated the required dimension b = 153 mm. We must not round this down to 150 mm as this are below the required value, but rounding up to 160 mm would be acceptable. While not included in this problem, there would also be a factor of safety (<a href="#sec-4.8" class="quarto-xref"><span class="quarto-unresolved-ref">sec-4.8</span></a>) included in all designs in practice.</p>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Step-by-step: Title?
+Step-by-step: Most Economical Beam Design (rectangular sections)
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -892,8 +1084,8 @@ Step-by-step: Title?
 </section></details>
 </section>
 
-<section id="unsymmetric-bendingmoment-arbitrarily-applied" class="level2" data-number="9.3">
-<h2 data-number="9.3" class="anchored" data-anchor-id="unsymmetric-bendingmoment-arbitrarily-applied"><span class="header-section-number">9.3</span> Unsymmetric Bending—Moment Arbitrarily Applied</h2>
+<section id="sec-9.3" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="sec-9.3"><span class="header-section-number">9.3</span> Unsymmetric Bending—Moment Arbitrarily Applied</h2>
 <details>
 <summary>
 Click to expand
@@ -929,21 +1121,21 @@ y=\frac{M_y I_z}{M_z I_y} z
 <p><span class="math display">\[
 y=\left(\frac{I_z}{I_y} \tan \theta\right) z
 \]</span></p>
-<p>Since the slope of the line is [math] where the angle α represents the angle the neutral axis forms with the z axis and can be written as:</p>
+<p>Since the slope of the line is <span class="math inline">\(\tan \alpha=y / z\)</span> where the angle α represents the angle the neutral axis forms with the z axis and can be written as:</p>
 <p><span class="math display">\[
 \tan \alpha=y / z
 \]</span></p>
-<div id="example-9.5" class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div id="example-9.5" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example 9.5: Unsymmetric Bending 
+Example 9.5
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>A bending moment M = 400 kip⸱in. is applied around an axis 65° above the negative z-axis as shown. Determine the bending stress at corners A, B, C, and D. Also determine the orientation of the neutral axis with respect to the z-axis.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -951,19 +1143,30 @@ Example 9.5: Unsymmetric Bending 
 <p><img src="images/CH9 PNGs/Example 9.5 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="410"></p>
 </figure>
 </div>
-<p><strong>Solution</strong></p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>We first determine the components of the bending moment around the y- and z-axes:</p>
 <p><span class="math display">\[
 \begin{aligned}
-&amp; M_y=-400 \sin \left(65^{\circ}\right)=-362.5 \text{ kip} \cdot \text {in } \\
-&amp; M_z=-400 \cos \left(65^{\circ}\right)=-322.6 \text{ kip} \cdot \text {in }
+&amp; M_y=-400 \sin(65^{\circ})=-362.5{~kip}\cdot{in.} \\
+&amp; M_z=-400 \cos(65^{\circ})=-322.6{~kip}\cdot{in.}
 \end{aligned}
 \]</span></p>
 <p>We’ll also need the area moment of inertia around both axes:</p>
 <p><span class="math display">\[
 \begin{gathered}
-I_y=\frac{8 * 15^3}{12}=2250 \text{ in}^4 \\
-I_z=\frac{15 * 8^3}{12}=640 \text{ in}^4
+I_y=\frac{8 * 15^3}{12}=2250{~in.}^4 \\
+I_z=\frac{15 * 8^3}{12}=640{~in.}^4
 \end{gathered}
 \]</span></p>
 <p>Now we can calculate the stress at each corner using</p>
@@ -973,19 +1176,19 @@ I_z=\frac{15 * 8^3}{12}=640 \text{ in}^4
 <p>Pay close attention to the signs used for each term.</p>
 <p>A:</p>
 <p><span class="math display">\[
-\sigma_A=-\frac{-322.6 *-4}{640}+\frac{-362.5 * 7.5}{2250}=-2.02 \mathrm{ksi}-1.21 \mathrm{ksi}=-3.23 \mathrm{ksi}=3.23 \text{ ksi }(C)
+\sigma_A=-\frac{-322.6{~kip}\cdot{in.} *-4{~in.}}{640{~in.}^4}+\frac{-362.5{~kip}\cdot{in.} * 7.5{~in.}}{2250{~in.}^4}=-2.02{~ksi}-1.21{~ksi}=-3.23{~ksi}=3.23{~ksi}~(C)
 \]</span></p>
 <p>B:</p>
 <p><span class="math display">\[
-\sigma_B=-\frac{-322.6 * 4}{640}+\frac{-362.5 * 7.5}{2250}=2.02 \mathrm{ksi}-1.21 \mathrm{ksi}=0.810 \mathrm{ksi}=0.810 \text{ ksi }(T)
+\sigma_B=-\frac{-322.6{~kip}\cdot{in.} * 4{~in.}}{640{~in.}^4}+\frac{-362.5{~kip}\cdot{in.} * 7.5{~in.}}{2250{~in.}^4}=2.02{~ksi}-1.21{~ksi}=0.810{~ksi}=0.810{~ksi }~(T)
 \]</span></p>
 <p>C:</p>
 <p><span class="math display">\[
-\sigma_C=-\frac{-322.6 * 4}{640}+\frac{-362.5 *-7.5}{2250}=2.02 \mathrm{ksi}+1.21 \mathrm{ksi}=3.23 \mathrm{ksi}=3.23 \text{ ksi }(T)
+\sigma_C=-\frac{-322.6{~kip}\cdot{in.} * 4{~in.}}{640{~in.}^4}+\frac{-362.5{~kip}\cdot{in.} *-7.5{~in.}}{2250{~in.}^4}=2.02{~ksi}+1.21{~ksi}=3.23{~ksi}=3.23{~ksi}~(T)
 \]</span></p>
 <p>D:</p>
 <p><span class="math display">\[
-\sigma_D=-\frac{-322.6 *-4}{640}+\frac{-362.5 *-7.5}{2250}=-2.02 k s i+1.21 k s i=-0.810 k s i=0.810 \text{ ksi }(C)
+\sigma_D=-\frac{-322.6{~kip}\cdot{in.} *-4{~in.}}{640{~in.^4}}+\frac{-362.5{~kip}\cdot{in.} *-7.5{~in.}}{2250{~in.}^4}=-2.02{~ksi}+1.21{~ksi}=-0.810{~ksi}=0.810{~ksi}~(C)
 \]</span></p>
 <p>Note that due to the symmetry of the cross-section, the stresses at diagonally opposite corners have the same magnitude but opposite signs. This can be used to shorten the problem by only calculating the stresses at two corners (say A and B) and identifying the stresses at the opposite corners.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -997,23 +1200,26 @@ I_z=\frac{15 * 8^3}{12}=640 \text{ in}^4
 <p><span class="math display">\[
 \begin{gathered}
 \tan (\alpha)=\frac{I_z}{I_y} \tan (\theta) \\
-\alpha=\tan ^{-1}\left(\frac{640}{2250} \tan \left(65^{\circ}\right)\right)=31.4^{\circ}
+\alpha=\tan ^{-1}\left(\frac{640{~in.}^4}{2250{~in.}^4} \tan \left(65^{\circ}\right)\right)=31.4^{\circ}
 \end{gathered}
 \]</span></p>
 </div>
 </div>
 </div>
-<div id="example-9.6" class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+</div>
+</div>
+</div>
+<div id="example-9.6" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example 9.6: Unsymmetric Bending 
+Example 9.6
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>A bending moment M = 25 kip⸱ft is applied to a W14 x 43 beam around an axis 40° above the positive z-axis as shown. Determine the maximum tensile bending stress in the section and the orientation of the neutral axis with respect to the z-axis.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -1021,13 +1227,24 @@ Example 9.6: Unsymmetric Bending 
 <p><img src="images/CH9 PNGs/Example 9.6 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="313"></p>
 </figure>
 </div>
-<p><strong>Solution</strong></p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The dimensions of the W14 x 43 beam can be found in Appendix A. We can also look up the area moment of inertia about both axes.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/CH9 PNGs/Example 9.6 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="313"></p>
 </figure>
 </div>
-<p>The dimensions of the W14 x 43 beam can be found in Appendix A. We can also look up the area moment of inertia about both axes.</p>
 <p><span class="math display">\[
 \begin{gathered}
 I_y=45.2 \text{ in}^4 \\
@@ -1037,17 +1254,17 @@ I_z=428 \text{ in}^4
 <p>Next determine the components of the bending moment around the y- and z-axes. Since the bending moment is given in kip⸱ft and all of the dimensions are given in inches, we’ll convert the bending moment to kip⸱in at this stage.</p>
 <p><span class="math display">\[
 \begin{aligned}
-&amp; M_y=25 \sin \left(40^{\circ}\right) * 12=193 \mathrm{kip} \cdot \text { in } \\
-&amp; M_z=25 \cos \left(40^{\circ}\right) * 12=230 \mathrm{kip} \cdot \text { in }
+&amp; M_y=25 \sin \left(40^{\circ}\right) * 12=193{~kip}\cdot{~in.} \\
+&amp; M_z=25 \cos \left(40^{\circ}\right) * 12=230{~kip}\cdot{~in.}
 \end{aligned}
 \]</span></p>
 <p>The bending stress at any point can be calculated using:</p>
 <p><span class="math display">\[
 \sigma=-\frac{M_z y}{I_z}+\frac{M_y z}{I_y}
 \]</span></p>
-<p>The maximum tensile bending stress will occur at the corner where both of these terms are positive. Since both M<sub>z</sub> and My are positive, it should be apparent that the y-distance should be negative and the z-distance should be positive, so the maximum tensile bending stress will occur at the bottom left corner. At this point, <span class="math inline">\(y=-\frac{13.7}{2}=-6.85 \text{ in}\)</span> and <span class="math inline">\(z=\frac{8}{2}=4 \text{ in}\)</span>.</p>
+<p>The maximum tensile bending stress will occur at the corner where both of these terms are positive. Since both M<sub>z</sub> and My are positive, it should be apparent that the y-distance should be negative and the z-distance should be positive, so the maximum tensile bending stress will occur at the bottom left corner. At this point, <span class="math inline">\(y=-\frac{13.7{~in.}}{2}=-6.85{~in.}\)</span> and <span class="math inline">\(z=\frac{8{~in.}}{2}=4{~in.}\)</span>.</p>
 <p><span class="math display">\[
-\sigma=-\frac{230 *-6.85}{428}+\frac{193 * 4}{45.2}=3.68+17.1\text{ ksi}=20.8 \text{ ksi }(T)
+\sigma=-\frac{230{~kip}\cdot{in.} *-6.85{~in.}}{428{~in.}^4}+\frac{193{~kip}\cdot{in.} * 4{~in.}}{45.2{~in.}^4}=3.68{~ksi}+17.1{~ksi}=20.8{~ksi}~(T)
 \]</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1058,16 +1275,37 @@ I_z=428 \text{ in}^4
 <p><span class="math display">\[
 \begin{gathered}
 \tan (\alpha)=\frac{I_z}{I_y} \tan (\theta) \\
-\alpha=\tan ^{-1}\left(\frac{428}{45.2} \tan \left(40^{\circ}\right)\right)=82.8^{\circ}
+\alpha=\tan ^{-1}\left(\frac{428{~in.}^4}{45.2{~in.}^4} \tan \left(40^{\circ}\right)\right)=82.8^{\circ}
 \end{gathered}
 \]</span></p>
 </div>
 </div>
 </div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Step-by-step: Unsymmetric Bending
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><p>Determine the geometric properties of the cross-section, including centroid location and area moments of inertia (<span class="math inline">\(I_y~\text{and}~I_z\)</span>)</p></li>
+<li><p>Determine the point of interest and the distances in the y- and z-directions from the centroid to this point (<span class="math inline">\(y~\text{and}~z\)</span>)</p></li>
+<li><p>Determine the y- and z-components of the internal bending moment <span class="math inline">\(M_y~\text{and}~M_z\)</span></p></li>
+<li><p>Calculate the bending stress at the point of interest from <span class="math inline">\(\sigma=-\frac{M_z y}{I_z}+\frac{M_y z}{I_y}\)</span></p></li>
+</ol>
+</div>
+</div>
 </details>
 </section>
-<section id="summary" class="level2" style=".unnumbered" data-number="9.4">
-<h2 style=".unnumbered" data-number="9.4" class="anchored" data-anchor-id="summary"><span class="header-section-number">9.4</span> Summary</h2>
+<section id="summary" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="summary">Summary</h2>
 <details>
 <summary>
 Click to expand

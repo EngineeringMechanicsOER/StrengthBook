@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Mechanics of Deformable Bodies - 6&nbsp; Torsional Loading</title>
+<title>Mechanics of Deformable Bodies - 6&nbsp; Torsion</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -71,7 +71,37 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles/custom.css">
 </head>
 
 <body class="nav-sidebar docked">
@@ -83,7 +113,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Chapter 6.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Torsional Loading</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Chapter 6.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Torsion</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -150,7 +180,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Chapter 6.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Torsional Loading</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Torsion</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -252,7 +282,30 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">6.1</span> Introduction</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <ul class="collapse">
+  <li><a href="#the-effect-of-torsion" id="toc-the-effect-of-torsion" class="nav-link" data-scroll-target="#the-effect-of-torsion"><span class="header-section-number">6.0.1</span> The Effect of Torsion</a></li>
+  <li><a href="#determination-of-internal-torques" id="toc-determination-of-internal-torques" class="nav-link" data-scroll-target="#determination-of-internal-torques"><span class="header-section-number">6.0.2</span> Determination of Internal Torques</a></li>
+  <li><a href="#sign-convention-and-representation-of-torque" id="toc-sign-convention-and-representation-of-torque" class="nav-link" data-scroll-target="#sign-convention-and-representation-of-torque"><span class="header-section-number">6.0.3</span> Sign Convention and Representation of Torque</a></li>
+  </ul></li>
+  <li><a href="#sec-6.1" id="toc-sec-6.1" class="nav-link" data-scroll-target="#sec-6.1"><span class="header-section-number">6.1</span> Calculation of Shear Stress due to Pure Torsion</a></li>
+  <li><a href="#sec-6.2" id="toc-sec-6.2" class="nav-link" data-scroll-target="#sec-6.2"><span class="header-section-number">6.2</span> Calculation of Angle of Twist</a>
+  <ul class="collapse">
+  <li><a href="#units" id="toc-units" class="nav-link" data-scroll-target="#units"><span class="header-section-number">6.2.1</span> Units</a></li>
+  <li><a href="#notation" id="toc-notation" class="nav-link" data-scroll-target="#notation"><span class="header-section-number">6.2.2</span> Notation</a></li>
+  </ul></li>
+  <li><a href="#sec-6.3" id="toc-sec-6.3" class="nav-link" data-scroll-target="#sec-6.3"><span class="header-section-number">6.3</span> Statically Indeterminate Torsion</a>
+  <ul class="collapse">
+  <li><a href="#method-of-superposition" id="toc-method-of-superposition" class="nav-link" data-scroll-target="#method-of-superposition"><span class="header-section-number">6.3.1</span> Method of Superposition</a></li>
+  </ul></li>
+  <li><a href="#sec-6.4" id="toc-sec-6.4" class="nav-link" data-scroll-target="#sec-6.4"><span class="header-section-number">6.4</span> Power Transmission</a>
+  <ul class="collapse">
+  <li><a href="#definition-of-power" id="toc-definition-of-power" class="nav-link" data-scroll-target="#definition-of-power"><span class="header-section-number">6.4.1</span> Definition of Power</a></li>
+  <li><a href="#units-1" id="toc-units-1" class="nav-link" data-scroll-target="#units-1"><span class="header-section-number">6.4.2</span> Units</a></li>
+  <li><a href="#torque-transfer-between-connected-gears-gear-ratio" id="toc-torque-transfer-between-connected-gears-gear-ratio" class="nav-link" data-scroll-target="#torque-transfer-between-connected-gears-gear-ratio"><span class="header-section-number">6.4.3</span> Torque Transfer Between Connected Gears (Gear Ratio)</a></li>
+  <li><a href="#angular-velocity-ratio-of-connected-shafts" id="toc-angular-velocity-ratio-of-connected-shafts" class="nav-link" data-scroll-target="#angular-velocity-ratio-of-connected-shafts"><span class="header-section-number">6.4.4</span> Angular Velocity Ratio of Connected Shafts</a></li>
+  <li><a href="#angle-of-twist" id="toc-angle-of-twist" class="nav-link" data-scroll-target="#angle-of-twist"><span class="header-section-number">6.4.5</span> Angle of Twist</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -261,7 +314,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-torsional-loading" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Torsional Loading</span></span></h1>
+<h1 class="title"><span id="sec-torsional-loading" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Torsion</span></span></h1>
 </div>
 
 
@@ -289,21 +342,855 @@ Learning Objectives
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>Insert text</li>
+<li>Calculate internal reaction torques to use as inputs for determining shear stress and angle of twist at any given point in a body subjected to pure torsion.</li>
+<li>Understand and apply the shear stress equation for torque to determine shear stress at any given point in a body subjected to pure torsion.</li>
+<li>Understand and apply the torque twist equation to determine angle of twist at any given point in a body subjected to pure torsion.</li>
+<li>Apply the concept of kinematic constraints in combination with equilibrium to solve statically indeterminate problems in which the body is subjected to pure torsion.</li>
+<li>Describe and apply torsional concepts to shafts used in power transmission assemblies.</li>
 </ul>
 </div>
 </div>
-<section id="introduction" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">6.1</span> Introduction</h2>
+<section id="introduction" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="introduction">Introduction</h2>
 <details>
 <summary>
 Click to expand
 </summary>
-<p>Insert text</p>
+<p>Torsion is a moment applied around the longitudinal axis of a body. The effect of torsion is a twisting action. Torsion is found in many common situations. Some examples of applications in which torsion is a primary form of loading include:</p>
+<ol type="1">
+<li>In machinery, rotating shafts, such as transmission shafts that transmit power, are subjected to torque</li>
+<li>When one uses a torque wrench to tight or loosen a bolt, the bolt is subjected to torque</li>
+<li>Poles on which road signs and traffic lights are mounted are subjected to torque when forces (such as wind) are applied perpendicular to the sign.</li>
+<li>Hinge pins are subjected to torque when the rotating elements they are attached to (doors for example) are rotated.</li>
+</ol>
+<p><strong>Figure 6.1:</strong> needs caption</p>
+<p>This chapter will focus on bodies subjected to pure torsion (no axial or bending loads). These concepts will appear again in chapter 12 when more generalized loading conditions are discussed.</p>
+<section id="the-effect-of-torsion" class="level3" data-number="6.0.1">
+<h3 data-number="6.0.1" class="anchored" data-anchor-id="the-effect-of-torsion"><span class="header-section-number">6.0.1</span> The Effect of Torsion</h3>
+<p>As mentioned above, the effect of a torsional moment is to cause the body to twist. The resulting stress is a shear stress.</p>
+<p>Consider the pleated tube shown in figure 6.1 (a) and (b) below. Figure 6.1(a) shows the tube in an unloaded state with some of the pleats colored for identification. In figure 6.1(b), we see that after a torque is applied, the pleats move vertically but not horizontally. In addition, without the color present, it would be difficult to identify the displacement at all. We can say that all points remain in their original plane even in the deformed state so that the shape of the cross-section is unchanged.</p>
+<p><strong>Figure 6.2:</strong> Unloaded tube (a) and tube with torque applied (b).</p>
+<p>Now consider the I-beam subjected to torsion in figure 6.2. In this case we see that the shape of the cross-section changes and that the points do not remain in the same vertical plane (there is horizontal displacement as well as vertical). This shape change is referred to as warping. In this text, we will only be considering circular cross-sections with no warping.</p>
+<p><strong>Figure 6.3:</strong> I-beam subjected to torsion unloaded (a) and with applied torque (b).</p>
+<p>Going back to figure 6.1, let’s consider the shape formed by the non-displaced colored lines in figure 6.1(a) versus the displaced lines in figure 6.1(b). These images are shown again in figure 6.3. In the non-displaced case, a rectangle can be drawn around the green lines on the left with 90° corners. In the displaced case, the corners are no longer at 90°. From chapter 2, we know that this change in angle is the definition of shear strain. The evidence of shear strain indicates that the applied torque results in shear stress. In section 6.2, the equation that relates torque to shear stress will be derived.</p>
+<p><strong>Figure 6.4:</strong> Evidence of shear strain</p>
+</section>
+<section id="determination-of-internal-torques" class="level3" data-number="6.0.2">
+<h3 data-number="6.0.2" class="anchored" data-anchor-id="determination-of-internal-torques"><span class="header-section-number">6.0.2</span> Determination of Internal Torques</h3>
+<p>As with axial loading, the stress and deformations due to torsion vary from point to point within a body and are dependent on the internal torques at the individual points and geometric section properties. Internal torques can be found by sectioning bodies and applying equilibrium in a process also very similar as was done in the axial loading problems (see example 1.5 in chapter 1 and also examples 2.1 and 2.2 in chapter 2). In the case of internal torques, moment equilibrium around the longitudinal axis will be applied instead of force summation.</p>
+<p>Before looking at an example that illustrates the process of finding internal torque reactions, it would be beneficial to establish the sign conventions that will be used as well as ways of representing torque in this text.</p>
+</section>
+<section id="sign-convention-and-representation-of-torque" class="level3" data-number="6.0.3">
+<h3 data-number="6.0.3" class="anchored" data-anchor-id="sign-convention-and-representation-of-torque"><span class="header-section-number">6.0.3</span> Sign Convention and Representation of Torque</h3>
+<p>Just as is typically used for moments, the sign convention that will be used in this text for torques is to assign a positive sign to torques that are counterclockwise and a negative sign for those that are clockwise. However, the direction that a torque appears to be depends on the perspective from which the rotation is being observed. In figure 6.1 below, the applied torque would appear clockwise if viewed from the left end of the bar towards the right and counterclockwise if viewed from the right end of the bar towards the left. As long as one is being consistent, it is not usually important which perspective is used. However, a typical convention is to look from the free end of the shaft if there is one, towards the fixed end, or from the positive longitudinal axis if one is given, towards the negative.</p>
+<p><strong>Figure 6.5:</strong> Different directions for viewing torque result in different perspectives on sign.</p>
+<p>It can sometimes be difficult to visually determine whether a torque appears clockwise or counterclockwise, so one tool that can be used is the right-hand rule. If you use your right hand and curl your fingers in the direction of the rotation represented by the torque arrow, a positive (counterclockwise) torque would be represented if your thumb points in the direction of the positive longitudinal axis (the x-axis in figure 6.2).</p>
+<p><strong>Figure 6.6:</strong> Using the right-hand rule to determine sign for torque</p>
+<p>When examining cut sections as will be needed to determine internal torques, establishing the sign of the internal torque requires looking from the direction of the cut edge towards the end of the cut section. One tool that can be used in this instance in place of direction visualization is to make the cut necessary to determine the internal torque in a given section and then imagine your right hand as being at the cut edge and curl your fingers in the direction of the torque. If your thumb points away from the cut edge, the internal torque is positive and vice versa. This is illustrated in figure 6.3.</p>
+<p><strong>Figure 6.7:</strong> Tool to determine sign of internal torques</p>
+<p>Finally, since circular arrows can be difficult to draw in a way that clearly conveys direction, double headed line arrows are frequently used to represent torque. Conventions can vary between texts and other sources. In this text, the following convention will be used:</p>
+<ol type="1">
+<li>On a whole body FBD, arrows facing in the direction of the positive longitudinal axis will be considered to indicate positive torques (counterclockwise) and vice versa. When applying equilibrium, these signs will be used.</li>
+<li>The same will hold true for cut section FBD’s used to determine internal torques. However, if applying equilibrium indicates that the internal torque points away from the cut section, the torque can be concluded to be positive (counterclockwise) for the purposes of calculating angle of twist (as discussed in section 6.3). Internal torque that points towards the cut section can be concluded to be negative (clockwise). In addition, on the cut sections, the regular convention of right directed arrows being positive and left directed arrows being negative for the purpose of summing moments will be used.</li>
+</ol>
+<p>The direction of the internal torque is not important in calculating shear stress (the sign on the stress requires concepts that will be discussed in chapter 12), but it is important when calculating angle of twist (section 6.3).</p>
+<p>Example 6.1 demonstrates how to determine internal torques in a multi-section body as well as how to apply the above-described sign conventions.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example 6.1
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>A multi-section steel bar is supported by a fixed support at A and is subjected to torque T<sub>B</sub> = 70 N mm and T<sub>E</sub> = 30 N mm. Determine the internal torque at all points in the shaft.</p>
+<p>[figure]</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Since the loading consists of torques applied at two distinct points, the internal torque will be constant in the sections to the left and right of where the torques are applied. Therefore, the problem reduces down to determining the internal torque between A and B and the internal torque between B and E. Note that because A is a fixed support, there will be an additional torque (the reaction torque) there that can be determined by applying equilibrium to the whole shaft if necessary. In this particular example, we will discuss why the reaction force is not necessary to calculate the internal torques.&nbsp;</p>
+<p>To determine the internal torque in section AB, we can cut the shaft anywhere between points A and B and draw an FBD of the section to the left of the cut (everything from point A to the cut) or the section to the right of the cut (everything from the cut to E). An illustration of the cut and the resulting FBD’s are shown below. Note that the internal torque T<sub>AB</sub> is drawn in opposite directions on the two sections. This must be the case if the bar is in equilibrium.</p>
+<p>[figure]</p>
+<p>Before applying equilibrium, note the double headed arrows that represent the torques and the significance of the directions. In the above diagrams T<sub>AB</sub> is drawn as <strong>positive</strong> internal torque on both the left and right section diagrams <strong>since it points away from the cut</strong> in both instances. However, when summing moments (as shown below), the direction of the arrow will be used as the sign in the equilibrium equation.</p>
+<p>For the applied loads, since T<sub>A</sub> is drawn in the negative x direction on the left side cut section, it is assumed to be negative (or look clockwise as viewed in the direction of E towards A). On the right side diagram, T<sub>B</sub> is drawn in the positive x direction since it appears counterclockwise as viewed from E towards A. Applied torque T<sub>E</sub> is drawn in the negative direction since it appears clockwise as viewed in the direction of E towards A.</p>
+<p>Since writing equilibrium equations based on the FBD of the left side section would require first determining the reaction torque at wall A, we will choose to use the FBD of the section to the right of the cut instead.</p>
+<p>Recall that torques are moments that cause the body to twist. In this problem the torques act around the x-axis. Applying the moment equilibrium equation on this section gives:</p>
+<p><span class="math display">\[
+\begin{gathered}
+\sum M_x=-T_{A B}+T_B-T_E=0 \\
+\sum M_x=-T_{A B}+70 \mathrm{Nmm}-30 \mathrm{Nmm}=0 \\
+T_{A B}=40 \mathrm{Nmm}
+\end{gathered}
+\]</span></p>
+<p>The positive result confirms that the assumed direction for T<sub>AB</sub> is the correct one, so it is a counterclockwise torque since it points away from the cut. The same result would have been obtained by applying equilibrium to the left side section after determining T<sub>A</sub>.</p>
+<p>Similarly, the internal torque in all parts of the shaft between B and E can be determined by cutting the shaft at a non-specific point between B and E and applying equilibrium to the section of shaft to the left of the cut or the section to the right of the cut. The two FBD’s are shown below. Once again, the internal torque (T<sub>BE</sub> in this case) is drawn in the direction away from the cut on both sections, so it is assumed to be positive on both sections.</p>
+<p>[figure]</p>
+<p>Applying the moment equilibrium equation on the right section gives:</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; \sum M_x=-T_{B E}-T_E=0 \\
+&amp; \sum M_x=-T_{B E}-30 N \mathrm{~mm}=0 \\
+&amp; T_{B E}=-30 \mathrm{Nmm}
+\end{aligned}
+\]</span></p>
+<p>The negative result indicates that TBE goes in the opposite direction than what is drawn, so it points towards the cut section and is clockwise.</p>
+<p><strong>The internal torque for all points between A and B is 40 N mm counterclockwise.</strong></p>
+<p><strong>The internal torque for all points between B and E is 30 N mm clockwise.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section></details>
+</section>
+
+<section id="sec-6.1" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="sec-6.1"><span class="header-section-number">6.1</span> Calculation of Shear Stress due to Pure Torsion</h2>
+<details>
+<summary>
+Click to expand
+</summary>
+<p>In this section, the derivation of the shear stress equation for torque is explained before presenting it so that the inputs to the resulting equation, as well as the assumptions, etc., can be better understood.</p>
+<p>Consider a circular shaft that is fixed on one end and subjected to torque on the free end, as shown in figure 6.1.1. The shaft has an outer radius, c, as shown in figure 6.1.2 (b). For the given loading, the internal torque at any location along the shaft, x, would also be T.</p>
+<p><strong>Figure 6.8:</strong> Illustration of fixed end shaft subjected to torque and smaller sliver within the shaft.</p>
+<p>Before the torque, T, is applied, a horizontal line segment drawn across a sliver of the shaft, marked by points A and B, has a length of Δx. Now let’s consider the same shaft segment after the torque has been applied and points A and B move to A’ and B’. An illustration of the resulting geometry can be seen in figure 6.1.2 (a). Since the shaft is fixed on the left end, we see that point B on the shaft will rotate more than point A. We can approximate that line segment AB remains linear for a very narrow section of shaft (infinitely small Δx).</p>
+<p><strong>Figure 6.9:</strong> Illustration of the displacement of points A and B on the shaft (a) and the cross-section of the shaft (b).</p>
+<p>Recalling that shear strain is the change in the angle between two lines that are originally perpendicular, we can see that the angle of tilt in AB after the torque is applied is the shear strain, γ, that results from the torque. The displacement of point B from the original position to B’ on the cross-section is shown in figure 6.1.2 (b). For an infinitely small Δx, the arc segment from B to B’ can be approximated as vertical so that the shear strain γ can be expressed using trigonometry as:</p>
+<p><span class="math display">\[
+\tan (\gamma)=\frac{B B^{\prime}}{\Delta x}
+\]</span></p>
+<p>The small angle approximation (again, based on an infinitely small Δx), gives:</p>
+<p><span class="math display">\[
+\gamma=\frac{B B^{\prime}}{\Delta x}
+\]</span></p>
+<p>Now consider the cross-section of the shaft where point B and B’ are located, shown in figure 6.1.2b. As discussed above, B’ is the location point B moves to when the torque is applied, so the angle between the radial lines that go from the center to points B and B’, respectively, of the shaft segment is the angle of twist of the segment. Since we are considering just a section of the shaft, the angle is represented as Δφ (as opposed to the absolute angle of twist, φ, as measured from the fixed end). If the outer radius of the shaft is r = c, then the length of BB’ is given by the arclength, so:</p>
+<p><span class="math display">\[
+\mathrm{BB}^{\prime}=\mathrm{c}(\Delta \varphi)
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+\gamma=\frac{c(\Delta \varphi)}{\Delta x}
+\]</span></p>
+<p>Generalizing this result for any point on the cross-section that is located at an arbitrary radial distance ρ from the center gives:</p>
+<p><span class="math display">\[
+\gamma=\frac{\rho(\Delta \varphi)}{\Delta x}
+\]</span></p>
+<p>The resulting expression of γ shows that the shear strain varies linearly with ρ from the center of the cross-section to the outer radius, as illustrated in figure 6.1.3. The shear strain is 0 at the center, and the max shear strain occurs at the max value of ρ = c.</p>
+<p><span class="math display">\[
+\gamma_{\max }=\frac{c(\Delta \varphi)}{\Delta x}
+\]</span></p>
+<p>Substituting the general and max expressions for shear strain into Hooke’s Law for shear stress, τ = Gγ, reveals that shear stress also varies linearly from 0 to τ<sub>max</sub> in going from the center of the cross-section to the outer radius.</p>
+<p><span class="math display">\[
+\tau=G \gamma=G \frac{\rho(\Delta \varphi)}{\Delta x}, \tau_{\max }=G \frac{c(\Delta \varphi)}{\Delta x}
+\]</span></p>
+<p><strong>Figure 6.10:</strong> Shear strain and shear stress vary linearly from the center to the outer edge of the circular cross-section.</p>
+<p>Looking at figure 6.1.3 shows that the slope of the linear variation is <span class="math inline">\(\frac{\tau_{\max }}{c}\)</span> and the shear stress can also be expressed as:</p>
+<p><span class="math display">\[
+\tau=\frac{\tau_{\max }}{c} \rho\quad(6.1)
+\]</span></p>
+<p>The last step in developing the shear stress relationship to torque involves considering the equilibrium of the shaft. Refer to figure 6.1.4. If each point (i) on the cross-section with area dA<sub>i</sub> has a given amount of shear stress,τ<sub>i</sub>, given by equation 6.1.1, then the corresponding force at each point dF<sub>i</sub> can be calculated as:</p>
+<p><span class="math display">\[
+\mathrm{dF}_i=\tau_i \mathrm{dA}_i=\frac{\tau_{\max }}{c} \rho_i d A\quad(6.2)
+\]</span></p>
+<p><strong>Figure 6.11:</strong> Illustration of infinitesimal forces on the shaft cross-section.</p>
+<p>Recalling that the internal torque everywhere on the shaft is T, equilibrium dictates that the sum of the moments about the center of the cross-section should be equal to T. For an infinite number of points on the cross-section, this summation can be performed as an integral:</p>
+<p><span class="math display">\[
+T=\int d F_i \rho_i=\int \frac{\tau_{\max }}{c} \rho_i^2 d A\quad(6.3)
+\]</span></p>
+<p>Since τ<sub>max</sub> and c are constant, they can be pulled outside the integral, leaving the integral portion to be <span class="math inline">\(\int \rho_i^2 d A\)</span>, which is the definition of the polar moment of inertia. The polar moment of inertia is the moment of inertia around the out of plane axis, which is the x-axis. The polar moment of inertia will be denoted with the letter J in this text.</p>
+<p>For a solid circular cross-section of outer radius, r, and outer diameter, d:</p>
+<p><span class="math display">\[
+J_{\text {solid }}=\frac{\pi}{4} r^4=\frac{\pi}{64} d^4
+\]</span></p>
+<p>For a tube or hollow circular cross-section with outer radius and diameter, r<sub>o</sub> and d<sub>o</sub>, respectively, and inner radius and diameter, r<sub>i</sub> and d<sub>i</sub>, respectively:</p>
+<p><span class="math display">\[
+J_{\text {hollow }}=\frac{\pi}{4}\left(r_o^4-r_i^4\right)=\frac{\pi}{32}\left(d_o^4-d_i^4\right)
+\]</span></p>
+<p>Equation 6.3 can be simplified to:</p>
+<p><span class="math display">\[
+T=\frac{\tau_{\max } J}{c}\quad(6.4)
+\]</span></p>
+<p>Solving equation 6.4 for τ<sub>max</sub> gives:</p>
+<p><span class="math display">\[
+\tau_{\max }=\frac{T c}{J} \quad(6.5)
+\]</span></p>
+<p>Solving equation 6.2.1 for τ<sub>max</sub> and substituting the resulting expression into equation 6.2.5 gives a more general form of the equation:</p>
+<p><span class="math display">\[
+\tau=\frac{T \rho}{J} \quad(6.6)
+\]</span></p>
+<p>Keep in mind that the “max” designation in equation 6.5 is referring to the max shear stress with respect to the variation across the surface of the cross-section.</p>
+<p>Note that for now, only the magnitude of the shear stress (without sign) will be determined since the sign for shear stress is not based purely on the sign of the torque. The sign on shear stress will be discussed in chapter 12.</p>
+<p>Example 6.2 demonstrates the use of the above equations to determine shear stress in the same circular bar assembly used in example 6.1.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example 6.2
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The multi-section solid steel bar of example 6.1 is repeated here with the same loading (TB = 70 N mm and TE = 30 N mm). Also, given the diameters: dAC = 50 mm, dCD = 20 mm, and dDE = 35 mm, determine the magnitude and location of the max shear stress in the bar assembly.</p>
+<p>[figure]</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>It can be seen from equation 6.5 that the max shear stress will depend on the internal torque and the geometrical properties of the shaft. Therefore, to find the max shear stress, we must calculate the shear stress at the outer radius for each distinct section of the shaft for which the internal torque and/or cross-sectional dimensions change. Each segment of the bar for which the internal torque stays constant, and the cross-sectional dimensions stay constant will have constant shear stress. In this example, there are 4 distinct sections for which to calculate shear stress:</p>
+<ol type="1">
+<li>Section AB which gets sectioned at B due to the applied torque</li>
+<li>Section BC which gets sectioned at C due to the geometry change at C</li>
+<li>Section CD which gets sectioned at D due to the geometry change at D</li>
+<li>Section DE which would get sectioned at E if E were not the end of the shaft</li>
+</ol>
+<p>From example 6.1, it is known that the magnitudes of the internal torque for all points between A and B, TAB, is 40 N mm and the internal torque for all points between B and E, TBE, is 70 N mm. Since the internal torque stays constant from B to E, it is known that TBC = TCD = TDE = 70 N mm. Recall that only the <strong>magnitude</strong> of shear stress will be calculated with the sign being discussed in chapter 12.</p>
+<p>Since the bar has a solid cross-section with the diameters given, we will use <span class="math inline">\(J_{\text {solid }}=\frac{\pi}{32} d^4\)</span> to calculate the polar moment of inertia at each section.</p>
+<p>Applying equation 6.5 to each section:</p>
+<p><span class="math display">\[
+\begin{gathered}
+\tau_{A B}=\frac{T_{A B} * c_{A B}}{J_{A B}}=\frac{0.04 N \cdot m * \frac{0.05}{2} m} {\frac{\pi}{32}(0.05 m)^4}=1629.7 \mathrm{~Pa}=1.630 \mathrm{kPa} \\
+\\
+\tau_{B C}=\frac{T_{B C} * c_{B C}}{J_{B C}}=\frac{0.07 \mathrm{~N} \cdot m * \frac{0.05}{2} m}{\frac{\pi}{32}(0.05 \mathrm{~m})^4}=2852 \mathrm{~Pa}=2.85 \mathrm{kPa} \\
+\\
+\tau_{C D}=\frac{T_{C D} * c_{C D}}{J_{C D}}=\frac{0.07 \mathrm{~N} \cdot m * \frac{0.02}{2} m}{\frac{\pi}{32}(0.02 m)^4}=44563 \mathrm{~Pa}=44.6 \mathrm{kPa} \\
+\\
+\tau_{D E}=\frac{T_{D E} * c_{D E}}{J_{D E}}=\frac{0.07 \mathrm{~N} \cdot \mathrm{m} * \frac{0.035}{2} m}{\frac{\pi}{32}(0.035 \mathrm{~m})^4}=8315 \mathrm{MPa}=8.32 \mathrm{kPa}
+\end{gathered}
+\]</span></p>
+<p><strong>The max shear stress in the bar is 44.6 kPa and occurs in section CD.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </details>
+</section>
+<section id="sec-6.2" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="sec-6.2"><span class="header-section-number">6.2</span> Calculation of Angle of Twist</h2>
+<details>
+<summary>
+Click to expand
+</summary>
+<p>In chapter 5, we derived and applied a formula for axial deformation. We will do something similar in this chapter for circular shafts subjected to torsion. The deformation of a shaft that arises from applying torsion, assuming deformation is restricted to the elastic deformation range for the material, is quantified by the angle of twist, φ. As discussed in section 6.1, and illustrated here again in figure 6.2.1, the angle of twist is the angle formed between the radial line that goes from the center of the cross section to a point in its original location and the radial line that goes from the center to the point in its new location after the torsional load is applied. The equation to determine angle of twist at various points along the shaft will be derived below.</p>
+<p><strong>Figure 6.12:</strong> The angle between B (original location) and B’ (where B moves to after torque is applied to the shaft) is the angle of twist, φ.</p>
+<p>Recall from section 6.1 that the shear strain <span class="math inline">\(\gamma=\frac{\rho(\Delta \varphi)}{\Delta x}\)</span>. Also recall that Δx represents the length of a section of shaft of arbitrary length and Δφ is the change in angle of twist that occurs across that length. For an infinitely small section of shaft, the shear strain equation can be expressed in terms of differentials: <span class="math inline">\(\gamma=\frac{\rho(d \varphi)}{d x}\)</span>.</p>
+<p>Now applying Hooke’s Law, τ = Gγ, and the equation for shear stress (equation 6.6) we get:</p>
+<p><span class="math display">\[
+\frac{\rho(d \varphi)}{d x}=\frac{\tau}{G}=\frac{T \rho}{J G}
+\]</span></p>
+<p>Solving for dφ gives:</p>
+<p><span class="math display">\[
+d \varphi=\frac{T d x}{J G}
+\]</span></p>
+<p>For a section (i) of shaft of length L<sub>i</sub> for which torque (T<sub>i</sub>), material (G<sub>i</sub>), and geometry (J<sub>i</sub>), stay constant, equation 6.2.1 becomes:</p>
+<p><span class="math display">\[
+\varphi_i=\frac{T_i L_i}{J_i G_i}
+\]</span></p>
+<p>Integrating both sides of equation 6.2.1 gives the total angle of twist for an entire shaft or section of shaft:</p>
+<p><span class="math display">\[
+\varphi=\int \frac{T d x}{J G}
+\]</span></p>
+<p>For multi-section bodies where each individual section has constant T, J, and G, the integral can be expressed in the form of a sum where the angle of twist of each distinct section is calculated individually and then they are all added together:</p>
+<p><span class="math display">\[
+\varphi=\varphi_i=\sum \frac{T_i L_i}{J_i G_i}
+\]</span></p>
+<p>In these calculations, the sign of internal torque will be important as it indicates the direction of the twist. If one section twists in one direction and the adjoining section twists in the opposite direction, the effect will be that the angles will subtract from each other resulting in a smaller overall angle of twist. On the other hand, if two adjoining sections twist in the same direction, the effect will be additive. According to the assigned sign convention discussed in section 6.1, an overall positive angle of twist indicates that the shaft twists counterclockwise when looking from the positive end of the longitudinal axis to the negative and vice versa.</p>
+<section id="units" class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="units"><span class="header-section-number">6.2.1</span> Units</h3>
+<p>If values for T, L, J, and G are substituted in equation 6.2.2 such that the units are all consistent with each other, the overall unit works out to be unitless as is expected for an angle calculation. Since the calculation is for an angle, the actual unit is considered to be radians. If an angle is desired to be in degrees, the result of the equation would need to be converted by multiplying the result by π/180.</p>
+<p>Because the angle of twist often works out to be very small, it may be desired to express the value in terms of μrad, which is 10<sup>-6</sup> radians. To convert from rad to μrad, multiply the number of radians by 10<sup>6</sup>.</p>
+</section>
+<section id="notation" class="level3" data-number="6.2.2">
+<h3 data-number="6.2.2" class="anchored" data-anchor-id="notation"><span class="header-section-number">6.2.2</span> Notation</h3>
+<p>When finding the angle of twist, the angle at any given point along the length of the shaft will be found relative to some reference point. Often the reference point is a fixed point (at a fixed support for example), so the relative angle is an absolute angle. In this case, the symbol φ will be subscripted with the point along the shaft where the angle was calculated. For example, given the shaft assembly in figure 6.2.2 below, the notation φ<sub>B</sub> denotes the angle of twist at point B relative to the fixed point A.</p>
+<p>If one is finding the relative angle of twist between two non-fixed points that are on the same section of shaft (same T, J, and G), the angle of one point relative to another on the same section of shaft is notated with two subscripts specifying the two points. For example, the angle of twist of D relative to C in figure 6.2.2 is notated as φ<sub>CD</sub>. In this case, one would perform the calculation for the angle of twist at D as if point C is fixed, in which case:</p>
+<p><span class="math display">\[
+\varphi_{B C}=\frac{T_{C D} L_{C D}}{J_{C D} G_{C D}}
+\]</span></p>
+<p>If one is finding the relative angle of twist between two non-fixed points (let’s say B and D in figure 6.2.2) that are on different sections of shaft (i.e., there are 1 or more section changes between them due to changing T, J, or G), the relative angle of twist between them would be found by summing the angles of twist of each section between them. In this case, the notation would be φ<sub>D/B</sub> which is said as the angle of twist of D relative to B. If point C is where the section change occurs, the calculation would be:</p>
+<p><span class="math display">\[
+\varphi_{D / B}=\varphi_{B C}+\varphi_{C D}
+\]</span></p>
+<p><strong>Figure 6.13:</strong> A multi-section body with fixed end A and constant torque conditions in sections</p>
+<p>These concepts will be illustrated in example 6.3 which continues with the same bar assembly and loading used in examples 6.1 and 6.2.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example 6.3
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The multi-section steel bar of examples 6.1 and 6.2 is repeated here with the same loading (T<sub>B</sub> = 70 N mm and T<sub>E</sub>= 30 N mm). Given the diameters: d<sub>AC</sub> = 50 mm, d<sub>CD</sub> = 20 mm, and d<sub>DE</sub> = 35 mm, and section lengths L<sub>AB</sub> = 300 mm, L<sub>BC</sub> = 200 mm, L<sub>CD</sub> = 400 mm, and L<sub>DE</sub> = 700 mm, determine the angle of twist of points C, D, and E, all relative to point A which is attached to the fixed support. All sections have a shear modulus of G = 40 GPa. A negative result indicates a clockwise twist and a positive result indicates a counterclockwise twist.</p>
+<p>[figure]</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>As was the case when calculating shear stress in Example 6.2, the changes in torque and geometry result in 4 distinct sections for which the angle of twist will remain constant within the section but change going from one section to another. These sections are AB, BC, CD, and DE.</p>
+<p>In example 6.1, it was shown that the internal torque in section AB is counterclockwise and equal to 40 N mm. It was also shown that the internal torque in all sections between B and E is clockwise and equal to 30 N mm. The directions in this case are relative to viewing in the direction from the positive end of the x-axis to the negative (i.e., point E to point A). This will mean that the angle of twist in section AB will be positive while the angle of twist in BC, CD, and DE will be negative.</p>
+<p>Since point A is a fixed point, <span class="math inline">\(\varphi_{B / A}=\varphi_B=\varphi_{A B}\)</span>.</p>
+<p><span class="math display">\[
+\varphi_B=\varphi_{A B}=\frac{T_{A B} L_{A B}}{J_{A B} G_{A B}}=\frac{0.04 \mathrm{~N} \cdot \mathrm{m}(0.300 \mathrm{~m})}{\frac{\pi}{32}(0.05 \mathrm{~m})^4\left(40 \times 10^9 \frac{\mathrm{N}}{\mathrm{m}^2}\right)}=4.889 \times 10^{-7} \mathrm{rad}
+\]</span></p>
+<p>To find the angle of twist of point C relative to A, φC, we will need to add the angle of twist of section BC to that of section AB:</p>
+<p><span class="math display">\[
+\varphi_C=\varphi_{A B}+\varphi_{B C}=9.778 \times 10^{-6} \mathrm{rad}+\frac{T_{B C} L_{B C}}{J_{B C} G_{B C}}=9.778 \times 10^{-6} \mathrm{rad}+\frac{-0.07 \mathrm{~N} \cdot \mathrm{m}(0.200 \mathrm{~m})}{\frac{\pi}{32}(0.05 \mathrm{~m})^4\left(40 \times 10^9 \frac{\mathrm{N}}{\mathrm{m}^2}\right)}=-8.149 \times 10^{-8} \mathrm{rad}
+\]</span></p>
+<p>Note that TBC was substituted in as a negative value as discussed above.</p>
+<p>To find the angle of twist of point D relative A, φD, the angle of twist of section CD will be added to the that of AB and BC.</p>
+<p><span class="math display">\[
+\varphi_D=\varphi_{A B}+\varphi_{B C}+\varphi_{C D}=-1.630 \times 10^{-7} \mathrm{rad}+\frac{T_{C D} L_{C D}}{J_{C D} G_{C D}}=-1.630 \times 10^{-7} \mathrm{rad}+\frac{-0.07 \mathrm{~N} \cdot \mathrm{m}(0.400 \mathrm{~m})}{\frac{\pi}{32}(0.02 \mathrm{~m})^4\left(40 \times 10^9 \frac{\mathrm{N}}{\mathrm{m}^2}\right)}=-4.464 \times 10^{-5} \mathrm{rad}
+\]</span></p>
+<p>Finally, to find the angle of twist of E relative to A, φE, the angle of twist of section DE will be added to that of AB, BC, and CD.</p>
+<p><span class="math display">\[
+\varphi_E=\varphi_{A B}+\varphi_{B C}+\varphi_{C D}+\varphi_{D E}=-8.929 \times 10^{-5} \mathrm{rad}+\frac{T_{D E} L_{D E}}{J_{D E} G_{D E}}=-8.929 \times 10^{-5} \mathrm{rad}+\frac{-0.07 \mathrm{~N} \cdot \mathrm{m}(0.700 \mathrm{~m})}{\frac{\pi}{32}(0.035 \mathrm{~m})^4\left(40 \times 10^9 \frac{\mathrm{N}}{\mathrm{m}^2}\right)}=-5.296 \times 10^{-5} \mathrm{rad}
+\]</span></p>
+<p><strong>φB = 4.89 x 10-7 rad = .489 μrad (counterclockwise)</strong></p>
+<p><strong>φC = -8.149 x 10-8 rad = .0815 μrad (clockwise)</strong></p>
+<p><strong>φD = -4.46 x 10-5 rad = 44.6 μrad (clockwise)</strong></p>
+<p><strong>φE = -5.30 x 10-5 rad = 53.0 μrad (clockwise)</strong></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section></details>
+</section>
+
+<section id="sec-6.3" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="sec-6.3"><span class="header-section-number">6.3</span> Statically Indeterminate Torsion</h2>
+<details>
+<summary>
+Click to expand
+</summary>
+<p>As was discussed in section 5.5 of chapter 5 for axial loading, one may sometimes encounter loading and constraint conditions that are statically indeterminate. In these situations, though a structure may be in static equilibrium, equilibrium equations do not provide enough equations to solve for all the unknown reactions. In many cases, the known constraints on deformation can be used to provide the additional necessary equations. As was discussed for axial loading in 5.5, the two categories of statically indeterminate loading that will be considered are:</p>
+<ol type="1">
+<li><p>Redundant supports—this would be if there are more than one fixed supports or if there are more than two simple supports. In the context of torsional loading, we will consider the case of having structures or assemblies that are attached to fix supports on either end. In this configuration, the shaft is constrained on both ends such that the overall angle of twist must be 0 if both ends are truly fixed, or the angle of twist is limited to a specified amount if there is a fixed degree of freedom on one end (for example if one side involves a loose connection).</p></li>
+<li><p>Co-axial or parallel shafts—multiple shafts are bonded concentrically (one within another) so that they are constrained to twist as a unit by the same amount. In this case, the extra equation needed in addition to equilibrium comes from setting the angle of twist for each material equal to each other.</p></li>
+</ol>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Step-by-step: Statically Indeterminate Structures
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Draw the FBD of the whole body and apply whichever equilibrium equations are relevant given the loading and geometry of the problem. For the pure torsion problems of this chapter, only the moment equilibrium about the longitudinal axis will be useful. All other equilibrium equations will be identically 0.</li>
+<li>Write the equation of kinematic constraint, or the equation that expresses the restriction on the deformation. These equations would generally be:
+<ul>
+<li><p><span class="math inline">\(\sum \varphi=0\)</span> if a shaft assembly is tightly supported by fixed supports on the ends.</p></li>
+<li><p><span class="math inline">\(\sum \varphi=\text{angle}\)</span> if shaft assembly is supported by fixed supports on both ends but one is loose, misaligned, etc. such that there is some degree of freedom for the end to twist</p></li>
+<li><p>φ<sub>1</sub> = φ<sub>2</sub>, where 1 and 2 represent two different shafts that are bonded together, with one around the other.</p></li>
+</ul></li>
+<li>Write the compatibility equation by substituting the appropriate torque twist relationship (<span class="math inline">\(\varphi=\frac{T L}{J G}\)</span>) into the kinematic constraint equation.</li>
+<li>By this point, you should have the same number of equations as unknowns. Solve the equations.</li>
+</ol>
+</div>
+</div>
+<section id="method-of-superposition" class="level3" data-number="6.3.1">
+<h3 data-number="6.3.1" class="anchored" data-anchor-id="method-of-superposition"><span class="header-section-number">6.3.1</span> Method of Superposition</h3>
+<p>For the case of redundant supports, an alternative would be to use the method of superposition. The method of superposition is based on the idea that the effects of individual loads on the deformation of a body can be calculated individually and then added together to get the total effect. To apply this method:</p>
+<ol type="1">
+<li>Take away one of the redundant supports</li>
+<li>Determine the total angle of twist of the shaft without the support</li>
+<li>Replace the support but take way the other loads</li>
+<li>Determine the deformation in the shaft due to the reaction at the now replaced support</li>
+<li>Sum the angle of twist from step 2 and step 4 and set the total equal to zero (or a given angle as appropriate).</li>
+<li>Solve the equation resulting from step 5 for the reaction at the redundant support and then use the whole body equilibrium to solve for the reaction at the other support(s).</li>
+</ol>
+<p>Example 6.4 goes through the process of solving a statically indeterminate torsion problem that falls under the first category of problems described above. This example utilizes the first solution process described above.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example 6.4: Needs title
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>A shaft assembly consists of a 12 in long steel section AB (d = 10 in, G = 11600 ksi)) bonded rigidly to a 9 inch long solid brass section BC (d = 7 in, G = 5800 ksi). The assembly is to be bolted to walls A and C. If a torque TB of magnitude 2000 kip in is applied at B, determine the shear stress in the steel section and the brass section after the ends are bolted for each of the following end conditions:</p>
+<ol type="1">
+<li>Both ends A and C are tightly connected immediately at installation</li>
+<li>There is a slight misalignment at end A that necessitates that that end be turned by .5° before the bolts can be tightened.</li>
+</ol>
+<p>[figure]</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Step 1</strong> (for both (a) and (b))</p>
+<p>Draw the FBD of the whole body (see below) and write out relevant equilibrium equations. In this case, that would only be <span class="math inline">\(\sum M_x=0\)</span>. Note that the assumed directions for TA and TC would usually said to be completely assumed, with the signs of the answers obtained for them indicating if the assumed directions are correct. For case(a), this is still true.</p>
+<p>However, for case (b), the direction of TA should be in the direction opposite to the way the shaft turns as a result of the applied torque, TB, before the bolt is tightened. The reason for this is illustrated in Figure 3 below. The assumed direction of TC can be in either direction for both case (a) and case (b).</p>
+<p>[figure]</p>
+<p>[figure]</p>
+<p>Note that the choice of which way the positive x-axis goes on the whole body FBD is arbitrary. As long as the choice of signs applied to torques for any global (whole body) equation is based on the same assumption, it does not matter which direction is chosen to be the positive x direction. In this case where the positive direction is chosen to be going to the left, the signs on the torques will be based on the way the torques are perceived when looking in the direction from A towards C. Since the direction of TB is known to be counterclockwise from that perspective, it is drawn in the direction of the positive x-axis and following from that, TA is drawn to be in the direction of the negative x-axis. TC is assumed to be the same direction as T.</p>
+<p><span class="math display">\[
+\begin{gathered}
+\sum M_x=-T_A+T_B-T_C=0 \\
+T_C+T_A=T_B
+\end{gathered}
+\]</span></p>
+<p>Since there are two unknowns (TA and TC), but only one equilibrium equation, the problem is statically indeterminate.</p>
+<p><strong>Step 2</strong></p>
+<p>Apply kinematic constraint. For case (a), both ends are fixed at the time of installation so the total angle of twist in the shaft should be zero:</p>
+<p><span class="math display">\[
+\varphi_A=\sum \frac{T L}{J G}=\varphi_{A B}+\varphi_{B C}=0
+\]</span></p>
+<p>Where TAB and TBC are the internal torques in each of those respective sections.</p>
+<p>For case (b), the misalignment means end A must be turned by 0.5° before it gets locked in, so the magnitude of the total angle of twist is also 0.5°. The direction of twist is given by considering the loose end of the shaft to be a free end (as it would be before the bolt is tightened). If end A is a free end, the internal torque in section AB is 0 and the internal torque in section BC is equal to positive TB. Given that, we take the angle of twist in the bar at the time of bolt tightening to also be positive.</p>
+<p>So for case (b), the kinematic equation is:</p>
+<p><span class="math display">\[
+\varphi_A=\sum \frac{T L}{J G}=\varphi_{A B}+\varphi_{B C}=.5^{\circ} * \frac{\pi}{180^{\circ}}
+\]</span></p>
+<p><strong>Step 3</strong></p>
+<p>Write the compatibility equation by substituting the appropriate torque-twist equations for the angles of twist.</p>
+<p>To implement this step, the internal torque (and sign) for each section must be established by cutting sections and applying equilibrium.</p>
+<p>The FBD for a section made by cutting through section AB is shown in figure 4.</p>
+<p>[figure]</p>
+<p>The equilibrium equation for this section is:</p>
+<p><span class="math display">\[
+\sum M_x=T_A-T_{A B}=0
+\]</span></p>
+<p>So TAB = TA in magnitude and is clockwise since the positive result for TAB in this case confirms that the arrow should be pointed toward the cut. Thus, the angle of twist in section AB should be negative.</p>
+<p><span class="math display">\[
+\varphi_{A B}=-\frac{T_{A B} L_{A B}}{J_{A B} G_{A B}}=\frac{-T_A(12 \mathrm{in})}{\frac{\pi}{32}(10 i n)^4(11600 \mathrm{ksi})}
+\]</span></p>
+<p>The FBD for a section made by cutting through section BC is shown in figure 5.</p>
+<p>[figure]</p>
+<p>The equilibrium equation for this section is:</p>
+<p><span class="math display">\[
+\sum M_x=-T_{B C}+T_C=0
+\]</span></p>
+<p>So TBC = TC in magnitude and is counterclockwise since the positive result for TBC in this case confirms that the arrow should be pointed away from the cut. Thus, section BC will have a positive angle of twist.</p>
+<p><span class="math display">\[
+\varphi_{B C}=+\frac{T_{B C} L_{B C}}{J_{B C} G_{B C}}=\frac{T_C(9 \text { in })}{\frac{\pi}{32}(7 i n)^4(5800 \mathrm{ksi})}
+\]</span></p>
+<p>Subbing (4) and (6) into (2a) gives the compatibility equation for case (a):</p>
+<p><span class="math display">\[
+\frac{-T_A(12 \mathrm{in})}{\frac{\pi}{32}(10 i n)^4(11600 \mathrm{ksi})}+\frac{T_C(9 \mathrm{in})}{\frac{\pi}{32}(7 i n)^4(5800 \mathrm{ksi})}=0
+\]</span></p>
+<p>Subbing (4) and (6) into (2b) gives the compatibility equation for case (b):</p>
+<p><span class="math display">\[
+\frac{-T_A(12 \mathrm{in})}{\frac{\pi}{32}(10 i n)^4(11600 \mathrm{ksi})}+\frac{T_C(9 \mathrm{in})}{\frac{\pi}{32}(7 i n)^4(5800 \mathrm{ksi})}=.5^{\circ} * \frac{\pi}{180^{\circ}}
+\]</span></p>
+<p><strong>Step 4</strong>: Solve the equilibrium and compatibility equations for TA and TC.</p>
+<p>For case (a), solving equations (1) and (7) gives TA = 1724 kip in and TC = 276.0 kip in. Both results work out to be positive, so the assumed directions are the actual directions assumed on the FBD in figure 4.</p>
+<p>For case (b), solving equations (1) and (8) gives TA = 581.3 kip in and TC = 1419 kip in. Both results work out to be positive, so the assumed directions are the actual directions.</p>
+<p>Now that the reaction torques are known and it was established from equations (3) and (5) that the internal torques TAB and TBC are equal in magnitude to TA and TC, respectively, the shear stresses in the two sections can be calculated.</p>
+<p>For case a:</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; \tau_{A B}=\frac{T_{A B} c_{A B}}{J_{A B}}=\frac{(1724 \mathrm{kip} \mathrm{in}(5 \mathrm{in}))}{\frac{\pi}{32}(10 \mathrm{in})^4}=\quad 8.78 \underline{\underline{\mathrm{ksi}}} \\
+&amp; \tau_{B C}=\frac{T_{B C} c_{B C}}{J_{B C}}=\frac{(276.0 \mathrm{kip} \mathrm{in}(3.5 \mathrm{in}))}{\frac{\pi}{32}(7 \mathrm{in})^4}=4.10 \underline{\underline{\mathrm{ksi}}}
+\end{aligned}
+\]</span></p>
+<p>For case b:</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; \tau_{A B}=\frac{T_{A B} c_{A B}}{J_{A B}}=\frac{(581.3 \mathrm{kip} \mathrm{in}(5 \mathrm{in}))}{\frac{\pi}{32}(10 \mathrm{in})^4}=\quad 2.96 \mathrm{\underline { \textrm {ksi } }} \\
+&amp; \tau_{B C}=\frac{T_{B C} c_{B C}}{J_{B C}}=\frac{(1419 \mathrm{kip} \mathrm{in}(3.5 \mathrm{in}))}{\frac{\pi}{32}(7 \mathrm{in})^4}=21.1 \mathrm{ksi}
+\end{aligned}
+\]</span></p>
+<p><strong>a:</strong></p>
+<p><strong>τAB = 8.78 ksi</strong></p>
+<p><strong>τBC = 4.10 ksi</strong></p>
+<p><strong>b:</strong></p>
+<p><strong>τAB = 2.96 ksi</strong></p>
+<p><strong>τBC = 21.1 ksi</strong></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Example 6.5 goes through using superposition to solve part (a) of the problem from example 6.4.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example 6.5: Needs title
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Re-solve part (a) of example 6.4 using the method of superposition. The problem is repeated here for convenience.</p>
+<p>A shaft assembly consisting of a 12 in long steel steel section AB (d = 10 in, G = 11600 ksi)) bonded rigidly to a 9 inch long solid brass section BC (d = 7 in, G = 5800 ksi). The assembly is bolted to walls A and C. If both ends A and C are tightly connected to the walls and a torque TB of magnitude 2000 kip in is applied at B, determine the shear stress in the steel section and the brass section.</p>
+<p>[figure]</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The first step to solving (global equilibrium) remains the same. The method of superposition will be applied in step 2 and step 3.</p>
+<p><strong>Step 1</strong> (for both (a) and (b))</p>
+<p>Draw the FBD of the whole body (see Figure 3 below) and write out whichever equilibrium equations are relevant (the equations that wouldn’t just be 0 = 0). The assumed directions for TA and TC are shown on the FBD as well as the direction used for the positive x direction. Recall that the direction of the torque should be determined by looking from the positive x-axis towards the negative (A to C).</p>
+<p>[figure]</p>
+<p>Applying equilibrium in this case reduces down to the sum of the moments about the x-axis as the only non-trivial equation:</p>
+<p><span class="math display">\[
+\begin{gathered}
+\sum M_x=-T_A+T_B-T_C=0 \\
+T_C+T_A=T_B
+\end{gathered}
+\]</span></p>
+<p>Since there are two unknowns (TA and TC), but only one equilibrium equation, the problem is statically indeterminate.</p>
+<p><strong>Step 2:</strong> To apply the method of superposition, the support at C will be considered redundant. The angle of twist for end C relative to A will then be expressed based on two isolated loading conditions:</p>
+<ol type="1">
+<li><p>Without the reaction at C, so that the assembly acts as if it has a free end at C as shown in figure 3. In this case, since there is no torque applied between B and C, a section cut within BC shows that the that internal torque TBC must be 0 for equilibrium. A section cut through AB shows that the internal torque TAB = TB (clockwise, since it needs to point towards the cut for the section to be in equilibrium). Therefore, the angle of twist with this loading is:<br>
+<span class="math display">\[
+\varphi_{C / A}=\sum \frac{T L}{J G}=\frac{\mathrm{T}_{\mathrm{AB}} \mathrm{L}_{\mathrm{AB}}}{\mathrm{J}_{\mathrm{AB}} \mathrm{G}_{\mathrm{AB}}}=\frac{-(2000 \mathrm{kip} \mathrm{in})(15 \mathrm{in})}{\frac{\pi}{32}(10 \mathrm{in})^4(11600 \mathrm{ksi})}=-4.215 \times 10^{-3} \mathrm{rad}
+\]</span></p></li>
+<li><p>With the reaction at C, but no torque applied at B. Drawing the section FBD’s in this case reveals that both TAB and TBC are equal in magnitude and opposite in direction from TC. Since they are both pointed away from the cut, the direction is taken to be counterclockwise, or positive. Therefore, the angle of twist with this loading is:<br>
+<span class="math display">\[
+\phi_{C / A}=\sum \frac{T L}{J G}=\frac{\mathrm{T}_{\mathrm{AB}} \mathrm{L}_{\mathrm{AB}}}{\mathrm{J}_{\mathrm{AB}} \mathrm{G}_{\mathrm{AB}}}+\frac{\mathrm{T}_{\mathrm{BC}} \mathrm{L}_{\mathrm{BC}}}{\mathrm{J}_{\mathrm{BC}} \mathrm{G}_{\mathrm{BC}}}=\frac{T_C(12 i n)}{\frac{\pi}{32}(10 i n)^4(11600 k s i)}+\frac{T_C(9 i n)}{\frac{\pi}{32}(7 i n)^4(5800 k s i)}=527^* 10^5 T_{C}
+\]</span><br>
+[figure]</p></li>
+</ol>
+<p><strong>Step 3</strong></p>
+<p>Now adding the effects of the isolated loading conditions gives the total angle of twist which should still be equal to zero when the ends are tightly bolted to the walls without extra twisting.</p>
+<p><span class="math display">\[
+-4.215 \times 10^{-3} \mathrm{rad}+(1.527^* 10^{-5}) T{c}=0
+\]</span></p>
+<p><strong>Step 4</strong></p>
+<p>Solving for TC gives TC = 276 kip in just as found in example 6.4.</p>
+<p><strong>Step 5</strong></p>
+<p>Substituting this result into equation (1) also gives the same result as in example 6.4 for the reaction torque at A, TA = 1724 kip in.</p>
+<p>Once again, the corresponding shear stresses are:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\tau_{A B} &amp; =\frac{T_{A B} c_{A B}}{J_{A B}}=\frac{(1724 \mathrm{kip} \mathrm{in}(5 \mathrm{in}))}{\frac{\pi}{32}(10 \mathrm{in})^4}=\quad 8.78 \text{ ksi} \\
+\tau_{B C} &amp; =\frac{T_{B C} c_{B C}}{J_{B C}}=\frac{(276.0 \mathrm{kip} \mathrm{in}(3.5 \mathrm{in}))}{\frac{\pi}{32}(7 \mathrm{in})^4}=4.10 \text{ ksi}
+\end{aligned}
+\]</span></p>
+<p><strong>τAB = 8.78 ksi</strong></p>
+<p><strong>τBC = 4.10 ksi</strong></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Example 6.6 goes through the process of solving a statically indeterminate torsion problems that falls under the second category of problems described above.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example 6.6: Needs title
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The vertical shaft assembly consists of a solid brass (G = 40 GPa) circular shaft completely bonded in section BC to a steel reinforcing tube (G = 80 GPa). The diameter of the brass is 25 mm along the whole length while the outer diameter of the steel is 50 mm. The assembly is subjected to torques TB = 800 N m and TA = 300 N m in the directions shown. Determine the shear stress in the brass in section AB and in BC.</p>
+<p>[figure]</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>First we’ll find the shear stress in the brass in section BC. We will need to determine how much of the internal torque within that section is carried by the brass.</p>
+<p>Step 1 Since the reaction at C is not strictly necessary to solve this problem, the whole body FBD is not needed here. We will start by determining the internal reactions in section BC. Cut through section BC, draw the resulting FBD, and apply equilibrium.</p>
+<p><span class="math display">\[
+\sum M_x=T_A-T_B-T_{A l}-T_{s t}=0
+\]</span></p>
+<p>There is only 1 non-trivial eqilibrium equation and two unknowns, so the problem is statically indeterminate.</p>
+<p><strong>Step 2</strong></p>
+<p>Apply the kinematic constraint. In this case, the materials are fully bonded in section BC, so the materials are constrained to twist as a unit in the that section. In BC, the kinematic equation is:</p>
+<p><span class="math display">\[
+\varphi_{B r}=\varphi_{s t}
+\]</span></p>
+<p><strong>Step 3</strong></p>
+<p>Write the compatibility equation by substituting the appropriate torque twist equations into equation (2).</p>
+<p><span class="math display">\[
+\frac{\mathrm{T}_{\mathrm{Br}} \mathrm{L}_{\mathrm{Br}}}{\mathrm{J}_{\mathrm{Br}} G_{\mathrm{Br}}}=\frac{\mathrm{T}_{\mathrm{st}} \mathrm{L}_{\mathrm{st}}}{\mathrm{J}_{\mathrm{st}} \mathrm{G}_{\mathrm{st}}}
+\]</span></p>
+<p>The lengths are equal and therefore cancel out. Rearranging (3) to solve for T<sub>st</sub> in terms of T<sub>Br</sub> and filling in values:</p>
+<p><span class="math display">\[
+T_{s t}=\frac{T_{B r} J_{s t} G_{s t}}{J_{B r} G_{B r}}=\frac{T_{B r} \frac{\pi}{32}\left((0.05 m)^4-(0.025 m)^4\right)\left(80 \times 10^9 \frac{\mathrm{N}}{\mathrm{m}^2}\right)}{\frac{\pi}{32}(0.025 \mathrm{~m})^4\left(40 \times 10^9 \frac{\mathrm{N}}{\mathrm{m}^2}\right)}=30.0 \mathrm{~T}_{\mathrm{Br}}
+\]</span></p>
+<p>Subbing this result into equation (1) gives T<sub>Br</sub> in section BC to be T<sub>Br</sub> = 16.13 N·m. Applying the shear stress equation gives:</p>
+<p><span class="math display">\[
+\tau_{B r}(B C)=\frac{T_{B r} c_{B r}}{J_{B r}}=\frac{16.13 \mathrm{~N} \cdot \mathrm{m}(0.0125 \mathrm{~m})}{\frac{\pi}{32}(0.025 \mathrm{~mm})^4}=5.26 \mathrm{MPa}
+\]</span></p>
+<p>Next we’ll find the shear stress in the brass in section AB. Since this section consists only of the brass, all of the internal torque in that section is carried by the brass. Making a cut within that section and applying equilibrium shows that the magnitude of the internal torque T<sub>AB</sub> = T<sub>A</sub> = 300 Nm.</p>
+<p>Applying the shear stress equation gives:</p>
+<p><span class="math display">\[
+\tau_{B r}(B C)=\frac{T_{B r} c_{B r}}{J_{B r}}=\frac{300 \mathrm{~N} \cdot \mathrm{m}(0.0125 \mathrm{~mm})}{\frac{\pi}{32}(0.025 \mathrm{~mm})^4}=97.8 \mathrm{MPa}
+\]</span></p>
+<p><strong>τBR in section BC is 5.26 MPa</strong></p>
+<p><strong>τBR in section AB is 97.8 MPa</strong></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section></details>
+</section>
+
+<section id="sec-6.4" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="sec-6.4"><span class="header-section-number">6.4</span> Power Transmission</h2>
+<details>
+<summary>
+Click to expand
+</summary>
+<p>As mentioned in the introduction to torsion, one common application in which one would encounter circular shafts subjected to torsion is in power transmission shafts. In these types of assemblies, shafts are connected through gears and belts and apply torque to one another through these connections. If a shaft somewhere in the assembly is connected to a motor that causes it to rotate, that rotation is then transmitted to other connected shafts which can in turn transmit rotation to even more shafts. Note that such systems are still considered to be in equilibrium even with the rotation as long as the angular velocity is constant.</p>
+<section id="definition-of-power" class="level3" data-number="6.4.1">
+<h3 data-number="6.4.1" class="anchored" data-anchor-id="definition-of-power"><span class="header-section-number">6.4.1</span> Definition of Power</h3>
+<p>You may recall from other subjects of study that power is defined to be the time rate of change of work. The definition of work is force times distance. So power can be calculated as:</p>
+<p><span class="math display">\[
+P=\frac{W}{t}=\frac{F \times d}{t}
+\]</span></p>
+<p>Within the context of rotating shafts, the force would be the force applied to the outer edge of the shaft that results in torque and the distance would be the arc length that a point on the edge of the shaft travels around the circumference in a given amount of time, t. Figure 6.4.1 illustrates this point.</p>
+<p><strong>Figure 6.14:</strong> Force applied to rotation shaft results in work</p>
+<p>If the arclength over which point B travels, BB’ = rθ, then W = Frθ. However, Fr is also equal to the torque T on the shaft, so W = Tθ.</p>
+<p>Going back to the power equation, we then have <span class="math inline">\(P=\frac{T \theta}{t}\)</span>. The <span class="math inline">\(\frac{\theta}{t}\)</span> is angular velocity, which will be denoted with the Greek letter ω. So the power equation can finally be expressed as P = Tω, where ω must be expressed in radians per second.</p>
+</section>
+<section id="units-1" class="level3" data-number="6.4.2">
+<h3 data-number="6.4.2" class="anchored" data-anchor-id="units-1"><span class="header-section-number">6.4.2</span> Units</h3>
+<p>In SI the standard unit for power is the Watt (W), which is (N m)/s. The N m unit is also referred to as a Joule, so a Watt is a Joule/s.</p>
+<p>In US Customary units, power is commonly expressed as ft lb/s or in lb/s. However, it is also common to express power in terms of horsepower, where there are 550 ft lb/s for 1 hp. Note that there is a conversion difference between the US horsepower and the British horsepower. In this text, horsepower will refer to the US version.</p>
+<p>When applying the P = Tω equation, the angular velocity ω must be expressed in radians per second. If frequency is given in Hz, which is 1 revolution/s, then one must multiply by 2π to convert it to rad/s since there are 2π rad per revolution.</p>
+<p>If angular velocity is given in rpm, which is revolution per minute, then one must multiply by 2π radians per revolution and divide by 60 to convert 1/min to 1/s. This reduces to an overall multiplication factor of π/30 to convert from rpm to rad/s.</p>
+<table class="table">
+<caption><strong>Table 6.1:</strong> Power</caption>
+<colgroup>
+<col style="width: 7%">
+<col style="width: 92%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>SI (watt)</td>
+<td><span class="math display">\[                                                                                                                                                                                                                                                        
+                                                                                                                                                                                        W=\frac{N m}{s}=\frac{J}{s}                                                               
+                                                                                                                                                                                        \]</span></td>
+</tr>
+<tr class="even">
+<td>US</td>
+<td><span class="math display">\[                                                                                                                                                                                                                                                        
+                                                                                                                                                                                        \left(\frac{f t l b}{s}\right) \operatorname{or}\left(\frac{l b}{s}\right)                
+                                                                                                                                                                                        \]</span></td>
+</tr>
+<tr class="odd">
+<td>US (horsepower, hP)</td>
+<td><span class="math display">\[                                                                                                                                                                                                                                                        
+                                                                                                                                                                                        1 h P=\frac{550 f t l b}{s}                                                               
+                                                                                                                                                                                        \]</span></td>
+</tr>
+</tbody>
+</table>
+<table class="table">
+<caption><strong>Table 6.2:</strong> Other rotational units</caption>
+<colgroup>
+<col style="width: 7%">
+<col style="width: 92%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Hertz (Hz)</td>
+<td><span class="math display">\[                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+                                                                                                                                                                                                                                                                                                                H z=\frac{r e v}{s}                                                                                                                                                         
+                                                                                                                                                                                                                                                                                                                \]</span></td>
+</tr>
+<tr class="even">
+<td>Angular velocity given Hz (rad/s)</td>
+<td><span class="math display">\[                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+                                                                                                                                                                                                                                                                                                                \frac{r a d}{s}=H z(2 \pi)=\frac{r e v}{s}(2 \pi)                                                                                                                           
+                                                                                                                                                                                                                                                                                                                \]</span></td>
+</tr>
+<tr class="odd">
+<td>Angular velocity given rpm (rad/s)</td>
+<td><span class="math display">\[                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+                                                                                                                                                                                                                                                                                                                \frac{\mathrm{rad}}{\mathrm{s}}=\frac{r e v}{\min }\left(\frac{2 \pi \mathrm{rad}}{1 \mathrm{rev}}\right)\left(\frac{1 \mathrm{~min}}{60 \mathrm{~s}}\right)                
+                                                                                                                                                                                                                                                                                                                \]</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="torque-transfer-between-connected-gears-gear-ratio" class="level3" data-number="6.4.3">
+<h3 data-number="6.4.3" class="anchored" data-anchor-id="torque-transfer-between-connected-gears-gear-ratio"><span class="header-section-number">6.4.3</span> Torque Transfer Between Connected Gears (Gear Ratio)</h3>
+<p>Consider two connected gears as shown in figure 6.4.2. The interaction of the teeth results in a force applied to each gear from the other. For equilibrium, this force must be equal in magnitude but opposite in direction. The force results in a torque which can be expressed as T = Fr.</p>
+<p><strong>Figure 6.15:</strong> Gear interaction results in the application of force and torque</p>
+<p>Given that the force on each gear is equal in magnitude to the force on the other, we can write:</p>
+<p><span class="math display">\[
+F=\frac{T_A}{r_A}=\frac{T_B}{r_B}
+\]</span></p>
+<p>which then allows us to express the torque exerted by one gear in terms of the torque exerted by the other as well as the ratio of radii:</p>
+<p><span class="math display">\[
+T_A=\frac{r_A}{r_B} T_B
+\]</span></p>
+<p>The ratio of radii is known as the gear ratio. It can be expressed in terms of the ratio of gear radii, gear diameters, or the number of teeth on each gear.</p>
+</section>
+<section id="angular-velocity-ratio-of-connected-shafts" class="level3" data-number="6.4.4">
+<h3 data-number="6.4.4" class="anchored" data-anchor-id="angular-velocity-ratio-of-connected-shafts"><span class="header-section-number">6.4.4</span> Angular Velocity Ratio of Connected Shafts</h3>
+<p>When two shafts are connected by a pair of gears, conservation of energy would dictate that the power transferred into one shaft equals the power transferring out of the other (power in = power out, assuming losses are negligible).</p>
+<p>So if PA = TAωA and PB = TBωB and PA = PB, then we get <span class="math inline">\(\omega_A=\frac{T_B}{T_A} \omega_B\)</span></p>
+<p>Further using the gear ratio relationship between TB and TA gives:</p>
+<p><span class="math display">\[
+\omega_A=\frac{r_B}{r_A} \omega_B
+\]</span></p>
+<p>Note that the gear ratio in this case is inverse of the one used to relate torques.</p>
+</section>
+<section id="angle-of-twist" class="level3" data-number="6.4.5">
+<h3 data-number="6.4.5" class="anchored" data-anchor-id="angle-of-twist"><span class="header-section-number">6.4.5</span> Angle of Twist</h3>
+<p>When two connected gears rotate, they will have equal arclengths of travel for a given amount of shaft rotation, but in opposite directions, as depicted in figure 6.4.3. This means that rAφA = - rBφB, and the angle of twist at point B for the shaft that it is on can be related to the angle of twist at the same location on the shaft that gear A is on.</p>
+<p><span class="math display">\[
+\varphi_A=-\frac{r_B}{r_A} \varphi_B
+\]</span></p>
+<p>As with the angular velocities, notice that the gear ratio is the inverse as that used to relate torques.</p>
+<p><strong>Figure 6.16:</strong> Connected gears travel the same distance in opposite directions.</p>
+<p>In example 6.7, a problem of power transmission with connected gears is presented which utilizes the above concepts.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example 6.7: Needs title
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>60 kW of power is transmitted to gear D of the assembly at 33 Hz. Shaft CD is allowed to turn freely within its bearings in the direction shown at D. End A of shaft AB is attached rigidly to the wall. Determine the angle of twist of point D relative to A.</p>
+<p>Assume gear C has 35 teeth around it’s circumference and gear B has 50 teeth. In addition, shaft AB (d = 40 mm) is 450 mm long and shaft CD (d = 30 mm) is 700 mm long. Both shafts are made of steel (G = 80 GPa).</p>
+<p>[figure]</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>In general, we can think of the angle of twist at D to be equal to whatever the angle of twist of point C is plus the angle of twist of shaft CD. If the shaft were completely co-linear (no gear connection), the angle of twist at B would be equal to the angle of twist at C. In this case, we would calculate the angle of twist as:</p>
+<p><span class="math display">\[
+\varphi_{D / A}=\varphi_{A B}+\varphi_{C D}
+\]</span></p>
+<p>However, the gear connection causes the angle of twist at point C on shaft CD to be different from the angle of twist of point B, so we will express the angle of twist at D as:</p>
+<p><span class="math display">\[
+\varphi_{D / A}=\varphi_C+\varphi_{C D}
+\]</span></p>
+<p>To calculate the angle of twist at D, we will need to:</p>
+<ol type="1">
+<li>Calculate the torque being applied at D based on the power information. When considering units, recall that a Watt is a N m/s and a Hz is a revolution per second.<br>
+<span class="math display">\[
+T_D=\frac{P_D}{\omega}=\frac{60000 \mathrm{~W}}{33 \mathrm{~Hz}\left(\frac{2 \pi \mathrm{rad}}{\mathrm{Hz}}\right)}=289.4 \mathrm{~N} \mathrm{~m}
+\]</span></li>
+<li>Based on the torque at D, calculate the torque at C by applying equilibrium to shaft CD:<br>
+<span class="math display">\[
+\sum M_x=T_D-T_C=0 \text { so } \mathrm{T}_{\mathrm{C}}=\mathrm{T}_{\mathrm{D}}
+\]</span><br>
+[figure]<br>
+If we look from D towards C, the given direction of TD is counterclockwise, so TC = 289.4 N m (clockwise).</li>
+<li>Use the gear ratio to relate the torque exerted on gear C to the torque exerted on gear B:<br>
+<span class="math display">\[
+T_B=\frac{N_B}{N_C} T_c=\frac{50}{35}(289.4 \mathrm{Nm})=413.4 \mathrm{~N} \mathrm{~m}
+\]</span></li>
+<li>Calculate φ<sub>B</sub> = φ<sub>AB</sub>. The FBD of a section cut from AB shows that the internal torque T<sub>AB</sub> = T<sub>B</sub>. Note that the direction of T<sub>B</sub> is shown as clockwise when viewed in the direction of B towards A. One can determine this based on the fact that shaft CD is shown to rotate counterclockwise, which results in a clockwise torque imposed from gear C onto gear B. Equilibrium shows that the internal torque T<sub>AB</sub> is then also clockwise so φ<sub>B</sub> will be negative.<br>
+[figure]<br>
+<span class="math display">\[
+\varphi_B=\frac{T_{A B} L_{A B}}{J_{A B} G_{A B}}=-\frac{413.4 \mathrm{~N} \cdot m(0.450 \mathrm{~m})}{\frac{\pi}{32}(0.04 m)^4\left(80 \times 10^9 \frac{\mathrm{N}}{\mathrm{m}^2}\right)}=-0.009252 \text{ rad}
+\]</span></li>
+<li>Use the gear ratio to relate the angle of twist at B to the angle of twist at C:<br>
+<span class="math display">\[
+\varphi_C=-\frac{N_B}{N_C} \varphi_B=-\frac{50}{35}(-.009252 \text{ rad})=.01322 \text{ rad}
+\]</span></li>
+<li>Determine and use the internal torque T<sub>CD</sub> to determine φ<sub>CD</sub>. Cutting a section through shaft CD and drawing the FBD shows that T<sub>CD</sub> = T<sub>D</sub> (counterclockwise), so:<br>
+[figure]<br>
+<span class="math display">\[
+\varphi_{C D}=\frac{T_{C D} L_{C D}}{J_{C D} G_{C D}}=\frac{289.4 \mathrm{~N} \cdot m(0.700 \mathrm{~m})}{\frac{\pi}{32}(0.03 m)^4\left(80 \times 10^9 \frac{\mathrm{N}}{\mathrm{m}^2}\right)}=.03184 \text{ rad}
+\]</span></li>
+<li>Calculate φ<sub>D/A</sub> = φ<sub>C</sub> + φ<sub>CD</sub><br>
+<span class="math display">\[
+\varphi_{D / A}=.01322 \mathrm{rad}+.03184 \mathrm{rad}=.04506 \text{ rad}
+\]</span></li>
+</ol>
+<p><strong>φ<sub>D</sub> = .04506 rad</strong></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 
 
 </section>
+</details></section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

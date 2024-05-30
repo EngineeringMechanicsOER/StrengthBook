@@ -3,7 +3,7 @@ format: html
 editor: visual
 ---
 
-# Introduction and Statics Review {#sec-stress}
+# Introduction and Statics Review {#sec-statics}
 
 ::: {.callout-note icon="false"}
 ## Learning Objectives
@@ -17,7 +17,7 @@ editor: visual
 
 ## Introduction {.unnumbered}
 
-<details>
+<details open>
 
 <summary>Click to expand</summary>
 
@@ -47,7 +47,7 @@ Notice that while pins and fixed supports react with a force in a specific direc
 
 </details>
 
-## Equilibrium in Two Dimensions
+## Equilibrium in Two Dimensions {#sec-1.1}
 
 <details>
 
@@ -63,12 +63,15 @@ Since there are three equations, a statically determinate problem should have no
 
 Example 1.1 illustrates the process of finding external reactions.
 
-::: {#example-1.1 .callout-note collapse="true"}
+::: {#example-1.1 .callout-tip collapse="true" icon="false"}
 ## Example 1.1
 
 A 3 ft beam is supported by a pin connection at the wall at point A and a cable at point C as shown. A load is applied 2 ft away from point A. Find the force in pin A as well as the tensile force in the cable.
 
 ![](images/CH1%20PNGs/example%201.1%20part%201.png){fig-align="center" width="264"}
+
+::: {.callout-tip collapse="true" icon="false"}
+## Solution
 
 **Step 1: Draw the FBD**
 
@@ -82,17 +85,18 @@ Starting with the moment about A will eliminate two unknowns from the equation s
 
 $$
 \begin{aligned}
-& \sum M_A=T \sin (30) * 3 ft-1200\text{ lbs }(2 ft)=0 \rightarrow T=1600 \text{ lbs} \\
-& \sum F_x=-A_x-T \cos (30)=0 \rightarrow-1384.6 \text{ lbs} \\
-& \sum F_y=A_y+T \sin (30)-1200 \text{ lbs}=0 \rightarrow 400 \text{ lbs}
+& \sum M_A=T \sin (30^{\circ}) * 3{~ft}-1,200{~lb }*2{~ft}=0 \quad\rightarrow\quad T=1,600 {~lb} \\
+& \sum F_x=-A_x-T \cos (30^{\circ})=0 \quad\rightarrow\quad A_x=-1,384.6{~lb} \\
+& \sum F_y=A_y+T \sin (30^{\circ})-1200{~lb}=0 \quad\rightarrow\quad A_y= 400{~lb}
 \end{aligned}
 $$
 
 Since a negative answer was obtained for A~x~, that force actually acts in the positive x direction.
 
-The total force in pin A is then $F_A=\sqrt{A_x^2+A_y^2}=1441 \text{ lbs}$
+The total force in pin A is then $F_A=\sqrt{A_x^2+A_y^2}=1,441{~lb}$
 
-**Answer: T = 1600 lbs, FA = 1441 lbs**
+**Answer: T = 1,600 lb, FA = 1,441 lb**
+:::
 :::
 
 ### Two Force Members
@@ -103,12 +107,15 @@ One special type of pin connection for which the direction of the reaction force
 
 The presence and recognition of two force members can make some otherwise statically indeterminate problems become statically determinate. This is demonstrated in Example 1.2 below.
 
-::: {#example-1.2 .callout-note collapse="true" icon="false"}
+::: {#example-1.2 .callout-tip collapse="true" icon="false"}
 ## Example 1.2
 
 Determine the force in pin C and in pin A.
 
 ![](images/CH1%20PNGs/example%201.2%20part%201.png){fig-align="center" width="443"}
+
+::: {.callout-tip collapse="true" icon="false"}
+## Solution
 
 **Step 1: Draw the FBD**
 
@@ -122,26 +129,27 @@ Based on this FBD, it appears that there are 4 unknowns and therefore not solvab
 
 $$
 \begin{aligned}
-\text{(1)}& \sum M_C=-F_A \cos \left(60^{\circ}\right) \times(3 m) \sin \left(60^{\circ}\right)+F_A \sin \left(60^{\circ}\right) \times\left(4 m+3 m\left(\cos \left(60^{\circ}\right)\right)-2000 \times 2 m=0\right. \\
+\text{(1)}& \sum M_C=-F_A \cos \left(60^{\circ}\right)*(3{~m}) \sin \left(60^{\circ}\right)+F_A \sin \left(60^{\circ}\right) *\left(4{~m}+3{~m}\left(\cos \left(60^{\circ}\right)\right)-2,000{~ N}*2{~m}=0\right. \\
 \text{(2)}& \sum F_x=F_A \cos \left(60^{\circ}\right)+C_x=0 \\
-\text{(3)}& \sum F_y=F_A \sin \left(60^{\circ}\right)-2000+C_y=0
+\text{(3)}& \sum F_y=F_A \sin \left(60^{\circ}\right)-2,000{~N}+C_y=0
 \end{aligned}
 $$
 
-Solving (1) for F~A~ yields F~A~ = 1154.7 N
+Solving (1) for F~A~ yields F~A~ = 1,154.7 N
 
-Subbing this result into (1) and (2) yields C~x~ = -577.4 N and C~y~ = 1000 N
+Subbing this result into (1) and (2) yields C~x~ = -577.4 N and C~y~ = 1,000 N
 
 $$
-F_C=\sqrt{C_x^2+C_y^2}=1154.7 \mathrm{~N}
+F_C=\sqrt{C_x^2+C_y^2}=1,154.7{~N}
 $$
 
-**Answer: F~A~ = 1155 N and F~C~ = 1155 N**
+**Answer: F~A~ = 1,155 N and F~C~ = 1,155 N**
+:::
 :::
 
 </details>
 
-## Internal Reactions
+## Internal Reactions {#sec-1.2}
 
 <details>
 
@@ -155,12 +163,15 @@ Pins that connect members can be represented on an FBD in the same way as pins t
 
 However, just as was discussed above, when one of the connected members is a two-force member, the reaction at the pin will be known to follow a line of action that goes through the points of application of the forces on the two-force member. Example 1.3 demonstrates these concepts.
 
-::: {#example-1.3 .callout-note collapse="true" icon="false"}
+::: {#example-1.3 .callout-tip collapse="true" icon="false"}
 ## Example 1.3
 
 A plant hanger is secured to a wall with a pin and additionally supported by a brace that is pin connected to the hanger at B and to the wall at C. Determine the external reactions at A and C as well as the reaction in the internal pin B.
 
 ![](images/CH1%20PNGs/example%201.3%20part%201.png){fig-align="center" width="315"}
+
+::: {.callout-tip collapse="true" icon="false"}
+## Solution
 
 If we do not notice that BC is a two-force member, we would approach the problem by separating the brace from the hanger and drawing an FBD of each part separately. Notice that B~x~ and B~y~ are drawn in opposite directions in the two different diagrams since the pin will exert an equal and opposite force on each bar.
 
@@ -174,15 +185,16 @@ With the components B~x~ and B~y~ replaced with the resultant force F~B~ with kn
 
 $$
 \begin{aligned}
-\text{(1)} & \sum M_A=F_B\left(\frac{4}{5}\right) 3 f t-50 l b(7 f t)=0 \\
+\text{(1)} & \sum M_A=F_B\left(\frac{4}{5}\right)*3{~ft}-50{~lb}*7{~ft}=0 \\
 \text{(2)} & \sum F_x=-A_x+F_B\left(\frac{3}{5}\right)=0 \\
-\text{(3)} & \sum F_y=A_y+F_B\left(\frac{4}{5}\right)-50 l b=0
+\text{(3)} & \sum F_y=A_y+F_B\left(\frac{4}{5}\right)-50{~lb}=0
 \end{aligned}
 $$
 
 Solving the equations (1)-(3) yields F~B~ = 145.8 lb, A~x~ = 87.5 lb, and A~y~ = -66.7 lb. Therefore, the pin force in pin B is 145.8 lb and the pin force in A is $\mathrm{A}=\sqrt{A_x^2+A_y^2}=110 \text{ lb}$. Since BC is a two-force member, F~C~ = F~B~.
 
 **Answer: F~A~ = 110 lb, F~B~ = F~C~ = 146.8 lb**
+:::
 :::
 
 ### Internal reactions in truss structures
@@ -193,12 +205,15 @@ To use Method of Sections, a cut is made through the truss structure and analysi
 
 Example 1.4 demonstrates the use of both Method of Joints and Method of Sections to solve for forces in truss members.
 
-::: {#example-1.4 .callout-note collapse="true" icon="false"}
+::: {#example-1.4 .callout-tip collapse="true" icon="false"}
 ## Example 1.4
 
 Determine the forces in members ED and EF. Let P~1~ = 8 kN and P~2~ = 12 kN.
 
 ![](images/CH1%20PNGs/example%201.4%20part%201.png){fig-align="center"}
+
+::: {.callout-tip collapse="true" icon="false"}
+## Solution - Method of Joints
 
 Considering Joint E, it can be seen that since there are 4 members attached to the joint, there would be 4 unknown forces to account for. Therefore, starting with Method of Joints at E would not work. However, looking at joint D, there are only two unknowns, with one of them being member ED, so that would be a useful place to start.
 
@@ -209,7 +224,7 @@ Note: The triangle ECD is a right triangle, so the sin and cos of the angle at c
 $$
 \begin{aligned}
 \text{(1)} & \sum F_x=-F_{C D}-F_{D E}\left(\frac{1}{\sqrt{5}}\right)=0 \\
-\text{(2)} & \sum F_y=F_{D E}\left(\frac{2}{\sqrt{5}}\right)-12 k N=0
+\text{(2)} & \sum F_y=F_{D E}\left(\frac{2}{\sqrt{5}}\right)-12{~kN}=0
 \end{aligned}
 $$
 
@@ -225,7 +240,7 @@ Even with knowing F~DE~, joint E would have three unknown forces. Joint C only h
 
 $$
 \begin{aligned}
-&\sum F_x=-F_{B C}-6=0 \rightarrow F_{B C}=-6 k N\\
+&\sum F_x=-F_{B C}-6=0 \quad\rightarrow\quad F_{B C}=-6{~kN}\\
 &\sum F_y=F_{C E}=0
 \end{aligned}
 $$
@@ -236,12 +251,16 @@ Then at joint E:
 
 $$
 \begin{aligned}
-&\sum F_y=-13.42\left(\frac{2}{\sqrt{5}}\right)-F_{B E}\left(\frac{2}{\sqrt{8}}\right)=0 \rightarrow F_{B C}=-16.98 k N\\
-&\sum F_x=13.42\left(\frac{1}{\sqrt{5}}\right)--16.98\left(\frac{2}{\sqrt{8}}\right)-F_{E F}=0 \rightarrow F_{E F}=18 \mathrm{kN}
+&\sum F_y=-13.42{~kN}\left(\frac{2}{\sqrt{5}}\right)-F_{B E}\left(\frac{2}{\sqrt{8}}\right)=0 \quad\rightarrow\quad F_{B C}=-16.98{~kN}\\
+&\sum F_x=13.42{~kN}\left(\frac{1}{\sqrt{5}}\right)--16.98{~kN}\left(\frac{2}{\sqrt{8}}\right)-F_{E F}=0 \quad\rightarrow\quad F_{E F}=18\text{ kN}
 \end{aligned}
 $$
 
-**Answer: FDC = 6 kN (Compressive), FEF = 18 kN (Tensile)**
+**Answer: F~DC~ = 6 kN (Compressive), F~EF~ = 18 kN (Tensile)**
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+## Solution - Method of Sections
 
 While Method of Joints can be used here, it is inefficient. We needed to draw and analyze free body diagrams of joints D, C, and E and keep track of the forces at these joints as well as whether each force was in tension or compression.
 
@@ -252,28 +271,32 @@ Method of Sections may be used as an alternative to find force FEF. To apply Met
 Looking at the FBD of the two cut sections, the right side section would be easiest to work with since there are no external reactions on that side. If the left side section were picked, the reactions at A and G would first need to be determined (note that FGF = Gx). All three equilibrium equations can be used with the Method of Sections. In this particular case in which only EEF is left to solve for, only the moment about B is needed to solve since the other two unknown forces both pass through B.
 
 $$
-\sum M_B=-P_2(3 m)+F_{E F}(2 m)=0 \rightarrow F_{E F}=18 \text{ kN}
+\sum M_B=-P_2*3{~m}+F_{E F}*2{~m}=0 \quad\rightarrow\quad F_{E F}=18{~kN}
 $$
 
 Once again, the forces are drawn on the FBD in the tensile direction, so the negative answer indicates a compressive force.
 
-**Answer: FDC = 6 kN (Compressive), FEF = 18 kN (Tensile)**
+**Answer: F~DC~ = 6 kN (Compressive), F~EF~ = 18 kN (Tensile)**
+:::
 :::
 
 ### Internal reactions in continuous bodies
 
 Internal reactions also exist within a body or structure. These reactions are necessary to hold the body together and will vary from point to point in a body depending on the distribution of external loading. As shown in Figure 1.2, the reactions at any given point can be examined by making a cut at the point of interest in the body. One can think of any point within a body as acting as a fixed support for the rest of the body. That is, every point must potentially exert a force parallel to the cross section where the cut is made which is the shear force V, a force perpendicular to the cross section where the cut is made which is the normal force N, and a reaction moment where the cut is made which is the bending moment M. Moreover, as was discussed for internal pin reactions and the cut made for Method of Sections for trusses, the reactions at a cut will be equal and opposite on the two sides of the cut.
 
-![](images/CH1%20PNGs/figure%201.2.png){fig-align="center" width="483"}
+![Figure 1.2: Cross-sections showing the internal loads on a continuous body](images/CH1%20PNGs/figure%201.2.png){fig-align="center" width="483"}
 
-To determine the reactions, the FBD of the part of the beam to the left of the cut can be drawn and used, or the part of the beam to the right of the cut can be drawn and used. As was discussed with Method of Sections for trusses, the choice of which side of the cut to examine is based primarily on which side appears easiest and most efficient to analyze. Once the FBD of the cut section is drawn, the three equilibrium equations can be applied to determine the internal reactions. The determination of shear and bending moments in beams will be reviewed in more detail in Chapter 8. The focus of Example 1.5 is on the determination of the normal force, as this will be important in Chapters 2 and 3.
+To determine the reactions, the FBD of the part of the beam to the left of the cut can be drawn and used, or the part of the beam to the right of the cut can be drawn and used. As was discussed with Method of Sections for trusses, the choice of which side of the cut to examine is based primarily on which side appears easiest and most efficient to analyze. Once the FBD of the cut section is drawn, the three equilibrium equations can be applied to determine the internal reactions. The determination of shear and bending moments in beams will be reviewed in more detail in @sec-beams. The focus of Example 1.5 is on the determination of the normal force, as this will be important in @sec-stress and @sec-strain.
 
-::: {#example-1.5 .callout-note collapse="true" icon="false"}
+::: {#example-1.5 .callout-tip collapse="true" icon="false"}
 ## Example 1.5
 
 Two solid bars make up the axial assembly loaded as shown. Determine the normal force in each bar. State whether the force is tensile or compressive.
 
 ![](images/CH1%20PNGs/example%201.5%20part%201.png){fig-align="center" width="400"}
+
+::: {.callout-tip collapse="true" icon="false"}
+## Solution
 
 Though the assembly is not a beam, determining the internal reactions will work in the same way. In this particular case, all the forces are in the normal direction (no shear force) and due to the central placement of the 60 kN force and the symmetry of the 125 kN forces, there will be also be no bending moment. Consequently, only the normal reaction force will be drawn on the FBDs.
 
@@ -284,7 +307,7 @@ Making the cut in section AB and drawing the FBD allows us to determine the norm
 ![](images/CH1%20PNGs/example%201.5%20part%202.png){fig-align="center"}
 
 $$
-\sum F_x=-60 k N+N_{A B}=0 \rightarrow N_{A B}=60 \text{ kN}
+\sum F_x=-60{~kN}+N_{A B}=0 \quad\rightarrow\quad N_{A B}=60{~kN}
 $$
 
 Making the cut in section BC and drawing the FBD allows us to determine the normal force in section BC. Once again, drawing the left section of the cut for the FBD results in avoiding needing to know the external reactions at wall C.
@@ -292,7 +315,7 @@ Making the cut in section BC and drawing the FBD allows us to determine the norm
 ![](images/CH1%20PNGs/example%201.5%20part%203.png){fig-align="center" width="342"}
 
 $$
-\sum F_x=-60 k N+250 k N+N_{B C}=0 \rightarrow N_{B C}=-190 \text{ kN}
+\sum F_x=-60{~kN}+250{~kN}+N_{BC}=0 \quad\rightarrow\quad N_{BC}=-190{~kN}
 $$
 
 For both AB and BC, the internal normal force was assumed tensile in the FBD and equilibrium equation. In the case of NAB, the positive answer confirms that it is tensile. In the case of NBC, the negative answer reveals that it is compressive.
@@ -301,10 +324,11 @@ For both AB and BC, the internal normal force was assumed tensile in the FBD and
 
 **Answer: NAB = 60 kN (T), NBC = 190 kN (C)**
 :::
+:::
 
 </details>
 
-## Equilibrium and Reactions in Three Dimensions
+## Equilibrium and Reactions in Three Dimensions {#sec-1.3}
 
 <details>
 
@@ -362,12 +386,15 @@ To apply the right-hand rule:
 
 These concepts are further reviewed in Example 1.6.
 
-::: {#example-1.6 .callout-note collapse="true" icon="false"}
+::: {#example-1.6 .callout-tip collapse="true" icon="false"}
 ## Example 1.6
 
-Determine the internal reactions at point P, located at the center of the cross-section of the rectangular bar and 1.75 ft from the fixed support, if **F** = -150 **i** - 225 **j** + Fz = 300 **k** lb.
+Determine the internal reactions at point P, located at the center of the cross-section of the rectangular bar and 1.75 ft from the fixed support, if **F** = -150**i** - 225**j** + Fz = 300**k** lb.
 
 ![](images/CH1%20PNGs/example%201.6%20part%201.png){fig-align="center" width="484"}
+
+::: {.callout-tip collapse="true" icon="false"}
+## Solution
 
 To determine the internal reactions at P, a cut is made at P that is parallel to the cross section. Since the left side of the cut would include the wall but the right side of the cut would be free with no external reactions to determine, the right side section will be used.
 
@@ -378,19 +405,19 @@ The force reactions at P will just be equal (but opposite in direction) to the f
 The moment about the x axis at point P is:
 
 $$
-\sum M_{Px} = \pm F_yz \pm F_zy = 0 = -[(225 \text{ lb})(3 \text{ in})(\frac{1 \text{ ft}}{12 \text{ in}})]+[(300 \text{ lb})(2 \text{ in})(\frac{1 \text{ ft}}{12 \text{ in}})]+M_{px} -6.25 \text{ lb ft}
+\sum M_{Px} = \pm ~F_yz \pm F_zy = 0 = -[(225{~lb})(3{~in})(\frac{1{~ft}}{12{~in}})]+[(300{~lb})(2{~in})(\frac{1{~ft}}{12{~in}})]+M_{px} -6.25{~lb·ft}
 $$
 
 The moment about the y axis at point P is:
 
 $$
-\sum M_{Py} = \pm F_xz \pm F_zx = 0 = -[(150 \text{ lb})(3 \text{ in})(\frac{1 \text{ ft}}{12 \text{ in}})]-[(300 \text{ lb})(1.25 \text{ ft})]+M_{py} -347.5 \text{ lb ft}
+\sum M_{Py} = \pm ~F_xz \pm F_zx = 0 = -[(150{~lb})(3{~in})(\frac{1{~ft}}{12{~in}})]-[(300{~lb})(1.25{~ft})]+M_{py} -347.5{~lb·ft}
 $$
 
 The moment about the z axis at point P is:
 
 $$
-\sum M_{Pz} = \pm F_xy \pm F_yx = 0 = [(150 \text{ lb})(2 \text{ in})(\frac{1 \text{ ft}}{12 \text{ in}})]-[(225 \text{ lb})(1.25 \text{ ft})]+M_{pz} -2.5 \text{ lb ft}
+\sum M_{Pz} = \pm F_xy \pm F_yx = 0 = [(150{~lb})(2{~in})(\frac{1{~ft}}{12{~in}})]-[(225{~lb})(1.25{~ft})]+M_{pz} -2.5{~lb·ft}
 $$
 
 The sign on the individual multiplicative terms in each equation are determined by right hand rule or visualization.
@@ -403,11 +430,12 @@ P~y~ = 225 lb
 
 P~z~ = 300 lb
 
-M~Px~ = 6.25 lb ft
+M~Px~ = 6.25 lb·ft
 
-M~Py~ = 348 lb ft
+M~Py~ = 348 lb·ft
 
-M~Pz~ = 2.5 lb ft
+M~Pz~ = 2.5 lb·ft
+:::
 :::
 
 </details>

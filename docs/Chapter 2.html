@@ -71,7 +71,37 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles/custom.css">
 </head>
 
 <body class="nav-sidebar docked">
@@ -150,7 +180,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Chapter 6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Torsional Loading</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Torsion</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -252,12 +282,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">2.1</span> Introduction</a></li>
-  <li><a href="#average-normal-stress" id="toc-average-normal-stress" class="nav-link" data-scroll-target="#average-normal-stress"><span class="header-section-number">2.2</span> Average Normal Stress</a></li>
-  <li><a href="#average-shear-stress" id="toc-average-shear-stress" class="nav-link" data-scroll-target="#average-shear-stress"><span class="header-section-number">2.3</span> Average Shear Stress</a></li>
-  <li><a href="#bearing-stress" id="toc-bearing-stress" class="nav-link" data-scroll-target="#bearing-stress"><span class="header-section-number">2.4</span> Bearing Stress</a></li>
-  <li><a href="#stress-on-an-inclined-plane" id="toc-stress-on-an-inclined-plane" class="nav-link" data-scroll-target="#stress-on-an-inclined-plane"><span class="header-section-number">2.5</span> Stress on an Inclined Plane</a></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">2.6</span> Summary</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#sec-2.1" id="toc-sec-2.1" class="nav-link" data-scroll-target="#sec-2.1"><span class="header-section-number">2.1</span> Average Normal Stress</a></li>
+  <li><a href="#sec-2.2" id="toc-sec-2.2" class="nav-link" data-scroll-target="#sec-2.2"><span class="header-section-number">2.2</span> Average Shear Stress</a></li>
+  <li><a href="#sec-2.3" id="toc-sec-2.3" class="nav-link" data-scroll-target="#sec-2.3"><span class="header-section-number">2.3</span> Bearing Stress</a></li>
+  <li><a href="#sec-2.4" id="toc-sec-2.4" class="nav-link" data-scroll-target="#sec-2.4"><span class="header-section-number">2.4</span> Stress on an Inclined Plane</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   </ul>
 </nav>
     </div>
@@ -301,52 +331,70 @@ Learning Objectives
 </ul>
 </div>
 </div>
-<section id="introduction" class="level2" style=".unnumbered" data-number="2.1">
-<h2 style=".unnumbered" data-number="2.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">2.1</span> Introduction</h2>
-<details>
+<section id="introduction" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="introduction">Introduction</h2>
+<details open="">
 <summary>
 Click to expand
 </summary>
-<p>Having reviewed static equilibrium in Chapter 1, we now know how to find the internal loads in a body using equilibrium. When determining whether a body can resist the loads applied to it, the internal load is only part of the solution. The dimensions of the body and the inherent properties of the material it is made from are also important.</p>
+<p>Having reviewed static equilibrium in <a href="#sec-statics" class="quarto-xref"><span class="quarto-unresolved-ref">sec-statics</span></a>, we now know how to find the internal loads in a body using equilibrium. When determining whether a body can resist the loads applied to it, the internal load is only part of the solution. The dimensions of the body and the inherent properties of the material it is made from are also important.</p>
 <p>In this chapter we’ll explore the concept of stress, which can help us determine whether an object will physically break when subjected to a load. We’ll cover average normal stress (stress perpendicular to the cross-section) in Section 2.1 and average shear stress (stress parallel to the cross-section) in Section 2.2. We’ll then discuss bearing stress (the stress between two bodies in contact with each other) in Section 2.3 and finish with the average normal and shear stresses on an inclined cross-section in Section 2.4.</p>
 </details>
 </section>
-<section id="average-normal-stress" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="average-normal-stress"><span class="header-section-number">2.2</span> Average Normal Stress</h2>
+<section id="sec-2.1" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="sec-2.1"><span class="header-section-number">2.1</span> Average Normal Stress</h2>
 <details>
 <summary>
 Click to expand
 </summary>
 <p>Average normal stress is defined as the internal normal force divided by the cross-sectional area of the body. It is given the Greek letter sigma (σ). Stress increases as the force increases or as the cross-sectional area decreases.</p>
-<p>[math]</p>
+<p><span class="math display">\[
+\sigma=\frac{N}{A}
+\]</span></p>
 <p><em>where</em></p>
-<p><em>𝜎 = Average normal stress [Pa, psi]</em></p>
-<p><em>N = Internal normal force [N, lb]</em></p>
-<p><em>A = Cross-sectional area [m<sup>2</sup>, in<sup>2</sup>]</em></p>
-<p>As such the SI units of stress are N/m<sup>2</sup>, more commonly referred to as the Pascal (Pa) where 1 Pa = 1 N/m<sup>2</sup>. The US customary units for stress are lb/in.2, commonly written as psi. Since stresses can get very large, it is common to use prefixes such as kilo (k) and mega (M) to represent 10<sup>3</sup> and 10<sup>6</sup> respectively. A stress of 15,000,000 Pa is written as 15 MPa. A stress of 35,000 psi is written as 35 ksi.</p>
+<ul>
+<li><p>𝜎 = Average normal stress [Pa, psi]</p></li>
+<li><p>N = Internal normal force [N, lb]</p></li>
+<li><p>A = Cross-sectional area [m<sup>2</sup>, in<sup>2</sup>]</p></li>
+</ul>
+<p>As such the SI units of stress are N/m<sup>2</sup>, more commonly referred to as the Pascal (Pa) where 1 Pa = 1 N/m<sup>2</sup>. The US customary units for stress are lb/in<sup>2</sup>, commonly written as psi. Since stresses can get very large, it is common to use prefixes such as kilo (k) and mega (M) to represent 10<sup>3</sup> and 10<sup>6</sup> respectively. A stress of 15,000,000 Pa is written as 15 MPa. A stress of 35,000 psi is written as 35 ksi.</p>
 <p>Normal stress occurs perpendicular to the cross-section and so is associated with either a pulling or pushing motion (Figure 2.1). Normal forces that pull on a cross-section are known as tensile forces and create a tensile normal stress. Normal forces that push on a cross-section are known as compressive forces and create a compressive normal stress. The normal stress calculated above is really an average normal stress as the force is distributed over the cross-section, but we generally simplify this to a concentrated force that creates the same normal stress at every point on the cross-section (Figure 2.2).</p>
-<p><strong>Figure 2.1:</strong> Forces pulling on a cross-section cause tension, while forces pushing on a cross-section cause compression. Both are very common. (Left) A crane cable during a lift experiences tension. (Right) The support columns under a bridge experience compression.</p>
-<p><strong>Figure 2.2:</strong> The internal load is equally distributed over the cross-sectional area, but may be represented as a single concentrated load acting at the center (N in this case). The stress is therefore an average normal stress.</p>
-<p>The internal normal force in a body can be found through the method of equilibrium as learned in Statics. See Example 2.1 for a demonstration.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH2 figures/2.1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<figcaption>Figure 2.1: Forces pulling on a cross-section cause tension, while forces pushing on a cross-section cause compression. Both are very common. Left: A crane cable during a lift experiences tension. Right: The support columns under a bridge experience compression.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH2 figures/2.2.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<figcaption>Figure 2.2: The internal load is equally distributed over the cross-sectional area, but may be represented as a single concentrated load acting at the center (N in this case). The stress is therefore an average normal stress.</figcaption>
+</figure>
+</div>
+<p>The internal normal force in a body can be found through the method of equilibrium as reviewed in <a href="#sec-1.2" class="quarto-xref"><span class="quarto-unresolved-ref">sec-1.2</span></a>. See Example 2.1 for a demonstration.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example 2.1: Simple normal stress
+Example 2.1
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The support column will be subjected to a compressive force F = 65 kips.</p>
-<p>[figure]</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH2 figures/example 2.1 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="302"></p>
+</figure>
+</div>
 <ol type="1">
 <li><p>The diameter of the column is 4 inches. Determine the average normal stress in the column.</p></li>
 <li><p>The column is to be made of concrete with an allowable compressive stress of 4 ksi. For the same force F = 65 kips, determine the required diameter of the column so that the average normal stress does not exceed 4 ksi.</p></li>
 </ol>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -361,17 +409,27 @@ Solution
 <ol type="1">
 <li>Cut a cross-section through the column and draw a free body diagram. Although it is clear in this case that the internal load will be 65 kips, it is best to get in the habit of writing out equilibrium equations.</li>
 </ol>
-<p>[figure]</p>
-<p>[math]</p>
-<p>The column has a circular cross-section of area [math]</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH2 figures/example 2.1 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="359"></p>
+</figure>
+</div>
+<p><span class="math display">\[
+\sum F_y= N-65{~kips}=0
+\]</span></p>
+<p>The column has a circular cross-section of area <span class="math inline">\(A=\pi(2)^2=4 \pi{~in.}^2\)</span>.</p>
 <p>The average normal stress can now be found from:</p>
-<p>[math]</p>
+<p><span class="math display">\[
+\sigma=\frac{N}{A}=\frac{65{~kips}}{4 \pi{~in.}^2}=5.17{~ksi}
+\]</span></p>
 <ol start="2" type="1">
 <li>Use the average normal stress equation again, but this time the stress is known to be 4 ksi. The loading has not changed so the internal normal force will still be 65 kips.</li>
 </ol>
-<p>[math]</p>
-<p>Since [math] we can find [math]</p>
-<p>Then [math]</p>
+<p><span class="math display">\[
+\sigma=\frac{N}{A} \rightarrow A=\frac{N}{\sigma}=\frac{65{~kips}}{4{~ksi}}=16.25 {~in}^2
+\]</span></p>
+<p>Since <span class="math inline">\(A=\pi r^2\)</span> we can find <span class="math inline">\(r=\sqrt{\frac{A}{\pi}}=\sqrt{\frac{16.25{~in.}^2}{\pi}}=2.27{~in}\)</span>.</p>
+<p>Then <span class="math inline">\(d=2 r=2 * 2.27{~in.}=4.55{~in.}\)</span></p>
 <p>Note that this is the minimum required diameter to ensure the average normal stress does not exceed 4 ksi. If the diameter is any smaller than this, the stress will exceed the 4 ksi limit.</p>
 </div>
 </div>
@@ -380,20 +438,20 @@ Solution
 </div>
 </div>
 <p>Sometimes the loading or cross-sectional area of the body will change, resulting in a change in stress. In these cases the stress can be calculated separately in each segment of the body by first finding the internal load in each segment and then dividing the internal load by the cross-sectional area of the respective segment. Different parts of the body may experience different stresses. Generally the highest stress is of most importance as that is the stress that typically determines whether the body will break. Because we do not know in advance where the largest stress is, however, it is typically necessary to calculate the stress at each different cross-section in order to determine the highest stress. See Example 2.2 for a demonstration.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example 2.2: Normal stress with multiple loads/sections
+Example 2.2
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Two hollow pipes are welded together as shown. Pipe (1) has an outer diameter of 70 mm and an inner diameter of 40 mm while pipe (2) has an outer diameter of 110 mm and an inner diameter of 60 mm. Forces are applied at the end of each pipe and at the weld, where F1 = 40 kN, F2 = 70 kN, and F3 = 30 kN. Determine the average normal stress in each pipe.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -405,29 +463,46 @@ Solution
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>We can calculate average normal stress using [math] so we will need to find the area of each pipe and the normal force in each pipe. This can be done in any order. Starting with the areas:</p>
-<p>[math]</p>
+<p>We can calculate average normal stress using <span class="math inline">\(\sigma=\frac{N}{A}\)</span> so we will need to find the area of each pipe and the normal force in each pipe. This can be done in any order. Starting with the areas:</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; A_1=\pi\left(0.035^2-0.02^2\right)=0.00259{~m}^2 \\
+&amp; A_2=\pi\left(0.055^2-0.03^2\right)=0.00668{~m}^2
+\end{aligned}
+\]</span></p>
 <p>The internal loads can be found by cutting a cross-section through each pipe, drawing a free body diagram, and writing an equilibrium equation.</p>
-<p>[math]</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;\sum F_x=40{~kN}-N_1=0 \quad \rightarrow \quad N_1=40{~kN} \\
+&amp;\sum F_x=40{~kN}-70{~kN}+N_2=0 \quad \rightarrow \quad N_2=30{~kN}
+\end{aligned}
+\]</span></p>
 <p>Note that we may choose to draw the internal load in either tension or compression. The answer must be compared to the free body diagram. A positive answer from the equilibrium equation indicates that the direction drawn on the free body diagram was correct. Although both answers here were positive, it can be seen in the free body diagrams that N<sub>1</sub> was drawn in compression and N<sub>2</sub> was drawn in tension. These positive answers indicate that the drawings are correct. N<sub>1</sub> is 40 kN in compression and N<sub>2</sub> is 30 kN in tension.</p>
 <p>Note also that it is acceptable to draw a free body diagram of either side of the cross-section. This will not change the result. Perhaps it would have been easier to draw the right-hand-side of section 2.</p>
-<p>[math]</p>
+<p><span class="math display">\[
+\sum F_x=30{~kN}+N_2=0 \quad \rightarrow \quad N_2=30{~kN}
+\]</span></p>
 <p>We again find that N<sub>2</sub> is 30 kN in tension. You may always choose to draw either side of a cross-section. Make sure to include everything to that side of your cut, all the way to the end of the structure (e.g.&nbsp;do not stop at the weld).</p>
 <p>Now that the areas and internal loads are known we can calculate the internal normal stresses.</p>
-<p>[math]</p>
+<p><span class="math display">\[
+\begin{gathered}
+\sigma_1=\frac{N_1}{A_1}=\frac{-40,000{~N}}{0.00259{~m}^2}=-15.4{~MPa} \\
+\sigma_2=\frac{N_2}{A_2}=\frac{30,000{~N}}{0.00668{~m}^2}=4.49{~MPa}
+\end{gathered}
+\]</span></p>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Step-by-step: Needs title
+Step-by-step: Average Normal Stress
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -435,36 +510,48 @@ Step-by-step: Needs title
 <li><p>Use equilibrium equations to determine reaction loads at any supports.</p></li>
 <li><p>Cut a cross-section through the member at the point where you want to determine the internal normal stress, and draw a free body diagram of the member on either side of the cut. Be sure to include everything on the chosen side, including external loads, support reactions, and the internal normal force.</p></li>
 <li><p>Use equilibrium equations to determine the internal normal force (N) in the member.</p></li>
-<li><p>Determine average normal stress using [math]</p></li>
+<li><p>Determine average normal stress using <span class="math inline">\(\sigma=\frac{N}{A}\)</span>.</p></li>
 </ol>
 </div>
 </div>
-</details></section>
-<section id="average-shear-stress" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="average-shear-stress"><span class="header-section-number">2.3</span> Average Shear Stress</h2>
+</details>
+</section>
+<section id="sec-2.2" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="sec-2.2"><span class="header-section-number">2.2</span> Average Shear Stress</h2>
+<details>
+<summary>
+Click to expand
+</summary>
 <p>Average shear stress is defined as the internal shear force divided by the cross-sectional area of the body. While normal forces (and therefore normal stresses) occur when a body is under tension or compression, shear forces (and therefore shear stresses) occur when a force is tangentially applied parallel to the cross-section, resulting in a sliding motion (Figure 2.3).</p>
-<p><strong>Figure 2.3:</strong> (a) External loads F creating (b) an internal normal force (N) perpendicular to the cross-section. (c) External loads F1, F2, and F3 creating (d) an internal shear force (V) parallel to the cross-section. Note that for diagram (d) to be in equilibrium there would also need to be an internal bending moment. That has been omitted here for clarity.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH2 figures/2.3.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<figcaption>Figure 2.3: (a) External loads F creating (b) an internal normal force (N) perpendicular to the cross-section. (c) External loads F<sub>1</sub>, F<sub>2</sub>, and F<sub>3</sub> creating (d) an internal shear force (V) parallel to the cross-section. Note that for diagram (d) to be in equilibrium there would also need to be an internal bending moment. That has been omitted here for clarity.</figcaption>
+</figure>
+</div>
 <p>Although the basic definition of average normal stress and average shear stress is the same (force divided by area) there are some differences. To quickly differentiate which stress we are talking about, shear stress is denoted by the Greek letter tau (τ).</p>
-<p>[math]</p>
+<p><span class="math display">\[
+\tau=\frac{V}{A}
+\]</span></p>
 <p>   where            </p>
 <p>τ = Average shear stress [Pa, psi]            </p>
 <p>V = Internal sheal force [N, lb]            </p>
 <p>A = Cross-sectional area [m<sup>2</sup>, in<sup>2</sup>]</p>
 <p>Like normal force, internal shear force can be found by cutting a cross-section through the body, drawing a free body diagram, and applying equilibrium equations. See Example 2.3 for a demonstration.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example 2.3: Simple shear stress
+Example 2.3
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>A bridge spans a gap of L = 150 ft. The roadway may be considered simply supported and has a rectangular cross-section of base b = 10 in. and height h = 6 in. It is subjected to a uniform distributed load of w = 200 lb/ft. Determine the magnitude of the average shear stress in the cross-section at x = 30 ft and x = 80 ft.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -476,18 +563,26 @@ Solution
 </div>
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Average shear stress can be calculated from [math]. The cross-sectional area is [math]</p>
-<p>The reactions at the support can be found by converting the distributed load into a statically equivalent concentrated load. This load will be equal to [math] and will be located at the center of the bridge. Since the loading is symmetric, each support will support half of this load, or 15000 lb each.</p>
+<p>Average shear stress can be calculated from <span class="math inline">\(\tau=\frac{V}{A}\)</span>. The cross-sectional area is <span class="math inline">\(A=10{~in.}*6{~in.}=60{~in.}^2\)</span></p>
+<p>The reactions at the support can be found by converting the distributed load into a statically equivalent concentrated load. This load will be equal to <span class="math inline">\(F=200{~lb/ft}*150{~ft}=30000{~lb}\)</span> and will be located at the center of the bridge. Since the loading is symmetric, each support will support half of this load, or 15000 lb each.</p>
 <p>The internal shear force can be found by cutting a cross-section through the point of interest, drawing a free body diagram, and applying equilibrium equations. Remember to include the internal loads V and M, and to again convert the distributed load into a statically equivalent concentrated load over this portion of the bridge.</p>
 <p>At x = 30 ft:</p>
-<p>[math]</p>
+<p><span class="math display">\[
+\sum F_y=15,000{~lb}-6,000{~lb}-V=0 \quad \rightarrow \quad V=9,000{~lb}
+\]</span></p>
 <p>Note that an internal bending moment is also necessary in order to maintain equilibrium. We could find M by summing moments about any point, but it is not needed in order to solve this problem.</p>
 <p>The shear stress can now be calculated.</p>
-<p>[math]</p>
+<p><span class="math display">\[
+\tau=\frac{V}{A}=\frac{9,000{~lb}}{60{~in.}^2}=150{~psi}
+\]</span></p>
 <p>At x = 80 ft:</p>
-<p>[math]</p>
+<p><span class="math display">\[
+\sum F_y=15,000{~lb}-16,000{~lb}-V=0 \quad \rightarrow \quad V=-1,000{~lb}
+\]</span></p>
 <p>Note that the negative sign here simply indicates that V is acting in the opposite direction of that drawn in the free body diagram. It can be discarded here as we are calculating the magnitude of the average shear stress at each point.</p>
-<p>[math]</p>
+<p><span class="math display">\[
+\tau=\frac{V}{A}=\frac{1,000{~lb}}{60{~in.}^2}=16.7{~psi}
+\]</span></p>
 </div>
 </div>
 </div>
@@ -495,21 +590,26 @@ Solution
 </div>
 </div>
 <p>Shear stresses are common in both members of a structure and also in the fasteners between members. Depending on how these connections are formed we may see multiple shear planes. It is very important to correctly identify the internal force in the body. Figure 2.4 demonstrates the difference between single and double shear configurations for a pinned joint and the effects on internal shear force. See Example 2.4 for an example where double shear occurs.</p>
-<p><strong>Figure 2.4:</strong> Pins experiencing (a) single shear and (b) double shear.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH2 figures/2.4.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<figcaption>Figure 2.4: Pins experiencing (a) single shear and (b) double shear.</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example 2.4: Shear stress with double shear
+Example 2.4
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>A pin made of a tin alloy with an allowable shear stress of 3 ksi is used to connect a footrest to the frame of a motorcycle. When in motion, the footrest supports a load of 200 lb which is transferred to the pin. Determine the required diameter of the pin such that the stress will not exceed 5 ksi.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -521,22 +621,22 @@ Solution
 </div>
 <div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Average shear stress can be calculated from [math]. Rearrange this equation to [math]. Start with a free body diagram of the pin in order to determine the internal shear force.</p>
-<p>From the diagram it should be apparent that the pin is in double shear and the maximum internal shear force in the pin is 100 lb. Thus the required cross-sectional area [math].</p>
-<p>Since [math] the required diameter is [math]</p>
+<p>Average shear stress can be calculated from <span class="math inline">\(\tau=\frac{V}{A}\)</span>. Rearrange this equation to <span class="math inline">\(A=\frac{V}{\tau}\)</span>. Start with a free body diagram of the pin in order to determine the internal shear force.</p>
+<p>From the diagram it should be apparent that the pin is in double shear and the maximum internal shear force in the pin is 100 lb. Thus the required cross-sectional area <span class="math inline">\(A=\frac{100{~lb}}{3000{~psi}}=0.0333{~in.}^2\)</span>.</p>
+<p>Since <span class="math inline">\(A=\frac{\pi}{4} d^2\)</span> the required diameter is <span class="math inline">\(d=\sqrt{\frac{0.0333{~in.}^2 * 4}{\pi}}=0.206{~in}\)</span>.</p>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Step-by-step: Needs title
+Step-by-step: Average Shear stress
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -544,24 +644,39 @@ Step-by-step: Needs title
 <li><p>Use equilibrium equations to determine reaction loads at any supports.</p></li>
 <li><p>Cut a cross-section through the member at the point where you want to determine the internal shear stress, and draw a free body diagram of the member on either side of the cut. Be sure to include everything on the chosen side, including external loads, support reactions, and the internal shear force.</p></li>
 <li><p>Use equilibrium equations to determine the internal shear force (V) in the member.</p></li>
-<li><p>Determine average normal stress using [math]</p></li>
+<li><p>Determine average normal stress using <span class="math inline">\(\tau=\frac{V}{A}\)</span></p></li>
 </ol>
 </div>
 </div>
+</details>
 </section>
-<section id="bearing-stress" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="bearing-stress"><span class="header-section-number">2.4</span> Bearing Stress</h2>
+<section id="sec-2.3" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="sec-2.3"><span class="header-section-number">2.3</span> Bearing Stress</h2>
+<details>
+<summary>
+Click to expand
+</summary>
 <p>Bearing stress is similar to normal stress, except that it occurs at the contact area between two bodies instead of within a single body. Bearing stress is calculated with the average normal stress equation, where the cross-sectional area is the contact area between the two bodies (Figure 2.5).</p>
-<p><strong>Figure 2.5:</strong> Circular column sitting upon a rectangular foundation. Contact areas between a circular and rectangular surface, and between two rectangular surfaces are shown.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH2 figures/2.5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="271"></p>
+<figcaption>Figure 2.5: Circular column sitting upon a rectangular foundation. Contact areas between a circular and rectangular surface, and between two rectangular surfaces are shown.</figcaption>
+</figure>
+</div>
 <p>One common situation is contact between two curved edges, such as the bolt in Figure 2.6. In this situation it is common to use the projected contact area between the curved surfaces, which forms a rectangle of base d and height t. This greatly simplifies the calculation, but again represents an average value for the contact or bearing stress.</p>
-<p><strong>Figure 2.6:</strong> When calculating the bearing stress between curved surfaces, project a rectangle of area A = d*t.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH2 figures/2.6.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="407"></p>
+<figcaption>Figure 2.6: When calculating the bearing stress between curved surfaces, project a rectangle of area A = d*t.</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Step-by-step:
+Step-by-step: Bearing Stress
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -569,39 +684,65 @@ Step-by-step:
 <li><p>Use equilibrium equations to determine reaction loads at any supports.</p></li>
 <li><p>Determine the contact area between the two components (A).</p></li>
 <li><p>Use equilibrium equations to determine the normal force (N) between the two components.</p></li>
-<li><p>Determine average bearing stress using [math]</p></li>
+<li><p>Determine average bearing stress using <span class="math inline">\(\sigma=\frac{N}{A}\)</span>.</p></li>
 </ol>
 </div>
 </div>
+</details>
 </section>
-<section id="stress-on-an-inclined-plane" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="stress-on-an-inclined-plane"><span class="header-section-number">2.5</span> Stress on an Inclined Plane</h2>
-<p>We have so far been cutting cross-sections perpendicular to the external force, or parallel to it. However, there is no rule that says we have to do this. It is perfectly acceptable to cut cross-sections at an angle and there are many situations where it may make sense to do so (Figure 2.7)</p>
-<p><strong>Figure 2.7:</strong> (a) External loads, F, will create (b) an internal normal force, N, when a cross-section is cut vertically. (c) If the cross-section is cut along an inclined plane the internal force, P, will not be a normal force or shear force. (d) The internal force should be broken into normal (N) and shear (V) components that are perpendicular and parallel to the plane respectively.</p>
+<section id="sec-2.4" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="sec-2.4"><span class="header-section-number">2.4</span> Stress on an Inclined Plane</h2>
+<details>
+<summary>
+Click to expand
+</summary>
+<p>We have so far been cutting cross-sections perpendicular to the external force, or parallel to it. However, there is no rule that says we have to do this. It is perfectly acceptable to cut cross-sections at an angle and there are many situations where it may make sense to do so (Figure 2.7).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH2 figures/2.7.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<figcaption>Figure 2.7: (a) External loads, F, will create (b) an internal normal force, N, when a cross-section is cut vertically. (c) If the cross-section is cut along an inclined plane the internal force, P, will not be a normal force or shear force. (d) The internal force should be broken into normal (N) and shear (V) components that are perpendicular and parallel to the plane respectively.</figcaption>
+</figure>
+</div>
 <p>In this scenario the internal load must still be equal and opposite to the external load in order to maintain equilibrium but, because we cut the cross-section at an angle, this internal load is neither parallel nor perpendicular to the cross-section. Therefore it is not entirely a normal force or a shear force. However, the internal force may be broken into components that are perpendicular and parallel to the cross-section.</p>
-<p>[math]</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; N=P \sin (\theta) \\
+&amp; V=P \cos (\theta)
+\end{aligned}
+\]</span></p>
 <p>The area used to calculate the average normal and shear stresses must be the area of the inclined plane (Figure 2.8). By setting up a right-angled triangle it should be apparent that the area of the plane, A<sub>p</sub>, can be found from:</p>
-<p>[math]</p>
-<p>We can calculate average normal stress from [math]</p>
-<p>We can calculate average shear stress from [math]</p>
+<p><span class="math display">\[
+A_p=\frac{A}{\sin (\theta)}
+\]</span></p>
+<p>We can calculate average normal stress from <span class="math inline">\(\sigma=\frac{N}{A_p}=\frac{P \sin (\theta)}{\frac{A}{\sin (\theta)}}=\frac{P \sin ^2(\theta)}{A}\)</span>.</p>
+<p>We can calculate average shear stress from <span class="math inline">\(\tau=\frac{V}{A_p}=\frac{P \cos (\theta)}{\frac{A}{\sin (\theta)}}=\frac{P \sin (\theta) \cos (\theta)}{A}\)</span>.</p>
 <p>Note these equations assume the angle (θ) is measured from the axis perpendicular to area A. For a horizontal beam, area A is in the vertical plane so angle θ is measured from the horizontal axis.</p>
-<p><strong>Figure 2.8:</strong> When calculating the stresses on an inclined plane, it is important to use the area of the plane, A<sub>p</sub>, rather than the area of the cross-sectional plane, A.</p>
-<p>Even if the external load remains constant, we can obtain different values for the internal normal and shear forces (and therefore different values for the stresses) by changing the angle at which we cut the cross-section. We’ll explore the implications of this further in Chapter 13.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH2 figures/2.8.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<figcaption>Figure 2.8: When calculating the stresses on an inclined plane, it is important to use the area of the plane, Ap, rather than the area of the cross-sectional plane, A.</figcaption>
+</figure>
+</div>
+<p>Even if the external load remains constant, we can obtain different values for the internal normal and shear forces (and therefore different values for the stresses) by changing the angle at which we cut the cross-section. We’ll explore the implications of this further in <a href="#sec-stress-transformation" class="quarto-xref"><span class="quarto-unresolved-ref">sec-stress-transformation</span></a>. For now, a demonstration of calculating the stresses on an inclined plane is given in Example 2.5.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example 2.5: Inclined plane
+Example 2.5
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>A beam is formed of two structural wooden members that are glued together along an inclined plane at angle θ = 40° and subjected to a tensile force of F = 30 kN. The height of the beam is 50 mm and its thickness is 20 mm. Determine the normal and shear stresses created along the inclined plane.</p>
-<p>[figure]</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH2 figures/example 2.5 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="294"></p>
+</figure>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -614,28 +755,44 @@ Solution
 <div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Begin by cutting a cross-section along the inclined plane and drawing a free body diagram. Remember to include the internal normal and shear forces perpendicular and parallel to the cross-section.</p>
-<p>[figure]</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH2 figures/example 2.5 part 1 copy.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
 <p>Use equilibrium equations to determine the internal forces. It will be easiest to define axes parallel and perpendicular to the inclined plane.</p>
-<p>[math]</p>
+<p><span class="math display">\[
+\begin{aligned}
+\sum F_{x^{\prime}}= F \cos (\theta)-V=0 \\
+\sum F_{y^{\prime}}= N-F \sin (\theta)=0
+\end{aligned}
+\]</span></p>
 <p>With F = 30 kN and θ = 40°, these can be solved for N = 19.3 kN and V = 23.0 kN.</p>
 <p>Next, determine the cross-sectional area of the inclined plane.</p>
-<p>[math]</p>
-<p>With A = 0.05 m x 0.02 m = 0.001 m2 and θ = 40°, Ap = 0.00156 m2.</p>
+<p><span class="math display">\[
+A_p=\frac{A}{\sin (\theta)}
+\]</span></p>
+<p>With <span class="math inline">\(A = 0.05{~m}*0.02{~m} = 0.001{~m}^2\)</span> and <span class="math inline">\(θ = 40°\)</span>, <span class="math inline">\(Ap = 0.00156{~m}^2\)</span>.</p>
 <p>Finally, determine the average normal stress and the average shear stress.</p>
-<p>[math]</p>
+<p><span class="math display">\[
+\begin{aligned}
+\sigma &amp; =\frac{N}{A_p}=\frac{19,300{~N}}{0.00156{~m}^2}=12.4 \times 10^6 \frac{{N}}{m^2}=12.4{~MPa} \\
+\tau &amp; =\frac{V}{A_p}=\frac{23,000{~N}}{0.00156{~m}^2}=14.8 \times 10^6 \frac{\mathrm{N}}{m^2}=14.8{~MPa}
+\end{aligned}
+\]</span></p>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Step-by-step:
+Step-by-step: Stresses on Inclined Planes
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -643,14 +800,19 @@ Step-by-step:
 <li><p>Use equilibrium equations to determine reaction loads at any supports.</p></li>
 <li><p>Cut a cross-section along the inclined plane and determine the angle (θ) of the plane with respect to the axis perpendicular to cross-sectional area A.</p></li>
 <li><p>Use equilibrium equations to determine the internal load (F).</p></li>
-<li><p>Determine average normal stress using [math]</p></li>
-<li><p>Determine average shear stress using [math]</p></li>
+<li><p>Determine average normal stress using <span class="math inline">\(\sigma=\frac{F \sin ^2(\theta)}{A}\)</span>.</p></li>
+<li><p>Determine average shear stress using <span class="math inline">\(\tau=\frac{F \sin (\theta) \cos (\theta)}{A}\)</span>.</p></li>
 </ol>
 </div>
 </div>
+</details>
 </section>
-<section id="summary" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="summary"><span class="header-section-number">2.6</span> Summary</h2>
+<section id="summary" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="summary">Summary</h2>
+<details>
+<summary>
+Click to expand
+</summary>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -679,15 +841,27 @@ Key equations
 </div>
 <div class="callout-body-container callout-body">
 <p>Average normal stress:</p>
-<p>[math]</p>
+<p><span class="math display">\[
+\sigma=\frac{N}{A}
+\]</span></p>
 <p>Average shear stress:</p>
-<p>[math]</p>
+<p><span class="math display">\[
+\tau=\frac{V}{A}
+\]</span></p>
 <p>Bearing stress:</p>
-<p>[math]</p>
+<p><span class="math display">\[
+\sigma=\frac{N}{A}
+\]</span></p>
 <p>Average stresses on an inclined plane:</p>
-<p>[math]</p>
+<p><span class="math display">\[
+\begin{aligned}
+\sigma &amp; =\frac{P \sin ^2(\theta)}{A} \\
+\tau &amp; =\frac{P \sin (\theta) \cos (\theta)}{A}
+\end{aligned}
+\]</span></p>
 </div>
 </div>
+</details>
 
 
 </section>

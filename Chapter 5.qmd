@@ -17,7 +17,7 @@ editor: visual
 
 ## Introduction {.unnumbered}
 
-<details>
+<details open>
 
 <summary>Click to expand</summary>
 
@@ -25,7 +25,7 @@ In this chapter we’ll take a closer look at the effects of axial loading. Axia
 
 ![Figure 5.1: Axial loads act perpendicular to the cross-section. They cause normal stress on the cross-section and normal strains in both the axial (A) and transverse (T) directions.](images/PNGs/Figure%205.1.png){fig-align="center" width="361"}
 
-Axial loads create axial stresses, which we have already seen in Section 2.1 and we’ll revisit briefly in Section 5.1. We previously considered the average normal stress in a cross-section, but the geometry of the cross-section can cause large localized stresses much higher than the average. We’ll discuss these stress concentrations in Section 5.2.
+Axial loads create axial stresses, which we have already seen in @sec-2.1 and we’ll revisit briefly in Section 5.1. We previously considered the average normal stress in a cross-section, but the geometry of the cross-section can cause large localized stresses much higher than the average. We’ll discuss these stress concentrations in Section 5.2.
 
 This text is concerned with both stress and deformation, so in Section 5.3 we’ll explore the deformation caused by axial loads. We’ll extend this to a special case of axial deformation involving parallel bars in Section 5.4, before using our knowledge of axial deformation to help us solve statically indeterminate problems in Section 5.5. These are problems where the equilibrium equations are not sufficient to determine the reaction and internal forces.
 
@@ -33,7 +33,7 @@ Finally we’ll investigate the effects of temperature in Section 5.6. As the te
 
 </details>
 
-## Axial Stress
+## Axial Stress {#sec-5.1}
 
 <details>
 
@@ -54,7 +54,7 @@ $$
 
 </details>
 
-## Stress Concentrations
+## Stress Concentrations {#sec-5.2}
 
 <details>
 
@@ -89,14 +89,14 @@ This stress concentration factor depends on the geometry at hand and can be foun
 
 ![Figure 5.5: Graphs showing how the stress concentration factor, K changes based on the geometry of the object.](images/PNGs/Figure%205.5.png){fig-align="center"}
 
-::: {.callout-note collapse="true" icon="false"}
-## Example 5.1: Stress concentration for hole
+::: {.callout-tip collapse="true" icon="false"}
+## Example 5.1
 
 A hole is drilled through a steel plate to allow two components to be bolted together. The plate has the dimensions shown and is 15 mm thick. If the plate is subjected to an axial load of P = 50 kN, determine the maximum stress in the plate if the hole diameter d = 20 mm.
 
 ![](images/PNGs/Example%205.1%20part%201.png){fig-align="center" width="348"}
 
-::: {.callout-note collapse="true" icon="false"}
+::: {.callout-tip collapse="true" icon="false"}
 ## Solution
 
 Start by calculating the average normal stress in the plate at the location of the hole. The cross-section is a rectangle with a base of 15 mm (0.015 m) and a height of 100 mm (0.1 m), with a 20 mm (0.02 m) diameter hole cut out.
@@ -104,7 +104,7 @@ Start by calculating the average normal stress in the plate at the location of t
 ![](images/PNGs/Example%205.1%20part%202.png){fig-align="center" width="185"}
 
 $$
-\sigma_{a v g}=\frac{N}{A}=\frac{50000}{0.015 *(0.1-0.02)}=41.7 \mathrm{MPa}
+\sigma_{a v g}=\frac{N}{A}=\frac{50000{~N}}{0.015{~m} *(0.1-0.02){~m}}=41.7{~MPa}
 $$
 
 Determine the ratio $\frac{d}{D}$ where d = hole diameter and D = Height of the cross-section. Use the appropriate stress concentration curve to read off the stress concentration factor K for this geometry.
@@ -113,7 +113,7 @@ Determine the ratio $\frac{d}{D}$ where d = hole diameter and D = Height of the 
 
 $$
 \begin{aligned}
-&\frac{d}{D}=\frac{20}{100}=0.2\\
+&\frac{d}{D}=\frac{20{~mm}}{100{~mm}}=0.2\\
 &K=2.525
 \end{aligned}
 $$
@@ -121,19 +121,19 @@ $$
 Calculate the maximum stress.
 
 $$
-\sigma_{\max }=K \sigma_{a v g}=2.525 * 41.7=105 M P a
+\sigma_{max }=K \sigma_{avg}=2.525*41.7{~MPa}=105{~MPa}
 $$
 :::
 :::
 
-::: {.callout-note collapse="true" icon="false"}
-## Example 5.2: Stress concentration for fillet
+::: {.callout-tip collapse="true" icon="false"}
+## Example 5.2
 
 A 1-inch-thick connecting rod in an engine assembly has the dimensions shown. If the maximum allowable stress in the rod is 40 ksi, determine the maximum axial load that may be applied to the rod.
 
 ![](images/PNGs/Example%205.2%20part%201.png){fig-align="center" width="363"}
 
-::: {.callout-note collapse="true" icon="false"}
+::: {.callout-tip collapse="true" icon="false"}
 ## Solution
 
 The connecting rod has two holes and a fillet. We can start by determining which of these geometries experiences the largest maximum stress, in terms of applied load P. For each geometry, calculate the average normal stress and then use the appropriate stress concentration curve to determine the maximum normal stress.
@@ -144,10 +144,10 @@ For the smaller circle:
 
 $$
 \begin{aligned}
-& \sigma_{\text {avg }}=\frac{N}{A}=\frac{P}{1 *(4-2)}=\frac{P}{2}=0.5 P \\
-& \frac{d}{D}=\frac{2}{4}=0.5 \\
-& \mathrm{~K}=2.15 \\
-& \sigma_{\max }=K \sigma_{\text {avg }}=2.15 * 0.5 P=1.075 P
+& \sigma_{avg}=\frac{N}{A}=\frac{P}{1 *(4-2)}=\frac{P}{2}=0.5 P \\
+& \frac{d}{D}=\frac{2{~in.}}{4{~in.}}=0.5 \\
+& K=2.15 \\
+& \sigma_{max }=K \sigma_{avg}=2.15 * 0.5 P=1.075 P
 \end{aligned}
 $$
 
@@ -157,10 +157,10 @@ For the larger circle:
 
 $$
 \begin{aligned}
-& \sigma_{\text {avg }}=\frac{N}{A}=\frac{P}{1 *(8-6)}=\frac{P}{2}=0.5 P \\
-& \frac{d}{D}=\frac{6}{8}=0.75 \\
-& \mathrm{~K}=2.05 \\
-& \sigma_{\text {max }}=K \sigma_{\text {avg }}=2.05 * 0.5 P=1.025 P
+& \sigma_{avg}=\frac{N}{A}=\frac{P}{1 *(8-6)}=\frac{P}{2}=0.5 P \\
+& \frac{d}{D}=\frac{6{~in.}}{8{~in.}}=0.75 \\
+& K=2.05 \\
+& \sigma_{max}=K \sigma_{avg}=2.05 * 0.5 P=1.025 P
 \end{aligned}
 $$
 
@@ -170,21 +170,21 @@ For the fillet:
 
 $$
 \begin{aligned}
-& \sigma_{\text {avg }}=\frac{N}{A}=\frac{P}{1 * 4}=\frac{P}{4}=0.25 P \\
-& \frac{D}{d}=\frac{8}{4}=2 \\
-& \frac{r}{d}=\frac{1}{4}=0.25 \\
-& \mathrm{~K}=1.82 \\
+& \sigma_{avg}=\frac{N}{A}=\frac{P}{1 * 4}=\frac{P}{4}=0.25 P \\
+& \frac{D}{d}=\frac{8{~in.}}{4{~in.}}=2 \\
+& \frac{r}{d}=\frac{1{~in.}}{4{~in.}}=0.25 \\
+& K=1.82 \\
 & \sigma_{\text {max }}=K \sigma_{\text {avg }}=1.82 * 0.25 P=0.455 P
 \end{aligned}
 $$
 
 The largest stress is at the small hole, where 𝜎~max~ = 1.075*P*.
 
-Since the maximum allowable stress is 40 ksi, $40=1.075 P \rightarrow P=\frac{40}{1.075}=37.2$ kips.
+Since the maximum allowable stress is 40 ksi, $40{~ksi}=1.075 P \quad\rightarrow\quad P=\frac{40{~ksi}}{1.075}=37.2{~kips}$
 :::
 :::
 
-::: {.callout-note collapse="true" icon="false"}
+::: {.callout-warning collapse="true" icon="false"}
 ## Step-by-step: Stress concentrations
 
 1.  Calculate the average normal stress using $\sigma_{\text {avg }}=\frac{N}{A}$. Do this at the hole or at the thinner section of the fillet.
@@ -196,7 +196,7 @@ Since the maximum allowable stress is 40 ksi, $40=1.075 P \rightarrow P=\frac{40
 
 </details>
 
-## Axial Deformation
+## Axial Deformation {#sec-5.3}
 
 <details>
 
@@ -240,14 +240,14 @@ In practice, there may be multiple axial loads applied to the bar. The cross-sec
 $$
 \Delta L=\sum \frac{F L}{A E}$$
 
-::: {.callout-note collapse="true" icon="false"}
-## Example 5.3: Axial change in length problem with different loads, areas, and materials
+::: {.callout-tip collapse="true" icon="false"}
+## Example 5.3
 
 A component is made by welding together 2 circular rods. Rod (1) is made of steel (E = 29 x 10^6^ psi) and is hollow, with an outer diameter of 4 in. and an inner diameter of 2 in. Rod (2) is made of copper (E = 17 x 10^6^ psi) and is solid, with a diameter of 5 in. If the component is subjected to the axial loads shown, determine the total deformation of the component.
 
 ![](images/PNGs/Example%205.3%20part%201.png){fig-align="center"}
 
-::: {.callout-note collapse="true" icon="false"}
+::: {.callout-tip collapse="true" icon="false"}
 ## Solution
 
 We can find the change in length of the component using $\Delta L=\sum \frac{F L}{A E}$.
@@ -258,8 +258,8 @@ First, break the component into three segments and determine the internal load i
 
 $$
 \begin{gathered}
-N_1=N_2=60 \mathrm{kips} \\
-N_3=-20 \mathrm{kips}
+N_1=N_2=60{~kips} \\
+N_3=-20{~kips}
 \end{gathered}
 $$
 
@@ -269,38 +269,38 @@ Cross-sectional areas:
 
 $$
 \begin{gathered}
-A_1=\pi *\left(2^2-1^2\right)=9.42 i n .{ }^2 \\
-A_2=\pi *\left(2.5^2\right)=19.6 i n .{ }^2
+A_1=\pi*(2^2-1^2){~in.}^2=9.42{~in.}^2 \\
+A_2=\pi*(2.5^2){~in.}^2=19.6{~in.}^2
 \end{gathered}
 $$
 
 Deformation of segment 1:
 
 $$
-\Delta L_1=\frac{60000 * 9}{9.42 * 29 \times 10^6}=0.00198 \mathrm{in.}
+\Delta L_1=\frac{60000{~lb} * 9{~in.}}{9.42{~in.}^2 * 29 \times 10^6\frac{lb}{in^2}}=0.00198{~in.}
 $$
 
 Deformation of segment 2:
 
 $$
-\Delta L_2=\frac{60000 * 4}{19.6 * 17 \times 10^6}=0.000719 \mathrm{in} .
+\Delta L_2=\frac{60000{~lb} * 4{~in.}}{19.6{~in.}^2 * 17 \times 10^6\frac{lb}{in.^2}}=0.000719{~in} .
 $$
 
 Deformation of segment 3:
 
 $$
-\Delta L_3=\frac{-20000 * 10}{19.6 * 17 \times 10^6}=-0.000599 \mathrm{in.}
+\Delta L_3=\frac{-20000{~lb} * 10{~in.}}{19.6{~in.}^2 * 17 \times 10^6\frac{lb}{in.^2}}=-0.000599{~in.}
 $$
 
 Note that segment 3 is in compression and so gets shorter, while segments 1 and 2 are in tension and so get longer. The total deformation in the component is simply the sum of these three deformations.
 
 $$
-\Delta L=0.00198+0.000719-0.000599=0.0021 \mathrm{in} .
+\Delta L=0.00198{~in.}+0.000719{~in.}-0.000599{~in.}=0.002{~in.}
 $$
 :::
 :::
 
-::: {.callout-note collapse="true" icon="false"}
+::: {.callout-warning collapse="true" icon="false"}
 ## Step-by-step: Axial deformation
 
 1.  Split the bar into sections of constant F, A, and E. Any time any of these terms changes, begin a new section.
@@ -314,7 +314,7 @@ $$
 
 </details>
 
-## Deformation in Series of Bars
+## Deformation in Series of Bars {#sec-5.4}
 
 <details>
 
@@ -345,14 +345,14 @@ $$
 
 ![Figure 5.8: Similar triangles for calculating deflection at a point when both bars experience a change in length.](images/PNGs/Figure%205.9.png){fig-align="center" width="379"}
 
-::: {.callout-note collapse="true" icon="false"}
-## Example 5.4: Apply numbers to figure 5.6
+::: {.callout-tip collapse="true" icon="false"}
+## Example 5.4
 
 A rigid beam is supported by two non-rigid poles and subjected to a distributed load w = 75 kN/m. Pole 1 is made of steel (E = 200 GPa) and has a diameter of 30 mm. Pole 2 is made of cast iron (E = 70 GPa) and has a diameter of 50 mm. Determine the deflection at point C of the rigid beam.
 
 ![](images/PNGs/Example%205.4%20part%201.png){fig-align="center" width="307"}
 
-::: {.callout-note collapse="true" icon="false"}
+::: {.callout-tip collapse="true" icon="false"}
 ## Solution
 
 Although the beam is rigid, poles 1 and 2 will both elongate. We can find the force in each pole by drawing a free body diagram and applying equilibrium equations.
@@ -361,8 +361,8 @@ Although the beam is rigid, poles 1 and 2 will both elongate. We can find the fo
 
 $$
 \begin{gathered}
-\sum M_A=0:-(600 * 8)+\left(F_2 * 12\right)=0 \rightarrow F_2=400 k N \\
-\sum F_y=0: F_1-600+400=0 \rightarrow F_1=200 k N
+\sum M_A=-(600{~kN}* 8{~m})+(F_2 * 12{~m})=0 \quad\rightarrow\quad F_2=400{~kN} \\
+\sum F_y=F_1-600{~kN}+400{~kN}=0 \quad\rightarrow\quad F_1=200{~kN}
 \end{gathered}
 $$
 
@@ -370,8 +370,8 @@ We can then calculate the change in length of each pole.
 
 $$
 \begin{aligned}
-\Delta L_1 & =\frac{F_1 L_1}{A_1 E_1}=\frac{200000 * 5}{\pi * 0.015^2 * 200 * 10^9}=0.00707 \mathrm{~m}=7.07 \mathrm{~mm} \\
-\Delta L_2 & =\frac{F_2 L_2}{A_2 E_2}=\frac{400000 * 3}{\pi * 0.025^2 * 70 * 10^9}=0.00873 \mathrm{~m}=8.73 \mathrm{~mm}
+\Delta L_1 & =\frac{F_1 L_1}{A_1 E_1}=\frac{200000{~N} * 5{~m}}{\pi * (0.015{~in.})^2 * 200 * 10^9\frac{N}{m^2}}=0.00707{~m}=7.07{~mm} \\
+\Delta L_2 & =\frac{F_2 L_2}{A_2 E_2}=\frac{400000{~N} * 3{~m}}{\pi * (0.025{~in.})^2 * 70 * 10^9\frac{N}{m^2}}=0.00873{~m}=8.73{~mm}
 \end{aligned}
 $$
 
@@ -384,18 +384,18 @@ We can find how much more point C has deflected than point A by using similar tr
 ![](images/PNGs/Example%205.4%20part%204.png){fig-align="center" width="253"}
 
 $$
-\frac{1.66}{12}=\frac{\Delta L_{C / A}}{4} \rightarrow \Delta L_{C / A}=0.553 \mathrm{~mm}
+\frac{1.66{~mm}}{12{~m}}=\frac{\Delta L_{C / A}}{4{~m}} \quad\rightarrow\quad \Delta L_{C / A}=0.553{~mm}
 $$
 
 So point C deflects 0.553 mm more than point A, which is a total deflection at point C of
 
 $$
-\Delta L_C=7.07 \mathrm{~mm}+0.553 \mathrm{~mm}=7.62 \mathrm{~mm}
+\Delta L_C=7.07{~mm}+0.553{~mm}=7.62{~mm}
 $$
 :::
 :::
 
-::: {.callout-note collapse="true" icon="false"}
+::: {.callout-warning collapse="true" icon="false"}
 ## Step-by-step: Deformation in series of bars
 
 1.  Use equilibrium to determine the internal force in each bar.
@@ -405,7 +405,7 @@ $$
 
 </details>
 
-## Statically Indeterminate Problems
+## Statically Indeterminate Problems {#sec-5.5}
 
 <details>
 
@@ -425,14 +425,14 @@ In such problems, it is not possible to determine all of the reaction forces usi
 
 The sum of these two deformations must equal the actual deformation of the member. If the member is held between two rigid supports, the total deformation will be zero. If there is a small gap or the supports allow a certain amount of movement, the total deformation will be equal to the size of this gap. Example 5.5 shows this process applied to a bar made of 2 materials.
 
-::: {.callout-note collapse="true" icon="false"}
-## Example 5.5: Bar between 2 supports, 2 materials, and areas
+::: {.callout-tip collapse="true" icon="false"}
+## Example 5.5
 
 A 15-foot-tall concrete (E = 4,000 ksi) column has a square cross-section of 6 in. by 6 in. A 10-foot-tall-copper (E = 17,000 ksi) cylinder with an outer diameter of 4 in. and in inner diameter of 3 in. is attached to the top of the concrete. The structure is fixed between two supports. A force of 25 kips is applied as shown. Determine the average normal stress in each material.
 
 ![](images/PNGs/Example%205.5%20part%201.png){fig-align="center" width="182"}
 
-::: {.callout-note collapse="true" icon="false"}
+::: {.callout-tip collapse="true" icon="false"}
 ## Solution
 
 To determine the internal force in each material, we first need to find the reaction forces at the supports. We would usually draw a free body diagram and apply equilibrium equations to find these forces. However, this won’t work here because the problem is statically indeterminate.
@@ -440,10 +440,7 @@ To determine the internal force in each material, we first need to find the reac
 ![](images/PNGs/Example%205.5%20part%202.png){fig-align="center" width="111"}
 
 $$
-\begin{aligned}
-&\sum F_y=0: F_1+F_2-25=0\\
-&F_1+F_2=25 \text { kips }
-\end{aligned}
+\sum F_y=F_1+F_2-25{~kips}=0 \quad\rightarrow\quad F_1+F_2=25{~kips}
 $$
 
 To solve the statically indeterminate problem, remove one of the supports and allow the structure to deform. Either support may be removed. Let’s remove the top support. In this scenario there is no load in the copper cylinder and there is a compressive load of 25 kips in the concrete column.
@@ -453,7 +450,7 @@ To solve the statically indeterminate problem, remove one of the supports and al
 The total deformation of the structure in this scenario is:
 
 $$
-\Delta L=\sum \frac{F L}{A E}=0-\frac{(25) *(15 * 12)}{(6 * 6) *(4,000)}=-0.03125 \mathrm{in}
+\Delta L=\sum \frac{F L}{A E}=0-\frac{(25{~kips}) *(15 * 12){~in.}}{(6 * 6){~in.}^2 *(4,000)\frac{kips}{in.^2}}=-0.03125{~in}
 $$
 
 Then replace force F~1~ and calculate the deformation caused by this force. Since the force is applied at the top of the structure, both the concrete and the copper will elongate.
@@ -461,27 +458,31 @@ Then replace force F~1~ and calculate the deformation caused by this force. Sinc
 ![](images/PNGs/Example%205.5%20part%204.png){fig-align="center" width="210"}
 
 $$
-\Delta L=\sum \frac{F L}{A E}=\frac{F_1 *(10 * 12)}{\pi\left(2^2-1.5^2\right) *(17,000)}+\frac{\left(F_1\right) *(15 * 12)}{(6 * 6) *(4,000)}=0.001284 F_1+0.00125 F_1=0.002534 F_1
+\Delta L=\sum \frac{F L}{A E}=\frac{F_1 *(10 * 12){~in.}}{\pi(2^2-1.5^2){~in.}^2 *(17,000)\frac{kips}{in.^2}}+\frac{\left(F_1\right) *(15 * 12){~in.}}{(6 * 6){~in.}^2 *(4,000)\frac{kips}{in.^2}} \\
+=0.001284F_1+0.00125 F_1 \\
+=0.002534 F_1
 $$
 
 Since the structure is fixed at both ends, the actual total deformation must be zero.
 
 $$
--0.03125+0.002534 F_1=0 \rightarrow F_1=12.3 \mathrm{kips}
+-0.03125{~in.}+0.002534 F_1=0 \quad\rightarrow\quad F_1=12.3{~kips}
 $$
 
 Returning to our equilibrium equation, we can also find force F~2~.
 
 $$
-F_1+F_2=25 \text { kips } \rightarrow 12.3+F_2=25 \rightarrow F_2=12.7 \text { kips }
+F_1+F_2=25{~kips} \\
+12.3{~kips}+F_2=25{~kips} \\
+F_2=12.7{~kips}
 $$
 
 The internal force in the copper cylinder will be 12.3 kips and the internal force in the concrete column will be 12.7 kips. Finally, calculate the stress in each material. Note from our original free body diagram that the copper cylinder is in tension while the concrete column is in compression. We’ll introduce a negative sign here to indicate compressive stress in the concrete.
 
 $$
 \begin{aligned}
-& \sigma_{\text {copper }}=\frac{N_1}{A_1}=\frac{12.3}{\pi\left(2^2-1.5^2\right)}=2.24 \mathrm{ksi} \\
-& \sigma_{\text {concrete }}=-\frac{N_2}{A_2}=-\frac{12.7}{(6 * 6)}=-0.353 \mathrm{ksi}
+& \sigma_{copper}=\frac{N_1}{A_1}=\frac{12.3{~kips}}{\pi(2^2-1.5^2){~in.}^2}=2.24 {~ksi} \\
+& \sigma_{concrete}=-\frac{N_2}{A_2}=-\frac{12.7{~kips}}{(6 * 6){~in.}^2}=-0.353 {~ksi}
 \end{aligned}
 $$
 :::
@@ -498,14 +499,14 @@ $$
 
 Example 5.6 re-solves Example 5.5 using this method instead.
 
-::: {.callout-note collapse="true" icon="false"}
-## Example 5.6: Bar between 2 supports, 2 materials, and areas
+::: {.callout-tip collapse="true" icon="false"}
+## Example 5.6
 
 A 15-foot-tall concrete (E = 4,000 ksi) column has a square cross-section of 6 in. by 6 in. A 10-foot-tall-copper (E = 17,000 ksi) cylinder with an outer diameter of 4 in. and in inner diameter of 3 in. is attached to the top of the concrete. The structure is fixed between two supports. A force of 25 kips is applied as shown. Determine the average normal stress in each material.
 
 ![](images/PNGs/Example%205.6%20part%201.png){fig-align="center" width="187"}
 
-::: {.callout-note collapse="true" icon="false"}
+::: {.callout-tip collapse="true" icon="false"}
 ## Solution
 
 As before, begin with an equilibrium equation that relates the support loads to the applied load. In this equation we use the convention that forces pointing upwards are positive and forces pointing downwards are negative.
@@ -514,8 +515,8 @@ As before, begin with an equilibrium equation that relates the support loads to 
 
 $$
 \begin{aligned}
-& \sum F_y=0: F_1+F_2-25=0 \\
-& F_1+F_2=25 \mathrm{kips}
+& \sum F_y=F_1+F_2-25{~kips}=0 \\
+& F_1+F_2=25{~kips}
 \end{aligned}
 $$
 
@@ -528,15 +529,15 @@ $$
 Here F1 and F2 are the internal forces in segments 1 and 2 of the bar. These will be the same as the reaction loads at the supports that we are trying to solve for.
 
 $$
-\frac{F_1 *(10 * 12)}{\pi\left(2^2-1.5^2\right) *(17,000)}-\frac{F_2 *(15 * 12)}{(6 * 6) *(4,000)}=0
+\frac{F_1 *(10 * 12){~in.}}{\pi(2^2-1.5^2){~in.}^2 *(17,000)\frac{kips}{in.^2}}-\frac{F_2 *(15 * 12){~in.}}{(6 * 6){~in.}^2 *(4,000)\frac{kips}{in.^2}}=0
 $$
 
 Rearrange the equilibrium equation and substitute into the deformation equation.
 
 $$
 \begin{gathered}
-F_1=25-F_2 \\
-\frac{\left(25-F_2\right) *(10 * 12)}{\pi\left(2^2-1.5^2\right) *(17,000)}-\frac{F_2 *(15 * 12)}{(6 * 6) *(4,000)}=0
+F_1=25{~kips}-F_2 \\
+\frac{(25-F_2){~kips} *(10 * 12){~in.}}{\pi(2^2-1.5^2){~in.}^2 *(17,000)\frac{kips}{in.^2}}-\frac{F_2 *(15 * 12){in.}}{(6 * 6){in.}^2 *(4,000)\frac{kips}{in.^2}}=0
 \end{gathered}
 $$
 
@@ -546,22 +547,22 @@ $$
 \begin{gathered}
 0.0321-0.001284 F_2-0.00125 F_2=0 \\
 0.0321=0.002534 F_2 \\
-F_2=12.7 \mathrm{kips}
+F_2=12.7 {~kips}
 \end{gathered}
 $$
 
 Then use the equilibrium equation again to find F1.
 
 $$
-F_1=25-12.7=12.3 \mathrm{kips}
+F_1=25{~kips}-12.7{~kips}=12.3{~kips}
 $$
 
 These are the same reactions that we found in Example 5.5 when we solved this problem using the other approach. From here we can find the stress in each material as before, noting again from our diagram that segment 2 is in compression.
 
 $$
 \begin{aligned}
-& \sigma_{\text {copper }}=\frac{N_1}{A_1}=\frac{12.3}{\pi\left(2^2-1.5^2\right)}=2.24 \mathrm{ksi} \\
-& \sigma_{\text {concrete }}=-\frac{N_2}{A_2}=-\frac{12.7}{(6 * 6)}=-0.353 \mathrm{ksi}
+& \sigma_{copper}=\frac{N_1}{A_1}=\frac{12.3{~kips}}{\pi(2^2-1.5^2){~in.}^2}=2.24 {~ksi} \\
+& \sigma_{concrete}=-\frac{N_2}{A_2}=-\frac{12.7{~kips}}{(6 * 6){~in.}^2}=-0.353 {~ksi}
 \end{aligned}
 $$
 :::
@@ -573,14 +574,14 @@ The second type of indeterminate problem involves two materials bonded together 
 
 We have one equilibrium equation but two unknown internal forces. However, since the materials are bonded together we can say that they must deform by the same amount. By setting the deformation for each material equal to each other we can define a second equation that involves the two internal forces and, combined with the equilibrium equation, we can now solve for both internal forces. See Example 5.7 for a demonstration.
 
-::: {.callout-note collapse="true" icon="false"}
-## Example 5.7: 2 materials in parallel
+::: {.callout-tip collapse="true" icon="false"}
+## Example 5.7
 
 A 20-ft-tall concrete (E = 4,000 ksi) column has a square cross-section 6 inches on each side. It is reinforced by six pieces of steel (E = 30,000 ksi) rebar that extend through the length of the column. Each has a diameter of 0.5 inches. The column is subjected to a compressive load of 70 kips. Determine the stress in each material.
 
 ![](images/PNGs/Example%205.7%20part%201.png){fig-align="center" width="177"}
 
-::: {.callout-note collapse="true" icon="false"}
+::: {.callout-tip collapse="true" icon="false"}
 ## Solution
 
 The 70 kips force will be split between the two materials. We need to find the force in each material before we can calculate the stress. Start by cutting a cross-section through the column, drawing a free body diagram, and writing an equilibrium equation.
@@ -588,7 +589,7 @@ The 70 kips force will be split between the two materials. We need to find the f
 ![](images/PNGs/Example%205.7%20copy.png){fig-align="center" width="137"}
 
 $$
-\sum F_y=0: F_C+F_S=70 \mathrm{kips}
+\sum F_y= F_C+F_S=70{~kips}
 $$
 
 This problem is statically indeterminate, since we have two unknowns and only one equilibrium equation. However, since the two materials are bonded together we can say that they must both deform the same amount.
@@ -605,20 +606,20 @@ $$
 
 The length of both materials is 20 ft, so this term will cancel.
 
-Although the steel is 6 individual pieces, it’s fine to determine the total area of the steel and the total force in the steel. The total area of the steel is $A_S=6 * \pi * 0.25^2=1.178 \mathrm{in}^2$
+Although the steel is 6 individual pieces, it’s fine to determine the total area of the steel and the total force in the steel. The total area of the steel is $A_S=6 * \pi * (0.25{~in.})^2=1.178{~in}^2$
 
 For the area of the concrete, calculate the area of the square and then remove the area of the 6 rebar rods.
 
 $$
-A_C=(6 * 6)-1.178=34.82 \mathrm{in.}^2
+A_C=(6 * 6){~in.}^2-1.178{~in.^2}=34.82{~in.}^2
 $$
 
 Substitute these into the deformation equation and rearrange.
 
 $$
 \begin{gathered}
-\frac{F_C}{34.82 * 4,000}=\frac{F_S}{1.178 * 30,000} \\
-F_C=F_S\left[\frac{34.82 * 4,000}{1.178 * 30,000}\right] \\
+\frac{F_C}{34.82{~in.}^2 * 4,000{~ksi}}=\frac{F_S}{1.178{~in.}^2 * 30,000{~ksi}} \\
+F_C=F_S\left[\frac{34.82{~in.}^2 * 4,000{~ksi}}{1.178{~in.}^2 * 30,000{~ksi}}\right] \\
 F_C=3.941 F_S
 \end{gathered}
 $$
@@ -626,28 +627,28 @@ $$
 Substitute this into the equilibrium equation.
 
 $$
-\begin{gathered}
-F_C+F_S=70 \mathrm{kips} \\
-3.941 F_S+F_S=70 \mathrm{kips} \\
-4.941 F_S=70 \mathrm{kips} \\
-F_S=14.2 \mathrm{kips}
-\end{gathered}
+\begin{aligned}
+&F_C+F_S=70{~kips} \\
+&3.941 F_S+F_S=70{~kips} \\
+&4.941 F_S=70{~kips} \\
+&F_S=14.2{~kips}
+\end{aligned}
 $$
 
-Then since $F_C=3.941 F_S \rightarrow F_C=3.941 * 14.2=55.8 \mathrm{kips}$
+Then since $F_C=3.941 F_S \quad\rightarrow\quad F_C=3.941 * 14.2{~kips}=55.8{~kips}$
 
 Now that we know the force in each material, we can calculate the stress in each material.
 
 $$
 \begin{aligned}
-& \sigma_S=\frac{14.2}{1.178}=12.0 \mathrm{ksi} \\
-& \sigma_C=\frac{55.8}{34.82}=1.60 \mathrm{ksi}
+& \sigma_S=\frac{14.2{~kips}}{1.178{~in.}^2}=12.0{~ksi} \\
+& \sigma_C=\frac{55.8{~kips}}{34.82{~in.}^2}=1.60{~ksi}
 \end{aligned}
 $$
 :::
 :::
 
-::: {.callout-note collapse="true" icon="false"}
+::: {.callout-warning collapse="true" icon="false"}
 ## Step-by-step: Statically indeterminate axial problems
 
 **Problems with redundant supports**
@@ -675,7 +676,7 @@ Approach 2:
 
 </details>
 
-## Thermal Deformation
+## Thermal Deformation {#sec-5.6}
 
 <details>
 
@@ -712,10 +713,10 @@ $$
 
 However if we do not design a gap, or if the gap is not large enough, then the object is not free to expand or contract. As the member pushes or pulls on its supports, a physical force is created. This in turn creates a stress in the object and these stresses can be very large. Such problems are statically indeterminate as the force applied on the member by the support is unknown and can’t be found using only equilibrium. Solving these problems is very similar to solving the first type of statically indeterminate problem. First, remove a support and determine the amount of deformation that would occur due to the change in temperature if the object were free to deform. Then replace the force from the removed support, which will cause the object to deform in the other direction. The sum of these two deformations will equal the total deformation of the member as before. Example 5.8 works through an indeterminate thermal expansion problem.
 
-::: {.callout-note collapse="true" icon="false"}
+::: {.callout-tip collapse="true" icon="false"}
 ## Example 5.8: Indeterminate thermal expansion without gap. Then add gap and rework
 
-Steel (E = 200 GPa, α = 11.7x10-6 /°C) train rails are laid end-to-end. Each rail is 20 meters long. A small section of this track is shown below. The rails are laid in winter when the temperature is 0° C. In summer, the maximum temperature is 40°C. Determine the compressive stress in the rail as a result of the temperature change if:
+Steel (E = 200 GPa, α = 11.7 x 10-6 /°C) train rails are laid end-to-end. Each rail is 20 meters long. A small section of this track is shown below. The rails are laid in winter when the temperature is 0° C. In summer, the maximum temperature is 40°C. Determine the compressive stress in the rail as a result of the temperature change if:
 
 \(a\) In a particular section of track, the rails are laid with no gap between them.
 
@@ -723,7 +724,7 @@ Steel (E = 200 GPa, α = 11.7x10-6 /°C) train rails are laid end-to-end. Each r
 
 ![](images/PNGs/Example%205.8.png){fig-align="center" width="416"}
 
-::: {.callout-note collapse="true" icon="false"}
+::: {.callout-tip collapse="true" icon="false"}
 ## Solution
 
 \(a\)
@@ -731,7 +732,7 @@ Steel (E = 200 GPa, α = 11.7x10-6 /°C) train rails are laid end-to-end. Each r
 First determine the deformation of each rail that would occur if it was free to expand.
 
 $$
-\Delta L_T=\alpha \Delta T L=11.7 \times 10^{-6} * 40 * 20=0.00936 \mathrm{~m}
+\Delta L_T=\alpha \Delta T L=11.7 \times 10^{-6}/^\circ{C} * 40^\circ{C} * 20{~m}=0.00936{~m}
 $$
 
 Since each rail will contact the rail next to it as it tries to expand, each rail will experience a compressive force. This force causes compression in the rail.
@@ -743,15 +744,15 @@ $$
 The actual deformation of each rail must be zero since they are in contact end-to-end. Thus, these deformations must sum to zero.
 
 $$
-0.00936-\frac{F * 20}{A * 200 * 10^9}=0
+0.00936{~m}-\frac{F * 20{~m}}{A * 200 * 10^9{~Pa}}=0
 $$
 
 Although we don’t know the cross-sectional area of the rail, we can replace $\sigma=\frac{F}{A}$
 
 $$
 \begin{gathered}
-0.00936-\sigma * \frac{20}{200 * 10^9}=0 \\
-\sigma=\frac{0.00936 * 200 * 10^9}{20}=93.6 \mathrm{MPa}
+0.00936{~m}-\sigma * \frac{20{~m}}{200 * 10^9{~Pa}}=0 \\
+\sigma=\frac{0.00936{~m} * 200 * 10^9{~Pa}}{20{~m}}=93.6{~MPa}
 \end{gathered}
 $$
 
@@ -760,22 +761,22 @@ $$
 In this case we again begin by determining the deformation of each rail that would occur if it was free to expand.
 
 $$
-\Delta L_T=\alpha \Delta T L=11.7 \times 10^{-6} * 40 * 20=0.00936 \mathrm{~m}
+\Delta L_T=\alpha \Delta T L=11.7 \times 10^{-6}/^\circ{C} * 40^\circ{C} * 20{~m}=0.00936{~m}
 $$
 
 Each rail would expand 9.36 mm, but the gap between rails is only 5 mm so the rails close this gap and make contact, which means there will again be some compressive stress. Set up the deformation equation as in part (a), but this time the deformation is 5 mm (0.005 m) instead of zero.
 
 $$
-0.00936-\frac{F * 20}{A * 200 * 10^9}=0.005
+0.00936{~m}-\frac{F * 20{~m}}{A * 200 * 10^9{~Pa}}=0.005{~m}
 $$
 
 Replace $\sigma=\frac{F}{A}$ as before and determine the stress.
 
 $$
 \begin{gathered}
-0.00936-\sigma * \frac{20}{200 * 10^9}=0.005 \\
-0.00936-0.005=\sigma * \frac{20}{200 * 10^9} \\
-\sigma=\frac{0.00436 * 200 * 10^9}{20}=43.6 \mathrm{MPa}
+0.00936{~m}-\sigma * \frac{20{~m}}{200 * 10^9{~Pa}}=0.005{~m} \\
+0.00936{~m}-0.005{~m}=\sigma * \frac{20{~m}}{200 * 10^9{~Pa}} \\
+\sigma=\frac{0.00436{~m} * 200 * 10^9{~Pa}}{20{~m}}=43.6{~MPa}
 \end{gathered}
 $$
 
@@ -783,7 +784,7 @@ We can see that installing the rails with a small gap has significantly reduced 
 :::
 :::
 
-::: {.callout-note collapse="true" icon="false"}
+::: {.callout-warning collapse="true" icon="false"}
 ## Step-by-step: Thermal deformation
 
 1.  Remove one of the supports and calculate the total deformation that would occur if the support wasn’t there using $\Delta L_T=\alpha \Delta T L$ for thermal deformation and $\Delta L=\frac{F L}{A E}$ for any applied axial loads.

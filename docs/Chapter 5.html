@@ -101,6 +101,7 @@ window.Quarto = {
 };
 </script>
 
+<link rel="stylesheet" href="styles/custom.css">
 </head>
 
 <body class="nav-sidebar docked">
@@ -179,7 +180,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Chapter 6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Torsional Loading</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Torsion</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -282,12 +283,12 @@ window.Quarto = {
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#axial-stress" id="toc-axial-stress" class="nav-link" data-scroll-target="#axial-stress"><span class="header-section-number">5.1</span> Axial Stress</a></li>
-  <li><a href="#stress-concentrations" id="toc-stress-concentrations" class="nav-link" data-scroll-target="#stress-concentrations"><span class="header-section-number">5.2</span> Stress Concentrations</a></li>
-  <li><a href="#axial-deformation" id="toc-axial-deformation" class="nav-link" data-scroll-target="#axial-deformation"><span class="header-section-number">5.3</span> Axial Deformation</a></li>
-  <li><a href="#deformation-in-series-of-bars" id="toc-deformation-in-series-of-bars" class="nav-link" data-scroll-target="#deformation-in-series-of-bars"><span class="header-section-number">5.4</span> Deformation in Series of Bars</a></li>
-  <li><a href="#statically-indeterminate-problems" id="toc-statically-indeterminate-problems" class="nav-link" data-scroll-target="#statically-indeterminate-problems"><span class="header-section-number">5.5</span> Statically Indeterminate Problems</a></li>
-  <li><a href="#thermal-deformation" id="toc-thermal-deformation" class="nav-link" data-scroll-target="#thermal-deformation"><span class="header-section-number">5.6</span> Thermal Deformation</a></li>
+  <li><a href="#sec-5.1" id="toc-sec-5.1" class="nav-link" data-scroll-target="#sec-5.1"><span class="header-section-number">5.1</span> Axial Stress</a></li>
+  <li><a href="#sec-5.2" id="toc-sec-5.2" class="nav-link" data-scroll-target="#sec-5.2"><span class="header-section-number">5.2</span> Stress Concentrations</a></li>
+  <li><a href="#sec-5.3" id="toc-sec-5.3" class="nav-link" data-scroll-target="#sec-5.3"><span class="header-section-number">5.3</span> Axial Deformation</a></li>
+  <li><a href="#sec-5.4" id="toc-sec-5.4" class="nav-link" data-scroll-target="#sec-5.4"><span class="header-section-number">5.4</span> Deformation in Series of Bars</a></li>
+  <li><a href="#sec-5.5" id="toc-sec-5.5" class="nav-link" data-scroll-target="#sec-5.5"><span class="header-section-number">5.5</span> Statically Indeterminate Problems</a></li>
+  <li><a href="#sec-5.6" id="toc-sec-5.6" class="nav-link" data-scroll-target="#sec-5.6"><span class="header-section-number">5.6</span> Thermal Deformation</a></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   </ul>
 </nav>
@@ -335,7 +336,7 @@ Learning Objectives
 </div>
 <section id="introduction" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="introduction">Introduction</h2>
-<details>
+<details open="">
 <summary>
 Click to expand
 </summary>
@@ -346,13 +347,13 @@ Click to expand
 <figcaption>Figure 5.1: Axial loads act perpendicular to the cross-section. They cause normal stress on the cross-section and normal strains in both the axial (A) and transverse (T) directions.</figcaption>
 </figure>
 </div>
-<p>Axial loads create axial stresses, which we have already seen in Section 2.1 and we’ll revisit briefly in Section 5.1. We previously considered the average normal stress in a cross-section, but the geometry of the cross-section can cause large localized stresses much higher than the average. We’ll discuss these stress concentrations in Section 5.2.</p>
+<p>Axial loads create axial stresses, which we have already seen in <a href="#sec-2.1" class="quarto-xref"><span class="quarto-unresolved-ref">sec-2.1</span></a> and we’ll revisit briefly in Section 5.1. We previously considered the average normal stress in a cross-section, but the geometry of the cross-section can cause large localized stresses much higher than the average. We’ll discuss these stress concentrations in Section 5.2.</p>
 <p>This text is concerned with both stress and deformation, so in Section 5.3 we’ll explore the deformation caused by axial loads. We’ll extend this to a special case of axial deformation involving parallel bars in Section 5.4, before using our knowledge of axial deformation to help us solve statically indeterminate problems in Section 5.5. These are problems where the equilibrium equations are not sufficient to determine the reaction and internal forces.</p>
 <p>Finally we’ll investigate the effects of temperature in Section 5.6. As the temperature of an object changes it will expand or contract. Thus there can be deformation even in the absence of any applied forces.</p>
 </details>
 </section>
-<section id="axial-stress" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="axial-stress"><span class="header-section-number">5.1</span> Axial Stress</h2>
+<section id="sec-5.1" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="sec-5.1"><span class="header-section-number">5.1</span> Axial Stress</h2>
 <details>
 <summary>
 Click to expand
@@ -366,8 +367,8 @@ Click to expand
 <p><em>A = Cross-sectional area [m<sup>2</sup>, in.<sup>2</sup>]</em></p>
 </details>
 </section>
-<section id="stress-concentrations" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="stress-concentrations"><span class="header-section-number">5.2</span> Stress Concentrations</h2>
+<section id="sec-5.2" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="sec-5.2"><span class="header-section-number">5.2</span> Stress Concentrations</h2>
 <details>
 <summary>
 Click to expand
@@ -407,13 +408,13 @@ Click to expand
 <figcaption>Figure 5.5: Graphs showing how the stress concentration factor, K changes based on the geometry of the object.</figcaption>
 </figure>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example 5.1: Stress concentration for hole
+Example 5.1
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -425,7 +426,7 @@ Example 5.1: Stress concentration for hole
 <p><img src="images/PNGs/Example 5.1 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="348"></p>
 </figure>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -444,7 +445,7 @@ Solution
 </figure>
 </div>
 <p><span class="math display">\[
-\sigma_{a v g}=\frac{N}{A}=\frac{50000}{0.015 *(0.1-0.02)}=41.7 \mathrm{MPa}
+\sigma_{a v g}=\frac{N}{A}=\frac{50000{~N}}{0.015{~m} *(0.1-0.02){~m}}=41.7{~MPa}
 \]</span></p>
 <p>Determine the ratio <span class="math inline">\(\frac{d}{D}\)</span> where d = hole diameter and D = Height of the cross-section. Use the appropriate stress concentration curve to read off the stress concentration factor K for this geometry.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -454,13 +455,13 @@ Solution
 </div>
 <p><span class="math display">\[
 \begin{aligned}
-&amp;\frac{d}{D}=\frac{20}{100}=0.2\\
+&amp;\frac{d}{D}=\frac{20{~mm}}{100{~mm}}=0.2\\
 &amp;K=2.525
 \end{aligned}
 \]</span></p>
 <p>Calculate the maximum stress.</p>
 <p><span class="math display">\[
-\sigma_{\max }=K \sigma_{a v g}=2.525 * 41.7=105 M P a
+\sigma_{max }=K \sigma_{avg}=2.525*41.7{~MPa}=105{~MPa}
 \]</span></p>
 </div>
 </div>
@@ -468,13 +469,13 @@ Solution
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example 5.2: Stress concentration for fillet
+Example 5.2
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -486,7 +487,7 @@ Example 5.2: Stress concentration for fillet
 <p><img src="images/PNGs/Example 5.2 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="363"></p>
 </figure>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -507,10 +508,10 @@ Solution
 </div>
 <p><span class="math display">\[
 \begin{aligned}
-&amp; \sigma_{\text {avg }}=\frac{N}{A}=\frac{P}{1 *(4-2)}=\frac{P}{2}=0.5 P \\
-&amp; \frac{d}{D}=\frac{2}{4}=0.5 \\
-&amp; \mathrm{~K}=2.15 \\
-&amp; \sigma_{\max }=K \sigma_{\text {avg }}=2.15 * 0.5 P=1.075 P
+&amp; \sigma_{avg}=\frac{N}{A}=\frac{P}{1 *(4-2)}=\frac{P}{2}=0.5 P \\
+&amp; \frac{d}{D}=\frac{2{~in.}}{4{~in.}}=0.5 \\
+&amp; K=2.15 \\
+&amp; \sigma_{max }=K \sigma_{avg}=2.15 * 0.5 P=1.075 P
 \end{aligned}
 \]</span></p>
 <p>For the larger circle:</p>
@@ -521,10 +522,10 @@ Solution
 </div>
 <p><span class="math display">\[
 \begin{aligned}
-&amp; \sigma_{\text {avg }}=\frac{N}{A}=\frac{P}{1 *(8-6)}=\frac{P}{2}=0.5 P \\
-&amp; \frac{d}{D}=\frac{6}{8}=0.75 \\
-&amp; \mathrm{~K}=2.05 \\
-&amp; \sigma_{\text {max }}=K \sigma_{\text {avg }}=2.05 * 0.5 P=1.025 P
+&amp; \sigma_{avg}=\frac{N}{A}=\frac{P}{1 *(8-6)}=\frac{P}{2}=0.5 P \\
+&amp; \frac{d}{D}=\frac{6{~in.}}{8{~in.}}=0.75 \\
+&amp; K=2.05 \\
+&amp; \sigma_{max}=K \sigma_{avg}=2.05 * 0.5 P=1.025 P
 \end{aligned}
 \]</span></p>
 <p>For the fillet:</p>
@@ -535,22 +536,22 @@ Solution
 </div>
 <p><span class="math display">\[
 \begin{aligned}
-&amp; \sigma_{\text {avg }}=\frac{N}{A}=\frac{P}{1 * 4}=\frac{P}{4}=0.25 P \\
-&amp; \frac{D}{d}=\frac{8}{4}=2 \\
-&amp; \frac{r}{d}=\frac{1}{4}=0.25 \\
-&amp; \mathrm{~K}=1.82 \\
+&amp; \sigma_{avg}=\frac{N}{A}=\frac{P}{1 * 4}=\frac{P}{4}=0.25 P \\
+&amp; \frac{D}{d}=\frac{8{~in.}}{4{~in.}}=2 \\
+&amp; \frac{r}{d}=\frac{1{~in.}}{4{~in.}}=0.25 \\
+&amp; K=1.82 \\
 &amp; \sigma_{\text {max }}=K \sigma_{\text {avg }}=1.82 * 0.25 P=0.455 P
 \end{aligned}
 \]</span></p>
 <p>The largest stress is at the small hole, where 𝜎<sub>max</sub> = 1.075<em>P</em>.</p>
-<p>Since the maximum allowable stress is 40 ksi, <span class="math inline">\(40=1.075 P \rightarrow P=\frac{40}{1.075}=37.2\)</span> kips.</p>
+<p>Since the maximum allowable stress is 40 ksi, <span class="math inline">\(40{~ksi}=1.075 P \quad\rightarrow\quad P=\frac{40{~ksi}}{1.075}=37.2{~kips}\)</span></p>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -572,8 +573,8 @@ Step-by-step: Stress concentrations
 </div>
 </details>
 </section>
-<section id="axial-deformation" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="axial-deformation"><span class="header-section-number">5.3</span> Axial Deformation</h2>
+<section id="sec-5.3" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="sec-5.3"><span class="header-section-number">5.3</span> Axial Deformation</h2>
 <details>
 <summary>
 Click to expand
@@ -604,13 +605,13 @@ Click to expand
 <p>In practice, there may be multiple axial loads applied to the bar. The cross-sectional area may change at different points along the bar, or perhaps there could be different materials with different elastic moduli connected in series to form the bar. In any of these cases we can split the bar into sections where each section has a constant F, A, and E. We can calculate the change in length of each section separately and sum them to find the total. See Example 5.3 for a problem involving multiple segments of a bar.</p>
 <p><span class="math display">\[
 \Delta L=\sum \frac{F L}{A E}\]</span></p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example 5.3: Axial change in length problem with different loads, areas, and materials
+Example 5.3
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -622,7 +623,7 @@ Example 5.3: Axial change in length problem with different loads, areas, and mat
 <p><img src="images/PNGs/Example 5.3 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -643,33 +644,33 @@ Solution
 </div>
 <p><span class="math display">\[
 \begin{gathered}
-N_1=N_2=60 \mathrm{kips} \\
-N_3=-20 \mathrm{kips}
+N_1=N_2=60{~kips} \\
+N_3=-20{~kips}
 \end{gathered}
 \]</span></p>
 <p>Now calculate the deformation of each segment. Be sure to use the appropriate dimensions and material properties for each segment.</p>
 <p>Cross-sectional areas:</p>
 <p><span class="math display">\[
 \begin{gathered}
-A_1=\pi *\left(2^2-1^2\right)=9.42 i n .{ }^2 \\
-A_2=\pi *\left(2.5^2\right)=19.6 i n .{ }^2
+A_1=\pi*(2^2-1^2){~in.}^2=9.42{~in.}^2 \\
+A_2=\pi*(2.5^2){~in.}^2=19.6{~in.}^2
 \end{gathered}
 \]</span></p>
 <p>Deformation of segment 1:</p>
 <p><span class="math display">\[
-\Delta L_1=\frac{60000 * 9}{9.42 * 29 \times 10^6}=0.00198 \mathrm{in.}
+\Delta L_1=\frac{60000{~lb} * 9{~in.}}{9.42{~in.}^2 * 29 \times 10^6\frac{lb}{in^2}}=0.00198{~in.}
 \]</span></p>
 <p>Deformation of segment 2:</p>
 <p><span class="math display">\[
-\Delta L_2=\frac{60000 * 4}{19.6 * 17 \times 10^6}=0.000719 \mathrm{in} .
+\Delta L_2=\frac{60000{~lb} * 4{~in.}}{19.6{~in.}^2 * 17 \times 10^6\frac{lb}{in.^2}}=0.000719{~in} .
 \]</span></p>
 <p>Deformation of segment 3:</p>
 <p><span class="math display">\[
-\Delta L_3=\frac{-20000 * 10}{19.6 * 17 \times 10^6}=-0.000599 \mathrm{in.}
+\Delta L_3=\frac{-20000{~lb} * 10{~in.}}{19.6{~in.}^2 * 17 \times 10^6\frac{lb}{in.^2}}=-0.000599{~in.}
 \]</span></p>
 <p>Note that segment 3 is in compression and so gets shorter, while segments 1 and 2 are in tension and so get longer. The total deformation in the component is simply the sum of these three deformations.</p>
 <p><span class="math display">\[
-\Delta L=0.00198+0.000719-0.000599=0.0021 \mathrm{in} .
+\Delta L=0.00198{~in.}+0.000719{~in.}-0.000599{~in.}=0.002{~in.}
 \]</span></p>
 </div>
 </div>
@@ -677,7 +678,7 @@ A_2=\pi *\left(2.5^2\right)=19.6 i n .{ }^2
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -700,8 +701,8 @@ Step-by-step: Axial deformation
 </div>
 </details>
 </section>
-<section id="deformation-in-series-of-bars" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="deformation-in-series-of-bars"><span class="header-section-number">5.4</span> Deformation in Series of Bars</h2>
+<section id="sec-5.4" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="sec-5.4"><span class="header-section-number">5.4</span> Deformation in Series of Bars</h2>
 <details>
 <summary>
 Click to expand
@@ -735,13 +736,13 @@ Click to expand
 <figcaption>Figure 5.8: Similar triangles for calculating deflection at a point when both bars experience a change in length.</figcaption>
 </figure>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example 5.4: Apply numbers to figure 5.6
+Example 5.4
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -753,7 +754,7 @@ Example 5.4: Apply numbers to figure 5.6
 <p><img src="images/PNGs/Example 5.4 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="307"></p>
 </figure>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -773,15 +774,15 @@ Solution
 </div>
 <p><span class="math display">\[
 \begin{gathered}
-\sum M_A=0:-(600 * 8)+\left(F_2 * 12\right)=0 \rightarrow F_2=400 k N \\
-\sum F_y=0: F_1-600+400=0 \rightarrow F_1=200 k N
+\sum M_A=-(600{~kN}* 8{~m})+(F_2 * 12{~m})=0 \quad\rightarrow\quad F_2=400{~kN} \\
+\sum F_y=F_1-600{~kN}+400{~kN}=0 \quad\rightarrow\quad F_1=200{~kN}
 \end{gathered}
 \]</span></p>
 <p>We can then calculate the change in length of each pole.</p>
 <p><span class="math display">\[
 \begin{aligned}
-\Delta L_1 &amp; =\frac{F_1 L_1}{A_1 E_1}=\frac{200000 * 5}{\pi * 0.015^2 * 200 * 10^9}=0.00707 \mathrm{~m}=7.07 \mathrm{~mm} \\
-\Delta L_2 &amp; =\frac{F_2 L_2}{A_2 E_2}=\frac{400000 * 3}{\pi * 0.025^2 * 70 * 10^9}=0.00873 \mathrm{~m}=8.73 \mathrm{~mm}
+\Delta L_1 &amp; =\frac{F_1 L_1}{A_1 E_1}=\frac{200000{~N} * 5{~m}}{\pi * (0.015{~in.})^2 * 200 * 10^9\frac{N}{m^2}}=0.00707{~m}=7.07{~mm} \\
+\Delta L_2 &amp; =\frac{F_2 L_2}{A_2 E_2}=\frac{400000{~N} * 3{~m}}{\pi * (0.025{~in.})^2 * 70 * 10^9\frac{N}{m^2}}=0.00873{~m}=8.73{~mm}
 \end{aligned}
 \]</span></p>
 <p>To determine the deflection at point C, first determine that point B has deflected (8.73 mm – 7.07 mm) = 1.66 mm more than point A.</p>
@@ -797,11 +798,11 @@ Solution
 </figure>
 </div>
 <p><span class="math display">\[
-\frac{1.66}{12}=\frac{\Delta L_{C / A}}{4} \rightarrow \Delta L_{C / A}=0.553 \mathrm{~mm}
+\frac{1.66{~mm}}{12{~m}}=\frac{\Delta L_{C / A}}{4{~m}} \quad\rightarrow\quad \Delta L_{C / A}=0.553{~mm}
 \]</span></p>
 <p>So point C deflects 0.553 mm more than point A, which is a total deflection at point C of</p>
 <p><span class="math display">\[
-\Delta L_C=7.07 \mathrm{~mm}+0.553 \mathrm{~mm}=7.62 \mathrm{~mm}
+\Delta L_C=7.07{~mm}+0.553{~mm}=7.62{~mm}
 \]</span></p>
 </div>
 </div>
@@ -809,7 +810,7 @@ Solution
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -831,8 +832,8 @@ Step-by-step: Deformation in series of bars
 </div>
 </details>
 </section>
-<section id="statically-indeterminate-problems" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="statically-indeterminate-problems"><span class="header-section-number">5.5</span> Statically Indeterminate Problems</h2>
+<section id="sec-5.5" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="sec-5.5"><span class="header-section-number">5.5</span> Statically Indeterminate Problems</h2>
 <details>
 <summary>
 Click to expand
@@ -854,13 +855,13 @@ Click to expand
 </figure>
 </div>
 <p>The sum of these two deformations must equal the actual deformation of the member. If the member is held between two rigid supports, the total deformation will be zero. If there is a small gap or the supports allow a certain amount of movement, the total deformation will be equal to the size of this gap. Example 5.5 shows this process applied to a bar made of 2 materials.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example 5.5: Bar between 2 supports, 2 materials, and areas
+Example 5.5
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -872,7 +873,7 @@ Example 5.5: Bar between 2 supports, 2 materials, and areas
 <p><img src="images/PNGs/Example 5.5 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="182"></p>
 </figure>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -891,10 +892,7 @@ Solution
 </figure>
 </div>
 <p><span class="math display">\[
-\begin{aligned}
-&amp;\sum F_y=0: F_1+F_2-25=0\\
-&amp;F_1+F_2=25 \text { kips }
-\end{aligned}
+\sum F_y=F_1+F_2-25{~kips}=0 \quad\rightarrow\quad F_1+F_2=25{~kips}
 \]</span></p>
 <p>To solve the statically indeterminate problem, remove one of the supports and allow the structure to deform. Either support may be removed. Let’s remove the top support. In this scenario there is no load in the copper cylinder and there is a compressive load of 25 kips in the concrete column.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -904,7 +902,7 @@ Solution
 </div>
 <p>The total deformation of the structure in this scenario is:</p>
 <p><span class="math display">\[
-\Delta L=\sum \frac{F L}{A E}=0-\frac{(25) *(15 * 12)}{(6 * 6) *(4,000)}=-0.03125 \mathrm{in}
+\Delta L=\sum \frac{F L}{A E}=0-\frac{(25{~kips}) *(15 * 12){~in.}}{(6 * 6){~in.}^2 *(4,000)\frac{kips}{in.^2}}=-0.03125{~in}
 \]</span></p>
 <p>Then replace force F<sub>1</sub> and calculate the deformation caused by this force. Since the force is applied at the top of the structure, both the concrete and the copper will elongate.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -913,21 +911,25 @@ Solution
 </figure>
 </div>
 <p><span class="math display">\[
-\Delta L=\sum \frac{F L}{A E}=\frac{F_1 *(10 * 12)}{\pi\left(2^2-1.5^2\right) *(17,000)}+\frac{\left(F_1\right) *(15 * 12)}{(6 * 6) *(4,000)}=0.001284 F_1+0.00125 F_1=0.002534 F_1
+\Delta L=\sum \frac{F L}{A E}=\frac{F_1 *(10 * 12){~in.}}{\pi(2^2-1.5^2){~in.}^2 *(17,000)\frac{kips}{in.^2}}+\frac{\left(F_1\right) *(15 * 12){~in.}}{(6 * 6){~in.}^2 *(4,000)\frac{kips}{in.^2}} \\
+=0.001284F_1+0.00125 F_1 \\
+=0.002534 F_1
 \]</span></p>
 <p>Since the structure is fixed at both ends, the actual total deformation must be zero.</p>
 <p><span class="math display">\[
--0.03125+0.002534 F_1=0 \rightarrow F_1=12.3 \mathrm{kips}
+-0.03125{~in.}+0.002534 F_1=0 \quad\rightarrow\quad F_1=12.3{~kips}
 \]</span></p>
 <p>Returning to our equilibrium equation, we can also find force F<sub>2</sub>.</p>
 <p><span class="math display">\[
-F_1+F_2=25 \text { kips } \rightarrow 12.3+F_2=25 \rightarrow F_2=12.7 \text { kips }
+F_1+F_2=25{~kips} \\
+12.3{~kips}+F_2=25{~kips} \\
+F_2=12.7{~kips}
 \]</span></p>
 <p>The internal force in the copper cylinder will be 12.3 kips and the internal force in the concrete column will be 12.7 kips. Finally, calculate the stress in each material. Note from our original free body diagram that the copper cylinder is in tension while the concrete column is in compression. We’ll introduce a negative sign here to indicate compressive stress in the concrete.</p>
 <p><span class="math display">\[
 \begin{aligned}
-&amp; \sigma_{\text {copper }}=\frac{N_1}{A_1}=\frac{12.3}{\pi\left(2^2-1.5^2\right)}=2.24 \mathrm{ksi} \\
-&amp; \sigma_{\text {concrete }}=-\frac{N_2}{A_2}=-\frac{12.7}{(6 * 6)}=-0.353 \mathrm{ksi}
+&amp; \sigma_{copper}=\frac{N_1}{A_1}=\frac{12.3{~kips}}{\pi(2^2-1.5^2){~in.}^2}=2.24 {~ksi} \\
+&amp; \sigma_{concrete}=-\frac{N_2}{A_2}=-\frac{12.7{~kips}}{(6 * 6){~in.}^2}=-0.353 {~ksi}
 \end{aligned}
 \]</span></p>
 </div>
@@ -947,13 +949,13 @@ F_1+F_2=25 \text { kips } \rightarrow 12.3+F_2=25 \rightarrow F_2=12.7 \text { k
 <p><span class="math display">\[
 \begin{aligned} &amp; \frac{F_A L_1}{A_1 E_1}+\frac{F_B L_2}{A_2 E_2}=0 \\ &amp; F-F_A-F_B=0\end{aligned}\]</span></p>
 <p>Example 5.6 re-solves Example 5.5 using this method instead.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example 5.6: Bar between 2 supports, 2 materials, and areas
+Example 5.6
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -965,7 +967,7 @@ Example 5.6: Bar between 2 supports, 2 materials, and areas
 <p><img src="images/PNGs/Example 5.6 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="187"></p>
 </figure>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -985,8 +987,8 @@ Solution
 </div>
 <p><span class="math display">\[
 \begin{aligned}
-&amp; \sum F_y=0: F_1+F_2-25=0 \\
-&amp; F_1+F_2=25 \mathrm{kips}
+&amp; \sum F_y=F_1+F_2-25{~kips}=0 \\
+&amp; F_1+F_2=25{~kips}
 \end{aligned}
 \]</span></p>
 <p>This bar consists of 2 segments – the copper cylinder (segment 1) and the concrete column (segment 2). Since the bar is held between two rigid supports, the total deformation of these two segments must sum to zero. Note that in this diagram segment 1 is in tension while segment 2 is in compression. We must be consistent with the sign convention that tension is positive and compression is negative.</p>
@@ -995,13 +997,13 @@ Solution
 \]</span></p>
 <p>Here F1 and F2 are the internal forces in segments 1 and 2 of the bar. These will be the same as the reaction loads at the supports that we are trying to solve for.</p>
 <p><span class="math display">\[
-\frac{F_1 *(10 * 12)}{\pi\left(2^2-1.5^2\right) *(17,000)}-\frac{F_2 *(15 * 12)}{(6 * 6) *(4,000)}=0
+\frac{F_1 *(10 * 12){~in.}}{\pi(2^2-1.5^2){~in.}^2 *(17,000)\frac{kips}{in.^2}}-\frac{F_2 *(15 * 12){~in.}}{(6 * 6){~in.}^2 *(4,000)\frac{kips}{in.^2}}=0
 \]</span></p>
 <p>Rearrange the equilibrium equation and substitute into the deformation equation.</p>
 <p><span class="math display">\[
 \begin{gathered}
-F_1=25-F_2 \\
-\frac{\left(25-F_2\right) *(10 * 12)}{\pi\left(2^2-1.5^2\right) *(17,000)}-\frac{F_2 *(15 * 12)}{(6 * 6) *(4,000)}=0
+F_1=25{~kips}-F_2 \\
+\frac{(25-F_2){~kips} *(10 * 12){~in.}}{\pi(2^2-1.5^2){~in.}^2 *(17,000)\frac{kips}{in.^2}}-\frac{F_2 *(15 * 12){in.}}{(6 * 6){in.}^2 *(4,000)\frac{kips}{in.^2}}=0
 \end{gathered}
 \]</span></p>
 <p>Then simplify and solve for force F2.</p>
@@ -1009,18 +1011,18 @@ F_1=25-F_2 \\
 \begin{gathered}
 0.0321-0.001284 F_2-0.00125 F_2=0 \\
 0.0321=0.002534 F_2 \\
-F_2=12.7 \mathrm{kips}
+F_2=12.7 {~kips}
 \end{gathered}
 \]</span></p>
 <p>Then use the equilibrium equation again to find F1.</p>
 <p><span class="math display">\[
-F_1=25-12.7=12.3 \mathrm{kips}
+F_1=25{~kips}-12.7{~kips}=12.3{~kips}
 \]</span></p>
 <p>These are the same reactions that we found in Example 5.5 when we solved this problem using the other approach. From here we can find the stress in each material as before, noting again from our diagram that segment 2 is in compression.</p>
 <p><span class="math display">\[
 \begin{aligned}
-&amp; \sigma_{\text {copper }}=\frac{N_1}{A_1}=\frac{12.3}{\pi\left(2^2-1.5^2\right)}=2.24 \mathrm{ksi} \\
-&amp; \sigma_{\text {concrete }}=-\frac{N_2}{A_2}=-\frac{12.7}{(6 * 6)}=-0.353 \mathrm{ksi}
+&amp; \sigma_{copper}=\frac{N_1}{A_1}=\frac{12.3{~kips}}{\pi(2^2-1.5^2){~in.}^2}=2.24 {~ksi} \\
+&amp; \sigma_{concrete}=-\frac{N_2}{A_2}=-\frac{12.7{~kips}}{(6 * 6){~in.}^2}=-0.353 {~ksi}
 \end{aligned}
 \]</span></p>
 </div>
@@ -1037,13 +1039,13 @@ F_1=25-12.7=12.3 \mathrm{kips}
 </figure>
 </div>
 <p>We have one equilibrium equation but two unknown internal forces. However, since the materials are bonded together we can say that they must deform by the same amount. By setting the deformation for each material equal to each other we can define a second equation that involves the two internal forces and, combined with the equilibrium equation, we can now solve for both internal forces. See Example 5.7 for a demonstration.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example 5.7: 2 materials in parallel
+Example 5.7
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1055,7 +1057,7 @@ Example 5.7: 2 materials in parallel
 <p><img src="images/PNGs/Example 5.7 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="177"></p>
 </figure>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -1074,7 +1076,7 @@ Solution
 </figure>
 </div>
 <p><span class="math display">\[
-\sum F_y=0: F_C+F_S=70 \mathrm{kips}
+\sum F_y= F_C+F_S=70{~kips}
 \]</span></p>
 <p>This problem is statically indeterminate, since we have two unknowns and only one equilibrium equation. However, since the two materials are bonded together we can say that they must both deform the same amount.</p>
 <p><span class="math display">\[
@@ -1085,34 +1087,34 @@ Solution
 \frac{F_C L_C}{A_C E_C}=\frac{F_S L_S}{A_S E_S}
 \]</span></p>
 <p>The length of both materials is 20 ft, so this term will cancel.</p>
-<p>Although the steel is 6 individual pieces, it’s fine to determine the total area of the steel and the total force in the steel. The total area of the steel is <span class="math inline">\(A_S=6 * \pi * 0.25^2=1.178 \mathrm{in}^2\)</span></p>
+<p>Although the steel is 6 individual pieces, it’s fine to determine the total area of the steel and the total force in the steel. The total area of the steel is <span class="math inline">\(A_S=6 * \pi * (0.25{~in.})^2=1.178{~in}^2\)</span></p>
 <p>For the area of the concrete, calculate the area of the square and then remove the area of the 6 rebar rods.</p>
 <p><span class="math display">\[
-A_C=(6 * 6)-1.178=34.82 \mathrm{in.}^2
+A_C=(6 * 6){~in.}^2-1.178{~in.^2}=34.82{~in.}^2
 \]</span></p>
 <p>Substitute these into the deformation equation and rearrange.</p>
 <p><span class="math display">\[
 \begin{gathered}
-\frac{F_C}{34.82 * 4,000}=\frac{F_S}{1.178 * 30,000} \\
-F_C=F_S\left[\frac{34.82 * 4,000}{1.178 * 30,000}\right] \\
+\frac{F_C}{34.82{~in.}^2 * 4,000{~ksi}}=\frac{F_S}{1.178{~in.}^2 * 30,000{~ksi}} \\
+F_C=F_S\left[\frac{34.82{~in.}^2 * 4,000{~ksi}}{1.178{~in.}^2 * 30,000{~ksi}}\right] \\
 F_C=3.941 F_S
 \end{gathered}
 \]</span></p>
 <p>Substitute this into the equilibrium equation.</p>
 <p><span class="math display">\[
-\begin{gathered}
-F_C+F_S=70 \mathrm{kips} \\
-3.941 F_S+F_S=70 \mathrm{kips} \\
-4.941 F_S=70 \mathrm{kips} \\
-F_S=14.2 \mathrm{kips}
-\end{gathered}
+\begin{aligned}
+&amp;F_C+F_S=70{~kips} \\
+&amp;3.941 F_S+F_S=70{~kips} \\
+&amp;4.941 F_S=70{~kips} \\
+&amp;F_S=14.2{~kips}
+\end{aligned}
 \]</span></p>
-<p>Then since <span class="math inline">\(F_C=3.941 F_S \rightarrow F_C=3.941 * 14.2=55.8 \mathrm{kips}\)</span></p>
+<p>Then since <span class="math inline">\(F_C=3.941 F_S \quad\rightarrow\quad F_C=3.941 * 14.2{~kips}=55.8{~kips}\)</span></p>
 <p>Now that we know the force in each material, we can calculate the stress in each material.</p>
 <p><span class="math display">\[
 \begin{aligned}
-&amp; \sigma_S=\frac{14.2}{1.178}=12.0 \mathrm{ksi} \\
-&amp; \sigma_C=\frac{55.8}{34.82}=1.60 \mathrm{ksi}
+&amp; \sigma_S=\frac{14.2{~kips}}{1.178{~in.}^2}=12.0{~ksi} \\
+&amp; \sigma_C=\frac{55.8{~kips}}{34.82{~in.}^2}=1.60{~ksi}
 \end{aligned}
 \]</span></p>
 </div>
@@ -1121,7 +1123,7 @@ F_S=14.2 \mathrm{kips}
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -1159,8 +1161,8 @@ Step-by-step: Statically indeterminate axial problems
 </div>
 </details>
 </section>
-<section id="thermal-deformation" class="level2" data-number="5.6">
-<h2 data-number="5.6" class="anchored" data-anchor-id="thermal-deformation"><span class="header-section-number">5.6</span> Thermal Deformation</h2>
+<section id="sec-5.6" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="sec-5.6"><span class="header-section-number">5.6</span> Thermal Deformation</h2>
 <details>
 <summary>
 Click to expand
@@ -1183,7 +1185,7 @@ Click to expand
 </p>
 <p><strong>Figure 5.13</strong> – Expansion joint on a bridge, allowing for thermal expansion and contraction of the bridge as temperature changes through the year.</p>
 <p>However if we do not design a gap, or if the gap is not large enough, then the object is not free to expand or contract. As the member pushes or pulls on its supports, a physical force is created. This in turn creates a stress in the object and these stresses can be very large. Such problems are statically indeterminate as the force applied on the member by the support is unknown and can’t be found using only equilibrium. Solving these problems is very similar to solving the first type of statically indeterminate problem. First, remove a support and determine the amount of deformation that would occur due to the change in temperature if the object were free to deform. Then replace the force from the removed support, which will cause the object to deform in the other direction. The sum of these two deformations will equal the total deformation of the member as before. Example 5.8 works through an indeterminate thermal expansion problem.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -1195,7 +1197,7 @@ Example 5.8: Indeterminate thermal expansion without gap. Then add gap and rewor
 </div>
 <div id="callout-21" class="callout-21-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Steel (E = 200 GPa, α = 11.7x10-6 /°C) train rails are laid end-to-end. Each rail is 20 meters long. A small section of this track is shown below. The rails are laid in winter when the temperature is 0° C. In summer, the maximum temperature is 40°C. Determine the compressive stress in the rail as a result of the temperature change if:</p>
+<p>Steel (E = 200 GPa, α = 11.7 x 10-6 /°C) train rails are laid end-to-end. Each rail is 20 meters long. A small section of this track is shown below. The rails are laid in winter when the temperature is 0° C. In summer, the maximum temperature is 40°C. Determine the compressive stress in the rail as a result of the temperature change if:</p>
 <p>(a) In a particular section of track, the rails are laid with no gap between them.</p>
 <p>(b) In another section, the rails have a 5-mm-gap between them.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -1203,7 +1205,7 @@ Example 5.8: Indeterminate thermal expansion without gap. Then add gap and rewor
 <p><img src="images/PNGs/Example 5.8.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="416"></p>
 </figure>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -1218,7 +1220,7 @@ Solution
 <p>(a)</p>
 <p>First determine the deformation of each rail that would occur if it was free to expand.</p>
 <p><span class="math display">\[
-\Delta L_T=\alpha \Delta T L=11.7 \times 10^{-6} * 40 * 20=0.00936 \mathrm{~m}
+\Delta L_T=\alpha \Delta T L=11.7 \times 10^{-6}/^\circ{C} * 40^\circ{C} * 20{~m}=0.00936{~m}
 \]</span></p>
 <p>Since each rail will contact the rail next to it as it tries to expand, each rail will experience a compressive force. This force causes compression in the rail.</p>
 <p><span class="math display">\[
@@ -1226,30 +1228,30 @@ Solution
 \]</span></p>
 <p>The actual deformation of each rail must be zero since they are in contact end-to-end. Thus, these deformations must sum to zero.</p>
 <p><span class="math display">\[
-0.00936-\frac{F * 20}{A * 200 * 10^9}=0
+0.00936{~m}-\frac{F * 20{~m}}{A * 200 * 10^9{~Pa}}=0
 \]</span></p>
 <p>Although we don’t know the cross-sectional area of the rail, we can replace <span class="math inline">\(\sigma=\frac{F}{A}\)</span></p>
 <p><span class="math display">\[
 \begin{gathered}
-0.00936-\sigma * \frac{20}{200 * 10^9}=0 \\
-\sigma=\frac{0.00936 * 200 * 10^9}{20}=93.6 \mathrm{MPa}
+0.00936{~m}-\sigma * \frac{20{~m}}{200 * 10^9{~Pa}}=0 \\
+\sigma=\frac{0.00936{~m} * 200 * 10^9{~Pa}}{20{~m}}=93.6{~MPa}
 \end{gathered}
 \]</span></p>
 <p>(b)</p>
 <p>In this case we again begin by determining the deformation of each rail that would occur if it was free to expand.</p>
 <p><span class="math display">\[
-\Delta L_T=\alpha \Delta T L=11.7 \times 10^{-6} * 40 * 20=0.00936 \mathrm{~m}
+\Delta L_T=\alpha \Delta T L=11.7 \times 10^{-6}/^\circ{C} * 40^\circ{C} * 20{~m}=0.00936{~m}
 \]</span></p>
 <p>Each rail would expand 9.36 mm, but the gap between rails is only 5 mm so the rails close this gap and make contact, which means there will again be some compressive stress. Set up the deformation equation as in part (a), but this time the deformation is 5 mm (0.005 m) instead of zero.</p>
 <p><span class="math display">\[
-0.00936-\frac{F * 20}{A * 200 * 10^9}=0.005
+0.00936{~m}-\frac{F * 20{~m}}{A * 200 * 10^9{~Pa}}=0.005{~m}
 \]</span></p>
 <p>Replace <span class="math inline">\(\sigma=\frac{F}{A}\)</span> as before and determine the stress.</p>
 <p><span class="math display">\[
 \begin{gathered}
-0.00936-\sigma * \frac{20}{200 * 10^9}=0.005 \\
-0.00936-0.005=\sigma * \frac{20}{200 * 10^9} \\
-\sigma=\frac{0.00436 * 200 * 10^9}{20}=43.6 \mathrm{MPa}
+0.00936{~m}-\sigma * \frac{20{~m}}{200 * 10^9{~Pa}}=0.005{~m} \\
+0.00936{~m}-0.005{~m}=\sigma * \frac{20{~m}}{200 * 10^9{~Pa}} \\
+\sigma=\frac{0.00436{~m} * 200 * 10^9{~Pa}}{20{~m}}=43.6{~MPa}
 \end{gathered}
 \]</span></p>
 <p>We can see that installing the rails with a small gap has significantly reduced the thermal stress. Accurately predicting the amount of deformation and leaving a suitably sized gap would reduce the stress even further.</p>
@@ -1259,7 +1261,7 @@ Solution
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -1875,8 +1877,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./Chapter 6.html" class="pagination-link" aria-label="Torsional Loading">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Torsional Loading</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./Chapter 6.html" class="pagination-link" aria-label="Torsion">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Torsion</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -71,7 +71,37 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles/custom.css">
 </head>
 
 <body class="nav-sidebar docked">
@@ -150,7 +180,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Chapter 6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Torsional Loading</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Torsion</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -253,6 +283,9 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">13.1</span> Introduction</a></li>
+  <li><a href="#cylindrical-pressure-vessels" id="toc-cylindrical-pressure-vessels" class="nav-link" data-scroll-target="#cylindrical-pressure-vessels"><span class="header-section-number">13.2</span> Cylindrical Pressure Vessels</a></li>
+  <li><a href="#spherical-pressure-vessels" id="toc-spherical-pressure-vessels" class="nav-link" data-scroll-target="#spherical-pressure-vessels"><span class="header-section-number">13.3</span> Spherical Pressure Vessels</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">13.4</span> Summary</a></li>
   </ul>
 </nav>
     </div>
@@ -289,7 +322,10 @@ Learning Objectives
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>Insert text</li>
+<li>Define thin-walled pressure vessels</li>
+<li>Describe the stresses that exist in thin-walled pressure vessels</li>
+<li>Calculate the stresses generated in the walls of thin-walled pressure vessels</li>
+<li>Perform stress transformation on these stresses</li>
 </ul>
 </div>
 </div>
@@ -299,11 +335,422 @@ Learning Objectives
 <summary>
 Click to expand
 </summary>
-<p>Insert text</p>
+<p>Pressure vessels are storage tanks that are used for storing fluids at high pressure and they must be designed to resist this pressure. They are commonly found in factories, power plants, vehicles, and even your own home. Figure 13.1 shows some common applications.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH13 PNGs/figure 13.1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="502"></p>
+<figcaption>Figure 13.1: Some common examples of pressure vessels. (A) standard home water heater; (B) industrial compressed gas storage; (C) propellant tank for aerospace applications; (D) butane tank for home use.</figcaption>
+</figure>
+</div>
+<p>Pressure vessels are necessarily hollow, and a thin-walled pressure vessel is one where the ratio:</p>
+<p><span class="math display">\[
+\frac{\text { Inner radius }}{\text { W all thickness }}&gt;10
+\]</span></p>
+<p>This implies that the wall thickness is relatively small compared to the vessel radius. This simplifies our analysis in two ways:</p>
+<ol type="1">
+<li>We can assume that stresses in the vessel walls are uniform across the thickness of the wall</li>
+<li>We can ignore stress in the radial direction (perpendicular to the vessel wall)</li>
+</ol>
+<p>As we’ll see in this chapter, stresses are generated in the walls of thin-walled pressure vessels in two directions known as the axial stress and hoop stress (figure 13.2). There is a 3<sup>rd</sup> stress in the radial direction but this is very small compared to the other stresses and is assumed to be zero in this text.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH13 PNGs/figure 13.2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="505"></p>
+<figcaption>Figure 13.2: A stress element on the wall of a thin-walled pressure vessel. Stresses exist in the axial and hoop directions. The radial stress is very small in comparison and is assumed to be zero.</figcaption>
+</figure>
+</div>
+<p>As seen in figure 13.1, thin-walled pressure vessels are commonly either cylindrical or spherical. Section 13.1 will discuss the stresses in cylindrical vessels. Section 13.2 will discuss the stresses in spherical vessels.</p>
 </details>
-
-
 </section>
+<section id="cylindrical-pressure-vessels" class="level2" data-number="13.2">
+<h2 data-number="13.2" class="anchored" data-anchor-id="cylindrical-pressure-vessels"><span class="header-section-number">13.2</span> Cylindrical Pressure Vessels</h2>
+<details>
+<summary>
+Click to expand
+</summary>
+<p>The equations stresses in the wall of a cylindrical pressure vessel can be derived with the help of a free body diagram. Let’s cut a cross-section through our vessel to expose the fluid inside (figure 13.3).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH13 PNGs/figure 13.3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="598"></p>
+<figcaption>Figure 13.3: Cross-section through the cylindrical vessel showing the axial stress in the walls (𝜎𝐴) and the fluid pressure P.</figcaption>
+</figure>
+</div>
+<p>There will be an axial stress from the internal fluid pressure (P) and an axial stress in the walls of the vessel (𝜎<sub>𝐴</sub>). Since <span class="math inline">\(\text{stress}=\frac{\text { force }}{\text { area }}\)</span> we can determine the two forces. The fluid pressure acts over a circular area <span class="math inline">\(A=\pi r_i^2\)</span>. The stress in the walls acts over an area equal to the circumference of the vessel multiplied by the wall thickness, <span class="math inline">\(A=2 \pi r_i t\)</span>.</p>
+<p>By equilibrium:</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; \sum F_x=0 \\
+&amp; \left(\sigma_A\right)\left(2 \pi r_i t\right)-(P)\left(\pi r_i^2\right)=0 \\
+&amp; \sigma_A=\frac{P r_i}{2 t}
+\end{aligned}
+\]</span></p>
+<p>where</p>
+<ul>
+<li><p>𝜎<sub>𝐴</sub> = Axial stress in the wall of the vessel [Pa, psi]</p></li>
+<li><p>P = Fluid pressure inside the vessel [Pa, psi]</p></li>
+<li><p><em>r<sub>i</sub></em> = Inner radius of the vessel [m, in]</p></li>
+<li><p>t = Wall thickness of the vessel [m, in]</p></li>
+</ul>
+<p>Similarly there will be a stress in the lateral direction, referred to as the hoop stress 𝜎<sub>H</sub>. Let’s cut a vertical cross-section (figure 13.4) to derive an equation for this stress.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH13 PNGs/figure 13.4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="509"></p>
+<figcaption>Figure 13.4: Cross-section through the cylindrical vessel showing the hoop stress in the walls (𝜎<sub>H</sub>) and the fluid pressure P.</figcaption>
+</figure>
+</div>
+<p>There will again be a stress from the internal fluid pressure (P) and a stress in the walls of the vessel (𝜎<sub>H</sub>). The fluid pressure acts over an area of <span class="math inline">\(A=2 r_i L\)</span>. The stress in the walls acts over an area of <span class="math inline">\(A=2 t L\)</span>.</p>
+<p>By equilibrium:</p>
+<p><span class="math display">\[
+\begin{gathered}
+\sum F_x=0 \\
+\left(\sigma_H\right)(2 t L)-(P)\left(2 r_i L\right)=0 \\
+\sigma_H=\frac{P r_i}{t}
+\end{gathered}
+\]</span></p>
+<p>where</p>
+<ul>
+<li><p>𝜎<sub>H</sub> = Hoop stress in the wall of the vessel [Pa, psi]</p></li>
+<li><p>P = Fluid pressure inside the vessel [Pa, psi]</p></li>
+<li><p><em>r<sub>i</sub></em> = Inner radius of the vessel [m, in]</p></li>
+<li><p>t = Wall thickness of the vessel [m, in]</p></li>
+</ul>
+<p>The internal pressure P is typically reported as the gage pressure, which is defined as the internal pressure minus the atmospheric pressure. This allows us to calculate the stresses directly without needing to account for atmospheric pressure.</p>
+<p>Since the radial stress is assumed to be zero, the axial and hoop stresses represent a state of plane stress such as those discussed in chapter 12. Further, since there is no shear stress, the axial and hoop stresses represent the principal stresses. Since the hoop stress is larger, this is the first principal stress (𝜎<sub>1</sub>). The axial stress is the second principal stress (𝜎<sub>2</sub>). The third principal stress acts in the radial direction and has already been assumed to be zero. Figure 13.5 shows a plane stress element representing the stresses in the wall of a cylindrical thin-walled pressure vessel.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH13 PNGs/figure 13.5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="497"></p>
+<figcaption>Figure 13.5: The hoop stress represents the first principal stress 𝜎<sub>1</sub>. The axial stress represents the second principal stress 𝜎<sub>2</sub>. There is no shear stress.</figcaption>
+</figure>
+</div>
+<p>By the methods of chapter 12 we may perform stress transformation on these stresses. Figure 13.6 shows Mohr’s Circle for the in-plane and out-of-plane stresses.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH13 PNGs/figure 13.6.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="403"></p>
+<figcaption>Figure 13.6: Mohr’s Circle for the stresses in the walls of a cylindrical thin-walled pressure vessel, showing principal stresses 𝜎<sub>1</sub> and 𝜎<sub>2</sub>. The 3rd principal stress 𝜎<sub>3</sub> = 0.</figcaption>
+</figure>
+</div>
+<p>Since the two principal stresses are positive and the third principal stress is zero it should be apparent that the maximum in plane shear stress can be determined as:</p>
+<p><span class="math display">\[
+\tau_{\text {max } \text { in-plane }}=\frac{\sigma_1-\sigma_2}{2}
+\]</span></p>
+<p>It should also be apparent that the maximum out-of-plane shear stress will be larger and can be calculated from:</p>
+<p><span class="math display">\[
+\tau_{\max a b s}=\frac{\sigma_1}{2}
+\]</span></p>
+<p>Example 13.1 demonstrates calculation of the principal stresses and maximum in-plane shear stress for a cylindrical thin-walled pressure vessel. Example 13.2 combine the content from this section with stress transformation from chapter 12 in order to find the stresses at specific orientations.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example 13.1: Needs title
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>A cylindrical pressure vessel has an outer diameter of 8 ft and a wall thickness of 2 inches. The vessel contains propane at a gage pressure of 250 psi. Determine the principal stresses and maximum in-plane shear stress in the walls of the vessel.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>First determine the inner radius of the vessel. It will be easiest to convert this to inches since the other length units in the problem are given in inches.</p>
+<p>Outer radius, <em>r<sub>o</sub></em> = 8 <em>ft</em>/2 = 4 <em>ft</em> = 48 <em>in</em></p>
+<p>Inner radius, <em>r<sub>i</sub></em> = 48 - 2 = 46 <em>in</em></p>
+<p>Now calculate the axial and hoop stresses.</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; \sigma_A=\frac{P r_i}{2 t}=\frac{250 * 46}{2 * 2}=2,875 \mathrm{psi} \\
+&amp; \sigma_H=\frac{P r_i}{t}=\frac{250 * 46}{2}=5,750 \mathrm{psi}
+\end{aligned}
+\]</span></p>
+<p>Since there is no shear stress, these are the principal stresses.</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; \sigma_1=5,750 p s i \\
+&amp; \sigma_2=2,875 p s i
+\end{aligned}
+\]</span></p>
+<p>Finally, the maximum in-plane shear stress can be found from:</p>
+<p><span class="math display">\[
+\tau_{\max \text { in plane }}=\frac{\sigma_1-\sigma_2}{2}=\frac{5,750-2,875}{2}=1,438 \mathrm{psi}
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example 13.2: Needs title
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>A cylindrical pressure vessel is made by welding steel plate at an angle of 𝜃=25° as shown. The vessel has an outer diameter of 1.5 m and a wall thickness of 40 mm. The vessel contains fluid at a gage pressure of 5 MPa. Determine the normal stress perpendicular to the weld and the shear stress parallel to the weld.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH13 PNGs/example 13.2 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="321"></p>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>First determine the inner radius of the vessel. Wall thickness 𝑡 = 40 𝑚𝑚 = 0.04 𝑚.</p>
+<p>Outer radius, <em>r<sub>o</sub></em> = 1.5/2 = 0.75 𝑚</p>
+<p>Inner radius, <em>r<sub>i</sub></em> = 0.75 - 0.04 = 0.71 𝑚</p>
+<p>Now calculate the axial and hoop stresses.</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; \sigma_A=\frac{P r_i}{2 t}=\frac{5 * 0.71}{2 * 0.04}=44.4 \mathrm{MPa} \\
+&amp; \sigma_H=\frac{P r_i}{t}=\frac{5 * 0.71}{0.04}=88.8 \mathrm{MPa}
+\end{aligned}
+\]</span></p>
+<p>By the methods of section 12.1, we can calculate the normal stress perpendicular to the weld. Draw a stress element of a point on the pressure vessel. The axial stress will act horizontally and the hoop stress vertically for this element.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH13 PNGs/example 13.2 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="313"></p>
+</figure>
+</div>
+<p>The weld is at an angle of 25° measured counter-clockwise from horizontal. The normal stress perpendicular to this weld is therefore at an angle of 65° clockwise from horizontal. We can determine the normal stress at this orientation from:</p>
+<p><span class="math display">\[
+\begin{gathered}
+\sigma_x^{\prime}=\frac{\sigma_x+\sigma_y}{2}+\frac{\sigma_x-\sigma_y}{2} \cos (2 \theta)+\tau_{x y} \sin (2 \theta) \\
+\sigma_x^{\prime}=\frac{44.4+88.8}{2}+\frac{44.4-88.8}{2} \cos \left(2 *-65^{\circ}\right)+0 \\
+\sigma_x^{\prime}=66.6-22.2 \cos \left(-130^{\circ}\right) \\
+\sigma_x^{\prime}=80.9 \mathrm{MPa}
+\end{gathered}
+\]</span></p>
+<p>The shear stress occurs parallel to the weld at an angle of 25° counter-clockwise from the horizontal. We can determine the shear stress at this orientation from:</p>
+<p><span class="math display">\[
+\begin{gathered}
+\tau_{x^{\prime} y^{\prime}}=-\left(\frac{\sigma_x-\sigma_y}{2}\right) \sin (2 \theta)+\tau_{x y} \cos (2 \theta) \\
+\tau_{x^{\prime} y^{\prime}}=-\left(\frac{44.4-88.8}{2}\right) \sin \left(2 * 25^{\circ}\right)+0 \\
+\tau_{x^{\prime} y^{\prime}}=-\left(\frac{44.4-88.8}{2}\right) \sin \left(2 * 25^{\circ}\right)+0 \\
+\tau_{x^{\prime} y^{\prime}}=22.2 \sin \left(50^{\circ}\right) \\
+\tau_{x^{\prime} y^{\prime}}=17.0 \mathrm{MPa}
+\end{gathered}
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Step-by-step: Cylindrical thin-walled pressure vessels
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><p>Determine the inner radius, wall thickness, and internal gage pressure for the vessel</p></li>
+<li><p>Calculate the axial <span class="math inline">\(\left(\sigma_A=\frac{P r_i}{2 t}\right)\)</span> and hoop <span class="math inline">\(\left(\sigma_H=\frac{P r_i}{t}\right)\)</span> stresses—these are the principal stresses</p></li>
+<li><p>Perform any stress transformation calculations as required</p></li>
+</ol>
+</div>
+</div>
+</details>
+</section>
+<section id="spherical-pressure-vessels" class="level2" data-number="13.3">
+<h2 data-number="13.3" class="anchored" data-anchor-id="spherical-pressure-vessels"><span class="header-section-number">13.3</span> Spherical Pressure Vessels</h2>
+<details>
+<summary>
+Click to expand
+</summary>
+<p>A spherical vessel will yield the same cross-section regardless of the axis it is cut along (figure 13.7). The stress in the walls of a spherical vessel is the same as the axial stress in a cylindrical vessel.</p>
+<p>By equilibrium:</p>
+<p><span class="math display">\[
+\begin{gathered}
+\sum F_x=0 \\
+\left(\sigma_A\right)\left(2 \pi r_i t\right)-(P)\left(\pi r_i^2\right)=0 \\
+\sigma_A=\frac{P r_i}{2 t}
+\end{gathered}
+\]</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH13 PNGs/figure 13.7.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="274"></p>
+<figcaption>Figure 13.7: Cross-section through the spherical vessel showing the axial stress in the walls (𝜎<sub>A</sub>) and the fluid pressure P.</figcaption>
+</figure>
+</div>
+<p>In this case, the same stress exists in both principal directions. We will again assume that the radial stress is zero, meaning that these stresses again form a state of plane stress (figure 13.8). There is again no shear stress, so these stresses are the principal stresses. In this case, the two principal stresses are the same.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH13 PNGs/figure 13.8.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="246"></p>
+<figcaption>Figure 13.8: Spherical vessels experience the same axial stress in both principal directions. There is no shear stress.</figcaption>
+</figure>
+</div>
+<p>Note that these principal stresses are equal to 𝜎<sub>2</sub> in the cylindrical vessel. As such, spherical vessels are stronger than cylindrical vessels. However, they are also more expensive to manufacture so cylindrical vessels are still very common.</p>
+<p>We may again use the methods of chapter 12 to perform stress transformation. Figure 13.9 shows Mohr’s Circle for the in-plane and out-of-plane stresses.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH13 PNGs/figure 13.9.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="418"></p>
+<figcaption>Figure 13.9: Mohr’s Circle for the stresses in the walls of a spherical thin-walled pressure vessel. Principal stresses 𝜎<sub>1</sub> = 𝜎<sub>2</sub> and the in-plane circle reduces to a single point. The 3rd principal stress 𝜎<sub>3</sub> = 0.</figcaption>
+</figure>
+</div>
+<p>This time 𝜎<sub>1</sub> = 𝜎<sub>2</sub> and so the in-plane Mohr’s Circle reduces to a single point. The maximum in-plane shear stress is therefore zero. The maximum out-of-plane shear stress can be calculated from:</p>
+<p><span class="math display">\[
+\tau_{\max a b s}=\frac{\sigma_1}{2}
+\]</span></p>
+<p>Example 13.3 demonstrates the design of a spherical vessel, based on the allowable stress in the vessel walls.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example 13.3: Needs title
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>A spherical pressure vessel is made of steel with a yield strength of 250 MPa. The vessel has an outer diameter of 4 meters and a wall thickness of 25 mm. If the factor of safety with respect to yield is 2.5, determine the maximum allowable gage pressure of the fluid within the vessel.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Wall thickness, 𝑡 = 25 𝑚𝑚 = 0.025 𝑚</p>
+<p>Outer radius, <em>r<sub>o</sub></em> = 2 𝑚</p>
+<p>Inner radius, <em>r<sub>i</sub></em> = 2 - 0.025 = 1.975 𝑚</p>
+<p>Start by using the factor of safety to find the maximum allowable stress in the walls of the vessel.</p>
+<p><span class="math display">\[
+\sigma_{\text {allow }}=\frac{250}{2.5}=100 \text{ Mpa}
+\]</span></p>
+<p>Spherical vessels experience the same stress in both directions:</p>
+<p><span class="math display">\[
+\sigma_A=\frac{P r_i}{2 t}
+\]</span></p>
+<p>Rearrange this equation to solve for P:</p>
+<p><span class="math display">\[
+\begin{gathered}
+P=\frac{\sigma_A * 2 t}{r_i} \\
+P=\frac{100 * 2 * 0.025}{1.975}=2.53 \text{ MPa}
+\end{gathered}
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Step-by-step: <strong>Spherical thin-walled pressure vessels</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Determine the inner radius, wall thickness, and internal gage pressure for the vessel</li>
+<li>Calculate the axial stress <span class="math inline">\(\left(\sigma_A=\frac{P r_i}{2 t}\right)\)</span>. This stress will be the same in both the horizontal and vertical directions</li>
+<li>Perform any stress transformation calculations as required</li>
+</ol>
+</div>
+</div>
+</details>
+</section>
+<section id="summary" class="level2" data-number="13.4">
+<h2 data-number="13.4" class="anchored" data-anchor-id="summary"><span class="header-section-number">13.4</span> Summary</h2>
+<details>
+<summary>
+Click to expand
+</summary>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Key takeaways
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Pressure vessels contain fluids at high pressure. A thin walled pressure vessel is one where <span class="math inline">\(\frac{\text { Inner radius }}{\text { Wall thickness }}&gt;10\)</span>.</p>
+<p>For thin walled pressure vessels, the stresses in the vessel walls are assumed to be constant across the thickness of the wall and the stress in the radial direction is assumed to be zero. The stresses created in the axial and hoop directions by the fluid pressure are the principal stresses.</p>
+<p>Pressure vessels are commonly cylindrical or spherical. Cylindrical vessels experience both axial and hoop stresses. The axial stress is half of the hoop stress. Spherical vessels experience only an axial stress. As such, spherical vessels experience less stress than cylindrical vessels.</p>
+<p>There is no shear stress generated in the axial and hoop directions. However, stress transformation can be used to determine both in-plane and out-of-plane shear stresses.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Key equations
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Cylindrical thin-walled pressure vessels</strong></p>
+<p>Hoop stress:</p>
+<p><span class="math display">\[
+\sigma_H=\frac{P r_i}{t}=\sigma_1
+\]</span></p>
+<p>Axial stress:</p>
+<p><span class="math display">\[
+\sigma_A=\frac{P r_i}{2 t}=\sigma_2
+\]</span></p>
+<p>Maximum in-plane shear stress:</p>
+<p><span class="math display">\[
+\tau_{\max \text { in-plane }}=\frac{\sigma_1-\sigma_2}{2}
+\]</span></p>
+<p>Absolute maximum shear stress:</p>
+<p><span class="math display">\[
+\tau_{\max a b s}=\frac{\sigma_1}{2}
+\]</span></p>
+<p><strong>Spherical thin-walled pressure vessels</strong></p>
+<p>Axial stress:</p>
+<p><span class="math display">\[
+\sigma_A=\frac{P r_i}{2 t}=\sigma_1=\sigma_2
+\]</span></p>
+<p>Absolute maximum shear stress:</p>
+<p><span class="math display">\[
+\tau_{\max a b s}=\frac{\sigma_1}{2}
+\]</span></p>
+</div>
+</div>
+
+
+</details></section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

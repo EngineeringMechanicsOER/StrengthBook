@@ -71,7 +71,37 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles/custom.css">
 </head>
 
 <body class="nav-sidebar docked">
@@ -150,7 +180,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Chapter 6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Torsional Loading</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Torsion</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -252,7 +282,19 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">15.1</span> Introduction</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#eulers-formula-for-buckling" id="toc-eulers-formula-for-buckling" class="nav-link" data-scroll-target="#eulers-formula-for-buckling"><span class="header-section-number">15.1</span> Euler’s Formula for Buckling</a>
+  <ul class="collapse">
+  <li><a href="#stability" id="toc-stability" class="nav-link" data-scroll-target="#stability"><span class="header-section-number">15.1.1</span> <em>Stability</em></a></li>
+  <li><a href="#eulers-formula" id="toc-eulers-formula" class="nav-link" data-scroll-target="#eulers-formula"><span class="header-section-number">15.1.2</span> <em>Euler’s Formula</em></a></li>
+  <li><a href="#bucking-direction" id="toc-bucking-direction" class="nav-link" data-scroll-target="#bucking-direction"><span class="header-section-number">15.1.3</span> <em>Bucking Direction</em></a></li>
+  <li><a href="#critical-stress" id="toc-critical-stress" class="nav-link" data-scroll-target="#critical-stress"><span class="header-section-number">15.1.4</span> <em>Critical Stress</em></a></li>
+  </ul></li>
+  <li><a href="#effect-of-supports" id="toc-effect-of-supports" class="nav-link" data-scroll-target="#effect-of-supports"><span class="header-section-number">15.2</span> Effect of Supports</a>
+  <ul class="collapse">
+  <li><a href="#effective-length" id="toc-effective-length" class="nav-link" data-scroll-target="#effective-length"><span class="header-section-number">15.2.1</span> <em>Effective Length</em></a></li>
+  </ul></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   </ul>
 </nav>
     </div>
@@ -289,21 +331,526 @@ Learning Objectives
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>Insert text</li>
+<li>Describe column buckling behavior</li>
+<li>Construct the equation known as Euler’s formula for columns</li>
+<li>Differentiate different end conditions to calculate an appropriate effective length</li>
 </ul>
 </div>
 </div>
-<section id="introduction" class="level2" data-number="15.1">
-<h2 data-number="15.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">15.1</span> Introduction</h2>
+<section id="introduction" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="introduction">Introduction</h2>
 <details>
 <summary>
 Click to expand
 </summary>
-<p>Insert text</p>
+<p>Until now, our focus has been primarily on meeting strength and deflection criteria. While these aspects are crucial, it’s equally important to ensure the structure’s stability. In this chapter, we will delve into the stability analysis of long and slender members subjected to compressive loading, commonly referred to as columns. Some examples are shown in figure 15.1. When the compressive load reaches a critical point, columns may undergo sudden sideways deflection, a phenomenon known as buckling.&nbsp; After buckling, a column is unable to support any further load. This chapter will focus on long, slender, homogeneous, axial compression members, otherwise known as columns.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH15s PNGs/figure 15.1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<figcaption>Figure 15.1: Examples of columns.</figcaption>
+</figure>
+</div>
 </details>
-
-
 </section>
+<section id="eulers-formula-for-buckling" class="level2" data-number="15.1">
+<h2 data-number="15.1" class="anchored" data-anchor-id="eulers-formula-for-buckling"><span class="header-section-number">15.1</span> Euler’s Formula for Buckling</h2>
+<details>
+<summary>
+Click to expand
+</summary>
+<p>Even in ideal conditions, buckling often occurs for long slender members at loads significantly lower than the material’s crushing or compression limit. When a long slender object is subjected to axial loading, it may buckle once the load reaches a critical threshold known as the critical load, P<sub>cr</sub>. At this point, the object experiences significant lateral deflection perpendicular to the load direction, so columns should be designed such that the applied load does not exceed the critical load.</p>
+<p>Buckling of a ruler (long slender member) is depicted in figure 15.2. The ruler in the left and center photos is subjected to axial load P that is less than the critical load, P<sub>cr</sub>. This is known as stable equilibrium. In the photo on the right, the axial load, P, exceeded the critical load P<sub>cr</sub>, causing a significant lateral deflection. This is known as unstable equilibrium.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH15s PNGs/figure 15.2.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<figcaption>Figure 15.2: Buckling of a ruler.</figcaption>
+</figure>
+</div>
+<section id="stability" class="level3" data-number="15.1.1">
+<h3 data-number="15.1.1" class="anchored" data-anchor-id="stability"><span class="header-section-number">15.1.1</span> <em>Stability</em></h3>
+<p>We can consider stability by using a simplified model of a pinned-pinned column. This column will consist of two ridged bars connected with a pin and a spring with a stiffness k, as shown in figure 15.3a. When the load, P, is small, the system remains vertical, and the spring is unstretched. If point C is displaced to the right a small amount, Δ, the spring will produce a force F = kΔ, as shown in figure 15.3b. This force is used to resist the horizontal forces, P<sub>x</sub> = Ptanθ, as shown in figure 15.3c.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH15s PNGs/figure 15.3.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<figcaption>Figure 15.3: Free body diagram of a simplified column</figcaption>
+</figure>
+</div>
+<p>Since θ is small:</p>
+<p><span class="math display">\[
+\sin \theta \sim \theta \text { and } \tan \theta \sim \theta
+\]</span></p>
+<p>so</p>
+<p><span class="math display">\[
+\Delta=\theta \frac{L}{2} \text { and } 2 P_x=2 P \theta
+\]</span></p>
+<p>Using the spring restoring force equation F=kΔ, then substituting in for Δ we have:</p>
+<p><span class="math display">\[
+F=k \theta \frac{L}{2}
+\]</span></p>
+<p>If the spring restoring force is greater than the axial force, then we have a stable equilibrium.</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; F&gt;P \\
+&amp; k \theta \frac{L}{2}&gt;2 P \theta
+\end{aligned}
+\]</span></p>
+<p>The θ cancels out, and we can solve for P:</p>
+<p><span class="math display">\[
+P&lt;\frac{k L}{4}
+\]</span></p>
+<p>Similarly we can solve for the expression for unstable equilibrium F &lt; P:</p>
+<p><span class="math display">\[
+P&gt;\frac{k L}{4}
+\]</span></p>
+<p>The point at which F = P is crucial as it is the line between stable and unstable equilibrium. We call this the critical load P<sub>cr</sub>:</p>
+<p><span class="math display">\[
+P_{c r}=\frac{k L}{4}
+\]</span></p>
+<p>Thus, if the load P exceeds P<sub>cr</sub>, then the system will be unstable, and if P is less than P<sub>cr</sub>, then the system will be stable. We will use P<sub>cr</sub> in the next section to determine the bucking load of columns.</p>
+</section>
+<section id="eulers-formula" class="level3" data-number="15.1.2">
+<h3 data-number="15.1.2" class="anchored" data-anchor-id="eulers-formula"><span class="header-section-number">15.1.2</span> <em>Euler’s Formula</em></h3>
+<p>As mentioned in earlier sections, members can fail due to material yielding or fracturing. However, instability represents another critical failure mechanism that requires consideration. We will use Euler’s formula to calculate the theoretical buckling load. To do this, we will start with the simplest of columns, pinned-pinned end connections. This means that the column cannot translate but can rotate as shown in figure 15.4.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH15s PNGs/figure 15.4.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<figcaption>Figure 15.4: Pinned-pinned axially loaded column.</figcaption>
+</figure>
+</div>
+<p>Columns are similar to beams rotated 90 degrees, so we can use what we already know about the elastic curve.</p>
+<p><span class="math display">\[
+\frac{d^2 y}{d x^2}=\frac{M}{E I}
+\]</span></p>
+<p>We can use the free-body diagram in figure 15.4c to sum moments about any point on the lower column section.</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; \sum M=0=M+P y \\
+&amp; M=-P y
+\end{aligned}
+\]</span></p>
+<p>We can now substitute this expression into the elastic curve equation:</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; \frac{d^2 y}{d x^2}=\frac{-P y}{E I} \\
+&amp; \frac{d^2 y}{d x^2}+\left(\frac{P}{E I}\right) y=0
+\end{aligned}
+\]</span></p>
+<p>This is a linear, homogeneous, second-order differential equation with constant coefficients, which has a general solution of:</p>
+<p><span class="math display">\[
+y=C_1 \sin \left(\sqrt{\frac{P}{E I}} x\right)+C_2 \cos \left(\sqrt{\frac{P}{E I}} x\right)
+\]</span></p>
+<p>The two constants, C<sub>1</sub> and C<sub>2</sub>, can be determined by imploring boundary conditions.&nbsp; Since y = 0 at x = 0 and y = 0 when x = L. The first condition gives:</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;0  =C_1(0)+C_2(1) \\
+&amp; \text { so } C_2  =0
+\end{aligned}
+\]</span></p>
+<p>The second boundary condition, x = L when y = 0 results in:</p>
+<p><span class="math display">\[
+0=C_1 \sin \left(\sqrt{\frac{P}{E I}} x\right)+0
+\]</span></p>
+<p>The equation is satisfied if C<sub>1</sub> = 0. However, this is a trivial solution that implies y = 0 and there is no lateral deflection. For the nontrivial solution, the sine function must be equal to zero, which requires:</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;\sqrt{\frac{P}{E I}} L=n \pi \\
+&amp; \text {where } n=1, 2, 3, 4,...
+\end{aligned}
+\]</span></p>
+<p>The smallest value of P occurs when n = 1; substituting this and rearranging gives us Euler’s formula:</p>
+<p><span class="math display">\[
+P_{c r}=\frac{\pi^2 E I}{L^2}
+\]</span></p>
+<p>where:</p>
+<ul>
+<li><p>P<sub>cr</sub> = critical axial load on the column just before it buckles [N, lb]. Note that this load must be less than that of the load that would cause the stress in the columns to exceed the yield stress, or the column will fail due to yield stress before it buckles.</p></li>
+<li><p>E = Modulus of elasticity of the material [Pa, psi]</p></li>
+<li><p>I = Moment of inertia for the column [m<sup>4</sup>, in<sup>4</sup>]</p></li>
+<li><p>L = Unsupported length of the column&nbsp; (pinned=pinned connection) [m, in]</p></li>
+</ul>
+<p>This is named after the Swiss mathematician <a href="https://en.wikipedia.org/wiki/Leonhard_Euler">Leonhard Euler</a> who developed this formula in 1744. Other bucking modes can exist (n = 2, n = 3, n = 4, etc.) but are less common as the load required for those higher modes would be much larger. The first three bucking loads can be seen in figure 15.5.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH15s PNGs/figure 15.5.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<figcaption>Figure 15.5: First three buckling modes</figcaption>
+</figure>
+</div>
+</section>
+<section id="bucking-direction" class="level3" data-number="15.1.3">
+<h3 data-number="15.1.3" class="anchored" data-anchor-id="bucking-direction"><span class="header-section-number">15.1.3</span> <em>Bucking Direction</em></h3>
+<p>Columns that are pinned at both ends and have circular or square cross sections (where the moments of inertia are the same about any axis) could buckle in any direction. However, columns that do not have a symmetric cross-section will take place in the plane perpendicular to the principal axis of the minimum moment of inertia. For example, the ruler in figure 15.2 has a rectangular cross-section. When a compressive force is applied to the ruler, it will buckle about the axis with the smaller moment of inertia. The axis of bucking might not be obvious for sections that are not symmetric. During buckling analysis, it’s essential to evaluate both directions to determine the axis with the lowest moment of inertia. Subsequently, this axis is utilized for computing the critical buckling load. Figure 15.6 illustrates column buckling of wood supports.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH15s PNGs/figure 15.6.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<figcaption>Figure 15.6: Buckling of wooden studs.</figcaption>
+</figure>
+</div>
+</section>
+<section id="critical-stress" class="level3" data-number="15.1.4">
+<h3 data-number="15.1.4" class="anchored" data-anchor-id="critical-stress"><span class="header-section-number">15.1.4</span> <em>Critical Stress</em></h3>
+<p>We can use the Euler bucking equation to calculate the critical stress for a column by setting I=Ar<sup>2</sup> where A is the cross-sectional area and r is the radius of gyration. For a more comprehensive discussion on the radious of gyration, see the <a href="https://engineeringstatics.org/radius-of-gyration-sec.html">Engineering Statics</a> book by Baker and Haynes.</p>
+<p><span class="math display">\[
+\sigma_{c r}=\frac{P_{c r}}{A}=\frac{\pi^2 E\left(A r^2\right)}{A L^2}
+\]</span></p>
+<p>Rearranging we have:</p>
+<p><span class="math display">\[
+\sigma_{c r}=\frac{\pi^2 E}{\left(\frac{L}{r}\right)^2}
+\]</span></p>
+<p>where:</p>
+<ul>
+<li><p>σ<sub>cr</sub> = critical stress on the column just before it buckles [Pa, psi]. Note that this stress must be less than that of the yield stress, or the column will fail due to yield stress before it buckles.</p></li>
+<li><p>E = Modulus of elasticity of the material [Pa, psi]</p></li>
+<li><p>L = Unsupported length of the column (pinned=pinned connection) [m, in]</p></li>
+<li><p>r = Smallest radius of gyration of the column [m, in]</p></li>
+</ul>
+<p>The quantity in the denominator, L/r, is called the slenderness ratio of the column. Many times columns are classified using the slenderness ratio as short, intermediate, and long. The smallest value of the radius of gyration is used to find the critical stress.</p>
+<p>A plot of the critical stress versus the slenderness ratio is shown in figure 15.7. For larger slenderness ratios the curve is hyperbolic. For smaller slenderness ratios, the critical stress is equal to the yield stress of the material. This graph illustrates that if the critical stress calculated using Euler’s equation is greater than the yield stress that is of no interest. The column will yield before it has the chance to buckle.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH15s PNGs/figure 15.7.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<figcaption>Figure 15.7: Plot of critical stress.</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example 15.1: Simple column
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>A pinned-pinned W10x30 column is 8 ft long made of A492 steel (σ<sub>y</sub> = 50 ksi and E = 29,000 ksi) What is the largest load axial load that this column can support?</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH15s PNGs/example 15.1 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="156"></p>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>We will consult the table in the Appendix to get the section properties of a W10x30 section.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH15s PNGs/example 15.1 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="303"></p>
+</figure>
+</div>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; A=8.84 \text{ in}^2 \\
+&amp; I_x=170 \text{ in}^4 \\
+&amp; r_y=4.38 \text{ in} \\
+&amp; I_y=16.7 \text{ in}^4 \\
+&amp; r_y=1.37 \text{ in}
+\end{aligned}
+\]</span></p>
+<p>We will start with calculating the critical load using Euler’s Bucking Formula. Note that we can confidently say that this column will buckle about the y-axis since the moment of inertia in the y-direction is the smallest.</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; P_{c r}=\frac{\pi^2 E I}{L^2}=\frac{\pi^2(29000 \mathrm{ksi})\left(16.7 \mathrm{in}^4\right)}{\left(8 \mathrm{ft} \cdot 12{\text{ in/ft}}\right)^2} \\
+&amp; P_{c r}=518.6 \text{ kips}
+\end{aligned}
+\]</span></p>
+<p>This represents the load at which any increase in applied load will cause the column to buckle. We will calculate the stress associated with this critical load.</p>
+<p><span class="math display">\[
+\sigma_{c r}=\frac{P_{c r}}{A}=\frac{518.6 \text{ kips}}{8.8 \text{ in}^2}=58.7 \text{ ksi}
+\]</span></p>
+<p>Since this stress is larger than the yield stress of the steel (σ<sub>y</sub> = 50 ksi) the column will not buckle first it will fail due to yielding. We can calculate the force using the stress of an axial member formula discussed in chapter 2.</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;\sigma_{cr} =\frac{P}{A} \\
+&amp; 50 \text{ ksi} =\frac{P}{8.84 \text{ in}^2} \\
+&amp;p =442 \text{ kips}
+\end{aligned}
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section></details>
+</section>
+
+<section id="effect-of-supports" class="level2" data-number="15.2">
+<h2 data-number="15.2" class="anchored" data-anchor-id="effect-of-supports"><span class="header-section-number">15.2</span> Effect of Supports</h2>
+<details>
+<summary>
+Click to expand
+</summary>
+<p>We derived Euler’s equation for bucking with pinned-pinned supports (the simplest case). However, in many cases, columns are supported by other end conditions. Just as we derived Euler’s formula for bucking by solving a differential equation for the pinned-pinned conditions, the same can be done for other types of support cases. We will derive one more here.</p>
+<p>Let’s consider the case where a column is fixed at one end and free at the other end as shown in figure 15.8a. Summing moments at the cut end of the free body diagram in figure 15.9 we get M=P(δ-y).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH15s PNGs/figure 15.8.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="398"></p>
+<figcaption>Figure 15.8: Column with a fixed base and a free end.</figcaption>
+</figure>
+</div>
+<p>We can now write the differential equation using the elastic curve equation:</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; E I \frac{d^2 y}{d x^2}=P(\delta-y) \\
+&amp; \frac{d^2 y}{d x^2}+\left(\frac{P}{E I}\right) y=\left(\frac{P}{E I}\right) \delta
+\end{aligned}
+\]</span></p>
+<p>Since the right side is not equal to zero, this equation is nonhomogeneous (note this differs from our earlier derivation for the pinned-pinned connection). There will be a particular and complementary solution.</p>
+<p><span class="math display">\[
+y=C_1 \sin \left(\sqrt{\frac{P}{E I} x}\right)+C_2 \cos \left(\sqrt{\frac{P}{E I} x}\right)+\delta
+\]</span></p>
+<p>We can now employ boundary conditions to solve for the constants. At x = 0, y = 0, so C<sub>2</sub> = δ. Also at x = 0, dy/dx=0, so C<sub>1</sub>=0. This leads us to the following deflection curve:</p>
+<p><span class="math display">\[
+y=\delta\left(1-\cos \left(\sqrt{\frac{P}{E I}} x\right)\right)
+\]</span></p>
+<p>At the free end of the column, x = L, we know that y = δ so:</p>
+<p><span class="math display">\[
+0=\delta \cos \left(\sqrt{\frac{P}{E I} L}\right)
+\]</span></p>
+<p>The trivial solution δ = 0 shows that no matter what the P value no buckling will occur. So we have:</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; 0=\cos \left(\sqrt{\frac{P}{E I} L}\right) \\
+&amp; \sqrt{\frac{P}{E I}} L=\frac{n \pi}{2} \\
+&amp; \text{where n=1, 3, 5,...}
+\end{aligned}
+\]</span></p>
+<p>The smallest critical load happens at n = 1, results in:</p>
+<p><span class="math display">\[
+P_{c r}=\frac{\pi^2 E I}{(2 L)^2}
+\]</span></p>
+<p>Other support conditions can be derived in a similar manner.</p>
+<section id="effective-length" class="level3" data-number="15.2.1">
+<h3 data-number="15.2.1" class="anchored" data-anchor-id="effective-length"><span class="header-section-number">15.2.1</span> <em>Effective Length</em></h3>
+<p>The critical load equation for the fixed-free column differs from the equation for the pinned-pinned column only by the length L being multiplied by a factor of 2. We will adjust the column length L to denote the distance between the points on the column where the moment is zero. This distance is referred to as the <strong><em>effective length</em></strong>, L<sub>e</sub>. For a pinned-pinned column, L = L<sub>e</sub>, as illustrated in figure 15.9. As derived above, for a column with a fixed base and a free end, L<sub>e</sub> = 2L. Two other common end conditions are depicted in this figure relating L to L<sub>e</sub>. We can use one general equation for any support condition by replacing the effective length with KL, where K represents the effective length factor.</p>
+<p><span class="math display">\[
+P_{c r}=\frac{\pi^2 E I}{(K L)^2}
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+\sigma_{c r}=\frac{\pi^2 E}{\left(\frac{K L}{r}\right)^2}
+\]</span></p>
+<p>You can find the effective length factor, K, below each of the end conditions in figure 15.9.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH15s PNGs/figure 15.9.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<figcaption>Figure 15.9: Effective length of columns for varying end conditions.</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example 15.2: Simple column
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Redo example 15.1 with a fixed-fixed column.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>We will consult the table in the Appendix to get the section properties of a W10x30 section.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH15s PNGs/example 15.2 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="162"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH15s PNGs/example 15.2 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="306"></p>
+</figure>
+</div>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; A=8.84 \text{ in}^2 \\
+&amp; I_x=170 \text{ in}^4 \\
+&amp; r_y=4.38 \text{ in} \\
+&amp; I_y=16.7 \text{ in}^4 \\
+&amp; r_y=1.37 \text{ in}
+\end{aligned}
+\]</span></p>
+<p>We will start with calculating the critical load using Euler’s Bucking Formula. Note that we can confidently say that this column will buckle about the y-axis since the moment of inertia in the y-direction is the smallest.</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; P_{cr}=\frac{\pi^2 E I^2}{(k L)^2}=\frac{\pi^2(29000 \text{ ksi})\left(16.7{\text{ in}^4}\right)}{\left(2 \cdot 8 \mathrm{ft} \cdot 12{\text{ in/ft}}\right)^2} \\
+&amp; P_{c r}=129.7 \text { kips} \\
+&amp;
+\end{aligned}
+\]</span></p>
+<p>This represents the load at which any increase in applied load will cause the column to buckle. We will calculate the stress associated with this critical load.</p>
+<p><span class="math display">\[
+\sigma_{c r}=\frac{P_{cr}}{A}=\frac{129.7 \mathrm{~K}}{8.84 \text{ in}^2}=14.7 \text{ ksi}
+\]</span></p>
+<p>Since this stress is smaller than the yield stress of the steel (σ<sub>y</sub> = 50 ksi) the column will buckle first at a critical load of 129.7 kips.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example 15.3: Braced column
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>A W12x50 column carries a load of 650 kips. If the column is 25 feet long, has fixed-pinned end conditions, is braced at the midpoint in the weak direction, and is made from A492 steel (σ<sub>y</sub> = 50 ksi and E = 29,000 ksi), is it adequate?</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH15s PNGs/example 15.3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="199"></p>
+</figure>
+</div>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; A=14.6 \text{ in}^2 \\
+&amp; I_x=391 \text{ in}^4 \\
+&amp; r_y=5.18 \text{ in} \\
+&amp; I_y=56.3 \text{ in}^4 \\
+&amp; r_y=1.96 \text{ in}
+\end{aligned}
+\]</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH15s PNGs/example 15.3 copy.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="305"></p>
+</figure>
+</div>
+<p>We will consult the table in the Appendix to get the section properties of a W12x50 section. We will start with calculating the critical load using Euler’s Bucking Formula. The brace at the midpoint of the column changes the length of the column in the weak direction. This doesn’t make it obvious which axis the column will buckle about so we will need to check both the strong and weak directions.</p>
+<p><strong>Strong axis</strong></p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; P_{cr}=\frac{\pi^2 E I^2}{(k L)^2}=\frac{\pi^2(29000 \text{ ksi})\left(391{\text{ in}^4}\right)}{\left(0.7 \cdot 25 \text{ ft} \cdot 12{\text{ in/ft}}\right)^2} \\
+&amp; P_{c r}=2538 \text { kips} \\
+&amp;
+\end{aligned}
+\]</span></p>
+<p>We use the general form of Euler’s bucking equation. Since the end supports are pinned-fixed, we use K = 0.7. We calculated that the critical load in the strong direction to be 2538 kips.</p>
+<p>We will compare this to buckling about the weak axis. The values of I, K, and L will change. The L value changes because the column is braced at the midpoint, so the column has a shorter distance to buckle about. The K value can be tricky. There were no details about the brace; we don’t know if the brace will provide an end condition like a fixed or pinned end. So, we will calculate the worst case, which would be a pinned-pinned end condition (this makes the denominator the largest, so the result will be the smallest).</p>
+<p><strong>Weak axis</strong></p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; P_{cr}=\frac{\pi^2 E I^2}{(k L)^2}=\frac{\pi^2(29000 \text{ ksi})\left(56.3{\text{ in}^4}\right)}{\left(1 \cdot 12.5 \text{ ft} \cdot 12{\text{ in/ft}}\right)^2} \\
+&amp; P_{c r}=716 \text { kips} \\
+&amp;
+\end{aligned}
+\]</span></p>
+<p>We calculated that the critical load in the weak direction to be 716 kips. This means that if the column were to buckle, it would be about the weak axis since this load was smaller. Since the critical buckling load is greater than the 650 kip applied load our column is adequate. However, we need to calculate the load due to yielding of the steel.</p>
+<p><strong>Yield</strong></p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; \sigma_{y0}=\frac{P}{4} \therefore P=(50 \text{ ksi})\left(14.6 \text{ in}^2\right) \\
+&amp; P_{y0}=730 \text{ kips}
+\end{aligned}
+\]</span></p>
+<p>We calculated a yielding load of 730 kips. Interpreting these results: The column is adequate for a 650 kip load. Failure would first occur by bucking in the weak direction if the load were increased to 716 kips. It should be noted that we did not apply any safety factors. In civil engineering, design codes for steel columns designate how to apply safety factors to the loading and the capacity.</p>
+<p>Let’s talk about the brace, what would happen to the capacity of the columns if the brace was not there? We will recalculate the critical load for bucking bout the weak direction.</p>
+<p><strong>No brace</strong></p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; P_{cr}=\frac{\pi^2 E I^2}{(k L)^2}=\frac{\pi^2(29000 \text{ ksi})\left(56.3{\text{ in}^4}\right)}{\left(0.7 \cdot 25 \mathrm{ft} \cdot 12{\text{ in/ft}}\right)} \\
+&amp; P_{c r}=365 \text { kips} \\
+&amp;
+\end{aligned}
+\]</span></p>
+<p>Notice how much lower this was than the braced condition. If the column was not braced it would not be adequate for the applied load.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section></details>
+</section>
+
+<section id="summary" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="summary">Summary</h2>
+<details>
+<summary>
+Click to expand
+</summary>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Key takeaways</strong></p>
+<ul>
+<li><p>Structural members that are long, slender, and subjected to compressive axial loads are categorized as a column.</p></li>
+<li><p>In addition to stress and deflection, engineers need to check buckling as a form of member failure.</p></li>
+<li><p>The critical load refers to the maximum axial load that a column can withstand just before buckling occurs.</p></li>
+<li><p>The effective length is the distance on the column between the points where the moment is zero. This accounts for various end conditions.</p></li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Key equations</strong></p>
+<p>Euler’s Bucking Formula: General Case</p>
+<p><span class="math display">\[
+P_{c r}=\frac{\pi^2 E I}{(K L)^2}
+\]</span></p>
+<p>Critical Stress Formula: General Case</p>
+<p><span class="math display">\[
+\sigma_{c r}=\frac{\pi^2 E}{\left(\frac{K L}{r}\right)^2}
+\]</span></p>
+</div>
+</div>
+
+
+</details></section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
