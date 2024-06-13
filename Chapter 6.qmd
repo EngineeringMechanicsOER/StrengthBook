@@ -17,7 +17,7 @@ editor: visual
 
 ## Introduction {.unnumbered}
 
-<details>
+<details open>
 
 <summary>Click to expand</summary>
 
@@ -30,50 +30,52 @@ Torsion is a moment applied around the longitudinal axis of a body. The effect o
 
 **Figure 6.1:** needs caption
 
-This chapter will focus on bodies subjected to pure torsion (no axial or bending loads). These concepts will appear again in chapter 12 when more generalized loading conditions are discussed.
+This chapter will focus on bodies subjected to pure torsion (no axial or bending loads). These concepts will appear again in @sec-combined-loads when more generalized loading conditions are discussed.
+
+In sections 6.1 and 6.2 we'll derive equations for calculating the stress and deformation caused by torsional loads. In Section 6.3 we'll consider statically indeterminate torsion problems, using methods similar to those in @sec-5.5. In Section 6.4 we'll consider torques due to power transmission, a common application where torques are present.
 
 ### The Effect of Torsion
 
 As mentioned above, the effect of a torsional moment is to cause the body to twist. The resulting stress is a shear stress.
 
-Consider the pleated tube shown in figure 6.1 (a) and (b) below. Figure 6.1(a) shows the tube in an unloaded state with some of the pleats colored for identification. In figure 6.1(b), we see that after a torque is applied, the pleats move vertically but not horizontally. In addition, without the color present, it would be difficult to identify the displacement at all. We can say that all points remain in their original plane even in the deformed state so that the shape of the cross-section is unchanged.
+Consider the pleated tube shown in Figure 6.1 (a) and (b) below. Figure 6.1(a) shows the tube in an unloaded state with some of the pleats colored for identification. In figure 6.1(b), we see that after a torque is applied, the pleats move vertically but not horizontally. In addition, without the color present, it would be difficult to identify the displacement at all. We can say that all points remain in their original plane even in the deformed state so that the shape of the cross-section is unchanged.
 
 **Figure 6.2:** Unloaded tube (a) and tube with torque applied (b).
 
-Now consider the I-beam subjected to torsion in figure 6.2. In this case we see that the shape of the cross-section changes and that the points do not remain in the same vertical plane (there is horizontal displacement as well as vertical). This shape change is referred to as warping. In this text, we will only be considering circular cross-sections with no warping.
+Now consider the I-beam subjected to torsion in Figure 6.2. In this case we see that the shape of the cross-section changes and that the points do not remain in the same vertical plane (there is horizontal displacement as well as vertical). This shape change is referred to as warping. In this text, we will only be considering circular cross-sections with no warping.
 
 **Figure 6.3:** I-beam subjected to torsion unloaded (a) and with applied torque (b).
 
-Going back to figure 6.1, let’s consider the shape formed by the non-displaced colored lines in figure 6.1(a) versus the displaced lines in figure 6.1(b). These images are shown again in figure 6.3. In the non-displaced case, a rectangle can be drawn around the green lines on the left with 90° corners. In the displaced case, the corners are no longer at 90°. From chapter 2, we know that this change in angle is the definition of shear strain. The evidence of shear strain indicates that the applied torque results in shear stress. In section 6.2, the equation that relates torque to shear stress will be derived.
+Going back to Figure 6.1, let’s consider the shape formed by the non-displaced colored lines in figure 6.1(a) versus the displaced lines in figure 6.1(b). These images are shown again in Figure 6.3. In the non-displaced case, a rectangle can be drawn around the green lines on the left with 90° corners. In the displaced case, the corners are no longer at 90°. From @sec-3.2, we know that this change in angle is the definition of shear strain. The evidence of shear strain indicates that the applied torque results in shear stress.
 
 **Figure 6.4:** Evidence of shear strain
 
 ### Determination of Internal Torques
 
-As with axial loading, the stress and deformations due to torsion vary from point to point within a body and are dependent on the internal torques at the individual points and geometric section properties. Internal torques can be found by sectioning bodies and applying equilibrium in a process also very similar as was done in the axial loading problems (see example 1.5 in chapter 1 and also examples 2.1 and 2.2 in chapter 2). In the case of internal torques, moment equilibrium around the longitudinal axis will be applied instead of force summation.
+As with axial loading, the stress and deformations due to torsion vary from point to point within a body and are dependent on the internal torques at the individual points and geometric section properties. Internal torques can be found by sectioning bodies and applying equilibrium equations, just like we did axial loading problems (see Examples 1.5, 2.1 and 2.2). In the case of internal torques, moment equilibrium around the longitudinal axis will be applied instead of force summation.
 
 Before looking at an example that illustrates the process of finding internal torque reactions, it would be beneficial to establish the sign conventions that will be used as well as ways of representing torque in this text.
 
 ### Sign Convention and Representation of Torque
 
-Just as is typically used for moments, the sign convention that will be used in this text for torques is to assign a positive sign to torques that are counterclockwise and a negative sign for those that are clockwise. However, the direction that a torque appears to be depends on the perspective from which the rotation is being observed. In figure 6.1 below, the applied torque would appear clockwise if viewed from the left end of the bar towards the right and counterclockwise if viewed from the right end of the bar towards the left. As long as one is being consistent, it is not usually important which perspective is used. However, a typical convention is to look from the free end of the shaft if there is one, towards the fixed end, or from the positive longitudinal axis if one is given, towards the negative.
+Just as is typically used for moments, the sign convention that will be used in this text for torques is to assign a positive sign to torques that are counterclockwise and a negative sign for those that are clockwise. However, the direction that a torque appears to be depends on the perspective from which the rotation is being observed. In Figure 6.5 below, the applied torque would appear clockwise if viewed from the left end of the bar towards the right and counterclockwise if viewed from the right end of the bar towards the left. As long as one is being consistent, it is not usually important which perspective is used. However, a typical convention is to look from the free end of the shaft if there is one, towards the fixed end, or from the positive longitudinal axis if one is given, towards the negative.
 
 **Figure 6.5:** Different directions for viewing torque result in different perspectives on sign.
 
-It can sometimes be difficult to visually determine whether a torque appears clockwise or counterclockwise, so one tool that can be used is the right-hand rule. If you use your right hand and curl your fingers in the direction of the rotation represented by the torque arrow, a positive (counterclockwise) torque would be represented if your thumb points in the direction of the positive longitudinal axis (the x-axis in figure 6.2).
+It can sometimes be difficult to visually determine whether a torque appears clockwise or counterclockwise, so one tool that can be used is the right-hand rule. If you use your right hand and curl your fingers in the direction of the rotation represented by the torque arrow, a positive (counterclockwise) torque would be represented if your thumb points in the direction of the positive longitudinal axis (the x-axis in Figure 6.6).
 
 **Figure 6.6:** Using the right-hand rule to determine sign for torque
 
-When examining cut sections as will be needed to determine internal torques, establishing the sign of the internal torque requires looking from the direction of the cut edge towards the end of the cut section. One tool that can be used in this instance in place of direction visualization is to make the cut necessary to determine the internal torque in a given section and then imagine your right hand as being at the cut edge and curl your fingers in the direction of the torque. If your thumb points away from the cut edge, the internal torque is positive and vice versa. This is illustrated in figure 6.3.
+When examining cut sections as will be needed to determine internal torques, establishing the sign of the internal torque requires looking from the direction of the cut edge towards the end of the cut section. One tool that can be used in this instance in place of direction visualization is to make the cut necessary to determine the internal torque in a given section and then imagine your right hand as being at the cut edge and curl your fingers in the direction of the torque. If your thumb points away from the cut edge, the internal torque is positive and vice versa. This is illustrated in Figure 6.7.
 
 **Figure 6.7:** Tool to determine sign of internal torques
 
 Finally, since circular arrows can be difficult to draw in a way that clearly conveys direction, double headed line arrows are frequently used to represent torque. Conventions can vary between texts and other sources. In this text, the following convention will be used:
 
 1.  On a whole body FBD, arrows facing in the direction of the positive longitudinal axis will be considered to indicate positive torques (counterclockwise) and vice versa. When applying equilibrium, these signs will be used.
-2.  The same will hold true for cut section FBD’s used to determine internal torques. However, if applying equilibrium indicates that the internal torque points away from the cut section, the torque can be concluded to be positive (counterclockwise) for the purposes of calculating angle of twist (as discussed in section 6.3). Internal torque that points towards the cut section can be concluded to be negative (clockwise). In addition, on the cut sections, the regular convention of right directed arrows being positive and left directed arrows being negative for the purpose of summing moments will be used.
+2.  The same will hold true for cut section FBD’s used to determine internal torques. However, if applying equilibrium indicates that the internal torque points away from the cut section, the torque can be concluded to be positive (counterclockwise) for the purposes of calculating angle of twist. Internal torque that points towards the cut section can be concluded to be negative (clockwise). In addition, on the cut sections, the regular convention of right directed arrows being positive and left directed arrows being negative for the purpose of summing moments will be used.
 
-The direction of the internal torque is not important in calculating shear stress (the sign on the stress requires concepts that will be discussed in chapter 12), but it is important when calculating angle of twist (section 6.3).
+The direction of the internal torque is not important in calculating shear stress (the sign on the stress requires concepts that will be discussed in @sec-stress-transformation), but it is important when calculating angle of twist, as we'll see in Section 6.2.
 
 Example 6.1 demonstrates how to determine internal torques in a multi-section body as well as how to apply the above-described sign conventions.
 
@@ -102,11 +104,11 @@ Since writing equilibrium equations based on the FBD of the left side section wo
 Recall that torques are moments that cause the body to twist. In this problem the torques act around the x-axis. Applying the moment equilibrium equation on this section gives:
 
 $$
-\begin{gathered}
-\sum M_x=-T_{A B}+T_B-T_E=0 \\
-\sum M_x=-T_{A B}+70 \mathrm{Nmm}-30 \mathrm{Nmm}=0 \\
-T_{A B}=40 \mathrm{Nmm}
-\end{gathered}
+\begin{aligned}
+\sum M_x&=-T_{AB}+T_B-T_E=0 \\
+\sum M_x&=-T_{A B}+70{~N}\cdot{mm}-30{~N}\cdot{mm}=0 \\
+T_{A B}&=40{~N}\cdot{mm}
+\end{aligned}
 $$
 
 The positive result confirms that the assumed direction for T~AB~ is the correct one, so it is a counterclockwise torque since it points away from the cut. The same result would have been obtained by applying equilibrium to the left side section after determining T~A~.
@@ -119,17 +121,17 @@ Applying the moment equilibrium equation on the right section gives:
 
 $$
 \begin{aligned}
-& \sum M_x=-T_{B E}-T_E=0 \\
-& \sum M_x=-T_{B E}-30 N \mathrm{~mm}=0 \\
-& T_{B E}=-30 \mathrm{Nmm}
+\sum M_x&=-T_{BE}-T_E=0 \\
+\sum M_x&=-T_{BE}-30{~}N\cdot{mm}=0 \\
+T_{B E}&=-30{~N}\cdot{mm}
 \end{aligned}
 $$
 
 The negative result indicates that TBE goes in the opposite direction than what is drawn, so it points towards the cut section and is clockwise.
 
-**The internal torque for all points between A and B is 40 N mm counterclockwise.**
+**The internal torque for all points between A and B is 40 N**·**mm counterclockwise.**
 
-**The internal torque for all points between B and E is 30 N mm clockwise.**
+**The internal torque for all points between B and E is 30 N**·**mm clockwise.**
 :::
 :::
 
@@ -166,31 +168,31 @@ $$
 Now consider the cross-section of the shaft where point B and B’ are located, shown in figure 6.1.2b. As discussed above, B’ is the location point B moves to when the torque is applied, so the angle between the radial lines that go from the center to points B and B’, respectively, of the shaft segment is the angle of twist of the segment. Since we are considering just a section of the shaft, the angle is represented as Δφ (as opposed to the absolute angle of twist, φ, as measured from the fixed end). If the outer radius of the shaft is r = c, then the length of BB’ is given by the arclength, so:
 
 $$
-\mathrm{BB}^{\prime}=\mathrm{c}(\Delta \varphi)
+\mathrm{BB}^{\prime}=\mathrm{c}(\Delta \phi)
 $$
 
 and
 
 $$
-\gamma=\frac{c(\Delta \varphi)}{\Delta x}
+\gamma=\frac{c(\Delta \phi)}{\Delta x}
 $$
 
 Generalizing this result for any point on the cross-section that is located at an arbitrary radial distance ρ from the center gives:
 
 $$
-\gamma=\frac{\rho(\Delta \varphi)}{\Delta x}
+\gamma=\frac{\rho(\Delta \phi)}{\Delta x}
 $$
 
 The resulting expression of γ shows that the shear strain varies linearly with ρ from the center of the cross-section to the outer radius, as illustrated in figure 6.1.3. The shear strain is 0 at the center, and the max shear strain occurs at the max value of ρ = c.
 
 $$
-\gamma_{\max }=\frac{c(\Delta \varphi)}{\Delta x}
+\gamma_{\max }=\frac{c(\Delta \phi)}{\Delta x}
 $$
 
 Substituting the general and max expressions for shear strain into Hooke’s Law for shear stress, τ = Gγ, reveals that shear stress also varies linearly from 0 to τ~max~ in going from the center of the cross-section to the outer radius.
 
 $$
-\tau=G \gamma=G \frac{\rho(\Delta \varphi)}{\Delta x}, \tau_{\max }=G \frac{c(\Delta \varphi)}{\Delta x}
+\tau=G \gamma=G \frac{\rho(\Delta \phi)}{\Delta x}, \tau_{\max }=G \frac{c(\Delta \phi)}{\Delta x}
 $$
 
 **Figure 6.10:** Shear strain and shear stress vary linearly from the center to the outer edge of the circular cross-section.
@@ -198,13 +200,13 @@ $$
 Looking at figure 6.1.3 shows that the slope of the linear variation is $\frac{\tau_{\max }}{c}$ and the shear stress can also be expressed as:
 
 $$
-\tau=\frac{\tau_{\max }}{c} \rho\quad(6.1)
+\tau=\frac{\tau_{\max }}{c} \rho
 $$
 
-The last step in developing the shear stress relationship to torque involves considering the equilibrium of the shaft. Refer to figure 6.1.4. If each point (i) on the cross-section with area dA~i~ has a given amount of shear stress,τ~i~, given by equation 6.1.1, then the corresponding force at each point dF~i~ can be calculated as:
+The last step in developing the shear stress relationship to torque involves considering the equilibrium of the shaft. Refer to figure 6.1.4. If each point (i) on the cross-section with area dA~i~ has a given amount of shear stress,τ~i~, then the corresponding force at each point dF~i~ can be calculated as:
 
 $$
-\mathrm{dF}_i=\tau_i \mathrm{dA}_i=\frac{\tau_{\max }}{c} \rho_i d A\quad(6.2)
+\mathrm{dF}_i=\tau_i \mathrm{dA}_i=\frac{\tau_{\max }}{c} \rho_i d A
 $$
 
 **Figure 6.11:** Illustration of infinitesimal forces on the shaft cross-section.
@@ -212,7 +214,7 @@ $$
 Recalling that the internal torque everywhere on the shaft is T, equilibrium dictates that the sum of the moments about the center of the cross-section should be equal to T. For an infinite number of points on the cross-section, this summation can be performed as an integral:
 
 $$
-T=\int d F_i \rho_i=\int \frac{\tau_{\max }}{c} \rho_i^2 d A\quad(6.3)
+T=\int d F_i \rho_i=\int \frac{\tau_{\max }}{c} \rho_i^2 d A
 $$
 
 Since τ~max~ and c are constant, they can be pulled outside the integral, leaving the integral portion to be $\int \rho_i^2 d A$, which is the definition of the polar moment of inertia. The polar moment of inertia is the moment of inertia around the out of plane axis, which is the x-axis. The polar moment of inertia will be denoted with the letter J in this text.
@@ -220,76 +222,95 @@ Since τ~max~ and c are constant, they can be pulled outside the integral, leavi
 For a solid circular cross-section of outer radius, r, and outer diameter, d:
 
 $$
-J_{\text {solid }}=\frac{\pi}{4} r^4=\frac{\pi}{64} d^4
+J_{solid}=\frac{\pi}{4} r^4=\frac{\pi}{64} d^4
 $$
 
 For a tube or hollow circular cross-section with outer radius and diameter, r~o~ and d~o~, respectively, and inner radius and diameter, r~i~ and d~i~, respectively:
 
 $$
-J_{\text {hollow }}=\frac{\pi}{4}\left(r_o^4-r_i^4\right)=\frac{\pi}{32}\left(d_o^4-d_i^4\right)
+J_{hollow}=\frac{\pi}{4}\left(r_o^4-r_i^4\right)=\frac{\pi}{32}\left(d_o^4-d_i^4\right)
 $$
 
-Equation 6.3 can be simplified to:
+Replacing $J=\rho^2_idA$ in our previous equation gives:
 
 $$
-T=\frac{\tau_{\max } J}{c}\quad(6.4)
+T=\frac{\tau_{\max } J}{c}
 $$
 
-Solving equation 6.4 for τ~max~ gives:
+This can be rearranged to:
 
 $$
-\tau_{\max }=\frac{T c}{J} \quad(6.5)
+\tau_{\max }=\frac{T c}{J}
 $$
 
-Solving equation 6.2.1 for τ~max~ and substituting the resulting expression into equation 6.2.5 gives a more general form of the equation:
+This equation gives the maximum stress on a given cross-section, which will occur on the outer edge of the shaft (where $\rho=c$). A more general form of the equation which can be used to find the stress at any point on the cross-section is:
 
 $$
-\tau=\frac{T \rho}{J} \quad(6.6)
-$$
+\boxed{\tau=\frac{T \rho}{J}}
+$$ {#eq-6.1}
 
-Keep in mind that the “max” designation in equation 6.5 is referring to the max shear stress with respect to the variation across the surface of the cross-section.
+| *where*
+| *𝜏 = Shear stress due to torsion \[Pa, psi\]*
+| T = Internal torque \[N·m, lb·in.\]
+| *𝜌 = Radial distance from center of cross-section to point of interest \[m, in.\]*
 
-Note that for now, only the magnitude of the shear stress (without sign) will be determined since the sign for shear stress is not based purely on the sign of the torque. The sign on shear stress will be discussed in chapter 12.
+*J = Polar moment of inertia \[m^4^, in.^4^\]*
 
-Example 6.2 demonstrates the use of the above equations to determine shear stress in the same circular bar assembly used in example 6.1.
+Note that for now, only the magnitude of the shear stress (without sign) will be determined since the sign for shear stress is not based purely on the sign of the torque. The sign on shear stress will be discussed in @sec-stress-transformation.
 
-::: {.callout-note collapse="true" icon="false"}
+Example 6.2 demonstrates the use of the above equations to determine shear stress in the same circular bar assembly used in Example 6.1.
+
+::: {.callout-tip collapse="true" icon="false"}
 ## Example 6.2
 
-The multi-section solid steel bar of example 6.1 is repeated here with the same loading (TB = 70 N mm and TE = 30 N mm). Also, given the diameters: dAC = 50 mm, dCD = 20 mm, and dDE = 35 mm, determine the magnitude and location of the max shear stress in the bar assembly.
+The multi-section solid steel bar of example 6.1 is repeated here with the same loading (TB = 70 N mm and TE = 30 N mm). Also, given the diameters: d~AC~ = 50 mm, d~CD~ = 20 mm, and d~DE~ = 35 mm, determine the magnitude and location of the max shear stress in the bar assembly.
 
 \[figure\]
 
-::: {.callout-note collapse="true" icon="false"}
+::: {.callout-tip collapse="true" icon="false"}
 ## Solution
 
-It can be seen from equation 6.5 that the max shear stress will depend on the internal torque and the geometrical properties of the shaft. Therefore, to find the max shear stress, we must calculate the shear stress at the outer radius for each distinct section of the shaft for which the internal torque and/or cross-sectional dimensions change. Each segment of the bar for which the internal torque stays constant, and the cross-sectional dimensions stay constant will have constant shear stress. In this example, there are 4 distinct sections for which to calculate shear stress:
+It can be seen from Equation 6.5 that the max shear stress will depend on the internal torque and the geometrical properties of the shaft. Therefore, to find the max shear stress, we must calculate the shear stress at the outer radius for each distinct section of the shaft for which the internal torque and/or cross-sectional dimensions change. Each segment of the bar for which the internal torque stays constant, and the cross-sectional dimensions stay constant will have constant shear stress. In this example, there are 4 distinct sections for which to calculate shear stress:
 
 1.  Section AB which gets sectioned at B due to the applied torque
 2.  Section BC which gets sectioned at C due to the geometry change at C
 3.  Section CD which gets sectioned at D due to the geometry change at D
 4.  Section DE which would get sectioned at E if E were not the end of the shaft
 
-From example 6.1, it is known that the magnitudes of the internal torque for all points between A and B, TAB, is 40 N mm and the internal torque for all points between B and E, TBE, is 70 N mm. Since the internal torque stays constant from B to E, it is known that TBC = TCD = TDE = 70 N mm. Recall that only the **magnitude** of shear stress will be calculated with the sign being discussed in chapter 12.
+From Example 6.1, it is known that the magnitudes of the internal torque for all points between A and B, TAB, is 40 N mm and the internal torque for all points between B and E, TBE, is 70 N mm. Since the internal torque stays constant from B to E, it is known that TBC = TCD = TDE = 70 N mm. Recall that only the **magnitude** of shear stress will be calculated with the sign being discussed in @sec-stress-transformation.
 
-Since the bar has a solid cross-section with the diameters given, we will use $J_{\text {solid }}=\frac{\pi}{32} d^4$ to calculate the polar moment of inertia at each section.
+Since the bar has a solid cross-section with the diameters given, we will use $J_{solid}=\frac{\pi}{32} d^4$ to calculate the polar moment of inertia at each section.
 
-Applying equation 6.5 to each section:
+Now we can calculate the maximum stress in each section:
 
 $$
 \begin{gathered}
-\tau_{A B}=\frac{T_{A B} * c_{A B}}{J_{A B}}=\frac{0.04 N \cdot m * \frac{0.05}{2} m} {\frac{\pi}{32}(0.05 m)^4}=1629.7 \mathrm{~Pa}=1.630 \mathrm{kPa} \\
+\tau_{AB}=\frac{T_{AB}*c_{AB}}{J_{AB}}=\frac{0.04{~N}\cdot{m}*\frac{0.05}{2} {~m}} {\frac{\pi}{32}(0.05{~m})^4}=1629.7{~Pa}=1.630{~kPa} \\
 \\
-\tau_{B C}=\frac{T_{B C} * c_{B C}}{J_{B C}}=\frac{0.07 \mathrm{~N} \cdot m * \frac{0.05}{2} m}{\frac{\pi}{32}(0.05 \mathrm{~m})^4}=2852 \mathrm{~Pa}=2.85 \mathrm{kPa} \\
+\tau_{BC}=\frac{T_{BC}*c_{BC}}{J_{BC}}=\frac{0.07{~N}\cdot{m}*\frac{0.05}{2}{~m}}{\frac{\pi}{32}(0.05{~m})^4}=2852{~Pa}=2.85{~kPa} \\
 \\
-\tau_{C D}=\frac{T_{C D} * c_{C D}}{J_{C D}}=\frac{0.07 \mathrm{~N} \cdot m * \frac{0.02}{2} m}{\frac{\pi}{32}(0.02 m)^4}=44563 \mathrm{~Pa}=44.6 \mathrm{kPa} \\
+\tau_{CD}=\frac{T_{CD}*c_{CD}}{J_{CD}}=\frac{0.07{~N}\cdot{m}*\frac{0.02}{2}~{m}}{\frac{\pi}{32}(0.02{~m})^4}=44563{~Pa}=44.6{~kPa} \\
 \\
-\tau_{D E}=\frac{T_{D E} * c_{D E}}{J_{D E}}=\frac{0.07 \mathrm{~N} \cdot \mathrm{m} * \frac{0.035}{2} m}{\frac{\pi}{32}(0.035 \mathrm{~m})^4}=8315 \mathrm{MPa}=8.32 \mathrm{kPa}
+\tau_{DE}=\frac{T_{DE}*c_{DE}}{J_{DE}}=\frac{0.07{~N}\cdot{m}*\frac{0.035}{2}{~m}}{\frac{\pi}{32}(0.035{~m})^4}=8315{~Pa}=8.32{~kPa}
 \end{gathered}
 $$
 
 **The max shear stress in the bar is 44.6 kPa and occurs in section CD.**
 :::
+:::
+
+::: {.callout-warning icon="false"}
+## Step-by-step: Torsional stress
+
+1.  Use equilibrium to determine reaction torques at any supports
+
+2.  Cut a cross-section through the member and draw a free body diagram of either everything to the left of the cut or everything to the right
+
+3.  Use equilibrium to determine the internal torque in the member
+
+4.  Determine the torsional stress using $\tau=\frac{T\rho}{J}$
+
+5.  Repeat steps 2 - 4 as necessary. A new section should be cut any time either another external torque is applied or the dimensions of the cross-section change
 :::
 
 </details>
@@ -300,94 +321,108 @@ $$
 
 <summary>Click to expand</summary>
 
-In chapter 5, we derived and applied a formula for axial deformation. We will do something similar in this chapter for circular shafts subjected to torsion. The deformation of a shaft that arises from applying torsion, assuming deformation is restricted to the elastic deformation range for the material, is quantified by the angle of twist, φ. As discussed in section 6.1, and illustrated here again in figure 6.2.1, the angle of twist is the angle formed between the radial line that goes from the center of the cross section to a point in its original location and the radial line that goes from the center to the point in its new location after the torsional load is applied. The equation to determine angle of twist at various points along the shaft will be derived below.
+In @sec-axial-loading, we derived and applied a formula for axial deformation. We will do something similar in this chapter for circular shafts subjected to torsion. The deformation of a shaft that arises from applying torsion, assuming deformation is restricted to the elastic deformation range for the material, is quantified by the angle of twist, $\phi$. As discussed in Section 6.1, and illustrated here again in Figure 6.12, the angle of twist is the angle formed between the radial line that goes from the center of the cross section to a point in its original location and the radial line that goes from the center to the point in its new location after the torsional load is applied. The equation to determine angle of twist at various points along the shaft will be derived below.
 
-**Figure 6.12:** The angle between B (original location) and B' (where B moves to after torque is applied to the shaft) is the angle of twist, φ.
+**Figure 6.12:** The angle between B (original location) and B' (where B moves to after torque is applied to the shaft) is the angle of twist, $\phi$.
 
-Recall from section 6.1 that the shear strain $\gamma=\frac{\rho(\Delta \varphi)}{\Delta x}$. Also recall that Δx represents the length of a section of shaft of arbitrary length and Δφ is the change in angle of twist that occurs across that length. For an infinitely small section of shaft, the shear strain equation can be expressed in terms of differentials: $\gamma=\frac{\rho(d \varphi)}{d x}$.
+Recall from Section 6.1 that the shear strain $\gamma=\frac{\rho(\Delta \phi)}{\Delta x}$. Also recall that Δx represents the length of a section of shaft of arbitrary length and Δφ is the change in angle of twist that occurs across that length. For an infinitely small section of shaft, the shear strain equation can be expressed in terms of differentials: $\gamma=\frac{\rho(d \phi)}{d x}$.
 
-Now applying Hooke’s Law, τ = Gγ, and the equation for shear stress (equation 6.6) we get:
+Now applying Hooke’s Law, τ = Gγ, and the equation for shear stress we get:
 
 $$
-\frac{\rho(d \varphi)}{d x}=\frac{\tau}{G}=\frac{T \rho}{J G}
+\frac{\rho(d \phi)}{d x}=\frac{\tau}{G}=\frac{T \rho}{J G}
 $$
 
 Solving for dφ gives:
 
 $$
-d \varphi=\frac{T d x}{J G}
+d \phi=\frac{T d x}{J G}
 $$
 
-For a section (i) of shaft of length L~i~ for which torque (T~i~), material (G~i~), and geometry (J~i~), stay constant, equation 6.2.1 becomes:
+For a section (i) of shaft of length L~i~ for which torque (T~i~), material (G~i~), and geometry (J~i~), stay constant, this becomes:
 
 $$
-\varphi_i=\frac{T_i L_i}{J_i G_i}
+\phi_i=\frac{T_i L_i}{J_i G_i}
 $$
 
-Integrating both sides of equation 6.2.1 gives the total angle of twist for an entire shaft or section of shaft:
+Integrating both sides of the equation gives the total angle of twist for an entire shaft or section of shaft:
 
 $$
-\varphi=\int \frac{T d x}{J G}
+\phi=\int \frac{T d x}{J G}
 $$
 
 For multi-section bodies where each individual section has constant T, J, and G, the integral can be expressed in the form of a sum where the angle of twist of each distinct section is calculated individually and then they are all added together:
 
 $$
-\varphi=\varphi_i=\sum \frac{T_i L_i}{J_i G_i}
-$$
+\boxed{\phi=\phi_i=\sum \frac{T_i L_i}{J_i G_i}}
+$$ {#eq-6.2}
+
+| *where*
+| *𝜙 = Change in angle \[rad\]*
+| *T = Internal torque* \[N·m, lb·in.\]
+| *L = Length \[m, in.\]*
+| *J = Polar moment of inertia \[m^4^, in.^4^\]*
+
+*G = Shear modulus \[Pa, psi\]*
 
 In these calculations, the sign of internal torque will be important as it indicates the direction of the twist. If one section twists in one direction and the adjoining section twists in the opposite direction, the effect will be that the angles will subtract from each other resulting in a smaller overall angle of twist. On the other hand, if two adjoining sections twist in the same direction, the effect will be additive. According to the assigned sign convention discussed in section 6.1, an overall positive angle of twist indicates that the shaft twists counterclockwise when looking from the positive end of the longitudinal axis to the negative and vice versa.
 
 ### Units
 
-If values for T, L, J, and G are substituted in equation 6.2.2 such that the units are all consistent with each other, the overall unit works out to be unitless as is expected for an angle calculation. Since the calculation is for an angle, the actual unit is considered to be radians. If an angle is desired to be in degrees, the result of the equation would need to be converted by multiplying the result by π/180.
+If values for T, L, J, and G are used in @eq-6.2 such that the units are all consistent with each other, the overall unit works out to be unitless as is expected for an angle calculation. Since the calculation is for an angle, the actual unit is considered to be radians. If an angle is desired to be in degrees, the result of the equation would need to be converted by multiplying the result by π/180.
 
 Because the angle of twist often works out to be very small, it may be desired to express the value in terms of μrad, which is 10^-6^ radians. To convert from rad to μrad, multiply the number of radians by 10^6^.
 
 ### Notation
 
-When finding the angle of twist, the angle at any given point along the length of the shaft will be found relative to some reference point. Often the reference point is a fixed point (at a fixed support for example), so the relative angle is an absolute angle. In this case, the symbol φ will be subscripted with the point along the shaft where the angle was calculated. For example, given the shaft assembly in figure 6.2.2 below, the notation φ~B~ denotes the angle of twist at point B relative to the fixed point A.
+When finding the angle of twist, the angle at any given point along the length of the shaft will be found relative to some reference point. Often the reference point is a fixed point (at a fixed support for example), so the relative angle is an absolute angle. In this case, the symbol $\phi$ will be subscripted with the point along the shaft where the angle was calculated. For example, given the shaft assembly in Figure 6.13 below, the notation φ~B~ denotes the angle of twist at point B relative to the fixed point A.
 
-If one is finding the relative angle of twist between two non-fixed points that are on the same section of shaft (same T, J, and G), the angle of one point relative to another on the same section of shaft is notated with two subscripts specifying the two points. For example, the angle of twist of D relative to C in figure 6.2.2 is notated as φ~CD~. In this case, one would perform the calculation for the angle of twist at D as if point C is fixed, in which case:
-
-$$
-\varphi_{B C}=\frac{T_{C D} L_{C D}}{J_{C D} G_{C D}}
-$$
-
-If one is finding the relative angle of twist between two non-fixed points (let’s say B and D in figure 6.2.2) that are on different sections of shaft (i.e., there are 1 or more section changes between them due to changing T, J, or G), the relative angle of twist between them would be found by summing the angles of twist of each section between them. In this case, the notation would be φ~D/B~ which is said as the angle of twist of D relative to B. If point C is where the section change occurs, the calculation would be:
+If one is finding the relative angle of twist between two non-fixed points that are on the same section of shaft (same T, J, and G), the angle of one point relative to another on the same section of shaft is notated with two subscripts specifying the two points. For example, the angle of twist of D relative to C in Figure 6.13 is notated as $\phi_{CD}$. In this case, one would perform the calculation for the angle of twist at D as if point C is fixed, in which case:
 
 $$
-\varphi_{D / B}=\varphi_{B C}+\varphi_{C D}
+\phi_{B C}=\frac{T_{C D} L_{C D}}{J_{C D} G_{C D}}
+$$
+
+If one is finding the relative angle of twist between two non-fixed points (let’s say B and D in Figure 6.13) that are on different sections of shaft (i.e., there are 1 or more section changes between them due to changing T, J, or G), the relative angle of twist between them would be found by summing the angles of twist of each section between them. In this case, the notation would be $\phi_{D/B}$ which is said as the angle of twist of D relative to B. If point C is where the section change occurs, the calculation would be:
+
+$$
+\phi_{D / B}=\phi_{B C}+\phi_{C D}
 $$
 
 **Figure 6.13:** A multi-section body with fixed end A and constant torque conditions in sections
 
-These concepts will be illustrated in example 6.3 which continues with the same bar assembly and loading used in examples 6.1 and 6.2.
+These concepts will be illustrated in Example 6.3 which continues with the same bar assembly and loading used in Examples 6.1 and 6.2.
 
-::: {.callout-note collapse="true" icon="false"}
+::: {.callout-tip collapse="true" icon="false"}
 ## Example 6.3
 
-The multi-section steel bar of examples 6.1 and 6.2 is repeated here with the same loading (T~B~ = 70 N mm and T~E~= 30 N mm). Given the diameters: d~AC~ = 50 mm, d~CD~ = 20 mm, and d~DE~ = 35 mm, and section lengths L~AB~ = 300 mm, L~BC~ = 200 mm, L~CD~ = 400 mm, and L~DE~ = 700 mm, determine the angle of twist of points C, D, and E, all relative to point A which is attached to the fixed support. All sections have a shear modulus of G = 40 GPa. A negative result indicates a clockwise twist and a positive result indicates a counterclockwise twist.
+The multi-section steel bar of Examples 6.1 and 6.2 is repeated here with the same loading (T~B~ = 70 N·mm and T~E~= 30 N·mm). Given the diameters: d~AC~ = 50 mm, d~CD~ = 20 mm, and d~DE~ = 35 mm, and section lengths L~AB~ = 300 mm, L~BC~ = 200 mm, L~CD~ = 400 mm, and L~DE~ = 700 mm, determine the angle of twist of points C, D, and E, all relative to point A which is attached to the fixed support. All sections have a shear modulus of G = 40 GPa. A negative result indicates a clockwise twist and a positive result indicates a counterclockwise twist.
 
 \[figure\]
 
-::: {.callout-note collapse="true" icon="false"}
+::: {.callout-tip collapse="true" icon="false"}
 ## Solution
 
 As was the case when calculating shear stress in Example 6.2, the changes in torque and geometry result in 4 distinct sections for which the angle of twist will remain constant within the section but change going from one section to another. These sections are AB, BC, CD, and DE.
 
-In example 6.1, it was shown that the internal torque in section AB is counterclockwise and equal to 40 N mm. It was also shown that the internal torque in all sections between B and E is clockwise and equal to 30 N mm. The directions in this case are relative to viewing in the direction from the positive end of the x-axis to the negative (i.e., point E to point A). This will mean that the angle of twist in section AB will be positive while the angle of twist in BC, CD, and DE will be negative.
+In Example 6.1, it was shown that the internal torque in section AB is counterclockwise and equal to 40 N·mm. It was also shown that the internal torque in all sections between B and E is clockwise and equal to 30 N·mm. The directions in this case are relative to viewing in the direction from the positive end of the x-axis to the negative (i.e., point E to point A). This will mean that the angle of twist in section AB will be positive while the angle of twist in BC, CD, and DE will be negative.
 
-Since point A is a fixed point, $\varphi_{B / A}=\varphi_B=\varphi_{A B}$.
+Since point A is a fixed point, $\phi_{B / A}=\phi_B=\phi_{A B}$.
 
 $$
-\varphi_B=\varphi_{A B}=\frac{T_{A B} L_{A B}}{J_{A B} G_{A B}}=\frac{0.04 \mathrm{~N} \cdot \mathrm{m}(0.300 \mathrm{~m})}{\frac{\pi}{32}(0.05 \mathrm{~m})^4\left(40 \times 10^9 \frac{\mathrm{N}}{\mathrm{m}^2}\right)}=4.889 \times 10^{-7} \mathrm{rad}
+\phi_B=\phi_{A B}=\frac{T_{AB}L_{AB}}{J_{AB}G_{AB}}=\frac{0.04{~N}\cdot{m}*(0.300{~m})}{\frac{\pi}{32}(0.05{~m})^4\left(40 \times 10^9~\frac{N}{{m}^2}\right)}=4.889 \times 10^{-7}{~rad}
 $$
 
 To find the angle of twist of point C relative to A, φC, we will need to add the angle of twist of section BC to that of section AB:
 
 $$
-\varphi_C=\varphi_{A B}+\varphi_{B C}=9.778 \times 10^{-6} \mathrm{rad}+\frac{T_{B C} L_{B C}}{J_{B C} G_{B C}}=9.778 \times 10^{-6} \mathrm{rad}+\frac{-0.07 \mathrm{~N} \cdot \mathrm{m}(0.200 \mathrm{~m})}{\frac{\pi}{32}(0.05 \mathrm{~m})^4\left(40 \times 10^9 \frac{\mathrm{N}}{\mathrm{m}^2}\right)}=-8.149 \times 10^{-8} \mathrm{rad}
+\begin{aligned}
+\phi_C&=\phi_{A B}+\phi_{BC}=4.889\times 10^{-6}{~rad}+\frac{T_{BC}L_{BC}}{J_{BC}G_{BC}} \\
+\\
+&=9.778\times10^{-6}{~rad}+\frac{-0.07{~N}\cdot{m}*(0.200{~m})}{\frac{\pi}{32}(0.05{~m})^4\left(40 \times 10^9~\frac{{N}}{{m}^2}\right)} \\
+\\
+&=-8.149 \times 10^{-8}{~rad}
+\end{aligned}
 $$
 
 Note that TBC was substituted in as a negative value as discussed above.
@@ -395,13 +430,25 @@ Note that TBC was substituted in as a negative value as discussed above.
 To find the angle of twist of point D relative A, φD, the angle of twist of section CD will be added to the that of AB and BC.
 
 $$
-\varphi_D=\varphi_{A B}+\varphi_{B C}+\varphi_{C D}=-1.630 \times 10^{-7} \mathrm{rad}+\frac{T_{C D} L_{C D}}{J_{C D} G_{C D}}=-1.630 \times 10^{-7} \mathrm{rad}+\frac{-0.07 \mathrm{~N} \cdot \mathrm{m}(0.400 \mathrm{~m})}{\frac{\pi}{32}(0.02 \mathrm{~m})^4\left(40 \times 10^9 \frac{\mathrm{N}}{\mathrm{m}^2}\right)}=-4.464 \times 10^{-5} \mathrm{rad}
+\begin{aligned}
+\phi_D&=\phi_{AB}+\phi_{BC}+\phi_{CD}=-8.149\times10^{-8} {~rad}+\frac{T_{CD}L_{CD}}{J_{CD}G_{CD}} \\
+\\
+&=-8.149 \times 10^{-7}{~rad}+\frac{-0.07{~N}\cdot{m}*(0.400{~m})}{\frac{\pi}{32}(0.02{~m})^4\left(40 \times 10^9~\frac{{N}}{{m}^2}\right)} \\
+\\
+&=-4.464 \times 10^{-5} {~rad}
+\end{aligned}
 $$
 
 Finally, to find the angle of twist of E relative to A, φE, the angle of twist of section DE will be added to that of AB, BC, and CD.
 
 $$
-\varphi_E=\varphi_{A B}+\varphi_{B C}+\varphi_{C D}+\varphi_{D E}=-8.929 \times 10^{-5} \mathrm{rad}+\frac{T_{D E} L_{D E}}{J_{D E} G_{D E}}=-8.929 \times 10^{-5} \mathrm{rad}+\frac{-0.07 \mathrm{~N} \cdot \mathrm{m}(0.700 \mathrm{~m})}{\frac{\pi}{32}(0.035 \mathrm{~m})^4\left(40 \times 10^9 \frac{\mathrm{N}}{\mathrm{m}^2}\right)}=-5.296 \times 10^{-5} \mathrm{rad}
+\begin{aligned}
+\phi_E&=\phi_{AB}+\phi_{BC}+\phi_{CD}+\phi_{DE}=-4.464\times 10^{-5}{~rad}+\frac{T_{DE}L_{DE}}{J_{DE}G_{DE}} \\
+\\
+&=-4.464\times 10^{-5}{~rad}+\frac{-0.07{~N}\cdot{m}*(0.700{~m})}{\frac{\pi}{32}(0.035{~m})^4\left(40\times 10^9~\frac{{N}}{{m}^2}\right)} \\
+\\
+&=-5.296\times 10^{-5} {~rad}
+\end{aligned}
 $$
 
 **φB = 4.89 x 10-7 rad = .489 μrad (counterclockwise)**
@@ -414,6 +461,22 @@ $$
 :::
 :::
 
+::: {.callout-warning icon="false"}
+## Step-by-step: Angle of Twist
+
+1.  Use equilibrium to determine reaction torques at any supports
+
+2.  Cut a cross-section through the segment of interest and draw a free body diagram of either everything to the left of the cut or everything to the right
+
+3.  Use equilibrium to determine the internal torque in the segment
+
+4.  Determine the angle of twist of the segment using $\phi=\frac{TL}{JG}$
+
+5.  Repeat steps 2 - 4 for all segments. A new cut should be made any time either a new external torque is applied, the dimensions of the cross-section change, or the material changes
+
+6.  The total angle of twist between two points can be determined by summing the angle of twist for each segment between those points. Be careful with signs, as some segments may rotate clockwise while others rotate counterclockwise
+:::
+
 </details>
 
 ## Statically Indeterminate Torsion {#sec-6.3}
@@ -422,25 +485,11 @@ $$
 
 <summary>Click to expand</summary>
 
-As was discussed in section 5.5 of chapter 5 for axial loading, one may sometimes encounter loading and constraint conditions that are statically indeterminate. In these situations, though a structure may be in static equilibrium, equilibrium equations do not provide enough equations to solve for all the unknown reactions. In many cases, the known constraints on deformation can be used to provide the additional necessary equations. As was discussed for axial loading in 5.5, the two categories of statically indeterminate loading that will be considered are:
+As was discussed in @sec-5.5 for axial loading, one may sometimes encounter loading and constraint conditions that are statically indeterminate. In these situations, though a structure may be in static equilibrium, equilibrium equations do not provide enough equations to solve for all the unknown reactions. In many cases, the known constraints on deformation can be used to provide the additional necessary equations. We will consider the same two categories of statically indeterminate loading:
 
-1.  Redundant supports—this would be if there are more than one fixed supports or if there are more than two simple supports. In the context of torsional loading, we will consider the case of having structures or assemblies that are attached to fix supports on either end. In this configuration, the shaft is constrained on both ends such that the overall angle of twist must be 0 if both ends are truly fixed, or the angle of twist is limited to a specified amount if there is a fixed degree of freedom on one end (for example if one side involves a loose connection).
+1.  Redundant supports—Cases where there are fixed supports at each end. In this configuration, the shaft is constrained on both ends such that the overall angle of twist must be 0 if both ends are truly fixed, or the angle of twist is limited to a specified amount if there is a fixed degree of freedom on one end (for example if one side involves a loose connection).
 
 2.  Co-axial or parallel shafts—multiple shafts are bonded concentrically (one within another) so that they are constrained to twist as a unit by the same amount. In this case, the extra equation needed in addition to equilibrium comes from setting the angle of twist for each material equal to each other.
-
-::: {.callout-note icon="false"}
-## Step-by-step: Statically Indeterminate Structures
-
-1.  Draw the FBD of the whole body and apply whichever equilibrium equations are relevant given the loading and geometry of the problem. For the pure torsion problems of this chapter, only the moment equilibrium about the longitudinal axis will be useful. All other equilibrium equations will be identically 0.
-2.  Write the equation of kinematic constraint, or the equation that expresses the restriction on the deformation. These equations would generally be:
-    -   $\sum \varphi=0$ if a shaft assembly is tightly supported by fixed supports on the ends.
-
-    -   $\sum \varphi=\text{angle}$ if shaft assembly is supported by fixed supports on both ends but one is loose, misaligned, etc. such that there is some degree of freedom for the end to twist
-
-    -   φ~1~ = φ~2~, where 1 and 2 represent two different shafts that are bonded together, with one around the other.
-3.  Write the compatibility equation by substituting the appropriate torque twist relationship ($\varphi=\frac{T L}{J G}$) into the kinematic constraint equation.
-4.  By this point, you should have the same number of equations as unknowns. Solve the equations.
-:::
 
 ### Method of Superposition
 
@@ -453,32 +502,34 @@ For the case of redundant supports, an alternative would be to use the method of
 5.  Sum the angle of twist from step 2 and step 4 and set the total equal to zero (or a given angle as appropriate).
 6.  Solve the equation resulting from step 5 for the reaction at the redundant support and then use the whole body equilibrium to solve for the reaction at the other support(s).
 
-Example 6.4 goes through the process of solving a statically indeterminate torsion problem that falls under the first category of problems described above. This example utilizes the first solution process described above.
+Example 6.4 demonstrates how to solve a statically indeterminate torsion problem that falls under the first category of problems described above.Example 6.5 uses superposition to solve part (a) of Example 6.4.
 
-::: {.callout-note collapse="true" icon="false"}
-## Example 6.4: Needs title
+Example 6.6 goes through the process of solving a statically indeterminate torsion problems that falls under the second category of problems described above.
 
-A shaft assembly consists of a 12 in long steel section AB (d = 10 in, G = 11600 ksi)) bonded rigidly to a 9 inch long solid brass section BC (d = 7 in, G = 5800 ksi). The assembly is to be bolted to walls A and C. If a torque TB of magnitude 2000 kip in is applied at B, determine the shear stress in the steel section and the brass section after the ends are bolted for each of the following end conditions:
+::: {.callout-tip collapse="true" icon="false"}
+## Example 6.4
+
+A shaft assembly consists of a 12 in long steel section AB (d = 10 in., G = 11600 ksi)) bonded rigidly to a 9 inch long solid brass section BC (d = 7 in., G = 5800 ksi). The assembly is to be bolted to walls A and C. If a torque T~B~ of magnitude 2000 kip·in is applied at B, determine the shear stress in the steel section and the brass section after the ends are bolted for each of the following end conditions:
 
 1.  Both ends A and C are tightly connected immediately at installation
-2.  There is a slight misalignment at end A that necessitates that that end be turned by .5° before the bolts can be tightened.
+2.  There is a slight misalignment at end A that necessitates that that end be turned by 0.5° before the bolts can be tightened.
 
 \[figure\]
 
-::: {.callout-note collapse="true" icon="false"}
+::: {.callout-tip collapse="true" icon="false"}
 ## Solution
 
 **Step 1** (for both (a) and (b))
 
-Draw the FBD of the whole body (see below) and write out relevant equilibrium equations. In this case, that would only be $\sum M_x=0$. Note that the assumed directions for TA and TC would usually said to be completely assumed, with the signs of the answers obtained for them indicating if the assumed directions are correct. For case(a), this is still true.
+Draw the FBD of the whole body (see below) and write out relevant equilibrium equations. In this case, that would only be $\sum M_x=0$. Note that the assumed directions for T~A~ and T~C~ would usually said to be completely assumed, with the signs of the answers obtained for them indicating if the assumed directions are correct. For case(a), this is still true.
 
-However, for case (b), the direction of TA should be in the direction opposite to the way the shaft turns as a result of the applied torque, TB, before the bolt is tightened. The reason for this is illustrated in Figure 3 below. The assumed direction of TC can be in either direction for both case (a) and case (b).
-
-\[figure\]
+However, for case (b), the direction of TA should be in the direction opposite to the way the shaft turns as a result of the applied torque, T~B~, before the bolt is tightened. The reason for this is illustrated in Figure 3 below. The assumed direction of T~C~ can be in either direction for both case (a) and case (b).
 
 \[figure\]
 
-Note that the choice of which way the positive x-axis goes on the whole body FBD is arbitrary. As long as the choice of signs applied to torques for any global (whole body) equation is based on the same assumption, it does not matter which direction is chosen to be the positive x direction. In this case where the positive direction is chosen to be going to the left, the signs on the torques will be based on the way the torques are perceived when looking in the direction from A towards C. Since the direction of TB is known to be counterclockwise from that perspective, it is drawn in the direction of the positive x-axis and following from that, TA is drawn to be in the direction of the negative x-axis. TC is assumed to be the same direction as T.
+\[figure\]
+
+Note that the choice of which way the positive x-axis goes on the whole body FBD is arbitrary. As long as the choice of signs applied to torques for any global (whole body) equation is based on the same assumption, it does not matter which direction is chosen to be the positive x direction. In this case where the positive direction is chosen to be going to the left, the signs on the torques will be based on the way the torques are perceived when looking in the direction from A towards C. Since the direction of TB is known to be counterclockwise from that perspective, it is drawn in the direction of the positive x-axis and following from that, T~A~ is drawn to be in the direction of the negative x-axis. TC is assumed to be the same direction as T.
 
 $$
 \begin{gathered}
@@ -487,24 +538,24 @@ T_C+T_A=T_B
 \end{gathered}
 $$
 
-Since there are two unknowns (TA and TC), but only one equilibrium equation, the problem is statically indeterminate.
+Since there are two unknowns (T~A~ and T~C~), but only one equilibrium equation, the problem is statically indeterminate.
 
 **Step 2**
 
 Apply kinematic constraint. For case (a), both ends are fixed at the time of installation so the total angle of twist in the shaft should be zero:
 
 $$
-\varphi_A=\sum \frac{T L}{J G}=\varphi_{A B}+\varphi_{B C}=0
+\phi_A=\sum \frac{T L}{J G}=\phi_{A B}+\phi_{B C}=0
 $$
 
-Where TAB and TBC are the internal torques in each of those respective sections.
+Where T~AB~ and T~BC~ are the internal torques in each of those respective sections.
 
-For case (b), the misalignment means end A must be turned by 0.5° before it gets locked in, so the magnitude of the total angle of twist is also 0.5°. The direction of twist is given by considering the loose end of the shaft to be a free end (as it would be before the bolt is tightened). If end A is a free end, the internal torque in section AB is 0 and the internal torque in section BC is equal to positive TB. Given that, we take the angle of twist in the bar at the time of bolt tightening to also be positive.
+For case (b), the misalignment means end A must be turned by 0.5° before it gets locked in, so the magnitude of the total angle of twist is also 0.5°. The direction of twist is given by considering the loose end of the shaft to be a free end (as it would be before the bolt is tightened). If end A is a free end, the internal torque in section AB is 0 and the internal torque in section BC is equal to positive T~B~. Given that, we take the angle of twist in the bar at the time of bolt tightening to also be positive.
 
 So for case (b), the kinematic equation is:
 
 $$
-\varphi_A=\sum \frac{T L}{J G}=\varphi_{A B}+\varphi_{B C}=.5^{\circ} * \frac{\pi}{180^{\circ}}
+\phi_A=\sum \frac{TL}{JG}=\phi_{A B}+\phi_{BC}=0.5^{\circ} * \frac{\pi}{180^{\circ}}
 $$
 
 **Step 3**
@@ -513,7 +564,7 @@ Write the compatibility equation by substituting the appropriate torque-twist eq
 
 To implement this step, the internal torque (and sign) for each section must be established by cutting sections and applying equilibrium.
 
-The FBD for a section made by cutting through section AB is shown in figure 4.
+The FBD for a section made by cutting through section AB is shown below.
 
 \[figure\]
 
@@ -523,13 +574,13 @@ $$
 \sum M_x=T_A-T_{A B}=0
 $$
 
-So TAB = TA in magnitude and is clockwise since the positive result for TAB in this case confirms that the arrow should be pointed toward the cut. Thus, the angle of twist in section AB should be negative.
+So T~AB~ = T~A~ in magnitude and is clockwise since the positive result for T~AB~ in this case confirms that the arrow should be pointed toward the cut. Thus, the angle of twist in section AB should be negative.
 
 $$
-\varphi_{A B}=-\frac{T_{A B} L_{A B}}{J_{A B} G_{A B}}=\frac{-T_A(12 \mathrm{in})}{\frac{\pi}{32}(10 i n)^4(11600 \mathrm{ksi})}
+\phi_{AB}=-\frac{T_{AB}L_{AB}}{J_{AB}G_{AB}}=\frac{-T_A*(12{~in.})}{\frac{\pi}{32}(10{~in.})^4*(11600{~ksi})}
 $$
 
-The FBD for a section made by cutting through section BC is shown in figure 5.
+The FBD for a section made by cutting through section BC is shown below.
 
 \[figure\]
 
@@ -539,29 +590,61 @@ $$
 \sum M_x=-T_{B C}+T_C=0
 $$
 
-So TBC = TC in magnitude and is counterclockwise since the positive result for TBC in this case confirms that the arrow should be pointed away from the cut. Thus, section BC will have a positive angle of twist.
+So T~BC~ = TC in magnitude and is counterclockwise since the positive result for T~BC~ in this case confirms that the arrow should be pointed away from the cut. Thus, section BC will have a positive angle of twist.
 
 $$
-\varphi_{B C}=+\frac{T_{B C} L_{B C}}{J_{B C} G_{B C}}=\frac{T_C(9 \text { in })}{\frac{\pi}{32}(7 i n)^4(5800 \mathrm{ksi})}
+\phi_{B C}=+\frac{T_{BC}L_{BC}}{J_{BC}G_{BC}}=\frac{T_C*(9{~in.})}{\frac{\pi}{32}(7{~in.})^4*(5800{~ksi})}
 $$
 
-Subbing (4) and (6) into (2a) gives the compatibility equation for case (a):
+Substitute these equations into the compatibility equation for case (a):
 
 $$
-\frac{-T_A(12 \mathrm{in})}{\frac{\pi}{32}(10 i n)^4(11600 \mathrm{ksi})}+\frac{T_C(9 \mathrm{in})}{\frac{\pi}{32}(7 i n)^4(5800 \mathrm{ksi})}=0
+\frac{-T_A*(12{~in.})}{\frac{\pi}{32}(10{~in.})^4*(11600{~ksi})}+\frac{T_C*(9 {~in.})}{\frac{\pi}{32}(7{~in.})^4*(5800{~ksi})}=0
 $$
 
-Subbing (4) and (6) into (2b) gives the compatibility equation for case (b):
+And for case (b):
 
 $$
-\frac{-T_A(12 \mathrm{in})}{\frac{\pi}{32}(10 i n)^4(11600 \mathrm{ksi})}+\frac{T_C(9 \mathrm{in})}{\frac{\pi}{32}(7 i n)^4(5800 \mathrm{ksi})}=.5^{\circ} * \frac{\pi}{180^{\circ}}
+\frac{-T_A*(12{~in.})}{\frac{\pi}{32}(10{~in.})^4*(11600{~ksi})}+\frac{T_C*(9 {~in.})}{\frac{\pi}{32}(7{~in.})^4*(5800{~ksi})}=0.5^{\circ}*\frac{\pi}{180^{\circ}}
 $$
 
-**Step 4**: Solve the equilibrium and compatibility equations for TA and TC.
+**Step 4**: Solve the equilibrium and compatibility equations for T~A~ and T~C~.
 
-For case (a), solving equations (1) and (7) gives TA = 1724 kip in and TC = 276.0 kip in. Both results work out to be positive, so the assumed directions are the actual directions assumed on the FBD in figure 4.
+For case (a):
 
-For case (b), solving equations (1) and (8) gives TA = 581.3 kip in and TC = 1419 kip in. Both results work out to be positive, so the assumed directions are the actual directions.
+$$
+\begin{aligned}
+&T_A=T_C\left[\frac{9{~in.}*\frac{\pi}{32}(10{~in.})^4*(11600{~ksi})}{12{~in.}*\frac{\pi}{32}(7{~in.})^4*(5800{~ksi})}\right] \\
+\\
+&T_A=T_C[6.247] \\
+\\
+&\text{Substitute into}~T_A+T_C=2000{~kip}\cdot{in.} \\
+\\
+&6.247T_C+T_C=2000{~kip}\cdot{in.} \\
+\\
+&T_C=276{~kip}\cdot{in.} \\
+&T_A=1724{~kip}\cdot{in.}
+\end{aligned}
+$$
+
+For case (b):
+
+$$
+\begin{aligned}
+&T_A=\left(\frac{T_C*(9{~in.})}{\frac{\pi}{32}(7{~in.})^4*(5800{~ksi})}-0.5^\circ*\frac{\pi}{180^\circ}\right)*\left(\frac{\frac{\pi}{32}(10{~in.})^4*11600{~ksi}}{12~in.}\right) \\
+\\
+&T_A=T_C[6.247]-8282{~kip}\cdot{in.} \\
+\\
+&\text{Substitute into}~T_A+T_C=2000{~kip}\cdot{in.} \\
+\\
+&6.247T_C+T_C-8282{~kip}\cdot{in.}=2000{~kip}\cdot{in.} \\
+\\
+&T_C=1419{~kip}\cdot{in.} \\
+&T_A=581{~kip}\cdot{in.}
+\end{aligned}
+$$
+
+solving equations (1) and (8) gives TA = 581.3 kip in and TC = 1419 kip in. Both results work out to be positive, so the assumed directions are the actual directions.
 
 Now that the reaction torques are known and it was established from equations (3) and (5) that the internal torques TAB and TBC are equal in magnitude to TA and TC, respectively, the shear stresses in the two sections can be calculated.
 
@@ -569,8 +652,8 @@ For case a:
 
 $$
 \begin{aligned}
-& \tau_{A B}=\frac{T_{A B} c_{A B}}{J_{A B}}=\frac{(1724 \mathrm{kip} \mathrm{in}(5 \mathrm{in}))}{\frac{\pi}{32}(10 \mathrm{in})^4}=\quad 8.78 \underline{\underline{\mathrm{ksi}}} \\
-& \tau_{B C}=\frac{T_{B C} c_{B C}}{J_{B C}}=\frac{(276.0 \mathrm{kip} \mathrm{in}(3.5 \mathrm{in}))}{\frac{\pi}{32}(7 \mathrm{in})^4}=4.10 \underline{\underline{\mathrm{ksi}}}
+& \tau_{AB}=\frac{T_{AB}*c_{AB}}{J_{AB}}=\frac{1724{~kip}\cdot{in.}*5{~in.}}{\frac{\pi}{32}(10{~in.})^4}=8.78{~ksi} \\
+& \tau_{BC}=\frac{T_{BC}*c_{BC}}{J_{BC}}=\frac{276{~kip}\cdot{in.}*3.5{~in.}}{\frac{\pi}{32}(7{~in.})^4}=4.10{~ksi}
 \end{aligned}
 $$
 
@@ -578,44 +661,42 @@ For case b:
 
 $$
 \begin{aligned}
-& \tau_{A B}=\frac{T_{A B} c_{A B}}{J_{A B}}=\frac{(581.3 \mathrm{kip} \mathrm{in}(5 \mathrm{in}))}{\frac{\pi}{32}(10 \mathrm{in})^4}=\quad 2.96 \mathrm{\underline { \textrm {ksi } }} \\
-& \tau_{B C}=\frac{T_{B C} c_{B C}}{J_{B C}}=\frac{(1419 \mathrm{kip} \mathrm{in}(3.5 \mathrm{in}))}{\frac{\pi}{32}(7 \mathrm{in})^4}=21.1 \mathrm{ksi}
+& \tau_{AB}=\frac{T_{AB}*c_{AB}}{J_{AB}}=\frac{581{~kip}\cdot{in.}*5{in.}}{\frac{\pi}{32}(10{~in.})^4}=2.96{~ksi} \\
+& \tau_{BC}=\frac{T_{BC}*c_{BC}}{J_{BC}}=\frac{1419{~kip}\cdot{in.}*3.5{~in}}{\frac{\pi}{32}(7{in.})^4}=21.1{~ksi}
 \end{aligned}
 $$
 
-**a:**
+**Case a:**
 
-**τAB = 8.78 ksi**
+**τ~AB~ = 8.78 ksi**
 
-**τBC = 4.10 ksi**
+**τ~BC~ = 4.10 ksi**
 
-**b:**
+**Case b:**
 
-**τAB = 2.96 ksi**
+**τ~AB~ = 2.96 ksi**
 
-**τBC = 21.1 ksi**
+**τ~BC~ = 21.1 ksi**
 :::
 :::
 
-Example 6.5 goes through using superposition to solve part (a) of the problem from example 6.4.
-
-::: {.callout-note collapse="true" icon="false"}
-## Example 6.5: Needs title
+::: {.callout-tip collapse="true" icon="false"}
+## Example 6.5
 
 Re-solve part (a) of example 6.4 using the method of superposition. The problem is repeated here for convenience.
 
-A shaft assembly consisting of a 12 in long steel steel section AB (d = 10 in, G = 11600 ksi)) bonded rigidly to a 9 inch long solid brass section BC (d = 7 in, G = 5800 ksi). The assembly is bolted to walls A and C. If both ends A and C are tightly connected to the walls and a torque TB of magnitude 2000 kip in is applied at B, determine the shear stress in the steel section and the brass section.
+A shaft assembly consisting of a 12 in long steel steel section AB (d = 10 in, G = 11600 ksi)) bonded rigidly to a 9 inch long solid brass section BC (d = 7 in, G = 5800 ksi). The assembly is bolted to walls A and C. If both ends A and C are tightly connected to the walls and a torque T~B~ of magnitude 2000 kip·in is applied at B, determine the shear stress in the steel section and the brass section.
 
 \[figure\]
 
-::: {.callout-note collapse="true" icon="false"}
+::: {.callout-tip collapse="true" icon="false"}
 ## Solution
 
 The first step to solving (global equilibrium) remains the same. The method of superposition will be applied in step 2 and step 3.
 
 **Step 1** (for both (a) and (b))
 
-Draw the FBD of the whole body (see Figure 3 below) and write out whichever equilibrium equations are relevant (the equations that wouldn’t just be 0 = 0). The assumed directions for TA and TC are shown on the FBD as well as the direction used for the positive x direction. Recall that the direction of the torque should be determined by looking from the positive x-axis towards the negative (A to C).
+Draw the FBD of the whole body and write out the relevant equilibrium equations. The assumed directions for T~A~ and T~C~ are shown on the FBD as well as the direction used for the positive x-direction. Recall that the direction of the torque should be determined by looking from the positive x-axis towards the negative (A to C).
 
 \[figure\]
 
@@ -628,18 +709,24 @@ T_C+T_A=T_B
 \end{gathered}
 $$
 
-Since there are two unknowns (TA and TC), but only one equilibrium equation, the problem is statically indeterminate.
+Since there are two unknowns (T~A~ and T~C~), but only one equilibrium equation, the problem is statically indeterminate.
 
 **Step 2:** To apply the method of superposition, the support at C will be considered redundant. The angle of twist for end C relative to A will then be expressed based on two isolated loading conditions:
 
-1.  Without the reaction at C, so that the assembly acts as if it has a free end at C as shown in figure 3. In this case, since there is no torque applied between B and C, a section cut within BC shows that the that internal torque TBC must be 0 for equilibrium. A section cut through AB shows that the internal torque TAB = TB (clockwise, since it needs to point towards the cut for the section to be in equilibrium). Therefore, the angle of twist with this loading is:\
+1.  Without the reaction at C, so that the assembly acts as if it has a free end at C as shown in figure 3. In this case, since there is no torque applied between B and C, a section cut within BC shows that the that internal torque T~BC~ must be 0 for equilibrium. A section cut through AB shows that the internal torque T~AB~ = T~B~ (clockwise, since it needs to point towards the cut for the section to be in equilibrium). Therefore, the angle of twist with this loading is:\
     $$
-    \varphi_{C / A}=\sum \frac{T L}{J G}=\frac{\mathrm{T}_{\mathrm{AB}} \mathrm{L}_{\mathrm{AB}}}{\mathrm{J}_{\mathrm{AB}} \mathrm{G}_{\mathrm{AB}}}=\frac{-(2000 \mathrm{kip} \mathrm{in})(15 \mathrm{in})}{\frac{\pi}{32}(10 \mathrm{in})^4(11600 \mathrm{ksi})}=-4.215 \times 10^{-3} \mathrm{rad}
+    \phi_{C/A}=\sum \frac{TL}{JG}=\frac{T_{AB}L_{AB}}{J_{AB} {G}_{AB}}=\frac{-(2000{~kip}\cdot{in.})*(15{~in.})}{\frac{\pi}{32}(10{in.})^4*(11600{~ksi})}=-4.215 \times 10^{-3}{~rad}
     $$
 
-2.  With the reaction at C, but no torque applied at B. Drawing the section FBD’s in this case reveals that both TAB and TBC are equal in magnitude and opposite in direction from TC. Since they are both pointed away from the cut, the direction is taken to be counterclockwise, or positive. Therefore, the angle of twist with this loading is:\
+2.  With the reaction at C, but no torque applied at B. Drawing the section FBD’s in this case reveals that both T~AB~ and T~BC~ are equal in magnitude and opposite in direction from T~C~. Since they are both pointed away from the cut, the direction is taken to be counterclockwise, or positive. Therefore, the angle of twist with this loading is:\
     $$
-    \phi_{C / A}=\sum \frac{T L}{J G}=\frac{\mathrm{T}_{\mathrm{AB}} \mathrm{L}_{\mathrm{AB}}}{\mathrm{J}_{\mathrm{AB}} \mathrm{G}_{\mathrm{AB}}}+\frac{\mathrm{T}_{\mathrm{BC}} \mathrm{L}_{\mathrm{BC}}}{\mathrm{J}_{\mathrm{BC}} \mathrm{G}_{\mathrm{BC}}}=\frac{T_C(12 i n)}{\frac{\pi}{32}(10 i n)^4(11600 k s i)}+\frac{T_C(9 i n)}{\frac{\pi}{32}(7 i n)^4(5800 k s i)}=527^* 10^5 T_{C}
+    \begin{aligned}
+    \phi_{C/A}&=\sum\frac{TL}{JG}=\frac{T_{AB}L_{AB}}{J_{AB}{G}_{AB}}+\frac{T_{BC}L_{BC}}{J_{BC}G_{BC}} \\
+    \\
+    &=\frac{T_C*(12{~in.})}{\frac{\pi}{32}(10{~in.})^4*(11600{~ksi})}+\frac{T_C*(9{~in.})}{\frac{\pi}{32}(7{~in.})^4*(5800{~ksi})} \\
+    \\
+    &=527\times 10^5~T_{C}
+    \end{aligned}
     $$\
     \[figure\]
 
@@ -648,14 +735,14 @@ Since there are two unknowns (TA and TC), but only one equilibrium equation, the
 Now adding the effects of the isolated loading conditions gives the total angle of twist which should still be equal to zero when the ends are tightly bolted to the walls without extra twisting.
 
 $$
--4.215 \times 10^{-3} \mathrm{rad}+(1.527^* 10^{-5}) T{c}=0
+-4.215 \times 10^{-3}{~rad}+1.527^* 10^{-5}~T{c}=0
 $$
 
 **Step 4**
 
-Solving for TC gives TC = 276 kip in just as found in example 6.4.
+Solving for TC gives TC = 276 kip·in which is the same result found in Example 6.4.
 
-**Step 5**
+Step 5
 
 Substituting this result into equation (1) also gives the same result as in example 6.4 for the reaction torque at A, TA = 1724 kip in.
 
@@ -663,35 +750,35 @@ Once again, the corresponding shear stresses are:
 
 $$
 \begin{aligned}
-\tau_{A B} & =\frac{T_{A B} c_{A B}}{J_{A B}}=\frac{(1724 \mathrm{kip} \mathrm{in}(5 \mathrm{in}))}{\frac{\pi}{32}(10 \mathrm{in})^4}=\quad 8.78 \text{ ksi} \\
-\tau_{B C} & =\frac{T_{B C} c_{B C}}{J_{B C}}=\frac{(276.0 \mathrm{kip} \mathrm{in}(3.5 \mathrm{in}))}{\frac{\pi}{32}(7 \mathrm{in})^4}=4.10 \text{ ksi}
+& \tau_{AB}=\frac{T_{AB}*c_{AB}}{J_{AB}}=\frac{1724{~kip}\cdot{in.}*5{~in.}}{\frac{\pi}{32}(10{~in.})^4}=8.78{~ksi} \\
+& \tau_{BC}=\frac{T_{BC}*c_{BC}}{J_{BC}}=\frac{276{~kip}\cdot{in.}*3.5{~in.}}{\frac{\pi}{32}(7{~in.})^4}=4.10{~ksi}
 \end{aligned}
 $$
 
-**τAB = 8.78 ksi**
+**τ~AB~ = 8.78 ksi**
 
-**τBC = 4.10 ksi**
+**τ~BC~ = 4.10 ksi**
 :::
 :::
 
-Example 6.6 goes through the process of solving a statically indeterminate torsion problems that falls under the second category of problems described above.
+::: {.callout-tip collapse="true" icon="false"}
+## Example 6.6
 
-::: {.callout-note collapse="true" icon="false"}
-## Example 6.6: Needs title
-
-The vertical shaft assembly consists of a solid brass (G = 40 GPa) circular shaft completely bonded in section BC to a steel reinforcing tube (G = 80 GPa). The diameter of the brass is 25 mm along the whole length while the outer diameter of the steel is 50 mm. The assembly is subjected to torques TB = 800 N m and TA = 300 N m in the directions shown. Determine the shear stress in the brass in section AB and in BC.
+The vertical shaft assembly consists of a solid brass (G = 40 GPa) circular shaft completely bonded in section BC to a steel reinforcing tube (G = 80 GPa). The diameter of the brass is 25 mm along the whole length while the outer diameter of the steel is 50 mm. The assembly is subjected to torques T~B~ = 800 N·m and T~A~ = 300 N·m in the directions shown. Determine the shear stress in the brass in section AB and in BC.
 
 \[figure\]
 
-::: {.callout-note collapse="true" icon="false"}
+::: {.callout-tip collapse="true" icon="false"}
 ## Solution
 
 First we’ll find the shear stress in the brass in section BC. We will need to determine how much of the internal torque within that section is carried by the brass.
 
-Step 1 Since the reaction at C is not strictly necessary to solve this problem, the whole body FBD is not needed here. We will start by determining the internal reactions in section BC. Cut through section BC, draw the resulting FBD, and apply equilibrium.
+**Step 1**
+
+Since the reaction at C is not strictly necessary to solve this problem, the whole body FBD is not needed here. We will start by determining the internal reactions in section BC. Cut through section BC, draw the resulting FBD, and apply equilibrium.
 
 $$
-\sum M_x=T_A-T_B-T_{A l}-T_{s t}=0
+\sum M_x=T_A-T_B-T_{Br}-T_{St}=0
 $$
 
 There is only 1 non-trivial eqilibrium equation and two unknowns, so the problem is statically indeterminate.
@@ -701,7 +788,7 @@ There is only 1 non-trivial eqilibrium equation and two unknowns, so the problem
 Apply the kinematic constraint. In this case, the materials are fully bonded in section BC, so the materials are constrained to twist as a unit in the that section. In BC, the kinematic equation is:
 
 $$
-\varphi_{B r}=\varphi_{s t}
+\phi_{B r}=\phi_{s t}
 $$
 
 **Step 3**
@@ -709,33 +796,60 @@ $$
 Write the compatibility equation by substituting the appropriate torque twist equations into equation (2).
 
 $$
-\frac{\mathrm{T}_{\mathrm{Br}} \mathrm{L}_{\mathrm{Br}}}{\mathrm{J}_{\mathrm{Br}} G_{\mathrm{Br}}}=\frac{\mathrm{T}_{\mathrm{st}} \mathrm{L}_{\mathrm{st}}}{\mathrm{J}_{\mathrm{st}} \mathrm{G}_{\mathrm{st}}}
+\frac{T_{Br}L_{Br}}{J_{Br}G_{Br}}=\frac{T_{St}L_{St}}{J_{St}G_{St}}
 $$
 
-The lengths are equal and therefore cancel out. Rearranging (3) to solve for T~st~ in terms of T~Br~ and filling in values:
+The lengths are equal and therefore cancel out. Rearranging this equation:
 
 $$
-T_{s t}=\frac{T_{B r} J_{s t} G_{s t}}{J_{B r} G_{B r}}=\frac{T_{B r} \frac{\pi}{32}\left((0.05 m)^4-(0.025 m)^4\right)\left(80 \times 10^9 \frac{\mathrm{N}}{\mathrm{m}^2}\right)}{\frac{\pi}{32}(0.025 \mathrm{~m})^4\left(40 \times 10^9 \frac{\mathrm{N}}{\mathrm{m}^2}\right)}=30.0 \mathrm{~T}_{\mathrm{Br}}
+\begin{aligned}
+T_{St}&=\frac{T_{Br}J_{St}G_{St}}{J_{Br}G_{Br}} \\
+\\
+&=T_{BR}\left[\frac{\frac{\pi}{32}\left((0.05{~m})^4-(0.025{~m})^4\right)\left(80 \times 10^9~\frac{{N}}{{m}^2}\right)}{\frac{\pi}{32}(0.025{~m})^4\left(40 \times 10^9 \frac{{N}}{{m}^2}\right)}\right] \\
+\\
+&=30.0~T_{Br}
+\end{aligned}
 $$
 
-Subbing this result into equation (1) gives T~Br~ in section BC to be T~Br~ = 16.13 N·m. Applying the shear stress equation gives:
+Now substitute this into the equilibrium equation:
 
 $$
-\tau_{B r}(B C)=\frac{T_{B r} c_{B r}}{J_{B r}}=\frac{16.13 \mathrm{~N} \cdot \mathrm{m}(0.0125 \mathrm{~m})}{\frac{\pi}{32}(0.025 \mathrm{~mm})^4}=5.26 \mathrm{MPa}
+300{~N}\cdot{m}-800{~N}\cdot{m}-T_{Br}-30~T_{Br}=0 \\
+T_{Br}=-16.1 {~N}\cdot{m}
 $$
-
-Next we’ll find the shear stress in the brass in section AB. Since this section consists only of the brass, all of the internal torque in that section is carried by the brass. Making a cut within that section and applying equilibrium shows that the magnitude of the internal torque T~AB~ = T~A~ = 300 Nm.
 
 Applying the shear stress equation gives:
 
 $$
-\tau_{B r}(B C)=\frac{T_{B r} c_{B r}}{J_{B r}}=\frac{300 \mathrm{~N} \cdot \mathrm{m}(0.0125 \mathrm{~mm})}{\frac{\pi}{32}(0.025 \mathrm{~mm})^4}=97.8 \mathrm{MPa}
+\tau_{Br(B C)}=\frac{T_{Br}*c_{Br}}{J_{Br}}=\frac{16.1{~N}\cdot{m}*(0.0125{~m})}{\frac{\pi}{32}(0.025{~m})^4}=5.26{~MPa}
 $$
 
-**τBR in section BC is 5.26 MPa**
+Next we’ll find the shear stress in the brass in section AB. Since this section consists only of the brass, all of the internal torque in that section is carried by the brass. Making a cut within that section and applying equilibrium shows that the magnitude of the internal torque T~AB~ = T~A~ = 300 N·m.
 
-**τBR in section AB is 97.8 MPa**
+Applying the shear stress equation gives:
+
+$$
+\tau_{Br(AB)}=\frac{T_{Br}*c_{Br}}{J_{Br}}=\frac{300{~N}\cdot{m}*(0.0125{~m})}{\frac{\pi}{32}(0.025{~m})^4}=97.8{~MPa}
+$$
+
+**τ~BR~ in section BC is 5.26 MPa**
+
+**τ~BR~ in section AB is 97.8 MPa**
 :::
+:::
+
+::: {.callout-warning icon="false"}
+## Step-by-step: Statically Indeterminate Structures
+
+1.  Draw the FBD of the whole body and apply whichever equilibrium equations are relevant given the loading and geometry of the problem. For the pure torsion problems of this chapter, only the moment equilibrium about the longitudinal axis will be useful. All other equilibrium equations will be identically 0.
+2.  Write the equation of kinematic constraint, or the equation that expresses the restriction on the deformation. These equations would generally be:
+    -   $\sum \phi=0$ if a shaft assembly is tightly supported by fixed supports on the ends.
+
+    -   $\sum \phi=\text{angle}$ if shaft assembly is supported by fixed supports on both ends but one is loose, misaligned, etc. such that there is some degree of freedom for the end to twist
+
+    -   φ~1~ = φ~2~, where 1 and 2 represent two different shafts that are bonded together, with one around the other.
+3.  Write the compatibility equation by substituting the appropriate torque twist relationship ($\phi=\frac{T L}{J G}$) into the kinematic constraint equation.
+4.  By this point, you should have the same number of equations as unknowns. Solve the equations.
 :::
 
 </details>
@@ -756,55 +870,65 @@ $$
 P=\frac{W}{t}=\frac{F \times d}{t}
 $$
 
-Within the context of rotating shafts, the force would be the force applied to the outer edge of the shaft that results in torque and the distance would be the arc length that a point on the edge of the shaft travels around the circumference in a given amount of time, t. Figure 6.4.1 illustrates this point.
+Within the context of rotating shafts, the force would be the force applied to the outer edge of the shaft that results in torque and the distance would be the arc length that a point on the edge of the shaft travels around the circumference in a given amount of time, t. Figure 6.14 illustrates this point.
 
 **Figure 6.14:** Force applied to rotation shaft results in work
 
 If the arclength over which point B travels, BB’ = rθ, then W = Frθ. However, Fr is also equal to the torque T on the shaft, so W = Tθ.
 
-Going back to the power equation, we then have $P=\frac{T \theta}{t}$. The $\frac{\theta}{t}$ is angular velocity, which will be denoted with the Greek letter ω. So the power equation can finally be expressed as P = Tω, where ω must be expressed in radians per second.
+Going back to the power equation, we then have $P=\frac{T \theta}{t}$. The $\frac{\theta}{t}$ is angular velocity, which will be denoted with the Greek letter ω. So the power equation can finally be expressed as:
+
+$$
+\boxed{P = T\omega}
+$$ {#eq-6.4}
+
+| *where*
+| *P = Power \[Watts, horsepower\]*
+| *T = Torque \[N·m, lb·in.\]*
+
+*𝜔 = Angular velocity \[rad/sec\]*
 
 ### Units
 
-In SI the standard unit for power is the Watt (W), which is (N m)/s. The N m unit is also referred to as a Joule, so a Watt is a Joule/s.
+In SI the standard unit for power is the Watt (W), which is (N·m)/s. The N·m unit is also referred to as a Joule, so a Watt is a Joule/s.
 
-In US Customary units, power is commonly expressed as ft lb/s or in lb/s. However, it is also common to express power in terms of horsepower, where there are 550 ft lb/s for 1 hp. Note that there is a conversion difference between the US horsepower and the British horsepower. In this text, horsepower will refer to the US version.
+In US Customary units, power is commonly expressed as ft·lb/s or in·lb/s. However, it is also common to express power in terms of horsepower, where there are 550 ft·lb/s for 1 hp. Note that there is a conversion difference between the US horsepower and the British horsepower. In this text, horsepower will refer to the US version.
 
 When applying the P = Tω equation, the angular velocity ω must be expressed in radians per second. If frequency is given in Hz, which is 1 revolution/s, then one must multiply by 2π to convert it to rad/s since there are 2π rad per revolution.
 
 If angular velocity is given in rpm, which is revolution per minute, then one must multiply by 2π radians per revolution and divide by 60 to convert 1/min to 1/s. This reduces to an overall multiplication factor of π/30 to convert from rpm to rad/s.
 
-|                     |                                                                                                                                                                                                                                                           |
-|---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| SI (watt)           | $$                                                                                                                                                                                                                                                        
-                                                                                                                                                                                        W=\frac{N m}{s}=\frac{J}{s}                                                               
-                                                                                                                                                                                        $$                                                                                        |
-| US                  | $$                                                                                                                                                                                                                                                        
-                                                                                                                                                                                        \left(\frac{f t l b}{s}\right) \operatorname{or}\left(\frac{l b}{s}\right)                
-                                                                                                                                                                                        $$                                                                                        |
-| US (horsepower, hP) | $$                                                                                                                                                                                                                                                        
-                                                                                                                                                                                        1 h P=\frac{550 f t l b}{s}                                                               
-                                                                                                                                                                                        $$                                                                                        |
+|                     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+|---------------|---------------------------------------------------------|
+| SI (watt)           | $$                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  W=\frac{N m}{s}=\frac{J}{s}                                                                                                           
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  $$                                                                                                                                    |
+| US                  | $$                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  \left(\frac{f t l b}{s}\right) \operatorname{or}\left(\frac{l b}{s}\right)                                                            
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  $$                                                                                                                                    |
+| US (horsepower, hP) | $$                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  1 h P=\frac{550 f t l b}{s}                                                                                                           
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  $$                                                                                                                                    |
 
 : **Table 6.1:** Power
 
-|                                    |                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-|------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Hertz (Hz)                         | $$                                                                                                                                                                                                                                                                                                                                                                                                                                                   
-                                                                                                                                                                                                                                                                                                                H z=\frac{r e v}{s}                                                                                                                                                         
-                                                                                                                                                                                                                                                                                                                $$                                                                                                                                                                          |
-| Angular velocity given Hz (rad/s)  | $$                                                                                                                                                                                                                                                                                                                                                                                                                                                   
-                                                                                                                                                                                                                                                                                                                \frac{r a d}{s}=H z(2 \pi)=\frac{r e v}{s}(2 \pi)                                                                                                                           
-                                                                                                                                                                                                                                                                                                                $$                                                                                                                                                                          |
-| Angular velocity given rpm (rad/s) | $$                                                                                                                                                                                                                                                                                                                                                                                                                                                   
-                                                                                                                                                                                                                                                                                                                \frac{\mathrm{rad}}{\mathrm{s}}=\frac{r e v}{\min }\left(\frac{2 \pi \mathrm{rad}}{1 \mathrm{rev}}\right)\left(\frac{1 \mathrm{~min}}{60 \mathrm{~s}}\right)                
-                                                                                                                                                                                                                                                                                                                $$                                                                                                                                                                          |
+|                                    |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+|---------------|---------------------------------------------------------|
+| Hertz (Hz)                         | $$                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    H z=\frac{r e v}{s}                                                                                                                                                                                                     
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    $$                                                                                                                                                                                                                      |
+| Angular velocity given Hz (rad/s)  | $$                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    \frac{r a d}{s}=H z(2 \pi)=\frac{r e v}{s}(2 \pi)                                                                                                                                                                       
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    $$                                                                                                                                                                                                                      |
+| Angular velocity given rpm (rad/s) | $$                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    \frac{\mathrm{rad}}{\mathrm{s}}=\frac{r e v}{\min }\left(\frac{2 \pi \mathrm{rad}}{1 \mathrm{rev}}\right)\left(\frac{1 \mathrm{~min}}{60 \mathrm{~s}}\right)                                                            
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    $$                                                                                                                                                                                                                      |
 
 : **Table 6.2:** Other rotational units
 
 ### Torque Transfer Between Connected Gears (Gear Ratio)
 
-Consider two connected gears as shown in figure 6.4.2. The interaction of the teeth results in a force applied to each gear from the other. For equilibrium, this force must be equal in magnitude but opposite in direction. The force results in a torque which can be expressed as T = Fr.
+Consider two connected gears as shown in Figure 6.15. The interaction of the teeth results in a force applied to each gear from the other. For equilibrium, this force must be equal in magnitude but opposite in direction. The force results in a torque which can be expressed as T = Fr.
 
 **Figure 6.15:** Gear interaction results in the application of force and torque
 
@@ -817,8 +941,8 @@ $$
 which then allows us to express the torque exerted by one gear in terms of the torque exerted by the other as well as the ratio of radii:
 
 $$
-T_A=\frac{r_A}{r_B} T_B
-$$
+\boxed{T_A=\frac{r_A}{r_B} T_B}
+$$ {#eq-6.5}
 
 The ratio of radii is known as the gear ratio. It can be expressed in terms of the ratio of gear radii, gear diameters, or the number of teeth on each gear.
 
@@ -831,27 +955,27 @@ So if PA = TAωA and PB = TBωB and PA = PB, then we get $\omega_A=\frac{T_B}{T_
 Further using the gear ratio relationship between TB and TA gives:
 
 $$
-\omega_A=\frac{r_B}{r_A} \omega_B
-$$
+\boxed{\omega_A=\frac{r_B}{r_A} \omega_B}
+$$ {#eq-6.6}
 
 Note that the gear ratio in this case is inverse of the one used to relate torques.
 
 ### Angle of Twist
 
-When two connected gears rotate, they will have equal arclengths of travel for a given amount of shaft rotation, but in opposite directions, as depicted in figure 6.4.3. This means that rAφA = - rBφB, and the angle of twist at point B for the shaft that it is on can be related to the angle of twist at the same location on the shaft that gear A is on.
+When two connected gears rotate, they will have equal arclengths of travel for a given amount of shaft rotation, but in opposite directions, as depicted in figure 6.16. This means that rAφA = - rBφB, and the angle of twist at point B for the shaft that it is on can be related to the angle of twist at the same location on the shaft that gear A is on.
 
 $$
-\varphi_A=-\frac{r_B}{r_A} \varphi_B
-$$
+\boxed{\phi_A=-\frac{r_B}{r_A} \phi_B}
+$$ {#eq-6.7}
 
 As with the angular velocities, notice that the gear ratio is the inverse as that used to relate torques.
 
 **Figure 6.16:** Connected gears travel the same distance in opposite directions.
 
-In example 6.7, a problem of power transmission with connected gears is presented which utilizes the above concepts.
+In Example 6.7, a problem of power transmission with connected gears is presented which utilizes the above concepts.
 
-::: {.callout-note icon="false"}
-## Example 6.7: Needs title
+::: {.callout-tip icon="false"}
+## Example 6.7
 
 60 kW of power is transmitted to gear D of the assembly at 33 Hz. Shaft CD is allowed to turn freely within its bearings in the direction shown at D. End A of shaft AB is attached rigidly to the wall. Determine the angle of twist of point D relative to A.
 
@@ -859,56 +983,139 @@ Assume gear C has 35 teeth around it’s circumference and gear B has 50 teeth. 
 
 \[figure\]
 
-::: {.callout-note collapse="true" icon="false"}
+::: {.callout-tip collapse="true" icon="false"}
 ## Solution
 
 In general, we can think of the angle of twist at D to be equal to whatever the angle of twist of point C is plus the angle of twist of shaft CD. If the shaft were completely co-linear (no gear connection), the angle of twist at B would be equal to the angle of twist at C. In this case, we would calculate the angle of twist as:
 
 $$
-\varphi_{D / A}=\varphi_{A B}+\varphi_{C D}
+\phi_{D / A}=\phi_{A B}+\phi_{C D}
 $$
 
 However, the gear connection causes the angle of twist at point C on shaft CD to be different from the angle of twist of point B, so we will express the angle of twist at D as:
 
 $$
-\varphi_{D / A}=\varphi_C+\varphi_{C D}
+\phi_{D / A}=\phi_C+\phi_{C D}
 $$
 
 To calculate the angle of twist at D, we will need to:
 
 1.  Calculate the torque being applied at D based on the power information. When considering units, recall that a Watt is a N m/s and a Hz is a revolution per second.\
     $$
-    T_D=\frac{P_D}{\omega}=\frac{60000 \mathrm{~W}}{33 \mathrm{~Hz}\left(\frac{2 \pi \mathrm{rad}}{\mathrm{Hz}}\right)}=289.4 \mathrm{~N} \mathrm{~m}
+    T_D=\frac{P_D}{\omega}=\frac{60000{~W}}{33{~Hz}\left(\frac{2\pi{~rad}}{{Hz}}\right)}=289.4{~N}\cdot{m}
     $$
+
 2.  Based on the torque at D, calculate the torque at C by applying equilibrium to shaft CD:\
     $$
-    \sum M_x=T_D-T_C=0 \text { so } \mathrm{T}_{\mathrm{C}}=\mathrm{T}_{\mathrm{D}}
+    \sum M_x=T_D-T_C=0 \\ 
+    T_C=T_D
     $$\
-    \[figure\]\
-    If we look from D towards C, the given direction of TD is counterclockwise, so TC = 289.4 N m (clockwise).
+    \[figure\]
+
+    \
+    If we look from D towards C, the given direction of T~D~ is counterclockwise, so TC = 289.4 N·m (clockwise).
+
 3.  Use the gear ratio to relate the torque exerted on gear C to the torque exerted on gear B:\
     $$
-    T_B=\frac{N_B}{N_C} T_c=\frac{50}{35}(289.4 \mathrm{Nm})=413.4 \mathrm{~N} \mathrm{~m}
+    T_B=\frac{N_B}{N_C} T_c=\frac{50}{35}(289.4{~N}\cdot{m})=413.4{~N}\cdot{m}
     $$
-4.  Calculate φ~B~ = φ~AB~. The FBD of a section cut from AB shows that the internal torque T~AB~ = T~B~. Note that the direction of T~B~ is shown as clockwise when viewed in the direction of B towards A. One can determine this based on the fact that shaft CD is shown to rotate counterclockwise, which results in a clockwise torque imposed from gear C onto gear B. Equilibrium shows that the internal torque T~AB~ is then also clockwise so φ~B~ will be negative.\
+
+4.  Calculate φ~B~ = φ~AB~. The FBD of a section cut from AB shows that the internal torque T~AB~ = T~B~. Note that the direction of T~B~ is shown as clockwise when viewed in the direction of B towards A. One can determine this based on the fact that shaft CD is shown to rotate counterclockwise, which results in a clockwise torque imposed from gear C onto gear B. Equilibrium shows that the internal torque T~AB~ is then also clockwise so φ~B~ will be negative.
+
+    \
     \[figure\]\
     $$
-    \varphi_B=\frac{T_{A B} L_{A B}}{J_{A B} G_{A B}}=-\frac{413.4 \mathrm{~N} \cdot m(0.450 \mathrm{~m})}{\frac{\pi}{32}(0.04 m)^4\left(80 \times 10^9 \frac{\mathrm{N}}{\mathrm{m}^2}\right)}=-0.009252 \text{ rad}
+    \phi_B=\frac{T_{AB}L_{AB}}{J_{AB}G_{AB}}=-\frac{413.4{~N}\cdot{m}*(0.450{~m})}{\frac{\pi}{32}(0.04{~m})^4\left(80 \times 10^9~\frac{{N}}{{m}^2}\right)}=-0.009252{~rad}
     $$
+
 5.  Use the gear ratio to relate the angle of twist at B to the angle of twist at C:\
     $$
-    \varphi_C=-\frac{N_B}{N_C} \varphi_B=-\frac{50}{35}(-.009252 \text{ rad})=.01322 \text{ rad}
+    \phi_C=-\frac{N_B}{N_C} \phi_B=-\frac{50}{35}(-.009252{~rad})=0.01322{~rad}
     $$
-6.  Determine and use the internal torque T~CD~ to determine φ~CD~. Cutting a section through shaft CD and drawing the FBD shows that T~CD~ = T~D~ (counterclockwise), so:\
+
+6.  Determine and use the internal torque T~CD~ to determine φ~CD~. Cutting a section through shaft CD and drawing the FBD shows that T~CD~ = T~D~ (counterclockwise), so:
+
+    \
     \[figure\]\
     $$
-    \varphi_{C D}=\frac{T_{C D} L_{C D}}{J_{C D} G_{C D}}=\frac{289.4 \mathrm{~N} \cdot m(0.700 \mathrm{~m})}{\frac{\pi}{32}(0.03 m)^4\left(80 \times 10^9 \frac{\mathrm{N}}{\mathrm{m}^2}\right)}=.03184 \text{ rad}
+    \phi_{C D}=\frac{T_{CD}L_{CD}}{J_{CD}G_{CD}}=\frac{289.4{~N}\cdot{m}*(0.700 {~m})}{\frac{\pi}{32}(0.03{~m})^4\left(80 \times 10^9~\frac{{N}}{{m}^2}\right)}=0.03184{~rad}
     $$
+
 7.  Calculate φ~D/A~ = φ~C~ + φ~CD~\
     $$
-    \varphi_{D / A}=.01322 \mathrm{rad}+.03184 \mathrm{rad}=.04506 \text{ rad}
+    \phi_{D/A}=0.01322{~rad}+0.03184{~rad}=0.04506{~rad}
     $$
 
 **φ~D~ = .04506 rad**
 :::
+:::
+
+::: {.callout-warning icon="false"}
+## Step-by-step: Power Transmission
+
+1.  Convert the power (P) from 1 Watt = 1 N·m/s or 1 hp = 550 lb·ft/sec = 6600 lb·in./sec
+
+2.  Determine the angular velocity $(\omega)$ in units of rad/sec
+
+3.  Determine the torque from $T=\frac{P}{\omega}$
+
+4.  Find the internal torque and calculate the stress and/or angle of twist as in @sec-6.1 and @sec-6.2
+
+5.  If the problem involves connected gears, determine the torque and/or angle of twist from $T_A=\frac{r_A}{r_B}T_B$ and $\phi_A=\frac{r_B}{r_A}\phi_B$ where gear A is the larger gear
+
+6.  Calculate the stress and/or angle of twist in all segments. A new segment should be considered any time there is a change in torque, cross-section dimensions, or material. The total angle of twist between two points can be determined by summing the angle of twist of all segments between those points
+:::
+
+## Summary
+
+::: {.callout-note icon="false"}
+## Key takeaways
+
+Torque is a moment applied around the longitudinal axis of a body. It causes a rotational deformation known as angle of twist. In a circular cross-section, the cross-section remains plane after deformation.
+
+Torsional stress is a shear stress. Both stress and strain vary from 0 at the center of a circular cross-section to a maximum value on the outer edge of the cross-section.
+
+Internal torques can be determined by cutting a cross-section through the member, drawing a free body diagram, and applying equilibrium equations. Torques are considered positive if they act counterclockwise when viewed from the cut section. This is most easily visualized with the right hand rule. The sign of the torque affects the sign of the stress and deformation.
+
+It is typically sufficient at this stage to calculate the magnitude of the stress, but the sign of the angle of twist is important. Many problems involve multiple segments experiencing different stresses and deformations. The stress and angle of twist may be determined for each segment independently, but we often need to sum deformations across multiple segments so the correct sign must be maintained.
+
+One common scenario where torques are present is power transmission. It is common that we know the amount of power and the angular velocity, and need to determine the torque. Problems involving power transmission often involve shafts with connected gears. These gears alter the torque and angle of twist according to the ratio of their radii. If we know the torque and angle of twist at one gear, we can determine the torque and angle of twist of the connected gear.
+:::
+
+::: {.callout-note icon="false"}
+## Key equations
+
+Torsional stress:
+
+$$
+\tau=\frac{T\rho}{J}
+$$
+
+$$
+\tau_{max}=\frac{Tc}{J}
+$$
+
+Angle of twist:
+
+$$
+\phi=\sum\frac{TL}{JG}
+$$
+
+Relationship between power and torque:
+
+$$
+P=T\omega
+$$
+
+Transfer of torque, angular velocity, and angle of twist between connected gears:
+
+$$
+T_A=\frac{r_A}{r_B}T_B
+$$
+
+$$
+\omega_A=\frac{r_B}{r_A} \omega_B
+$$ $$
+\phi_A=-\frac{r_B}{r_A} \phi_B
+$$
 :::

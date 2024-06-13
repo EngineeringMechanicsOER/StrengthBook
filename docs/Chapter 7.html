@@ -144,13 +144,13 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction</span></a>
+ <span class="menu-text">Overview</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Chapter 1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction and Statics Review</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Statics Review</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -352,6 +352,8 @@ Click to expand
 <p>Beams are structural members that support loads along their length. Typically, these loads are perpendicular to the axis of the beam and cause only shear and bending moments.</p>
 <p><strong>[Figure 7.2 Overarching book figure]</strong></p>
 <p>As we found in previous chapters, internal forces and moments are crucial to calculating stresses and deflections. The same is true for finding stresses and deflections in beams. Due to the nature of the loadings and constraints of beams, finding internal forces requires new methods in statics. This chapter describes these methods for finding a beam’s internal shear force and bending moments.</p>
+<p>In Section 7.1 we’ll review how to find the internal shear force and bending moments at a specific point in a beam using equilibrium. In Section 7.2 we’ll discuss the relationships between the applied load, the internal shear force, and the internal bending moment.</p>
+<p>We’ll then discuss a more general approach to visualizing the internal shear force and bending moment at different points in a beam using shear force and bedning moment diagrams. In Section 7.3 we’ll explore how to draw these diagrams using an equilibrium method. Then in Section 7.4 we’ll discuss an alternative graphical method for drawing these diagrams.</p>
 <section id="sign-convention" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="sign-convention">Sign convention</h3>
 <p>Before we can present methods for finding internal shear and moments of beams, we need to establish a sign convention. This way, we provide consistency and know how to interpret our results. It should be noted that anytime you start a new project or subject you should ensure that a sign convention is established.</p>
@@ -372,7 +374,7 @@ Click to expand
 <summary>
 Click to expand
 </summary>
-<p>One way to find internal shear and bending forces is to cut sections and analyze the free-body diagrams, as we did in previous chapters of this book. The first step for a statically determinate beam is to find the external reactions. To determine the internal forces at any point along the beam, cut the section at that point and draw the free-body diagram from that point to one end of the beam. We will replace the cut with an internal shear force, V, and an internal moment, M, and then use equilibrium equations to solve for those internal.</p>
+<p>One way to find internal shear and bending forces is to cut sections and analyze the free-body diagrams, as we did in previous chapters of this book. The first step for a statically determinate beam is to find the external reactions. To determine the internal forces at any point along the beam, cut the section at that point and draw the free-body diagram from that point to one end of the beam. We will include the internal shear force, V, and internal bending moment, M, at the cut section and then use equilibrium equations to solve for those internal loads.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -385,6 +387,10 @@ Example 7.1
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
+<div id="exm-7.1" class="theorem example">
+<p><span class="theorem-title"><strong>Example 7.1</strong></span> &nbsp;</p>
+<p>
+</p>
 <p>Find the internal shear and bending moment at points J, K, and L in the beam pictured below.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -464,6 +470,7 @@ M_L=17{~kip}\cdot{ft}
 </div>
 </div>
 </div>
+</div>
 </details>
 </section>
 <section id="sec-7.2" class="level2" data-number="7.2">
@@ -484,13 +491,13 @@ Click to expand
 <h3 data-number="7.2.1" class="anchored" data-anchor-id="relationship-between-load-and-shear"><span class="header-section-number">7.2.1</span> Relationship between Load and Shear</h3>
 <p>This FBD is in static equilibrium so we can use our equilibrium equation to sum forces in the y-direction and set it equal to zero.</p>
 <p><span class="math display">\[
-\begin{aligned}
-\sum F_y=0 &amp; =V-\Delta F-(V+\Delta V) \\
-\Delta V &amp; =-\Delta F
-\end{aligned}
+\sum F_y=V-\Delta F-(V+\Delta V)=0 \\
 \]</span></p>
-<p>OR <span class="math display">\[
-\Delta v=\Delta x
+<p><span id="eq-7.1"><span class="math display">\[
+\boxed{\Delta V=\Delta F}
+\tag{7.1}\]</span></span></p>
+<p>Or <span class="math display">\[
+\Delta V=w\Delta x
 \]</span></p>
 <p>Dividing both sides by Δx and then letting Δx approach zero gives us:</p>
 <p><span class="math display">\[
@@ -501,10 +508,10 @@ Click to expand
 d v=w d x
 \]</span></p>
 <p>Now we can integrate between any two points A and B on the beam:</p>
-<p><span class="math display">\[
-\underbrace{\Delta v}_{\substack{\text{change in} \\ \text{shear}}}=\int\underbrace{w d x}_{\substack{\text{area under} \\ \text {loading curve}}} \text{ Equation 11.1}
-\]</span></p>
-<p>Equation 11.1 is valid for distributed loads and not when there is a discontinuity in the shear diagram that is caused by concentrated loads. This relationship should only be used between concentrated loads.</p>
+<p><span id="eq-7.2"><span class="math display">\[
+\boxed{\underbrace{\Delta v}_{\substack{\text{change in} \\ \text{shear}}}=\int\underbrace{w d x}_{\substack{\text{area under} \\ \text {loading curve}}}}
+\tag{7.2}\]</span></span></p>
+<p>This equation is valid for distributed loads and not when there is a discontinuity in the shear diagram that is caused by concentrated loads. This relationship should only be used between concentrated loads.</p>
 </section>
 <section id="relationship-between-shear-and-moment" class="level3" data-number="7.2.2">
 <h3 data-number="7.2.2" class="anchored" data-anchor-id="relationship-between-shear-and-moment"><span class="header-section-number">7.2.2</span> Relationship between Shear and Moment</h3>
@@ -522,18 +529,18 @@ d v=w d x
 \end{aligned}
 \]</span></p>
 <p>Dividing both sides by Δx and then letting Δx approach zero gives us:</p>
-<p><span class="math display">\[
-\underbrace{\frac{\Delta M}{\Delta x}}_{\text { Slope of moment diagram}}=\underbrace{V}_{\text {shear }}
-\]</span></p>
+<p><span id="eq-7.3"><span class="math display">\[
+\boxed{\underbrace{\frac{\Delta M}{\Delta x}}_{\text { Slope of moment diagram}}=\underbrace{V}_{\text {shear }}}
+\tag{7.3}\]</span></span></p>
 <p>We could then rearrange this by multiplying both sides of the equation by dx.</p>
 <p><span class="math display">\[
 d M=V d x
 \]</span></p>
 <p>Now we can integrate between any two points A and B on the beam:</p>
-<p><span class="math display">\[
-\underbrace{\Delta M}_{\text {Change in moment}}=\underbrace{\int V d x}_{\text {Area under shear diagram }} \text{ Equation 11.2}
-\]</span></p>
-<p>Similar to equation 11.1, equation 11.2 is not valid at points where a concentrated force or concentrated moment occurs. These concentrated loads cause discontinuities in the moment diagram however, equation 11.2 can be used in between these concentrated loads.</p>
+<p><span id="eq-7.4"><span class="math display">\[
+\boxed{\underbrace{\Delta M}_{\text {Change in moment}}=\underbrace{\int V d x}_{\text {Area under shear diagram }}}
+\tag{7.4}\]</span></span></p>
+<p>This equation is not valid at points where a concentrated force or concentrated moment occurs. These concentrated loads cause discontinuities in the moment diagram.</p>
 </section>
 <section id="how-can-i-use-my-calculus-knowledge-when-building-shear-and-moment-diagrams" class="level3" data-number="7.2.3">
 <h3 data-number="7.2.3" class="anchored" data-anchor-id="how-can-i-use-my-calculus-knowledge-when-building-shear-and-moment-diagrams"><span class="header-section-number">7.2.3</span> How can I use my calculus knowledge when building Shear and Moment Diagrams?</h3>
@@ -565,7 +572,18 @@ d M=V d x
 <summary>
 Click to expand
 </summary>
-<p>The easy relationship between load, shear, and moment allows us to build complete shear and moment diagrams using a few different methods. This section shows you a method that will work for both simple and complicated loading situations. Let’s work through an example to illustrate this method.</p>
+<p>The relationship between load, shear, and moment allows us to build complete shear and moment diagrams using a few different methods. We’ll explore two of them - an equilibrium method and a graphical method.</p>
+<p>In Section 7.1 we found the internal shear force and bending moment at specific points in the beam by cutting a cross-section at a given point and using equilibrium. The method in this section is similar, but instead of cutting a cross-section at a specific point we’ll instead cut a cross-section at distance ‘x’ from the left end of the beam. We’ll draw a free body diagram and determine the internal shear force (V) and bending moment (M) as before, but this time we’ll end up with equations for V and M that are functions of distance x.</p>
+<p>To draw the diagrams, we can solve this equation at two values of x. It is often simplest to solve when x = 0 and when x = L, the length of the beam. This gives us two points on our diagram which we can then connect. The shape of the diagram depends on the highest power of x that appears in the equation.</p>
+<ul>
+<li><p>For x<sup>0</sup> we get a flat horizontal line</p></li>
+<li><p>For x<sup>1</sup> we get a straight diagonal line</p></li>
+<li><p>For x<sup>2</sup> we get a curved line</p></li>
+<li><p>For x<sup>3</sup> we get a steeper curve</p></li>
+</ul>
+<p>If two points are not sufficient to determine the exact shape of the curve, simply solve the equations at a 3rd point (for example, where x = L/2). We can solve the equations at as many points as necessary but 2 - 3 points, along with knowledge of the general shape of the line, are typically sufficient.</p>
+<p>The equations found using this method are valid as long as the external loading does not change. In cases where the external loading does change, we’ll need to determine a new set of equations each time the loading changes. This includes any time a distributed load begins or ends, and both sides of a concentrated force or couple. In each region of load, we will cut a cross-section at distance x and determine equations for V and M that are valid for that region. We can then solve each equation at values of x at the start and end of their valid region and build up the complete shear force and bending moment diagrams.</p>
+<p>Example 7.2 illustrates this method.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -578,6 +596,11 @@ Example 7.2
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
+<div id="exm-7.2" class="theorem example">
+<p><span class="theorem-title"><strong>Example 7.2</strong></span> &nbsp;</p>
+<p>
+</p>
+<p>Draw the shear force and bending moment diagrams for the beam shown.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/CH7 PNGs/example 7.2 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="316"></p>
@@ -715,6 +738,26 @@ Solution
 </div>
 </div>
 </div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Step-by-step: Shear Force and Bending Moment Diagrams (Equilibrium Method)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><p>Use equilibrium to determine the reaction loads at any supports</p></li>
+<li><p>Identify the distinct regions of external loading and cut a cross-section within each region</p></li>
+<li><p>Draw a free body diagram of the left side of the first cut, which should be made at distance x<sub>1</sub>. Use equilibrium to determine equations for the internal shear force (V) and bending moment (M) as functions of x<sub>1</sub></p></li>
+<li><p>Repeat step 3 for each loading region and develop equations for V and M that are valid in each region</p></li>
+<li><p>Plot each set of equations on axes of V-x and M-x. Each equation is valid only in the region it was developed in. Solve each equation at the start and end points of its region and then connect the points with an appropriate line, based on the highest power of x that appears in the equation</p></li>
+</ol>
+</div>
+</div>
 </details>
 </section>
 <section id="sec-7.4" class="level2" data-number="7.4">
@@ -723,9 +766,13 @@ Solution
 <summary>
 Click to expand
 </summary>
-<p>When the loading is relatively simple, consisting of concentrated forces, concentrated moments, and uniformly distributed loads, we can use geometry to find the area of the load and shear diagrams since the shapes are simple. Let’s work through an example to illustrate this method.</p>
-<div id="example-7.3" class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<p>An alternative, and often quicker, method for drawing shear force and bending moment diagrams is known as the graphical method. Due to the relationship between load, shear force, and bending moment, we can use one diagram to draw the next.</p>
+<p>Specifically, we saw in Section 7.2 that <span class="math inline">\(\frac{dV}{dx}=w\)</span> and <span class="math inline">\(\frac{dM}{dx}=V\)</span>. That is, the change in shear with respect to x (i.e.&nbsp;the slope of the shear diagram at any given point) is equal to any applied distributed load at that point and the change in bending moment with respect to x (i.e.&nbsp;the slope of the bending moment diagram at any given point) is equal to the shear force at that point.</p>
+<p>Further, any applied concentrated forces cause a discontinuity on the shear force diagram (an upwards applied load causes the diagram to jump up). Any applied couples cause a discontinuity on the bending moment diagram (a clockwise applied couple causes the diagram to jump up). This allows us to draw the shape of the shear force diagram based on the applied loads, and the shape of the bending moment diagram based on the shear force diagram.</p>
+<p>Finally, we also know from <a href="#eq-7.2" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-7.2</span></a> that the change in shear force between any two points is equal to the area under the distributed load between those same two points. We know from <a href="#eq-7.4" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-7.4</span></a> that the change in bending moment between any two points is equal to the area underneath the shear force diagram between those two points. This allows us to add numbers to our diagrams and determine the value of the shear force and bending moment at key points.</p>
+<p>When the loading is relatively simple, consisting of concentrated forces, concentrated moments, and uniformly distributed loads, we can use geometry to find the area of the load and shear diagrams since the shapes are simple. <a href="#exm-7.3" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-7.3</span></a> illustrates this method.</p>
+<div id="Example-7.3" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -734,8 +781,12 @@ Example 7.3
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
+<div id="exm-7.3" class="theorem example">
+<p><span class="theorem-title"><strong>Example 7.3</strong></span> &nbsp;</p>
+<p>
+</p>
 <p>Draw the shear force and bending moment diagrams for the beam shown.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -748,7 +799,7 @@ Example 7.3
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -757,7 +808,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The first step is to draw a FBD of the beam, being sure to change the supports to the correct external reaction forces, as shown below.</p>
 <p>We will then use static equilibrium equations to solve for the magnitude of the support reactions.</p>
@@ -888,8 +939,9 @@ Solution
 </div>
 </div>
 </div>
+</div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -898,8 +950,12 @@ Example 7.4
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
+<div id="exm-7.4" class="theorem example">
+<p><span class="theorem-title"><strong>Example 7.4</strong></span> &nbsp;</p>
+<p>
+</p>
 <p>Draw the shear force and bending moment diagrams for the beam shown.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -907,7 +963,7 @@ Example 7.4
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -916,7 +972,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>This beam a little different than other examples in this chapter as the support is a fixed end and includes a force-couple system at point C. However, the processes that we presented here still apply in this situation.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -986,6 +1042,46 @@ Solution
 </div>
 </div>
 </div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Step-by-step: Shear Force and Bending Moment Diagrams (Graphical Method)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><p>Use equilibrium to determine the reaction loads at any supports</p></li>
+<li><p>Use the loading diagram to draw the shear force diagram. Begin at the left end of the beam and move to the right, obeying these rules</p>
+<ul>
+<li><p>A concentrated force causes a discontinuity on the shear diagram. An upwards force causes a jump upwards</p></li>
+<li><p>A distributed load causes a slope on the shear diagram equal to the size of the distributed load. An upwards load causes a slope upwards</p>
+<ul>
+<li>The total change in shear force due to a distributed load is equal to the area underneath the distributed load</li>
+</ul></li>
+<li><p>Anywhere there are no applied forces, the shear force does not change</p></li>
+<li><p>The shear force diagram should start and end at zero. If it does not, go back and check for errors</p></li>
+</ul></li>
+<li><p>Once the shear force diagram is complete, use it to draw the bending moment diagram. Begin at the left end of the beam and move to the right, obeying these rules</p>
+<ul>
+<li><p>An applied couple causes a discontinuity on the moment diagram. A clockwise couple causes a jump upwards</p></li>
+<li><p>The slope of the moment diagram at any point is equal to the shear force at that point. As the shear force changes, the slope of the moment diagram will change too</p>
+<ul>
+<li><p>If the shear force is zero, the bending moment will be constant</p></li>
+<li><p>If the shear force is constant, the slope of the moment diagram will be linear</p></li>
+<li><p>If the shear force is linear, the slope of the moment diagram will be parabolic</p></li>
+<li><p>If the shear force is posiitve, the moment diagram will slope upwards</p></li>
+<li><p>If the shear force is negative, the moment diagram will slope downwards</p></li>
+<li><p>As the magnitude of the shear force gets larger, the slope of the bending moment diagram gets steeper</p></li>
+</ul></li>
+<li><p>The bending moment diagram should start and end at zero. If it does not, go back and check for errors</p></li>
+</ul></li>
+</ol>
+</div>
+</div>
 </details></section>
 <section id="summary" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="summary">Summary</h2>
@@ -1025,7 +1121,7 @@ Key equations
 <div class="callout-body-container callout-body">
 <p>Relationship between load and shear:</p>
 <p><span class="math display">\[
-d v=w d x
+\Delta V=\Delta F
 \]</span> <span class="math display">\[
 \underbrace{\Delta v}_{\substack{\text{change in} \\ \text{shear}}}=\int\underbrace{w d x}_{\substack{\text{area under} \\ \text {loading curve}}}
 \]</span></p>

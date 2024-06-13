@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Mechanics of Deformable Bodies - 1&nbsp; Introduction and Statics Review</title>
+<title>Mechanics of Deformable Bodies - 1&nbsp; Statics Review</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -113,7 +113,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Chapter 1.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction and Statics Review</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Chapter 1.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Statics Review</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -144,13 +144,13 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction</span></a>
+ <span class="menu-text">Overview</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Chapter 1.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction and Statics Review</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Statics Review</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -303,7 +303,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-statics" class="quarto-section-identifier"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction and Statics Review</span></span></h1>
+<h1 class="title"><span id="sec-statics" class="quarto-section-identifier"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Statics Review</span></span></h1>
 </div>
 
 
@@ -387,6 +387,9 @@ Click to expand
 </tbody>
 </table>
 <p>Notice that while pins and fixed supports react with a force in a specific direction, both the magnitude and direction of the force are unknown until equilibrium equations are applied to solve for them. Instead of expressing the components of the unknown F in terms of the unknown θ, the reactions are normally shown as the components F<sub>x</sub> and F<sub>y</sub>. Once they are found, the overall magnitude of the force in the pin and its direction can be calculated <span class="math inline">\(\left(F=\sqrt{F_x^2+F_y^2}, \tan \theta_x=\frac{F_y}{F_x}\right)\)</span>.</p>
+<p>Section 1.1 reviews equilibrium of members and frames in two dimensions, including the analysis of two-force members and multi-force members.</p>
+<p>Section 1.2 addresses internal loads, including normal force, shear force, and bending moment.</p>
+<p>Section 1.3 reviews equilibrium in three dimensions.</p>
 </details>
 </section>
 <section id="sec-1.1" class="level2" data-number="1.1">
@@ -396,9 +399,9 @@ Click to expand
 Click to expand
 </summary>
 <p>Once the FBD is drawn, the next step is to apply the equilibrium equations. In two dimensions (x-y plane), these are:</p>
-<p><span class="math display">\[
-\sum F_x=0 \quad \sum F_y=0 \quad \sum M_{\text {any point }}=0
-\]</span></p>
+<p><span id="eq-1.1"><span class="math display">\[
+\boxed{\sum F_x=0 \quad \sum F_y=0 \quad \sum M_{any~point}=0}
+\tag{1.1}\]</span></span></p>
 <p>Since there are three equations, a statically determinate problem should have no more than 3 unknowns.</p>
 <p>Example 1.1 illustrates the process of finding external reactions.</p>
 <div id="example-1.1" class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -511,16 +514,21 @@ Solution
 <p><strong>Step 2: Apply equilibrium equations</strong></p>
 <p><span class="math display">\[
 \begin{aligned}
-\text{(1)}&amp; \sum M_C=-F_A \cos \left(60^{\circ}\right)*(3{~m}) \sin \left(60^{\circ}\right)+F_A \sin \left(60^{\circ}\right) *\left(4{~m}+3{~m}\left(\cos \left(60^{\circ}\right)\right)-2,000{~ N}*2{~m}=0\right. \\
-\text{(2)}&amp; \sum F_x=F_A \cos \left(60^{\circ}\right)+C_x=0 \\
-\text{(3)}&amp; \sum F_y=F_A \sin \left(60^{\circ}\right)-2,000{~N}+C_y=0
+&amp; \sum M_C=F_A \cos \left(50^{\circ}\right)*(5{~m}) \sin \left(50^{\circ}\right)-F_A \sin \left(50^{\circ}\right) *\left(4{~m}+5{~m}\left(\cos \left(50^{\circ}\right)\right)-4,000{~ N}*2{~m}=0\right. \\
+&amp; \sum F_x=F_A \cos \left(50^{\circ}\right)+C_x=0 \\
+&amp; \sum F_y=F_A \sin \left(50^{\circ}\right)-4,000{~N}+C_y=0
 \end{aligned}
 \]</span></p>
-<p>Solving (1) for F<sub>A</sub> yields F<sub>A</sub> = 1,154.7 N</p>
-<p>Subbing this result into (1) and (2) yields C<sub>x</sub> = -577.4 N and C<sub>y</sub> = 1,000 N</p>
+<p>Solving (1) for F<sub>A</sub> yields F<sub>A</sub> = 2,611 N</p>
+<p>Substituting this result into (1) and (2) yields C<sub>x</sub> = - 1,678 N and C<sub>y</sub> = 2,000 N</p>
 <p><span class="math display">\[
-F_C=\sqrt{C_x^2+C_y^2}=1,154.7{~N}
+F_C=\sqrt{C_x^2+C_y^2}=2,611{~N}
 \]</span></p>
+<p>Recall that, for rigid bodies, forces may be slid along their line of action. We could slide force <span class="math inline">\(F_A\)</span> to point B. Doing so simplifies our moment equation since the horizontal component of <span class="math inline">\(F_A\)</span> now acts through point C.</p>
+<p><span class="math display">\[
+\sum M_C=-F_A \sin(50^\circ)*4{~m}+F_A \cos(50^\circ)*0+4,000{~N}*2{~m}=0
+\]</span></p>
+<p>This gives us the same result of <span class="math inline">\(F_A=2,611{~N}\)</span> and the rest of the problem proceeds the same way.</p>
 <p><strong>Answer: F<sub>A</sub> = 1,155 N and F<sub>C</sub> = 1,155 N</strong></p>
 </div>
 </div>
@@ -587,12 +595,12 @@ Solution
 <p>With the components B<sub>x</sub> and B<sub>y</sub> replaced with the resultant force F<sub>B</sub> with known direction, the number of unknowns on bar AB is reduced to 3. These unknowns can be solved for using the equilibrium equations:</p>
 <p><span class="math display">\[
 \begin{aligned}
-\text{(1)} &amp; \sum M_A=F_B\left(\frac{4}{5}\right)*3{~ft}-50{~lb}*7{~ft}=0 \\
-\text{(2)} &amp; \sum F_x=-A_x+F_B\left(\frac{3}{5}\right)=0 \\
-\text{(3)} &amp; \sum F_y=A_y+F_B\left(\frac{4}{5}\right)-50{~lb}=0
+&amp; \sum M_A=F_B\left(\frac{4}{5}\right)*3{~ft}-50{~lb}*7{~ft}=0 \\
+&amp; \sum F_x=-A_x+F_B\left(\frac{3}{5}\right)=0 \\
+&amp; \sum F_y=A_y+F_B\left(\frac{4}{5}\right)-50{~lb}=0
 \end{aligned}
 \]</span></p>
-<p>Solving the equations (1)-(3) yields F<sub>B</sub> = 145.8 lb, A<sub>x</sub> = 87.5 lb, and A<sub>y</sub> = -66.7 lb. Therefore, the pin force in pin B is 145.8 lb and the pin force in A is <span class="math inline">\(\mathrm{A}=\sqrt{A_x^2+A_y^2}=110 \text{ lb}\)</span>. Since BC is a two-force member, F<sub>C</sub> = F<sub>B</sub>.</p>
+<p>Solving the equations (1)-(3) yields F<sub>B</sub> = 145.8 lb, A<sub>x</sub> = 87.5 lb, and A<sub>y</sub> = -66.7 lb. Therefore, the pin force in pin B is 145.8 lb and the pin force in A is <span class="math inline">\(\mathrm{A}=\sqrt{A_x^2+A_y^2}=110{~lb}\)</span>. Since BC is a two-force member, F<sub>C</sub> = F<sub>B</sub>.</p>
 <p><strong>Answer: F<sub>A</sub> = 110 lb, F<sub>B</sub> = F<sub>C</sub> = 146.8 lb</strong></p>
 </div>
 </div>
@@ -641,8 +649,8 @@ Solution - Method of Joints
 <p>Note: The triangle ECD is a right triangle, so the sin and cos of the angle at corner D can be expressed in terms of the ratios of the sides. If the angle at D is θ, then cos(θ)= <span class="math inline">\(\frac{1}{\sqrt{5}}\)</span> and sin(θ)= <span class="math inline">\(\frac{2}{\sqrt{5}}\)</span> where <span class="math inline">\(\sqrt{5}\)</span> is the hypotenuse of the triangle.</p>
 <p><span class="math display">\[
 \begin{aligned}
-\text{(1)} &amp; \sum F_x=-F_{C D}-F_{D E}\left(\frac{1}{\sqrt{5}}\right)=0 \\
-\text{(2)} &amp; \sum F_y=F_{D E}\left(\frac{2}{\sqrt{5}}\right)-12{~kN}=0
+&amp; \sum F_x=-F_{C D}-F_{D E}\left(\frac{1}{\sqrt{5}}\right)=0 \\
+&amp; \sum F_y=F_{D E}\left(\frac{2}{\sqrt{5}}\right)-12{~kN}=0
 \end{aligned}
 \]</span></p>
 <div class="quarto-figure quarto-figure-center">
@@ -673,7 +681,7 @@ Solution - Method of Joints
 <p><span class="math display">\[
 \begin{aligned}
 &amp;\sum F_y=-13.42{~kN}\left(\frac{2}{\sqrt{5}}\right)-F_{B E}\left(\frac{2}{\sqrt{8}}\right)=0 \quad\rightarrow\quad F_{B C}=-16.98{~kN}\\
-&amp;\sum F_x=13.42{~kN}\left(\frac{1}{\sqrt{5}}\right)--16.98{~kN}\left(\frac{2}{\sqrt{8}}\right)-F_{E F}=0 \quad\rightarrow\quad F_{E F}=18\text{ kN}
+&amp;\sum F_x=13.42{~kN}\left(\frac{1}{\sqrt{5}}\right)--16.98{~kN}\left(\frac{2}{\sqrt{8}}\right)-F_{E F}=0 \quad\rightarrow\quad F_{E F}=18{~kN}
 \end{aligned}
 \]</span></p>
 <p><strong>Answer: F<sub>DC</sub> = 6 kN (Compressive), F<sub>EF</sub> = 18 kN (Tensile)</strong></p>
@@ -753,7 +761,7 @@ Solution
 <div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Though the assembly is not a beam, determining the internal reactions will work in the same way. In this particular case, all the forces are in the normal direction (no shear force) and due to the central placement of the 60 kN force and the symmetry of the 125 kN forces, there will be also be no bending moment. Consequently, only the normal reaction force will be drawn on the FBDs.</p>
-<p>You may recall from shear and moment analysis of beams, a cut is made whenever there is a loading change. In this example, there is a loading change at B, so there will be two sections of the assembly with distinct normal reactions.</p>
+<p>To find the internal load in a segment, cut a cross-section within that segment. Since the external loading (and therefore the internal loading) changes at point B, we’ll make one cut in segment AB and another in segment BC.</p>
 <p>Making the cut in section AB and drawing the FBD allows us to determine the normal force in section AB. Note that drawing the left section of the cut for the FBD results in avoiding needing to know the external reactions at wall C.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -761,7 +769,7 @@ Solution
 </figure>
 </div>
 <p><span class="math display">\[
-\sum F_x=-60{~kN}+N_{A B}=0 \quad\rightarrow\quad N_{A B}=60{~kN}
+\sum F_x=-50{~kN}+N_{AB}=0 \quad\rightarrow\quad N_{AB}=50{~kN}
 \]</span></p>
 <p>Making the cut in section BC and drawing the FBD allows us to determine the normal force in section BC. Once again, drawing the left section of the cut for the FBD results in avoiding needing to know the external reactions at wall C.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -770,15 +778,15 @@ Solution
 </figure>
 </div>
 <p><span class="math display">\[
-\sum F_x=-60{~kN}+250{~kN}+N_{BC}=0 \quad\rightarrow\quad N_{BC}=-190{~kN}
+\sum F_x=-50{~kN}+180{~kN}+N_{BC}=0 \quad\rightarrow\quad N_{BC}=-130{~kN}
 \]</span></p>
-<p>For both AB and BC, the internal normal force was assumed tensile in the FBD and equilibrium equation. In the case of NAB, the positive answer confirms that it is tensile. In the case of NBC, the negative answer reveals that it is compressive.</p>
+<p>For both AB and BC, the internal normal force was assumed tensile in the FBD and equilibrium equation. In the case of N<sub>AB</sub>, the positive answer confirms that it is tensile. In the case of N<sub>BC</sub>, the negative answer reveals that it is compressive.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/CH1 PNGs/example 1.5 part 4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="417"></p>
 </figure>
 </div>
-<p><strong>Answer: NAB = 60 kN (T), NBC = 190 kN (C)</strong></p>
+<p><strong>Answer: NAB = 50 kN (T), NBC = 130 kN (C)</strong></p>
 </div>
 </div>
 </div>
@@ -796,13 +804,13 @@ Click to expand
 </summary>
 <p>Because real life structures will be subject to forces and moments in all directions, we will also see problems in which it will be necessary to consider 3 dimensional forces and 3 dimensional moments.</p>
 <p>For 3D systems, there are 6 total scalar equilibrium equations:</p>
-<p><span class="math display">\[
-\begin{array}{ll}
+<p><span id="eq-1.2"><span class="math display">\[
+\boxed{\begin{array}{ll}
 \sum F_x=0 &amp; \sum M_x=0 \\
 \sum F_y=0 &amp; \sum M_y=0 \\
 \sum F_z=0 &amp; \sum M_z=0
-\end{array}
-\]</span></p>
+\end{array}}
+\tag{1.2}\]</span></span></p>
 <p>Note that the moment vector describes the axis around which the body tends to rotate. Each individual component represents the tendency of the body to rotate around the specified axis. In 3D, there are three internal forces and three internal moments (Figure 1.3). There is one normal force (N<sub>x</sub>) perpendicular to the cross-section and two shear forces (V<sub>y</sub> and V<sub>z</sub>) parallel to the cross-section. There are two bending moments (M<sub>y</sub> and M<sub>z</sub>) which act around the axes parallel to the cross-section and one torsional moment (T<sub>x</sub>) which acts around the axis perpendicular to the cross-section. We will study each of these loads in detail over the next few chapters.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1490,8 +1498,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Introduction">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction</span>
+      <a href="./index.html" class="pagination-link" aria-label="Overview">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Overview</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

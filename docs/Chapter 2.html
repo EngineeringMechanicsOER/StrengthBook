@@ -144,13 +144,13 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction</span></a>
+ <span class="menu-text">Overview</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Chapter 1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction and Statics Review</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Statics Review</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -348,15 +348,14 @@ Click to expand
 Click to expand
 </summary>
 <p>Average normal stress is defined as the internal normal force divided by the cross-sectional area of the body. It is given the Greek letter sigma (σ). Stress increases as the force increases or as the cross-sectional area decreases.</p>
-<p><span class="math display">\[
-\sigma=\frac{N}{A}
-\]</span></p>
-<p><em>where</em></p>
-<ul>
-<li><p>𝜎 = Average normal stress [Pa, psi]</p></li>
-<li><p>N = Internal normal force [N, lb]</p></li>
-<li><p>A = Cross-sectional area [m<sup>2</sup>, in<sup>2</sup>]</p></li>
-</ul>
+<p><span id="eq-2.1"><span class="math display">\[
+\boxed
+{\sigma=\frac{N}{A}}
+\tag{2.1}\]</span></span></p>
+<div class="line-block"><em>where</em><br>
+<em>𝜎 = Average normal stress [Pa, psi]</em><br>
+<em>N = Internal normal force [N, lb]</em></div>
+<p><em>A = Cross-sectional area [m<sup>2</sup>, in.<sup>2</sup>]</em></p>
 <p>As such the SI units of stress are N/m<sup>2</sup>, more commonly referred to as the Pascal (Pa) where 1 Pa = 1 N/m<sup>2</sup>. The US customary units for stress are lb/in<sup>2</sup>, commonly written as psi. Since stresses can get very large, it is common to use prefixes such as kilo (k) and mega (M) to represent 10<sup>3</sup> and 10<sup>6</sup> respectively. A stress of 15,000,000 Pa is written as 15 MPa. A stress of 35,000 psi is written as 35 ksi.</p>
 <p>Normal stress occurs perpendicular to the cross-section and so is associated with either a pulling or pushing motion (Figure 2.1). Normal forces that pull on a cross-section are known as tensile forces and create a tensile normal stress. Normal forces that push on a cross-section are known as compressive forces and create a compressive normal stress. The normal stress calculated above is really an average normal stress as the force is distributed over the cross-section, but we generally simplify this to a concentrated force that creates the same normal stress at every point on the cross-section (Figure 2.2).</p>
 <div class="quarto-figure quarto-figure-center">
@@ -530,13 +529,13 @@ Click to expand
 </figure>
 </div>
 <p>Although the basic definition of average normal stress and average shear stress is the same (force divided by area) there are some differences. To quickly differentiate which stress we are talking about, shear stress is denoted by the Greek letter tau (τ).</p>
-<p><span class="math display">\[
-\tau=\frac{V}{A}
-\]</span></p>
-<p>   where            </p>
-<p>τ = Average shear stress [Pa, psi]            </p>
-<p>V = Internal sheal force [N, lb]            </p>
-<p>A = Cross-sectional area [m<sup>2</sup>, in<sup>2</sup>]</p>
+<p><span id="eq-2.2"><span class="math display">\[
+\boxed{\tau=\frac{V}{A}}
+\tag{2.2}\]</span></span></p>
+<div class="line-block"><em>where</em><br>
+<em>τ = Average shear stress [Pa, psi]</em><br>
+<em>V = Internal shear force [N, lb]</em></div>
+<p><em>A = Cross-sectional area [m<sup>2</sup>, in.<sup>2</sup>]</em></p>
 <p>Like normal force, internal shear force can be found by cutting a cross-section through the body, drawing a free body diagram, and applying equilibrium equations. See Example 2.3 for a demonstration.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
@@ -714,9 +713,20 @@ Click to expand
 <p><span class="math display">\[
 A_p=\frac{A}{\sin (\theta)}
 \]</span></p>
-<p>We can calculate average normal stress from <span class="math inline">\(\sigma=\frac{N}{A_p}=\frac{P \sin (\theta)}{\frac{A}{\sin (\theta)}}=\frac{P \sin ^2(\theta)}{A}\)</span>.</p>
-<p>We can calculate average shear stress from <span class="math inline">\(\tau=\frac{V}{A_p}=\frac{P \cos (\theta)}{\frac{A}{\sin (\theta)}}=\frac{P \sin (\theta) \cos (\theta)}{A}\)</span>.</p>
-<p>Note these equations assume the angle (θ) is measured from the axis perpendicular to area A. For a horizontal beam, area A is in the vertical plane so angle θ is measured from the horizontal axis.</p>
+<p>We can calculate average normal stress from:</p>
+<p><span id="eq-2.3"><span class="math display">\[\boxed{\sigma=\frac{N}{A_p}=\frac{P \sin (\theta)}{\frac{A}{\sin (\theta)}}=\frac{P \sin ^2(\theta)}{A}} \tag{2.3}\]</span></span></p>
+<p>We can calculate average shear stress from:</p>
+<p><span id="eq-2.4"><span class="math display">\[\boxed{\tau=\frac{V}{A_p}=\frac{P \cos (\theta)}{\frac{A}{\sin (\theta)}}=\frac{P \sin (\theta) \cos (\theta)}{A}} \tag{2.4}\]</span></span></p>
+<div class="line-block"><em>where</em><br>
+<em>𝜎 = Average normal stress on the inclined plane [Pa, psi]</em><br>
+<em>τ = Average shear stress on the inclined plane [Pa, psi]</em><br>
+<em>N = Internal normal force perpendicular to the inclined plane [N, lb]</em><br>
+<em>V = Internal shear force perpendicular to the inclined plane [N, lb]</em><br>
+<em>A<sub>p</sub> = Area of the inclined plane [m<sup>2</sup>, in.<sup>2</sup>]</em><br>
+<em>A = Cross-sectional area [m<sup>2</sup>, in<sup>2</sup>]</em><br>
+<em>P = Internal load perpendicular to cross-sectional area A [N, lb]</em></div>
+<p><em>𝜃 = Angle between the inclined plane and the axis perpendicular to cross-sectional area A [°]</em></p>
+<p>Note these equations assume the angle (𝜃) is measured from the axis perpendicular to area A. For a horizontal beam, area A is in the vertical plane so angle θ is measured from the horizontal axis.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/CH2 figures/2.8.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
@@ -1400,8 +1410,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./Chapter 1.html" class="pagination-link" aria-label="Introduction and Statics Review">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction and Statics Review</span></span>
+      <a href="./Chapter 1.html" class="pagination-link" aria-label="Statics Review">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Statics Review</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

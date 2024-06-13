@@ -3,7 +3,7 @@ format: html
 editor: visual
 ---
 
-# Introduction and Statics Review {#sec-statics}
+# Statics Review {#sec-statics}
 
 ::: {.callout-note icon="false"}
 ## Learning Objectives
@@ -45,6 +45,12 @@ Finding the external reactions will be the first step of many of the types of pr
 
 Notice that while pins and fixed supports react with a force in a specific direction, both the magnitude and direction of the force are unknown until equilibrium equations are applied to solve for them. Instead of expressing the components of the unknown F in terms of the unknown θ, the reactions are normally shown as the components F~x~ and F~y~. Once they are found, the overall magnitude of the force in the pin and its direction can be calculated $\left(F=\sqrt{F_x^2+F_y^2}, \tan \theta_x=\frac{F_y}{F_x}\right)$.
 
+Section 1.1 reviews equilibrium of members and frames in two dimensions, including the analysis of two-force members and multi-force members.
+
+Section 1.2 addresses internal loads, including normal force, shear force, and bending moment.
+
+Section 1.3 reviews equilibrium in three dimensions.
+
 </details>
 
 ## Equilibrium in Two Dimensions {#sec-1.1}
@@ -56,8 +62,8 @@ Notice that while pins and fixed supports react with a force in a specific direc
 Once the FBD is drawn, the next step is to apply the equilibrium equations. In two dimensions (x-y plane), these are:
 
 $$
-\sum F_x=0 \quad \sum F_y=0 \quad \sum M_{\text {any point }}=0
-$$
+\boxed{\sum F_x=0 \quad \sum F_y=0 \quad \sum M_{any~point}=0}
+$$ {#eq-1.1}
 
 Since there are three equations, a statically determinate problem should have no more than 3 unknowns.
 
@@ -129,19 +135,27 @@ Based on this FBD, it appears that there are 4 unknowns and therefore not solvab
 
 $$
 \begin{aligned}
-\text{(1)}& \sum M_C=-F_A \cos \left(60^{\circ}\right)*(3{~m}) \sin \left(60^{\circ}\right)+F_A \sin \left(60^{\circ}\right) *\left(4{~m}+3{~m}\left(\cos \left(60^{\circ}\right)\right)-2,000{~ N}*2{~m}=0\right. \\
-\text{(2)}& \sum F_x=F_A \cos \left(60^{\circ}\right)+C_x=0 \\
-\text{(3)}& \sum F_y=F_A \sin \left(60^{\circ}\right)-2,000{~N}+C_y=0
+& \sum M_C=F_A \cos \left(50^{\circ}\right)*(5{~m}) \sin \left(50^{\circ}\right)-F_A \sin \left(50^{\circ}\right) *\left(4{~m}+5{~m}\left(\cos \left(50^{\circ}\right)\right)-4,000{~ N}*2{~m}=0\right. \\
+& \sum F_x=F_A \cos \left(50^{\circ}\right)+C_x=0 \\
+& \sum F_y=F_A \sin \left(50^{\circ}\right)-4,000{~N}+C_y=0
 \end{aligned}
 $$
 
-Solving (1) for F~A~ yields F~A~ = 1,154.7 N
+Solving (1) for F~A~ yields F~A~ = 2,611 N
 
-Subbing this result into (1) and (2) yields C~x~ = -577.4 N and C~y~ = 1,000 N
+Substituting this result into (1) and (2) yields C~x~ = - 1,678 N and C~y~ = 2,000 N
 
 $$
-F_C=\sqrt{C_x^2+C_y^2}=1,154.7{~N}
+F_C=\sqrt{C_x^2+C_y^2}=2,611{~N}
 $$
+
+Recall that, for rigid bodies, forces may be slid along their line of action. We could slide force $F_A$ to point B. Doing so simplifies our moment equation since the horizontal component of $F_A$ now acts through point C.
+
+$$
+\sum M_C=-F_A \sin(50^\circ)*4{~m}+F_A \cos(50^\circ)*0+4,000{~N}*2{~m}=0
+$$
+
+This gives us the same result of $F_A=2,611{~N}$ and the rest of the problem proceeds the same way.
 
 **Answer: F~A~ = 1,155 N and F~C~ = 1,155 N**
 :::
@@ -185,13 +199,13 @@ With the components B~x~ and B~y~ replaced with the resultant force F~B~ with kn
 
 $$
 \begin{aligned}
-\text{(1)} & \sum M_A=F_B\left(\frac{4}{5}\right)*3{~ft}-50{~lb}*7{~ft}=0 \\
-\text{(2)} & \sum F_x=-A_x+F_B\left(\frac{3}{5}\right)=0 \\
-\text{(3)} & \sum F_y=A_y+F_B\left(\frac{4}{5}\right)-50{~lb}=0
+& \sum M_A=F_B\left(\frac{4}{5}\right)*3{~ft}-50{~lb}*7{~ft}=0 \\
+& \sum F_x=-A_x+F_B\left(\frac{3}{5}\right)=0 \\
+& \sum F_y=A_y+F_B\left(\frac{4}{5}\right)-50{~lb}=0
 \end{aligned}
 $$
 
-Solving the equations (1)-(3) yields F~B~ = 145.8 lb, A~x~ = 87.5 lb, and A~y~ = -66.7 lb. Therefore, the pin force in pin B is 145.8 lb and the pin force in A is $\mathrm{A}=\sqrt{A_x^2+A_y^2}=110 \text{ lb}$. Since BC is a two-force member, F~C~ = F~B~.
+Solving the equations (1)-(3) yields F~B~ = 145.8 lb, A~x~ = 87.5 lb, and A~y~ = -66.7 lb. Therefore, the pin force in pin B is 145.8 lb and the pin force in A is $\mathrm{A}=\sqrt{A_x^2+A_y^2}=110{~lb}$. Since BC is a two-force member, F~C~ = F~B~.
 
 **Answer: F~A~ = 110 lb, F~B~ = F~C~ = 146.8 lb**
 :::
@@ -223,8 +237,8 @@ Note: The triangle ECD is a right triangle, so the sin and cos of the angle at c
 
 $$
 \begin{aligned}
-\text{(1)} & \sum F_x=-F_{C D}-F_{D E}\left(\frac{1}{\sqrt{5}}\right)=0 \\
-\text{(2)} & \sum F_y=F_{D E}\left(\frac{2}{\sqrt{5}}\right)-12{~kN}=0
+& \sum F_x=-F_{C D}-F_{D E}\left(\frac{1}{\sqrt{5}}\right)=0 \\
+& \sum F_y=F_{D E}\left(\frac{2}{\sqrt{5}}\right)-12{~kN}=0
 \end{aligned}
 $$
 
@@ -252,7 +266,7 @@ Then at joint E:
 $$
 \begin{aligned}
 &\sum F_y=-13.42{~kN}\left(\frac{2}{\sqrt{5}}\right)-F_{B E}\left(\frac{2}{\sqrt{8}}\right)=0 \quad\rightarrow\quad F_{B C}=-16.98{~kN}\\
-&\sum F_x=13.42{~kN}\left(\frac{1}{\sqrt{5}}\right)--16.98{~kN}\left(\frac{2}{\sqrt{8}}\right)-F_{E F}=0 \quad\rightarrow\quad F_{E F}=18\text{ kN}
+&\sum F_x=13.42{~kN}\left(\frac{1}{\sqrt{5}}\right)--16.98{~kN}\left(\frac{2}{\sqrt{8}}\right)-F_{E F}=0 \quad\rightarrow\quad F_{E F}=18{~kN}
 \end{aligned}
 $$
 
@@ -300,14 +314,14 @@ Two solid bars make up the axial assembly loaded as shown. Determine the normal 
 
 Though the assembly is not a beam, determining the internal reactions will work in the same way. In this particular case, all the forces are in the normal direction (no shear force) and due to the central placement of the 60 kN force and the symmetry of the 125 kN forces, there will be also be no bending moment. Consequently, only the normal reaction force will be drawn on the FBDs.
 
-You may recall from shear and moment analysis of beams, a cut is made whenever there is a loading change. In this example, there is a loading change at B, so there will be two sections of the assembly with distinct normal reactions.
+To find the internal load in a segment, cut a cross-section within that segment. Since the external loading (and therefore the internal loading) changes at point B, we'll make one cut in segment AB and another in segment BC.
 
 Making the cut in section AB and drawing the FBD allows us to determine the normal force in section AB. Note that drawing the left section of the cut for the FBD results in avoiding needing to know the external reactions at wall C.
 
 ![](images/CH1%20PNGs/example%201.5%20part%202.png){fig-align="center"}
 
 $$
-\sum F_x=-60{~kN}+N_{A B}=0 \quad\rightarrow\quad N_{A B}=60{~kN}
+\sum F_x=-50{~kN}+N_{AB}=0 \quad\rightarrow\quad N_{AB}=50{~kN}
 $$
 
 Making the cut in section BC and drawing the FBD allows us to determine the normal force in section BC. Once again, drawing the left section of the cut for the FBD results in avoiding needing to know the external reactions at wall C.
@@ -315,14 +329,14 @@ Making the cut in section BC and drawing the FBD allows us to determine the norm
 ![](images/CH1%20PNGs/example%201.5%20part%203.png){fig-align="center" width="342"}
 
 $$
-\sum F_x=-60{~kN}+250{~kN}+N_{BC}=0 \quad\rightarrow\quad N_{BC}=-190{~kN}
+\sum F_x=-50{~kN}+180{~kN}+N_{BC}=0 \quad\rightarrow\quad N_{BC}=-130{~kN}
 $$
 
-For both AB and BC, the internal normal force was assumed tensile in the FBD and equilibrium equation. In the case of NAB, the positive answer confirms that it is tensile. In the case of NBC, the negative answer reveals that it is compressive.
+For both AB and BC, the internal normal force was assumed tensile in the FBD and equilibrium equation. In the case of N~AB~, the positive answer confirms that it is tensile. In the case of N~BC~, the negative answer reveals that it is compressive.
 
 ![](images/CH1%20PNGs/example%201.5%20part%204.png){fig-align="center" width="417"}
 
-**Answer: NAB = 60 kN (T), NBC = 190 kN (C)**
+**Answer: NAB = 50 kN (T), NBC = 130 kN (C)**
 :::
 :::
 
@@ -339,12 +353,12 @@ Because real life structures will be subject to forces and moments in all direct
 For 3D systems, there are 6 total scalar equilibrium equations:
 
 $$
-\begin{array}{ll}
+\boxed{\begin{array}{ll}
 \sum F_x=0 & \sum M_x=0 \\
 \sum F_y=0 & \sum M_y=0 \\
 \sum F_z=0 & \sum M_z=0
-\end{array}
-$$
+\end{array}}
+$$ {#eq-1.2}
 
 Note that the moment vector describes the axis around which the body tends to rotate. Each individual component represents the tendency of the body to rotate around the specified axis. In 3D, there are three internal forces and three internal moments (Figure 1.3). There is one normal force (N~x~) perpendicular to the cross-section and two shear forces (V~y~ and V~z~) parallel to the cross-section. There are two bending moments (M~y~ and M~z~) which act around the axes parallel to the cross-section and one torsional moment (T~x~) which acts around the axis perpendicular to the cross-section. We will study each of these loads in detail over the next few chapters.
 

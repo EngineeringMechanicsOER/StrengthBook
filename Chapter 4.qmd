@@ -30,6 +30,14 @@ For the purposes of this book as we learn the principles, we assume that mechani
 
 Of particular importance is that materials in this text are assumed to be isotropic—that is, they have the same properties when loaded in different directions. Anisotropic materials, which display different properties depending on the direction of loading, are quite common but are beyond the scope of this text.
 
+Section 4.1 discusses a common method of determining mechanical properties, known as the Tensile Test. The output of the Tensile Test - the Stress-Strain Diagram - is analyzed in Section 4.2.
+
+Important mechanical relationships Hooke's Law, which relates stress to strain, and Poisson's ratio, which relates normal strain in the axial and lateral directions, are covered in Sections 4.3 and 4.4.
+
+Section 4.5 considers the relationship between shear stress and shear strain and Section 4.6 introduces the concept of thermal strain. In Section 4.7 we expand Hooke's Law from Section 4.3 to the general three-dimensional case.
+
+Finally, in Section 4.8, we consider applying a factor of safety to our designs to ensure they don't fail.
+
 </details>
 
 ## Tensile Test {#sec-4.1}
@@ -109,12 +117,18 @@ Since strain is unitless, elastic modulus will have the same units as stress \[P
 This relationship is more commonly called Hooke’s Law, and written in the form:
 
 $$
-\sigma=E \varepsilon
-$$
+\boxed{\sigma=E \varepsilon}
+$$ {#eq-4.1}
+
+| *where*
+| *𝜎 = Average normal stress \[Pa, psi\]*
+| *E = Elastic modulus \[Pa, psi\]*
+
+*𝜀 = Normal strain*
 
 It is especially important to note that this relationship is only applicable within the linear elastic region of the material’s response. Use of this relationship beyond this region can lead to serious design mistakes. One should note that this proportionality, applicable at the material level for stress and strain, also extends to structural elements, such as bars in tension or compression, beam deflections, helical springs in which the force and deflection are related by the spring constant, and many other engineering components and structures, as will be covered in the following chapters of the book.
 
-![Figure 4.6: Illustration of the initial linear elastic portions of the sress strain curce and slopes corresponding to (a) Young's modulus for uniaxial tension; (b) shear modulus for pure shear loading, and (c) the bulk modulus for hydrostatic compression.](images/CH4%20PNGs/4.6.png){fig-align="center" width="486"}
+![Figure 4.6: Illustration of the initial linear elastic portions of the sress strain curce and slopes corresponding to (a) Young's modulus for uniaxial tension; (b) shear modulus for pure shear loading](images/CH4%20PNGs/4.6.png){fig-align="center" width="486"}
 
 Example 4.1 uses Hooke’s law to determine the elastic modulus of a material where the applied load and deformation are known.
 
@@ -166,8 +180,14 @@ $$
 When you stretch a rubber band, you will note that the elastomer elongates in the axial direction but that the cross-sectional area contracts. That is, there is a normal strain in the longitudinal (length) direction and also in the lateral (width or thickness) direction. There is a coupling between these normal strains in perpendicular directions. Poisson’s ratio is the material property that describes the proportional relationship between longitudinal and lateral strains. Named after Siméon Denis Poisson (1781-1840), the French mathematician and physicist, Poisson’s ratio is defined as the negative of the lateral strain divided by the longitudinal strain for a uniaxial eight loaded material. It may be expressed as:
 
 $$
-\nu=-\frac{\varepsilon_{\text {lateral }}}{\varepsilon_{\text {longitudinal }}}
-$$
+\boxed{\nu=-\frac{\varepsilon_{lateral}}{\varepsilon_{longitudinal}}}
+$$ {#eq-4.2}
+
+| *where*
+| *𝜈 = Poisson's ratio*
+| *𝜀~lateral~ = Lateral normal strain*
+
+*𝜀~longitudinal~ = Longitudinal normal strain*
 
 Note that this relationship is appropriate for a uniaxially loaded specimen (i.e., when a load is applied in only the longitudinal direction). Section 4.8 expands this relationship to cases where normal stresses are present in more than one direction. Poisson’s ratio is a material property that depends on the material as well as its structure. Theoretically, Poisson’s ratio can range from –1 to ½ for isotropic materials, but usually ranges from near zero for foams to nearly ½ for soft materials such as elastomers and gels. Most metals fall in the range from 0.2 to 0.35. A positive value of Poisson’s ratio means that as the material is extended in one direction, there will be a contraction in lateral directions. Most solid materials have positive Poisson’s ratios, though negative values have been reported in auxetic materials, such as certain meta-materials fabricated using additive manufacturing processes. Although beyond the scope of this course, such materials offer intriguing design possibilities. See example 4.2 for a simple application of Poisson’s ratio.
 
@@ -183,20 +203,20 @@ A circular polymeric rod with a diameter of 10 mm is subjected to a uniaxial for
 
 The longitudinal strain is given as: ε~longitudinal~ = 0.005
 
-The lateral strain is determined from the reduction in diameter divided by the original diameter, and is negative because it is contracting: $\varepsilon_{\text{lateral}}=\frac{-0.02{~mm}}{10{~mm}}=-0.002$
+The lateral strain is determined from the reduction in diameter divided by the original diameter, and is negative because it is contracting: $\varepsilon_{lateral}=\frac{-0.02{~mm}}{10{~mm}}=-0.002$
 
-Poisson’s ratio is then easily determined as: $\nu=-\frac{\varepsilon_{\text {lateral }}}{\varepsilon_{\text {longitudinal }}}=-\frac{-0.002}{0.005}=0.4$
+Poisson’s ratio is then easily determined as: $\nu=-\frac{\varepsilon_{lateral}}{\varepsilon_{longitudinal}}=-\frac{-0.002}{0.005}=0.4$
 :::
 :::
 
 ::: {.callout-warning icon="false"}
 ## Step-by-step:
 
-1.  Determine the longitudinal strain $\varepsilon_{\text {long }}=\frac{\Delta L}{L}$
+1.  Determine the longitudinal strain $\varepsilon_{long}=\frac{\Delta L}{L}$
 
 2.  Determine the lateral strain $\varepsilon_{l a t}=\frac{\Delta d}{d}$
 
-3.  Calculate Poisson’s ratio $\nu=-\frac{\varepsilon_{\text {lat }}}{\varepsilon_{\text {long }}}$
+3.  Calculate Poisson’s ratio $\nu=-\frac{\varepsilon_{lat}}{\varepsilon_{long}}$
 :::
 
 </details>
@@ -210,14 +230,26 @@ Poisson’s ratio is then easily determined as: $\nu=-\frac{\varepsilon_{\text {
 In addition to considering normal stresses and strains, an understanding of the relationship between shear stresses and shear strains is also needed. A similar experiment can be performed to produce a diagram of shear stress against shear strain. The slope of a shear stress versus shear strain diagram is referred to as the shear modulus or modulus of rigidity, and will be designated by G. The corresponding slope of a shear stress versus shear strain plot is referred to as the shear modulus or modulus of rigidity, as shown in figure 4.5b.
 
 $$
-\tau=G \gamma
-$$
+\boxed{\tau=G \gamma}
+$$ {#eq-4.3}
 
-where $G$ is the shear modulus or modulus of rigidity, $\tau$ is the shear stress, and $\gamma$ is the shear strain. It should be noted that Young’s modulus, the shear modulus, Poisson’s ratio, and the bulk modulus (to be defined in Section 4.8) are not all independent of one another. For isotropic materials, there are only two independent, linear elastic properties; knowing any two allows one to calculate the others. It can be shown that:
+| *where*
+| *𝜏 = Shear stress \[Pa, psi\]*
+| *G = Shear modulus or modulus of rigidity \[Pa, psi\]*
+
+*𝛾 = shear strain*
+
+It should be noted that Young’s modulus, the shear modulus, and Poisson’s ratio are not all independent of one another. For isotropic materials, there are only two independent, linear elastic properties; knowing any two allows one to calculate the others. It can be shown that:
 
 $$
-G=\frac{E}{2(1+v)}
-$$
+\boxed{G=\frac{E}{2(1+v)}}
+$$ {#eq-4.4}
+
+| *where*
+| *G = Shear modulus or modulus of rigidity \[Pa, psi\]*
+| *E = Elastic modulus \[Pa, psi\]*
+
+*𝜈 = Poisson's ratio*
 
 See example 4.3 for a problem involving the shear modulus.
 
@@ -268,19 +300,27 @@ $$
 \alpha=\frac{\varepsilon}{\Delta T}=\frac{\frac{\Delta L}{L}}{\Delta T}
 $$
 
-where $\Delta T=T_{\text {final }}-T_{\text {initial }}$. Since strain is unitless, CTE has units of $\frac{1}{{ }^{\circ} \mathrm{C}}$ or $\frac{1}{{ }^{\circ} F}$. Knowing the CTE, one can easily determine the strain expected when a material is subjected to a temperature change of ΔT:
+where $\Delta T=T_{final}-T_{initial}$. Since strain is unitless, CTE has units of $\frac{1}{{ }^{\circ} \mathrm{C}}$ or $\frac{1}{{ }^{\circ} F}$. Knowing the CTE, one can easily determine the strain expected when a material is subjected to a temperature change of ΔT:
 
 $$
-\varepsilon=\alpha \cdot \Delta T
-$$
+\boxed{\varepsilon_T=\alpha \cdot \Delta T}
+$$ {#eq-4.5}
 
 Or dimensional changes can be determined as:
 
 $$
-\Delta L=\alpha \cdot \Delta T \cdot L
-$$
+\boxed{\Delta L=\alpha \cdot \Delta T \cdot L}
+$$ {#eq-4.6}
 
-See example 4.4 for a problem involving a temperature change resulting in a thermal strain.
+| *where*
+| *𝜀~T~ = Thermal strain*
+| *𝛼 = Coefficient of thermal expansion* $\left[\frac{1}{^\circ C},\frac{1}{^\circ F}\right]$
+| *𝛥T = Change in temperature* $[^\circ C, ^\circ F]$
+| *𝛥L = Change in length \[m, in.\]*
+
+*L = Original length \[m, in.\]*
+
+See Example 4.4 for a problem involving a temperature change resulting in a thermal strain.
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Example 4.4
@@ -297,14 +337,14 @@ A 24” long aluminum bar with a coefficient of thermal expansion of 13x10^-6^/F
 
 1.  $\varepsilon_T=\alpha \cdot \Delta T=13 \times 10^{-6} /^\circ{F} *\left(-75^{\circ}{F}\right)=-0.00098$
 
-2.  $L_{\text {final }}-L_{\text {initial}}=\varepsilon_T \cdot 24{~in} =-0.0234 {~in}$
+2.  $L_{final}-L_{initial}=\varepsilon_T \cdot 24{~in} =-0.0234 {~in}$
 :::
 :::
 
 ::: {.callout-warning icon="false"}
 ## Step-by-step: Thermal Strain
 
-1.  Determine the change in temperature, $\Delta T=T_{\text {final }}-T_{\text {initial }}$
+1.  Determine the change in temperature, $\Delta T=T_{final}-T_{initial}$
 
 2.  Look up the coefficient of thermal expansion (𝛼) for the material
 
@@ -323,7 +363,7 @@ A 24” long aluminum bar with a coefficient of thermal expansion of 13x10^-6^/F
 
 Materials are often tested under idealized conditions, such as uniaxial tension or shearing resulting from torsional loading. These tests are important because they provide material properties necessary for engineering design. Such simple stress states are less common in actual engineered components, where more complex, multiaxial stress states are present, as shown in figure 4.6.
 
-![Figure 4.7: Illustration of a general, multiaxial stress state, showing normal and shear stresses acting on the positive x, y, and z planes. (Similar stresses act on the opposite sides, but are hidden. ?????\[text\] (a) represents tensional notation and (b) shows engineering notation, as will be used herein.](images/CH4%20PNGs/4.7.png){fig-align="center" width="423"}
+![Figure 4.7: Illustration of a general, multiaxial stress state, showing normal and shear stresses acting on the positive x-, y-, and z-planes. Note that equal and opposite stresses exist on the hidden faces of the element.](images/CH4%20PNGs/4.7.png){fig-align="center" width="423"}
 
 Here there are three normal stresses, referred to with a single subscript indicating their direction (σ~x~, σ~y~, and σ~z~). There are six shear stresses, designated by τ, which are referred to with two subscripts, one indicating the plane or ‘face’ that the stress acts on and the other indicating the direction that it acts in. For example, on the y-z plane (the x-face) there is the normal stress σ~x~ and two shear stresses, τ~xy~ and τ~xz~. The first subscript indicates that these shear stresses act on the x-face and the second subscript indicates that they point in the y- and z-directions respectively.
 
@@ -366,12 +406,19 @@ $$
 If loads are applied in all 3 directions simultaneously, we can determine the overall strain in each direction by simply adding together the above components:
 
 $$
-\begin{aligned}
+\boxed{\begin{aligned}
 & \varepsilon_x=\frac{\sigma_x}{E}-\frac{\nu \sigma_y}{E}-\frac{\nu \sigma_z}{E}=\frac{1}{E}\left[\sigma_x-\nu\left(\sigma_y+\sigma_z\right)\right] \\
 & \varepsilon_y=\frac{1}{E}\left[\sigma_y-\nu\left(\sigma_x+\sigma_z\right)\right] \\
 & \varepsilon_z=\frac{1}{E}\left[\sigma_z-\nu\left(\sigma_x+\sigma_y\right)\right]
-\end{aligned}
-$$
+\end{aligned}}
+$$ {#eq-4.7}
+
+| *where*
+| *𝜀~x~, 𝜀~y~, 𝜀~z~ = Normal strain in the x-, y-, and z-directions*
+| *𝜎~x~, 𝜎~y~, 𝜎~z~ = Normal stress in the x-, y-, and z-directions \[Pa, psi\]*
+| *E = Elastic modulus \[Pa, psi\]*
+
+*𝜈 = Poisson's ratio*
 
 This is the generalized Hooke’s law for the 3-dimensional state of stress. Example problem 4.5 demonstrates the application of the generalized Hooke’s law to a problem with stresses acting in the x-, y-, and z-directions.
 
@@ -380,12 +427,18 @@ We may make similar observations about strain, where normal strains are written 
 The relationships between shear stresses and strains do not change in isotropic materials subjected to additional other stress components, so:
 
 $$
-\begin{aligned}
+\boxed{\begin{aligned}
 & \gamma_{xy}=\frac{\tau_{xy}}{G} \\
 & \gamma_{yz}=\frac{\tau_{yz}}{G} \\
 & \gamma_{xz}=\frac{\tau_{xz}}{G}
-\end{aligned}
-$$
+\end{aligned}}
+$$ {#eq-4.8}
+
+| *where*
+| *𝛾~xy~, 𝛾~yz~, 𝛾~xz~ = Shear strains*
+| *𝜏~xy~, 𝜏~yz~, 𝜏~xz~ = Shear stresses \[Pa, psi\]*
+
+*G = Shear modulus \[Pa, psi\]*
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Example 4.5
@@ -430,8 +483,14 @@ If one used the simple uniaxial Hooke’s law, $\sigma=\mathrm{E} \varepsilon$, 
 Safety is of primary importance in engineering practice, and various engineering principles and codes are built on the necessity of considering the safety of products we design. The concept is that we would determine the location and magnitude of the maximum stresses under the most stringent anticipated loading conditions and compare these predicted values with the failure stress, such as the yield or ultimate strength of a material. Rather than allowing the maximum anticipated stress to equal the failure stress, however, products are often designed so that the maximum allowable stress is only some fraction of the failure stress, leading to a more conservative design. Essentially, the failure stress is scaled back by the factor of safety (F.S.), a quantity that is greater than one.
 
 $$
-\sigma_{\text {allow }}=\frac{\sigma_{\text {fail }}}{F . S .}
-$$
+\boxed{\sigma_{allow}=\frac{\sigma_{fail}}{F . S .}}
+$$ {#eq-4.9}
+
+| *where*
+| *𝜎~allow~ = Allowable stress \[Pa, psi\]*
+| *𝜎~fail~ = Failure stress \[Pa, psi\]*
+
+*F.S. = Factor of safety*
 
 Example problem 4.6 demonstrates a simple calculation of the factor of safety based on the failure and allowable stresses in a component. In practice it is also common to work the other way and, starting with a defined factor of safety and failure stress, calculate the allowable stress in a component made of a given material.
 
@@ -473,8 +532,8 @@ $$
 ## Step-by-step: Safety factor
 
 1.  Determine the failure stress of the member. Depending on the application, this may be the yield stress or the ultimate stress.
-2.  Determine the allowable stress in the member from $\sigma_{\text {allow }}=\frac{\sigma_{\text {fail }}}{F . S .}$
-3.  Use the allowable stress to calculate the allowable force in the member or the required cross-sectional area, using $\sigma_{\text {allow }}=\frac{F}{A}$
+2.  Determine the allowable stress in the member from $\sigma_{allow}=\frac{\sigma_{fail}}{F . S .}$
+3.  Use the allowable stress to calculate the allowable force in the member or the required cross-sectional area, using $\sigma_{allow}=\frac{F}{A}$
 :::
 
 </details>
@@ -511,13 +570,13 @@ The factor of safety is one simple means to quantify how conservative a design m
 Hooke’s law:
 
 $$
-\sigma=E \varepsilon_{\text {long }}
+\sigma=E \varepsilon_{long}
 $$
 
 Poisson’s ratio:
 
 $$
-\nu=-\frac{\varepsilon_{\text {lat }}}{\varepsilon_{\text {long }}}
+\nu=-\frac{\varepsilon_{lat}}{\varepsilon_{long}}
 $$
 
 Shear stress/strain:
@@ -538,6 +597,10 @@ $$
 \varepsilon=\alpha \Delta T
 $$
 
+$$
+\Delta L=\alpha\Delta TL
+$$
+
 Generalized Hooke’s law:
 
 $$
@@ -548,10 +611,16 @@ $$
 \end{aligned}
 $$
 
-Factor of safety:
+$$
+{\begin{aligned}
+& \gamma_{xy}=\frac{\tau_{xy}}{G} \\
+& \gamma_{yz}=\frac{\tau_{yz}}{G} \\
+& \gamma_{xz}=\frac{\tau_{xz}}{G}
+\end{aligned}}
+$$ Factor of safety:
 
 $$
-F . S .=\frac{\sigma_{\text {fail }}}{\sigma_{\text {allow }}}
+F . S .=\frac{\sigma_{fail}}{\sigma_{allow}}
 $$
 :::
 
