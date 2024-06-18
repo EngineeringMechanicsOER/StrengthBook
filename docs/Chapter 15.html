@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Mechanics of Deformable Bodies - 15&nbsp; Columns</title>
+<title>Strength of Materials - 15&nbsp; Columns</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -128,7 +128,7 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Mechanics of Deformable Bodies</a> 
+      <a href="./">Strength of Materials</a> 
         <div class="sidebar-tools-main">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
@@ -270,6 +270,12 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Units and Order of Magnitude</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Appendix E.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Centroids and Area Moment of Inertia for Common Shapes</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -343,12 +349,16 @@ Learning Objectives
 <summary>
 Click to expand
 </summary>
-<p>Until now, our focus has been primarily on meeting strength and deflection criteria. While these aspects are crucial, it’s equally important to ensure the structure’s stability. In this chapter, we will delve into the stability analysis of long and slender members subjected to compressive loading, commonly referred to as columns. Some examples are shown in Figure 15.1. When the compressive load reaches a critical point, columns may undergo sudden sideways deflection, a phenomenon known as buckling.&nbsp; After buckling, a column is unable to support any further load. This chapter will focus on long, slender, homogeneous, axial compression members, otherwise known as columns.</p>
-<p>In Section 15.1 we’ll derive the buckling formula for columns that are supported by pin connections at both ends. In Section 15.2 we’ll extend this to consider other common end conditions.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/CH15s PNGs/figure 15.1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-<figcaption>Figure 15.1: Examples of columns.</figcaption>
+<p>Until now, our focus has been primarily on meeting strength and deflection criteria. While these aspects are crucial, it’s equally important to ensure the structure’s stability. In this chapter, we will delve into the stability analysis of long and slender members subjected to compressive loading, commonly referred to as columns. Some examples are shown in <a href="#fig-15.1" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-15.1</span></a>. When the compressive load reaches a critical point, columns may undergo sudden sideways deflection, a phenomenon known as buckling.&nbsp; After buckling, a column is unable to support any further load. This chapter will focus on long, slender, homogeneous, axial compression members, otherwise known as columns.</p>
+<p>In <a href="#sec-15.1" class="quarto-xref"><span class="quarto-unresolved-ref">sec-15.1</span></a> we’ll derive the buckling formula for columns that are supported by pin connections at both ends. In <a href="#sec-15.2" class="quarto-xref"><span class="quarto-unresolved-ref">sec-15.2</span></a> we’ll extend this to consider other common end conditions.</p>
+<div id="fig-15.1" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-15.1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/CH15s PNGs/figure 15.1.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-15.1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15.1: Examples of columns.
+</figcaption>
 </figure>
 </div>
 </details>
@@ -360,20 +370,28 @@ Click to expand
 Click to expand
 </summary>
 <p>Even in ideal conditions, buckling often occurs for long slender members at loads significantly lower than the material’s crushing or compression limit. When a long slender object is subjected to axial loading, it may buckle once the load reaches a critical threshold known as the critical load, P<sub>cr</sub>. At this point, the object experiences significant lateral deflection perpendicular to the load direction, so columns should be designed such that the applied load does not exceed the critical load.</p>
-<p>Buckling of a ruler (long slender member) is depicted in Figure 15.2. The ruler in the left and center photos is subjected to axial load P that is less than the critical load, P<sub>cr</sub>. This is known as stable equilibrium. In the photo on the right, the axial load, P, exceeded the critical load P<sub>cr</sub>, causing a significant lateral deflection. This is known as unstable equilibrium.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/CH15s PNGs/figure 15.2.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-<figcaption>Figure 15.2: Buckling of a ruler.</figcaption>
+<p>Buckling of a ruler (long slender member) is depicted in <a href="#fig-15.2" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-15.2</span></a>. The ruler in the left and center photos is subjected to axial load P that is less than the critical load, P<sub>cr</sub>. This is known as stable equilibrium. In the photo on the right, the axial load, P, exceeded the critical load P<sub>cr</sub>, causing a significant lateral deflection. This is known as unstable equilibrium.</p>
+<div id="fig-15.2" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-15.2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/CH15s PNGs/figure 15.2.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-15.2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15.2: Buckling of a ruler.
+</figcaption>
 </figure>
 </div>
 <section id="stability" class="level3" data-number="15.1.1">
 <h3 data-number="15.1.1" class="anchored" data-anchor-id="stability"><span class="header-section-number">15.1.1</span> Stability</h3>
-<p>We can consider stability by using a simplified model of a pinned-pinned column. This column will consist of two ridged bars connected with a pin and a spring with a stiffness k, as shown in Figure 15.3a. When the load, P, is small, the system remains vertical, and the spring is unstretched. If point C is displaced to the right a small amount, Δ, the spring will produce a force F = kΔ, as shown in Figure 15.3b. This force is used to resist the horizontal forces, P<sub>x</sub> = Ptanθ, as shown in figure 15.3c.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/CH15s PNGs/figure 15.3.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-<figcaption>Figure 15.3: Free body diagram of a simplified column</figcaption>
+<p>We can consider stability by using a simplified model of a pinned-pinned column. This column will consist of two ridged bars connected with a pin and a spring with a stiffness k, as shown in <a href="#fig-15.3" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-15.3</span></a> (A). When the load, P, is small, the system remains vertical, and the spring is unstretched. If point C is displaced to the right a small amount, Δ, the spring will produce a force F = kΔ, as shown in <a href="#fig-15.3" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-15.3</span></a> (B). This force is used to resist the horizontal forces, P<sub>x</sub> = Ptanθ, as shown in <a href="#fig-15.3" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-15.3</span></a> (C).</p>
+<div id="fig-15.3" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-15.3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/CH15s PNGs/figure 15.3.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-15.3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15.3: Free body diagram of a simplified column
+</figcaption>
 </figure>
 </div>
 <p>Since θ is small:</p>
@@ -411,18 +429,22 @@ P_{c r}=\frac{k L}{4}
 </section>
 <section id="eulers-formula" class="level3" data-number="15.1.2">
 <h3 data-number="15.1.2" class="anchored" data-anchor-id="eulers-formula"><span class="header-section-number">15.1.2</span> Euler’s Formula</h3>
-<p>As mentioned in earlier sections, members can fail due to material yielding or fracturing. However, instability represents another critical failure mechanism that requires consideration. We will use Euler’s formula to calculate the theoretical buckling load. To do this, we will start with the simplest of columns, pinned-pinned end connections. This means that the column cannot translate but can rotate as shown in Figure 15.4.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/CH15s PNGs/figure 15.4.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-<figcaption>Figure 15.4: Pinned-pinned axially loaded column.</figcaption>
+<p>As mentioned in earlier sections, members can fail due to material yielding or fracturing. However, instability represents another critical failure mechanism that requires consideration. We will use Euler’s formula to calculate the theoretical buckling load. To do this, we will start with the simplest of columns, pinned-pinned end connections. This means that the column cannot translate but can rotate as shown in <a href="#fig-15.4" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-15.4</span></a>.</p>
+<div id="fig-15.4" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-15.4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/CH15s PNGs/figure 15.4.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-15.4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15.4: Pinned-pinned axially loaded column.
+</figcaption>
 </figure>
 </div>
 <p>Columns are similar to beams rotated 90 degrees, so we can use what we already know about the elastic curve.</p>
 <p><span class="math display">\[
 \frac{d^2 y}{d x^2}=\frac{M}{E I}
 \]</span></p>
-<p>We can use the free-body diagram in figure 15.4c to sum moments about any point on the lower column section.</p>
+<p>We can use the free-body diagram in <a href="#fig-15.4" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-15.4</span></a> (C) to sum moments about any point on the lower column section.</p>
 <p><span class="math display">\[
 \begin{aligned}
 &amp; \sum M=0=M+P y \\
@@ -467,21 +489,29 @@ y=C_1 \sin \left(\sqrt{\frac{P}{E I}} x\right)+C_2 \cos \left(\sqrt{\frac{P}{E I
 <em>E = Elastic modulus of the material [Pa, psi]</em><br>
 <em>I = Area moment of inertia for the column [m<sup>4</sup>, in.<sup>4</sup>]. Note if I<sub>x</sub> and I<sub>y</sub> are different, use the smaller value.</em></div>
 <p><em>L = Unsupported length of the column&nbsp; (pinned=pinned connection) [m, in.]</em></p>
-<p>This is named after the Swiss mathematician <a href="https://en.wikipedia.org/wiki/Leonhard_Euler">Leonhard Euler</a> who developed this formula in 1744. Other bucking modes can exist (n = 2, n = 3, n = 4, etc.) but are less common as the load required for those higher modes would be much larger. The first three bucking loads can be seen in Figure 15.5.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/CH15s PNGs/figure 15.5.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-<figcaption>Figure 15.5: First three buckling modes</figcaption>
+<p>This is named after the Swiss mathematician <a href="https://en.wikipedia.org/wiki/Leonhard_Euler">Leonhard Euler</a> who developed this formula in 1744. Other bucking modes can exist (n = 2, n = 3, n = 4, etc.) but are less common as the load required for those higher modes would be much larger. The first three bucking loads can be seen in <a href="#fig-15.5" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-15.5</span></a>.</p>
+<div id="fig-15.5" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-15.5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/CH15s PNGs/figure 15.5.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-15.5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15.5: First three buckling modes
+</figcaption>
 </figure>
 </div>
 </section>
 <section id="bucking-direction" class="level3" data-number="15.1.3">
 <h3 data-number="15.1.3" class="anchored" data-anchor-id="bucking-direction"><span class="header-section-number">15.1.3</span> Bucking Direction</h3>
-<p>Columns that are pinned at both ends and have circular or square cross sections (where the moments of inertia are the same about any axis) could buckle in any direction. However, columns that do not have a symmetric cross-section will take place in the plane perpendicular to the principal axis of the minimum moment of inertia. For example, the ruler in figure 15.2 has a rectangular cross-section. When a compressive force is applied to the ruler, it will buckle about the axis with the smaller moment of inertia. The axis of bucking might not be obvious for sections that are not symmetric. During buckling analysis, it’s essential to evaluate both directions to determine the axis with the lowest moment of inertia. Subsequently, this axis is utilized for computing the critical buckling load. Figure 15.6 illustrates column buckling of wood supports.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/CH15s PNGs/figure 15.6.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-<figcaption>Figure 15.6: Buckling of wooden studs.</figcaption>
+<p>Columns that are pinned at both ends and have circular or square cross sections (where the moments of inertia are the same about any axis) could buckle in any direction. However, columns that do not have a symmetric cross-section will take place in the plane perpendicular to the principal axis of the minimum moment of inertia. For example, the ruler in <a href="#fig-15.2" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-15.2</span></a> has a rectangular cross-section. When a compressive force is applied to the ruler, it will buckle about the axis with the smaller moment of inertia. The axis of bucking might not be obvious for sections that are not symmetric. During buckling analysis, it’s essential to evaluate both directions to determine the axis with the lowest moment of inertia. Subsequently, this axis is utilized for computing the critical buckling load. <a href="#fig-15.6" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-15.6</span></a> illustrates column buckling of wood supports.</p>
+<div id="fig-15.6" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-15.6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/CH15s PNGs/figure 15.6.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-15.6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15.6: Buckling of wooden studs.
+</figcaption>
 </figure>
 </div>
 </section>
@@ -501,13 +531,18 @@ y=C_1 \sin \left(\sqrt{\frac{P}{E I}} x\right)+C_2 \cos \left(\sqrt{\frac{P}{E I
 <em>L = Unsupported length of the column (pinned=pinned connection) [m, in.]</em></div>
 <p><em>r = Smallest radius of gyration of the column [m, in.]</em></p>
 <p>The quantity in the denominator, L/r, is called the slenderness ratio of the column. Many times columns are classified using the slenderness ratio as short, intermediate, and long. The smallest value of the radius of gyration is used to find the critical stress.</p>
-<p>A plot of the critical stress versus the slenderness ratio is shown in figure 15.7. For larger slenderness ratios the curve is hyperbolic. For smaller slenderness ratios, the critical stress is equal to the yield stress of the material. This graph illustrates that if the critical stress calculated using Euler’s equation is greater than the yield stress that is of no interest. The column will yield before it has the chance to buckle.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/CH15s PNGs/figure 15.7.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-<figcaption>Figure 15.7: Plot of critical stress.</figcaption>
+<p>A plot of the critical stress versus the slenderness ratio is shown in <a href="#fig-15.7" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-15.7</span></a>. For larger slenderness ratios the curve is hyperbolic. For smaller slenderness ratios, the critical stress is equal to the yield stress of the material. This graph illustrates that if the critical stress calculated using Euler’s equation is greater than the yield stress that is of no interest. The column will yield before it has the chance to buckle.</p>
+<div id="fig-15.7" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-15.7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/CH15s PNGs/figure 15.7.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-15.7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15.7: Plot of critical stress.
+</figcaption>
 </figure>
 </div>
+<p><a href="#exm-15.1" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-15.1</span></a> demonstrates calculation of the critical buckling load and critical buckling stress.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -520,6 +555,10 @@ Example 15.1
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
+<div id="exm-15.1" class="theorem example">
+<p><span class="theorem-title"><strong>Example 15.1</strong></span> &nbsp;</p>
+<p>
+</p>
 <p>A pinned-pinned W10x30 column is 8 ft long made of A492 steel (σ<sub>y</sub> = 50 ksi and E = 29,000 ksi) What is the largest load axial load that this column can support?</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -538,7 +577,7 @@ Solution
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>We will consult the table in the Appendix to get the section properties of a W10x30 section.</p>
+<p>We will consult the table in <a href="#sec-geometric-properties-of-standard-beams" class="quarto-xref"><span class="quarto-unresolved-ref">sec-geometric-properties-of-standard-beams</span></a> to get the section properties of a W10x30 section.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/CH15s PNGs/example 15.1 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="303"></p>
@@ -578,6 +617,7 @@ Solution
 </div>
 </div>
 </div>
+</div>
 <div class="callout callout-style-default callout-warning no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -606,11 +646,15 @@ Step-by-step: Buckling of pin-supported columns
 Click to expand
 </summary>
 <p>We derived Euler’s equation for bucking with pinned-pinned supports (the simplest case). However, in many cases, columns are supported by other end conditions. Just as we derived Euler’s formula for bucking by solving a differential equation for the pinned-pinned conditions, the same can be done for other types of support cases. We will derive one more here.</p>
-<p>Let’s consider the case where a column is fixed at one end and free at the other end as shown in Figure 15.8a. Summing moments at the cut end of the free body diagram in Figure 15.9 we get M=P(δ-y).</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/CH15s PNGs/figure 15.8.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="398"></p>
-<figcaption>Figure 15.8: Column with a fixed base and a free end.</figcaption>
+<p>Let’s consider the case where a column is fixed at one end and free at the other end as shown in <a href="#fig-15.8" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-15.8</span></a> (A). Summing moments at the cut end of the free body diagram in <a href="#fig-15.8" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-15.8</span></a> (B) we get M=P(δ-y).</p>
+<div id="fig-15.8" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-15.8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/CH15s PNGs/figure 15.8.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="398">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-15.8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15.8: Column with a fixed base and a free end.
+</figcaption>
 </figure>
 </div>
 <p>We can now write the differential equation using the elastic curve equation:</p>
@@ -647,7 +691,7 @@ P_{c r}=\frac{\pi^2 E I}{(2 L)^2}
 <p>Other support conditions can be derived in a similar manner.</p>
 <section id="effective-length" class="level3" data-number="15.2.1">
 <h3 data-number="15.2.1" class="anchored" data-anchor-id="effective-length"><span class="header-section-number">15.2.1</span> Effective Length</h3>
-<p>The critical load equation for the fixed-free column differs from the equation for the pinned-pinned column only by the length L being multiplied by a factor of 2. We will adjust the column length L to denote the distance between the points on the column where the moment is zero. This distance is referred to as the <strong><em>effective length</em></strong>, L<sub>e</sub>. For a pinned-pinned column, L = L<sub>e</sub>, as illustrated in figure 15.9. As derived above, for a column with a fixed base and a free end, L<sub>e</sub> = 2L. Two other common end conditions are depicted in this figure relating L to L<sub>e</sub>. We can use one general equation for any support condition by replacing the effective length with KL, where K represents the effective length factor.</p>
+<p>The critical load equation for the fixed-free column differs from the equation for the pinned-pinned column only by the length L being multiplied by a factor of 2. We will adjust the column length L to denote the distance between the points on the column where the moment is zero. This distance is referred to as the <strong><em>effective length</em></strong>, L<sub>e</sub>. For a pinned-pinned column, L = L<sub>e</sub>, as illustrated in <a href="#fig-15.9" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-15.9</span></a>. As derived above, for a column with a fixed base and a free end, L<sub>e</sub> = 2L. Two other common end conditions are depicted in this figure relating L to L<sub>e</sub>. We can use one general equation for any support condition by replacing the effective length with KL, where K represents the effective length factor.</p>
 <p><span id="eq-15.3"><span class="math display">\[
 \boxed{P_{c r}=\frac{\pi^2 E I}{(K L)^2}}
 \tag{15.3}\]</span></span></p>
@@ -655,13 +699,18 @@ P_{c r}=\frac{\pi^2 E I}{(2 L)^2}
 <p><span id="eq-15.4"><span class="math display">\[
 \boxed{\sigma_{c r}=\frac{\pi^2 E}{\left(\frac{K L}{r}\right)^2}}
 \tag{15.4}\]</span></span></p>
-<p>You can find the effective length factor, K, below each of the end conditions in figure 15.9.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/CH15s PNGs/figure 15.9.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-<figcaption>Figure 15.9: Effective length of columns for varying end conditions.</figcaption>
+<p>You can find the effective length factor, K, below each of the end conditions in <a href="#fig-15.9" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-15.9</span></a>.</p>
+<div id="fig-15.9" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-15.9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/CH15s PNGs/figure 15.9.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-15.9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15.9: Effective length of columns for various end conditions.
+</figcaption>
 </figure>
 </div>
+<p><a href="#exm-15.2" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-15.2</span></a> and <a href="#exm-15.3" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-15.3</span></a> demonstrate how to calculate the critical buckling load in columns with various different supports.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -674,7 +723,11 @@ Example 15.2
 </div>
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Redo example 15.1 with a fixed-fixed column.</p>
+<div id="exm-15.2" class="theorem example">
+<p><span class="theorem-title"><strong>Example 15.2</strong></span> &nbsp;</p>
+<p>
+</p>
+<p>Redo <a href="#exm-15.1" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-15.1</span></a> with a fixed-fixed column.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -687,7 +740,7 @@ Solution
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>We will consult the table in the Appendix to get the section properties of a W10x30 section.</p>
+<p>We will consult the table in <a href="#sec-geometric-properties-of-standard-beams" class="quarto-xref"><span class="quarto-unresolved-ref">sec-geometric-properties-of-standard-beams</span></a> to get the section properties of a W10x30 section.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/CH15s PNGs/example 15.2 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="162"></p>
@@ -726,18 +779,23 @@ Solution
 </div>
 </div>
 </div>
+</div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example 15.3: Braced column
+Example 15.3
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
+<div id="exm-15.3" class="theorem example">
+<p><span class="theorem-title"><strong>Example 15.3</strong></span> &nbsp;</p>
+<p>
+</p>
 <p>A W12x50 column carries a load of 650 kips. If the column is 25 feet long, has fixed-pinned end conditions, is braced at the midpoint in the weak direction, and is made from A492 steel (σ<sub>y</sub> = 50 ksi and E = 29,000 ksi), is it adequate?</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
@@ -770,7 +828,7 @@ Solution
 <p><img src="images/CH15s PNGs/example 15.3 copy.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="305"></p>
 </figure>
 </div>
-<p>We will consult the table in the Appendix to get the section properties of a W12x50 section. We will start with calculating the critical load using Euler’s Bucking Formula. The brace at the midpoint of the column changes the length of the column in the weak direction. This doesn’t make it obvious which axis the column will buckle about so we will need to check both the strong and weak directions.</p>
+<p>We will consult the table in <a href="#sec-geometric-properties-of-standard-beams" class="quarto-xref"><span class="quarto-unresolved-ref">sec-geometric-properties-of-standard-beams</span></a> to get the section properties of a W12x50 section. We will start with calculating the critical load using Euler’s Bucking Formula. The brace at the midpoint of the column changes the length of the column in the weak direction. This doesn’t make it obvious which axis the column will buckle about so we will need to check both the strong and weak directions.</p>
 <p><strong>Strong axis</strong></p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -806,6 +864,7 @@ Solution
 \end{aligned}
 \]</span></p>
 <p>Notice how much lower this was than the braced condition. If the column was not braced it would not be adequate for the applied load.</p>
+</div>
 </div>
 </div>
 </div>

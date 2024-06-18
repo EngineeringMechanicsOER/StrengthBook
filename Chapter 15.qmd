@@ -19,11 +19,11 @@ editor: visual
 
 <summary>Click to expand</summary>
 
-Until now, our focus has been primarily on meeting strength and deflection criteria. While these aspects are crucial, it's equally important to ensure the structure's stability. In this chapter, we will delve into the stability analysis of long and slender members subjected to compressive loading, commonly referred to as columns. Some examples are shown in Figure 15.1. When the compressive load reaches a critical point, columns may undergo sudden sideways deflection, a phenomenon known as buckling.  After buckling, a column is unable to support any further load. This chapter will focus on long, slender, homogeneous, axial compression members, otherwise known as columns.
+Until now, our focus has been primarily on meeting strength and deflection criteria. While these aspects are crucial, it's equally important to ensure the structure's stability. In this chapter, we will delve into the stability analysis of long and slender members subjected to compressive loading, commonly referred to as columns. Some examples are shown in @fig-15.1. When the compressive load reaches a critical point, columns may undergo sudden sideways deflection, a phenomenon known as buckling.  After buckling, a column is unable to support any further load. This chapter will focus on long, slender, homogeneous, axial compression members, otherwise known as columns.
 
-In Section 15.1 we'll derive the buckling formula for columns that are supported by pin connections at both ends. In Section 15.2 we'll extend this to consider other common end conditions.
+In @sec-15.1 we'll derive the buckling formula for columns that are supported by pin connections at both ends. In @sec-15.2 we'll extend this to consider other common end conditions.
 
-![Figure 15.1: Examples of columns.](images/CH15s%20PNGs/figure%2015.1.png){fig-align="center"}
+![Examples of columns.](images/CH15s%20PNGs/figure%2015.1.png){#fig-15.1 fig-align="center"}
 
 </details>
 
@@ -35,15 +35,15 @@ In Section 15.1 we'll derive the buckling formula for columns that are supported
 
 Even in ideal conditions, buckling often occurs for long slender members at loads significantly lower than the material’s crushing or compression limit. When a long slender object is subjected to axial loading, it may buckle once the load reaches a critical threshold known as the critical load, P~cr~. At this point, the object experiences significant lateral deflection perpendicular to the load direction, so columns should be designed such that the applied load does not exceed the critical load.
 
-Buckling of a ruler (long slender member) is depicted in Figure 15.2. The ruler in the left and center photos is subjected to axial load P that is less than the critical load, P~cr~. This is known as stable equilibrium. In the photo on the right, the axial load, P, exceeded the critical load P~cr~, causing a significant lateral deflection. This is known as unstable equilibrium.
+Buckling of a ruler (long slender member) is depicted in @fig-15.2. The ruler in the left and center photos is subjected to axial load P that is less than the critical load, P~cr~. This is known as stable equilibrium. In the photo on the right, the axial load, P, exceeded the critical load P~cr~, causing a significant lateral deflection. This is known as unstable equilibrium.
 
-![Figure 15.2: Buckling of a ruler.](images/CH15s%20PNGs/figure%2015.2.png){fig-align="center"}
+![Buckling of a ruler.](images/CH15s%20PNGs/figure%2015.2.png){#fig-15.2 fig-align="center"}
 
 ### Stability
 
-We can consider stability by using a simplified model of a pinned-pinned column. This column will consist of two ridged bars connected with a pin and a spring with a stiffness k, as shown in Figure 15.3a. When the load, P, is small, the system remains vertical, and the spring is unstretched. If point C is displaced to the right a small amount, Δ, the spring will produce a force F = kΔ, as shown in Figure 15.3b. This force is used to resist the horizontal forces, P~x~ = Ptanθ, as shown in figure 15.3c.
+We can consider stability by using a simplified model of a pinned-pinned column. This column will consist of two ridged bars connected with a pin and a spring with a stiffness k, as shown in @fig-15.3 (A). When the load, P, is small, the system remains vertical, and the spring is unstretched. If point C is displaced to the right a small amount, Δ, the spring will produce a force F = kΔ, as shown in @fig-15.3 (B). This force is used to resist the horizontal forces, P~x~ = Ptanθ, as shown in @fig-15.3 (C).
 
-![Figure 15.3: Free body diagram of a simplified column](images/CH15s%20PNGs/figure%2015.3.png){fig-align="center"}
+![Free body diagram of a simplified column](images/CH15s%20PNGs/figure%2015.3.png){#fig-15.3 fig-align="center"}
 
 Since θ is small:
 
@@ -94,9 +94,9 @@ Thus, if the load P exceeds P~cr~, then the system will be unstable, and if P is
 
 ### Euler’s Formula
 
-As mentioned in earlier sections, members can fail due to material yielding or fracturing. However, instability represents another critical failure mechanism that requires consideration. We will use Euler’s formula to calculate the theoretical buckling load. To do this, we will start with the simplest of columns, pinned-pinned end connections. This means that the column cannot translate but can rotate as shown in Figure 15.4.
+As mentioned in earlier sections, members can fail due to material yielding or fracturing. However, instability represents another critical failure mechanism that requires consideration. We will use Euler’s formula to calculate the theoretical buckling load. To do this, we will start with the simplest of columns, pinned-pinned end connections. This means that the column cannot translate but can rotate as shown in @fig-15.4.
 
-![Figure 15.4: Pinned-pinned axially loaded column.](images/CH15s%20PNGs/figure%2015.4.png){fig-align="center"}
+![Pinned-pinned axially loaded column.](images/CH15s%20PNGs/figure%2015.4.png){#fig-15.4 fig-align="center"}
 
 Columns are similar to beams rotated 90 degrees, so we can use what we already know about the elastic curve.
 
@@ -104,7 +104,7 @@ $$
 \frac{d^2 y}{d x^2}=\frac{M}{E I}
 $$
 
-We can use the free-body diagram in figure 15.4c to sum moments about any point on the lower column section.
+We can use the free-body diagram in @fig-15.4 (C) to sum moments about any point on the lower column section.
 
 $$
 \begin{aligned}
@@ -166,15 +166,15 @@ $$ {#eq-15.1}
 
 *L = Unsupported length of the column  (pinned=pinned connection) \[m, in.\]*
 
-This is named after the Swiss mathematician [Leonhard Euler](https://en.wikipedia.org/wiki/Leonhard_Euler) who developed this formula in 1744. Other bucking modes can exist (n = 2, n = 3, n = 4, etc.) but are less common as the load required for those higher modes would be much larger. The first three bucking loads can be seen in Figure 15.5.
+This is named after the Swiss mathematician [Leonhard Euler](https://en.wikipedia.org/wiki/Leonhard_Euler) who developed this formula in 1744. Other bucking modes can exist (n = 2, n = 3, n = 4, etc.) but are less common as the load required for those higher modes would be much larger. The first three bucking loads can be seen in @fig-15.5.
 
-![Figure 15.5: First three buckling modes](images/CH15s%20PNGs/figure%2015.5.png){fig-align="center"}
+![First three buckling modes](images/CH15s%20PNGs/figure%2015.5.png){#fig-15.5 fig-align="center"}
 
 ### Bucking Direction
 
-Columns that are pinned at both ends and have circular or square cross sections (where the moments of inertia are the same about any axis) could buckle in any direction. However, columns that do not have a symmetric cross-section will take place in the plane perpendicular to the principal axis of the minimum moment of inertia. For example, the ruler in figure 15.2 has a rectangular cross-section. When a compressive force is applied to the ruler, it will buckle about the axis with the smaller moment of inertia. The axis of bucking might not be obvious for sections that are not symmetric. During buckling analysis, it's essential to evaluate both directions to determine the axis with the lowest moment of inertia. Subsequently, this axis is utilized for computing the critical buckling load. Figure 15.6 illustrates column buckling of wood supports.
+Columns that are pinned at both ends and have circular or square cross sections (where the moments of inertia are the same about any axis) could buckle in any direction. However, columns that do not have a symmetric cross-section will take place in the plane perpendicular to the principal axis of the minimum moment of inertia. For example, the ruler in @fig-15.2 has a rectangular cross-section. When a compressive force is applied to the ruler, it will buckle about the axis with the smaller moment of inertia. The axis of bucking might not be obvious for sections that are not symmetric. During buckling analysis, it's essential to evaluate both directions to determine the axis with the lowest moment of inertia. Subsequently, this axis is utilized for computing the critical buckling load. @fig-15.6 illustrates column buckling of wood supports.
 
-![Figure 15.6: Buckling of wooden studs.](images/CH15s%20PNGs/figure%2015.6.jpg){fig-align="center"}
+![Buckling of wooden studs.](images/CH15s%20PNGs/figure%2015.6.jpg){#fig-15.6 fig-align="center"}
 
 ### Critical Stress
 
@@ -199,12 +199,19 @@ $$ {#eq-15.2}
 
 The quantity in the denominator, L/r, is called the slenderness ratio of the column. Many times columns are classified using the slenderness ratio as short, intermediate, and long. The smallest value of the radius of gyration is used to find the critical stress.
 
-A plot of the critical stress versus the slenderness ratio is shown in figure 15.7. For larger slenderness ratios the curve is hyperbolic. For smaller slenderness ratios, the critical stress is equal to the yield stress of the material. This graph illustrates that if the critical stress calculated using Euler’s equation is greater than the yield stress that is of no interest. The column will yield before it has the chance to buckle.
+A plot of the critical stress versus the slenderness ratio is shown in @fig-15.7. For larger slenderness ratios the curve is hyperbolic. For smaller slenderness ratios, the critical stress is equal to the yield stress of the material. This graph illustrates that if the critical stress calculated using Euler’s equation is greater than the yield stress that is of no interest. The column will yield before it has the chance to buckle.
 
-![Figure 15.7: Plot of critical stress.](images/CH15s%20PNGs/figure%2015.7.png){fig-align="center"}
+![Plot of critical stress.](images/CH15s%20PNGs/figure%2015.7.png){#fig-15.7 fig-align="center"}
+
+@exm-15.1 demonstrates calculation of the critical buckling load and critical buckling stress.
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Example 15.1
+
+::: {#exm-15.1}
+<p>
+
+</p>
 
 A pinned-pinned W10x30 column is 8 ft long made of A492 steel (σ~y~ = 50 ksi and E = 29,000 ksi) What is the largest load axial load that this column can support?
 
@@ -213,7 +220,7 @@ A pinned-pinned W10x30 column is 8 ft long made of A492 steel (σ~y~ = 50 ksi an
 ::: {.callout-tip collapse="true" icon="false"}
 ## Solution
 
-We will consult the table in the Appendix to get the section properties of a W10x30 section.
+We will consult the table in @sec-geometric-properties-of-standard-beams to get the section properties of a W10x30 section.
 
 ![](images/CH15s%20PNGs/example%2015.1%20part%202.png){fig-align="center" width="303"}
 
@@ -253,6 +260,7 @@ $$
 $$
 :::
 :::
+:::
 
 ::: {.callout-warning icon="false"}
 ## Step-by-step: Buckling of pin-supported columns
@@ -276,9 +284,9 @@ $$
 
 We derived Euler’s equation for bucking with pinned-pinned supports (the simplest case). However, in many cases, columns are supported by other end conditions. Just as we derived Euler’s formula for bucking by solving a differential equation for the pinned-pinned conditions, the same can be done for other types of support cases. We will derive one more here.
 
-Let’s consider the case where a column is fixed at one end and free at the other end as shown in Figure 15.8a. Summing moments at the cut end of the free body diagram in Figure 15.9 we get M=P(δ-y).
+Let’s consider the case where a column is fixed at one end and free at the other end as shown in @fig-15.8 (A). Summing moments at the cut end of the free body diagram in @fig-15.8 (B) we get M=P(δ-y).
 
-![Figure 15.8: Column with a fixed base and a free end.](images/CH15s%20PNGs/figure%2015.8.png){fig-align="center" width="398"}
+![Column with a fixed base and a free end.](images/CH15s%20PNGs/figure%2015.8.png){#fig-15.8 fig-align="center" width="398"}
 
 We can now write the differential equation using the elastic curve equation:
 
@@ -327,7 +335,7 @@ Other support conditions can be derived in a similar manner.
 
 ### Effective Length
 
-The critical load equation for the fixed-free column differs from the equation for the pinned-pinned column only by the length L being multiplied by a factor of 2. We will adjust the column length L to denote the distance between the points on the column where the moment is zero. This distance is referred to as the ***effective length***, L~e~. For a pinned-pinned column, L = L~e~, as illustrated in figure 15.9. As derived above, for a column with a fixed base and a free end, L~e~ = 2L. Two other common end conditions are depicted in this figure relating L to L~e~. We can use one general equation for any support condition by replacing the effective length with KL, where K represents the effective length factor.
+The critical load equation for the fixed-free column differs from the equation for the pinned-pinned column only by the length L being multiplied by a factor of 2. We will adjust the column length L to denote the distance between the points on the column where the moment is zero. This distance is referred to as the ***effective length***, L~e~. For a pinned-pinned column, L = L~e~, as illustrated in @fig-15.9. As derived above, for a column with a fixed base and a free end, L~e~ = 2L. Two other common end conditions are depicted in this figure relating L to L~e~. We can use one general equation for any support condition by replacing the effective length with KL, where K represents the effective length factor.
 
 $$
 \boxed{P_{c r}=\frac{\pi^2 E I}{(K L)^2}}
@@ -339,19 +347,26 @@ $$
 \boxed{\sigma_{c r}=\frac{\pi^2 E}{\left(\frac{K L}{r}\right)^2}}
 $$ {#eq-15.4}
 
-You can find the effective length factor, K, below each of the end conditions in figure 15.9.
+You can find the effective length factor, K, below each of the end conditions in @fig-15.9.
 
-![Figure 15.9: Effective length of columns for varying end conditions.](images/CH15s%20PNGs/figure%2015.9.png){fig-align="center"}
+![Effective length of columns for various end conditions.](images/CH15s%20PNGs/figure%2015.9.png){#fig-15.9 fig-align="center"}
+
+@exm-15.2 and @exm-15.3 demonstrate how to calculate the critical buckling load in columns with various different supports.
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Example 15.2
 
-Redo example 15.1 with a fixed-fixed column.
+::: {#exm-15.2}
+<p>
+
+</p>
+
+Redo @exm-15.1 with a fixed-fixed column.
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Solution
 
-We will consult the table in the Appendix to get the section properties of a W10x30 section.
+We will consult the table in @sec-geometric-properties-of-standard-beams to get the section properties of a W10x30 section.
 
 ![](images/CH15s%20PNGs/example%2015.2%20part%201.png){fig-align="center" width="162"}
 
@@ -386,9 +401,15 @@ $$
 Since this stress is smaller than the yield stress of the steel (σ~y~ = 50 ksi) the column will buckle first at a critical load of 129.7 kips.
 :::
 :::
+:::
 
 ::: {.callout-tip collapse="true" icon="false"}
-## Example 15.3: Braced column
+## Example 15.3
+
+::: {#exm-15.3}
+<p>
+
+</p>
 
 A W12x50 column carries a load of 650 kips. If the column is 25 feet long, has fixed-pinned end conditions, is braced at the midpoint in the weak direction, and is made from A492 steel (σ~y~ = 50 ksi and E = 29,000 ksi), is it adequate?
 
@@ -409,7 +430,7 @@ $$
 
 ![](images/CH15s%20PNGs/example%2015.3%20copy.png){fig-align="center" width="305"}
 
-We will consult the table in the Appendix to get the section properties of a W12x50 section. We will start with calculating the critical load using Euler’s Bucking Formula. The brace at the midpoint of the column changes the length of the column in the weak direction. This doesn’t make it obvious which axis the column will buckle about so we will need to check both the strong and weak directions.
+We will consult the table in @sec-geometric-properties-of-standard-beams to get the section properties of a W12x50 section. We will start with calculating the critical load using Euler’s Bucking Formula. The brace at the midpoint of the column changes the length of the column in the weak direction. This doesn’t make it obvious which axis the column will buckle about so we will need to check both the strong and weak directions.
 
 **Strong axis**
 
@@ -459,6 +480,7 @@ $$
 $$
 
 Notice how much lower this was than the braced condition. If the column was not braced it would not be adequate for the applied load.
+:::
 :::
 :::
 

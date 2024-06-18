@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Mechanics of Deformable Bodies - 2&nbsp; Stress</title>
+<title>Strength of Materials - 2&nbsp; Stress</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -128,7 +128,7 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Mechanics of Deformable Bodies</a> 
+      <a href="./">Strength of Materials</a> 
         <div class="sidebar-tools-main">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
@@ -270,6 +270,12 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Units and Order of Magnitude</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Appendix E.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Centroids and Area Moment of Inertia for Common Shapes</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -338,7 +344,7 @@ Learning Objectives
 Click to expand
 </summary>
 <p>Having reviewed static equilibrium in <a href="#sec-statics" class="quarto-xref"><span class="quarto-unresolved-ref">sec-statics</span></a>, we now know how to find the internal loads in a body using equilibrium. When determining whether a body can resist the loads applied to it, the internal load is only part of the solution. The dimensions of the body and the inherent properties of the material it is made from are also important.</p>
-<p>In this chapter we’ll explore the concept of stress, which can help us determine whether an object will physically break when subjected to a load. We’ll cover average normal stress (stress perpendicular to the cross-section) in Section 2.1 and average shear stress (stress parallel to the cross-section) in Section 2.2. We’ll then discuss bearing stress (the stress between two bodies in contact with each other) in Section 2.3 and finish with the average normal and shear stresses on an inclined cross-section in Section 2.4.</p>
+<p>In this chapter we’ll explore the concept of stress, which can help us determine whether an object will physically break when subjected to a load. We’ll cover average normal stress (stress perpendicular to the cross-section) in <a href="#sec-2.1" class="quarto-xref"><span class="quarto-unresolved-ref">sec-2.1</span></a> and average shear stress (stress parallel to the cross-section) in <a href="#sec-2.2" class="quarto-xref"><span class="quarto-unresolved-ref">sec-2.2</span></a>. We’ll then discuss bearing stress (the stress between two bodies in contact with each other) in <a href="#sec-2.3" class="quarto-xref"><span class="quarto-unresolved-ref">sec-2.3</span></a> and finish with the average normal and shear stresses on an inclined cross-section in <a href="#sec-2.4" class="quarto-xref"><span class="quarto-unresolved-ref">sec-2.4</span></a>.</p>
 </details>
 </section>
 <section id="sec-2.1" class="level2" data-number="2.1">
@@ -354,23 +360,31 @@ Click to expand
 \tag{2.1}\]</span></span></p>
 <div class="line-block"><em>where</em><br>
 <em>𝜎 = Average normal stress [Pa, psi]</em><br>
-<em>N = Internal normal force [N, lb]</em></div>
-<p><em>A = Cross-sectional area [m<sup>2</sup>, in.<sup>2</sup>]</em></p>
+<em>N = Internal normal force [N, lb]</em><br>
+<em>A = Cross-sectional area [m<sup>2</sup>, in.<sup>2</sup>]</em></div>
 <p>As such the SI units of stress are N/m<sup>2</sup>, more commonly referred to as the Pascal (Pa) where 1 Pa = 1 N/m<sup>2</sup>. The US customary units for stress are lb/in<sup>2</sup>, commonly written as psi. Since stresses can get very large, it is common to use prefixes such as kilo (k) and mega (M) to represent 10<sup>3</sup> and 10<sup>6</sup> respectively. A stress of 15,000,000 Pa is written as 15 MPa. A stress of 35,000 psi is written as 35 ksi.</p>
-<p>Normal stress occurs perpendicular to the cross-section and so is associated with either a pulling or pushing motion (Figure 2.1). Normal forces that pull on a cross-section are known as tensile forces and create a tensile normal stress. Normal forces that push on a cross-section are known as compressive forces and create a compressive normal stress. The normal stress calculated above is really an average normal stress as the force is distributed over the cross-section, but we generally simplify this to a concentrated force that creates the same normal stress at every point on the cross-section (Figure 2.2).</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/CH2 figures/2.1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-<figcaption>Figure 2.1: Forces pulling on a cross-section cause tension, while forces pushing on a cross-section cause compression. Both are very common. Left: A crane cable during a lift experiences tension. Right: The support columns under a bridge experience compression.</figcaption>
+<p>Normal stress occurs perpendicular to the cross-section and so is associated with either a pulling or pushing motion (<a href="#fig-2.1" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-2.1</span></a>). Normal forces that pull on a cross-section are known as tensile forces and create a tensile normal stress. Normal forces that push on a cross-section are known as compressive forces and create a compressive normal stress. The normal stress calculated above is really an average normal stress as the force is distributed over the cross-section, but we generally simplify this to a concentrated force that creates the same normal stress at every point on the cross-section (<a href="#fig-2.2" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-2.2</span></a>).</p>
+<div id="fig-2.1" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-2.1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/CH2 figures/2.1.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-2.1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.1: Forces pulling on a cross-section cause tension, while forces pushing on a cross-section cause compression. Both are very common. Left: A crane cable during a lift experiences tension. Right: The support columns under a bridge experience compression.
+</figcaption>
 </figure>
 </div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/CH2 figures/2.2.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-<figcaption>Figure 2.2: The internal load is equally distributed over the cross-sectional area, but may be represented as a single concentrated load acting at the center (N in this case). The stress is therefore an average normal stress.</figcaption>
+<div id="fig-2.2" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-2.2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/CH2 figures/2.2.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-2.2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.2: The internal load is equally distributed over the cross-sectional area, but may be represented as a single concentrated load acting at the center (N in this case). The stress is therefore an average normal stress.
+</figcaption>
 </figure>
 </div>
-<p>The internal normal force in a body can be found through the method of equilibrium as reviewed in <a href="#sec-1.2" class="quarto-xref"><span class="quarto-unresolved-ref">sec-1.2</span></a>. See Example 2.1 for a demonstration.</p>
+<p>The internal normal force in a body can be found through the method of equilibrium as reviewed in <a href="#sec-1.2" class="quarto-xref"><span class="quarto-unresolved-ref">sec-1.2</span></a>. See <a href="#exm-2.1" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-2.1</span></a> for a demonstration.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -383,10 +397,14 @@ Example 2.1
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
+<div id="exm-2.1" class="theorem example">
+<p><span class="theorem-title"><strong>Example 2.1</strong></span> &nbsp;</p>
+<p>
+</p>
 <p>The support column will be subjected to a compressive force F = 65 kips.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH2 figures/example 2.1 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="302"></p>
+<p><img src="images/Updated CH2 examples/example 2.1 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="174"></p>
 </figure>
 </div>
 <ol type="1">
@@ -410,7 +428,7 @@ Solution
 </ol>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH2 figures/example 2.1 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="359"></p>
+<p><img src="images/Updated CH2 examples/example 2.1 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="136"></p>
 </figure>
 </div>
 <p><span class="math display">\[
@@ -436,7 +454,8 @@ Solution
 </div>
 </div>
 </div>
-<p>Sometimes the loading or cross-sectional area of the body will change, resulting in a change in stress. In these cases the stress can be calculated separately in each segment of the body by first finding the internal load in each segment and then dividing the internal load by the cross-sectional area of the respective segment. Different parts of the body may experience different stresses. Generally the highest stress is of most importance as that is the stress that typically determines whether the body will break. Because we do not know in advance where the largest stress is, however, it is typically necessary to calculate the stress at each different cross-section in order to determine the highest stress. See Example 2.2 for a demonstration.</p>
+</div>
+<p>Sometimes the loading or cross-sectional area of the body will change, resulting in a change in stress. In these cases the stress can be calculated separately in each segment of the body by first finding the internal load in each segment and then dividing the internal load by the cross-sectional area of the respective segment. Different parts of the body may experience different stresses. Generally the highest stress is of most importance as that is the stress that typically determines whether the body will break. Because we do not know in advance where the largest stress is, however, it is typically necessary to calculate the stress at each different cross-section in order to determine the highest stress. See <a href="#exm-2.2" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-2.2</span></a> for a demonstration.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -449,7 +468,16 @@ Example 2.2
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Two hollow pipes are welded together as shown. Pipe (1) has an outer diameter of 70 mm and an inner diameter of 40 mm while pipe (2) has an outer diameter of 110 mm and an inner diameter of 60 mm. Forces are applied at the end of each pipe and at the weld, where F1 = 40 kN, F2 = 70 kN, and F3 = 30 kN. Determine the average normal stress in each pipe.</p>
+<div id="exm-2.2" class="theorem example">
+<p><span class="theorem-title"><strong>Example 2.2</strong></span> &nbsp;</p>
+<p>
+</p>
+<p>Two hollow pipes are welded together as shown. Pipe (1) has an outer diameter of 70 mm and an inner diameter of 40 mm while pipe (2) has an outer diameter of 110 mm and an inner diameter of 60 mm. Forces are applied at the end of each pipe and at the weld, where F<sub>1</sub> = 40 kN, F<sub>2</sub> = 70 kN, and F<sub>3</sub> = 30 kN. Determine the average normal stress in each pipe.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Updated CH2 examples/example 2.2 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="327"></p>
+</figure>
+</div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -470,6 +498,16 @@ Solution
 \end{aligned}
 \]</span></p>
 <p>The internal loads can be found by cutting a cross-section through each pipe, drawing a free body diagram, and writing an equilibrium equation.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Updated CH2 examples/example 2.2 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="270"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Updated CH2 examples/example 2.2 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="261"></p>
+</figure>
+</div>
 <p><span class="math display">\[
 \begin{aligned}
 &amp;\sum F_x=40{~kN}-N_1=0 \quad \rightarrow \quad N_1=40{~kN} \\
@@ -478,6 +516,11 @@ Solution
 \]</span></p>
 <p>Note that we may choose to draw the internal load in either tension or compression. The answer must be compared to the free body diagram. A positive answer from the equilibrium equation indicates that the direction drawn on the free body diagram was correct. Although both answers here were positive, it can be seen in the free body diagrams that N<sub>1</sub> was drawn in compression and N<sub>2</sub> was drawn in tension. These positive answers indicate that the drawings are correct. N<sub>1</sub> is 40 kN in compression and N<sub>2</sub> is 30 kN in tension.</p>
 <p>Note also that it is acceptable to draw a free body diagram of either side of the cross-section. This will not change the result. Perhaps it would have been easier to draw the right-hand-side of section 2.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Updated CH2 examples/example 2.2 part 4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="236"></p>
+</figure>
+</div>
 <p><span class="math display">\[
 \sum F_x=30{~kN}+N_2=0 \quad \rightarrow \quad N_2=30{~kN}
 \]</span></p>
@@ -489,6 +532,7 @@ Solution
 \sigma_2=\frac{N_2}{A_2}=\frac{30,000{~N}}{0.00668{~m}^2}=4.49{~MPa}
 \end{gathered}
 \]</span></p>
+</div>
 </div>
 </div>
 </div>
@@ -521,11 +565,15 @@ Step-by-step: Average Normal Stress
 <summary>
 Click to expand
 </summary>
-<p>Average shear stress is defined as the internal shear force divided by the cross-sectional area of the body. While normal forces (and therefore normal stresses) occur when a body is under tension or compression, shear forces (and therefore shear stresses) occur when a force is tangentially applied parallel to the cross-section, resulting in a sliding motion (Figure 2.3).</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/CH2 figures/2.3.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-<figcaption>Figure 2.3: (a) External loads F creating (b) an internal normal force (N) perpendicular to the cross-section. (c) External loads F<sub>1</sub>, F<sub>2</sub>, and F<sub>3</sub> creating (d) an internal shear force (V) parallel to the cross-section. Note that for diagram (d) to be in equilibrium there would also need to be an internal bending moment. That has been omitted here for clarity.</figcaption>
+<p>Average shear stress is defined as the internal shear force divided by the cross-sectional area of the body. While normal forces (and therefore normal stresses) occur when a body is under tension or compression, shear forces (and therefore shear stresses) occur when a force is tangentially applied parallel to the cross-section, resulting in a sliding motion (<a href="#fig-2.3" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-2.3</span></a>).</p>
+<div id="fig-2.3" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-2.3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/CH2 figures/2.3.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-2.3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.3: (a) External loads F creating (b) an internal normal force (N) perpendicular to the cross-section. (c) External loads F<sub>1</sub>, F<sub>2</sub>, and F<sub>3</sub> creating (d) an internal shear force (V) parallel to the cross-section. Note that for diagram (d) to be in equilibrium there would also need to be an internal bending moment. That has been omitted here for clarity.
+</figcaption>
 </figure>
 </div>
 <p>Although the basic definition of average normal stress and average shear stress is the same (force divided by area) there are some differences. To quickly differentiate which stress we are talking about, shear stress is denoted by the Greek letter tau (τ).</p>
@@ -536,7 +584,7 @@ Click to expand
 <em>τ = Average shear stress [Pa, psi]</em><br>
 <em>V = Internal shear force [N, lb]</em></div>
 <p><em>A = Cross-sectional area [m<sup>2</sup>, in.<sup>2</sup>]</em></p>
-<p>Like normal force, internal shear force can be found by cutting a cross-section through the body, drawing a free body diagram, and applying equilibrium equations. See Example 2.3 for a demonstration.</p>
+<p>Like normal force, internal shear force can be found by cutting a cross-section through the body, drawing a free body diagram, and applying equilibrium equations. See <a href="#exm-2.3" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-2.3</span></a> for a demonstration.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -549,7 +597,16 @@ Example 2.3
 </div>
 <div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
+<div id="exm-2.3" class="theorem example">
+<p><span class="theorem-title"><strong>Example 2.3</strong></span> &nbsp;</p>
+<p>
+</p>
 <p>A bridge spans a gap of L = 150 ft. The roadway may be considered simply supported and has a rectangular cross-section of base b = 10 in. and height h = 6 in. It is subjected to a uniform distributed load of w = 200 lb/ft. Determine the magnitude of the average shear stress in the cross-section at x = 30 ft and x = 80 ft.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Updated CH2 examples/example 2.3 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="333"></p>
+</figure>
+</div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -566,6 +623,11 @@ Solution
 <p>The reactions at the support can be found by converting the distributed load into a statically equivalent concentrated load. This load will be equal to <span class="math inline">\(F=200{~lb/ft}*150{~ft}=30000{~lb}\)</span> and will be located at the center of the bridge. Since the loading is symmetric, each support will support half of this load, or 15000 lb each.</p>
 <p>The internal shear force can be found by cutting a cross-section through the point of interest, drawing a free body diagram, and applying equilibrium equations. Remember to include the internal loads V and M, and to again convert the distributed load into a statically equivalent concentrated load over this portion of the bridge.</p>
 <p>At x = 30 ft:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Updated CH2 examples/example 2.3 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="328"></p>
+</figure>
+</div>
 <p><span class="math display">\[
 \sum F_y=15,000{~lb}-6,000{~lb}-V=0 \quad \rightarrow \quad V=9,000{~lb}
 \]</span></p>
@@ -575,6 +637,11 @@ Solution
 \tau=\frac{V}{A}=\frac{9,000{~lb}}{60{~in.}^2}=150{~psi}
 \]</span></p>
 <p>At x = 80 ft:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Updated CH2 examples/example 2.3 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="285"></p>
+</figure>
+</div>
 <p><span class="math display">\[
 \sum F_y=15,000{~lb}-16,000{~lb}-V=0 \quad \rightarrow \quad V=-1,000{~lb}
 \]</span></p>
@@ -588,11 +655,16 @@ Solution
 </div>
 </div>
 </div>
-<p>Shear stresses are common in both members of a structure and also in the fasteners between members. Depending on how these connections are formed we may see multiple shear planes. It is very important to correctly identify the internal force in the body. Figure 2.4 demonstrates the difference between single and double shear configurations for a pinned joint and the effects on internal shear force. See Example 2.4 for an example where double shear occurs.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/CH2 figures/2.4.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-<figcaption>Figure 2.4: Pins experiencing (a) single shear and (b) double shear.</figcaption>
+</div>
+<p>Shear stresses are common in both members of a structure and also in the fasteners between members. Depending on how these connections are formed we may see multiple shear planes. It is very important to correctly identify the internal force in the body. <a href="#fig-2.4" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-2.4</span></a> demonstrates the difference between single and double shear configurations for a pinned joint and the effects on internal shear force. See <a href="#exm-2.4" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-2.4</span></a> for an example where double shear occurs.</p>
+<div id="fig-2.4" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-2.4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/CH2 figures/2.4.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-2.4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.4: Pins experiencing (a) single shear and (b) double shear.
+</figcaption>
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -607,7 +679,16 @@ Example 2.4
 </div>
 <div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
+<div id="exm-2.4" class="theorem example">
+<p><span class="theorem-title"><strong>Example 2.4</strong></span> &nbsp;</p>
+<p>
+</p>
 <p>A pin made of a tin alloy with an allowable shear stress of 3 ksi is used to connect a footrest to the frame of a motorcycle. When in motion, the footrest supports a load of 200 lb which is transferred to the pin. Determine the required diameter of the pin such that the stress will not exceed 5 ksi.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/example 2.4 (new).png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="431"></p>
+</figure>
+</div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -623,6 +704,7 @@ Solution
 <p>Average shear stress can be calculated from <span class="math inline">\(\tau=\frac{V}{A}\)</span>. Rearrange this equation to <span class="math inline">\(A=\frac{V}{\tau}\)</span>. Start with a free body diagram of the pin in order to determine the internal shear force.</p>
 <p>From the diagram it should be apparent that the pin is in double shear and the maximum internal shear force in the pin is 100 lb. Thus the required cross-sectional area <span class="math inline">\(A=\frac{100{~lb}}{3000{~psi}}=0.0333{~in.}^2\)</span>.</p>
 <p>Since <span class="math inline">\(A=\frac{\pi}{4} d^2\)</span> the required diameter is <span class="math inline">\(d=\sqrt{\frac{0.0333{~in.}^2 * 4}{\pi}}=0.206{~in}\)</span>.</p>
+</div>
 </div>
 </div>
 </div>
@@ -655,18 +737,26 @@ Step-by-step: Average Shear stress
 <summary>
 Click to expand
 </summary>
-<p>Bearing stress is similar to normal stress, except that it occurs at the contact area between two bodies instead of within a single body. Bearing stress is calculated with the average normal stress equation, where the cross-sectional area is the contact area between the two bodies (Figure 2.5).</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/CH2 figures/2.5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="271"></p>
-<figcaption>Figure 2.5: Circular column sitting upon a rectangular foundation. Contact areas between a circular and rectangular surface, and between two rectangular surfaces are shown.</figcaption>
+<p>Bearing stress is similar to normal stress, except that it occurs at the contact area between two bodies instead of within a single body. Bearing stress is calculated with the average normal stress equation, where the cross-sectional area is the contact area between the two bodies (<a href="#fig-2.5" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-2.5</span></a>).</p>
+<div id="fig-2.5" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-2.5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/CH2 figures/2.5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="271">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-2.5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.5: Circular column sitting upon a rectangular foundation. Contact areas between a circular and rectangular surface, and between two rectangular surfaces are shown.
+</figcaption>
 </figure>
 </div>
-<p>One common situation is contact between two curved edges, such as the bolt in Figure 2.6. In this situation it is common to use the projected contact area between the curved surfaces, which forms a rectangle of base d and height t. This greatly simplifies the calculation, but again represents an average value for the contact or bearing stress.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/CH2 figures/2.6.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="407"></p>
-<figcaption>Figure 2.6: When calculating the bearing stress between curved surfaces, project a rectangle of area A = d*t.</figcaption>
+<p>One common situation is contact between two curved edges, such as the bolt in <a href="#fig-2.6" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-2.6</span></a>. In this situation it is common to use the projected contact area between the curved surfaces, which forms a rectangle of base d and height t. This greatly simplifies the calculation, but again represents an average value for the contact or bearing stress.</p>
+<div id="fig-2.6" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-2.6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/CH2 figures/2.6.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="407">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-2.6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.6: When calculating the bearing stress between curved surfaces, project a rectangle of area A = d*t.
+</figcaption>
 </figure>
 </div>
 <div class="callout callout-style-default callout-warning no-icon callout-titled">
@@ -695,11 +785,15 @@ Step-by-step: Bearing Stress
 <summary>
 Click to expand
 </summary>
-<p>We have so far been cutting cross-sections perpendicular to the external force, or parallel to it. However, there is no rule that says we have to do this. It is perfectly acceptable to cut cross-sections at an angle and there are many situations where it may make sense to do so (Figure 2.7).</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/CH2 figures/2.7.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-<figcaption>Figure 2.7: (a) External loads, F, will create (b) an internal normal force, N, when a cross-section is cut vertically. (c) If the cross-section is cut along an inclined plane the internal force, P, will not be a normal force or shear force. (d) The internal force should be broken into normal (N) and shear (V) components that are perpendicular and parallel to the plane respectively.</figcaption>
+<p>We have so far been cutting cross-sections perpendicular to the external force, or parallel to it. However, there is no rule that says we have to do this. It is perfectly acceptable to cut cross-sections at an angle and there are many situations where it may make sense to do so (<a href="#fig-2.7" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-2.7</span></a>).</p>
+<div id="fig-2.7" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-2.7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/CH2 figures/2.7.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-2.7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.7: (a) External loads, F, will create (b) an internal normal force, N, when a cross-section is cut vertically. (c) If the cross-section is cut along an inclined plane the internal force, P, will not be a normal force or shear force. (d) The internal force should be broken into normal (N) and shear (V) components that are perpendicular and parallel to the plane respectively.
+</figcaption>
 </figure>
 </div>
 <p>In this scenario the internal load must still be equal and opposite to the external load in order to maintain equilibrium but, because we cut the cross-section at an angle, this internal load is neither parallel nor perpendicular to the cross-section. Therefore it is not entirely a normal force or a shear force. However, the internal force may be broken into components that are perpendicular and parallel to the cross-section.</p>
@@ -709,7 +803,7 @@ Click to expand
 &amp; V=P \cos (\theta)
 \end{aligned}
 \]</span></p>
-<p>The area used to calculate the average normal and shear stresses must be the area of the inclined plane (Figure 2.8). By setting up a right-angled triangle it should be apparent that the area of the plane, A<sub>p</sub>, can be found from:</p>
+<p>The area used to calculate the average normal and shear stresses must be the area of the inclined plane (<a href="#fig-2.8" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-2.8</span></a>). By setting up a right-angled triangle it should be apparent that the area of the plane, A<sub>p</sub>, can be found from:</p>
 <p><span class="math display">\[
 A_p=\frac{A}{\sin (\theta)}
 \]</span></p>
@@ -727,13 +821,17 @@ A_p=\frac{A}{\sin (\theta)}
 <em>P = Internal load perpendicular to cross-sectional area A [N, lb]</em></div>
 <p><em>𝜃 = Angle between the inclined plane and the axis perpendicular to cross-sectional area A [°]</em></p>
 <p>Note these equations assume the angle (𝜃) is measured from the axis perpendicular to area A. For a horizontal beam, area A is in the vertical plane so angle θ is measured from the horizontal axis.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/CH2 figures/2.8.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-<figcaption>Figure 2.8: When calculating the stresses on an inclined plane, it is important to use the area of the plane, Ap, rather than the area of the cross-sectional plane, A.</figcaption>
+<div id="fig-2.8" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-2.8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/CH2 figures/2.8.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-2.8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.8: When calculating the stresses on an inclined plane, it is important to use the area of the plane, Ap, rather than the area of the cross-sectional plane, A.
+</figcaption>
 </figure>
 </div>
-<p>Even if the external load remains constant, we can obtain different values for the internal normal and shear forces (and therefore different values for the stresses) by changing the angle at which we cut the cross-section. We’ll explore the implications of this further in <a href="#sec-stress-transformation" class="quarto-xref"><span class="quarto-unresolved-ref">sec-stress-transformation</span></a>. For now, a demonstration of calculating the stresses on an inclined plane is given in Example 2.5.</p>
+<p>Even if the external load remains constant, we can obtain different values for the internal normal and shear forces (and therefore different values for the stresses) by changing the angle at which we cut the cross-section. We’ll explore the implications of this further in <a href="#sec-stress-transformation" class="quarto-xref"><span class="quarto-unresolved-ref">sec-stress-transformation</span></a>. For now, a demonstration of calculating the stresses on an inclined plane is given in <a href="#exm-2.5" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-2.5</span></a>.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -746,6 +844,10 @@ Example 2.5
 </div>
 <div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
+<div id="exm-2.5" class="theorem example">
+<p><span class="theorem-title"><strong>Example 2.5</strong></span> &nbsp;</p>
+<p>
+</p>
 <p>A beam is formed of two structural wooden members that are glued together along an inclined plane at angle θ = 40° and subjected to a tensile force of F = 30 kN. The height of the beam is 50 mm and its thickness is 20 mm. Determine the normal and shear stresses created along the inclined plane.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -790,6 +892,7 @@ A_p=\frac{A}{\sin (\theta)}
 \tau &amp; =\frac{V}{A_p}=\frac{23,000{~N}}{0.00156{~m}^2}=14.8 \times 10^6 \frac{\mathrm{N}}{m^2}=14.8{~MPa}
 \end{aligned}
 \]</span></p>
+</div>
 </div>
 </div>
 </div>

@@ -22,9 +22,9 @@ editor: visual
 
 As we found in previous chapters, geometric cross-section properties are critical to calculating stresses and deformations for members subjected to axial and torsional loads. The same is true for finding stresses and deflections in beams subjected to shear and bending loads. This chapter describes methods for finding section properties necessary to calculate the stress and deflection in beams. Specifically, the centroid and the second moment of area.
 
-You likely were presented with these topics in Statics, so this chapter is designed to be a review. Section 8.1 will review centroids and Section 8.2 will review area moments of inertia (also known as the 2^nd^ moment of area).
+You likely were presented with these topics in Statics, so this chapter is designed to be a review. @sec-8.1 will review centroids and @sec-8.2 will review area moments of inertia (also known as the 2^nd^ moment of area).
 
-![Figure 8.1: Isometric view of concrete barriers used in roadway construction.](images/CH%208%20PNGs/figure%208.1.jpg){fig-align="center" width="314"}
+![Isometric view of concrete barriers used in roadway construction.](images/figure%208.1%20(new).jpeg){#fig-8.1 fig-align="center"}
 
 </details>
 
@@ -52,18 +52,25 @@ $$ {#eq-8.1}
 
 $A_i$ *= Area of each discrete area \[m^2^, in.^2^\]*
 
-We can find centroids of simple shapes easily by utilizing symmetry. When a shape possesses an axis of symmetry, each point on one side of the axis corresponds to another point symmetrically located on the opposite side. The distances between these mirrored points and the line of symmetry will sum to zero because they will be equal in magnitude but opposite in sign. This is true for every point in the shape, so the numerator of @eq-8.1 (the first moment of area) will be zero. Therefore, if a shape features a line of symmetry, its centroid must coincide with this line. In cases where a shape exhibits multiple lines of symmetry, the centroid is located at their intersection, as shown in Figure 8.2.
+We can find centroids of simple shapes easily by utilizing symmetry. When a shape possesses an axis of symmetry, each point on one side of the axis corresponds to another point symmetrically located on the opposite side. The distances between these mirrored points and the line of symmetry will sum to zero because they will be equal in magnitude but opposite in sign. This is true for every point in the shape, so the numerator of @eq-8.1 (the first moment of area) will be zero. Therefore, if a shape features a line of symmetry, its centroid must coincide with this line. In cases where a shape exhibits multiple lines of symmetry, the centroid is located at their intersection, as shown in @fig-8.2.
 
-![Figure 8.2: Centroids lie upon axes of symmetry.](images/CH%208%20PNGs/figure%208.2.png){fig-align="center" width="355"}
+![Centroids lie upon axes of symmetry.](images/CH%208%20PNGs/figure%208.2.png){#fig-8.2 fig-align="center" width="355"}
 
-In this text, we will use common shapes or a composite of common shapes for our cross-sections. Appendix E includes the location of the centroid of some common shapes. Part of Appendix E is reproduced in Figure 8.3. Each row of the table includes a common shape with the centroid marked, and simple formulas for determining the x- and y-coordinates of the centroid and calculating the area of the shape.
+In this text, we will use common shapes or a composite of common shapes for our cross-sections. @sec-centroids-moments-inertia includes the location of the centroid of some common shapes. Part of @sec-centroids-moments-inertia is reproduced in @fig-8.3. Each row of the table includes a common shape with the centroid marked, and simple formulas for determining the x- and y-coordinates of the centroid and calculating the area of the shape.
 
-![Figure 8.3: Reproduction of one of the shapes in Appendix E. Appendix E includes a sketch of the area with the centroid marked, formulas for determining the x- and y-coordinates of the centroid, and a formula for calculating the area of the shape.](images/CH%208%20PNGs/figure%208.3.png){fig-align="center"}
+![Reproduction of one of the shapes in @sec-centroids-moments-inertia. @sec-centroids-moments-inertia includes a sketch of the area with the centroid marked, formulas for determining the x- and y-coordinates of the centroid, and a formula for calculating the area of the shape.](images/CH%208%20PNGs/figure%208.3.png){#fig-8.3 fig-align="center"}
 
-Often, structural sections are combinations of these standard shapes called composite sections. As long as we know the location of the centroid of each shape that comprises the section, we will not need to use integration to find the location of the overall sections’ centroid. We can use @eq-8.1 in conjunction with the table in Appendix E to find the location of the centroid for composite shapes.
+Often, structural sections are combinations of these standard shapes called composite sections. As long as we know the location of the centroid of each shape that comprises the section, we will not need to use integration to find the location of the overall sections’ centroid. We can use @eq-8.1 in conjunction with the table in @sec-centroids-moments-inertia to find the location of the centroid for composite shapes.
+
+@exm-8.1, @exm-8.2, and @exm-8.3 demonstrate the process for determing the centroid coordinates of composite areas.
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Example 8.1
+
+::: {#exm-8.1}
+<p>
+
+</p>
 
 Find the centroid of the shape below.
 
@@ -99,9 +106,15 @@ Finally, to calculate the centroid coordinates, we will utilize @eq-8.1 by summi
 ![](images/CH%208%20PNGs/example%208.1%20part%204.png){fig-align="center" width="350"}
 :::
 :::
+:::
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Example 8.2
+
+::: {#exm-8.2}
+<p>
+
+</p>
 
 Find the centroid of the shape below.
 
@@ -110,7 +123,7 @@ Find the centroid of the shape below.
 ::: {.callout-tip collapse="true" icon="false"}
 ## Solution
 
-For this section, we notice that it is symmetric about the y-axis, similar to the previous example. This means that we will not need to calculate the centroid in the x direction because we know it will be on that y-axis. We only need to find the distance in the y direction, $\bar{Y}$.
+For this section, we notice that it is symmetric about the y-axis, similar to @exm-8.1. This means that we will not need to calculate the centroid in the x direction because we know it will be on that y-axis. We only need to find the distance in the y direction, $\bar{Y}$.
 
 The first thing we need to do is establish a coordinate system whose origin is our reference point, RP. In this example, we chose the bottom of the section along the y-axis so that all of our y distances will be positive.
 
@@ -147,9 +160,15 @@ We found the centroid to be 130.6 mm from the reference point in the y-direction
 ![](images/CH%208%20PNGs/example%208.2%20part%204.png){fig-align="center" width="366"}
 :::
 :::
+:::
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Example 8.3
+
+::: {#exm-8.3}
+<p>
+
+</p>
 
 Find the centroid of the shape below.
 
@@ -198,6 +217,7 @@ We found the centroid to be -3.43 inches in the x-direction from the reference p
 ![](images/CH%208%20PNGs/example%208.3%20part%205.png){fig-align="center" width="507"}
 :::
 :::
+:::
 
 ::: {.callout-warning icon="false"}
 ## Step-by-step: Finding the Centroid of Composite Sections
@@ -219,7 +239,7 @@ To find the location of the centroid of a composite section where the location o
 
 <summary>Click to expand</summary>
 
-Another important geometric property needed to calculate stresses in beams is the Moment of Inertia of the Area (2^nd^ moment of area). Similar to our discussion of centroids, you likely were presented this topic in Statics so this chapter is designed to be a review. By definition, the second moment of area or moment of inertia depicted in Figure 8.4 is defined as:
+Another important geometric property needed to calculate stresses in beams is the Moment of Inertia of the Area (2^nd^ moment of area). Similar to our discussion of centroids, you likely were presented this topic in Statics so this chapter is designed to be a review. By definition, the second moment of area or moment of inertia depicted in @fig-8.4 is defined as:
 
 $$
 \boxed{\begin{aligned}
@@ -229,17 +249,17 @@ $$
 \end{aligned}}
 $$ {#eq-8.2}
 
-![Figure 8.4: Moments of inertia of an area dA.](images/CH%208%20PNGs/figure%208.4.png){fig-align="center" width="439"}
+![Moments of inertia of an area dA.](images/CH%208%20PNGs/figure%208.4.png){#fig-8.4 fig-align="center" width="439"}
 
-In this text, we will use common shapes or a composite of common shapes for our cross-sections. Appendix E includes formulas to calculate the moment of inertia. Part of Appendix E is reproduced in figure 8.5. Each row of the table includes a common shape with the centroid marked, and formulas for determining the moment of inertia of the area about the x-, y-, and z-centroidal axes. Note that these equations are valid only for the axes passing through the centroid of the area and are written as $\overline{I_{x^{\prime}}}$, $\overline{I_{y^{\prime}}}$, and J respectively. The bar notation is used to signify that the moment of inertia is being calculated around the centroidal axes.
+In this text, we will use common shapes or a composite of common shapes for our cross-sections. @sec-centroids-moments-inertia includes formulas to calculate the moment of inertia. Part of @sec-centroids-moments-inertia is reproduced in @fig-8.5. Each row of the table includes a common shape with the centroid marked, and formulas for determining the moment of inertia of the area about the x-, y-, and z-centroidal axes. Note that these equations are valid only for the axes passing through the centroid of the area and are written as $\overline{I_{x^{\prime}}}$, $\overline{I_{y^{\prime}}}$, and J respectively. The bar notation is used to signify that the moment of inertia is being calculated around the centroidal axes.
 
-![Figure 8.5: Reproduction of one of the shapes in Appendix E. Appendix E includes a sketch of the area with the centroid marked, and formulas for determining the moment of inertia of the area about the x-, y-, and z-centroidal axes.](images/CH%208%20PNGs/figure%208.5.png){fig-align="center"}
+![Reproduction of one of the shapes in @sec-centroids-moments-inertia. @sec-centroids-moments-inertia includes a sketch of the area with the centroid marked, and formulas for determining the moment of inertia of the area about the x-, y-, and z-centroidal axes.](images/CH%208%20PNGs/figure%208.5.png){#fig-8.5 fig-align="center"}
 
 As noted previously, structural sections are often combinations of these standard shapes called composite sections. Similar to calculating centroids we will break these composite sections into common shapes and find the moment of inertia of these individual shapes.  When we calculate each individual shape's moment of inertia, we need to ensure that they are all about the same axis. The **parallel axis theorem** provides a method for calculating the moment of inertia of an area about an axis parallel to an axis passing through the centroid, given that the moment of inertia about the latter axis is known.
 
-To establish the parallel axis theorem, we will examine the moment of inertia *I* of an area *A* relative to an axis *x*, as illustrated in Figure 8.6.
+To establish the parallel axis theorem, we will examine the moment of inertia *I* of an area *A* relative to an axis *x*, as illustrated in @fig-8.6.
 
-![Figure 8.6: The moment of inertia of an area A about an axis x can be derived from its moment of inertia about the centroidal axis x' through a computation involving the distance dy between the axes.](images/CH%208%20PNGs/figure%208.6.png){fig-align="center" width="430"}
+![The moment of inertia of an area A about an axis x can be derived from its moment of inertia about the centroidal axis x' through a computation involving the distance dy between the axes.](images/CH%208%20PNGs/figure%208.6.png){#fig-8.6 fig-align="center" width="430"}
 
 The centroid of the area is at C, where the x’-y’ axis is drawn; note that x’ is parallel to x and y’ is parallel to y. The x-y’ axes will be termed the centroidal axes and a distance of dx and dy from the x-y axes, respectively. The distance between the element dA and the x’-axis is denoted as y’. Now we have $y=y^{\prime}+d_y$. Substituting into @eq-8.2, we have:
 
@@ -250,7 +270,7 @@ $$
 \end{aligned}
 $$
 
-The first integral represents the moment of inertia about the centroidal axis x’. The second integral is zero since the centroid is located on the x’ axis (i.e., $\int y^{\prime} d A$ represents the first moment of area about the x’ centroidal axis, which is zero as discussed in section 8.1). The last integral represents the total area, A. So we have:
+The first integral represents the moment of inertia about the centroidal axis x’. The second integral is zero since the centroid is located on the x’ axis (i.e., $\int y^{\prime} d A$ represents the first moment of area about the x’ centroidal axis, which is zero as discussed in @sec-8.1). The last integral represents the total area, A. So we have:
 
 $$
 \boxed{I_x=\overline{I_{x^{\prime}}}+A d_y^2}
@@ -269,10 +289,15 @@ $$ {#eq-8.4}
 
 *d~x~, d~y~ = perpendicular distance between the given axis and the parallel centroidal axis \[m, in.\]*
 
-While the parallel axis theorem can be used to calculate the area moment of inertia around any pair of axes, we will primarily focus on calculating the area moment of inertia around the centroidal axes of a composite area. It is this term which will be used in chapters 9 and 10 when calculating bending stresses and shear stresses.
+While the parallel axis theorem can be used to calculate the area moment of inertia around any pair of axes, we will primarily focus on calculating the area moment of inertia around the centroidal axes of a composite area. It is this term which will be used in @sec-bending-loads and @sec-shear-loads when calculating bending stresses and shear stresses. @exm-8.4, @exm-8.5, and @exm-8.6 demonstrate the use of the parallel axis theorem to find the area moments of inertia for the composite areas from the earlier examples about their centroidal axes.
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Example 8.4
+
+::: {#exm-8.4}
+<p>
+
+</p>
 
 Determine the I~x~ the shaded area with respect to the section’s centroid.
 
@@ -281,7 +306,7 @@ Determine the I~x~ the shaded area with respect to the section’s centroid.
 ::: {.callout-tip collapse="true" icon="false"}
 ## Solution
 
-Since we want to find the moment of inertia in the x direction with respect to the section’s centroid, we first need to calculate the centroid. We did this in Example 8.1, the results are shown below.
+Since we want to find the moment of inertia in the x direction with respect to the section’s centroid, we first need to calculate the centroid. We did this in @exm-8.1, the results are shown below.
 
 ![](images/CH%208%20PNGs/example%208.4%20part%202.png){fig-align="center" width="390"}
 
@@ -310,9 +335,15 @@ The calculation and visualizations for each d~y~ term are shown in the figure be
 ![](images/CH%208%20PNGs/example%208.4%20part%204.png){fig-align="center"}
 :::
 :::
+:::
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Example 8.5
+
+::: {#exm-8.5}
+<p>
+
+</p>
 
 Determine the I~x~ and I~y~ of the shaded area with respect to the shapes centroid.
 
@@ -321,7 +352,7 @@ Determine the I~x~ and I~y~ of the shaded area with respect to the shapes centro
 ::: {.callout-tip collapse="true" icon="false"}
 ## Solution
 
-Since we want to find the moment of inertia in the x and y directions with respect to the section’s centroid, we first need to calculate the centroid. We did this in Example 8.2, the results are shown below.
+Since we want to find the moment of inertia in the x and y directions with respect to the section’s centroid, we first need to calculate the centroid. We did this in @exm-8.2, the results are shown below.
 
 ![](images/CH%208%20PNGs/example%208.5%20part%202.png){fig-align="center" width="358"}
 
@@ -376,9 +407,15 @@ We will do the same process to calculate I~y~.
 Notice that the values for d~x~ are all zero when calculating I~y~. This is because the centroid of each shape coincides with the centroid of the entire section therefore the distance between them is zero.
 :::
 :::
+:::
 
 ::: {.callout-tip collapse="true" icon="false"}
-## Example 8.6: Moment of Inertia
+## Example 8.6
+
+::: {#exm-8.6}
+<p>
+
+</p>
 
 Determine the I~x~ and I~y~ of the shaded area with respect to the shape's centroid.
 
@@ -387,7 +424,7 @@ Determine the I~x~ and I~y~ of the shaded area with respect to the shape's centr
 ::: {.callout-tip collapse="true" icon="false"}
 ## Solution
 
-Since we want to find the moment of inertia in the x and y directions with respect to the section’s centroid, we first need to calculate the centroid. We did this in Example 8.3, the results are shown below.
+Since we want to find the moment of inertia in the x and y directions with respect to the section’s centroid, we first need to calculate the centroid. We did this in @exm-8.3, the results are shown below.
 
 ![](images/CH%208%20PNGs/example%208.6%20part%202.png){fig-align="center" width="450"}
 
@@ -438,6 +475,7 @@ The calculation and visualizations for each d~x~ and d~y~ terms are shown in the
 ![](images/CH%208%20PNGs/example%208.6%20part%204.png){fig-align="center"}
 :::
 :::
+:::
 
 ::: {.callout-warning icon="false"}
 ## Step-by-step: Finding the Moment of Inertia
@@ -468,7 +506,7 @@ Use the following steps to find the moment of inertia of a composite section:
 
 -   The centroid will be located on any axis of symmetry for the section.
 
--   In some cases, the centroid of a shape is not located within the shape itself (as shown in the rightmost section in figure 8.2).
+-   In some cases, the centroid of a shape is not located within the shape itself (as shown in the rightmost section in @fig-8.2).
 
 -   The moment of inertia represents a geometric property of an area and is occasionally termed as the second moment of the area about an axis, as it involves squaring the distance from the axis to each element of the area.
 

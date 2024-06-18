@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Mechanics of Deformable Bodies - 8&nbsp; Geometric Properties</title>
+<title>Strength of Materials - 8&nbsp; Geometric Properties</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -128,7 +128,7 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Mechanics of Deformable Bodies</a> 
+      <a href="./">Strength of Materials</a> 
         <div class="sidebar-tools-main">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
@@ -270,6 +270,12 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Units and Order of Magnitude</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Appendix E.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Centroids and Area Moment of Inertia for Common Shapes</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -336,11 +342,15 @@ Learning Objectives
 Click to expand
 </summary>
 <p>As we found in previous chapters, geometric cross-section properties are critical to calculating stresses and deformations for members subjected to axial and torsional loads. The same is true for finding stresses and deflections in beams subjected to shear and bending loads. This chapter describes methods for finding section properties necessary to calculate the stress and deflection in beams. Specifically, the centroid and the second moment of area.</p>
-<p>You likely were presented with these topics in Statics, so this chapter is designed to be a review. Section 8.1 will review centroids and Section 8.2 will review area moments of inertia (also known as the 2<sup>nd</sup> moment of area).</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/CH 8 PNGs/figure 8.1.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="314"></p>
-<figcaption>Figure 8.1: Isometric view of concrete barriers used in roadway construction.</figcaption>
+<p>You likely were presented with these topics in Statics, so this chapter is designed to be a review. <a href="#sec-8.1" class="quarto-xref"><span class="quarto-unresolved-ref">sec-8.1</span></a> will review centroids and <a href="#sec-8.2" class="quarto-xref"><span class="quarto-unresolved-ref">sec-8.2</span></a> will review area moments of inertia (also known as the 2<sup>nd</sup> moment of area).</p>
+<div id="fig-8.1" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-8.1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/figure 8.1 (new).jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-8.1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.1: Isometric view of concrete barriers used in roadway construction.
+</figcaption>
 </figure>
 </div>
 </details>
@@ -364,21 +374,30 @@ Click to expand
 <span class="math inline">\(\bar{X}, \bar{Y}\)</span> <em>= Centroid coordinates of the overall area [m, in.]</em><br>
 <span class="math inline">\(\bar{x}_i, \bar{y}_i\)</span> <em>= Centroid coordinates of each discrete area [m, in.]</em></div>
 <p><span class="math inline">\(A_i\)</span> <em>= Area of each discrete area [m<sup>2</sup>, in.<sup>2</sup>]</em></p>
-<p>We can find centroids of simple shapes easily by utilizing symmetry. When a shape possesses an axis of symmetry, each point on one side of the axis corresponds to another point symmetrically located on the opposite side. The distances between these mirrored points and the line of symmetry will sum to zero because they will be equal in magnitude but opposite in sign. This is true for every point in the shape, so the numerator of <a href="#eq-8.1" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-8.1</span></a> (the first moment of area) will be zero. Therefore, if a shape features a line of symmetry, its centroid must coincide with this line. In cases where a shape exhibits multiple lines of symmetry, the centroid is located at their intersection, as shown in Figure 8.2.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/CH 8 PNGs/figure 8.2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="355"></p>
-<figcaption>Figure 8.2: Centroids lie upon axes of symmetry.</figcaption>
+<p>We can find centroids of simple shapes easily by utilizing symmetry. When a shape possesses an axis of symmetry, each point on one side of the axis corresponds to another point symmetrically located on the opposite side. The distances between these mirrored points and the line of symmetry will sum to zero because they will be equal in magnitude but opposite in sign. This is true for every point in the shape, so the numerator of <a href="#eq-8.1" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-8.1</span></a> (the first moment of area) will be zero. Therefore, if a shape features a line of symmetry, its centroid must coincide with this line. In cases where a shape exhibits multiple lines of symmetry, the centroid is located at their intersection, as shown in <a href="#fig-8.2" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-8.2</span></a>.</p>
+<div id="fig-8.2" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-8.2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/CH 8 PNGs/figure 8.2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="355">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-8.2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.2: Centroids lie upon axes of symmetry.
+</figcaption>
 </figure>
 </div>
-<p>In this text, we will use common shapes or a composite of common shapes for our cross-sections. Appendix E includes the location of the centroid of some common shapes. Part of Appendix E is reproduced in Figure 8.3. Each row of the table includes a common shape with the centroid marked, and simple formulas for determining the x- and y-coordinates of the centroid and calculating the area of the shape.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/CH 8 PNGs/figure 8.3.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-<figcaption>Figure 8.3: Reproduction of one of the shapes in Appendix E. Appendix E includes a sketch of the area with the centroid marked, formulas for determining the x- and y-coordinates of the centroid, and a formula for calculating the area of the shape.</figcaption>
+<p>In this text, we will use common shapes or a composite of common shapes for our cross-sections. <a href="#sec-centroids-moments-inertia" class="quarto-xref"><span class="quarto-unresolved-ref">sec-centroids-moments-inertia</span></a> includes the location of the centroid of some common shapes. Part of <a href="#sec-centroids-moments-inertia" class="quarto-xref"><span class="quarto-unresolved-ref">sec-centroids-moments-inertia</span></a> is reproduced in <a href="#fig-8.3" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-8.3</span></a>. Each row of the table includes a common shape with the centroid marked, and simple formulas for determining the x- and y-coordinates of the centroid and calculating the area of the shape.</p>
+<div id="fig-8.3" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-8.3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/CH 8 PNGs/figure 8.3.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-8.3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.3: Reproduction of one of the shapes in <a href="#sec-centroids-moments-inertia" class="quarto-xref"><span class="quarto-unresolved-ref">sec-centroids-moments-inertia</span></a>. <a href="#sec-centroids-moments-inertia" class="quarto-xref"><span class="quarto-unresolved-ref">sec-centroids-moments-inertia</span></a> includes a sketch of the area with the centroid marked, formulas for determining the x- and y-coordinates of the centroid, and a formula for calculating the area of the shape.
+</figcaption>
 </figure>
 </div>
-<p>Often, structural sections are combinations of these standard shapes called composite sections. As long as we know the location of the centroid of each shape that comprises the section, we will not need to use integration to find the location of the overall sections’ centroid. We can use <a href="#eq-8.1" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-8.1</span></a> in conjunction with the table in Appendix E to find the location of the centroid for composite shapes.</p>
+<p>Often, structural sections are combinations of these standard shapes called composite sections. As long as we know the location of the centroid of each shape that comprises the section, we will not need to use integration to find the location of the overall sections’ centroid. We can use <a href="#eq-8.1" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-8.1</span></a> in conjunction with the table in <a href="#sec-centroids-moments-inertia" class="quarto-xref"><span class="quarto-unresolved-ref">sec-centroids-moments-inertia</span></a> to find the location of the centroid for composite shapes.</p>
+<p><a href="#exm-8.1" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-8.1</span></a>, <a href="#exm-8.2" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-8.2</span></a>, and <a href="#exm-8.3" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-8.3</span></a> demonstrate the process for determing the centroid coordinates of composite areas.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -391,6 +410,10 @@ Example 8.1
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
+<div id="exm-8.1" class="theorem example">
+<p><span class="theorem-title"><strong>Example 8.1</strong></span> &nbsp;</p>
+<p>
+</p>
 <p>Find the centroid of the shape below.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -468,6 +491,7 @@ Solution
 </div>
 </div>
 </div>
+</div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -480,6 +504,10 @@ Example 8.2
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
+<div id="exm-8.2" class="theorem example">
+<p><span class="theorem-title"><strong>Example 8.2</strong></span> &nbsp;</p>
+<p>
+</p>
 <p>Find the centroid of the shape below.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -498,7 +526,7 @@ Solution
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>For this section, we notice that it is symmetric about the y-axis, similar to the previous example. This means that we will not need to calculate the centroid in the x direction because we know it will be on that y-axis. We only need to find the distance in the y direction, <span class="math inline">\(\bar{Y}\)</span>.</p>
+<p>For this section, we notice that it is symmetric about the y-axis, similar to <a href="#exm-8.1" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-8.1</span></a>. This means that we will not need to calculate the centroid in the x direction because we know it will be on that y-axis. We only need to find the distance in the y direction, <span class="math inline">\(\bar{Y}\)</span>.</p>
 <p>The first thing we need to do is establish a coordinate system whose origin is our reference point, RP. In this example, we chose the bottom of the section along the y-axis so that all of our y distances will be positive.</p>
 <p>We then divide the section into simpler shapes for which we know the centroid’s location. In this case, we chose three rectangles labeled 1, 2, and 3 in the figure.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -571,6 +599,7 @@ Solution
 </div>
 </div>
 </div>
+</div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -583,6 +612,10 @@ Example 8.3
 </div>
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
+<div id="exm-8.3" class="theorem example">
+<p><span class="theorem-title"><strong>Example 8.3</strong></span> &nbsp;</p>
+<p>
+</p>
 <p>Find the centroid of the shape below.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -697,6 +730,7 @@ Solution
 </div>
 </div>
 </div>
+</div>
 <div class="callout callout-style-default callout-warning no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -725,7 +759,7 @@ Step-by-step: Finding the Centroid of Composite Sections
 <summary>
 Click to expand
 </summary>
-<p>Another important geometric property needed to calculate stresses in beams is the Moment of Inertia of the Area (2<sup>nd</sup> moment of area). Similar to our discussion of centroids, you likely were presented this topic in Statics so this chapter is designed to be a review. By definition, the second moment of area or moment of inertia depicted in Figure 8.4 is defined as:</p>
+<p>Another important geometric property needed to calculate stresses in beams is the Moment of Inertia of the Area (2<sup>nd</sup> moment of area). Similar to our discussion of centroids, you likely were presented this topic in Statics so this chapter is designed to be a review. By definition, the second moment of area or moment of inertia depicted in <a href="#fig-8.4" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-8.4</span></a> is defined as:</p>
 <p><span id="eq-8.2"><span class="math display">\[
 \boxed{\begin{aligned}
 &amp;I_x=\int_A y^2 d A \\
@@ -733,25 +767,37 @@ Click to expand
 &amp;I_z=J=\int_A r^2 d A \\
 \end{aligned}}
 \tag{8.2}\]</span></span></p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/CH 8 PNGs/figure 8.4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="439"></p>
-<figcaption>Figure 8.4: Moments of inertia of an area dA.</figcaption>
+<div id="fig-8.4" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-8.4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/CH 8 PNGs/figure 8.4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="439">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-8.4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.4: Moments of inertia of an area dA.
+</figcaption>
 </figure>
 </div>
-<p>In this text, we will use common shapes or a composite of common shapes for our cross-sections. Appendix E includes formulas to calculate the moment of inertia. Part of Appendix E is reproduced in figure 8.5. Each row of the table includes a common shape with the centroid marked, and formulas for determining the moment of inertia of the area about the x-, y-, and z-centroidal axes. Note that these equations are valid only for the axes passing through the centroid of the area and are written as <span class="math inline">\(\overline{I_{x^{\prime}}}\)</span>, <span class="math inline">\(\overline{I_{y^{\prime}}}\)</span>, and J respectively. The bar notation is used to signify that the moment of inertia is being calculated around the centroidal axes.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/CH 8 PNGs/figure 8.5.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-<figcaption>Figure 8.5: Reproduction of one of the shapes in Appendix E. Appendix E includes a sketch of the area with the centroid marked, and formulas for determining the moment of inertia of the area about the x-, y-, and z-centroidal axes.</figcaption>
+<p>In this text, we will use common shapes or a composite of common shapes for our cross-sections. <a href="#sec-centroids-moments-inertia" class="quarto-xref"><span class="quarto-unresolved-ref">sec-centroids-moments-inertia</span></a> includes formulas to calculate the moment of inertia. Part of <a href="#sec-centroids-moments-inertia" class="quarto-xref"><span class="quarto-unresolved-ref">sec-centroids-moments-inertia</span></a> is reproduced in <a href="#fig-8.5" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-8.5</span></a>. Each row of the table includes a common shape with the centroid marked, and formulas for determining the moment of inertia of the area about the x-, y-, and z-centroidal axes. Note that these equations are valid only for the axes passing through the centroid of the area and are written as <span class="math inline">\(\overline{I_{x^{\prime}}}\)</span>, <span class="math inline">\(\overline{I_{y^{\prime}}}\)</span>, and J respectively. The bar notation is used to signify that the moment of inertia is being calculated around the centroidal axes.</p>
+<div id="fig-8.5" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-8.5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/CH 8 PNGs/figure 8.5.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-8.5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.5: Reproduction of one of the shapes in <a href="#sec-centroids-moments-inertia" class="quarto-xref"><span class="quarto-unresolved-ref">sec-centroids-moments-inertia</span></a>. <a href="#sec-centroids-moments-inertia" class="quarto-xref"><span class="quarto-unresolved-ref">sec-centroids-moments-inertia</span></a> includes a sketch of the area with the centroid marked, and formulas for determining the moment of inertia of the area about the x-, y-, and z-centroidal axes.
+</figcaption>
 </figure>
 </div>
 <p>As noted previously, structural sections are often combinations of these standard shapes called composite sections. Similar to calculating centroids we will break these composite sections into common shapes and find the moment of inertia of these individual shapes.&nbsp; When we calculate each individual shape’s moment of inertia, we need to ensure that they are all about the same axis. The <strong>parallel axis theorem</strong> provides a method for calculating the moment of inertia of an area about an axis parallel to an axis passing through the centroid, given that the moment of inertia about the latter axis is known.</p>
-<p>To establish the parallel axis theorem, we will examine the moment of inertia <em>I</em> of an area <em>A</em> relative to an axis <em>x</em>, as illustrated in Figure 8.6.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/CH 8 PNGs/figure 8.6.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="430"></p>
-<figcaption>Figure 8.6: The moment of inertia of an area A about an axis x can be derived from its moment of inertia about the centroidal axis x’ through a computation involving the distance dy between the axes.</figcaption>
+<p>To establish the parallel axis theorem, we will examine the moment of inertia <em>I</em> of an area <em>A</em> relative to an axis <em>x</em>, as illustrated in <a href="#fig-8.6" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-8.6</span></a>.</p>
+<div id="fig-8.6" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-8.6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/CH 8 PNGs/figure 8.6.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="430">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-8.6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.6: The moment of inertia of an area A about an axis x can be derived from its moment of inertia about the centroidal axis x’ through a computation involving the distance dy between the axes.
+</figcaption>
 </figure>
 </div>
 <p>The centroid of the area is at C, where the x’-y’ axis is drawn; note that x’ is parallel to x and y’ is parallel to y. The x-y’ axes will be termed the centroidal axes and a distance of dx and dy from the x-y axes, respectively. The distance between the element dA and the x’-axis is denoted as y’. Now we have <span class="math inline">\(y=y^{\prime}+d_y\)</span>. Substituting into <a href="#eq-8.2" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-8.2</span></a>, we have:</p>
@@ -761,7 +807,7 @@ Click to expand
 &amp; I_x=\int\left(y^{\prime}\right)^2 d A+2 d_y \int y^{\prime} d A+d_y^2 \int d A
 \end{aligned}
 \]</span></p>
-<p>The first integral represents the moment of inertia about the centroidal axis x’. The second integral is zero since the centroid is located on the x’ axis (i.e., <span class="math inline">\(\int y^{\prime} d A\)</span> represents the first moment of area about the x’ centroidal axis, which is zero as discussed in section 8.1). The last integral represents the total area, A. So we have:</p>
+<p>The first integral represents the moment of inertia about the centroidal axis x’. The second integral is zero since the centroid is located on the x’ axis (i.e., <span class="math inline">\(\int y^{\prime} d A\)</span> represents the first moment of area about the x’ centroidal axis, which is zero as discussed in <a href="#sec-8.1" class="quarto-xref"><span class="quarto-unresolved-ref">sec-8.1</span></a>). The last integral represents the total area, A. So we have:</p>
 <p><span id="eq-8.3"><span class="math display">\[
 \boxed{I_x=\overline{I_{x^{\prime}}}+A d_y^2}
 \tag{8.3}\]</span></span></p>
@@ -774,7 +820,7 @@ Click to expand
 <span class="math inline">\(\overline{I_{x^{\prime}}}\)</span> <em>,</em> <span class="math inline">\(\overline{I_{y^{\prime}}}\)</span> <em>= moment of inertia of that area with respect to a parallel axis passing through the centroid of the area [m<sup>4</sup>, in.<sup>4</sup>]</em><br>
 <em>A = area [m<sup>2</sup>, in.<sup>2</sup>]</em></div>
 <p><em>d<sub>x</sub>, d<sub>y</sub> = perpendicular distance between the given axis and the parallel centroidal axis [m, in.]</em></p>
-<p>While the parallel axis theorem can be used to calculate the area moment of inertia around any pair of axes, we will primarily focus on calculating the area moment of inertia around the centroidal axes of a composite area. It is this term which will be used in chapters 9 and 10 when calculating bending stresses and shear stresses.</p>
+<p>While the parallel axis theorem can be used to calculate the area moment of inertia around any pair of axes, we will primarily focus on calculating the area moment of inertia around the centroidal axes of a composite area. It is this term which will be used in <a href="#sec-bending-loads" class="quarto-xref"><span class="quarto-unresolved-ref">sec-bending-loads</span></a> and <a href="#sec-shear-loads" class="quarto-xref"><span class="quarto-unresolved-ref">sec-shear-loads</span></a> when calculating bending stresses and shear stresses. <a href="#exm-8.4" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-8.4</span></a>, <a href="#exm-8.5" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-8.5</span></a>, and <a href="#exm-8.6" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-8.6</span></a> demonstrate the use of the parallel axis theorem to find the area moments of inertia for the composite areas from the earlier examples about their centroidal axes.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -787,6 +833,10 @@ Example 8.4
 </div>
 <div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
+<div id="exm-8.4" class="theorem example">
+<p><span class="theorem-title"><strong>Example 8.4</strong></span> &nbsp;</p>
+<p>
+</p>
 <p>Determine the I<sub>x</sub> the shaded area with respect to the section’s centroid.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -805,7 +855,7 @@ Solution
 </div>
 <div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Since we want to find the moment of inertia in the x direction with respect to the section’s centroid, we first need to calculate the centroid. We did this in Example 8.1, the results are shown below.</p>
+<p>Since we want to find the moment of inertia in the x direction with respect to the section’s centroid, we first need to calculate the centroid. We did this in <a href="#exm-8.1" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-8.1</span></a>, the results are shown below.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/CH 8 PNGs/example 8.4 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="390"></p>
@@ -877,6 +927,7 @@ Solution
 </div>
 </div>
 </div>
+</div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -889,6 +940,10 @@ Example 8.5
 </div>
 <div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
+<div id="exm-8.5" class="theorem example">
+<p><span class="theorem-title"><strong>Example 8.5</strong></span> &nbsp;</p>
+<p>
+</p>
 <p>Determine the I<sub>x</sub> and I<sub>y</sub> of the shaded area with respect to the shapes centroid.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -907,7 +962,7 @@ Solution
 </div>
 <div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Since we want to find the moment of inertia in the x and y directions with respect to the section’s centroid, we first need to calculate the centroid. We did this in Example 8.2, the results are shown below.</p>
+<p>Since we want to find the moment of inertia in the x and y directions with respect to the section’s centroid, we first need to calculate the centroid. We did this in <a href="#exm-8.2" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-8.2</span></a>, the results are shown below.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/CH 8 PNGs/example 8.5 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="358"></p>
@@ -1048,18 +1103,23 @@ Solution
 </div>
 </div>
 </div>
+</div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example 8.6: Moment of Inertia
+Example 8.6
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
+<div id="exm-8.6" class="theorem example">
+<p><span class="theorem-title"><strong>Example 8.6</strong></span> &nbsp;</p>
+<p>
+</p>
 <p>Determine the I<sub>x</sub> and I<sub>y</sub> of the shaded area with respect to the shape’s centroid.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1078,7 +1138,7 @@ Solution
 </div>
 <div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Since we want to find the moment of inertia in the x and y directions with respect to the section’s centroid, we first need to calculate the centroid. We did this in Example 8.3, the results are shown below.</p>
+<p>Since we want to find the moment of inertia in the x and y directions with respect to the section’s centroid, we first need to calculate the centroid. We did this in <a href="#exm-8.3" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-8.3</span></a>, the results are shown below.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/CH 8 PNGs/example 8.6 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="450"></p>
@@ -1223,6 +1283,7 @@ Solution
 </div>
 </div>
 </div>
+</div>
 <div class="callout callout-style-default callout-warning no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1265,7 +1326,7 @@ Key Takeaways
 <li><p>The centroid represents the geometric center of a shape.</p></li>
 <li><p>The center of gravity will be the same as the centroid only if the material is uniform (homogenous).</p></li>
 <li><p>The centroid will be located on any axis of symmetry for the section.</p></li>
-<li><p>In some cases, the centroid of a shape is not located within the shape itself (as shown in the rightmost section in figure 8.2).</p></li>
+<li><p>In some cases, the centroid of a shape is not located within the shape itself (as shown in the rightmost section in <a href="#fig-8.2" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-8.2</span></a>).</p></li>
 <li><p>The moment of inertia represents a geometric property of an area and is occasionally termed as the second moment of the area about an axis, as it involves squaring the distance from the axis to each element of the area.</p></li>
 <li><p>The parallel-axis theorem is used to compute the moment of inertia of composite sections.</p></li>
 </ul>

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Mechanics of Deformable Bodies - 6&nbsp; Torsion</title>
+<title>Strength of Materials - 6&nbsp; Torsion</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -128,7 +128,7 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Mechanics of Deformable Bodies</a> 
+      <a href="./">Strength of Materials</a> 
         <div class="sidebar-tools-main">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
@@ -270,6 +270,12 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Units and Order of Magnitude</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Appendix E.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Centroids and Area Moment of Inertia for Common Shapes</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -361,41 +367,104 @@ Click to expand
 <ol type="1">
 <li>In machinery, rotating shafts, such as transmission shafts that transmit power, are subjected to torque</li>
 <li>When one uses a torque wrench to tight or loosen a bolt, the bolt is subjected to torque</li>
-<li>Poles on which road signs and traffic lights are mounted are subjected to torque when forces (such as wind) are applied perpendicular to the sign.</li>
+<li>Poles on which road signs and traffic lights are mounted are subjected to torque when forces (such as wind) are applied perpendicular to the sign (<a href="#fig-6.1" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.1</span></a>).</li>
 <li>Hinge pins are subjected to torque when the rotating elements they are attached to (doors for example) are rotated.</li>
 </ol>
-<p><strong>Figure 6.1:</strong> needs caption</p>
+<div id="fig-6.1" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-6.1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/CH6 PNGs/figure 6.1.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="450">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-6.1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.1: Horizontal wind blowing on the traffic lights will create a torsional moment in the vertical pole.
+</figcaption>
+</figure>
+</div>
 <p>This chapter will focus on bodies subjected to pure torsion (no axial or bending loads). These concepts will appear again in <a href="#sec-combined-loads" class="quarto-xref"><span class="quarto-unresolved-ref">sec-combined-loads</span></a> when more generalized loading conditions are discussed.</p>
-<p>In sections 6.1 and 6.2 we’ll derive equations for calculating the stress and deformation caused by torsional loads. In Section 6.3 we’ll consider statically indeterminate torsion problems, using methods similar to those in <a href="#sec-5.5" class="quarto-xref"><span class="quarto-unresolved-ref">sec-5.5</span></a>. In Section 6.4 we’ll consider torques due to power transmission, a common application where torques are present.</p>
+<p>In <a href="#sec-6.1" class="quarto-xref"><span class="quarto-unresolved-ref">sec-6.1</span></a> and <a href="#sec-6.2" class="quarto-xref"><span class="quarto-unresolved-ref">sec-6.2</span></a> we’ll derive equations for calculating the stress and deformation caused by torsional loads. In <a href="#sec-6.3" class="quarto-xref"><span class="quarto-unresolved-ref">sec-6.3</span></a> we’ll consider statically indeterminate torsion problems, using methods similar to those in <a href="#sec-5.5" class="quarto-xref"><span class="quarto-unresolved-ref">sec-5.5</span></a>. In <a href="#sec-6.4" class="quarto-xref"><span class="quarto-unresolved-ref">sec-6.4</span></a> we’ll consider torques due to power transmission, a common application where torques are present.</p>
 <section id="the-effect-of-torsion" class="level3" data-number="6.0.1">
 <h3 data-number="6.0.1" class="anchored" data-anchor-id="the-effect-of-torsion"><span class="header-section-number">6.0.1</span> The Effect of Torsion</h3>
 <p>As mentioned above, the effect of a torsional moment is to cause the body to twist. The resulting stress is a shear stress.</p>
-<p>Consider the pleated tube shown in Figure 6.1 (a) and (b) below. Figure 6.1(a) shows the tube in an unloaded state with some of the pleats colored for identification. In figure 6.1(b), we see that after a torque is applied, the pleats move vertically but not horizontally. In addition, without the color present, it would be difficult to identify the displacement at all. We can say that all points remain in their original plane even in the deformed state so that the shape of the cross-section is unchanged.</p>
-<p><strong>Figure 6.2:</strong> Unloaded tube (a) and tube with torque applied (b).</p>
-<p>Now consider the I-beam subjected to torsion in Figure 6.2. In this case we see that the shape of the cross-section changes and that the points do not remain in the same vertical plane (there is horizontal displacement as well as vertical). This shape change is referred to as warping. In this text, we will only be considering circular cross-sections with no warping.</p>
-<p><strong>Figure 6.3:</strong> I-beam subjected to torsion unloaded (a) and with applied torque (b).</p>
-<p>Going back to Figure 6.1, let’s consider the shape formed by the non-displaced colored lines in figure 6.1(a) versus the displaced lines in figure 6.1(b). These images are shown again in Figure 6.3. In the non-displaced case, a rectangle can be drawn around the green lines on the left with 90° corners. In the displaced case, the corners are no longer at 90°. From <a href="#sec-3.2" class="quarto-xref"><span class="quarto-unresolved-ref">sec-3.2</span></a>, we know that this change in angle is the definition of shear strain. The evidence of shear strain indicates that the applied torque results in shear stress.</p>
-<p><strong>Figure 6.4:</strong> Evidence of shear strain</p>
+<p>Consider the pleated tube shown in <a href="#fig-6.2" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.2</span></a> below. <span class="citation" data-cites="fig6.2">@fig6.2</span> (A) shows the tube in an unloaded state with some of the pleats colored for identification. In <a href="#fig-6.2" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.2</span></a> (B), we see that after a torque is applied, the pleats move vertically but not horizontally. In addition, without the color present, it would be difficult to identify the displacement at all. We can say that all points remain in their original plane even in the deformed state so that the shape of the cross-section is unchanged.</p>
+<div id="fig-6.2" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-6.2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/figure 6.2 (new).png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="525">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-6.2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.2: Unloaded tube (left) and tube with torque applied (right).
+</figcaption>
+</figure>
+</div>
+<p>Now consider the I-beam subjected to torsion in <a href="#fig-6.3" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.3</span></a>. In this case we see that the shape of the cross-section changes and that the points do not remain in the same vertical plane (there is horizontal displacement as well as vertical). This shape change is referred to as warping. In this text, we will only be considering circular cross-sections with no warping.</p>
+<div id="fig-6.3" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-6.3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/CH6 PNGs/figure 6.3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="495">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-6.3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.3: I-beam subjected to torsion unloaded (a) and with applied torque (b).
+</figcaption>
+</figure>
+</div>
+<p>Going back to <a href="#fig-6.2" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.2</span></a>, let’s consider the shape formed by the non-displaced colored lines in <a href="#fig-6.2" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.2</span></a> (A) versus the displaced lines in <a href="#fig-6.2" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.2</span></a> (B). These images are shown again in <a href="#fig-6.4" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.4</span></a>. In the non-displaced case, a rectangle can be drawn around the green lines on the left with 90° corners. In the displaced case, the corners are no longer at 90°. From <a href="#sec-3.2" class="quarto-xref"><span class="quarto-unresolved-ref">sec-3.2</span></a>, we know that this change in angle is the definition of shear strain. The evidence of shear strain indicates that the applied torque results in shear stress.</p>
+<div id="fig-6.4" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-6.4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/CH6 PNGs/figure 6.4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="342">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-6.4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.4: Evidence of shear strain
+</figcaption>
+</figure>
+</div>
 </section>
 <section id="determination-of-internal-torques" class="level3" data-number="6.0.2">
 <h3 data-number="6.0.2" class="anchored" data-anchor-id="determination-of-internal-torques"><span class="header-section-number">6.0.2</span> Determination of Internal Torques</h3>
-<p>As with axial loading, the stress and deformations due to torsion vary from point to point within a body and are dependent on the internal torques at the individual points and geometric section properties. Internal torques can be found by sectioning bodies and applying equilibrium equations, just like we did axial loading problems (see Examples 1.5, 2.1 and 2.2). In the case of internal torques, moment equilibrium around the longitudinal axis will be applied instead of force summation.</p>
+<p>As with axial loading, the stress and deformations due to torsion vary from point to point within a body and are dependent on the internal torques at the individual points and geometric section properties. Internal torques can be found by sectioning bodies and applying equilibrium equations, just like we did axial loading problems (see examples 1.5, 2.1 and 2.2). In the case of internal torques, moment equilibrium around the longitudinal axis will be applied instead of force summation.</p>
 <p>Before looking at an example that illustrates the process of finding internal torque reactions, it would be beneficial to establish the sign conventions that will be used as well as ways of representing torque in this text.</p>
 </section>
 <section id="sign-convention-and-representation-of-torque" class="level3" data-number="6.0.3">
 <h3 data-number="6.0.3" class="anchored" data-anchor-id="sign-convention-and-representation-of-torque"><span class="header-section-number">6.0.3</span> Sign Convention and Representation of Torque</h3>
-<p>Just as is typically used for moments, the sign convention that will be used in this text for torques is to assign a positive sign to torques that are counterclockwise and a negative sign for those that are clockwise. However, the direction that a torque appears to be depends on the perspective from which the rotation is being observed. In Figure 6.5 below, the applied torque would appear clockwise if viewed from the left end of the bar towards the right and counterclockwise if viewed from the right end of the bar towards the left. As long as one is being consistent, it is not usually important which perspective is used. However, a typical convention is to look from the free end of the shaft if there is one, towards the fixed end, or from the positive longitudinal axis if one is given, towards the negative.</p>
-<p><strong>Figure 6.5:</strong> Different directions for viewing torque result in different perspectives on sign.</p>
-<p>It can sometimes be difficult to visually determine whether a torque appears clockwise or counterclockwise, so one tool that can be used is the right-hand rule. If you use your right hand and curl your fingers in the direction of the rotation represented by the torque arrow, a positive (counterclockwise) torque would be represented if your thumb points in the direction of the positive longitudinal axis (the x-axis in Figure 6.6).</p>
-<p><strong>Figure 6.6:</strong> Using the right-hand rule to determine sign for torque</p>
-<p>When examining cut sections as will be needed to determine internal torques, establishing the sign of the internal torque requires looking from the direction of the cut edge towards the end of the cut section. One tool that can be used in this instance in place of direction visualization is to make the cut necessary to determine the internal torque in a given section and then imagine your right hand as being at the cut edge and curl your fingers in the direction of the torque. If your thumb points away from the cut edge, the internal torque is positive and vice versa. This is illustrated in Figure 6.7.</p>
-<p><strong>Figure 6.7:</strong> Tool to determine sign of internal torques</p>
+<p>Just as is typically used for moments, the sign convention that will be used in this text for torques is to assign a positive sign to torques that are counterclockwise and a negative sign for those that are clockwise. However, the direction that a torque appears to be depends on the perspective from which the rotation is being observed. In <a href="#fig-6.5" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.5</span></a> below, the applied torque would appear clockwise if viewed from the left end of the bar towards the right and counterclockwise if viewed from the right end of the bar towards the left. As long as one is being consistent, it is not usually important which perspective is used. However, a typical convention is to look from the free end of the shaft if there is one, towards the fixed end, or from the positive longitudinal axis if one is given, towards the negative.</p>
+<div id="fig-6.5" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-6.5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/CH6 PNGs/figure 6.5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="512">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-6.5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.5: Different directions for viewing torque result in different perspectives on sign.
+</figcaption>
+</figure>
+</div>
+<p>It can sometimes be difficult to visually determine whether a torque appears clockwise or counterclockwise, so one tool that can be used is the right-hand rule. If you use your right hand and curl your fingers in the direction of the rotation represented by the torque arrow, a positive (counterclockwise) torque would be represented if your thumb points in the direction of the positive longitudinal axis (the x-axis in <a href="#fig-6.6" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.6</span></a>).</p>
+<div id="fig-6.6" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-6.6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/CH6 PNGs/figure 6.6.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="340">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-6.6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.6: Using the right-hand rule to determine sign for torque
+</figcaption>
+</figure>
+</div>
+<p>When examining cut sections as will be needed to determine internal torques, establishing the sign of the internal torque requires looking from the direction of the cut edge towards the end of the cut section. One tool that can be used in this instance in place of direction visualization is to make the cut necessary to determine the internal torque in a given section and then imagine your right hand as being at the cut edge and curl your fingers in the direction of the torque. If your thumb points away from the cut edge, the internal torque is positive and vice versa. This is illustrated in <a href="#fig-6.7" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.7</span></a>.</p>
+<div id="fig-6.7" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-6.7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/CH6 PNGs/figure 6.7.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="604">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-6.7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.7: Tool to determine sign of internal torques
+</figcaption>
+</figure>
+</div>
 <p>Finally, since circular arrows can be difficult to draw in a way that clearly conveys direction, double headed line arrows are frequently used to represent torque. Conventions can vary between texts and other sources. In this text, the following convention will be used:</p>
 <ol type="1">
 <li>On a whole body FBD, arrows facing in the direction of the positive longitudinal axis will be considered to indicate positive torques (counterclockwise) and vice versa. When applying equilibrium, these signs will be used.</li>
 <li>The same will hold true for cut section FBD’s used to determine internal torques. However, if applying equilibrium indicates that the internal torque points away from the cut section, the torque can be concluded to be positive (counterclockwise) for the purposes of calculating angle of twist. Internal torque that points towards the cut section can be concluded to be negative (clockwise). In addition, on the cut sections, the regular convention of right directed arrows being positive and left directed arrows being negative for the purpose of summing moments will be used.</li>
 </ol>
-<p>The direction of the internal torque is not important in calculating shear stress (the sign on the stress requires concepts that will be discussed in <a href="#sec-stress-transformation" class="quarto-xref"><span class="quarto-unresolved-ref">sec-stress-transformation</span></a>), but it is important when calculating angle of twist, as we’ll see in Section 6.2.</p>
+<p>The direction of the internal torque is not important in calculating shear stress (the sign on the stress requires concepts that will be discussed in <a href="#sec-stress-transformation" class="quarto-xref"><span class="quarto-unresolved-ref">sec-stress-transformation</span></a>), but it is important when calculating angle of twist, as we’ll see in <a href="#sec-6.2" class="quarto-xref"><span class="quarto-unresolved-ref">sec-6.2</span></a>.</p>
 <p>Example 6.1 demonstrates how to determine internal torques in a multi-section body as well as how to apply the above-described sign conventions.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
@@ -409,8 +478,16 @@ Example 6.1
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
+<div id="exm-6.1" class="theorem example">
+<p><span class="theorem-title"><strong>Example 6.1</strong></span> &nbsp;</p>
+<p>
+</p>
 <p>A multi-section steel bar is supported by a fixed support at A and is subjected to torque T<sub>B</sub> = 70 N mm and T<sub>E</sub> = 30 N mm. Determine the internal torque at all points in the shaft.</p>
-<p>[figure]</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH6 PNGs/example 6.1 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="388"></p>
+</figure>
+</div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -425,7 +502,11 @@ Solution
 <div class="callout-body-container callout-body">
 <p>Since the loading consists of torques applied at two distinct points, the internal torque will be constant in the sections to the left and right of where the torques are applied. Therefore, the problem reduces down to determining the internal torque between A and B and the internal torque between B and E. Note that because A is a fixed support, there will be an additional torque (the reaction torque) there that can be determined by applying equilibrium to the whole shaft if necessary. In this particular example, we will discuss why the reaction force is not necessary to calculate the internal torques.&nbsp;</p>
 <p>To determine the internal torque in section AB, we can cut the shaft anywhere between points A and B and draw an FBD of the section to the left of the cut (everything from point A to the cut) or the section to the right of the cut (everything from the cut to E). An illustration of the cut and the resulting FBD’s are shown below. Note that the internal torque T<sub>AB</sub> is drawn in opposite directions on the two sections. This must be the case if the bar is in equilibrium.</p>
-<p>[figure]</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH6 PNGs/example 6.1 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
 <p>Before applying equilibrium, note the double headed arrows that represent the torques and the significance of the directions. In the above diagrams T<sub>AB</sub> is drawn as <strong>positive</strong> internal torque on both the left and right section diagrams <strong>since it points away from the cut</strong> in both instances. However, when summing moments (as shown below), the direction of the arrow will be used as the sign in the equilibrium equation.</p>
 <p>For the applied loads, since T<sub>A</sub> is drawn in the negative x direction on the left side cut section, it is assumed to be negative (or look clockwise as viewed in the direction of E towards A). On the right side diagram, T<sub>B</sub> is drawn in the positive x direction since it appears counterclockwise as viewed from E towards A. Applied torque T<sub>E</sub> is drawn in the negative direction since it appears clockwise as viewed in the direction of E towards A.</p>
 <p>Since writing equilibrium equations based on the FBD of the left side section would require first determining the reaction torque at wall A, we will choose to use the FBD of the section to the right of the cut instead.</p>
@@ -439,7 +520,11 @@ T_{A B}&amp;=40{~N}\cdot{mm}
 \]</span></p>
 <p>The positive result confirms that the assumed direction for T<sub>AB</sub> is the correct one, so it is a counterclockwise torque since it points away from the cut. The same result would have been obtained by applying equilibrium to the left side section after determining T<sub>A</sub>.</p>
 <p>Similarly, the internal torque in all parts of the shaft between B and E can be determined by cutting the shaft at a non-specific point between B and E and applying equilibrium to the section of shaft to the left of the cut or the section to the right of the cut. The two FBD’s are shown below. Once again, the internal torque (T<sub>BE</sub> in this case) is drawn in the direction away from the cut on both sections, so it is assumed to be positive on both sections.</p>
-<p>[figure]</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH6 PNGs/example 6.1 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
 <p>Applying the moment equilibrium equation on the right section gives:</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -457,6 +542,7 @@ T_{B E}&amp;=-30{~N}\cdot{mm}
 </div>
 </div>
 </div>
+</div>
 </section></details>
 </section>
 
@@ -467,11 +553,29 @@ T_{B E}&amp;=-30{~N}\cdot{mm}
 Click to expand
 </summary>
 <p>In this section, the derivation of the shear stress equation for torque is explained before presenting it so that the inputs to the resulting equation, as well as the assumptions, etc., can be better understood.</p>
-<p>Consider a circular shaft that is fixed on one end and subjected to torque on the free end, as shown in figure 6.1.1. The shaft has an outer radius, c, as shown in figure 6.1.2 (b). For the given loading, the internal torque at any location along the shaft, x, would also be T.</p>
-<p><strong>Figure 6.8:</strong> Illustration of fixed end shaft subjected to torque and smaller sliver within the shaft.</p>
-<p>Before the torque, T, is applied, a horizontal line segment drawn across a sliver of the shaft, marked by points A and B, has a length of Δx. Now let’s consider the same shaft segment after the torque has been applied and points A and B move to A’ and B’. An illustration of the resulting geometry can be seen in figure 6.1.2 (a). Since the shaft is fixed on the left end, we see that point B on the shaft will rotate more than point A. We can approximate that line segment AB remains linear for a very narrow section of shaft (infinitely small Δx).</p>
-<p><strong>Figure 6.9:</strong> Illustration of the displacement of points A and B on the shaft (a) and the cross-section of the shaft (b).</p>
-<p>Recalling that shear strain is the change in the angle between two lines that are originally perpendicular, we can see that the angle of tilt in AB after the torque is applied is the shear strain, γ, that results from the torque. The displacement of point B from the original position to B’ on the cross-section is shown in figure 6.1.2 (b). For an infinitely small Δx, the arc segment from B to B’ can be approximated as vertical so that the shear strain γ can be expressed using trigonometry as:</p>
+<p>Consider a circular shaft that is fixed on one end and subjected to torque on the free end, as shown in <a href="#fig-6.8" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.8</span></a>. The shaft has an outer radius, c, as shown in <a href="#fig-6.9" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.9</span></a> (B). For the given loading, the internal torque at any location along the shaft, x, would also be T.</p>
+<div id="fig-6.8" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-6.8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/CH6 PNGs/figure 6.8.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="520">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-6.8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.8: Illustration of fixed end shaft subjected to torque and smaller sliver within the shaft.
+</figcaption>
+</figure>
+</div>
+<p>Before the torque, T, is applied, a horizontal line segment drawn across a sliver of the shaft, marked by points A and B, has a length of Δx. Now let’s consider the same shaft segment after the torque has been applied and points A and B move to A’ and B’. An illustration of the resulting geometry can be seen in <a href="#fig-6.9" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.9</span></a> (A). Since the shaft is fixed on the left end, we see that point B on the shaft will rotate more than point A. We can approximate that line segment AB remains linear for a very narrow section of shaft (infinitely small Δx).</p>
+<div id="fig-6.9" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-6.9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/CH6 PNGs/figure 6.9.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="504">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-6.9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.9: Illustration of the displacement of points A and B on the shaft (A) and the cross-section of the shaft (B).
+</figcaption>
+</figure>
+</div>
+<p>Recalling that shear strain is the change in the angle between two lines that are originally perpendicular, we can see that the angle of tilt in AB after the torque is applied is the shear strain, γ, that results from the torque. The displacement of point B from the original position to B’ on the cross-section is shown in <a href="#fig-6.9" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.9</span></a> (B). For an infinitely small Δx, the arc segment from B to B’ can be approximated as vertical so that the shear strain γ can be expressed using trigonometry as:</p>
 <p><span class="math display">\[
 \tan (\gamma)=\frac{B B^{\prime}}{\Delta x}
 \]</span></p>
@@ -479,7 +583,7 @@ Click to expand
 <p><span class="math display">\[
 \gamma=\frac{B B^{\prime}}{\Delta x}
 \]</span></p>
-<p>Now consider the cross-section of the shaft where point B and B’ are located, shown in figure 6.1.2b. As discussed above, B’ is the location point B moves to when the torque is applied, so the angle between the radial lines that go from the center to points B and B’, respectively, of the shaft segment is the angle of twist of the segment. Since we are considering just a section of the shaft, the angle is represented as Δφ (as opposed to the absolute angle of twist, φ, as measured from the fixed end). If the outer radius of the shaft is r = c, then the length of BB’ is given by the arclength, so:</p>
+<p>Now consider the cross-section of the shaft where point B and B’ are located, shown in <a href="#fig-6.9" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.9</span></a> (B). As discussed above, B’ is the location point B moves to when the torque is applied, so the angle between the radial lines that go from the center to points B and B’, respectively, of the shaft segment is the angle of twist of the segment. Since we are considering just a section of the shaft, the angle is represented as Δφ (as opposed to the absolute angle of twist, φ, as measured from the fixed end). If the outer radius of the shaft is r = c, then the length of BB’ is given by the arclength, so:</p>
 <p><span class="math display">\[
 \mathrm{BB}^{\prime}=\mathrm{c}(\Delta \phi)
 \]</span></p>
@@ -491,7 +595,7 @@ Click to expand
 <p><span class="math display">\[
 \gamma=\frac{\rho(\Delta \phi)}{\Delta x}
 \]</span></p>
-<p>The resulting expression of γ shows that the shear strain varies linearly with ρ from the center of the cross-section to the outer radius, as illustrated in figure 6.1.3. The shear strain is 0 at the center, and the max shear strain occurs at the max value of ρ = c.</p>
+<p>The resulting expression of γ shows that the shear strain varies linearly with ρ from the center of the cross-section to the outer radius, as illustrated in <a href="#fig-6.10" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.10</span></a>. The shear strain is 0 at the center, and the max shear strain occurs at the max value of ρ = c.</p>
 <p><span class="math display">\[
 \gamma_{\max }=\frac{c(\Delta \phi)}{\Delta x}
 \]</span></p>
@@ -499,16 +603,34 @@ Click to expand
 <p><span class="math display">\[
 \tau=G \gamma=G \frac{\rho(\Delta \phi)}{\Delta x}, \tau_{\max }=G \frac{c(\Delta \phi)}{\Delta x}
 \]</span></p>
-<p><strong>Figure 6.10:</strong> Shear strain and shear stress vary linearly from the center to the outer edge of the circular cross-section.</p>
-<p>Looking at figure 6.1.3 shows that the slope of the linear variation is <span class="math inline">\(\frac{\tau_{\max }}{c}\)</span> and the shear stress can also be expressed as:</p>
+<div id="fig-6.10" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-6.10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/CH6 PNGs/figure 6.10.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="252">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-6.10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.10: Shear strain and shear stress vary linearly from the center to the outer edge of the circular cross-section.
+</figcaption>
+</figure>
+</div>
+<p>Looking at <a href="#fig-6.10" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.10</span></a> shows that the slope of the linear variation is <span class="math inline">\(\frac{\tau_{\max }}{c}\)</span> and the shear stress can also be expressed as:</p>
 <p><span class="math display">\[
 \tau=\frac{\tau_{\max }}{c} \rho
 \]</span></p>
-<p>The last step in developing the shear stress relationship to torque involves considering the equilibrium of the shaft. Refer to figure 6.1.4. If each point (i) on the cross-section with area dA<sub>i</sub> has a given amount of shear stress,τ<sub>i</sub>, then the corresponding force at each point dF<sub>i</sub> can be calculated as:</p>
+<p>The last step in developing the shear stress relationship to torque involves considering the equilibrium of the shaft. Refer to <a href="#fig-6.11" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.11</span></a>. If each point (i) on the cross-section with area dA<sub>i</sub> has a given amount of shear stress,τ<sub>i</sub>, then the corresponding force at each point dF<sub>i</sub> can be calculated as:</p>
 <p><span class="math display">\[
 \mathrm{dF}_i=\tau_i \mathrm{dA}_i=\frac{\tau_{\max }}{c} \rho_i d A
 \]</span></p>
-<p><strong>Figure 6.11:</strong> Illustration of infinitesimal forces on the shaft cross-section.</p>
+<div id="fig-6.11" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-6.11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/CH6 PNGs/figure 6.11.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="265">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-6.11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.11: Illustration of infinitesimal forces on the shaft cross-section.
+</figcaption>
+</figure>
+</div>
 <p>Recalling that the internal torque everywhere on the shaft is T, equilibrium dictates that the sum of the moments about the center of the cross-section should be equal to T. For an infinite number of points on the cross-section, this summation can be performed as an integral:</p>
 <p><span class="math display">\[
 T=\int d F_i \rho_i=\int \frac{\tau_{\max }}{c} \rho_i^2 d A
@@ -540,7 +662,7 @@ T = Internal torque [N·m, lb·in.]<br>
 <em>𝜌 = Radial distance from center of cross-section to point of interest [m, in.]</em></div>
 <p><em>J = Polar moment of inertia [m<sup>4</sup>, in.<sup>4</sup>]</em></p>
 <p>Note that for now, only the magnitude of the shear stress (without sign) will be determined since the sign for shear stress is not based purely on the sign of the torque. The sign on shear stress will be discussed in <a href="#sec-stress-transformation" class="quarto-xref"><span class="quarto-unresolved-ref">sec-stress-transformation</span></a>.</p>
-<p>Example 6.2 demonstrates the use of the above equations to determine shear stress in the same circular bar assembly used in Example 6.1.</p>
+<p><a href="#exm-6.2" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-6.2</span></a> demonstrates the use of the above equations to determine shear stress in the same circular bar assembly used in <a href="#exm-6.1" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-6.1</span></a>.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -553,8 +675,16 @@ Example 6.2
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
+<div id="exm-6.2" class="theorem example">
+<p><span class="theorem-title"><strong>Example 6.2</strong></span> &nbsp;</p>
+<p>
+</p>
 <p>The multi-section solid steel bar of example 6.1 is repeated here with the same loading (TB = 70 N mm and TE = 30 N mm). Also, given the diameters: d<sub>AC</sub> = 50 mm, d<sub>CD</sub> = 20 mm, and d<sub>DE</sub> = 35 mm, determine the magnitude and location of the max shear stress in the bar assembly.</p>
-<p>[figure]</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH6 PNGs/example 6.2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="375"></p>
+</figure>
+</div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -574,7 +704,7 @@ Solution
 <li>Section CD which gets sectioned at D due to the geometry change at D</li>
 <li>Section DE which would get sectioned at E if E were not the end of the shaft</li>
 </ol>
-<p>From Example 6.1, it is known that the magnitudes of the internal torque for all points between A and B, TAB, is 40 N mm and the internal torque for all points between B and E, TBE, is 70 N mm. Since the internal torque stays constant from B to E, it is known that TBC = TCD = TDE = 70 N mm. Recall that only the <strong>magnitude</strong> of shear stress will be calculated with the sign being discussed in <a href="#sec-stress-transformation" class="quarto-xref"><span class="quarto-unresolved-ref">sec-stress-transformation</span></a>.</p>
+<p>From example 6.1, it is known that the magnitudes of the internal torque for all points between A and B, TAB, is 40 N mm and the internal torque for all points between B and E, TBE, is 70 N mm. Since the internal torque stays constant from B to E, it is known that TBC = TCD = TDE = 70 N mm. Recall that only the <strong>magnitude</strong> of shear stress will be calculated with the sign being discussed in <a href="#sec-stress-transformation" class="quarto-xref"><span class="quarto-unresolved-ref">sec-stress-transformation</span></a>.</p>
 <p>Since the bar has a solid cross-section with the diameters given, we will use <span class="math inline">\(J_{solid}=\frac{\pi}{32} d^4\)</span> to calculate the polar moment of inertia at each section.</p>
 <p>Now we can calculate the maximum stress in each section:</p>
 <p><span class="math display">\[
@@ -589,6 +719,7 @@ Solution
 \end{gathered}
 \]</span></p>
 <p><strong>The max shear stress in the bar is 44.6 kPa and occurs in section CD.</strong></p>
+</div>
 </div>
 </div>
 </div>
@@ -622,9 +753,18 @@ Step-by-step: Torsional stress
 <summary>
 Click to expand
 </summary>
-<p>In <a href="#sec-axial-loading" class="quarto-xref"><span class="quarto-unresolved-ref">sec-axial-loading</span></a>, we derived and applied a formula for axial deformation. We will do something similar in this chapter for circular shafts subjected to torsion. The deformation of a shaft that arises from applying torsion, assuming deformation is restricted to the elastic deformation range for the material, is quantified by the angle of twist, <span class="math inline">\(\phi\)</span>. As discussed in Section 6.1, and illustrated here again in Figure 6.12, the angle of twist is the angle formed between the radial line that goes from the center of the cross section to a point in its original location and the radial line that goes from the center to the point in its new location after the torsional load is applied. The equation to determine angle of twist at various points along the shaft will be derived below.</p>
-<p><strong>Figure 6.12:</strong> The angle between B (original location) and B’ (where B moves to after torque is applied to the shaft) is the angle of twist, <span class="math inline">\(\phi\)</span>.</p>
-<p>Recall from Section 6.1 that the shear strain <span class="math inline">\(\gamma=\frac{\rho(\Delta \phi)}{\Delta x}\)</span>. Also recall that Δx represents the length of a section of shaft of arbitrary length and Δφ is the change in angle of twist that occurs across that length. For an infinitely small section of shaft, the shear strain equation can be expressed in terms of differentials: <span class="math inline">\(\gamma=\frac{\rho(d \phi)}{d x}\)</span>.</p>
+<p>In <a href="#sec-axial-loading" class="quarto-xref"><span class="quarto-unresolved-ref">sec-axial-loading</span></a>, we derived and applied a formula for axial deformation. We will do something similar in this chapter for circular shafts subjected to torsion. The deformation of a shaft that arises from applying torsion, assuming deformation is restricted to the elastic deformation range for the material, is quantified by the angle of twist, <span class="math inline">\(\phi\)</span>. As discussed in <a href="#sec-6.1" class="quarto-xref"><span class="quarto-unresolved-ref">sec-6.1</span></a>, and illustrated here again in <a href="#fig-6.12" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.12</span></a>, the angle of twist is the angle formed between the radial line that goes from the center of the cross section to a point in its original location and the radial line that goes from the center to the point in its new location after the torsional load is applied. The equation to determine angle of twist at various points along the shaft will be derived below.</p>
+<div id="fig-6.12" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-6.12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/CH6 PNGs/figure 6.12.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="217">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-6.12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.12: The angle between B (original location) and B’ (where B moves to after torque is applied to the shaft) is the angle of twist, $\phi$.
+</figcaption>
+</figure>
+</div>
+<p>Recall from <a href="#sec-6.1" class="quarto-xref"><span class="quarto-unresolved-ref">sec-6.1</span></a> that the shear strain <span class="math inline">\(\gamma=\frac{\rho(\Delta \phi)}{\Delta x}\)</span>. Also recall that Δx represents the length of a section of shaft of arbitrary length and Δφ is the change in angle of twist that occurs across that length. For an infinitely small section of shaft, the shear strain equation can be expressed in terms of differentials: <span class="math inline">\(\gamma=\frac{\rho(d \phi)}{d x}\)</span>.</p>
 <p>Now applying Hooke’s Law, τ = Gγ, and the equation for shear stress we get:</p>
 <p><span class="math display">\[
 \frac{\rho(d \phi)}{d x}=\frac{\tau}{G}=\frac{T \rho}{J G}
@@ -649,9 +789,9 @@ d \phi=\frac{T d x}{J G}
 <em>𝜙 = Change in angle [rad]</em><br>
 <em>T = Internal torque</em> [N·m, lb·in.]<br>
 <em>L = Length [m, in.]</em><br>
-<em>J = Polar moment of inertia [m<sup>4</sup>, in.<sup>4</sup>]</em></div>
-<p><em>G = Shear modulus [Pa, psi]</em></p>
-<p>In these calculations, the sign of internal torque will be important as it indicates the direction of the twist. If one section twists in one direction and the adjoining section twists in the opposite direction, the effect will be that the angles will subtract from each other resulting in a smaller overall angle of twist. On the other hand, if two adjoining sections twist in the same direction, the effect will be additive. According to the assigned sign convention discussed in section 6.1, an overall positive angle of twist indicates that the shaft twists counterclockwise when looking from the positive end of the longitudinal axis to the negative and vice versa.</p>
+<em>J = Polar moment of inertia [m<sup>4</sup>, in.<sup>4</sup>]</em><br>
+<em>G = Shear modulus [Pa, psi]</em></div>
+<p>In these calculations, the sign of internal torque will be important as it indicates the direction of the twist. If one section twists in one direction and the adjoining section twists in the opposite direction, the effect will be that the angles will subtract from each other resulting in a smaller overall angle of twist. On the other hand, if two adjoining sections twist in the same direction, the effect will be additive. According to the assigned sign convention discussed in <a href="#sec-6.1" class="quarto-xref"><span class="quarto-unresolved-ref">sec-6.1</span></a>, an overall positive angle of twist indicates that the shaft twists counterclockwise when looking from the positive end of the longitudinal axis to the negative and vice versa.</p>
 <section id="units" class="level3" data-number="6.2.1">
 <h3 data-number="6.2.1" class="anchored" data-anchor-id="units"><span class="header-section-number">6.2.1</span> Units</h3>
 <p>If values for T, L, J, and G are used in <a href="#eq-6.2" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-6.2</span></a> such that the units are all consistent with each other, the overall unit works out to be unitless as is expected for an angle calculation. Since the calculation is for an angle, the actual unit is considered to be radians. If an angle is desired to be in degrees, the result of the equation would need to be converted by multiplying the result by π/180.</p>
@@ -659,17 +799,26 @@ d \phi=\frac{T d x}{J G}
 </section>
 <section id="notation" class="level3" data-number="6.2.2">
 <h3 data-number="6.2.2" class="anchored" data-anchor-id="notation"><span class="header-section-number">6.2.2</span> Notation</h3>
-<p>When finding the angle of twist, the angle at any given point along the length of the shaft will be found relative to some reference point. Often the reference point is a fixed point (at a fixed support for example), so the relative angle is an absolute angle. In this case, the symbol <span class="math inline">\(\phi\)</span> will be subscripted with the point along the shaft where the angle was calculated. For example, given the shaft assembly in Figure 6.13 below, the notation φ<sub>B</sub> denotes the angle of twist at point B relative to the fixed point A.</p>
-<p>If one is finding the relative angle of twist between two non-fixed points that are on the same section of shaft (same T, J, and G), the angle of one point relative to another on the same section of shaft is notated with two subscripts specifying the two points. For example, the angle of twist of D relative to C in Figure 6.13 is notated as <span class="math inline">\(\phi_{CD}\)</span>. In this case, one would perform the calculation for the angle of twist at D as if point C is fixed, in which case:</p>
+<p>When finding the angle of twist, the angle at any given point along the length of the shaft will be found relative to some reference point. Often the reference point is a fixed point (at a fixed support for example), so the relative angle is an absolute angle. In this case, the symbol <span class="math inline">\(\phi\)</span> will be subscripted with the point along the shaft where the angle was calculated. For example, given the shaft assembly in <a href="#fig-6.13" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.13</span></a> below, the notation φ<sub>B</sub> denotes the angle of twist at point B relative to the fixed point A.</p>
+<p>If one is finding the relative angle of twist between two non-fixed points that are on the same section of shaft (same T, J, and G), the angle of one point relative to another on the same section of shaft is notated with two subscripts specifying the two points. For example, the angle of twist of D relative to C in <a href="#fig-6.13" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.13</span></a> is notated as <span class="math inline">\(\phi_{CD}\)</span>. In this case, one would perform the calculation for the angle of twist at D as if point C is fixed, in which case:</p>
 <p><span class="math display">\[
 \phi_{B C}=\frac{T_{C D} L_{C D}}{J_{C D} G_{C D}}
 \]</span></p>
-<p>If one is finding the relative angle of twist between two non-fixed points (let’s say B and D in Figure 6.13) that are on different sections of shaft (i.e., there are 1 or more section changes between them due to changing T, J, or G), the relative angle of twist between them would be found by summing the angles of twist of each section between them. In this case, the notation would be <span class="math inline">\(\phi_{D/B}\)</span> which is said as the angle of twist of D relative to B. If point C is where the section change occurs, the calculation would be:</p>
+<p>If one is finding the relative angle of twist between two non-fixed points (let’s say B and D in <a href="#fig-6.13" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.13</span></a>) that are on different sections of shaft (i.e., there are 1 or more section changes between them due to changing T, J, or G), the relative angle of twist between them would be found by summing the angles of twist of each section between them. In this case, the notation would be <span class="math inline">\(\phi_{D/B}\)</span> which is said as the angle of twist of D relative to B. If point C is where the section change occurs, the calculation would be:</p>
 <p><span class="math display">\[
 \phi_{D / B}=\phi_{B C}+\phi_{C D}
 \]</span></p>
-<p><strong>Figure 6.13:</strong> A multi-section body with fixed end A and constant torque conditions in sections</p>
-<p>These concepts will be illustrated in Example 6.3 which continues with the same bar assembly and loading used in Examples 6.1 and 6.2.</p>
+<div id="fig-6.13" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-6.13-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/CH6 PNGs/figure 6.13.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="414">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-6.13-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.13: A multi-section body with fixed end A and constant torque conditions in sections
+</figcaption>
+</figure>
+</div>
+<p>These concepts will be illustrated in <a href="#exm-6.3" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-6.3</span></a> which continues with the same bar assembly and loading used in <a href="#exm-6.1" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-6.1</span></a> and <a href="#exm-6.2" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-6.2</span></a>.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -682,8 +831,16 @@ Example 6.3
 </div>
 <div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The multi-section steel bar of Examples 6.1 and 6.2 is repeated here with the same loading (T<sub>B</sub> = 70 N·mm and T<sub>E</sub>= 30 N·mm). Given the diameters: d<sub>AC</sub> = 50 mm, d<sub>CD</sub> = 20 mm, and d<sub>DE</sub> = 35 mm, and section lengths L<sub>AB</sub> = 300 mm, L<sub>BC</sub> = 200 mm, L<sub>CD</sub> = 400 mm, and L<sub>DE</sub> = 700 mm, determine the angle of twist of points C, D, and E, all relative to point A which is attached to the fixed support. All sections have a shear modulus of G = 40 GPa. A negative result indicates a clockwise twist and a positive result indicates a counterclockwise twist.</p>
-<p>[figure]</p>
+<div id="exm-6.3" class="theorem example">
+<p><span class="theorem-title"><strong>Example 6.3</strong></span> &nbsp;</p>
+<p>
+</p>
+<p>The multi-section steel bar of examples 6.1 and 6.2 is repeated here with the same loading (T<sub>B</sub> = 70 N·mm and T<sub>E</sub>= 30 N·mm). Given the diameters: d<sub>AC</sub> = 50 mm, d<sub>CD</sub> = 20 mm, and d<sub>DE</sub> = 35 mm, and section lengths L<sub>AB</sub> = 300 mm, L<sub>BC</sub> = 200 mm, L<sub>CD</sub> = 400 mm, and L<sub>DE</sub> = 700 mm, determine the angle of twist of points C, D, and E, all relative to point A which is attached to the fixed support. All sections have a shear modulus of G = 40 GPa. A negative result indicates a clockwise twist and a positive result indicates a counterclockwise twist.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH6 PNGs/example 6.3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="422"></p>
+</figure>
+</div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -697,7 +854,7 @@ Solution
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>As was the case when calculating shear stress in Example 6.2, the changes in torque and geometry result in 4 distinct sections for which the angle of twist will remain constant within the section but change going from one section to another. These sections are AB, BC, CD, and DE.</p>
-<p>In Example 6.1, it was shown that the internal torque in section AB is counterclockwise and equal to 40 N·mm. It was also shown that the internal torque in all sections between B and E is clockwise and equal to 30 N·mm. The directions in this case are relative to viewing in the direction from the positive end of the x-axis to the negative (i.e., point E to point A). This will mean that the angle of twist in section AB will be positive while the angle of twist in BC, CD, and DE will be negative.</p>
+<p>In example 6.1, it was shown that the internal torque in section AB is counterclockwise and equal to 40 N·mm. It was also shown that the internal torque in all sections between B and E is clockwise and equal to 30 N·mm. The directions in this case are relative to viewing in the direction from the positive end of the x-axis to the negative (i.e., point E to point A). This will mean that the angle of twist in section AB will be positive while the angle of twist in BC, CD, and DE will be negative.</p>
 <p>Since point A is a fixed point, <span class="math inline">\(\phi_{B / A}=\phi_B=\phi_{A B}\)</span>.</p>
 <p><span class="math display">\[
 \phi_B=\phi_{A B}=\frac{T_{AB}L_{AB}}{J_{AB}G_{AB}}=\frac{0.04{~N}\cdot{m}*(0.300{~m})}{\frac{\pi}{32}(0.05{~m})^4\left(40 \times 10^9~\frac{N}{{m}^2}\right)}=4.889 \times 10^{-7}{~rad}
@@ -737,6 +894,7 @@ Solution
 <p><strong>φC = -8.149 x 10-8 rad = .0815 μrad (clockwise)</strong></p>
 <p><strong>φD = -4.46 x 10-5 rad = 44.6 μrad (clockwise)</strong></p>
 <p><strong>φE = -5.30 x 10-5 rad = 53.0 μrad (clockwise)</strong></p>
+</div>
 </div>
 </div>
 </div>
@@ -788,8 +946,8 @@ Click to expand
 <li>Sum the angle of twist from step 2 and step 4 and set the total equal to zero (or a given angle as appropriate).</li>
 <li>Solve the equation resulting from step 5 for the reaction at the redundant support and then use the whole body equilibrium to solve for the reaction at the other support(s).</li>
 </ol>
-<p>Example 6.4 demonstrates how to solve a statically indeterminate torsion problem that falls under the first category of problems described above.Example 6.5 uses superposition to solve part (a) of Example 6.4.</p>
-<p>Example 6.6 goes through the process of solving a statically indeterminate torsion problems that falls under the second category of problems described above.</p>
+<p><a href="#exm-6.4" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-6.4</span></a> demonstrates how to solve a statically indeterminate torsion problem that falls under the first category of problems described above. <a href="#exm-6.5" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-6.5</span></a> uses superposition to solve part (a) of <a href="#exm-6.4" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-6.4</span></a>.</p>
+<p><a href="#exm-6.6" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-6.6</span></a> goes through the process of solving a statically indeterminate torsion problems that falls under the second category of problems described above.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -802,12 +960,20 @@ Example 6.4
 </div>
 <div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
+<div id="exm-6.4" class="theorem example">
+<p><span class="theorem-title"><strong>Example 6.4</strong></span> &nbsp;</p>
+<p>
+</p>
 <p>A shaft assembly consists of a 12 in long steel section AB (d = 10 in., G = 11600 ksi)) bonded rigidly to a 9 inch long solid brass section BC (d = 7 in., G = 5800 ksi). The assembly is to be bolted to walls A and C. If a torque T<sub>B</sub> of magnitude 2000 kip·in is applied at B, determine the shear stress in the steel section and the brass section after the ends are bolted for each of the following end conditions:</p>
 <ol type="1">
 <li>Both ends A and C are tightly connected immediately at installation</li>
 <li>There is a slight misalignment at end A that necessitates that that end be turned by 0.5° before the bolts can be tightened.</li>
 </ol>
-<p>[figure]</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH6 PNGs/example 6.4 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="273"></p>
+</figure>
+</div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -822,9 +988,17 @@ Solution
 <div class="callout-body-container callout-body">
 <p><strong>Step 1</strong> (for both (a) and (b))</p>
 <p>Draw the FBD of the whole body (see below) and write out relevant equilibrium equations. In this case, that would only be <span class="math inline">\(\sum M_x=0\)</span>. Note that the assumed directions for T<sub>A</sub> and T<sub>C</sub> would usually said to be completely assumed, with the signs of the answers obtained for them indicating if the assumed directions are correct. For case(a), this is still true.</p>
-<p>However, for case (b), the direction of TA should be in the direction opposite to the way the shaft turns as a result of the applied torque, T<sub>B</sub>, before the bolt is tightened. The reason for this is illustrated in Figure 3 below. The assumed direction of T<sub>C</sub> can be in either direction for both case (a) and case (b).</p>
-<p>[figure]</p>
-<p>[figure]</p>
+<p>However, for case (b), the direction of TA should be in the direction opposite to the way the shaft turns as a result of the applied torque, T<sub>B</sub>, before the bolt is tightened. The reason for this is illustrated in figure 3 below. The assumed direction of T<sub>C</sub> can be in either direction for both case (a) and case (b).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH6 PNGs/example 6.4 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="409"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH6 PNGs/example 6.4 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
 <p>Note that the choice of which way the positive x-axis goes on the whole body FBD is arbitrary. As long as the choice of signs applied to torques for any global (whole body) equation is based on the same assumption, it does not matter which direction is chosen to be the positive x direction. In this case where the positive direction is chosen to be going to the left, the signs on the torques will be based on the way the torques are perceived when looking in the direction from A towards C. Since the direction of TB is known to be counterclockwise from that perspective, it is drawn in the direction of the positive x-axis and following from that, T<sub>A</sub> is drawn to be in the direction of the negative x-axis. TC is assumed to be the same direction as T.</p>
 <p><span class="math display">\[
 \begin{gathered}
@@ -848,7 +1022,11 @@ T_C+T_A=T_B
 <p>Write the compatibility equation by substituting the appropriate torque-twist equations for the angles of twist.</p>
 <p>To implement this step, the internal torque (and sign) for each section must be established by cutting sections and applying equilibrium.</p>
 <p>The FBD for a section made by cutting through section AB is shown below.</p>
-<p>[figure]</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH6 PNGs/example 6.4 part 4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="317"></p>
+</figure>
+</div>
 <p>The equilibrium equation for this section is:</p>
 <p><span class="math display">\[
 \sum M_x=T_A-T_{A B}=0
@@ -858,7 +1036,11 @@ T_C+T_A=T_B
 \phi_{AB}=-\frac{T_{AB}L_{AB}}{J_{AB}G_{AB}}=\frac{-T_A*(12{~in.})}{\frac{\pi}{32}(10{~in.})^4*(11600{~ksi})}
 \]</span></p>
 <p>The FBD for a section made by cutting through section BC is shown below.</p>
-<p>[figure]</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH6 PNGs/example 6.4 part 5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="300"></p>
+</figure>
+</div>
 <p>The equilibrium equation for this section is:</p>
 <p><span class="math display">\[
 \sum M_x=-T_{B C}+T_C=0
@@ -934,6 +1116,7 @@ T_C+T_A=T_B
 </div>
 </div>
 </div>
+</div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -946,9 +1129,17 @@ Example 6.5
 </div>
 <div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
+<div id="exm-6.5" class="theorem example">
+<p><span class="theorem-title"><strong>Example 6.5</strong></span> &nbsp;</p>
+<p>
+</p>
 <p>Re-solve part (a) of example 6.4 using the method of superposition. The problem is repeated here for convenience.</p>
 <p>A shaft assembly consisting of a 12 in long steel steel section AB (d = 10 in, G = 11600 ksi)) bonded rigidly to a 9 inch long solid brass section BC (d = 7 in, G = 5800 ksi). The assembly is bolted to walls A and C. If both ends A and C are tightly connected to the walls and a torque T<sub>B</sub> of magnitude 2000 kip·in is applied at B, determine the shear stress in the steel section and the brass section.</p>
-<p>[figure]</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH6 PNGs/example 6.5 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="298"></p>
+</figure>
+</div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -964,7 +1155,11 @@ Solution
 <p>The first step to solving (global equilibrium) remains the same. The method of superposition will be applied in step 2 and step 3.</p>
 <p><strong>Step 1</strong> (for both (a) and (b))</p>
 <p>Draw the FBD of the whole body and write out the relevant equilibrium equations. The assumed directions for T<sub>A</sub> and T<sub>C</sub> are shown on the FBD as well as the direction used for the positive x-direction. Recall that the direction of the torque should be determined by looking from the positive x-axis towards the negative (A to C).</p>
-<p>[figure]</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH6 PNGs/example 6.5 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="437"></p>
+</figure>
+</div>
 <p>Applying equilibrium in this case reduces down to the sum of the moments about the x-axis as the only non-trivial equation:</p>
 <p><span class="math display">\[
 \begin{gathered}
@@ -978,7 +1173,8 @@ T_C+T_A=T_B
 <li><p>Without the reaction at C, so that the assembly acts as if it has a free end at C as shown in figure 3. In this case, since there is no torque applied between B and C, a section cut within BC shows that the that internal torque T<sub>BC</sub> must be 0 for equilibrium. A section cut through AB shows that the internal torque T<sub>AB</sub> = T<sub>B</sub> (clockwise, since it needs to point towards the cut for the section to be in equilibrium). Therefore, the angle of twist with this loading is:<br>
 <span class="math display">\[
 \phi_{C/A}=\sum \frac{TL}{JG}=\frac{T_{AB}L_{AB}}{J_{AB} {G}_{AB}}=\frac{-(2000{~kip}\cdot{in.})*(15{~in.})}{\frac{\pi}{32}(10{in.})^4*(11600{~ksi})}=-4.215 \times 10^{-3}{~rad}
-\]</span></p></li>
+\]</span></p>
+<p><img src="images/CH6 PNGs/example 6.5 part 3.png" class="img-fluid"></p></li>
 <li><p>With the reaction at C, but no torque applied at B. Drawing the section FBD’s in this case reveals that both T<sub>AB</sub> and T<sub>BC</sub> are equal in magnitude and opposite in direction from T<sub>C</sub>. Since they are both pointed away from the cut, the direction is taken to be counterclockwise, or positive. Therefore, the angle of twist with this loading is:<br>
 <span class="math display">\[
 \begin{aligned}
@@ -989,7 +1185,7 @@ T_C+T_A=T_B
 &amp;=527\times 10^5~T_{C}
 \end{aligned}
 \]</span><br>
-[figure]</p></li>
+<img src="images/CH6 PNGs/example 6.5 part 4.png" class="img-fluid"></p></li>
 </ol>
 <p><strong>Step 3</strong></p>
 <p>Now adding the effects of the isolated loading conditions gives the total angle of twist which should still be equal to zero when the ends are tightly bolted to the walls without extra twisting.</p>
@@ -997,8 +1193,8 @@ T_C+T_A=T_B
 -4.215 \times 10^{-3}{~rad}+1.527^* 10^{-5}~T{c}=0
 \]</span></p>
 <p><strong>Step 4</strong></p>
-<p>Solving for TC gives TC = 276 kip·in which is the same result found in Example 6.4.</p>
-<p>Step 5</p>
+<p>Solving for TC gives TC = 276 kip·in which is the same result found in example 6.4.</p>
+<p><strong>Step 5</strong></p>
 <p>Substituting this result into equation (1) also gives the same result as in example 6.4 for the reaction torque at A, TA = 1724 kip in.</p>
 <p>Once again, the corresponding shear stresses are:</p>
 <p><span class="math display">\[
@@ -1009,6 +1205,7 @@ T_C+T_A=T_B
 \]</span></p>
 <p><strong>τ<sub>AB</sub> = 8.78 ksi</strong></p>
 <p><strong>τ<sub>BC</sub> = 4.10 ksi</strong></p>
+</div>
 </div>
 </div>
 </div>
@@ -1027,8 +1224,16 @@ Example 6.6
 </div>
 <div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
+<div id="exm-6.6" class="theorem example">
+<p><span class="theorem-title"><strong>Example 6.6</strong></span> &nbsp;</p>
+<p>
+</p>
 <p>The vertical shaft assembly consists of a solid brass (G = 40 GPa) circular shaft completely bonded in section BC to a steel reinforcing tube (G = 80 GPa). The diameter of the brass is 25 mm along the whole length while the outer diameter of the steel is 50 mm. The assembly is subjected to torques T<sub>B</sub> = 800 N·m and T<sub>A</sub> = 300 N·m in the directions shown. Determine the shear stress in the brass in section AB and in BC.</p>
-<p>[figure]</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH6 PNGs/example 6.6 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="172"></p>
+</figure>
+</div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1048,6 +1253,11 @@ Solution
 \sum M_x=T_A-T_B-T_{Br}-T_{St}=0
 \]</span></p>
 <p>There is only 1 non-trivial eqilibrium equation and two unknowns, so the problem is statically indeterminate.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH6 PNGs/example 6.6 part 2.png" class="quarto-figure quarto-figure-center figure-img" width="189" height="383"></p>
+</figure>
+</div>
 <p><strong>Step 2</strong></p>
 <p>Apply the kinematic constraint. In this case, the materials are fully bonded in section BC, so the materials are constrained to twist as a unit in the that section. In BC, the kinematic equation is:</p>
 <p><span class="math display">\[
@@ -1084,6 +1294,12 @@ T_{Br}=-16.1 {~N}\cdot{m}
 \]</span></p>
 <p><strong>τ<sub>BR</sub> in section BC is 5.26 MPa</strong></p>
 <p><strong>τ<sub>BR</sub> in section AB is 97.8 MPa</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH6 PNGs/example 6.6 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="205"></p>
+</figure>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -1129,8 +1345,17 @@ Click to expand
 <p><span class="math display">\[
 P=\frac{W}{t}=\frac{F \times d}{t}
 \]</span></p>
-<p>Within the context of rotating shafts, the force would be the force applied to the outer edge of the shaft that results in torque and the distance would be the arc length that a point on the edge of the shaft travels around the circumference in a given amount of time, t. Figure 6.14 illustrates this point.</p>
-<p><strong>Figure 6.14:</strong> Force applied to rotation shaft results in work</p>
+<p>Within the context of rotating shafts, the force would be the force applied to the outer edge of the shaft that results in torque and the distance would be the arc length that a point on the edge of the shaft travels around the circumference in a given amount of time, t. <a href="#fig-6.14" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.14</span></a> illustrates this point.</p>
+<div id="fig-6.14" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-6.14-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/CH6 PNGs/figure 6.14.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="256">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-6.14-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.14: Force applied to rotation shaft results in work
+</figcaption>
+</figure>
+</div>
 <p>If the arclength over which point B travels, BB’ = rθ, then W = Frθ. However, Fr is also equal to the torque T on the shaft, so W = Tθ.</p>
 <p>Going back to the power equation, we then have <span class="math inline">\(P=\frac{T \theta}{t}\)</span>. The <span class="math inline">\(\frac{\theta}{t}\)</span> is angular velocity, which will be denoted with the Greek letter ω. So the power equation can finally be expressed as:</p>
 <p><span id="eq-6.4"><span class="math display">\[
@@ -1138,8 +1363,8 @@ P=\frac{W}{t}=\frac{F \times d}{t}
 \tag{6.3}\]</span></span></p>
 <div class="line-block"><em>where</em><br>
 <em>P = Power [Watts, horsepower]</em><br>
-<em>T = Torque [N·m, lb·in.]</em></div>
-<p><em>𝜔 = Angular velocity [rad/sec]</em></p>
+<em>T = Torque [N·m, lb·in.]</em><br>
+<em>𝜔 = Angular velocity [rad/sec]</em></div>
 </section>
 <section id="units-1" class="level3" data-number="6.4.2">
 <h3 data-number="6.4.2" class="anchored" data-anchor-id="units-1"><span class="header-section-number">6.4.2</span> Units</h3>
@@ -1150,62 +1375,71 @@ P=\frac{W}{t}=\frac{F \times d}{t}
 <table class="table">
 <caption><strong>Table 6.1:</strong> Power</caption>
 <colgroup>
-<col style="width: 20%">
-<col style="width: 79%">
+<col style="width: 1%">
+<col style="width: 98%">
 </colgroup>
 <tbody>
 <tr class="odd">
 <td>SI (watt)</td>
-<td><span class="math display">\[                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  W=\frac{N m}{s}=\frac{J}{s}                                                                                                           
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  \]</span></td>
+<td><span class="math display">\[                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             W=\frac{N m}{s}=\frac{J}{s}                                                                                                                                     
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             \]</span></td>
 </tr>
 <tr class="even">
 <td>US</td>
-<td><span class="math display">\[                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  \left(\frac{f t l b}{s}\right) \operatorname{or}\left(\frac{l b}{s}\right)                                                            
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  \]</span></td>
+<td><span class="math display">\[                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             \left(\frac{f t l b}{s}\right) \operatorname{or}\left(\frac{l b}{s}\right)                                                                                      
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             \]</span></td>
 </tr>
 <tr class="odd">
 <td>US (horsepower, hP)</td>
-<td><span class="math display">\[                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  1 h P=\frac{550 f t l b}{s}                                                                                                           
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  \]</span></td>
+<td><span class="math display">\[                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             1 h P=\frac{550 f t l b}{s}                                                                                                                                     
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             \]</span></td>
 </tr>
 </tbody>
 </table>
 <table class="table">
 <caption><strong>Table 6.2:</strong> Other rotational units</caption>
 <colgroup>
-<col style="width: 20%">
-<col style="width: 79%">
+<col style="width: 1%">
+<col style="width: 98%">
 </colgroup>
 <tbody>
 <tr class="odd">
 <td>Hertz (Hz)</td>
-<td><span class="math display">\[                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    H z=\frac{r e v}{s}                                                                                                                                                                                                     
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    \]</span></td>
+<td><span class="math display">\[                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  H z=\frac{r e v}{s}                                                                                                                                                                                                                               
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  \]</span></td>
 </tr>
 <tr class="even">
 <td>Angular velocity given Hz (rad/s)</td>
-<td><span class="math display">\[                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    \frac{r a d}{s}=H z(2 \pi)=\frac{r e v}{s}(2 \pi)                                                                                                                                                                       
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    \]</span></td>
+<td><span class="math display">\[                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  \frac{r a d}{s}=H z(2 \pi)=\frac{r e v}{s}(2 \pi)                                                                                                                                                                                                 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  \]</span></td>
 </tr>
 <tr class="odd">
 <td>Angular velocity given rpm (rad/s)</td>
-<td><span class="math display">\[                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    \frac{\mathrm{rad}}{\mathrm{s}}=\frac{r e v}{\min }\left(\frac{2 \pi \mathrm{rad}}{1 \mathrm{rev}}\right)\left(\frac{1 \mathrm{~min}}{60 \mathrm{~s}}\right)                                                            
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    \]</span></td>
+<td><span class="math display">\[                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  \frac{\mathrm{rad}}{\mathrm{s}}=\frac{r e v}{\min }\left(\frac{2 \pi \mathrm{rad}}{1 \mathrm{rev}}\right)\left(\frac{1 \mathrm{~min}}{60 \mathrm{~s}}\right)                                                                                      
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  \]</span></td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="torque-transfer-between-connected-gears-gear-ratio" class="level3" data-number="6.4.3">
 <h3 data-number="6.4.3" class="anchored" data-anchor-id="torque-transfer-between-connected-gears-gear-ratio"><span class="header-section-number">6.4.3</span> Torque Transfer Between Connected Gears (Gear Ratio)</h3>
-<p>Consider two connected gears as shown in Figure 6.15. The interaction of the teeth results in a force applied to each gear from the other. For equilibrium, this force must be equal in magnitude but opposite in direction. The force results in a torque which can be expressed as T = Fr.</p>
-<p><strong>Figure 6.15:</strong> Gear interaction results in the application of force and torque</p>
+<p>Consider two connected gears as shown in <a href="#fig-6.15" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.15</span></a>. The interaction of the teeth results in a force applied to each gear from the other. For equilibrium, this force must be equal in magnitude but opposite in direction. The force results in a torque which can be expressed as T = Fr.</p>
+<div id="fig-6.15" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-6.15-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/CH6 PNGs/figure 6.15.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-6.15-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.15: Gear interaction results in the application of force and torque
+</figcaption>
+</figure>
+</div>
 <p>Given that the force on each gear is equal in magnitude to the force on the other, we can write:</p>
 <p><span class="math display">\[
 F=\frac{T_A}{r_A}=\frac{T_B}{r_B}
@@ -1228,26 +1462,45 @@ F=\frac{T_A}{r_A}=\frac{T_B}{r_B}
 </section>
 <section id="angle-of-twist" class="level3" data-number="6.4.5">
 <h3 data-number="6.4.5" class="anchored" data-anchor-id="angle-of-twist"><span class="header-section-number">6.4.5</span> Angle of Twist</h3>
-<p>When two connected gears rotate, they will have equal arclengths of travel for a given amount of shaft rotation, but in opposite directions, as depicted in figure 6.16. This means that rAφA = - rBφB, and the angle of twist at point B for the shaft that it is on can be related to the angle of twist at the same location on the shaft that gear A is on.</p>
+<p>When two connected gears rotate, they will have equal arclengths of travel for a given amount of shaft rotation, but in opposite directions, as depicted in <a href="#fig-6.16" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.16</span></a>. This means that rAφA = - rBφB, and the angle of twist at point B for the shaft that it is on can be related to the angle of twist at the same location on the shaft that gear A is on.</p>
 <p><span id="eq-6.7"><span class="math display">\[
 \boxed{\phi_A=-\frac{r_B}{r_A} \phi_B}
 \tag{6.6}\]</span></span></p>
 <p>As with the angular velocities, notice that the gear ratio is the inverse as that used to relate torques.</p>
-<p><strong>Figure 6.16:</strong> Connected gears travel the same distance in opposite directions.</p>
-<p>In Example 6.7, a problem of power transmission with connected gears is presented which utilizes the above concepts.</p>
+<div id="fig-6.16" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-6.16-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/CH6 PNGs/figure 6.16.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="249">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-6.16-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.16: Connected gears travel the same distance in opposite directions.
+</figcaption>
+</figure>
+</div>
+<p>In <a href="#exm-6.7" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-6.7</span></a>, a problem of power transmission with connected gears is presented which utilizes the above concepts.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Example 6.7
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
+<div id="exm-6.7" class="theorem example">
+<p><span class="theorem-title"><strong>Example 6.7</strong></span> &nbsp;</p>
+<p>
+</p>
 <p>60 kW of power is transmitted to gear D of the assembly at 33 Hz. Shaft CD is allowed to turn freely within its bearings in the direction shown at D. End A of shaft AB is attached rigidly to the wall. Determine the angle of twist of point D relative to A.</p>
 <p>Assume gear C has 35 teeth around it’s circumference and gear B has 50 teeth. In addition, shaft AB (d = 40 mm) is 450 mm long and shaft CD (d = 30 mm) is 700 mm long. Both shafts are made of steel (G = 80 GPa).</p>
-<p>[figure]</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH6 PNGs/example 6.7 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="424"></p>
+</figure>
+</div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1279,7 +1532,7 @@ T_D=\frac{P_D}{\omega}=\frac{60000{~W}}{33{~Hz}\left(\frac{2\pi{~rad}}{{Hz}}\rig
 \sum M_x=T_D-T_C=0 \\
 T_C=T_D
 \]</span><br>
-[figure]</p>
+<img src="images/CH6 PNGs/example 6.7 part 2.png" class="img-fluid"></p>
 <p><br>
 If we look from D towards C, the given direction of T<sub>D</sub> is counterclockwise, so TC = 289.4 N·m (clockwise).</p></li>
 <li><p>Use the gear ratio to relate the torque exerted on gear C to the torque exerted on gear B:<br>
@@ -1288,7 +1541,8 @@ T_B=\frac{N_B}{N_C} T_c=\frac{50}{35}(289.4{~N}\cdot{m})=413.4{~N}\cdot{m}
 \]</span></p></li>
 <li><p>Calculate φ<sub>B</sub> = φ<sub>AB</sub>. The FBD of a section cut from AB shows that the internal torque T<sub>AB</sub> = T<sub>B</sub>. Note that the direction of T<sub>B</sub> is shown as clockwise when viewed in the direction of B towards A. One can determine this based on the fact that shaft CD is shown to rotate counterclockwise, which results in a clockwise torque imposed from gear C onto gear B. Equilibrium shows that the internal torque T<sub>AB</sub> is then also clockwise so φ<sub>B</sub> will be negative.</p>
 <p><br>
-[figure]<br>
+<img src="images/CH6 PNGs/example 6.7 part 3.png" class="img-fluid" width="308"><br>
+<br>
 <span class="math display">\[
 \phi_B=\frac{T_{AB}L_{AB}}{J_{AB}G_{AB}}=-\frac{413.4{~N}\cdot{m}*(0.450{~m})}{\frac{\pi}{32}(0.04{~m})^4\left(80 \times 10^9~\frac{{N}}{{m}^2}\right)}=-0.009252{~rad}
 \]</span></p></li>
@@ -1298,7 +1552,8 @@ T_B=\frac{N_B}{N_C} T_c=\frac{50}{35}(289.4{~N}\cdot{m})=413.4{~N}\cdot{m}
 \]</span></p></li>
 <li><p>Determine and use the internal torque T<sub>CD</sub> to determine φ<sub>CD</sub>. Cutting a section through shaft CD and drawing the FBD shows that T<sub>CD</sub> = T<sub>D</sub> (counterclockwise), so:</p>
 <p><br>
-[figure]<br>
+<img src="images/CH6 PNGs/example 6.7 part 4.png" class="img-fluid" width="290"><br>
+<br>
 <span class="math display">\[
 \phi_{C D}=\frac{T_{CD}L_{CD}}{J_{CD}G_{CD}}=\frac{289.4{~N}\cdot{m}*(0.700 {~m})}{\frac{\pi}{32}(0.03{~m})^4\left(80 \times 10^9~\frac{{N}}{{m}^2}\right)}=0.03184{~rad}
 \]</span></p></li>
@@ -1308,6 +1563,8 @@ T_B=\frac{N_B}{N_C} T_c=\frac{50}{35}(289.4{~N}\cdot{m})=413.4{~N}\cdot{m}
 \]</span></p></li>
 </ol>
 <p><strong>φ<sub>D</sub> = .04506 rad</strong></p>
+</div>
+</div>
 </div>
 </div>
 </div>

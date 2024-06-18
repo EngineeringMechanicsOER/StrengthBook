@@ -25,66 +25,71 @@ Torsion is a moment applied around the longitudinal axis of a body. The effect o
 
 1.  In machinery, rotating shafts, such as transmission shafts that transmit power, are subjected to torque
 2.  When one uses a torque wrench to tight or loosen a bolt, the bolt is subjected to torque
-3.  Poles on which road signs and traffic lights are mounted are subjected to torque when forces (such as wind) are applied perpendicular to the sign.
+3.  Poles on which road signs and traffic lights are mounted are subjected to torque when forces (such as wind) are applied perpendicular to the sign (@fig-6.1).
 4.  Hinge pins are subjected to torque when the rotating elements they are attached to (doors for example) are rotated.
 
-**Figure 6.1:** needs caption
+![Horizontal wind blowing on the traffic lights will create a torsional moment in the vertical pole.](images/CH6%20PNGs/figure%206.1.jpg){#fig-6.1 fig-align="center" width="450"}
 
 This chapter will focus on bodies subjected to pure torsion (no axial or bending loads). These concepts will appear again in @sec-combined-loads when more generalized loading conditions are discussed.
 
-In sections 6.1 and 6.2 we'll derive equations for calculating the stress and deformation caused by torsional loads. In Section 6.3 we'll consider statically indeterminate torsion problems, using methods similar to those in @sec-5.5. In Section 6.4 we'll consider torques due to power transmission, a common application where torques are present.
+In @sec-6.1 and @sec-6.2 we'll derive equations for calculating the stress and deformation caused by torsional loads. In @sec-6.3 we'll consider statically indeterminate torsion problems, using methods similar to those in @sec-5.5. In @sec-6.4 we'll consider torques due to power transmission, a common application where torques are present.
 
 ### The Effect of Torsion
 
 As mentioned above, the effect of a torsional moment is to cause the body to twist. The resulting stress is a shear stress.
 
-Consider the pleated tube shown in Figure 6.1 (a) and (b) below. Figure 6.1(a) shows the tube in an unloaded state with some of the pleats colored for identification. In figure 6.1(b), we see that after a torque is applied, the pleats move vertically but not horizontally. In addition, without the color present, it would be difficult to identify the displacement at all. We can say that all points remain in their original plane even in the deformed state so that the shape of the cross-section is unchanged.
+Consider the pleated tube shown in @fig-6.2 below. @fig6.2 (A) shows the tube in an unloaded state with some of the pleats colored for identification. In @fig-6.2 (B), we see that after a torque is applied, the pleats move vertically but not horizontally. In addition, without the color present, it would be difficult to identify the displacement at all. We can say that all points remain in their original plane even in the deformed state so that the shape of the cross-section is unchanged.
 
-**Figure 6.2:** Unloaded tube (a) and tube with torque applied (b).
+![Unloaded tube (left) and tube with torque applied (right).](images/figure%206.2%20(new).png){#fig-6.2 fig-align="center" width="525"}
 
-Now consider the I-beam subjected to torsion in Figure 6.2. In this case we see that the shape of the cross-section changes and that the points do not remain in the same vertical plane (there is horizontal displacement as well as vertical). This shape change is referred to as warping. In this text, we will only be considering circular cross-sections with no warping.
+Now consider the I-beam subjected to torsion in @fig-6.3. In this case we see that the shape of the cross-section changes and that the points do not remain in the same vertical plane (there is horizontal displacement as well as vertical). This shape change is referred to as warping. In this text, we will only be considering circular cross-sections with no warping.
 
-**Figure 6.3:** I-beam subjected to torsion unloaded (a) and with applied torque (b).
+![I-beam subjected to torsion unloaded (a) and with applied torque (b).](images/CH6%20PNGs/figure%206.3.png){#fig-6.3 fig-align="center" width="495"}
 
-Going back to Figure 6.1, let’s consider the shape formed by the non-displaced colored lines in figure 6.1(a) versus the displaced lines in figure 6.1(b). These images are shown again in Figure 6.3. In the non-displaced case, a rectangle can be drawn around the green lines on the left with 90° corners. In the displaced case, the corners are no longer at 90°. From @sec-3.2, we know that this change in angle is the definition of shear strain. The evidence of shear strain indicates that the applied torque results in shear stress.
+Going back to @fig-6.2, let’s consider the shape formed by the non-displaced colored lines in @fig-6.2 (A) versus the displaced lines in @fig-6.2 (B). These images are shown again in @fig-6.4. In the non-displaced case, a rectangle can be drawn around the green lines on the left with 90° corners. In the displaced case, the corners are no longer at 90°. From @sec-3.2, we know that this change in angle is the definition of shear strain. The evidence of shear strain indicates that the applied torque results in shear stress.
 
-**Figure 6.4:** Evidence of shear strain
+![Evidence of shear strain](images/CH6%20PNGs/figure%206.4.png){#fig-6.4 fig-align="center" width="342"}
 
 ### Determination of Internal Torques
 
-As with axial loading, the stress and deformations due to torsion vary from point to point within a body and are dependent on the internal torques at the individual points and geometric section properties. Internal torques can be found by sectioning bodies and applying equilibrium equations, just like we did axial loading problems (see Examples 1.5, 2.1 and 2.2). In the case of internal torques, moment equilibrium around the longitudinal axis will be applied instead of force summation.
+As with axial loading, the stress and deformations due to torsion vary from point to point within a body and are dependent on the internal torques at the individual points and geometric section properties. Internal torques can be found by sectioning bodies and applying equilibrium equations, just like we did axial loading problems (see examples 1.5, 2.1 and 2.2). In the case of internal torques, moment equilibrium around the longitudinal axis will be applied instead of force summation.
 
 Before looking at an example that illustrates the process of finding internal torque reactions, it would be beneficial to establish the sign conventions that will be used as well as ways of representing torque in this text.
 
 ### Sign Convention and Representation of Torque
 
-Just as is typically used for moments, the sign convention that will be used in this text for torques is to assign a positive sign to torques that are counterclockwise and a negative sign for those that are clockwise. However, the direction that a torque appears to be depends on the perspective from which the rotation is being observed. In Figure 6.5 below, the applied torque would appear clockwise if viewed from the left end of the bar towards the right and counterclockwise if viewed from the right end of the bar towards the left. As long as one is being consistent, it is not usually important which perspective is used. However, a typical convention is to look from the free end of the shaft if there is one, towards the fixed end, or from the positive longitudinal axis if one is given, towards the negative.
+Just as is typically used for moments, the sign convention that will be used in this text for torques is to assign a positive sign to torques that are counterclockwise and a negative sign for those that are clockwise. However, the direction that a torque appears to be depends on the perspective from which the rotation is being observed. In @fig-6.5 below, the applied torque would appear clockwise if viewed from the left end of the bar towards the right and counterclockwise if viewed from the right end of the bar towards the left. As long as one is being consistent, it is not usually important which perspective is used. However, a typical convention is to look from the free end of the shaft if there is one, towards the fixed end, or from the positive longitudinal axis if one is given, towards the negative.
 
-**Figure 6.5:** Different directions for viewing torque result in different perspectives on sign.
+![Different directions for viewing torque result in different perspectives on sign.](images/CH6%20PNGs/figure%206.5.png){#fig-6.5 fig-align="center" width="512"}
 
-It can sometimes be difficult to visually determine whether a torque appears clockwise or counterclockwise, so one tool that can be used is the right-hand rule. If you use your right hand and curl your fingers in the direction of the rotation represented by the torque arrow, a positive (counterclockwise) torque would be represented if your thumb points in the direction of the positive longitudinal axis (the x-axis in Figure 6.6).
+It can sometimes be difficult to visually determine whether a torque appears clockwise or counterclockwise, so one tool that can be used is the right-hand rule. If you use your right hand and curl your fingers in the direction of the rotation represented by the torque arrow, a positive (counterclockwise) torque would be represented if your thumb points in the direction of the positive longitudinal axis (the x-axis in @fig-6.6).
 
-**Figure 6.6:** Using the right-hand rule to determine sign for torque
+![Using the right-hand rule to determine sign for torque](images/CH6%20PNGs/figure%206.6.png){#fig-6.6 fig-align="center" width="340"}
 
-When examining cut sections as will be needed to determine internal torques, establishing the sign of the internal torque requires looking from the direction of the cut edge towards the end of the cut section. One tool that can be used in this instance in place of direction visualization is to make the cut necessary to determine the internal torque in a given section and then imagine your right hand as being at the cut edge and curl your fingers in the direction of the torque. If your thumb points away from the cut edge, the internal torque is positive and vice versa. This is illustrated in Figure 6.7.
+When examining cut sections as will be needed to determine internal torques, establishing the sign of the internal torque requires looking from the direction of the cut edge towards the end of the cut section. One tool that can be used in this instance in place of direction visualization is to make the cut necessary to determine the internal torque in a given section and then imagine your right hand as being at the cut edge and curl your fingers in the direction of the torque. If your thumb points away from the cut edge, the internal torque is positive and vice versa. This is illustrated in @fig-6.7.
 
-**Figure 6.7:** Tool to determine sign of internal torques
+![Tool to determine sign of internal torques](images/CH6%20PNGs/figure%206.7.png){#fig-6.7 fig-align="center" width="604"}
 
 Finally, since circular arrows can be difficult to draw in a way that clearly conveys direction, double headed line arrows are frequently used to represent torque. Conventions can vary between texts and other sources. In this text, the following convention will be used:
 
 1.  On a whole body FBD, arrows facing in the direction of the positive longitudinal axis will be considered to indicate positive torques (counterclockwise) and vice versa. When applying equilibrium, these signs will be used.
 2.  The same will hold true for cut section FBD’s used to determine internal torques. However, if applying equilibrium indicates that the internal torque points away from the cut section, the torque can be concluded to be positive (counterclockwise) for the purposes of calculating angle of twist. Internal torque that points towards the cut section can be concluded to be negative (clockwise). In addition, on the cut sections, the regular convention of right directed arrows being positive and left directed arrows being negative for the purpose of summing moments will be used.
 
-The direction of the internal torque is not important in calculating shear stress (the sign on the stress requires concepts that will be discussed in @sec-stress-transformation), but it is important when calculating angle of twist, as we'll see in Section 6.2.
+The direction of the internal torque is not important in calculating shear stress (the sign on the stress requires concepts that will be discussed in @sec-stress-transformation), but it is important when calculating angle of twist, as we'll see in @sec-6.2.
 
 Example 6.1 demonstrates how to determine internal torques in a multi-section body as well as how to apply the above-described sign conventions.
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Example 6.1
 
+::: {#exm-6.1}
+<p>
+
+</p>
+
 A multi-section steel bar is supported by a fixed support at A and is subjected to torque T~B~ = 70 N mm and T~E~ = 30 N mm. Determine the internal torque at all points in the shaft.
 
-\[figure\]
+![](images/CH6%20PNGs/example%206.1%20part%201.png){fig-align="center" width="388"}
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Solution
@@ -93,7 +98,7 @@ Since the loading consists of torques applied at two distinct points, the intern
 
 To determine the internal torque in section AB, we can cut the shaft anywhere between points A and B and draw an FBD of the section to the left of the cut (everything from point A to the cut) or the section to the right of the cut (everything from the cut to E). An illustration of the cut and the resulting FBD’s are shown below. Note that the internal torque T~AB~ is drawn in opposite directions on the two sections. This must be the case if the bar is in equilibrium.
 
-\[figure\]
+![](images/CH6%20PNGs/example%206.1%20part%202.png){fig-align="center"}
 
 Before applying equilibrium, note the double headed arrows that represent the torques and the significance of the directions. In the above diagrams T~AB~ is drawn as **positive** internal torque on both the left and right section diagrams **since it points away from the cut** in both instances. However, when summing moments (as shown below), the direction of the arrow will be used as the sign in the equilibrium equation.
 
@@ -115,7 +120,7 @@ The positive result confirms that the assumed direction for T~AB~ is the correct
 
 Similarly, the internal torque in all parts of the shaft between B and E can be determined by cutting the shaft at a non-specific point between B and E and applying equilibrium to the section of shaft to the left of the cut or the section to the right of the cut. The two FBD’s are shown below. Once again, the internal torque (T~BE~ in this case) is drawn in the direction away from the cut on both sections, so it is assumed to be positive on both sections.
 
-\[figure\]
+![](images/CH6%20PNGs/example%206.1%20part%203.png){fig-align="center"}
 
 Applying the moment equilibrium equation on the right section gives:
 
@@ -134,6 +139,7 @@ The negative result indicates that TBE goes in the opposite direction than what 
 **The internal torque for all points between B and E is 30 N**·**mm clockwise.**
 :::
 :::
+:::
 
 </details>
 
@@ -145,15 +151,15 @@ The negative result indicates that TBE goes in the opposite direction than what 
 
 In this section, the derivation of the shear stress equation for torque is explained before presenting it so that the inputs to the resulting equation, as well as the assumptions, etc., can be better understood.
 
-Consider a circular shaft that is fixed on one end and subjected to torque on the free end, as shown in figure 6.1.1. The shaft has an outer radius, c, as shown in figure 6.1.2 (b). For the given loading, the internal torque at any location along the shaft, x, would also be T.
+Consider a circular shaft that is fixed on one end and subjected to torque on the free end, as shown in @fig-6.8. The shaft has an outer radius, c, as shown in @fig-6.9 (B). For the given loading, the internal torque at any location along the shaft, x, would also be T.
 
-**Figure 6.8:** Illustration of fixed end shaft subjected to torque and smaller sliver within the shaft.
+![Illustration of fixed end shaft subjected to torque and smaller sliver within the shaft.](images/CH6%20PNGs/figure%206.8.png){#fig-6.8 fig-align="center" width="520"}
 
-Before the torque, T, is applied, a horizontal line segment drawn across a sliver of the shaft, marked by points A and B, has a length of Δx. Now let’s consider the same shaft segment after the torque has been applied and points A and B move to A’ and B’. An illustration of the resulting geometry can be seen in figure 6.1.2 (a). Since the shaft is fixed on the left end, we see that point B on the shaft will rotate more than point A. We can approximate that line segment AB remains linear for a very narrow section of shaft (infinitely small Δx).
+Before the torque, T, is applied, a horizontal line segment drawn across a sliver of the shaft, marked by points A and B, has a length of Δx. Now let’s consider the same shaft segment after the torque has been applied and points A and B move to A’ and B’. An illustration of the resulting geometry can be seen in @fig-6.9 (A). Since the shaft is fixed on the left end, we see that point B on the shaft will rotate more than point A. We can approximate that line segment AB remains linear for a very narrow section of shaft (infinitely small Δx).
 
-**Figure 6.9:** Illustration of the displacement of points A and B on the shaft (a) and the cross-section of the shaft (b).
+![Illustration of the displacement of points A and B on the shaft (A) and the cross-section of the shaft (B).](images/CH6%20PNGs/figure%206.9.png){#fig-6.9 fig-align="center" width="504"}
 
-Recalling that shear strain is the change in the angle between two lines that are originally perpendicular, we can see that the angle of tilt in AB after the torque is applied is the shear strain, γ, that results from the torque. The displacement of point B from the original position to B’ on the cross-section is shown in figure 6.1.2 (b). For an infinitely small Δx, the arc segment from B to B’ can be approximated as vertical so that the shear strain γ can be expressed using trigonometry as:
+Recalling that shear strain is the change in the angle between two lines that are originally perpendicular, we can see that the angle of tilt in AB after the torque is applied is the shear strain, γ, that results from the torque. The displacement of point B from the original position to B’ on the cross-section is shown in @fig-6.9 (B). For an infinitely small Δx, the arc segment from B to B’ can be approximated as vertical so that the shear strain γ can be expressed using trigonometry as:
 
 $$
 \tan (\gamma)=\frac{B B^{\prime}}{\Delta x}
@@ -165,7 +171,7 @@ $$
 \gamma=\frac{B B^{\prime}}{\Delta x}
 $$
 
-Now consider the cross-section of the shaft where point B and B’ are located, shown in figure 6.1.2b. As discussed above, B’ is the location point B moves to when the torque is applied, so the angle between the radial lines that go from the center to points B and B’, respectively, of the shaft segment is the angle of twist of the segment. Since we are considering just a section of the shaft, the angle is represented as Δφ (as opposed to the absolute angle of twist, φ, as measured from the fixed end). If the outer radius of the shaft is r = c, then the length of BB’ is given by the arclength, so:
+Now consider the cross-section of the shaft where point B and B’ are located, shown in @fig-6.9 (B). As discussed above, B’ is the location point B moves to when the torque is applied, so the angle between the radial lines that go from the center to points B and B’, respectively, of the shaft segment is the angle of twist of the segment. Since we are considering just a section of the shaft, the angle is represented as Δφ (as opposed to the absolute angle of twist, φ, as measured from the fixed end). If the outer radius of the shaft is r = c, then the length of BB’ is given by the arclength, so:
 
 $$
 \mathrm{BB}^{\prime}=\mathrm{c}(\Delta \phi)
@@ -183,7 +189,7 @@ $$
 \gamma=\frac{\rho(\Delta \phi)}{\Delta x}
 $$
 
-The resulting expression of γ shows that the shear strain varies linearly with ρ from the center of the cross-section to the outer radius, as illustrated in figure 6.1.3. The shear strain is 0 at the center, and the max shear strain occurs at the max value of ρ = c.
+The resulting expression of γ shows that the shear strain varies linearly with ρ from the center of the cross-section to the outer radius, as illustrated in @fig-6.10. The shear strain is 0 at the center, and the max shear strain occurs at the max value of ρ = c.
 
 $$
 \gamma_{\max }=\frac{c(\Delta \phi)}{\Delta x}
@@ -195,21 +201,21 @@ $$
 \tau=G \gamma=G \frac{\rho(\Delta \phi)}{\Delta x}, \tau_{\max }=G \frac{c(\Delta \phi)}{\Delta x}
 $$
 
-**Figure 6.10:** Shear strain and shear stress vary linearly from the center to the outer edge of the circular cross-section.
+![Shear strain and shear stress vary linearly from the center to the outer edge of the circular cross-section.](images/CH6%20PNGs/figure%206.10.png){#fig-6.10 fig-align="center" width="252"}
 
-Looking at figure 6.1.3 shows that the slope of the linear variation is $\frac{\tau_{\max }}{c}$ and the shear stress can also be expressed as:
+Looking at @fig-6.10 shows that the slope of the linear variation is $\frac{\tau_{\max }}{c}$ and the shear stress can also be expressed as:
 
 $$
 \tau=\frac{\tau_{\max }}{c} \rho
 $$
 
-The last step in developing the shear stress relationship to torque involves considering the equilibrium of the shaft. Refer to figure 6.1.4. If each point (i) on the cross-section with area dA~i~ has a given amount of shear stress,τ~i~, then the corresponding force at each point dF~i~ can be calculated as:
+The last step in developing the shear stress relationship to torque involves considering the equilibrium of the shaft. Refer to @fig-6.11. If each point (i) on the cross-section with area dA~i~ has a given amount of shear stress,τ~i~, then the corresponding force at each point dF~i~ can be calculated as:
 
 $$
 \mathrm{dF}_i=\tau_i \mathrm{dA}_i=\frac{\tau_{\max }}{c} \rho_i d A
 $$
 
-**Figure 6.11:** Illustration of infinitesimal forces on the shaft cross-section.
+![Illustration of infinitesimal forces on the shaft cross-section.](images/CH6%20PNGs/figure%206.11.png){#fig-6.11 fig-align="center" width="265"}
 
 Recalling that the internal torque everywhere on the shaft is T, equilibrium dictates that the sum of the moments about the center of the cross-section should be equal to T. For an infinite number of points on the cross-section, this summation can be performed as an integral:
 
@@ -258,14 +264,19 @@ $$ {#eq-6.1}
 
 Note that for now, only the magnitude of the shear stress (without sign) will be determined since the sign for shear stress is not based purely on the sign of the torque. The sign on shear stress will be discussed in @sec-stress-transformation.
 
-Example 6.2 demonstrates the use of the above equations to determine shear stress in the same circular bar assembly used in Example 6.1.
+@exm-6.2 demonstrates the use of the above equations to determine shear stress in the same circular bar assembly used in @exm-6.1.
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Example 6.2
 
+::: {#exm-6.2}
+<p>
+
+</p>
+
 The multi-section solid steel bar of example 6.1 is repeated here with the same loading (TB = 70 N mm and TE = 30 N mm). Also, given the diameters: d~AC~ = 50 mm, d~CD~ = 20 mm, and d~DE~ = 35 mm, determine the magnitude and location of the max shear stress in the bar assembly.
 
-\[figure\]
+![](images/CH6%20PNGs/example%206.2.png){fig-align="center" width="375"}
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Solution
@@ -277,7 +288,7 @@ It can be seen from Equation 6.5 that the max shear stress will depend on the in
 3.  Section CD which gets sectioned at D due to the geometry change at D
 4.  Section DE which would get sectioned at E if E were not the end of the shaft
 
-From Example 6.1, it is known that the magnitudes of the internal torque for all points between A and B, TAB, is 40 N mm and the internal torque for all points between B and E, TBE, is 70 N mm. Since the internal torque stays constant from B to E, it is known that TBC = TCD = TDE = 70 N mm. Recall that only the **magnitude** of shear stress will be calculated with the sign being discussed in @sec-stress-transformation.
+From example 6.1, it is known that the magnitudes of the internal torque for all points between A and B, TAB, is 40 N mm and the internal torque for all points between B and E, TBE, is 70 N mm. Since the internal torque stays constant from B to E, it is known that TBC = TCD = TDE = 70 N mm. Recall that only the **magnitude** of shear stress will be calculated with the sign being discussed in @sec-stress-transformation.
 
 Since the bar has a solid cross-section with the diameters given, we will use $J_{solid}=\frac{\pi}{32} d^4$ to calculate the polar moment of inertia at each section.
 
@@ -296,6 +307,7 @@ $$
 $$
 
 **The max shear stress in the bar is 44.6 kPa and occurs in section CD.**
+:::
 :::
 :::
 
@@ -321,11 +333,11 @@ $$
 
 <summary>Click to expand</summary>
 
-In @sec-axial-loading, we derived and applied a formula for axial deformation. We will do something similar in this chapter for circular shafts subjected to torsion. The deformation of a shaft that arises from applying torsion, assuming deformation is restricted to the elastic deformation range for the material, is quantified by the angle of twist, $\phi$. As discussed in Section 6.1, and illustrated here again in Figure 6.12, the angle of twist is the angle formed between the radial line that goes from the center of the cross section to a point in its original location and the radial line that goes from the center to the point in its new location after the torsional load is applied. The equation to determine angle of twist at various points along the shaft will be derived below.
+In @sec-axial-loading, we derived and applied a formula for axial deformation. We will do something similar in this chapter for circular shafts subjected to torsion. The deformation of a shaft that arises from applying torsion, assuming deformation is restricted to the elastic deformation range for the material, is quantified by the angle of twist, $\phi$. As discussed in @sec-6.1, and illustrated here again in @fig-6.12, the angle of twist is the angle formed between the radial line that goes from the center of the cross section to a point in its original location and the radial line that goes from the center to the point in its new location after the torsional load is applied. The equation to determine angle of twist at various points along the shaft will be derived below.
 
-**Figure 6.12:** The angle between B (original location) and B' (where B moves to after torque is applied to the shaft) is the angle of twist, $\phi$.
+![The angle between B (original location) and B' (where B moves to after torque is applied to the shaft) is the angle of twist, \$\\phi\$.](images/CH6%20PNGs/figure%206.12.png){#fig-6.12 fig-align="center" width="217"}
 
-Recall from Section 6.1 that the shear strain $\gamma=\frac{\rho(\Delta \phi)}{\Delta x}$. Also recall that Δx represents the length of a section of shaft of arbitrary length and Δφ is the change in angle of twist that occurs across that length. For an infinitely small section of shaft, the shear strain equation can be expressed in terms of differentials: $\gamma=\frac{\rho(d \phi)}{d x}$.
+Recall from @sec-6.1 that the shear strain $\gamma=\frac{\rho(\Delta \phi)}{\Delta x}$. Also recall that Δx represents the length of a section of shaft of arbitrary length and Δφ is the change in angle of twist that occurs across that length. For an infinitely small section of shaft, the shear strain equation can be expressed in terms of differentials: $\gamma=\frac{\rho(d \phi)}{d x}$.
 
 Now applying Hooke’s Law, τ = Gγ, and the equation for shear stress we get:
 
@@ -362,10 +374,9 @@ $$ {#eq-6.2}
 | *T = Internal torque* \[N·m, lb·in.\]
 | *L = Length \[m, in.\]*
 | *J = Polar moment of inertia \[m^4^, in.^4^\]*
+| *G = Shear modulus \[Pa, psi\]*
 
-*G = Shear modulus \[Pa, psi\]*
-
-In these calculations, the sign of internal torque will be important as it indicates the direction of the twist. If one section twists in one direction and the adjoining section twists in the opposite direction, the effect will be that the angles will subtract from each other resulting in a smaller overall angle of twist. On the other hand, if two adjoining sections twist in the same direction, the effect will be additive. According to the assigned sign convention discussed in section 6.1, an overall positive angle of twist indicates that the shaft twists counterclockwise when looking from the positive end of the longitudinal axis to the negative and vice versa.
+In these calculations, the sign of internal torque will be important as it indicates the direction of the twist. If one section twists in one direction and the adjoining section twists in the opposite direction, the effect will be that the angles will subtract from each other resulting in a smaller overall angle of twist. On the other hand, if two adjoining sections twist in the same direction, the effect will be additive. According to the assigned sign convention discussed in @sec-6.1, an overall positive angle of twist indicates that the shaft twists counterclockwise when looking from the positive end of the longitudinal axis to the negative and vice versa.
 
 ### Units
 
@@ -375,37 +386,42 @@ Because the angle of twist often works out to be very small, it may be desired t
 
 ### Notation
 
-When finding the angle of twist, the angle at any given point along the length of the shaft will be found relative to some reference point. Often the reference point is a fixed point (at a fixed support for example), so the relative angle is an absolute angle. In this case, the symbol $\phi$ will be subscripted with the point along the shaft where the angle was calculated. For example, given the shaft assembly in Figure 6.13 below, the notation φ~B~ denotes the angle of twist at point B relative to the fixed point A.
+When finding the angle of twist, the angle at any given point along the length of the shaft will be found relative to some reference point. Often the reference point is a fixed point (at a fixed support for example), so the relative angle is an absolute angle. In this case, the symbol $\phi$ will be subscripted with the point along the shaft where the angle was calculated. For example, given the shaft assembly in @fig-6.13 below, the notation φ~B~ denotes the angle of twist at point B relative to the fixed point A.
 
-If one is finding the relative angle of twist between two non-fixed points that are on the same section of shaft (same T, J, and G), the angle of one point relative to another on the same section of shaft is notated with two subscripts specifying the two points. For example, the angle of twist of D relative to C in Figure 6.13 is notated as $\phi_{CD}$. In this case, one would perform the calculation for the angle of twist at D as if point C is fixed, in which case:
+If one is finding the relative angle of twist between two non-fixed points that are on the same section of shaft (same T, J, and G), the angle of one point relative to another on the same section of shaft is notated with two subscripts specifying the two points. For example, the angle of twist of D relative to C in @fig-6.13 is notated as $\phi_{CD}$. In this case, one would perform the calculation for the angle of twist at D as if point C is fixed, in which case:
 
 $$
 \phi_{B C}=\frac{T_{C D} L_{C D}}{J_{C D} G_{C D}}
 $$
 
-If one is finding the relative angle of twist between two non-fixed points (let’s say B and D in Figure 6.13) that are on different sections of shaft (i.e., there are 1 or more section changes between them due to changing T, J, or G), the relative angle of twist between them would be found by summing the angles of twist of each section between them. In this case, the notation would be $\phi_{D/B}$ which is said as the angle of twist of D relative to B. If point C is where the section change occurs, the calculation would be:
+If one is finding the relative angle of twist between two non-fixed points (let’s say B and D in @fig-6.13) that are on different sections of shaft (i.e., there are 1 or more section changes between them due to changing T, J, or G), the relative angle of twist between them would be found by summing the angles of twist of each section between them. In this case, the notation would be $\phi_{D/B}$ which is said as the angle of twist of D relative to B. If point C is where the section change occurs, the calculation would be:
 
 $$
 \phi_{D / B}=\phi_{B C}+\phi_{C D}
 $$
 
-**Figure 6.13:** A multi-section body with fixed end A and constant torque conditions in sections
+![A multi-section body with fixed end A and constant torque conditions in sections](images/CH6%20PNGs/figure%206.13.png){#fig-6.13 fig-align="center" width="414"}
 
-These concepts will be illustrated in Example 6.3 which continues with the same bar assembly and loading used in Examples 6.1 and 6.2.
+These concepts will be illustrated in @exm-6.3 which continues with the same bar assembly and loading used in @exm-6.1 and @exm-6.2.
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Example 6.3
 
-The multi-section steel bar of Examples 6.1 and 6.2 is repeated here with the same loading (T~B~ = 70 N·mm and T~E~= 30 N·mm). Given the diameters: d~AC~ = 50 mm, d~CD~ = 20 mm, and d~DE~ = 35 mm, and section lengths L~AB~ = 300 mm, L~BC~ = 200 mm, L~CD~ = 400 mm, and L~DE~ = 700 mm, determine the angle of twist of points C, D, and E, all relative to point A which is attached to the fixed support. All sections have a shear modulus of G = 40 GPa. A negative result indicates a clockwise twist and a positive result indicates a counterclockwise twist.
+::: {#exm-6.3}
+<p>
 
-\[figure\]
+</p>
+
+The multi-section steel bar of examples 6.1 and 6.2 is repeated here with the same loading (T~B~ = 70 N·mm and T~E~= 30 N·mm). Given the diameters: d~AC~ = 50 mm, d~CD~ = 20 mm, and d~DE~ = 35 mm, and section lengths L~AB~ = 300 mm, L~BC~ = 200 mm, L~CD~ = 400 mm, and L~DE~ = 700 mm, determine the angle of twist of points C, D, and E, all relative to point A which is attached to the fixed support. All sections have a shear modulus of G = 40 GPa. A negative result indicates a clockwise twist and a positive result indicates a counterclockwise twist.
+
+![](images/CH6%20PNGs/example%206.3.png){fig-align="center" width="422"}
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Solution
 
 As was the case when calculating shear stress in Example 6.2, the changes in torque and geometry result in 4 distinct sections for which the angle of twist will remain constant within the section but change going from one section to another. These sections are AB, BC, CD, and DE.
 
-In Example 6.1, it was shown that the internal torque in section AB is counterclockwise and equal to 40 N·mm. It was also shown that the internal torque in all sections between B and E is clockwise and equal to 30 N·mm. The directions in this case are relative to viewing in the direction from the positive end of the x-axis to the negative (i.e., point E to point A). This will mean that the angle of twist in section AB will be positive while the angle of twist in BC, CD, and DE will be negative.
+In example 6.1, it was shown that the internal torque in section AB is counterclockwise and equal to 40 N·mm. It was also shown that the internal torque in all sections between B and E is clockwise and equal to 30 N·mm. The directions in this case are relative to viewing in the direction from the positive end of the x-axis to the negative (i.e., point E to point A). This will mean that the angle of twist in section AB will be positive while the angle of twist in BC, CD, and DE will be negative.
 
 Since point A is a fixed point, $\phi_{B / A}=\phi_B=\phi_{A B}$.
 
@@ -460,6 +476,7 @@ $$
 **φE = -5.30 x 10-5 rad = 53.0 μrad (clockwise)**
 :::
 :::
+:::
 
 ::: {.callout-warning icon="false"}
 ## Step-by-step: Angle of Twist
@@ -502,19 +519,24 @@ For the case of redundant supports, an alternative would be to use the method of
 5.  Sum the angle of twist from step 2 and step 4 and set the total equal to zero (or a given angle as appropriate).
 6.  Solve the equation resulting from step 5 for the reaction at the redundant support and then use the whole body equilibrium to solve for the reaction at the other support(s).
 
-Example 6.4 demonstrates how to solve a statically indeterminate torsion problem that falls under the first category of problems described above.Example 6.5 uses superposition to solve part (a) of Example 6.4.
+@exm-6.4 demonstrates how to solve a statically indeterminate torsion problem that falls under the first category of problems described above. @exm-6.5 uses superposition to solve part (a) of @exm-6.4.
 
-Example 6.6 goes through the process of solving a statically indeterminate torsion problems that falls under the second category of problems described above.
+@exm-6.6 goes through the process of solving a statically indeterminate torsion problems that falls under the second category of problems described above.
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Example 6.4
+
+::: {#exm-6.4}
+<p>
+
+</p>
 
 A shaft assembly consists of a 12 in long steel section AB (d = 10 in., G = 11600 ksi)) bonded rigidly to a 9 inch long solid brass section BC (d = 7 in., G = 5800 ksi). The assembly is to be bolted to walls A and C. If a torque T~B~ of magnitude 2000 kip·in is applied at B, determine the shear stress in the steel section and the brass section after the ends are bolted for each of the following end conditions:
 
 1.  Both ends A and C are tightly connected immediately at installation
 2.  There is a slight misalignment at end A that necessitates that that end be turned by 0.5° before the bolts can be tightened.
 
-\[figure\]
+![](images/CH6%20PNGs/example%206.4%20part%201.png){fig-align="center" width="273"}
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Solution
@@ -523,11 +545,11 @@ A shaft assembly consists of a 12 in long steel section AB (d = 10 in., G = 1160
 
 Draw the FBD of the whole body (see below) and write out relevant equilibrium equations. In this case, that would only be $\sum M_x=0$. Note that the assumed directions for T~A~ and T~C~ would usually said to be completely assumed, with the signs of the answers obtained for them indicating if the assumed directions are correct. For case(a), this is still true.
 
-However, for case (b), the direction of TA should be in the direction opposite to the way the shaft turns as a result of the applied torque, T~B~, before the bolt is tightened. The reason for this is illustrated in Figure 3 below. The assumed direction of T~C~ can be in either direction for both case (a) and case (b).
+However, for case (b), the direction of TA should be in the direction opposite to the way the shaft turns as a result of the applied torque, T~B~, before the bolt is tightened. The reason for this is illustrated in figure 3 below. The assumed direction of T~C~ can be in either direction for both case (a) and case (b).
 
-\[figure\]
+![](images/CH6%20PNGs/example%206.4%20part%202.png){fig-align="center" width="409"}
 
-\[figure\]
+![](images/CH6%20PNGs/example%206.4%20part%203.png){fig-align="center"}
 
 Note that the choice of which way the positive x-axis goes on the whole body FBD is arbitrary. As long as the choice of signs applied to torques for any global (whole body) equation is based on the same assumption, it does not matter which direction is chosen to be the positive x direction. In this case where the positive direction is chosen to be going to the left, the signs on the torques will be based on the way the torques are perceived when looking in the direction from A towards C. Since the direction of TB is known to be counterclockwise from that perspective, it is drawn in the direction of the positive x-axis and following from that, T~A~ is drawn to be in the direction of the negative x-axis. TC is assumed to be the same direction as T.
 
@@ -566,7 +588,7 @@ To implement this step, the internal torque (and sign) for each section must be 
 
 The FBD for a section made by cutting through section AB is shown below.
 
-\[figure\]
+![](images/CH6%20PNGs/example%206.4%20part%204.png){fig-align="center" width="317"}
 
 The equilibrium equation for this section is:
 
@@ -582,7 +604,7 @@ $$
 
 The FBD for a section made by cutting through section BC is shown below.
 
-\[figure\]
+![](images/CH6%20PNGs/example%206.4%20part%205.png){fig-align="center" width="300"}
 
 The equilibrium equation for this section is:
 
@@ -679,15 +701,21 @@ $$
 **τ~BC~ = 21.1 ksi**
 :::
 :::
+:::
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Example 6.5
+
+::: {#exm-6.5}
+<p>
+
+</p>
 
 Re-solve part (a) of example 6.4 using the method of superposition. The problem is repeated here for convenience.
 
 A shaft assembly consisting of a 12 in long steel steel section AB (d = 10 in, G = 11600 ksi)) bonded rigidly to a 9 inch long solid brass section BC (d = 7 in, G = 5800 ksi). The assembly is bolted to walls A and C. If both ends A and C are tightly connected to the walls and a torque T~B~ of magnitude 2000 kip·in is applied at B, determine the shear stress in the steel section and the brass section.
 
-\[figure\]
+![](images/CH6%20PNGs/example%206.5%20part%201.png){fig-align="center" width="298"}
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Solution
@@ -698,7 +726,7 @@ The first step to solving (global equilibrium) remains the same. The method of s
 
 Draw the FBD of the whole body and write out the relevant equilibrium equations. The assumed directions for T~A~ and T~C~ are shown on the FBD as well as the direction used for the positive x-direction. Recall that the direction of the torque should be determined by looking from the positive x-axis towards the negative (A to C).
 
-\[figure\]
+![](images/CH6%20PNGs/example%206.5%20part%202.png){fig-align="center" width="437"}
 
 Applying equilibrium in this case reduces down to the sum of the moments about the x-axis as the only non-trivial equation:
 
@@ -718,6 +746,8 @@ Since there are two unknowns (T~A~ and T~C~), but only one equilibrium equation,
     \phi_{C/A}=\sum \frac{TL}{JG}=\frac{T_{AB}L_{AB}}{J_{AB} {G}_{AB}}=\frac{-(2000{~kip}\cdot{in.})*(15{~in.})}{\frac{\pi}{32}(10{in.})^4*(11600{~ksi})}=-4.215 \times 10^{-3}{~rad}
     $$
 
+    ![](images/CH6%20PNGs/example%206.5%20part%203.png)
+
 2.  With the reaction at C, but no torque applied at B. Drawing the section FBD’s in this case reveals that both T~AB~ and T~BC~ are equal in magnitude and opposite in direction from T~C~. Since they are both pointed away from the cut, the direction is taken to be counterclockwise, or positive. Therefore, the angle of twist with this loading is:\
     $$
     \begin{aligned}
@@ -728,7 +758,7 @@ Since there are two unknowns (T~A~ and T~C~), but only one equilibrium equation,
     &=527\times 10^5~T_{C}
     \end{aligned}
     $$\
-    \[figure\]
+    ![](images/CH6%20PNGs/example%206.5%20part%204.png)
 
 **Step 3**
 
@@ -740,9 +770,9 @@ $$
 
 **Step 4**
 
-Solving for TC gives TC = 276 kip·in which is the same result found in Example 6.4.
+Solving for TC gives TC = 276 kip·in which is the same result found in example 6.4.
 
-Step 5
+**Step 5**
 
 Substituting this result into equation (1) also gives the same result as in example 6.4 for the reaction torque at A, TA = 1724 kip in.
 
@@ -760,13 +790,19 @@ $$
 **τ~BC~ = 4.10 ksi**
 :::
 :::
+:::
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Example 6.6
 
+::: {#exm-6.6}
+<p>
+
+</p>
+
 The vertical shaft assembly consists of a solid brass (G = 40 GPa) circular shaft completely bonded in section BC to a steel reinforcing tube (G = 80 GPa). The diameter of the brass is 25 mm along the whole length while the outer diameter of the steel is 50 mm. The assembly is subjected to torques T~B~ = 800 N·m and T~A~ = 300 N·m in the directions shown. Determine the shear stress in the brass in section AB and in BC.
 
-\[figure\]
+![](images/CH6%20PNGs/example%206.6%20part%201.png){fig-align="center" width="172"}
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Solution
@@ -782,6 +818,8 @@ $$
 $$
 
 There is only 1 non-trivial eqilibrium equation and two unknowns, so the problem is statically indeterminate.
+
+![](images/CH6%20PNGs/example%206.6%20part%202.png){fig-align="center" width="189" height="383"}
 
 **Step 2**
 
@@ -835,6 +873,9 @@ $$
 **τ~BR~ in section BC is 5.26 MPa**
 
 **τ~BR~ in section AB is 97.8 MPa**
+
+![](images/CH6%20PNGs/example%206.6%20part%203.png){fig-align="center" width="205"}
+:::
 :::
 :::
 
@@ -870,9 +911,9 @@ $$
 P=\frac{W}{t}=\frac{F \times d}{t}
 $$
 
-Within the context of rotating shafts, the force would be the force applied to the outer edge of the shaft that results in torque and the distance would be the arc length that a point on the edge of the shaft travels around the circumference in a given amount of time, t. Figure 6.14 illustrates this point.
+Within the context of rotating shafts, the force would be the force applied to the outer edge of the shaft that results in torque and the distance would be the arc length that a point on the edge of the shaft travels around the circumference in a given amount of time, t. @fig-6.14 illustrates this point.
 
-**Figure 6.14:** Force applied to rotation shaft results in work
+![Force applied to rotation shaft results in work](images/CH6%20PNGs/figure%206.14.png){#fig-6.14 fig-align="center" width="256"}
 
 If the arclength over which point B travels, BB’ = rθ, then W = Frθ. However, Fr is also equal to the torque T on the shaft, so W = Tθ.
 
@@ -885,8 +926,7 @@ $$ {#eq-6.4}
 | *where*
 | *P = Power \[Watts, horsepower\]*
 | *T = Torque \[N·m, lb·in.\]*
-
-*𝜔 = Angular velocity \[rad/sec\]*
+| *𝜔 = Angular velocity \[rad/sec\]*
 
 ### Units
 
@@ -898,39 +938,39 @@ When applying the P = Tω equation, the angular velocity ω must be expressed in
 
 If angular velocity is given in rpm, which is revolution per minute, then one must multiply by 2π radians per revolution and divide by 60 to convert 1/min to 1/s. This reduces to an overall multiplication factor of π/30 to convert from rpm to rad/s.
 
-|                     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-|---------------|---------------------------------------------------------|
-| SI (watt)           | $$                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  W=\frac{N m}{s}=\frac{J}{s}                                                                                                           
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  $$                                                                                                                                    |
-| US                  | $$                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  \left(\frac{f t l b}{s}\right) \operatorname{or}\left(\frac{l b}{s}\right)                                                            
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  $$                                                                                                                                    |
-| US (horsepower, hP) | $$                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  1 h P=\frac{550 f t l b}{s}                                                                                                           
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  $$                                                                                                                                    |
+|                     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+|---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| SI (watt)           | $$                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             W=\frac{N m}{s}=\frac{J}{s}                                                                                                                                     
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             $$                                                                                                                                                              |
+| US                  | $$                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             \left(\frac{f t l b}{s}\right) \operatorname{or}\left(\frac{l b}{s}\right)                                                                                      
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             $$                                                                                                                                                              |
+| US (horsepower, hP) | $$                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             1 h P=\frac{550 f t l b}{s}                                                                                                                                     
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             $$                                                                                                                                                              |
 
 : **Table 6.1:** Power
 
-|                                    |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-|---------------|---------------------------------------------------------|
-| Hertz (Hz)                         | $$                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    H z=\frac{r e v}{s}                                                                                                                                                                                                     
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    $$                                                                                                                                                                                                                      |
-| Angular velocity given Hz (rad/s)  | $$                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    \frac{r a d}{s}=H z(2 \pi)=\frac{r e v}{s}(2 \pi)                                                                                                                                                                       
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    $$                                                                                                                                                                                                                      |
-| Angular velocity given rpm (rad/s) | $$                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    \frac{\mathrm{rad}}{\mathrm{s}}=\frac{r e v}{\min }\left(\frac{2 \pi \mathrm{rad}}{1 \mathrm{rev}}\right)\left(\frac{1 \mathrm{~min}}{60 \mathrm{~s}}\right)                                                            
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    $$                                                                                                                                                                                                                      |
+|                                    |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+|------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Hertz (Hz)                         | $$                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  H z=\frac{r e v}{s}                                                                                                                                                                                                                               
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  $$                                                                                                                                                                                                                                                |
+| Angular velocity given Hz (rad/s)  | $$                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  \frac{r a d}{s}=H z(2 \pi)=\frac{r e v}{s}(2 \pi)                                                                                                                                                                                                 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  $$                                                                                                                                                                                                                                                |
+| Angular velocity given rpm (rad/s) | $$                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  \frac{\mathrm{rad}}{\mathrm{s}}=\frac{r e v}{\min }\left(\frac{2 \pi \mathrm{rad}}{1 \mathrm{rev}}\right)\left(\frac{1 \mathrm{~min}}{60 \mathrm{~s}}\right)                                                                                      
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  $$                                                                                                                                                                                                                                                |
 
 : **Table 6.2:** Other rotational units
 
 ### Torque Transfer Between Connected Gears (Gear Ratio)
 
-Consider two connected gears as shown in Figure 6.15. The interaction of the teeth results in a force applied to each gear from the other. For equilibrium, this force must be equal in magnitude but opposite in direction. The force results in a torque which can be expressed as T = Fr.
+Consider two connected gears as shown in @fig-6.15. The interaction of the teeth results in a force applied to each gear from the other. For equilibrium, this force must be equal in magnitude but opposite in direction. The force results in a torque which can be expressed as T = Fr.
 
-**Figure 6.15:** Gear interaction results in the application of force and torque
+![Gear interaction results in the application of force and torque](images/CH6%20PNGs/figure%206.15.png){#fig-6.15 fig-align="center"}
 
 Given that the force on each gear is equal in magnitude to the force on the other, we can write:
 
@@ -962,7 +1002,7 @@ Note that the gear ratio in this case is inverse of the one used to relate torqu
 
 ### Angle of Twist
 
-When two connected gears rotate, they will have equal arclengths of travel for a given amount of shaft rotation, but in opposite directions, as depicted in figure 6.16. This means that rAφA = - rBφB, and the angle of twist at point B for the shaft that it is on can be related to the angle of twist at the same location on the shaft that gear A is on.
+When two connected gears rotate, they will have equal arclengths of travel for a given amount of shaft rotation, but in opposite directions, as depicted in @fig-6.16. This means that rAφA = - rBφB, and the angle of twist at point B for the shaft that it is on can be related to the angle of twist at the same location on the shaft that gear A is on.
 
 $$
 \boxed{\phi_A=-\frac{r_B}{r_A} \phi_B}
@@ -970,18 +1010,23 @@ $$ {#eq-6.7}
 
 As with the angular velocities, notice that the gear ratio is the inverse as that used to relate torques.
 
-**Figure 6.16:** Connected gears travel the same distance in opposite directions.
+![Connected gears travel the same distance in opposite directions.](images/CH6%20PNGs/figure%206.16.png){#fig-6.16 fig-align="center" width="249"}
 
-In Example 6.7, a problem of power transmission with connected gears is presented which utilizes the above concepts.
+In @exm-6.7, a problem of power transmission with connected gears is presented which utilizes the above concepts.
 
-::: {.callout-tip icon="false"}
+::: {.callout-tip collapse="true" icon="false"}
 ## Example 6.7
+
+::: {#exm-6.7}
+<p>
+
+</p>
 
 60 kW of power is transmitted to gear D of the assembly at 33 Hz. Shaft CD is allowed to turn freely within its bearings in the direction shown at D. End A of shaft AB is attached rigidly to the wall. Determine the angle of twist of point D relative to A.
 
 Assume gear C has 35 teeth around it’s circumference and gear B has 50 teeth. In addition, shaft AB (d = 40 mm) is 450 mm long and shaft CD (d = 30 mm) is 700 mm long. Both shafts are made of steel (G = 80 GPa).
 
-\[figure\]
+![](images/CH6%20PNGs/example%206.7%20part%201.png){fig-align="center" width="424"}
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Solution
@@ -1010,7 +1055,7 @@ To calculate the angle of twist at D, we will need to:
     \sum M_x=T_D-T_C=0 \\ 
     T_C=T_D
     $$\
-    \[figure\]
+    ![](images/CH6%20PNGs/example%206.7%20part%202.png)
 
     \
     If we look from D towards C, the given direction of T~D~ is counterclockwise, so TC = 289.4 N·m (clockwise).
@@ -1023,7 +1068,8 @@ To calculate the angle of twist at D, we will need to:
 4.  Calculate φ~B~ = φ~AB~. The FBD of a section cut from AB shows that the internal torque T~AB~ = T~B~. Note that the direction of T~B~ is shown as clockwise when viewed in the direction of B towards A. One can determine this based on the fact that shaft CD is shown to rotate counterclockwise, which results in a clockwise torque imposed from gear C onto gear B. Equilibrium shows that the internal torque T~AB~ is then also clockwise so φ~B~ will be negative.
 
     \
-    \[figure\]\
+    ![](images/CH6%20PNGs/example%206.7%20part%203.png){width="308"}\
+    \
     $$
     \phi_B=\frac{T_{AB}L_{AB}}{J_{AB}G_{AB}}=-\frac{413.4{~N}\cdot{m}*(0.450{~m})}{\frac{\pi}{32}(0.04{~m})^4\left(80 \times 10^9~\frac{{N}}{{m}^2}\right)}=-0.009252{~rad}
     $$
@@ -1036,7 +1082,8 @@ To calculate the angle of twist at D, we will need to:
 6.  Determine and use the internal torque T~CD~ to determine φ~CD~. Cutting a section through shaft CD and drawing the FBD shows that T~CD~ = T~D~ (counterclockwise), so:
 
     \
-    \[figure\]\
+    ![](images/CH6%20PNGs/example%206.7%20part%204.png){width="290"}\
+    \
     $$
     \phi_{C D}=\frac{T_{CD}L_{CD}}{J_{CD}G_{CD}}=\frac{289.4{~N}\cdot{m}*(0.700 {~m})}{\frac{\pi}{32}(0.03{~m})^4\left(80 \times 10^9~\frac{{N}}{{m}^2}\right)}=0.03184{~rad}
     $$
@@ -1047,6 +1094,7 @@ To calculate the angle of twist at D, we will need to:
     $$
 
 **φ~D~ = .04506 rad**
+:::
 :::
 :::
 

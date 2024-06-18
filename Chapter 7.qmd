@@ -18,27 +18,25 @@ editor: visual
 
 <summary>Click to expand</summary>
 
-![Figure 7.1: Examples of structural beams](images/CH7%20PNGs/figure%207.1.png){fig-align="center"}
+![Examples of structural beams](images/CH7%20PNGs/figure%207.1.png){#fig-7.1 fig-align="center"}
 
-Beams are structural members that support loads along their length. Typically, these loads are perpendicular to the axis of the beam and cause only shear and bending moments.
-
-**\[Figure 7.2 Overarching book figure\]**
+Beams are structural members that support loads along their length. Typically, these loads are perpendicular to the axis of the beam and cause only shear and bending moments. @fig-7.1 shows some examples.
 
 As we found in previous chapters, internal forces and moments are crucial to calculating stresses and deflections. The same is true for finding stresses and deflections in beams. Due to the nature of the loadings and constraints of beams, finding internal forces requires new methods in statics. This chapter describes these methods for finding a beam's internal shear force and bending moments.
 
-In Section 7.1 we'll review how to find the internal shear force and bending moments at a specific point in a beam using equilibrium. In Section 7.2 we'll discuss the relationships between the applied load, the internal shear force, and the internal bending moment.
+In @sec-7.1 we'll review how to find the internal shear force and bending moments at a specific point in a beam using equilibrium. In @sec-7.2 we'll discuss the relationships between the applied load, the internal shear force, and the internal bending moment.
 
-We'll then discuss a more general approach to visualizing the internal shear force and bending moment at different points in a beam using shear force and bedning moment diagrams. In Section 7.3 we'll explore how to draw these diagrams using an equilibrium method. Then in Section 7.4 we'll discuss an alternative graphical method for drawing these diagrams.
+We'll then discuss a more general approach to visualizing the internal shear force and bending moment at different points in a beam using shear force and bedning moment diagrams. In @sec-7.3 we'll explore how to draw these diagrams using an equilibrium method. Then in @sec-7.4 we'll discuss an alternative graphical method for drawing these diagrams.
 
 ### Sign convention {.unnumbered}
 
 Before we can present methods for finding internal shear and moments of beams, we need to establish a sign convention. This way, we provide consistency and know how to interpret our results. It should be noted that anytime you start a new project or subject you should ensure that a sign convention is established.
 
-![Figure 7.3: Needs caption](images/CH7%20PNGs/figure%207.3.png){fig-align="center" width="286"}
+![Sign convention for internal shear force (V) and bending moment (M)](images/CH7%20PNGs/figure%207.3.png){#fig-7.2 fig-align="center" width="286"}
 
-For the purposes of this book, the shear is positive when the external forces shear off as depicted in the figure above. Another way to think about it is that a positive shear is when the internal shear forces cause a clockwise rotation of the beam segment.
+For the purposes of this book, the shear is positive when the external forces shear off as depicted in @fig-7.2. Another way to think about it is that a positive shear is when the internal shear forces cause a clockwise rotation of the beam segment.
 
-The bending moment is positive when the external forces bend the beam in a concave up shape as indicated in the figure. This causes the top fibers of the beam to be in compression while the bottom fibers are in tension.
+The bending moment is positive when the external forces bend the beam in a concave up shape as indicated in @fig-7.2. This causes the top fibers of the beam to be in compression while the bottom fibers are in tension.
 
 </details>
 
@@ -48,7 +46,7 @@ The bending moment is positive when the external forces bend the beam in a conca
 
 <summary>Click to expand</summary>
 
-One way to find internal shear and bending forces is to cut sections and analyze the free-body diagrams, as we did in previous chapters of this book. The first step for a statically determinate beam is to find the external reactions. To determine the internal forces at any point along the beam, cut the section at that point and draw the free-body diagram from that point to one end of the beam. We will include the internal shear force, V, and internal bending moment, M, at the cut section and then use equilibrium equations to solve for those internal loads.
+One way to find internal shear and bending forces is to cut sections and analyze the free-body diagrams, as we did in previous chapters of this book. The first step for a statically determinate beam is to find the external reactions. To determine the internal forces at any point along the beam, cut the section at that point and draw the free-body diagram from that point to one end of the beam. We will include the internal shear force, V, and internal bending moment, M, at the cut section and then use equilibrium equations to solve for those internal loads. This process is demonstrated in @exm-7.1.
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Example 7.1
@@ -132,9 +130,9 @@ We can observe that the internal forces vary at different points along the lengt
 
 <summary>Click to expand</summary>
 
-There is a relationship between loading, shear, and moment (and as you will see later in this text, slope and deflection) in a beam. Consider the beam below, which is subjected to a distributed load, w per unit length.
+There is a relationship between loading, shear, and moment (and as you will see later in this text, slope and deflection) in a beam. Consider the beam in @fig-7.3, which is subjected to a distributed load, w per unit length.
 
-![](images/CH7%20PNGs/figure%207.4.png){fig-align="center" width="372"}
+![Small segment of a beam subjected to an arbitrary distributed load.](images/CH7%20PNGs/figure%207.4.png){#fig-7.3 fig-align="center" width="372"}
 
 We will now look at a small section from that beam that has a width of Δx, shown below. We replaced the distributed load with a resultant force ΔF (this is indicated by a dashed arrow in the FBD).
 
@@ -178,9 +176,9 @@ This equation is valid for distributed loads and not when there is a discontinui
 
 ### Relationship between Shear and Moment
 
-![](images/CH7%20PNGs/figure%207.5.png){fig-align="center" width="199"}
+![Free body diagram of a small segment of a beam subjected to an arbitrary distributed load.](images/CH7%20PNGs/figure%207.5.png){#fig-7.4 fig-align="center" width="199"}
 
-Let's go back to the FBD of the small section of the beam subjected to a distributed load. We can apply another static equilibrium equation, summing moments about point C:
+Let's go back to the FBD of the small section of the beam subjected to a distributed load. This segment is shown in @fig-7.4. We can apply another static equilibrium equation, summing moments about point C:
 
 $$
 \begin{aligned}
@@ -212,9 +210,9 @@ This equation is not valid at points where a concentrated force or concentrated 
 
 ### How can I use my calculus knowledge when building Shear and Moment Diagrams?
 
-In a basic sense, the relationship between load, shear, and moment can be described in the figure below.
+In a basic sense, the relationship between load, shear, and moment can be described in @fig-7.5 below.
 
-![Figure 7.6: Relationship between load, shear, and moment](images/CH7%20PNGs/figure%205.6.png){fig-align="center" width="197" height="101"}
+![Relationship between load, shear, and moment](images/CH7%20PNGs/figure%205.6.png){#fig-7.5 fig-align="center" width="197" height="101"}
 
 We can combine these relationships with what we know about derivatives and integrals from our calculus course. Here are some items of note:
 
@@ -246,7 +244,7 @@ Use all that you know about calculus and the relationships between functions whe
 
 The relationship between load, shear, and moment allows us to build complete shear and moment diagrams using a few different methods. We'll explore two of them - an equilibrium method and a graphical method.
 
-In Section 7.1 we found the internal shear force and bending moment at specific points in the beam by cutting a cross-section at a given point and using equilibrium. The method in this section is similar, but instead of cutting a cross-section at a specific point we'll instead cut a cross-section at distance 'x' from the left end of the beam. We'll draw a free body diagram and determine the internal shear force (V) and bending moment (M) as before, but this time we'll end up with equations for V and M that are functions of distance x.
+In @sec-7.1 we found the internal shear force and bending moment at specific points in the beam by cutting a cross-section at a given point and using equilibrium. The method in this section is similar, but instead of cutting a cross-section at a specific point we'll instead cut a cross-section at distance 'x' from the left end of the beam. We'll draw a free body diagram and determine the internal shear force (V) and bending moment (M) as before, but this time we'll end up with equations for V and M that are functions of distance x.
 
 To draw the diagrams, we can solve this equation at two values of x. It is often simplest to solve when x = 0 and when x = L, the length of the beam. This gives us two points on our diagram which we can then connect. The shape of the diagram depends on the highest power of x that appears in the equation.
 
@@ -262,7 +260,7 @@ If two points are not sufficient to determine the exact shape of the curve, simp
 
 The equations found using this method are valid as long as the external loading does not change. In cases where the external loading does change, we'll need to determine a new set of equations each time the loading changes. This includes any time a distributed load begins or ends, and both sides of a concentrated force or couple. In each region of load, we will cut a cross-section at distance x and determine equations for V and M that are valid for that region. We can then solve each equation at values of x at the start and end of their valid region and build up the complete shear force and bending moment diagrams.
 
-Example 7.2 illustrates this method.
+@exm-7.2 illustrates this method.
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Example 7.2
@@ -415,13 +413,13 @@ We can see that in this example, the entire length of the beam is subjected to p
 
 An alternative, and often quicker, method for drawing shear force and bending moment diagrams is known as the graphical method. Due to the relationship between load, shear force, and bending moment, we can use one diagram to draw the next.
 
-Specifically, we saw in Section 7.2 that $\frac{dV}{dx}=w$ and $\frac{dM}{dx}=V$. That is, the change in shear with respect to x (i.e. the slope of the shear diagram at any given point) is equal to any applied distributed load at that point and the change in bending moment with respect to x (i.e. the slope of the bending moment diagram at any given point) is equal to the shear force at that point.
+Specifically, we saw in @sec-7.2 that $\frac{dV}{dx}=w$ and $\frac{dM}{dx}=V$. That is, the change in shear with respect to x (i.e. the slope of the shear diagram at any given point) is equal to any applied distributed load at that point and the change in bending moment with respect to x (i.e. the slope of the bending moment diagram at any given point) is equal to the shear force at that point.
 
 Further, any applied concentrated forces cause a discontinuity on the shear force diagram (an upwards applied load causes the diagram to jump up). Any applied couples cause a discontinuity on the bending moment diagram (a clockwise applied couple causes the diagram to jump up). This allows us to draw the shape of the shear force diagram based on the applied loads, and the shape of the bending moment diagram based on the shear force diagram.
 
 Finally, we also know from @eq-7.2 that the change in shear force between any two points is equal to the area under the distributed load between those same two points. We know from @eq-7.4 that the change in bending moment between any two points is equal to the area underneath the shear force diagram between those two points. This allows us to add numbers to our diagrams and determine the value of the shear force and bending moment at key points.
 
-When the loading is relatively simple, consisting of concentrated forces, concentrated moments, and uniformly distributed loads, we can use geometry to find the area of the load and shear diagrams since the shapes are simple. @exm-7.3 illustrates this method.
+When the loading is relatively simple, consisting of concentrated forces, concentrated moments, and uniformly distributed loads, we can use geometry to find the area of the load and shear diagrams since the shapes are simple. @exm-7.3 and @exm-7.4 illustrate this method.
 
 ::: {#Example-7.3 .callout-tip collapse="true" icon="false"}
 ## Example 7.3
