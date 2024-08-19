@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.5.53">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Strength of Materials - 6&nbsp; Torsion</title>
+<title>6&nbsp; Torsion – Strength of Materials</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -71,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -110,13 +110,13 @@ window.Quarto = {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Chapter 6.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Torsion</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -239,9 +239,9 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -367,10 +367,10 @@ Click to expand
 <ol type="1">
 <li>In machinery, rotating shafts, such as transmission shafts that transmit power, are subjected to torque</li>
 <li>When one uses a torque wrench to tight or loosen a bolt, the bolt is subjected to torque</li>
-<li>Poles on which road signs and traffic lights are mounted are subjected to torque when forces (such as wind) are applied perpendicular to the sign (<a href="#fig-6.1" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.1</span></a>).</li>
+<li>Poles on which road signs and traffic lights are mounted are subjected to torque when forces (such as wind) are applied perpendicular to the sign (<a href="#fig-6.1" class="quarto-xref">Figure&nbsp;<span>6.1</span></a>).</li>
 <li>Hinge pins are subjected to torque when the rotating elements they are attached to (doors for example) are rotated.</li>
 </ol>
-<div id="fig-6.1" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<div id="fig-6.1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-6.1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/CH6 PNGs/figure 6.1.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="450">
@@ -380,13 +380,13 @@ Figure&nbsp;6.1: Horizontal wind blowing on the traffic lights will create a tor
 </figcaption>
 </figure>
 </div>
-<p>This chapter will focus on bodies subjected to pure torsion (no axial or bending loads). These concepts will appear again in <a href="#sec-combined-loads" class="quarto-xref"><span class="quarto-unresolved-ref">sec-combined-loads</span></a> when more generalized loading conditions are discussed.</p>
-<p>In <a href="#sec-6.1" class="quarto-xref"><span class="quarto-unresolved-ref">sec-6.1</span></a> and <a href="#sec-6.2" class="quarto-xref"><span class="quarto-unresolved-ref">sec-6.2</span></a> we’ll derive equations for calculating the stress and deformation caused by torsional loads. In <a href="#sec-6.3" class="quarto-xref"><span class="quarto-unresolved-ref">sec-6.3</span></a> we’ll consider statically indeterminate torsion problems, using methods similar to those in <a href="#sec-5.5" class="quarto-xref"><span class="quarto-unresolved-ref">sec-5.5</span></a>. In <a href="#sec-6.4" class="quarto-xref"><span class="quarto-unresolved-ref">sec-6.4</span></a> we’ll consider torques due to power transmission, a common application where torques are present.</p>
+<p>This chapter will focus on bodies subjected to pure torsion (no axial or bending loads). These concepts will appear again in <a href="Chapter 14.html" class="quarto-xref"><span>Chapter 14</span></a> when more generalized loading conditions are discussed.</p>
+<p>In <a href="#sec-6.1" class="quarto-xref"><span>Section 6.1</span></a> and <a href="#sec-6.2" class="quarto-xref"><span>Section 6.2</span></a> we’ll derive equations for calculating the stress and deformation caused by torsional loads. In <a href="#sec-6.3" class="quarto-xref"><span>Section 6.3</span></a> we’ll consider statically indeterminate torsion problems, using methods similar to those in <a href="Chapter 5.html#sec-5.5" class="quarto-xref"><span>Section 5.5</span></a>. In <a href="#sec-6.4" class="quarto-xref"><span>Section 6.4</span></a> we’ll consider torques due to power transmission, a common application where torques are present.</p>
 <section id="the-effect-of-torsion" class="level3" data-number="6.0.1">
 <h3 data-number="6.0.1" class="anchored" data-anchor-id="the-effect-of-torsion"><span class="header-section-number">6.0.1</span> The Effect of Torsion</h3>
 <p>As mentioned above, the effect of a torsional moment is to cause the body to twist. The resulting stress is a shear stress.</p>
-<p>Consider the pleated tube shown in <a href="#fig-6.2" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.2</span></a> below. <span class="citation" data-cites="fig6.2">@fig6.2</span> (A) shows the tube in an unloaded state with some of the pleats colored for identification. In <a href="#fig-6.2" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.2</span></a> (B), we see that after a torque is applied, the pleats move vertically but not horizontally. In addition, without the color present, it would be difficult to identify the displacement at all. We can say that all points remain in their original plane even in the deformed state so that the shape of the cross-section is unchanged.</p>
-<div id="fig-6.2" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<p>Consider the pleated tube shown in <a href="#fig-6.2" class="quarto-xref">Figure&nbsp;<span>6.2</span></a> below. <span class="citation" data-cites="fig6.2">@fig6.2</span> (A) shows the tube in an unloaded state with some of the pleats colored for identification. In <a href="#fig-6.2" class="quarto-xref">Figure&nbsp;<span>6.2</span></a> (B), we see that after a torque is applied, the pleats move vertically but not horizontally. In addition, without the color present, it would be difficult to identify the displacement at all. We can say that all points remain in their original plane even in the deformed state so that the shape of the cross-section is unchanged.</p>
+<div id="fig-6.2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-6.2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/figure 6.2 (new).png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="525">
@@ -396,8 +396,8 @@ Figure&nbsp;6.2: Unloaded tube (left) and tube with torque applied (right).
 </figcaption>
 </figure>
 </div>
-<p>Now consider the I-beam subjected to torsion in <a href="#fig-6.3" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.3</span></a>. In this case we see that the shape of the cross-section changes and that the points do not remain in the same vertical plane (there is horizontal displacement as well as vertical). This shape change is referred to as warping. In this text, we will only be considering circular cross-sections with no warping.</p>
-<div id="fig-6.3" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<p>Now consider the I-beam subjected to torsion in <a href="#fig-6.3" class="quarto-xref">Figure&nbsp;<span>6.3</span></a>. In this case we see that the shape of the cross-section changes and that the points do not remain in the same vertical plane (there is horizontal displacement as well as vertical). This shape change is referred to as warping. In this text, we will only be considering circular cross-sections with no warping.</p>
+<div id="fig-6.3" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-6.3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/CH6 PNGs/figure 6.3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="495">
@@ -407,8 +407,8 @@ Figure&nbsp;6.3: I-beam subjected to torsion unloaded (a) and with applied torqu
 </figcaption>
 </figure>
 </div>
-<p>Going back to <a href="#fig-6.2" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.2</span></a>, let’s consider the shape formed by the non-displaced colored lines in <a href="#fig-6.2" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.2</span></a> (A) versus the displaced lines in <a href="#fig-6.2" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.2</span></a> (B). These images are shown again in <a href="#fig-6.4" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.4</span></a>. In the non-displaced case, a rectangle can be drawn around the green lines on the left with 90° corners. In the displaced case, the corners are no longer at 90°. From <a href="#sec-3.2" class="quarto-xref"><span class="quarto-unresolved-ref">sec-3.2</span></a>, we know that this change in angle is the definition of shear strain. The evidence of shear strain indicates that the applied torque results in shear stress.</p>
-<div id="fig-6.4" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<p>Going back to <a href="#fig-6.2" class="quarto-xref">Figure&nbsp;<span>6.2</span></a>, let’s consider the shape formed by the non-displaced colored lines in <a href="#fig-6.2" class="quarto-xref">Figure&nbsp;<span>6.2</span></a> (A) versus the displaced lines in <a href="#fig-6.2" class="quarto-xref">Figure&nbsp;<span>6.2</span></a> (B). These images are shown again in <a href="#fig-6.4" class="quarto-xref">Figure&nbsp;<span>6.4</span></a>. In the non-displaced case, a rectangle can be drawn around the green lines on the left with 90° corners. In the displaced case, the corners are no longer at 90°. From <a href="Chapter 3.html#sec-3.2" class="quarto-xref"><span>Section 3.2</span></a>, we know that this change in angle is the definition of shear strain. The evidence of shear strain indicates that the applied torque results in shear stress.</p>
+<div id="fig-6.4" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-6.4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/CH6 PNGs/figure 6.4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="342">
@@ -426,8 +426,8 @@ Figure&nbsp;6.4: Evidence of shear strain
 </section>
 <section id="sign-convention-and-representation-of-torque" class="level3" data-number="6.0.3">
 <h3 data-number="6.0.3" class="anchored" data-anchor-id="sign-convention-and-representation-of-torque"><span class="header-section-number">6.0.3</span> Sign Convention and Representation of Torque</h3>
-<p>Just as is typically used for moments, the sign convention that will be used in this text for torques is to assign a positive sign to torques that are counterclockwise and a negative sign for those that are clockwise. However, the direction that a torque appears to be depends on the perspective from which the rotation is being observed. In <a href="#fig-6.5" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.5</span></a> below, the applied torque would appear clockwise if viewed from the left end of the bar towards the right and counterclockwise if viewed from the right end of the bar towards the left. As long as one is being consistent, it is not usually important which perspective is used. However, a typical convention is to look from the free end of the shaft if there is one, towards the fixed end, or from the positive longitudinal axis if one is given, towards the negative.</p>
-<div id="fig-6.5" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<p>Just as is typically used for moments, the sign convention that will be used in this text for torques is to assign a positive sign to torques that are counterclockwise and a negative sign for those that are clockwise. However, the direction that a torque appears to be depends on the perspective from which the rotation is being observed. In <a href="#fig-6.5" class="quarto-xref">Figure&nbsp;<span>6.5</span></a> below, the applied torque would appear clockwise if viewed from the left end of the bar towards the right and counterclockwise if viewed from the right end of the bar towards the left. As long as one is being consistent, it is not usually important which perspective is used. However, a typical convention is to look from the free end of the shaft if there is one, towards the fixed end, or from the positive longitudinal axis if one is given, towards the negative.</p>
+<div id="fig-6.5" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-6.5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/CH6 PNGs/figure 6.5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="512">
@@ -437,8 +437,8 @@ Figure&nbsp;6.5: Different directions for viewing torque result in different per
 </figcaption>
 </figure>
 </div>
-<p>It can sometimes be difficult to visually determine whether a torque appears clockwise or counterclockwise, so one tool that can be used is the right-hand rule. If you use your right hand and curl your fingers in the direction of the rotation represented by the torque arrow, a positive (counterclockwise) torque would be represented if your thumb points in the direction of the positive longitudinal axis (the x-axis in <a href="#fig-6.6" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.6</span></a>).</p>
-<div id="fig-6.6" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<p>It can sometimes be difficult to visually determine whether a torque appears clockwise or counterclockwise, so one tool that can be used is the right-hand rule. If you use your right hand and curl your fingers in the direction of the rotation represented by the torque arrow, a positive (counterclockwise) torque would be represented if your thumb points in the direction of the positive longitudinal axis (the x-axis in <a href="#fig-6.6" class="quarto-xref">Figure&nbsp;<span>6.6</span></a>).</p>
+<div id="fig-6.6" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-6.6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/CH6 PNGs/figure 6.6.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="340">
@@ -448,8 +448,8 @@ Figure&nbsp;6.6: Using the right-hand rule to determine sign for torque
 </figcaption>
 </figure>
 </div>
-<p>When examining cut sections as will be needed to determine internal torques, establishing the sign of the internal torque requires looking from the direction of the cut edge towards the end of the cut section. One tool that can be used in this instance in place of direction visualization is to make the cut necessary to determine the internal torque in a given section and then imagine your right hand as being at the cut edge and curl your fingers in the direction of the torque. If your thumb points away from the cut edge, the internal torque is positive and vice versa. This is illustrated in <a href="#fig-6.7" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.7</span></a>.</p>
-<div id="fig-6.7" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<p>When examining cut sections as will be needed to determine internal torques, establishing the sign of the internal torque requires looking from the direction of the cut edge towards the end of the cut section. One tool that can be used in this instance in place of direction visualization is to make the cut necessary to determine the internal torque in a given section and then imagine your right hand as being at the cut edge and curl your fingers in the direction of the torque. If your thumb points away from the cut edge, the internal torque is positive and vice versa. This is illustrated in <a href="#fig-6.7" class="quarto-xref">Figure&nbsp;<span>6.7</span></a>.</p>
+<div id="fig-6.7" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-6.7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/CH6 PNGs/figure 6.7.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="604">
@@ -464,7 +464,7 @@ Figure&nbsp;6.7: Tool to determine sign of internal torques
 <li>On a whole body FBD, arrows facing in the direction of the positive longitudinal axis will be considered to indicate positive torques (counterclockwise) and vice versa. When applying equilibrium, these signs will be used.</li>
 <li>The same will hold true for cut section FBD’s used to determine internal torques. However, if applying equilibrium indicates that the internal torque points away from the cut section, the torque can be concluded to be positive (counterclockwise) for the purposes of calculating angle of twist. Internal torque that points towards the cut section can be concluded to be negative (clockwise). In addition, on the cut sections, the regular convention of right directed arrows being positive and left directed arrows being negative for the purpose of summing moments will be used.</li>
 </ol>
-<p>The direction of the internal torque is not important in calculating shear stress (the sign on the stress requires concepts that will be discussed in <a href="#sec-stress-transformation" class="quarto-xref"><span class="quarto-unresolved-ref">sec-stress-transformation</span></a>), but it is important when calculating angle of twist, as we’ll see in <a href="#sec-6.2" class="quarto-xref"><span class="quarto-unresolved-ref">sec-6.2</span></a>.</p>
+<p>The direction of the internal torque is not important in calculating shear stress (the sign on the stress requires concepts that will be discussed in <a href="Chapter 12.html" class="quarto-xref"><span>Chapter 12</span></a>), but it is important when calculating angle of twist, as we’ll see in <a href="#sec-6.2" class="quarto-xref"><span>Section 6.2</span></a>.</p>
 <p>Example 6.1 demonstrates how to determine internal torques in a multi-section body as well as how to apply the above-described sign conventions.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
@@ -553,8 +553,8 @@ T_{B E}&amp;=-30{~N}\cdot{mm}
 Click to expand
 </summary>
 <p>In this section, the derivation of the shear stress equation for torque is explained before presenting it so that the inputs to the resulting equation, as well as the assumptions, etc., can be better understood.</p>
-<p>Consider a circular shaft that is fixed on one end and subjected to torque on the free end, as shown in <a href="#fig-6.8" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.8</span></a>. The shaft has an outer radius, c, as shown in <a href="#fig-6.9" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.9</span></a> (B). For the given loading, the internal torque at any location along the shaft, x, would also be T.</p>
-<div id="fig-6.8" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<p>Consider a circular shaft that is fixed on one end and subjected to torque on the free end, as shown in <a href="#fig-6.8" class="quarto-xref">Figure&nbsp;<span>6.8</span></a>. The shaft has an outer radius, c, as shown in <a href="#fig-6.9" class="quarto-xref">Figure&nbsp;<span>6.9</span></a> (B). For the given loading, the internal torque at any location along the shaft, x, would also be T.</p>
+<div id="fig-6.8" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-6.8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/CH6 PNGs/figure 6.8.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="520">
@@ -564,8 +564,8 @@ Figure&nbsp;6.8: Illustration of fixed end shaft subjected to torque and smaller
 </figcaption>
 </figure>
 </div>
-<p>Before the torque, T, is applied, a horizontal line segment drawn across a sliver of the shaft, marked by points A and B, has a length of Δx. Now let’s consider the same shaft segment after the torque has been applied and points A and B move to A’ and B’. An illustration of the resulting geometry can be seen in <a href="#fig-6.9" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.9</span></a> (A). Since the shaft is fixed on the left end, we see that point B on the shaft will rotate more than point A. We can approximate that line segment AB remains linear for a very narrow section of shaft (infinitely small Δx).</p>
-<div id="fig-6.9" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<p>Before the torque, T, is applied, a horizontal line segment drawn across a sliver of the shaft, marked by points A and B, has a length of Δx. Now let’s consider the same shaft segment after the torque has been applied and points A and B move to A’ and B’. An illustration of the resulting geometry can be seen in <a href="#fig-6.9" class="quarto-xref">Figure&nbsp;<span>6.9</span></a> (A). Since the shaft is fixed on the left end, we see that point B on the shaft will rotate more than point A. We can approximate that line segment AB remains linear for a very narrow section of shaft (infinitely small Δx).</p>
+<div id="fig-6.9" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-6.9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/CH6 PNGs/figure 6.9.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="504">
@@ -575,7 +575,7 @@ Figure&nbsp;6.9: Illustration of the displacement of points A and B on the shaft
 </figcaption>
 </figure>
 </div>
-<p>Recalling that shear strain is the change in the angle between two lines that are originally perpendicular, we can see that the angle of tilt in AB after the torque is applied is the shear strain, γ, that results from the torque. The displacement of point B from the original position to B’ on the cross-section is shown in <a href="#fig-6.9" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.9</span></a> (B). For an infinitely small Δx, the arc segment from B to B’ can be approximated as vertical so that the shear strain γ can be expressed using trigonometry as:</p>
+<p>Recalling that shear strain is the change in the angle between two lines that are originally perpendicular, we can see that the angle of tilt in AB after the torque is applied is the shear strain, γ, that results from the torque. The displacement of point B from the original position to B’ on the cross-section is shown in <a href="#fig-6.9" class="quarto-xref">Figure&nbsp;<span>6.9</span></a> (B). For an infinitely small Δx, the arc segment from B to B’ can be approximated as vertical so that the shear strain γ can be expressed using trigonometry as:</p>
 <p><span class="math display">\[
 \tan (\gamma)=\frac{B B^{\prime}}{\Delta x}
 \]</span></p>
@@ -583,7 +583,7 @@ Figure&nbsp;6.9: Illustration of the displacement of points A and B on the shaft
 <p><span class="math display">\[
 \gamma=\frac{B B^{\prime}}{\Delta x}
 \]</span></p>
-<p>Now consider the cross-section of the shaft where point B and B’ are located, shown in <a href="#fig-6.9" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.9</span></a> (B). As discussed above, B’ is the location point B moves to when the torque is applied, so the angle between the radial lines that go from the center to points B and B’, respectively, of the shaft segment is the angle of twist of the segment. Since we are considering just a section of the shaft, the angle is represented as Δφ (as opposed to the absolute angle of twist, φ, as measured from the fixed end). If the outer radius of the shaft is r = c, then the length of BB’ is given by the arclength, so:</p>
+<p>Now consider the cross-section of the shaft where point B and B’ are located, shown in <a href="#fig-6.9" class="quarto-xref">Figure&nbsp;<span>6.9</span></a> (B). As discussed above, B’ is the location point B moves to when the torque is applied, so the angle between the radial lines that go from the center to points B and B’, respectively, of the shaft segment is the angle of twist of the segment. Since we are considering just a section of the shaft, the angle is represented as Δφ (as opposed to the absolute angle of twist, φ, as measured from the fixed end). If the outer radius of the shaft is r = c, then the length of BB’ is given by the arclength, so:</p>
 <p><span class="math display">\[
 \mathrm{BB}^{\prime}=\mathrm{c}(\Delta \phi)
 \]</span></p>
@@ -595,7 +595,7 @@ Figure&nbsp;6.9: Illustration of the displacement of points A and B on the shaft
 <p><span class="math display">\[
 \gamma=\frac{\rho(\Delta \phi)}{\Delta x}
 \]</span></p>
-<p>The resulting expression of γ shows that the shear strain varies linearly with ρ from the center of the cross-section to the outer radius, as illustrated in <a href="#fig-6.10" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.10</span></a>. The shear strain is 0 at the center, and the max shear strain occurs at the max value of ρ = c.</p>
+<p>The resulting expression of γ shows that the shear strain varies linearly with ρ from the center of the cross-section to the outer radius, as illustrated in <a href="#fig-6.10" class="quarto-xref">Figure&nbsp;<span>6.10</span></a>. The shear strain is 0 at the center, and the max shear strain occurs at the max value of ρ = c.</p>
 <p><span class="math display">\[
 \gamma_{\max }=\frac{c(\Delta \phi)}{\Delta x}
 \]</span></p>
@@ -603,7 +603,7 @@ Figure&nbsp;6.9: Illustration of the displacement of points A and B on the shaft
 <p><span class="math display">\[
 \tau=G \gamma=G \frac{\rho(\Delta \phi)}{\Delta x}, \tau_{\max }=G \frac{c(\Delta \phi)}{\Delta x}
 \]</span></p>
-<div id="fig-6.10" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<div id="fig-6.10" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-6.10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/CH6 PNGs/figure 6.10.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="252">
@@ -613,15 +613,15 @@ Figure&nbsp;6.10: Shear strain and shear stress vary linearly from the center to
 </figcaption>
 </figure>
 </div>
-<p>Looking at <a href="#fig-6.10" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.10</span></a> shows that the slope of the linear variation is <span class="math inline">\(\frac{\tau_{\max }}{c}\)</span> and the shear stress can also be expressed as:</p>
+<p>Looking at <a href="#fig-6.10" class="quarto-xref">Figure&nbsp;<span>6.10</span></a> shows that the slope of the linear variation is <span class="math inline">\(\frac{\tau_{\max }}{c}\)</span> and the shear stress can also be expressed as:</p>
 <p><span class="math display">\[
 \tau=\frac{\tau_{\max }}{c} \rho
 \]</span></p>
-<p>The last step in developing the shear stress relationship to torque involves considering the equilibrium of the shaft. Refer to <a href="#fig-6.11" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.11</span></a>. If each point (i) on the cross-section with area dA<sub>i</sub> has a given amount of shear stress,τ<sub>i</sub>, then the corresponding force at each point dF<sub>i</sub> can be calculated as:</p>
+<p>The last step in developing the shear stress relationship to torque involves considering the equilibrium of the shaft. Refer to <a href="#fig-6.11" class="quarto-xref">Figure&nbsp;<span>6.11</span></a>. If each point (i) on the cross-section with area dA<sub>i</sub> has a given amount of shear stress,τ<sub>i</sub>, then the corresponding force at each point dF<sub>i</sub> can be calculated as:</p>
 <p><span class="math display">\[
 \mathrm{dF}_i=\tau_i \mathrm{dA}_i=\frac{\tau_{\max }}{c} \rho_i d A
 \]</span></p>
-<div id="fig-6.11" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<div id="fig-6.11" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-6.11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/CH6 PNGs/figure 6.11.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="265">
@@ -661,8 +661,8 @@ T=\frac{\tau_{\max } J}{c}
 T = Internal torque [N·m, lb·in.]<br>
 <em>𝜌 = Radial distance from center of cross-section to point of interest [m, in.]</em></div>
 <p><em>J = Polar moment of inertia [m<sup>4</sup>, in.<sup>4</sup>]</em></p>
-<p>Note that for now, only the magnitude of the shear stress (without sign) will be determined since the sign for shear stress is not based purely on the sign of the torque. The sign on shear stress will be discussed in <a href="#sec-stress-transformation" class="quarto-xref"><span class="quarto-unresolved-ref">sec-stress-transformation</span></a>.</p>
-<p><a href="#exm-6.2" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-6.2</span></a> demonstrates the use of the above equations to determine shear stress in the same circular bar assembly used in <a href="#exm-6.1" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-6.1</span></a>.</p>
+<p>Note that for now, only the magnitude of the shear stress (without sign) will be determined since the sign for shear stress is not based purely on the sign of the torque. The sign on shear stress will be discussed in <a href="Chapter 12.html" class="quarto-xref"><span>Chapter 12</span></a>.</p>
+<p><a href="#exm-6.2" class="quarto-xref">Example&nbsp;<span>6.2</span></a> demonstrates the use of the above equations to determine shear stress in the same circular bar assembly used in <a href="#exm-6.1" class="quarto-xref">Example&nbsp;<span>6.1</span></a>.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -704,7 +704,7 @@ Solution
 <li>Section CD which gets sectioned at D due to the geometry change at D</li>
 <li>Section DE which would get sectioned at E if E were not the end of the shaft</li>
 </ol>
-<p>From example 6.1, it is known that the magnitudes of the internal torque for all points between A and B, TAB, is 40 N mm and the internal torque for all points between B and E, TBE, is 70 N mm. Since the internal torque stays constant from B to E, it is known that TBC = TCD = TDE = 70 N mm. Recall that only the <strong>magnitude</strong> of shear stress will be calculated with the sign being discussed in <a href="#sec-stress-transformation" class="quarto-xref"><span class="quarto-unresolved-ref">sec-stress-transformation</span></a>.</p>
+<p>From example 6.1, it is known that the magnitudes of the internal torque for all points between A and B, TAB, is 40 N mm and the internal torque for all points between B and E, TBE, is 70 N mm. Since the internal torque stays constant from B to E, it is known that TBC = TCD = TDE = 70 N mm. Recall that only the <strong>magnitude</strong> of shear stress will be calculated with the sign being discussed in <a href="Chapter 12.html" class="quarto-xref"><span>Chapter 12</span></a>.</p>
 <p>Since the bar has a solid cross-section with the diameters given, we will use <span class="math inline">\(J_{solid}=\frac{\pi}{32} d^4\)</span> to calculate the polar moment of inertia at each section.</p>
 <p>Now we can calculate the maximum stress in each section:</p>
 <p><span class="math display">\[
@@ -753,8 +753,8 @@ Step-by-step: Torsional stress
 <summary>
 Click to expand
 </summary>
-<p>In <a href="#sec-axial-loading" class="quarto-xref"><span class="quarto-unresolved-ref">sec-axial-loading</span></a>, we derived and applied a formula for axial deformation. We will do something similar in this chapter for circular shafts subjected to torsion. The deformation of a shaft that arises from applying torsion, assuming deformation is restricted to the elastic deformation range for the material, is quantified by the angle of twist, <span class="math inline">\(\phi\)</span>. As discussed in <a href="#sec-6.1" class="quarto-xref"><span class="quarto-unresolved-ref">sec-6.1</span></a>, and illustrated here again in <a href="#fig-6.12" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.12</span></a>, the angle of twist is the angle formed between the radial line that goes from the center of the cross section to a point in its original location and the radial line that goes from the center to the point in its new location after the torsional load is applied. The equation to determine angle of twist at various points along the shaft will be derived below.</p>
-<div id="fig-6.12" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<p>In <a href="Chapter 5.html" class="quarto-xref"><span>Chapter 5</span></a>, we derived and applied a formula for axial deformation. We will do something similar in this chapter for circular shafts subjected to torsion. The deformation of a shaft that arises from applying torsion, assuming deformation is restricted to the elastic deformation range for the material, is quantified by the angle of twist, <span class="math inline">\(\phi\)</span>. As discussed in <a href="#sec-6.1" class="quarto-xref"><span>Section 6.1</span></a>, and illustrated here again in <a href="#fig-6.12" class="quarto-xref">Figure&nbsp;<span>6.12</span></a>, the angle of twist is the angle formed between the radial line that goes from the center of the cross section to a point in its original location and the radial line that goes from the center to the point in its new location after the torsional load is applied. The equation to determine angle of twist at various points along the shaft will be derived below.</p>
+<div id="fig-6.12" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-6.12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/CH6 PNGs/figure 6.12.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="217">
@@ -764,7 +764,7 @@ Figure&nbsp;6.12: The angle between B (original location) and B’ (where B move
 </figcaption>
 </figure>
 </div>
-<p>Recall from <a href="#sec-6.1" class="quarto-xref"><span class="quarto-unresolved-ref">sec-6.1</span></a> that the shear strain <span class="math inline">\(\gamma=\frac{\rho(\Delta \phi)}{\Delta x}\)</span>. Also recall that Δx represents the length of a section of shaft of arbitrary length and Δφ is the change in angle of twist that occurs across that length. For an infinitely small section of shaft, the shear strain equation can be expressed in terms of differentials: <span class="math inline">\(\gamma=\frac{\rho(d \phi)}{d x}\)</span>.</p>
+<p>Recall from <a href="#sec-6.1" class="quarto-xref"><span>Section 6.1</span></a> that the shear strain <span class="math inline">\(\gamma=\frac{\rho(\Delta \phi)}{\Delta x}\)</span>. Also recall that Δx represents the length of a section of shaft of arbitrary length and Δφ is the change in angle of twist that occurs across that length. For an infinitely small section of shaft, the shear strain equation can be expressed in terms of differentials: <span class="math inline">\(\gamma=\frac{\rho(d \phi)}{d x}\)</span>.</p>
 <p>Now applying Hooke’s Law, τ = Gγ, and the equation for shear stress we get:</p>
 <p><span class="math display">\[
 \frac{\rho(d \phi)}{d x}=\frac{\tau}{G}=\frac{T \rho}{J G}
@@ -791,24 +791,24 @@ d \phi=\frac{T d x}{J G}
 <em>L = Length [m, in.]</em><br>
 <em>J = Polar moment of inertia [m<sup>4</sup>, in.<sup>4</sup>]</em><br>
 <em>G = Shear modulus [Pa, psi]</em></div>
-<p>In these calculations, the sign of internal torque will be important as it indicates the direction of the twist. If one section twists in one direction and the adjoining section twists in the opposite direction, the effect will be that the angles will subtract from each other resulting in a smaller overall angle of twist. On the other hand, if two adjoining sections twist in the same direction, the effect will be additive. According to the assigned sign convention discussed in <a href="#sec-6.1" class="quarto-xref"><span class="quarto-unresolved-ref">sec-6.1</span></a>, an overall positive angle of twist indicates that the shaft twists counterclockwise when looking from the positive end of the longitudinal axis to the negative and vice versa.</p>
+<p>In these calculations, the sign of internal torque will be important as it indicates the direction of the twist. If one section twists in one direction and the adjoining section twists in the opposite direction, the effect will be that the angles will subtract from each other resulting in a smaller overall angle of twist. On the other hand, if two adjoining sections twist in the same direction, the effect will be additive. According to the assigned sign convention discussed in <a href="#sec-6.1" class="quarto-xref"><span>Section 6.1</span></a>, an overall positive angle of twist indicates that the shaft twists counterclockwise when looking from the positive end of the longitudinal axis to the negative and vice versa.</p>
 <section id="units" class="level3" data-number="6.2.1">
 <h3 data-number="6.2.1" class="anchored" data-anchor-id="units"><span class="header-section-number">6.2.1</span> Units</h3>
-<p>If values for T, L, J, and G are used in <a href="#eq-6.2" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-6.2</span></a> such that the units are all consistent with each other, the overall unit works out to be unitless as is expected for an angle calculation. Since the calculation is for an angle, the actual unit is considered to be radians. If an angle is desired to be in degrees, the result of the equation would need to be converted by multiplying the result by π/180.</p>
+<p>If values for T, L, J, and G are used in <a href="#eq-6.2" class="quarto-xref">Equation&nbsp;<span>6.2</span></a> such that the units are all consistent with each other, the overall unit works out to be unitless as is expected for an angle calculation. Since the calculation is for an angle, the actual unit is considered to be radians. If an angle is desired to be in degrees, the result of the equation would need to be converted by multiplying the result by π/180.</p>
 <p>Because the angle of twist often works out to be very small, it may be desired to express the value in terms of μrad, which is 10<sup>-6</sup> radians. To convert from rad to μrad, multiply the number of radians by 10<sup>6</sup>.</p>
 </section>
 <section id="notation" class="level3" data-number="6.2.2">
 <h3 data-number="6.2.2" class="anchored" data-anchor-id="notation"><span class="header-section-number">6.2.2</span> Notation</h3>
-<p>When finding the angle of twist, the angle at any given point along the length of the shaft will be found relative to some reference point. Often the reference point is a fixed point (at a fixed support for example), so the relative angle is an absolute angle. In this case, the symbol <span class="math inline">\(\phi\)</span> will be subscripted with the point along the shaft where the angle was calculated. For example, given the shaft assembly in <a href="#fig-6.13" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.13</span></a> below, the notation φ<sub>B</sub> denotes the angle of twist at point B relative to the fixed point A.</p>
-<p>If one is finding the relative angle of twist between two non-fixed points that are on the same section of shaft (same T, J, and G), the angle of one point relative to another on the same section of shaft is notated with two subscripts specifying the two points. For example, the angle of twist of D relative to C in <a href="#fig-6.13" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.13</span></a> is notated as <span class="math inline">\(\phi_{CD}\)</span>. In this case, one would perform the calculation for the angle of twist at D as if point C is fixed, in which case:</p>
+<p>When finding the angle of twist, the angle at any given point along the length of the shaft will be found relative to some reference point. Often the reference point is a fixed point (at a fixed support for example), so the relative angle is an absolute angle. In this case, the symbol <span class="math inline">\(\phi\)</span> will be subscripted with the point along the shaft where the angle was calculated. For example, given the shaft assembly in <a href="#fig-6.13" class="quarto-xref">Figure&nbsp;<span>6.13</span></a> below, the notation φ<sub>B</sub> denotes the angle of twist at point B relative to the fixed point A.</p>
+<p>If one is finding the relative angle of twist between two non-fixed points that are on the same section of shaft (same T, J, and G), the angle of one point relative to another on the same section of shaft is notated with two subscripts specifying the two points. For example, the angle of twist of D relative to C in <a href="#fig-6.13" class="quarto-xref">Figure&nbsp;<span>6.13</span></a> is notated as <span class="math inline">\(\phi_{CD}\)</span>. In this case, one would perform the calculation for the angle of twist at D as if point C is fixed, in which case:</p>
 <p><span class="math display">\[
 \phi_{B C}=\frac{T_{C D} L_{C D}}{J_{C D} G_{C D}}
 \]</span></p>
-<p>If one is finding the relative angle of twist between two non-fixed points (let’s say B and D in <a href="#fig-6.13" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.13</span></a>) that are on different sections of shaft (i.e., there are 1 or more section changes between them due to changing T, J, or G), the relative angle of twist between them would be found by summing the angles of twist of each section between them. In this case, the notation would be <span class="math inline">\(\phi_{D/B}\)</span> which is said as the angle of twist of D relative to B. If point C is where the section change occurs, the calculation would be:</p>
+<p>If one is finding the relative angle of twist between two non-fixed points (let’s say B and D in <a href="#fig-6.13" class="quarto-xref">Figure&nbsp;<span>6.13</span></a>) that are on different sections of shaft (i.e., there are 1 or more section changes between them due to changing T, J, or G), the relative angle of twist between them would be found by summing the angles of twist of each section between them. In this case, the notation would be <span class="math inline">\(\phi_{D/B}\)</span> which is said as the angle of twist of D relative to B. If point C is where the section change occurs, the calculation would be:</p>
 <p><span class="math display">\[
 \phi_{D / B}=\phi_{B C}+\phi_{C D}
 \]</span></p>
-<div id="fig-6.13" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<div id="fig-6.13" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-6.13-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/CH6 PNGs/figure 6.13.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="414">
@@ -818,7 +818,7 @@ Figure&nbsp;6.13: A multi-section body with fixed end A and constant torque cond
 </figcaption>
 </figure>
 </div>
-<p>These concepts will be illustrated in <a href="#exm-6.3" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-6.3</span></a> which continues with the same bar assembly and loading used in <a href="#exm-6.1" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-6.1</span></a> and <a href="#exm-6.2" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-6.2</span></a>.</p>
+<p>These concepts will be illustrated in <a href="#exm-6.3" class="quarto-xref">Example&nbsp;<span>6.3</span></a> which continues with the same bar assembly and loading used in <a href="#exm-6.1" class="quarto-xref">Example&nbsp;<span>6.1</span></a> and <a href="#exm-6.2" class="quarto-xref">Example&nbsp;<span>6.2</span></a>.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -930,7 +930,7 @@ Step-by-step: Angle of Twist
 <summary>
 Click to expand
 </summary>
-<p>As was discussed in <a href="#sec-5.5" class="quarto-xref"><span class="quarto-unresolved-ref">sec-5.5</span></a> for axial loading, one may sometimes encounter loading and constraint conditions that are statically indeterminate. In these situations, though a structure may be in static equilibrium, equilibrium equations do not provide enough equations to solve for all the unknown reactions. In many cases, the known constraints on deformation can be used to provide the additional necessary equations. We will consider the same two categories of statically indeterminate loading:</p>
+<p>As was discussed in <a href="Chapter 5.html#sec-5.5" class="quarto-xref"><span>Section 5.5</span></a> for axial loading, one may sometimes encounter loading and constraint conditions that are statically indeterminate. In these situations, though a structure may be in static equilibrium, equilibrium equations do not provide enough equations to solve for all the unknown reactions. In many cases, the known constraints on deformation can be used to provide the additional necessary equations. We will consider the same two categories of statically indeterminate loading:</p>
 <ol type="1">
 <li><p>Redundant supports—Cases where there are fixed supports at each end. In this configuration, the shaft is constrained on both ends such that the overall angle of twist must be 0 if both ends are truly fixed, or the angle of twist is limited to a specified amount if there is a fixed degree of freedom on one end (for example if one side involves a loose connection).</p></li>
 <li><p>Co-axial or parallel shafts—multiple shafts are bonded concentrically (one within another) so that they are constrained to twist as a unit by the same amount. In this case, the extra equation needed in addition to equilibrium comes from setting the angle of twist for each material equal to each other.</p></li>
@@ -946,8 +946,8 @@ Click to expand
 <li>Sum the angle of twist from step 2 and step 4 and set the total equal to zero (or a given angle as appropriate).</li>
 <li>Solve the equation resulting from step 5 for the reaction at the redundant support and then use the whole body equilibrium to solve for the reaction at the other support(s).</li>
 </ol>
-<p><a href="#exm-6.4" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-6.4</span></a> demonstrates how to solve a statically indeterminate torsion problem that falls under the first category of problems described above. <a href="#exm-6.5" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-6.5</span></a> uses superposition to solve part (a) of <a href="#exm-6.4" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-6.4</span></a>.</p>
-<p><a href="#exm-6.6" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-6.6</span></a> goes through the process of solving a statically indeterminate torsion problems that falls under the second category of problems described above.</p>
+<p><a href="#exm-6.4" class="quarto-xref">Example&nbsp;<span>6.4</span></a> demonstrates how to solve a statically indeterminate torsion problem that falls under the first category of problems described above. <a href="#exm-6.5" class="quarto-xref">Example&nbsp;<span>6.5</span></a> uses superposition to solve part (a) of <a href="#exm-6.4" class="quarto-xref">Example&nbsp;<span>6.4</span></a>.</p>
+<p><a href="#exm-6.6" class="quarto-xref">Example&nbsp;<span>6.6</span></a> goes through the process of solving a statically indeterminate torsion problems that falls under the second category of problems described above.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1345,8 +1345,8 @@ Click to expand
 <p><span class="math display">\[
 P=\frac{W}{t}=\frac{F \times d}{t}
 \]</span></p>
-<p>Within the context of rotating shafts, the force would be the force applied to the outer edge of the shaft that results in torque and the distance would be the arc length that a point on the edge of the shaft travels around the circumference in a given amount of time, t. <a href="#fig-6.14" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.14</span></a> illustrates this point.</p>
-<div id="fig-6.14" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<p>Within the context of rotating shafts, the force would be the force applied to the outer edge of the shaft that results in torque and the distance would be the arc length that a point on the edge of the shaft travels around the circumference in a given amount of time, t. <a href="#fig-6.14" class="quarto-xref">Figure&nbsp;<span>6.14</span></a> illustrates this point.</p>
+<div id="fig-6.14" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-6.14-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/CH6 PNGs/figure 6.14.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="256">
@@ -1372,7 +1372,7 @@ Figure&nbsp;6.14: Force applied to rotation shaft results in work
 <p>In US Customary units, power is commonly expressed as ft·lb/s or in·lb/s. However, it is also common to express power in terms of horsepower, where there are 550 ft·lb/s for 1 hp. Note that there is a conversion difference between the US horsepower and the British horsepower. In this text, horsepower will refer to the US version.</p>
 <p>When applying the P = Tω equation, the angular velocity ω must be expressed in radians per second. If frequency is given in Hz, which is 1 revolution/s, then one must multiply by 2π to convert it to rad/s since there are 2π rad per revolution.</p>
 <p>If angular velocity is given in rpm, which is revolution per minute, then one must multiply by 2π radians per revolution and divide by 60 to convert 1/min to 1/s. This reduces to an overall multiplication factor of π/30 to convert from rpm to rad/s.</p>
-<table class="table">
+<table class="caption-top table">
 <caption><strong>Table 6.1:</strong> Power</caption>
 <colgroup>
 <col style="width: 1%">
@@ -1399,7 +1399,7 @@ Figure&nbsp;6.14: Force applied to rotation shaft results in work
 </tr>
 </tbody>
 </table>
-<table class="table">
+<table class="caption-top table">
 <caption><strong>Table 6.2:</strong> Other rotational units</caption>
 <colgroup>
 <col style="width: 1%">
@@ -1429,8 +1429,8 @@ Figure&nbsp;6.14: Force applied to rotation shaft results in work
 </section>
 <section id="torque-transfer-between-connected-gears-gear-ratio" class="level3" data-number="6.4.3">
 <h3 data-number="6.4.3" class="anchored" data-anchor-id="torque-transfer-between-connected-gears-gear-ratio"><span class="header-section-number">6.4.3</span> Torque Transfer Between Connected Gears (Gear Ratio)</h3>
-<p>Consider two connected gears as shown in <a href="#fig-6.15" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.15</span></a>. The interaction of the teeth results in a force applied to each gear from the other. For equilibrium, this force must be equal in magnitude but opposite in direction. The force results in a torque which can be expressed as T = Fr.</p>
-<div id="fig-6.15" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<p>Consider two connected gears as shown in <a href="#fig-6.15" class="quarto-xref">Figure&nbsp;<span>6.15</span></a>. The interaction of the teeth results in a force applied to each gear from the other. For equilibrium, this force must be equal in magnitude but opposite in direction. The force results in a torque which can be expressed as T = Fr.</p>
+<div id="fig-6.15" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-6.15-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/CH6 PNGs/figure 6.15.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
@@ -1462,12 +1462,12 @@ F=\frac{T_A}{r_A}=\frac{T_B}{r_B}
 </section>
 <section id="angle-of-twist" class="level3" data-number="6.4.5">
 <h3 data-number="6.4.5" class="anchored" data-anchor-id="angle-of-twist"><span class="header-section-number">6.4.5</span> Angle of Twist</h3>
-<p>When two connected gears rotate, they will have equal arclengths of travel for a given amount of shaft rotation, but in opposite directions, as depicted in <a href="#fig-6.16" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-6.16</span></a>. This means that rAφA = - rBφB, and the angle of twist at point B for the shaft that it is on can be related to the angle of twist at the same location on the shaft that gear A is on.</p>
+<p>When two connected gears rotate, they will have equal arclengths of travel for a given amount of shaft rotation, but in opposite directions, as depicted in <a href="#fig-6.16" class="quarto-xref">Figure&nbsp;<span>6.16</span></a>. This means that rAφA = - rBφB, and the angle of twist at point B for the shaft that it is on can be related to the angle of twist at the same location on the shaft that gear A is on.</p>
 <p><span id="eq-6.7"><span class="math display">\[
 \boxed{\phi_A=-\frac{r_B}{r_A} \phi_B}
 \tag{6.6}\]</span></span></p>
 <p>As with the angular velocities, notice that the gear ratio is the inverse as that used to relate torques.</p>
-<div id="fig-6.16" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<div id="fig-6.16" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-6.16-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/CH6 PNGs/figure 6.16.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="249">
@@ -1477,7 +1477,7 @@ Figure&nbsp;6.16: Connected gears travel the same distance in opposite direction
 </figcaption>
 </figure>
 </div>
-<p>In <a href="#exm-6.7" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-6.7</span></a>, a problem of power transmission with connected gears is presented which utilizes the above concepts.</p>
+<p>In <a href="#exm-6.7" class="quarto-xref">Example&nbsp;<span>6.7</span></a>, a problem of power transmission with connected gears is presented which utilizes the above concepts.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1584,7 +1584,7 @@ Step-by-step: Power Transmission
 <li><p>Convert the power (P) from 1 Watt = 1 N·m/s or 1 hp = 550 lb·ft/sec = 6600 lb·in./sec</p></li>
 <li><p>Determine the angular velocity <span class="math inline">\((\omega)\)</span> in units of rad/sec</p></li>
 <li><p>Determine the torque from <span class="math inline">\(T=\frac{P}{\omega}\)</span></p></li>
-<li><p>Find the internal torque and calculate the stress and/or angle of twist as in <a href="#sec-6.1" class="quarto-xref"><span class="quarto-unresolved-ref">sec-6.1</span></a> and <a href="#sec-6.2" class="quarto-xref"><span class="quarto-unresolved-ref">sec-6.2</span></a></p></li>
+<li><p>Find the internal torque and calculate the stress and/or angle of twist as in <a href="#sec-6.1" class="quarto-xref"><span>Section 6.1</span></a> and <a href="#sec-6.2" class="quarto-xref"><span>Section 6.2</span></a></p></li>
 <li><p>If the problem involves connected gears, determine the torque and/or angle of twist from <span class="math inline">\(T_A=\frac{r_A}{r_B}T_B\)</span> and <span class="math inline">\(\phi_A=\frac{r_B}{r_A}\phi_B\)</span> where gear A is the larger gear</p></li>
 <li><p>Calculate the stress and/or angle of twist in all segments. A new segment should be considered any time there is a change in torque, cross-section dimensions, or material. The total angle of twist between two points can be determined by summing the angle of twist of all segments between those points</p></li>
 </ol>
@@ -1831,18 +1831,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1874,7 +1863,47 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -1909,7 +1938,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');

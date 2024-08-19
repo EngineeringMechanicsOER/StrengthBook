@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.5.53">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Strength of Materials - 1&nbsp; Statics Review</title>
+<title>1&nbsp; Statics Review – Strength of Materials</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -71,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -110,13 +110,13 @@ window.Quarto = {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Chapter 1.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Statics Review</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -239,9 +239,9 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -289,7 +289,7 @@ window.Quarto = {
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#sec-1.1" id="toc-sec-1.1" class="nav-link" data-scroll-target="#sec-1.1"><span class="header-section-number">1.1</span> Equilibrium in Two Dimensions</a>
+  <li><a href="#sec-1_1" id="toc-sec-1_1" class="nav-link" data-scroll-target="#sec-1_1"><span class="header-section-number">1.1</span> Equilibrium in Two Dimensions</a>
   <ul class="collapse">
   <li><a href="#two-force-members" id="toc-two-force-members" class="nav-link" data-scroll-target="#two-force-members"><span class="header-section-number">1.1.1</span> Two Force Members</a></li>
   </ul></li>
@@ -353,14 +353,14 @@ Click to expand
 </summary>
 <p>Like in Statics, all bodies and structures discussed in this text will be assumed to be in static equilibrium. Unlike Statics, which assumed that all bodies were rigid, bodies in this text are deformable. In order to determine how an applied loading situation affects any given body or structure, and potentially causes it to deform, we must start by applying statics to establish the distribution of forces and moments within the body. This will be the first step of many problems. This chapter will present a review of those aspects of statics concepts that will be prevalent throughout this course.</p>
 <p>External forces and moments are the forces and moments that act on the boundaries of a system. They are the loads that are applied arbitrarily (weight, wind, pressure, etc.), as well as the reactions they induce in the supporting elements (pins, rollers, welds, etc.). In the case of external reactions, the word “reaction” refers to the forces and/or moments exerted by the supports on the body in reaction to the other loading in order to keep the body in equilibrium.</p>
-<p>Finding the external reactions will be the first step of many of the types of problems that will be covered in this text. This process will entail first drawing a free body diagram (FBD) of the body, or a sketch of the body freed from its supports, which shows the applied and reaction forces and moments. The reactions that correspond to the most common supports are illustrated below in <a href="#tbl-1.1" class="quarto-xref">Table&nbsp;<span class="quarto-unresolved-ref">tbl-1.1</span></a></p>
-<div id="tbl-1.1" class="quarto-float anchored">
+<p>Finding the external reactions will be the first step of many of the types of problems that will be covered in this text. This process will entail first drawing a free body diagram (FBD) of the body, or a sketch of the body freed from its supports, which shows the applied and reaction forces and moments. The reactions that correspond to the most common supports are illustrated below in <a href="#tbl-1.1" class="quarto-xref">Table&nbsp;<span>1.1</span></a></p>
+<div id="tbl-1.1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-1.1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;1.1: Free body diagrams for common supports.
 </figcaption>
 <div aria-describedby="tbl-1.1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="table">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 21%">
 <col style="width: 53%">
@@ -401,13 +401,13 @@ Table&nbsp;1.1: Free body diagrams for common supports.
 </figure>
 </div>
 <p>Notice that while pins and fixed supports react with a force in a specific direction, both the magnitude and direction of the force are unknown until equilibrium equations are applied to solve for them. Instead of expressing the components of the unknown F in terms of the unknown θ, the reactions are normally shown as the components F<sub>x</sub> and F<sub>y</sub>. Once they are found, the overall magnitude of the force in the pin and its direction can be calculated <span class="math inline">\(\left(F=\sqrt{F_x^2+F_y^2}, \tan \theta_x=\frac{F_y}{F_x}\right)\)</span>.</p>
-<p><a href="#sec-1.1" class="quarto-xref"><span class="quarto-unresolved-ref">sec-1.1</span></a> reviews equilibrium of members and frames in two dimensions, including the analysis of two-force members and multi-force members.</p>
-<p><a href="#sec-1.2" class="quarto-xref"><span class="quarto-unresolved-ref">sec-1.2</span></a> addresses internal loads, including normal force, shear force, and bending moment.</p>
-<p><a href="#sec-1.3" class="quarto-xref"><span class="quarto-unresolved-ref">sec-1.3</span></a> reviews equilibrium in three dimensions.</p>
+<p><a href="#sec-1_1" class="quarto-xref"><span>Section 1.1</span></a> reviews equilibrium of members and frames in two dimensions, including the analysis of two-force members and multi-force members.</p>
+<p><a href="#sec-1.2" class="quarto-xref"><span>Section 1.2</span></a> addresses internal loads, including normal force, shear force, and bending moment.</p>
+<p><a href="#sec-1.3" class="quarto-xref"><span>Section 1.3</span></a> reviews equilibrium in three dimensions.</p>
 </details>
 </section>
-<section id="sec-1.1" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="sec-1.1"><span class="header-section-number">1.1</span> Equilibrium in Two Dimensions</h2>
+<section id="sec-1_1" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="sec-1_1"><span class="header-section-number">1.1</span> Equilibrium in Two Dimensions</h2>
 <details>
 <summary>
 Click to expand
@@ -417,7 +417,7 @@ Click to expand
 \boxed{\sum F_x=0 \quad \sum F_y=0 \quad \sum M_{any~point}=0}
 \tag{1.1}\]</span></span></p>
 <p>Since there are three equations, a statically determinate problem should have no more than 3 unknowns.</p>
-<p><a href="#exm-1.1" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-1.1</span></a> illustrates the process of finding external reactions.</p>
+<p><a href="#exm-1.1" class="quarto-xref">Example&nbsp;<span>1.1</span></a> illustrates the process of finding external reactions.</p>
 <div id="example-1.1" class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -480,8 +480,8 @@ Solution
 </div>
 <section id="two-force-members" class="level3" data-number="1.1.1">
 <h3 data-number="1.1.1" class="anchored" data-anchor-id="two-force-members"><span class="header-section-number">1.1.1</span> Two Force Members</h3>
-<p>One special type of pin connection for which the direction of the reaction force is known is one in which the pin is connected to a <strong>two-force member</strong>. Contrary to the name, a two-force member is not necessarily a member on which only two forces are applied, but rather it is a member on which forces are applied at only two locations. A two-force member can be any shape, as is demonstrated in <a href="#fig-1.1" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-1.1</span></a>. One easy way to recognize a two-force member is to note the presence of only two connection points (such as two pins) but no other locations at which a force or moment couple is applied. Once a member is recognized to be a two-force member, it can be concluded that the resultant force at both connection points will be equal in magnitude (so F<sub>A</sub> = F<sub>B</sub> in <a href="#fig-1.1" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-1.1</span></a>) and opposite in direction and follow a line of action that goes through the connections. For a straight member, it can also be concluded that the force within the two-force member (internal reaction as will be discussed in <a href="#sec-1.1" class="quarto-xref"><span class="quarto-unresolved-ref">sec-1.1</span></a>) is equal to the reaction force in the pin.</p>
-<div id="fig-1.1" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<p>One special type of pin connection for which the direction of the reaction force is known is one in which the pin is connected to a <strong>two-force member</strong>. Contrary to the name, a two-force member is not necessarily a member on which only two forces are applied, but rather it is a member on which forces are applied at only two locations. A two-force member can be any shape, as is demonstrated in <a href="#fig-1.1" class="quarto-xref">Figure&nbsp;<span>1.1</span></a>. One easy way to recognize a two-force member is to note the presence of only two connection points (such as two pins) but no other locations at which a force or moment couple is applied. Once a member is recognized to be a two-force member, it can be concluded that the resultant force at both connection points will be equal in magnitude (so F<sub>A</sub> = F<sub>B</sub> in <a href="#fig-1.1" class="quarto-xref">Figure&nbsp;<span>1.1</span></a>) and opposite in direction and follow a line of action that goes through the connections. For a straight member, it can also be concluded that the force within the two-force member (internal reaction as will be discussed in <a href="#sec-1_1" class="quarto-xref"><span>Section 1.1</span></a>) is equal to the reaction force in the pin.</p>
+<div id="fig-1.1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-1.1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/CH1 PNGs/figure 1.1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="642">
@@ -491,7 +491,7 @@ Figure&nbsp;1.1: Illustrations of two force members showing the line of action o
 </figcaption>
 </figure>
 </div>
-<p>The presence and recognition of two force members can make some otherwise statically indeterminate problems become statically determinate. This is demonstrated in <a href="#exm-1.2" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-1.2</span></a> below.</p>
+<p>The presence and recognition of two force members can make some otherwise statically indeterminate problems become statically determinate. This is demonstrated in <a href="#exm-1.2" class="quarto-xref">Example&nbsp;<span>1.2</span></a> below.</p>
 <div id="example-1.2" class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -582,7 +582,7 @@ Click to expand
 <section id="internal-reactions-at-a-connection-with-two-force-members" class="level3" data-number="1.2.1">
 <h3 data-number="1.2.1" class="anchored" data-anchor-id="internal-reactions-at-a-connection-with-two-force-members"><span class="header-section-number">1.2.1</span> Internal reactions at a connection with two force members</h3>
 <p>Pins that connect members can be represented on an FBD in the same way as pins that connect the structure to external supports. That is, the reaction would be drawn as the two components of the overall force. However, the connected members would be considered as separate bodies, as if the connecting pin were pulled out and the members separated. The pin reactions would then be drawn on the FBD for each separated member. Since the pin would exert equal and opposite forces on the connected members, one needs to be careful to show the reaction forces in opposite directions on the FBD’s of those members. All three equilibrium equations can be applied separately to each member so one could theoretically solve for 3 times the number of unknowns as separate FBD’s drawn.</p>
-<p>However, just as was discussed above, when one of the connected members is a two-force member, the reaction at the pin will be known to follow a line of action that goes through the points of application of the forces on the two-force member. <a href="#exm-1.3" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-1.3</span></a> demonstrates these concepts.</p>
+<p>However, just as was discussed above, when one of the connected members is a two-force member, the reaction at the pin will be known to follow a line of action that goes through the points of application of the forces on the two-force member. <a href="#exm-1.3" class="quarto-xref">Example&nbsp;<span>1.3</span></a> demonstrates these concepts.</p>
 <div id="example-1.3" class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -651,7 +651,7 @@ Solution
 <h3 data-number="1.2.2" class="anchored" data-anchor-id="internal-reactions-in-truss-structures"><span class="header-section-number">1.2.2</span> Internal reactions in truss structures</h3>
 <p>Truss structures are made up of only two force members. The two main methods of determining internal reactions in planar (2D) truss structures are Method of Joints and Method of Sections. In using Method of Joints, an FBD is drawn of the connecting pins (joints) within the truss. Since all the members connected at any given pin will be two-force members, the reactions can be drawn in known directions. However, since the forces all pass through the same point on the body, the moment equilibrium equation is not useful, so only the forces equilibrium equations can be used for each joint. This means that only two unknowns can be solved for at each joint. This method is most useful when the forces of all the truss members are sought or if the only forces sought are attached to a joint with only two members.</p>
 <p>To use Method of Sections, a cut is made through the truss structure and analysis is based on the FBD of the intact part of the structure that is to the left of the cut or the intact part of the structure to the right of the cut. The FBD of either given side will show the applied forces and the reaction forces from the members that were cut through. These reactions will be equal in magnitude but opposite in direction between the two sides of the cut. The side to examine is usually based on which one will not require having to find external reactions (if there is a free end to the truss) and/or which one is least complicated to deal with in terms of geometry or applied loads. All three equilibrium equations can generally be effectively applied with Method of Sections, so three unknowns can be solved for with any given cut.</p>
-<p><a href="#exm-1.4" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-1.4</span></a> demonstrates the use of both Method of Joints and Method of Sections to solve for forces in truss members.</p>
+<p><a href="#exm-1.4" class="quarto-xref">Example&nbsp;<span>1.4</span></a> demonstrates the use of both Method of Joints and Method of Sections to solve for forces in truss members.</p>
 <div id="example-1.4" class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -778,8 +778,8 @@ Solution - Method of Sections
 </section>
 <section id="internal-reactions-in-continuous-bodies" class="level3" data-number="1.2.3">
 <h3 data-number="1.2.3" class="anchored" data-anchor-id="internal-reactions-in-continuous-bodies"><span class="header-section-number">1.2.3</span> Internal reactions in continuous bodies</h3>
-<p>Internal reactions also exist within a body or structure. These reactions are necessary to hold the body together and will vary from point to point in a body depending on the distribution of external loading. As shown in <a href="#fig-1.2" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-1.2</span></a>, the reactions at any given point can be examined by making a cut at the point of interest in the body. One can think of any point within a body as acting as a fixed support for the rest of the body. That is, every point must potentially exert a force parallel to the cross section where the cut is made which is the shear force V, a force perpendicular to the cross section where the cut is made which is the normal force N, and a reaction moment where the cut is made which is the bending moment M. Moreover, as was discussed for internal pin reactions and the cut made for Method of Sections for trusses, the reactions at a cut will be equal and opposite on the two sides of the cut.</p>
-<div id="fig-1.2" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<p>Internal reactions also exist within a body or structure. These reactions are necessary to hold the body together and will vary from point to point in a body depending on the distribution of external loading. As shown in <a href="#fig-1.2" class="quarto-xref">Figure&nbsp;<span>1.2</span></a>, the reactions at any given point can be examined by making a cut at the point of interest in the body. One can think of any point within a body as acting as a fixed support for the rest of the body. That is, every point must potentially exert a force parallel to the cross section where the cut is made which is the shear force V, a force perpendicular to the cross section where the cut is made which is the normal force N, and a reaction moment where the cut is made which is the bending moment M. Moreover, as was discussed for internal pin reactions and the cut made for Method of Sections for trusses, the reactions at a cut will be equal and opposite on the two sides of the cut.</p>
+<div id="fig-1.2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-1.2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/CH1 PNGs/figure 1.2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="483">
@@ -789,7 +789,7 @@ Figure&nbsp;1.2: Cross-sections showing the internal loads on a continuous body
 </figcaption>
 </figure>
 </div>
-<p>To determine the reactions, the FBD of the part of the beam to the left of the cut can be drawn and used, or the part of the beam to the right of the cut can be drawn and used. As was discussed with Method of Sections for trusses, the choice of which side of the cut to examine is based primarily on which side appears easiest and most efficient to analyze. Once the FBD of the cut section is drawn, the three equilibrium equations can be applied to determine the internal reactions. The determination of shear and bending moments in beams will be reviewed in more detail in <a href="#sec-beams" class="quarto-xref"><span class="quarto-unresolved-ref">sec-beams</span></a>. The focus of <a href="#exm-1.5" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-1.5</span></a> is on the determination of the normal force, as this will be important in <a href="#sec-stress" class="quarto-xref"><span class="quarto-unresolved-ref">sec-stress</span></a> and <a href="#sec-strain" class="quarto-xref"><span class="quarto-unresolved-ref">sec-strain</span></a>.</p>
+<p>To determine the reactions, the FBD of the part of the beam to the left of the cut can be drawn and used, or the part of the beam to the right of the cut can be drawn and used. As was discussed with Method of Sections for trusses, the choice of which side of the cut to examine is based primarily on which side appears easiest and most efficient to analyze. Once the FBD of the cut section is drawn, the three equilibrium equations can be applied to determine the internal reactions. The determination of shear and bending moments in beams will be reviewed in more detail in <a href="Chapter 7.html" class="quarto-xref"><span>Chapter 7</span></a>. The focus of <a href="#exm-1.5" class="quarto-xref">Example&nbsp;<span>1.5</span></a> is on the determination of the normal force, as this will be important in <a href="Chapter 2.html" class="quarto-xref"><span>Chapter 2</span></a> and <a href="Chapter 3.html" class="quarto-xref"><span>Chapter 3</span></a>.</p>
 <div id="example-1.5" class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -871,8 +871,8 @@ Click to expand
 \sum F_z=0 &amp; \sum M_z=0
 \end{array}}
 \tag{1.2}\]</span></span></p>
-<p>Note that the moment vector describes the axis around which the body tends to rotate. Each individual component represents the tendency of the body to rotate around the specified axis. In 3D, there are three internal forces and three internal moments (<a href="#fig-1.3" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-1.3</span></a>). There is one normal force (N<sub>x</sub>) perpendicular to the cross-section and two shear forces (V<sub>y</sub> and V<sub>z</sub>) parallel to the cross-section. There are two bending moments (M<sub>y</sub> and M<sub>z</sub>) which act around the axes parallel to the cross-section and one torsional moment (T<sub>x</sub>) which acts around the axis perpendicular to the cross-section. We will study each of these loads in detail over the next few chapters.</p>
-<div id="fig-1.3" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<p>Note that the moment vector describes the axis around which the body tends to rotate. Each individual component represents the tendency of the body to rotate around the specified axis. In 3D, there are three internal forces and three internal moments (<a href="#fig-1.3" class="quarto-xref">Figure&nbsp;<span>1.3</span></a>). There is one normal force (N<sub>x</sub>) perpendicular to the cross-section and two shear forces (V<sub>y</sub> and V<sub>z</sub>) parallel to the cross-section. There are two bending moments (M<sub>y</sub> and M<sub>z</sub>) which act around the axes parallel to the cross-section and one torsional moment (T<sub>x</sub>) which acts around the axis perpendicular to the cross-section. We will study each of these loads in detail over the next few chapters.</p>
+<div id="fig-1.3" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-1.3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/CH1 PNGs/figure 1.3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="510">
@@ -903,7 +903,7 @@ Figure&nbsp;1.3: In 3D there are three internal forces (normal force N<sub>x</su
 <li><p>The thumb is aligned with the axis of rotation (axis around which the moment is being calculated).</p></li>
 <li><p>Curl your fingers in the direction of the force. If your thumb must be pointed in the positive axis direction to perform this action, the moment is counterclockwise. If your thumb must be pointed in the negative axis direction, the moment is clockwise. Typical convention designates counterclockwise rotation to be positive and clockwise to be negative.</p></li>
 </ol>
-<p>These concepts are further reviewed in <a href="#exm-1.6" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-1.6</span></a>.</p>
+<p>These concepts are further reviewed in <a href="#exm-1.6" class="quarto-xref">Example&nbsp;<span>1.6</span></a>.</p>
 <div id="example-1.6" class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1213,18 +1213,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1256,7 +1245,47 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -1291,7 +1320,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');

@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.5.53">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Strength of Materials - 5&nbsp; Axial Loading</title>
+<title>5&nbsp; Axial Loading – Strength of Materials</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -71,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -110,13 +110,13 @@ window.Quarto = {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Chapter 5.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Axial Loading</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -239,9 +239,9 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -346,8 +346,8 @@ Learning Objectives
 <summary>
 Click to expand
 </summary>
-<p>In this chapter we’ll take a closer look at the effects of axial loading. Axial loads are those applied perpendicular to the cross-section of an object (<a href="#fig-5.1" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-5.1</span></a>) and such loads affect the object in several ways.</p>
-<div id="fig-5.1" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<p>In this chapter we’ll take a closer look at the effects of axial loading. Axial loads are those applied perpendicular to the cross-section of an object (<a href="#fig-5.1" class="quarto-xref">Figure&nbsp;<span>5.1</span></a>) and such loads affect the object in several ways.</p>
+<div id="fig-5.1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-5.1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/PNGs/Figure 5.1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="361">
@@ -357,9 +357,9 @@ Figure&nbsp;5.1: Axial loads act perpendicular to the cross-section. They cause 
 </figcaption>
 </figure>
 </div>
-<p>Axial loads create axial stresses, which we have already seen in <a href="#sec-2.1" class="quarto-xref"><span class="quarto-unresolved-ref">sec-2.1</span></a> and we’ll revisit briefly in <a href="#sec-5.1" class="quarto-xref"><span class="quarto-unresolved-ref">sec-5.1</span></a>. We previously considered the average normal stress in a cross-section, but the geometry of the cross-section can cause large localized stresses much higher than the average. We’ll discuss these stress concentrations in <a href="#sec-5.2" class="quarto-xref"><span class="quarto-unresolved-ref">sec-5.2</span></a>.</p>
-<p>This text is concerned with both stress and deformation, so in <a href="#sec-5.3" class="quarto-xref"><span class="quarto-unresolved-ref">sec-5.3</span></a> we’ll explore the deformation caused by axial loads. We’ll extend this to a special case of axial deformation involving parallel bars in <a href="#sec-5.4" class="quarto-xref"><span class="quarto-unresolved-ref">sec-5.4</span></a>, before using our knowledge of axial deformation to help us solve statically indeterminate problems in <a href="#sec-5.5" class="quarto-xref"><span class="quarto-unresolved-ref">sec-5.5</span></a>. These are problems where the equilibrium equations are not sufficient to determine the reaction and internal forces.</p>
-<p>Finally we’ll investigate the effects of temperature in <a href="#sec-5.6" class="quarto-xref"><span class="quarto-unresolved-ref">sec-5.6</span></a>. As the temperature of an object changes it will expand or contract. Thus there can be deformation even in the absence of any applied forces.</p>
+<p>Axial loads create axial stresses, which we have already seen in <a href="Chapter 2.html#sec-2.1" class="quarto-xref"><span>Section 2.1</span></a> and we’ll revisit briefly in <a href="#sec-5.1" class="quarto-xref"><span>Section 5.1</span></a>. We previously considered the average normal stress in a cross-section, but the geometry of the cross-section can cause large localized stresses much higher than the average. We’ll discuss these stress concentrations in <a href="#sec-5.2" class="quarto-xref"><span>Section 5.2</span></a>.</p>
+<p>This text is concerned with both stress and deformation, so in <a href="#sec-5.3" class="quarto-xref"><span>Section 5.3</span></a> we’ll explore the deformation caused by axial loads. We’ll extend this to a special case of axial deformation involving parallel bars in <a href="#sec-5.4" class="quarto-xref"><span>Section 5.4</span></a>, before using our knowledge of axial deformation to help us solve statically indeterminate problems in <a href="#sec-5.5" class="quarto-xref"><span>Section 5.5</span></a>. These are problems where the equilibrium equations are not sufficient to determine the reaction and internal forces.</p>
+<p>Finally we’ll investigate the effects of temperature in <a href="#sec-5.6" class="quarto-xref"><span>Section 5.6</span></a>. As the temperature of an object changes it will expand or contract. Thus there can be deformation even in the absence of any applied forces.</p>
 </details>
 </section>
 <section id="sec-5.1" class="level2" data-number="5.1">
@@ -368,7 +368,7 @@ Figure&nbsp;5.1: Axial loads act perpendicular to the cross-section. They cause 
 <summary>
 Click to expand
 </summary>
-<p>Axial loads create axial stresses, also known as normal stresses. As discussed in <a href="#sec-2.1" class="quarto-xref"><span class="quarto-unresolved-ref">sec-2.1</span></a>, the average normal stress is calculated from</p>
+<p>Axial loads create axial stresses, also known as normal stresses. As discussed in <a href="Chapter 2.html#sec-2.1" class="quarto-xref"><span>Section 2.1</span></a>, the average normal stress is calculated from</p>
 <p><span class="math display">\[
 \sigma=\frac{N}{A}
 \]</span></p>
@@ -380,8 +380,8 @@ Click to expand
 <summary>
 Click to expand
 </summary>
-<p>The normal stress discussed in the previous section is averaged over the cross-section and assumes that stresses (and therefore strains) at the cross-section are uniform. In reality stresses and strains can vary across a cross-section, especially if the cross-section is close to an applied load, a support, or a change in geometry. At these points localized stress concentrations occur, leading to large, localized stresses and strains. The intensity of these concentrations depends on the type of loading, support, or geometry (<a href="#fig-5.2" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-5.2</span></a>).</p>
-<div id="fig-5.2" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<p>The normal stress discussed in the previous section is averaged over the cross-section and assumes that stresses (and therefore strains) at the cross-section are uniform. In reality stresses and strains can vary across a cross-section, especially if the cross-section is close to an applied load, a support, or a change in geometry. At these points localized stress concentrations occur, leading to large, localized stresses and strains. The intensity of these concentrations depends on the type of loading, support, or geometry (<a href="#fig-5.2" class="quarto-xref">Figure&nbsp;<span>5.2</span></a>).</p>
+<div id="fig-5.2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-5.2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/PNGs/Figure 5.2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="566">
@@ -391,8 +391,8 @@ Figure&nbsp;5.2: Each bar has a fixed support on the left, a cross-section of 30
 </figcaption>
 </figure>
 </div>
-<p>However, these effects disappear a certain distance away from the force, support, or local geometry. It is therefore acceptable to assume uniform stress and strain (as we have been so far) provided that we also assume our cross-section is a sufficient distance away from these points. This is known as Saint-Venant’s principle, which can be formally stated as “The stresses and strains created at a point in a body by two statically equivalent loads are equivalent at points sufficiently far removed from the applied load” (<a href="#fig-5.3" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-5.3</span></a>).</p>
-<div id="fig-5.3" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<p>However, these effects disappear a certain distance away from the force, support, or local geometry. It is therefore acceptable to assume uniform stress and strain (as we have been so far) provided that we also assume our cross-section is a sufficient distance away from these points. This is known as Saint-Venant’s principle, which can be formally stated as “The stresses and strains created at a point in a body by two statically equivalent loads are equivalent at points sufficiently far removed from the applied load” (<a href="#fig-5.3" class="quarto-xref">Figure&nbsp;<span>5.3</span></a>).</p>
+<div id="fig-5.3" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-5.3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/PNGs/Figure 5.3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="565">
@@ -402,8 +402,8 @@ Figure&nbsp;5.3: Two statically equivalent loads applied to a bar. Close to the 
 </figcaption>
 </figure>
 </div>
-<p>More advanced courses will use the theory of elasticity to study the areas of variable stress and strain, but for now we’ll continue to apply Saint-Venant’s principle and assume that our cross-sections are sufficiently far away from the applied loads that we don’t need to consider these stress concentrations. We will however address the question of stress concentrations around changes in geometry here. We’ll study two specific examples; holes and fillets. <a href="#fig-5.2" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-5.2</span></a> shows an example of the stress concentrations around a hole. <a href="#fig-5.4" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-5.4</span></a> shows an example of the stress concentrations around a fillet. A fillet is a rounded corner used to help transition between two geometries.</p>
-<div id="fig-5.4" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<p>More advanced courses will use the theory of elasticity to study the areas of variable stress and strain, but for now we’ll continue to apply Saint-Venant’s principle and assume that our cross-sections are sufficiently far away from the applied loads that we don’t need to consider these stress concentrations. We will however address the question of stress concentrations around changes in geometry here. We’ll study two specific examples; holes and fillets. <a href="#fig-5.2" class="quarto-xref">Figure&nbsp;<span>5.2</span></a> shows an example of the stress concentrations around a hole. <a href="#fig-5.4" class="quarto-xref">Figure&nbsp;<span>5.4</span></a> shows an example of the stress concentrations around a fillet. A fillet is a rounded corner used to help transition between two geometries.</p>
+<div id="fig-5.4" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-5.4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/PNGs/Figure 5.4.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
@@ -421,8 +421,8 @@ Figure&nbsp;5.4: The fillet helps prevent a sharp corner but still causes stress
 <em>𝜎<sub>max</sub> = Maximum normal stress [Pa, psi]</em><br>
 <em>K = Stress concentrtion factor</em></div>
 <p><em>𝜎<sub>avg</sub> = Average normal stress [Pa, psi]</em></p>
-<p>This stress concentration factor depends on the geometry at hand and can be found from curves in design handbooks (<a href="#fig-5.5" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-5.5</span></a>). See <a href="#exm-5.1" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-5.1</span></a> and <a href="#exm-5.2" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-5.2</span></a> to see how these curves can be used.</p>
-<div id="fig-5.5" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<p>This stress concentration factor depends on the geometry at hand and can be found from curves in design handbooks (<a href="#fig-5.5" class="quarto-xref">Figure&nbsp;<span>5.5</span></a>). See <a href="#exm-5.1" class="quarto-xref">Example&nbsp;<span>5.1</span></a> and <a href="#exm-5.2" class="quarto-xref">Example&nbsp;<span>5.2</span></a> to see how these curves can be used.</p>
+<div id="fig-5.5" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-5.5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/PNGs/Figure 5.5.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
@@ -607,8 +607,8 @@ Step-by-step: Stress concentrations
 <summary>
 Click to expand
 </summary>
-<p>Consider a simple bar of uniform cross-section subjected to an axial force (<a href="#fig-5.6" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-5.6</span></a>).</p>
-<div id="fig-5.6" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<p>Consider a simple bar of uniform cross-section subjected to an axial force (<a href="#fig-5.6" class="quarto-xref">Figure&nbsp;<span>5.6</span></a>).</p>
+<div id="fig-5.6" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-5.6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/PNGs/Figure 5.6.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="335">
@@ -631,7 +631,7 @@ Figure&nbsp;5.6: A bar of uniform cross-section, A, and length, L, subjected to 
 \Delta L=\frac{F L}{A E}
 \]</span></p>
 <p>This equation can be used to directly find the change in length of an object subjected to an axial load.</p>
-<p>In practice, there may be multiple axial loads applied to the bar. The cross-sectional area may change at different points along the bar, or perhaps there could be different materials with different elastic moduli connected in series to form the bar. In any of these cases we can split the bar into sections where each section has a constant F, A, and E. We can calculate the change in length of each section separately and sum them to find the total. See <a href="#exm-5.3" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-5.3</span></a> for a problem involving multiple segments of a bar.</p>
+<p>In practice, there may be multiple axial loads applied to the bar. The cross-sectional area may change at different points along the bar, or perhaps there could be different materials with different elastic moduli connected in series to form the bar. In any of these cases we can split the bar into sections where each section has a constant F, A, and E. We can calculate the change in length of each section separately and sum them to find the total. See <a href="#exm-5.3" class="quarto-xref">Example&nbsp;<span>5.3</span></a> for a problem involving multiple segments of a bar.</p>
 <p><span id="eq-5.2"><span class="math display">\[
 \boxed{\Delta L=\sum \frac{F L}{A E}}
 \tag{5.2}\]</span></span></p>
@@ -745,8 +745,8 @@ Step-by-step: Axial deformation
 <summary>
 Click to expand
 </summary>
-<p>Sometimes a structure will have more than one axially loaded member. In such cases there are multiple bars that will experience a change in length and the amount of deformation won’t necessarily be the same in each member. The deformable members are generally connected by a rigid (nondeformable) beam. These problems generally involve a little geometry alongside our deformation equation (<a href="#fig-5.7" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-5.7</span></a>).</p>
-<div id="fig-5.7" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<p>Sometimes a structure will have more than one axially loaded member. In such cases there are multiple bars that will experience a change in length and the amount of deformation won’t necessarily be the same in each member. The deformable members are generally connected by a rigid (nondeformable) beam. These problems generally involve a little geometry alongside our deformation equation (<a href="#fig-5.7" class="quarto-xref">Figure&nbsp;<span>5.7</span></a>).</p>
+<div id="fig-5.7" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-5.7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/PNGs/Figure 5.7.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="360">
@@ -760,8 +760,8 @@ Figure&nbsp;5.7: Rigid beam AB is attached to deformable poles 1 and 2. The pole
 <p><span class="math display">\[
 \Delta L=\frac{F L}{A E}
 \]</span></p>
-<p>Once the change in length of each member is known, we can find the displacement at different points on the rigid beam through simple geometry of the rigid beam (<a href="#fig-5.8" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-5.8</span></a>). This process is demonstrated in <a href="#exm-5.4" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-5.4</span></a>.</p>
-<div id="fig-5.8" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<p>Once the change in length of each member is known, we can find the displacement at different points on the rigid beam through simple geometry of the rigid beam (<a href="#fig-5.8" class="quarto-xref">Figure&nbsp;<span>5.8</span></a>). This process is demonstrated in <a href="#exm-5.4" class="quarto-xref">Example&nbsp;<span>5.4</span></a>.</p>
+<div id="fig-5.8" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-5.8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/PNGs/Figure 5.8.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="329">
@@ -774,10 +774,10 @@ Figure&nbsp;5.8: Beam deflection in the case where only bar 2 deforms. Point B w
 <p>The deflection of point C will be somewhere between the deflection at A and the deflection at B. Assuming there is no deflection at A and assuming that the deflections (and therefore the angle at A) are small, we can use similar triangles to find:</p>
 <p><span class="math display">\[
 \frac{\Delta L_C}{L_{A C}}=\frac{\Delta L_2}{L} \rightarrow \Delta L_C=\Delta L_2 \frac{L_{A C}}{L}\]</span></p>
-<p>If there is a deflection at point A (<a href="#fig-5.9" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-5.9</span></a>) this simply becomes:</p>
+<p>If there is a deflection at point A (<a href="#fig-5.9" class="quarto-xref">Figure&nbsp;<span>5.9</span></a>) this simply becomes:</p>
 <p><span class="math display">\[
 \Delta L_C=\Delta L_1+\left(\Delta L_2-\Delta L_1\right) \frac{L_{A C}}{L}\]</span></p>
-<div id="fig-5.9" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<div id="fig-5.9" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-5.9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/PNGs/Figure 5.9.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="379">
@@ -892,8 +892,8 @@ Step-by-step: Deformation in series of bars
 Click to expand
 </summary>
 <p>A statically indeterminate problem is one which has more unknowns than we have equilibrium equations to solve for those unknowns. This is an issue because it prevents us from finding the internal loads and we therefore can’t calculate stress or deformation.</p>
-<p>We’ll study two types of statically indeterminate problems. In the first type there will be additional supports beyond those needed to maintain equilibrium. These are known as redundant supports and they are quite common in practice (<a href="#fig-5.10" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-5.10</span></a>).</p>
-<div id="fig-5.10" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<p>We’ll study two types of statically indeterminate problems. In the first type there will be additional supports beyond those needed to maintain equilibrium. These are known as redundant supports and they are quite common in practice (<a href="#fig-5.10" class="quarto-xref">Figure&nbsp;<span>5.10</span></a>).</p>
+<div id="fig-5.10" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-5.10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/PNGs/architecture-bridge-suspension-bridge-france-pillar-landmark-759379-pxhere.com.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img">
@@ -904,8 +904,8 @@ Figure&nbsp;5.10: An example of redundancy on a suspension bridge. There are mul
 </figure>
 </div>
 <p>In such problems, it is not possible to determine all of the reaction forces using equilibrium alone. However, we can use our knowledge of deformation to help. If a member is held between two supports then its total deformation must be zero. Since the change in length depends on the internal force in the member, this introduces an additional equation to use alongside the equilibrium equations. There are two possible approaches here.</p>
-<p><strong>Approach 1</strong>: To determine the reaction force at the redundant support, begin by removing the redundant support from the problem and determining the deformation that would occur if the support was not there. Then replace the reaction force at the support, which will cause the member to deform in the opposite direction (<a href="#fig-5.11" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-5.11</span></a>).</p>
-<div id="fig-5.11" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<p><strong>Approach 1</strong>: To determine the reaction force at the redundant support, begin by removing the redundant support from the problem and determining the deformation that would occur if the support was not there. Then replace the reaction force at the support, which will cause the member to deform in the opposite direction (<a href="#fig-5.11" class="quarto-xref">Figure&nbsp;<span>5.11</span></a>).</p>
+<div id="fig-5.11" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-5.11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/PNGs/Figure 5.11.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="519">
@@ -915,7 +915,7 @@ Figure&nbsp;5.11: (a) A bar held between two rigid supports. (b) A free body dia
 </figcaption>
 </figure>
 </div>
-<p>The sum of these two deformations must equal the actual deformation of the member. If the member is held between two rigid supports, the total deformation will be zero. If there is a small gap or the supports allow a certain amount of movement, the total deformation will be equal to the size of this gap. <a href="#exm-5.5" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-5.5</span></a> shows this process applied to a bar made of 2 materials.</p>
+<p>The sum of these two deformations must equal the actual deformation of the member. If the member is held between two rigid supports, the total deformation will be zero. If there is a small gap or the supports allow a certain amount of movement, the total deformation will be equal to the size of this gap. <a href="#exm-5.5" class="quarto-xref">Example&nbsp;<span>5.5</span></a> shows this process applied to a bar made of 2 materials.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1004,8 +1004,8 @@ F_2=12.7{~kips}
 </div>
 </div>
 </div>
-<p><strong>Approach 2</strong>: An alternate approach is to start by noting that the total deformation of the bar must be zero. In the case shown in <a href="#fig-5.12" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-5.12</span></a>, we can say that the deformation of segment 1 plus the deformation of segment 2 must add up to zero.</p>
-<div id="fig-5.12" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<p><strong>Approach 2</strong>: An alternate approach is to start by noting that the total deformation of the bar must be zero. In the case shown in <a href="#fig-5.12" class="quarto-xref">Figure&nbsp;<span>5.12</span></a>, we can say that the deformation of segment 1 plus the deformation of segment 2 must add up to zero.</p>
+<div id="fig-5.12" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-5.12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/PNGs/Figure 5.12.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
@@ -1021,7 +1021,7 @@ Figure&nbsp;5.12: (a) A bar held between two rigid supports. (b) A free body dia
 \\
 &amp; F-F_A-F_B=0\end{aligned}
 \]</span></p>
-<p><a href="#exm-5.6" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-5.6</span></a> re-solves <a href="#exm-5.5" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-5.5</span></a> using this method instead.</p>
+<p><a href="#exm-5.6" class="quarto-xref">Example&nbsp;<span>5.6</span></a> re-solves <a href="#exm-5.5" class="quarto-xref">Example&nbsp;<span>5.5</span></a> using this method instead.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1095,7 +1095,7 @@ F_2=12.7 {~kips}
 <p><span class="math display">\[
 F_1=25{~kips}-12.7{~kips}=12.3{~kips}
 \]</span></p>
-<p>These are the same reactions that we found in <a href="#exm-5.5" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-5.5</span></a> when we solved this problem using the other approach. From here we can find the stress in each material as before, noting again from our diagram that segment 2 is in compression.</p>
+<p>These are the same reactions that we found in <a href="#exm-5.5" class="quarto-xref">Example&nbsp;<span>5.5</span></a> when we solved this problem using the other approach. From here we can find the stress in each material as before, noting again from our diagram that segment 2 is in compression.</p>
 <p><span class="math display">\[
 \begin{aligned}
 &amp; \sigma_{copper}=\frac{N_1}{A_1}=\frac{12.3{~kips}}{\pi(2^2-1.5^2){~in.}^2}=2.24 {~ksi} \\
@@ -1109,8 +1109,8 @@ F_1=25{~kips}-12.7{~kips}=12.3{~kips}
 </div>
 </div>
 </div>
-<p>The second type of indeterminate problem involves two materials bonded together in parallel. In these problems it’s possible to find the reactions at the supports, but not possible to find the internal force in each material using only equilibrium (<a href="#fig-5.13" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-5.13</span></a>).</p>
-<div id="fig-5.13" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<p>The second type of indeterminate problem involves two materials bonded together in parallel. In these problems it’s possible to find the reactions at the supports, but not possible to find the internal force in each material using only equilibrium (<a href="#fig-5.13" class="quarto-xref">Figure&nbsp;<span>5.13</span></a>).</p>
+<div id="fig-5.13" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-5.13-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/PNGs/Figure 5.13.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="283">
@@ -1120,7 +1120,7 @@ Figure&nbsp;5.13: When two materials in parallel are subjected to force F, the f
 </figcaption>
 </figure>
 </div>
-<p>We have one equilibrium equation but two unknown internal forces. However, since the materials are bonded together we can say that they must deform by the same amount. By setting the deformation for each material equal to each other we can define a second equation that involves the two internal forces and, combined with the equilibrium equation, we can now solve for both internal forces. See <a href="#exm-5.7" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-5.7</span></a> for a demonstration.</p>
+<p>We have one equilibrium equation but two unknown internal forces. However, since the materials are bonded together we can say that they must deform by the same amount. By setting the deformation for each material equal to each other we can define a second equation that involves the two internal forces and, combined with the equilibrium equation, we can now solve for both internal forces. See <a href="#exm-5.7" class="quarto-xref">Example&nbsp;<span>5.7</span></a> for a demonstration.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1251,16 +1251,16 @@ Step-by-step: Statically indeterminate axial problems
 <summary>
 Click to expand
 </summary>
-<p>So far, we’ve studied the effects of axial forces on an object and how they create stresses and deformations. Temperature changes will also cause an object to deform. As seen in <a href="#sec-4.6" class="quarto-xref"><span class="quarto-unresolved-ref">sec-4.6</span></a>, the strain due to temperature can be predicted by:</p>
+<p>So far, we’ve studied the effects of axial forces on an object and how they create stresses and deformations. Temperature changes will also cause an object to deform. As seen in <a href="Chapter 4.html#sec-4.6" class="quarto-xref"><span>Section 4.6</span></a>, the strain due to temperature can be predicted by:</p>
 <p><span class="math display">\[
 \varepsilon_T=\alpha \Delta T
 \]</span></p>
-<p>As before, strain is dimensionless. The coefficient of thermal expansion is a material constant that can be looked up in handbooks or in <a href="#sec-material-properties" class="quarto-xref"><span class="quarto-unresolved-ref">sec-material-properties</span></a>. Note that for a given change in temperature, the thermal strain will be the same in the axial and transverse directions.</p>
+<p>As before, strain is dimensionless. The coefficient of thermal expansion is a material constant that can be looked up in handbooks or in <a href="Appendix C.html" class="quarto-xref"><span>Appendix C</span></a>. Note that for a given change in temperature, the thermal strain will be the same in the axial and transverse directions.</p>
 <p>Since strain is also defined as <span class="math inline">\(\varepsilon=\frac{\Delta L}{L}\)</span>, we can also predict the deformation due to a change in temperature:</p>
 <p><span class="math display">\[
 \varepsilon_T=\alpha \Delta T=\frac{\Delta L}{L} \quad\rightarrow\quad \Delta L=\alpha \Delta T L
 \]</span></p>
-<p>If the object is free to expand or contract this doesn’t cause any issues and is easy to account for. Many real applications will include a small gap to allow for changes in length due to temperature changes (<a href="#fig-5.14" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-5.14</span></a>). It is even possible that an object is subjected to both a physical force and a temperature change and the total change in length is simply the sum of these effects:</p>
+<p>If the object is free to expand or contract this doesn’t cause any issues and is easy to account for. Many real applications will include a small gap to allow for changes in length due to temperature changes (<a href="#fig-5.14" class="quarto-xref">Figure&nbsp;<span>5.14</span></a>). It is even possible that an object is subjected to both a physical force and a temperature change and the total change in length is simply the sum of these effects:</p>
 <p><span id="eq-5.3"><span class="math display">\[
 \boxed{\Delta L=\Delta L_F+\Delta L_T=\frac{F L}{A E}+\alpha \Delta T L}
 \tag{5.3}\]</span></span></p>
@@ -1274,7 +1274,7 @@ Click to expand
 <em>E = Elastic modulus [Pa, psi]</em><br>
 <em>𝛼 = Coefficient of thermal expansion</em> <span class="math inline">\(\left[\frac{1}{^\circ C}, \frac{1}{^\circ F}\right]\)</span><br>
 <em>𝛥T = Change in temperature</em> <span class="math inline">\([^\circ C, ^\circ F]\)</span></div>
-<div id="fig-5.14" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<div id="fig-5.14" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-5.14-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/5.14 newer.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="492">
@@ -1284,7 +1284,7 @@ Figure&nbsp;5.14: Expansion joint on a bridge, allowing for thermal expansion an
 </figcaption>
 </figure>
 </div>
-<p>However if we do not design a gap, or if the gap is not large enough, then the object is not free to expand or contract. As the member pushes or pulls on its supports, a physical force is created. This in turn creates a stress in the object and these stresses can be very large. Such problems are statically indeterminate as the force applied on the member by the support is unknown and can’t be found using only equilibrium. Solving these problems is very similar to solving the first type of statically indeterminate problem. First, remove a support and determine the amount of deformation that would occur due to the change in temperature if the object were free to deform. Then replace the force from the removed support, which will cause the object to deform in the other direction. The sum of these two deformations will equal the total deformation of the member as before. <a href="#exm-5.8" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-5.8</span></a> works through an indeterminate thermal expansion problem.</p>
+<p>However if we do not design a gap, or if the gap is not large enough, then the object is not free to expand or contract. As the member pushes or pulls on its supports, a physical force is created. This in turn creates a stress in the object and these stresses can be very large. Such problems are statically indeterminate as the force applied on the member by the support is unknown and can’t be found using only equilibrium. Solving these problems is very similar to solving the first type of statically indeterminate problem. First, remove a support and determine the amount of deformation that would occur due to the change in temperature if the object were free to deform. Then replace the force from the removed support, which will cause the object to deform in the other direction. The sum of these two deformations will equal the total deformation of the member as before. <a href="#exm-5.8" class="quarto-xref">Example&nbsp;<span>5.8</span></a> works through an indeterminate thermal expansion problem.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1622,18 +1622,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1665,7 +1654,47 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -1700,7 +1729,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');

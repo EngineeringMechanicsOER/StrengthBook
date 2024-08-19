@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.5.53">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Strength of Materials - 7&nbsp; Beams</title>
+<title>7&nbsp; Beams – Strength of Materials</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -71,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -110,13 +110,13 @@ window.Quarto = {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Chapter 7.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Beams</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -239,9 +239,9 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -349,7 +349,7 @@ Learning Objectives
 <summary>
 Click to expand
 </summary>
-<div id="fig-7.1" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<div id="fig-7.1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-7.1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/CH7 PNGs/figure 7.1.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
@@ -359,14 +359,14 @@ Figure&nbsp;7.1: Examples of structural beams
 </figcaption>
 </figure>
 </div>
-<p>Beams are structural members that support loads along their length. Typically, these loads are perpendicular to the axis of the beam and cause only shear and bending moments. <a href="#fig-7.1" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-7.1</span></a> shows some examples.</p>
+<p>Beams are structural members that support loads along their length. Typically, these loads are perpendicular to the axis of the beam and cause only shear and bending moments. <a href="#fig-7.1" class="quarto-xref">Figure&nbsp;<span>7.1</span></a> shows some examples.</p>
 <p>As we found in previous chapters, internal forces and moments are crucial to calculating stresses and deflections. The same is true for finding stresses and deflections in beams. Due to the nature of the loadings and constraints of beams, finding internal forces requires new methods in statics. This chapter describes these methods for finding a beam’s internal shear force and bending moments.</p>
-<p>In <a href="#sec-7.1" class="quarto-xref"><span class="quarto-unresolved-ref">sec-7.1</span></a> we’ll review how to find the internal shear force and bending moments at a specific point in a beam using equilibrium. In <a href="#sec-7.2" class="quarto-xref"><span class="quarto-unresolved-ref">sec-7.2</span></a> we’ll discuss the relationships between the applied load, the internal shear force, and the internal bending moment.</p>
-<p>We’ll then discuss a more general approach to visualizing the internal shear force and bending moment at different points in a beam using shear force and bedning moment diagrams. In <a href="#sec-7.3" class="quarto-xref"><span class="quarto-unresolved-ref">sec-7.3</span></a> we’ll explore how to draw these diagrams using an equilibrium method. Then in <a href="#sec-7.4" class="quarto-xref"><span class="quarto-unresolved-ref">sec-7.4</span></a> we’ll discuss an alternative graphical method for drawing these diagrams.</p>
+<p>In <a href="#sec-7.1" class="quarto-xref"><span>Section 7.1</span></a> we’ll review how to find the internal shear force and bending moments at a specific point in a beam using equilibrium. In <a href="#sec-7.2" class="quarto-xref"><span>Section 7.2</span></a> we’ll discuss the relationships between the applied load, the internal shear force, and the internal bending moment.</p>
+<p>We’ll then discuss a more general approach to visualizing the internal shear force and bending moment at different points in a beam using shear force and bedning moment diagrams. In <a href="#sec-7.3" class="quarto-xref"><span>Section 7.3</span></a> we’ll explore how to draw these diagrams using an equilibrium method. Then in <a href="#sec-7.4" class="quarto-xref"><span>Section 7.4</span></a> we’ll discuss an alternative graphical method for drawing these diagrams.</p>
 <section id="sign-convention" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="sign-convention">Sign convention</h3>
 <p>Before we can present methods for finding internal shear and moments of beams, we need to establish a sign convention. This way, we provide consistency and know how to interpret our results. It should be noted that anytime you start a new project or subject you should ensure that a sign convention is established.</p>
-<div id="fig-7.2" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<div id="fig-7.2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-7.2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/CH7 PNGs/figure 7.3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="286">
@@ -376,8 +376,8 @@ Figure&nbsp;7.2: Sign convention for internal shear force (V) and bending moment
 </figcaption>
 </figure>
 </div>
-<p>For the purposes of this book, the shear is positive when the external forces shear off as depicted in <a href="#fig-7.2" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-7.2</span></a>. Another way to think about it is that a positive shear is when the internal shear forces cause a clockwise rotation of the beam segment.</p>
-<p>The bending moment is positive when the external forces bend the beam in a concave up shape as indicated in <a href="#fig-7.2" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-7.2</span></a>. This causes the top fibers of the beam to be in compression while the bottom fibers are in tension.</p>
+<p>For the purposes of this book, the shear is positive when the external forces shear off as depicted in <a href="#fig-7.2" class="quarto-xref">Figure&nbsp;<span>7.2</span></a>. Another way to think about it is that a positive shear is when the internal shear forces cause a clockwise rotation of the beam segment.</p>
+<p>The bending moment is positive when the external forces bend the beam in a concave up shape as indicated in <a href="#fig-7.2" class="quarto-xref">Figure&nbsp;<span>7.2</span></a>. This causes the top fibers of the beam to be in compression while the bottom fibers are in tension.</p>
 </section></details>
 </section>
 
@@ -387,7 +387,7 @@ Figure&nbsp;7.2: Sign convention for internal shear force (V) and bending moment
 <summary>
 Click to expand
 </summary>
-<p>One way to find internal shear and bending forces is to cut sections and analyze the free-body diagrams, as we did in previous chapters of this book. The first step for a statically determinate beam is to find the external reactions. To determine the internal forces at any point along the beam, cut the section at that point and draw the free-body diagram from that point to one end of the beam. We will include the internal shear force, V, and internal bending moment, M, at the cut section and then use equilibrium equations to solve for those internal loads. This process is demonstrated in <a href="#exm-7.1" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-7.1</span></a>.</p>
+<p>One way to find internal shear and bending forces is to cut sections and analyze the free-body diagrams, as we did in previous chapters of this book. The first step for a statically determinate beam is to find the external reactions. To determine the internal forces at any point along the beam, cut the section at that point and draw the free-body diagram from that point to one end of the beam. We will include the internal shear force, V, and internal bending moment, M, at the cut section and then use equilibrium equations to solve for those internal loads. This process is demonstrated in <a href="#exm-7.1" class="quarto-xref">Example&nbsp;<span>7.1</span></a>.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -492,8 +492,8 @@ M_L=17{~kip}\cdot{ft}
 <summary>
 Click to expand
 </summary>
-<p>There is a relationship between loading, shear, and moment (and as you will see later in this text, slope and deflection) in a beam. Consider the beam in <a href="#fig-7.3" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-7.3</span></a>, which is subjected to a distributed load, w per unit length.</p>
-<div id="fig-7.3" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<p>There is a relationship between loading, shear, and moment (and as you will see later in this text, slope and deflection) in a beam. Consider the beam in <a href="#fig-7.3" class="quarto-xref">Figure&nbsp;<span>7.3</span></a>, which is subjected to a distributed load, w per unit length.</p>
+<div id="fig-7.3" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-7.3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/CH7 PNGs/figure 7.4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="372">
@@ -533,7 +533,7 @@ d v=w d x
 </section>
 <section id="relationship-between-shear-and-moment" class="level3" data-number="7.2.2">
 <h3 data-number="7.2.2" class="anchored" data-anchor-id="relationship-between-shear-and-moment"><span class="header-section-number">7.2.2</span> Relationship between Shear and Moment</h3>
-<div id="fig-7.4" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<div id="fig-7.4" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-7.4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/CH7 PNGs/figure 7.5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="199">
@@ -543,7 +543,7 @@ Figure&nbsp;7.4: Free body diagram of a small segment of a beam subjected to an 
 </figcaption>
 </figure>
 </div>
-<p>Let’s go back to the FBD of the small section of the beam subjected to a distributed load. This segment is shown in <a href="#fig-7.4" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-7.4</span></a>. We can apply another static equilibrium equation, summing moments about point C:</p>
+<p>Let’s go back to the FBD of the small section of the beam subjected to a distributed load. This segment is shown in <a href="#fig-7.4" class="quarto-xref">Figure&nbsp;<span>7.4</span></a>. We can apply another static equilibrium equation, summing moments about point C:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \sum M_c=0 &amp; =-M-V(\Delta x)+\Delta F\left(\frac{1}{2} \Delta x\right)+(M+\Delta M) \\
@@ -567,8 +567,8 @@ d M=V d x
 </section>
 <section id="how-can-i-use-my-calculus-knowledge-when-building-shear-and-moment-diagrams" class="level3" data-number="7.2.3">
 <h3 data-number="7.2.3" class="anchored" data-anchor-id="how-can-i-use-my-calculus-knowledge-when-building-shear-and-moment-diagrams"><span class="header-section-number">7.2.3</span> How can I use my calculus knowledge when building Shear and Moment Diagrams?</h3>
-<p>In a basic sense, the relationship between load, shear, and moment can be described in <a href="#fig-7.5" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-7.5</span></a> below.</p>
-<div id="fig-7.5" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<p>In a basic sense, the relationship between load, shear, and moment can be described in <a href="#fig-7.5" class="quarto-xref">Figure&nbsp;<span>7.5</span></a> below.</p>
+<div id="fig-7.5" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-7.5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/CH7 PNGs/figure 5.6.png" class="quarto-figure quarto-figure-center figure-img" width="197" height="101">
@@ -600,7 +600,7 @@ Figure&nbsp;7.5: Relationship between load, shear, and moment
 Click to expand
 </summary>
 <p>The relationship between load, shear, and moment allows us to build complete shear and moment diagrams using a few different methods. We’ll explore two of them - an equilibrium method and a graphical method.</p>
-<p>In <a href="#sec-7.1" class="quarto-xref"><span class="quarto-unresolved-ref">sec-7.1</span></a> we found the internal shear force and bending moment at specific points in the beam by cutting a cross-section at a given point and using equilibrium. The method in this section is similar, but instead of cutting a cross-section at a specific point we’ll instead cut a cross-section at distance ‘x’ from the left end of the beam. We’ll draw a free body diagram and determine the internal shear force (V) and bending moment (M) as before, but this time we’ll end up with equations for V and M that are functions of distance x.</p>
+<p>In <a href="#sec-7.1" class="quarto-xref"><span>Section 7.1</span></a> we found the internal shear force and bending moment at specific points in the beam by cutting a cross-section at a given point and using equilibrium. The method in this section is similar, but instead of cutting a cross-section at a specific point we’ll instead cut a cross-section at distance ‘x’ from the left end of the beam. We’ll draw a free body diagram and determine the internal shear force (V) and bending moment (M) as before, but this time we’ll end up with equations for V and M that are functions of distance x.</p>
 <p>To draw the diagrams, we can solve this equation at two values of x. It is often simplest to solve when x = 0 and when x = L, the length of the beam. This gives us two points on our diagram which we can then connect. The shape of the diagram depends on the highest power of x that appears in the equation.</p>
 <ul>
 <li><p>For x<sup>0</sup> we get a flat horizontal line</p></li>
@@ -610,7 +610,7 @@ Click to expand
 </ul>
 <p>If two points are not sufficient to determine the exact shape of the curve, simply solve the equations at a 3rd point (for example, where x = L/2). We can solve the equations at as many points as necessary but 2 - 3 points, along with knowledge of the general shape of the line, are typically sufficient.</p>
 <p>The equations found using this method are valid as long as the external loading does not change. In cases where the external loading does change, we’ll need to determine a new set of equations each time the loading changes. This includes any time a distributed load begins or ends, and both sides of a concentrated force or couple. In each region of load, we will cut a cross-section at distance x and determine equations for V and M that are valid for that region. We can then solve each equation at values of x at the start and end of their valid region and build up the complete shear force and bending moment diagrams.</p>
-<p><a href="#exm-7.2" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-7.2</span></a> illustrates this method.</p>
+<p><a href="#exm-7.2" class="quarto-xref">Example&nbsp;<span>7.2</span></a> illustrates this method.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -794,10 +794,10 @@ Step-by-step: Shear Force and Bending Moment Diagrams (Equilibrium Method)
 Click to expand
 </summary>
 <p>An alternative, and often quicker, method for drawing shear force and bending moment diagrams is known as the graphical method. Due to the relationship between load, shear force, and bending moment, we can use one diagram to draw the next.</p>
-<p>Specifically, we saw in <a href="#sec-7.2" class="quarto-xref"><span class="quarto-unresolved-ref">sec-7.2</span></a> that <span class="math inline">\(\frac{dV}{dx}=w\)</span> and <span class="math inline">\(\frac{dM}{dx}=V\)</span>. That is, the change in shear with respect to x (i.e.&nbsp;the slope of the shear diagram at any given point) is equal to any applied distributed load at that point and the change in bending moment with respect to x (i.e.&nbsp;the slope of the bending moment diagram at any given point) is equal to the shear force at that point.</p>
+<p>Specifically, we saw in <a href="#sec-7.2" class="quarto-xref"><span>Section 7.2</span></a> that <span class="math inline">\(\frac{dV}{dx}=w\)</span> and <span class="math inline">\(\frac{dM}{dx}=V\)</span>. That is, the change in shear with respect to x (i.e.&nbsp;the slope of the shear diagram at any given point) is equal to any applied distributed load at that point and the change in bending moment with respect to x (i.e.&nbsp;the slope of the bending moment diagram at any given point) is equal to the shear force at that point.</p>
 <p>Further, any applied concentrated forces cause a discontinuity on the shear force diagram (an upwards applied load causes the diagram to jump up). Any applied couples cause a discontinuity on the bending moment diagram (a clockwise applied couple causes the diagram to jump up). This allows us to draw the shape of the shear force diagram based on the applied loads, and the shape of the bending moment diagram based on the shear force diagram.</p>
-<p>Finally, we also know from <a href="#eq-7.2" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-7.2</span></a> that the change in shear force between any two points is equal to the area under the distributed load between those same two points. We know from <a href="#eq-7.4" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-7.4</span></a> that the change in bending moment between any two points is equal to the area underneath the shear force diagram between those two points. This allows us to add numbers to our diagrams and determine the value of the shear force and bending moment at key points.</p>
-<p>When the loading is relatively simple, consisting of concentrated forces, concentrated moments, and uniformly distributed loads, we can use geometry to find the area of the load and shear diagrams since the shapes are simple. <a href="#exm-7.3" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-7.3</span></a> and <a href="#exm-7.4" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-7.4</span></a> illustrate this method.</p>
+<p>Finally, we also know from <a href="#eq-7.2" class="quarto-xref">Equation&nbsp;<span>7.2</span></a> that the change in shear force between any two points is equal to the area under the distributed load between those same two points. We know from <a href="#eq-7.4" class="quarto-xref">Equation&nbsp;<span>7.4</span></a> that the change in bending moment between any two points is equal to the area underneath the shear force diagram between those two points. This allows us to add numbers to our diagrams and determine the value of the shear force and bending moment at key points.</p>
+<p>When the loading is relatively simple, consisting of concentrated forces, concentrated moments, and uniformly distributed loads, we can use geometry to find the area of the load and shear diagrams since the shapes are simple. <a href="#exm-7.3" class="quarto-xref">Example&nbsp;<span>7.3</span></a> and <a href="#exm-7.4" class="quarto-xref">Example&nbsp;<span>7.4</span></a> illustrate this method.</p>
 <div id="Example-7.3" class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1345,18 +1345,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1388,7 +1377,47 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -1423,7 +1452,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');

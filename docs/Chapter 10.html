@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.5.53">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Strength of Materials - 10&nbsp; Shear Loads</title>
+<title>10&nbsp; Shear Loads – Strength of Materials</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -71,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -110,13 +110,13 @@ window.Quarto = {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Chapter 10.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Shear Loads</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -239,9 +239,9 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -342,8 +342,8 @@ Learning Objectives
 <summary>
 Click to expand
 </summary>
-<p>In <a href="#sec-bending-loads" class="quarto-xref"><span class="quarto-unresolved-ref">sec-bending-loads</span></a> we learned to calculate bending stresses in beams and how to design beams to resist bending stress. The transverse loading applied to beams will also create internal shear loads and therefore shear stresses that must be calculated and accounted for (<a href="#fig-10.1" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-10.1</span></a>).</p>
-<div id="fig-10.1" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<p>In <a href="Chapter 9.html" class="quarto-xref"><span>Chapter 9</span></a> we learned to calculate bending stresses in beams and how to design beams to resist bending stress. The transverse loading applied to beams will also create internal shear loads and therefore shear stresses that must be calculated and accounted for (<a href="#fig-10.1" class="quarto-xref">Figure&nbsp;<span>10.1</span></a>).</p>
+<div id="fig-10.1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-10.1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/CH10 PNGs/figure 10.1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="200">
@@ -353,7 +353,7 @@ Figure&nbsp;10.1: A beam subjected to transverse loading will experience both an
 </figcaption>
 </figure>
 </div>
-<p>In this chapter, we’ll first review an important geometric property known as the first moment of area and demonstrate how to calculate it for common beam cross-sections in <a href="#sec-10.1" class="quarto-xref"><span class="quarto-unresolved-ref">sec-10.1</span></a>. In <a href="#sec-10.2" class="quarto-xref"><span class="quarto-unresolved-ref">sec-10.2</span></a> we’ll discuss shear stresses in beams and how to calculate them. In <a href="#sec-10.3" class="quarto-xref"><span class="quarto-unresolved-ref">sec-10.3</span></a> we’ll discuss shear flow, which is useful for beams with cross-sections formed by joining two or more parts with fasteners such as nails.</p>
+<p>In this chapter, we’ll first review an important geometric property known as the first moment of area and demonstrate how to calculate it for common beam cross-sections in <a href="#sec-10.1" class="quarto-xref"><span>Section 10.1</span></a>. In <a href="#sec-10.2" class="quarto-xref"><span>Section 10.2</span></a> we’ll discuss shear stresses in beams and how to calculate them. In <a href="#sec-10.3" class="quarto-xref"><span>Section 10.3</span></a> we’ll discuss shear flow, which is useful for beams with cross-sections formed by joining two or more parts with fasteners such as nails.</p>
 </details>
 </section>
 <section id="sec-10.1" class="level2" data-number="10.1">
@@ -362,7 +362,7 @@ Figure&nbsp;10.1: A beam subjected to transverse loading will experience both an
 <summary>
 Click to expand
 </summary>
-<p>Shear stress in an object depends on the internal shear force and the shape of the cross-section. One important geometric property used in this chapter is the first moment of area. This property was introduced in <a href="#sec-8.1" class="quarto-xref"><span class="quarto-unresolved-ref">sec-8.1</span></a> and was used when determining the centroid of an area. Recall we used <span class="citation" data-cites="eqn-8.2">@eqn-8.2</span> to break simple cross-sections down into a number of composite parts. When finding the centroid of these composite areas we modified the equation slightly to:</p>
+<p>Shear stress in an object depends on the internal shear force and the shape of the cross-section. One important geometric property used in this chapter is the first moment of area. This property was introduced in <a href="Chapter 8.html#sec-8.1" class="quarto-xref"><span>Section 8.1</span></a> and was used when determining the centroid of an area. Recall we used <span class="citation" data-cites="eqn-8.2">@eqn-8.2</span> to break simple cross-sections down into a number of composite parts. When finding the centroid of these composite areas we modified the equation slightly to:</p>
 <p><span class="math display">\[
 \bar{y}=\frac{\sum y_i A_i}{\sum A_i}=\frac{y_1 A_1+y_2 A_2+\ldots}{A_1+A_2+\ldots}
 \]</span></p>
@@ -382,11 +382,11 @@ Q=\int y d A
 <em>Q = First moment of area [m<sup>3</sup>, in.<sup>3</sup>]</em><br>
 <em>y = Vertical distance from neutral axis to centroid of area A [m, in.]</em></div>
 <p><em>A = Area above (or below) point of interest [m<sup>2</sup>, in.<sup>2</sup>]</em></p>
-<p>In <a href="#sec-8.1" class="quarto-xref"><span class="quarto-unresolved-ref">sec-8.1</span></a> we performed this calculation relative to some convenient reference axis in order to determine the location of the centroid of an area (such as in <a href="#exm-8.3" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-8.3</span></a>). A<sub>i</sub> represents the area of each composite part and y<sub>i</sub> represents the distance from the reference axis to the centroid of each composite part.</p>
+<p>In <a href="Chapter 8.html#sec-8.1" class="quarto-xref"><span>Section 8.1</span></a> we performed this calculation relative to some convenient reference axis in order to determine the location of the centroid of an area (such as in <a href="Chapter 8.html#exm-8.3" class="quarto-xref">Example&nbsp;<span>8.3</span></a>). A<sub>i</sub> represents the area of each composite part and y<sub>i</sub> represents the distance from the reference axis to the centroid of each composite part.</p>
 <p>The first moment of area can actually be calculated around any axis. The maximum value will always occur at the centroid of the cross-section (i.e., the neutral axis) so many problems will involve finding the first moment of area at the neutral axis, but there are also cases where finding the first moment of area around some other axis is required. Note that the axis should be perpendicular to the shear force, so a vertical load requires us to use a horizontal axis.</p>
 <p>To calculate the first moment of area around an axis, first draw a line through this axis. We may choose to use either the area above this axis or the area below it, whichever is simpler. The answer will be the same either way. Break this area down into composite parts (if necessary) and apply <span class="math inline">\(Q=\sum y_i A_i\)</span> where A<sub>i</sub> is the area of each composite part and y<sub>i</sub> is the perpendicular distance between the centroid of the overall cross-section and the centroid of each composite part. Note that we must first find the location of the centroid of the overall cross-section in order to measure this distance.</p>
-<p><a href="#exm-10.1" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-10.1</span></a> demonstrates this process to find the first moment of area around the neutral axis of a T cross-section. This example is solved twice, once using the area below the neutral axis and once using the area above.</p>
-<p><a href="#exm-10.2" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-10.2</span></a> uses the same cross-section and demonstrates calculating the first moment of area around a different axis on the cross-section.</p>
+<p><a href="#exm-10.1" class="quarto-xref">Example&nbsp;<span>10.1</span></a> demonstrates this process to find the first moment of area around the neutral axis of a T cross-section. This example is solved twice, once using the area below the neutral axis and once using the area above.</p>
+<p><a href="#exm-10.2" class="quarto-xref">Example&nbsp;<span>10.2</span></a> uses the same cross-section and demonstrates calculating the first moment of area around a different axis on the cross-section.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -421,7 +421,7 @@ Solution
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>First determine the y-coordinate of the centroid of the cross-section. Consider the area as two rectangles and use the method of <a href="#sec-8.1" class="quarto-xref"><span class="quarto-unresolved-ref">sec-8.1</span></a>. We will choose a reference point at the bottom of the section to calculate the centroid.</p>
+<p>First determine the y-coordinate of the centroid of the cross-section. Consider the area as two rectangles and use the method of <a href="Chapter 8.html#sec-8.1" class="quarto-xref"><span>Section 8.1</span></a>. We will choose a reference point at the bottom of the section to calculate the centroid.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/CH10 PNGs/example 10.1 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="295"></p>
@@ -434,7 +434,7 @@ Solution
 &amp; \bar{y}=\frac{(4.5{~in.} * 18{~in.}^2)+(10.5{~in.} * 30{~in.}^2)}{18{~in.}^2+30{~in.}^2}=8.25{~in.}~~\text{from the bottom of the section (our reference point) }
 \end{aligned}
 \]</span></p>
-<p>Note that since this section is simple, only two shapes, we didn’t create a table as we did in <a href="#sec-8.1" class="quarto-xref"><span class="quarto-unresolved-ref">sec-8.1</span></a>. This is a simplified version of the table, but the calculation is exactly the same.</p>
+<p>Note that since this section is simple, only two shapes, we didn’t create a table as we did in <a href="Chapter 8.html#sec-8.1" class="quarto-xref"><span>Section 8.1</span></a>. This is a simplified version of the table, but the calculation is exactly the same.</p>
 <p>Now draw a horizontal line through the point of interest. In this case the point of interest is the neutral axis. Use either the area above this line or the area below this line to determine the first moment of area around the neutral axis. We’ll solve it both ways to demonstrate that we get the same answer either way.</p>
 <p><strong>Area below the neutral axis:</strong></p>
 <div class="quarto-figure quarto-figure-center">
@@ -490,7 +490,7 @@ Example 10.2
 <p><span class="theorem-title"><strong>Example 10.2</strong></span> &nbsp;</p>
 <p>
 </p>
-<p>The T-shaped cross-section from <a href="#exm-10.1" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-10.1</span></a> is repeated here. Determine the first moment of area around an axis passing through the interface between the flange and web.</p>
+<p>The T-shaped cross-section from <a href="#exm-10.1" class="quarto-xref">Example&nbsp;<span>10.1</span></a> is repeated here. Determine the first moment of area around an axis passing through the interface between the flange and web.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/CH10 PNGs/example 10.2 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="343"></p>
@@ -508,9 +508,9 @@ Solution
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>We need to first determine the y-coordinate of the centroid of the cross section. We did this in <a href="#exm-10.1" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-10.1</span></a>, the results are shown below.</p>
+<p>We need to first determine the y-coordinate of the centroid of the cross section. We did this in <a href="#exm-10.1" class="quarto-xref">Example&nbsp;<span>10.1</span></a>, the results are shown below.</p>
 <p><span class="math inline">\(\bar{y}=8.25{~in.}\)</span> from the bottom of the cross-section.</p>
-<p>Now draw a horizontal line through the point of interest. In this case the point of interest is the seam between the two boards. As demonstrated in <a href="#exm-10.1" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-10.1</span></a>, we may use either the area below this line or the area above this line to determine the first moment of area.</p>
+<p>Now draw a horizontal line through the point of interest. In this case the point of interest is the seam between the two boards. As demonstrated in <a href="#exm-10.1" class="quarto-xref">Example&nbsp;<span>10.1</span></a>, we may use either the area below this line or the area above this line to determine the first moment of area.</p>
 <p><strong>Area above the line:</strong></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -534,11 +534,11 @@ Solution
 </div>
 </div>
 <p>Simple cross-sections such as rectangles and circles are fairly commonly used for beams. For these simple cross-sections we can derive standard solutions for the maximum first moment of area (Q<sub>max</sub>). Recall that this always occurs at the neutral axis of the cross-section.</p>
-<p>For a rectangle of base <em>b</em> and height <em>h</em> (<a href="#fig-10.2" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-10.2</span></a>), the neutral axis will be at <span class="math inline">\(y=\frac{h}{2}\)</span>. Drawing a line along the neutral axis and taking the area above this line gives <span class="math inline">\(A=b \frac{h}{2}\)</span>. The distance between the centroid of this area and the neutral axis of the cross-section will be <span class="math inline">\(y=\frac{h}{4}\)</span>. Thus, for a rectangular cross-section:</p>
+<p>For a rectangle of base <em>b</em> and height <em>h</em> (<a href="#fig-10.2" class="quarto-xref">Figure&nbsp;<span>10.2</span></a>), the neutral axis will be at <span class="math inline">\(y=\frac{h}{2}\)</span>. Drawing a line along the neutral axis and taking the area above this line gives <span class="math inline">\(A=b \frac{h}{2}\)</span>. The distance between the centroid of this area and the neutral axis of the cross-section will be <span class="math inline">\(y=\frac{h}{4}\)</span>. Thus, for a rectangular cross-section:</p>
 <p><span class="math display">\[
 Q_{\max }=\frac{h}{4} \frac{b h}{2}=\frac{b h^2}{8}
 \]</span></p>
-<div id="fig-10.2" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<div id="fig-10.2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-10.2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/CH10 PNGs/figure 10.2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="300">
@@ -548,11 +548,11 @@ Figure&nbsp;10.2: Determining the first moment of area around the neutral axis o
 </figcaption>
 </figure>
 </div>
-<p>For a circular cross-section of radius r (<a href="#fig-10.3" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-10.3</span></a>), the area above the neutral axis is semi-circle so <span class="math inline">\(A=\frac{1}{2} \pi r^2\)</span>. The distance from the centroid of the semi-circle to the neutral axis is <span class="math inline">\(y=\frac{4 r}{3 \pi}\)</span>. Thus, for a circular cross-section:</p>
+<p>For a circular cross-section of radius r (<a href="#fig-10.3" class="quarto-xref">Figure&nbsp;<span>10.3</span></a>), the area above the neutral axis is semi-circle so <span class="math inline">\(A=\frac{1}{2} \pi r^2\)</span>. The distance from the centroid of the semi-circle to the neutral axis is <span class="math inline">\(y=\frac{4 r}{3 \pi}\)</span>. Thus, for a circular cross-section:</p>
 <p><span class="math display">\[
 Q_{\max }=\frac{4 r}{3 \pi} \frac{1}{2} \pi r^2=\frac{2}{3} r^3
 \]</span></p>
-<div id="fig-10.3" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<div id="fig-10.3" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-10.3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/CH10 PNGs/figure 10.3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="292">
@@ -591,12 +591,12 @@ Step-by-step:
 <summary>
 Click to expand
 </summary>
-<p>In <a href="#sec-2.2" class="quarto-xref"><span class="quarto-unresolved-ref">sec-2.2</span></a> we learned about average shear stress:</p>
+<p>In <a href="Chapter 2.html#sec-2.2" class="quarto-xref"><span>Section 2.2</span></a> we learned about average shear stress:</p>
 <p><span class="math display">\[
 \tau_{avg}=\frac{V}{A}
 \]</span></p>
-<p>This is the average shear stress on a cross-section, but shear stress actually varies along the section (<a href="#fig-10.4" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-10.4</span></a>). For a vertical internal shear force, shear stress is zero at the top and bottom of a cross-section and maximum at the neutral axis. Shear stress varies in a parabolic fashion. The average shear stress does not provide a full picture and it is often necessary to calculate the shear stress at a specific point on the cross-section instead.</p>
-<div id="fig-10.4" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<p>This is the average shear stress on a cross-section, but shear stress actually varies along the section (<a href="#fig-10.4" class="quarto-xref">Figure&nbsp;<span>10.4</span></a>). For a vertical internal shear force, shear stress is zero at the top and bottom of a cross-section and maximum at the neutral axis. Shear stress varies in a parabolic fashion. The average shear stress does not provide a full picture and it is often necessary to calculate the shear stress at a specific point on the cross-section instead.</p>
+<div id="fig-10.4" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-10.4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/CH10 PNGs/figure 10.4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="363">
@@ -606,8 +606,8 @@ Figure&nbsp;10.4: Parabolic variation in shear stress over a cross-section. For 
 </figcaption>
 </figure>
 </div>
-<p>To derive the shear stress formula, we’ll begin by examining a small 2D element on a body subjected to an internal shear force (<a href="#fig-10.5" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-10.5</span></a>). If this element is in equilibrium, a shear force applied to one face of this element must also produce shear forces (and therefore shear stresses) on the other faces of the element.</p>
-<div id="fig-10.5" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<p>To derive the shear stress formula, we’ll begin by examining a small 2D element on a body subjected to an internal shear force (<a href="#fig-10.5" class="quarto-xref">Figure&nbsp;<span>10.5</span></a>). If this element is in equilibrium, a shear force applied to one face of this element must also produce shear forces (and therefore shear stresses) on the other faces of the element.</p>
+<div id="fig-10.5" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-10.5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/CH10 PNGs/figure 10.5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="219">
@@ -617,8 +617,8 @@ Figure&nbsp;10.5: Element A on the beam is subjected to shear force V on the rig
 </figcaption>
 </figure>
 </div>
-<p>Thus, an element experiencing a vertical shear stress also experiences a horizontal shear stress. This is known as the <em>complementary property of shear</em>. This effect can be seen by forming a ‘beam’ out of a stack of paper and applying a vertical force. The pieces of paper slide horizontally relative to each other (<a href="#fig-10.6" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-10.6</span></a>).</p>
-<div id="fig-10.6" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<p>Thus, an element experiencing a vertical shear stress also experiences a horizontal shear stress. This is known as the <em>complementary property of shear</em>. This effect can be seen by forming a ‘beam’ out of a stack of paper and applying a vertical force. The pieces of paper slide horizontally relative to each other (<a href="#fig-10.6" class="quarto-xref">Figure&nbsp;<span>10.6</span></a>).</p>
+<div id="fig-10.6" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-10.6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/CH10 PNGs/figure 10.6.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="364">
@@ -628,8 +628,8 @@ Figure&nbsp;10.6: A stack of papers representing a beam. The ends of the beam ar
 </figcaption>
 </figure>
 </div>
-<p>Another example is a wooden beam that fails due to shear. In such beams, cracks tend to appear horizontally even though the applied load is vertical. This is due to horizontal shear stress between the layers of the wood (<a href="#fig-10.7" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-10.7</span></a>).</p>
-<div id="fig-10.7" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<p>Another example is a wooden beam that fails due to shear. In such beams, cracks tend to appear horizontally even though the applied load is vertical. This is due to horizontal shear stress between the layers of the wood (<a href="#fig-10.7" class="quarto-xref">Figure&nbsp;<span>10.7</span></a>).</p>
+<div id="fig-10.7" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-10.7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/CH10 PNGs/figure 10.7.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="311">
@@ -639,8 +639,8 @@ Figure&nbsp;10.7: Horizontal shear failure in a wooden beam subjected to a verti
 </figcaption>
 </figure>
 </div>
-<p>Imagine a beam subjected to an arbitrary vertical load. Consider a small cross-section of width Δx (<a href="#fig-10.8" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-10.8</span></a>). This cross-section is subjected to an external load, an internal shear force on each side of the cross-section, and an internal bending moment on each side of the cross-section. The two shear forces and two bending moments are not necessarily equal.</p>
-<div id="fig-10.8" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<p>Imagine a beam subjected to an arbitrary vertical load. Consider a small cross-section of width Δx (<a href="#fig-10.8" class="quarto-xref">Figure&nbsp;<span>10.8</span></a>). This cross-section is subjected to an external load, an internal shear force on each side of the cross-section, and an internal bending moment on each side of the cross-section. The two shear forces and two bending moments are not necessarily equal.</p>
+<div id="fig-10.8" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-10.8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/CH10 PNGs/figure 10.8.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="291">
@@ -650,7 +650,7 @@ Figure&nbsp;10.8: Internal loads on a small cross-section of width Δx on a beam
 </figcaption>
 </figure>
 </div>
-<p>By considering horizontal equilibrium, we do not need to account for the vertical loads (V, V + ΔV, and w). The bending moments (M and M + ΔM) will create horizontal stresses (<a href="#fig-10.9" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-10.9</span></a>) equal to</p>
+<p>By considering horizontal equilibrium, we do not need to account for the vertical loads (V, V + ΔV, and w). The bending moments (M and M + ΔM) will create horizontal stresses (<a href="#fig-10.9" class="quarto-xref">Figure&nbsp;<span>10.9</span></a>) equal to</p>
 <p><span class="math display">\[
 \sigma_{x 1}=\frac{M y}{I}
 \]</span></p>
@@ -666,7 +666,7 @@ F_1=\int \frac{M y}{I} d A
 <p><span class="math display">\[
 F_2=\int \frac{(M+\Delta M) y}{I} d A
 \]</span></p>
-<div id="fig-10.9" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<div id="fig-10.9" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-10.9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/CH10 PNGs/figure 10.9.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="345">
@@ -676,8 +676,8 @@ Figure&nbsp;10.9: Horizontal stresses created by moments M and (M + ΔM).
 </figcaption>
 </figure>
 </div>
-<p>Each force is tensile in part of the beam and compressive in part of the beam. When calculated across the entire cross-section these forces will sum to zero. However, if we consider only part of the cross-section the forces do not sum to zero (<a href="#fig-10.10" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-10.10</span></a>). For the beam to be in equilibrium, there must be a horizontal shear force. For now we’ll call this force F’ and derive an equation for the shear stress it creates.</p>
-<div id="fig-10.10" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<p>Each force is tensile in part of the beam and compressive in part of the beam. When calculated across the entire cross-section these forces will sum to zero. However, if we consider only part of the cross-section the forces do not sum to zero (<a href="#fig-10.10" class="quarto-xref">Figure&nbsp;<span>10.10</span></a>). For the beam to be in equilibrium, there must be a horizontal shear force. For now we’ll call this force F’ and derive an equation for the shear stress it creates.</p>
+<div id="fig-10.10" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-10.10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/CH10 PNGs/figure 10.10.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="392">
@@ -703,7 +703,7 @@ F^{\prime}=\frac{\Delta M}{I} Q
 <p><span class="math display">\[
 \tau=\frac{V}{A}=\frac{F^{\prime}}{\Delta x t}=\frac{\Delta M Q}{\Delta x I t}
 \]</span></p>
-<p>From <a href="#sec-7.2" class="quarto-xref"><span class="quarto-unresolved-ref">sec-7.2</span></a> we know that the change in moment with respect to x is equal to the shear force, V</p>
+<p>From <a href="Chapter 7.html#sec-7.2" class="quarto-xref"><span>Section 7.2</span></a> we know that the change in moment with respect to x is equal to the shear force, V</p>
 <p><span class="math display">\[
 \frac{\Delta M}{\Delta x}=V \\
 \]</span></p>
@@ -717,8 +717,8 @@ F^{\prime}=\frac{\Delta M}{I} Q
 <em>I = Area moment of inertia of the cross-section [m<sup>4</sup>, in.<sup>4</sup>]</em></div>
 <p><em>t = thickness of the cross-section [m, in.]</em></p>
 <p>This is the shear stress equation, allowing us to calculate the shear stress at any point on a cross-section. This is often more useful than simply calculating the average shear stress across the entire cross-section.</p>
-<p><a href="#exm-10.3" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-10.3</span></a> demonstrates calculation of the maximum shear stress in a simply supported beam with a circular cross-section.</p>
-<p><a href="#exm-10.4" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-10.4</span></a> demonstrates how to calculate the maximum stress is a cross-section of varying thickness.</p>
+<p><a href="#exm-10.3" class="quarto-xref">Example&nbsp;<span>10.3</span></a> demonstrates calculation of the maximum shear stress in a simply supported beam with a circular cross-section.</p>
+<p><a href="#exm-10.4" class="quarto-xref">Example&nbsp;<span>10.4</span></a> demonstrates how to calculate the maximum stress is a cross-section of varying thickness.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -754,7 +754,7 @@ Solution
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The shear stress can be calculated from <span class="math inline">\(\tau=\frac{V Q}{I t}\)</span>. The maximum shear stress will occur when V and Q are at their maximum values.</p>
-<p>The maximum shear force, V<sub>max</sub>, can be found by drawing a shear force diagram. Start with a free body diagram of the beam and use this to sketch the shear force diagram using the graphical method of <a href="#sec-7.4" class="quarto-xref"><span class="quarto-unresolved-ref">sec-7.4</span></a>. The loading and supports are symmetric, so each support will resist half of the applied load.</p>
+<p>The maximum shear force, V<sub>max</sub>, can be found by drawing a shear force diagram. Start with a free body diagram of the beam and use this to sketch the shear force diagram using the graphical method of <a href="Chapter 7.html#sec-7.4" class="quarto-xref"><span>Section 7.4</span></a>. The loading and supports are symmetric, so each support will resist half of the applied load.</p>
 <p><span class="math display">\[
 A=B=\frac{w L}{2}=\frac{30\frac{kN}{m} * 8{~m}}{2}=120{~kN}
 \]</span></p>
@@ -822,7 +822,7 @@ Solution
 </div>
 <div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Determine the y-coordinate of the centroid using the method of <a href="#sec-8.1" class="quarto-xref"><span class="quarto-unresolved-ref">sec-8.1</span></a>. We will choose our reference point to be at the bottom of the section.</p>
+<p>Determine the y-coordinate of the centroid using the method of <a href="Chapter 8.html#sec-8.1" class="quarto-xref"><span>Section 8.1</span></a>. We will choose our reference point to be at the bottom of the section.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/CH10 PNGs/example 10.4 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="243"></p>
@@ -835,7 +835,7 @@ Solution
 &amp; \bar{y}=\frac{(2.5{~in.} * 5{~in.}^2)+(7{~in.} * 20{~in.}^2)}{5{~in.}^2+20{~in.}^2}=6.1{~in.}~~ \text{from the bottom of the section. }
 \end{aligned}
 \]</span></p>
-<p>Determine the area moment of inertia of the entire cross-section using the method of <a href="#sec-8.2" class="quarto-xref"><span class="quarto-unresolved-ref">sec-8.2</span></a></p>
+<p>Determine the area moment of inertia of the entire cross-section using the method of <a href="Chapter 8.html#sec-8.2" class="quarto-xref"><span>Section 8.2</span></a></p>
 <p><span class="math display">\[
 I=\left(\frac{1 * 5^3}{12}+5 *(2.5-6.1)^2\right)+\left(\frac{5 * 4^3}{12}+20 *(7-6.1)^2\right)=118.08{~in.}^4
 \]</span></p>
@@ -888,10 +888,10 @@ Step-by-step: Shear stress
 </div>
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li>Cut a cross-section through the point of interest and determine the internal shear force acting on this cross-section. This can be done either through equilibrium of by drawing a shear force diagram (<a href="#sec-beams" class="quarto-xref"><span class="quarto-unresolved-ref">sec-beams</span></a>).</li>
-<li>Locate the centroid of the cross section as shown in <a href="#sec-8.1" class="quarto-xref"><span class="quarto-unresolved-ref">sec-8.1</span></a>.</li>
-<li>Calculate the area moment of inertia, I, for the cross-section. Use the entire cross-section for this calculation as shown in <a href="#sec-8.2" class="quarto-xref"><span class="quarto-unresolved-ref">sec-8.2</span></a>.</li>
-<li>Draw a horizontal line through the point of interest and calculate the 1<sup>st</sup> moment of area, Q, as shown in <a href="#sec-10.1" class="quarto-xref"><span class="quarto-unresolved-ref">sec-10.1</span></a>.</li>
+<li>Cut a cross-section through the point of interest and determine the internal shear force acting on this cross-section. This can be done either through equilibrium of by drawing a shear force diagram (<a href="Chapter 7.html" class="quarto-xref"><span>Chapter 7</span></a>).</li>
+<li>Locate the centroid of the cross section as shown in <a href="Chapter 8.html#sec-8.1" class="quarto-xref"><span>Section 8.1</span></a>.</li>
+<li>Calculate the area moment of inertia, I, for the cross-section. Use the entire cross-section for this calculation as shown in <a href="Chapter 8.html#sec-8.2" class="quarto-xref"><span>Section 8.2</span></a>.</li>
+<li>Draw a horizontal line through the point of interest and calculate the 1<sup>st</sup> moment of area, Q, as shown in <a href="#sec-10.1" class="quarto-xref"><span>Section 10.1</span></a>.</li>
 <li>Determine the thickness of the cross-section, t, at the point of interest.</li>
 <li>Calculate the shear stress, <span class="math inline">\(\tau=\frac{VQ}{It}\)</span>.</li>
 </ol>
@@ -905,8 +905,8 @@ Step-by-step: Shear stress
 <summary>
 Click to expand
 </summary>
-<p>Some cross-sections are formed by connecting multiple pieces together with fasteners such as nails or bolts (<a href="#fig-10.11" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-10.11</span></a>). In such members, we must analyze not only the stresses in the cross-section itself but also the stresses in the fasteners.</p>
-<div id="fig-10.11" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<p>Some cross-sections are formed by connecting multiple pieces together with fasteners such as nails or bolts (<a href="#fig-10.11" class="quarto-xref">Figure&nbsp;<span>10.11</span></a>). In such members, we must analyze not only the stresses in the cross-section itself but also the stresses in the fasteners.</p>
+<div id="fig-10.11" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-10.11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/CH10 PNGs/figure 10.11.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="254">
@@ -917,7 +917,7 @@ Figure&nbsp;10.11: T cross-section formed by connecting two boards together with
 </figure>
 </div>
 <p>A useful quantity in this regard is shear flow, q. Shear flow measures of how much shear force is applied per unit length of the beam, and it is measured in units of force/length [N/m, lb/in.]. For example, if a nail is capable of resisting a shear force up to 10 kN and there is a shear flow of 30 kN/m, it is trivial to determine that we need at least 3 nails for every meter of beam.</p>
-<p>Recall from <a href="#sec-10.2" class="quarto-xref"><span class="quarto-unresolved-ref">sec-10.2</span></a> that the internal horizontal shear force, F’, may be written as</p>
+<p>Recall from <a href="#sec-10.2" class="quarto-xref"><span>Section 10.2</span></a> that the internal horizontal shear force, F’, may be written as</p>
 <p><span class="math display">\[
 F^{\prime}=\frac{\Delta M}{I} Q
 \]</span></p>
@@ -930,7 +930,7 @@ F^{\prime}=\frac{\Delta M}{I} Q
 q=\frac{V Q}{I}
 \]</span></p>
 <p>This equation is very similar to the shear stress equation, but the thickness of the cross-section doesn’t appear here as shear flow is measured per unit length. We will generally want to determine the shear flow at the seam where the individual pieces of the cross-section are joined together as this is where the fasteners must resist the horizontal shear force.</p>
-<p>Often we want to determine how far apart we can space the nails along the length of the beam. Since shear flow is the shear force per unit length, if we know how much shear force each fastener can resist, we can say that the shear flow is equal to the force resisted by each fastener (F<sub>nail</sub>) divided by the spacing between the fasteners (s). Sometimes there will be multiple rows of nails side-by-side (<a href="#fig-10.12" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-10.12</span></a>). In this case we can multiply the force resisted by each fastener by the number of rows (r).</p>
+<p>Often we want to determine how far apart we can space the nails along the length of the beam. Since shear flow is the shear force per unit length, if we know how much shear force each fastener can resist, we can say that the shear flow is equal to the force resisted by each fastener (F<sub>nail</sub>) divided by the spacing between the fasteners (s). Sometimes there will be multiple rows of nails side-by-side (<a href="#fig-10.12" class="quarto-xref">Figure&nbsp;<span>10.12</span></a>). In this case we can multiply the force resisted by each fastener by the number of rows (r).</p>
 <p><span id="eq-10.3"><span class="math display">\[
 \boxed{q=\frac{V Q}{I}=\frac{F_{nail} r}{s}}
 \tag{10.3}\]</span></span></p>
@@ -942,7 +942,7 @@ q=\frac{V Q}{I}
 <em>F<sub>nail</sub> = Horizontal shear force resisted by each nail [N, lb]</em><br>
 <em>r = Number of rows of nails resisting the shear force</em></div>
 <p><em>s = Spacing between nails [m, in.]</em></p>
-<div id="fig-10.12" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<div id="fig-10.12" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-10.12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/CH10 PNGs/figure 10.12.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="282">
@@ -952,8 +952,8 @@ Figure&nbsp;10.12: T cross-section held together by two rows of nails. The rows 
 </figcaption>
 </figure>
 </div>
-<p>Sometimes fasteners may be placed horizontally (<a href="#fig-10.13" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-10.13</span></a>). In these cases we should still draw a line along the seam perpendicular to the fastener (so vertically in this case). We can then use the area either to the left or right of this line to determine the first moment of area. Note that we still use the vertical distance between the centroid of our chosen area and the neutral axis of the cross-section.</p>
-<div id="fig-10.13" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<p>Sometimes fasteners may be placed horizontally (<a href="#fig-10.13" class="quarto-xref">Figure&nbsp;<span>10.13</span></a>). In these cases we should still draw a line along the seam perpendicular to the fastener (so vertically in this case). We can then use the area either to the left or right of this line to determine the first moment of area. Note that we still use the vertical distance between the centroid of our chosen area and the neutral axis of the cross-section.</p>
+<div id="fig-10.13" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-10.13-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/figure 10.13.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="324">
@@ -963,8 +963,8 @@ Figure&nbsp;10.13: A horizontal fastener requires a vertical line along the seam
 </figcaption>
 </figure>
 </div>
-<p><a href="#exm-10.5" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-10.5</span></a> works through a problem with two rows of nails at each seam.</p>
-<p><a href="#exm-10.6" class="quarto-xref">Example&nbsp;<span class="quarto-unresolved-ref">exm-10.6</span></a> involves an L-beam with a horizontal nail.</p>
+<p><a href="#exm-10.5" class="quarto-xref">Example&nbsp;<span>10.5</span></a> works through a problem with two rows of nails at each seam.</p>
+<p><a href="#exm-10.6" class="quarto-xref">Example&nbsp;<span>10.6</span></a> involves an L-beam with a horizontal nail.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1129,10 +1129,10 @@ Step-by-step: Shear flow
 </div>
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li>Cut a cross-section through the point of interest and determine the internal shear force acting on this cross-section. This can be done either through equilibrium of by drawing a shear force diagram (<a href="#sec-beams" class="quarto-xref"><span class="quarto-unresolved-ref">sec-beams</span></a>).</li>
-<li>Locate the centroid of the section as shown in <a href="#sec-8.1" class="quarto-xref"><span class="quarto-unresolved-ref">sec-8.1</span></a>.</li>
-<li>Calculate the area moment of inertia, I, for the cross-section. Use the entire cross-section for this calculation, as shown in <a href="#sec-8.2" class="quarto-xref"><span class="quarto-unresolved-ref">sec-8.2</span></a>.</li>
-<li>Draw a horizontal line through the point of interest and calculate the 1<sup>st</sup> moment of area, Q, as shown in <a href="#sec-10.1" class="quarto-xref"><span class="quarto-unresolved-ref">sec-10.1</span></a>.</li>
+<li>Cut a cross-section through the point of interest and determine the internal shear force acting on this cross-section. This can be done either through equilibrium of by drawing a shear force diagram (<a href="Chapter 7.html" class="quarto-xref"><span>Chapter 7</span></a>).</li>
+<li>Locate the centroid of the section as shown in <a href="Chapter 8.html#sec-8.1" class="quarto-xref"><span>Section 8.1</span></a>.</li>
+<li>Calculate the area moment of inertia, I, for the cross-section. Use the entire cross-section for this calculation, as shown in <a href="Chapter 8.html#sec-8.2" class="quarto-xref"><span>Section 8.2</span></a>.</li>
+<li>Draw a horizontal line through the point of interest and calculate the 1<sup>st</sup> moment of area, Q, as shown in <a href="#sec-10.1" class="quarto-xref"><span>Section 10.1</span></a>.</li>
 <li>Calculate the shear flow using <span class="math inline">\(q=\frac{V Q}{I}\)</span>.</li>
 <li>If required, calculate the maximum allowable spacing between the fasteners using <span class="math inline">\(q=\frac{F_{nail} r}{s}\)</span>. Alternatively, we may be given the spacing and asked to find the force resisted by each fastener, F<sub>nail</sub>.</li>
 </ol>
@@ -1379,18 +1379,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1422,7 +1411,47 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -1457,7 +1486,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
