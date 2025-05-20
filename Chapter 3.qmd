@@ -23,7 +23,7 @@ In @sec-stress we learned how to calculate normal and shear stresses with respec
 
 Imagine two points on a body, A and B separated by some distance L (@fig-3.1). In statics (and dynamics), objects are assumed to be rigid and they do not deform when subjected to forces. In reality, forces will cause an object to deform and its dimensions will change. As points A and B move with the object, the distance between them will change to some new distance L’.
 
-![Nonrigid bodies will deform under load and the distance between any two points A and B will change as the body deforms.](images/CH3%20PNGs/figure%203.1.png){#fig-3.1 fig-align="center"}
+![Nonrigid bodies will deform under load and the distance between any two points A and B will change as the body deforms.](images/Chapter%203%20figure%20updates%20after%20review/3.1%20(updated%20after%20review).png){#fig-3.1 fig-align="center" width="531"}
 
 These deformations may be very large relative to the size of the object (e.g., a rubber band) or they may be relatively small (e.g., structural members) but there will always be some amount of deformation as no material is infinitely stiff, as we will learn in @sec-mechanical-properties-of-materials. Engineers must design structures and machines such that these deformations are not excessively large for the intended application.
 
@@ -39,9 +39,9 @@ This chapter will introduce two types of strain. @sec-3.1 covers normal strain w
 
 A simple example of normal strain is the deformation of a bar subjected to an axial load. Consider a bar of length L subjected to a tensile axial load P as shown in @fig-3.2. The load will create a normal stress in the rod and will also cause the rod to elongate by an amount ΔL.
 
-![Axial loads cause a change in length that depends partly on the original length of the object.](images/CH3%20PNGs/figure%203.2.png){#fig-3.2 fig-align="center"}
+![Axial loads cause a change in length that depends partly on the original length of the object.](images/Chapter%203%20figure%20updates%20after%20review/3.2%20(updated%20after%20review).png){#fig-3.2 fig-align="center" width="605"}
 
-If the same load were applied to a longer rod of length 2L with the same cross-sectional area, the longer rod will elongate by an amount 2ΔL. The deformation depends on the original length of the rod in this case, but the strain does not. Strain is a measure that normalizes the change in length by the original length. Normal strain is defined as:
+If the same load were applied to a longer rod of length 2L with the same cross-sectional area, the longer rod would elongate by an amount 2ΔL. The deformation depends on the original length of the rod in this case, but the strain does not. Strain is a measure that normalizes the change in length by the original length. Normal strain is represented by the Greek letter epsilon (𝜀) and is defined as:
 
 $$
 \boxed{\varepsilon=\frac{\Delta L}{L}}
@@ -53,7 +53,7 @@ $$ {#eq-3.1}
 
 *L = Original length \[mm, in\]*
 
-This is a normal strain because it occurs under axial load and is associated with a change in length of the object. Since normal strain is defined by dividing one length by another it does not have any units. However, it is fairly common to still include units of mm/mm or in/in.
+This is a normal strain because it occurs under axial load and is associated with a change in length of the object. Since normal strain is defined by dividing one length by another it is a dimensionless quantity - one that does not have any units. However, it is fairly common to still include units of mm/mm or in/in.
 
 For example, if the rod was initially 5 m long and it elongated by 12 mm, the normal strain can be calculated as:
 
@@ -67,6 +67,8 @@ $$
 \varepsilon=\frac{\Delta L}{L}=\frac{0.012}{5}=0.0024{~m}/{m}=0.0024
 $$
 
+In fact, beacause the normal strain is dimensionless, its magnitude is the same in any system of units.
+
 Because strains tend to be quite small in many engineering applications, they are sometimes expressed with a prefix to eliminate the leading zeros. For example, a strain of 0.0024 may be expressed as 2.4 mm/m or 2400 µm/m or simply 2400 µ. Strains may also be expressed as a percentage, which can be found simply by multiplying the strain by 100%. The below strains are all equivalent:
 
 $$
@@ -75,7 +77,7 @@ $$
 
 We will continue to use the sign convention that we defined for normal stress. Tensile forces and stresses, which are associated with elongation of the bar and tensile normal strain, are positive. Compressive forces and stresses, which are associated with shortening of the bar and compressive normal strain, are negative (@fig-3.3).
 
-![(A) Objects in tension will elongate. By convention, tension and elongation are positive. (B) Objects in compression will shorten. By convention, compression and shortening are negative.](images/CH3%20PNGs/figure%203.3.png){#fig-3.3 fig-align="center"}
+![(A) Objects in tension will elongate. By convention, tension and elongation are positive. (B) Objects in compression will shorten. By convention, compression and shortening are negative.](images/Chapter%203%20figure%20updates%20after%20review/3.3%20(updated%20after%20review).png){#fig-3.3 fig-align="center" width="553"}
 
 See @exm-3.1 for a problem involving a bar experiencing both tension and compression. @exm-3.2 involves strain in two parallel cables.
 
@@ -90,7 +92,7 @@ See @exm-3.1 for a problem involving a bar experiencing both tension and compres
 The bar is subjected to forces F1 = 30 kips and F2 = 10 kips as shown. Segment AB is originally 10 inches in length and segment BC is originally 15 inches in length. As a result of the applied forces, the normal strain in segment AB is – 0.03 in/in and the strain in segment BC is 0.045 in/in.
 
 1.  Determine the change in length of each segment
-2.  Determine the overall strain for the entire bar
+2.  Determine the average strain for the entire bar
 
 ![](images/CH3%20PNGs/example%203.1.png){fig-align="center" width="291"}
 
@@ -101,12 +103,13 @@ Using $\varepsilon=\frac{\Delta L}{L}$ for each segment, rearrange to calculate 
 
 $$
 \begin{aligned}
+& \Delta L = \varepsilon*L\\
 & \Delta L_{A B}=\varepsilon_{A B} L_{A B}=-0.03 * 10{~in.}=-0.3{~in.} \\
 & \Delta L_{B C}=\varepsilon_{B C} L_{B C}=0.045 * 15{~in.}=0.675{~in.}
 \end{aligned}
 $$
 
-To find the overall strain for the entire bar, first find the overall change in length for the entire bar.
+To find the average strain for the entire bar, first find the overall change in length for the entire bar.
 
 $$
 \Delta L=-0.3{~in.}+0.675{~in.}=0.375{~in.}
@@ -131,16 +134,18 @@ $$
 
 Rigid bar ABCD is supported by a pin at A and cables at B and D. After load F is applied, the strain in cable D is 2300 µm/m. Determine the strain in cable B.
 
-![](images/CH3%20PNGs/example%203.2%20part%201.png){fig-align="center" width="325"}
+![](images/chapter%203%20figure%20edits%20after%20review/example%203.2%20part%201.png){fig-align="center" width="319"}
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Solution
 
 Consider the deflected position of rigid bar ABCD. We can calculate the change in length of cable D.
 
-![](images/CH3%20PNGs/example%203.2%20part%202.png){fig-align="center" width="349"}
+![](images/chapter%203%20figure%20edits%20after%20review/example%203.2%20part%202.png){fig-align="center" width="345"}
 
 $$
+\varepsilon = 2300\frac{\mu m}{m}*\frac{1 m}{10^6 \mu m} = 2300 \times 10^{-6} \frac{m}{m}\\
+\varepsilon = \frac{\Delta L}{L},\;\; \Delta L = \varepsilon*L\\
 \Delta L_D=\varepsilon L=2300 \times 10^{-6} * 3.5{~m}=0.00805 {~m}=8.05 {~mm}
 $$
 
@@ -177,15 +182,27 @@ $$
 
 <summary>Click to expand</summary>
 
-Consider a small, square element that may be part of a body such as that shown in @fig-3.1. As well as the distance between points changing as the body deforms, the shape of this square element will also change. The corners of the square element will initially form right-angles. As the body deforms and the points move with the object, the shape of the element changes and the corners no longer form right-angles (@fig-3.4).
+Consider a small, square element that may be part of a body such as that shown in @fig-3.1. As well as the distance between points changing as the body deforms, the shape of this square element will also change. The corners of the square element will initially form right-angles. As the body deforms and the points move with the object, the shape of the element changes and the corners no longer form right-angles (@fig-3.4). There is a small horizontal displacement of amount 𝛥x.
 
-![(A) The undeformed element is initially square, with right-angled corners. (B) As the body deforms, the square element skews and the corners are no longer right-angles.](images/CH3%20PNGs/figure%203.4.png){#fig-3.4 fig-align="center"}
+![(A) The undeformed element is initially square, with right-angled corners. (B) As the body deforms, the square element skews and the corners are no longer right-angles.](images/CH3%20PNGs/figure%203.4.png){#fig-3.4 fig-align="center" width="480"}
 
-While normal strain represents a change in length, a shear strain represents a change in angle—a distortion of the shape. Specifically, provided we start with right-angled corners, shear strain is defined as the original angle (before deformation) minus the new angle (after deformation). Regardless of the shape of the body, a square element can always be defined such that the original angle is always a right angle. After deformation, the new angle between these three points is 𝜃'. Shear strain is given the symbol γ and is, like normal strain, a dimensionless quantity, so is represented in radians (not degrees). Thus the original right angle is represented as $\frac{\pi}{2}$ radians and the shear strain as:
+Shear strain is denoted by the Greek letter gamma (γ) and, like normal strain, is a dimensionless quantity. Recall that normal strain was defined in @eq-3.1 as the change in length of the object divided by its original length. Shear strain has a similar definition, but the deformation is perpendicular to the side length instead of parallel to it (@fig-3.5). If the element has side length L and displacement 𝛥x, the shear strain is defined as:
 
 $$
-\boxed{\gamma=\frac{\pi}{2}-\theta^{\prime}}
+\boxed{\gamma=\frac{\Delta x}{L}}
 $$ {#eq-3.2}
+
+| *where*
+| *𝛾 = Shear strain*
+| $\Delta x$ *= Horizontal displacement \[m, in.\]*
+
+L = Vertical side length \[m, in.\]
+
+![As the element deforms under shear, the shear strain at corner O is defined as $\gamma=\frac{\Delta x}{L}$.](images/chapter%203%20figure%20edits%20after%20review/figure%203.5.png){#fig-3.5 fig-align="center" width="235"}
+
+For small deformations, it is common to approximate the shear strain as a change in angle. Specifically, provided we start with right-angled corners, shear strain can be approximated as the original angle (before deformation) minus the new angle (after deformation). Regardless of the shape of the body, a square element can always be defined such that the original angle is always a right angle. After deformation, the new angle between these three points is 𝜃'. By convention, shear strain is represented in radians. Thus the original right angle is represented as $\frac{\pi}{2}$ radians and the shear strain as:
+
+$$ \boxed{\gamma=\frac{\pi}{2}-\theta^{\prime}} $$
 
 | *where*
 | *𝛾 = Shear strain \[rad\]*
@@ -193,9 +210,11 @@ $$ {#eq-3.2}
 
 *𝜃' = New angle \[rad\]*
 
-Since we always subtract the new angle from the original angle, note that if the angle increases we get a negative shear strain and if the angle decreases we get a positive shear strain (@fig-3.5).
+It is often easier to find the angle 𝛾 directly, without first finding the angle 𝜃'. Consider the deformed element in @fig-3.5. If the element has side length L and horizontal displacement 𝛥x, the angle 𝛾 can be found from $\gamma=tan^{-1}\left(\frac{\Delta x}{L}\right)$. For small angles where $tan(\gamma)≈\gamma$ (when calculated in radians), this is approximately $\gamma=\frac{\Delta x}{L}$, as defined earlier.
 
-![(A) If the new angle 𝜃' is larger than $\frac{\pi}{2}$ radians, the shear strain is negative. (B) If the new angle 𝜃' is smaller than $\frac{\pi}{2}$ radians, the shear strain is positive.](images/CH3%20PNGs/figure%203.5.png){#fig-3.5 fig-align="center" width="485"}
+Since we always subtract the new angle from the original angle, note that if the angle increases we get a negative shear strain and if the angle decreases we get a positive shear strain (@fig-3.6).
+
+![(A) If the new angle 𝜃' is larger than $\frac{\pi}{2}$ radians, the shear strain is negative. (B) If the new angle 𝜃' is smaller than $\frac{\pi}{2}$ radians, the shear strain is positive.](images/Chapter%203%20figure%20updates%20after%20review/3.5%20(updated%20after%20review).png){#fig-3.6 fig-align="center" width="382"}
 
 See @exm-3.3 and @exm-3.4 to practice calculating shear strain.
 
@@ -209,14 +228,14 @@ See @exm-3.3 and @exm-3.4 to practice calculating shear strain.
 
 A thin rectangular plate has a base of 300 mm and a height of 500 mm. Initially corners A, B, C, and D are all right-angles. The plate is subjected to a shear force V which deforms the plate into the dotted lines shown. Corner D moves straight downward by 5 mm. Determine the shear strain at corner A.
 
-![](images/CH3%20PNGs/example%203.3%20part%201.png){fig-align="center" width="284"}
+![](images/chapter%203%20figure%20edits%20after%20review/example%203.3%20part%201.png){fig-align="center" width="218"}
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Solution
 
 We could calculate the new angle at corner A as $\theta^{\prime}=\frac{\pi}{2}+\alpha$.
 
-![](images/CH3%20PNGs/example%203.3%20part%202.png){fig-align="center" width="273"}
+![](images/chapter%203%20figure%20edits%20after%20review/example%203.3%20part%202.png){fig-align="center" width="215"}
 
 Angle α can be found since there is a triangle of base 300 mm and height 5 mm.
 
@@ -249,9 +268,9 @@ Notice that this is just the negative of angle α. Since the shear strain is the
 
 </p>
 
-A thin triangular plate ABC has a base of 8 inches and a height of 20 inches. Corner A is initially a right-angle. When subjected to a shea load, the plate deforms as shown. Corner B moves 0.1 inches to the right and corner C moves 0.06 inches downward. Determine the shear strain at corner A.
+A thin triangular plate ABC has a base of 8 inches and a height of 20 inches. Corner A is initially a right-angle. When subjected to a shear load, the plate deforms as shown. Corner B moves 0.1 inches to the right and corner C moves 0.06 inches downward. Determine the shear strain at corner A.
 
-![](images/CH3%20PNGs/example%203.4%20part%201.png){fig-align="center" width="320"}
+![](images/CH3%20PNGs/example%203.4%20part%201.png){fig-align="center" width="283"}
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Solution
@@ -330,7 +349,10 @@ $$
 Shear strain:
 
 $$
-\gamma=\frac{\pi}{2}-\theta^{\prime}
+\begin{aligned}
+&\gamma=\frac{\Delta x}{L} \\
+&\gamma≈\frac{\pi}{2}-\theta^{\prime}
+\end{aligned}
 $$
 :::
 

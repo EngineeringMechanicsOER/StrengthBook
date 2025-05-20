@@ -20,9 +20,9 @@ editor: visual
 
 <summary>Click to expand</summary>
 
-Having reviewed static equilibrium in @sec-statics, we now know how to find the internal loads in a body using equilibrium. When determining whether a body can resist the loads applied to it, the internal load is only part of the solution. The dimensions of the body and the inherent properties of the material it is made from are also important.
+Having reviewed static equilibrium in @sec-statics, we know how to find the internal loads in a body using equilibrium. When determining whether a body can resist the loads applied to it, the internal load is only part of the solution. The dimensions of the body and the inherent properties of the material it is made from are also important.
 
-In this chapter we’ll explore the concept of stress, which can help us determine whether an object will physically break when subjected to a load. We’ll cover average normal stress (stress perpendicular to the cross-section) in @sec-2.1 and average shear stress (stress parallel to the cross-section) in @sec-2.2. We’ll then discuss bearing stress (the stress between two bodies in contact with each other) in @sec-2.3 and finish with the average normal and shear stresses on an inclined cross-section in @sec-2.4.
+In this chapter we will explore the concept of stress, which can help us determine whether an object will physically break when subjected to a load. We’ll cover average normal stress (stress perpendicular to the cross-section) in @sec-2.1 and average shear stress (stress parallel to the cross-section) in @sec-2.2. We’ll then discuss bearing stress (the stress between two bodies in contact with each other) in @sec-2.3 and finish with the average normal and shear stresses on an inclined cross-section in @sec-2.4.
 
 </details>
 
@@ -32,7 +32,7 @@ In this chapter we’ll explore the concept of stress, which can help us determi
 
 <summary>Click to expand</summary>
 
-Average normal stress is defined as the internal normal force divided by the cross-sectional area of the body. It is given the Greek letter sigma (σ). Stress increases as the force increases or as the cross-sectional area decreases.
+Average normal stress is defined as the internal normal force divided by the cross-sectional area of the body. By convention, it is represented by the Greek letter sigma (σ). Stress increases as the force increases or as the cross-sectional area decreases.
 
 $$
 \boxed
@@ -42,15 +42,18 @@ $$ {#eq-2.1}
 | *where*
 | *𝜎 = Average normal stress \[Pa, psi\]*
 | *N = Internal normal force \[N, lb\]*
-| *A = Cross-sectional area \[m^2^, in.^2^\]*
 
-As such the SI units of stress are N/m^2^, more commonly referred to as the Pascal (Pa) where 1 Pa = 1 N/m^2^. The US customary units for stress are lb/in^2^, commonly written as psi. Since stresses can get very large, it is common to use prefixes such as kilo (k) and mega (M) to represent 10^3^ and 10^6^ respectively. A stress of 15,000,000 Pa is written as 15 MPa. A stress of 35,000 psi is written as 35 ksi.
+*A = Cross-sectional area \[m^2^, in.^2^\]*
 
-Normal stress occurs perpendicular to the cross-section and so is associated with either a pulling or pushing motion (@fig-2.1). Normal forces that pull on a cross-section are known as tensile forces and create a tensile normal stress. Normal forces that push on a cross-section are known as compressive forces and create a compressive normal stress. The normal stress calculated above is really an average normal stress as the force is distributed over the cross-section, but we generally simplify this to a concentrated force that creates the same normal stress at every point on the cross-section (@fig-2.2).
+As such the SI units of stress are N/m^2^, more commonly referred to as the Pascal (Pa) where 1 Pa = 1 N/m^2^. The US customary units for stress are lb/in^2^, commonly written as psi which is short for pounds per square inch. Since stresses can get very large, it is common to use prefixes such as kilo (k) and mega (M) to represent 10^3^ and 10^6^ respectively. A stress of 15,000,000 Pa is written as 15 MPa. A stress of 35,000 psi is written as 35 ksi.
 
-![Forces pulling on a cross-section cause tension, while forces pushing on a cross-section cause compression. Both are very common. Left: A crane cable during a lift experiences tension. Right: The support columns under a bridge experience compression.](images/CH2%20figures/2.1.png){#fig-2.1 fig-align="center"}
+Normal stress occurs perpendicular to the cross-section and so is associated with either a pulling or pushing motion (@fig-2.1). Normal forces that pull on a cross-section are known as tensile forces and create a tensile normal stress. Normal forces that push on a cross-section are known as compressive forces and create a compressive normal stress. By convention, tensile normal forces and stresses are psoitive, while compressive normal forces and stresses are negative.
 
-![The internal load is equally distributed over the cross-sectional area, but may be represented as a single concentrated load acting at the center (N in this case). The stress is therefore an average normal stress.](images/CH2%20figures/2.2.png){#fig-2.2 fig-align="center"}
+The normal stress calculated above is really an average normal stress as the force is distributed over the cross-section, but we generally simplify this to a concentrated force that creates the same normal stress at every point on the cross-section (@fig-2.2).
+
+![Forces pulling on a cross-section cause tension, while forces pushing on a cross-section cause compression. Both are very common. Left: A crane cable during a lift experiences tension. Right: The support columns under a bridge experience compression.](images/CH2%20figures/2.1.png){#fig-2.1 fig-align="center" width="528"}
+
+![The internal load is equally distributed over the cross-sectional area, but may be represented as a single concentrated load acting at the center (N in this case). The stress is therefore an average normal stress.](images/CH2%20figures/2.2.png){#fig-2.2 fig-align="center" width="225"}
 
 The internal normal force in a body can be found through the method of equilibrium as reviewed in @sec-1.2. See @exm-2.1 for a demonstration.
 
@@ -64,7 +67,7 @@ The internal normal force in a body can be found through the method of equilibri
 
 The support column will be subjected to a compressive force F = 65 kips.
 
-![](images/Updated%20CH2%20examples/example%202.1%20part%201.png){fig-align="center" width="174"}
+![](images/Updated%20CH2%20examples/example%202.1%20part%201.png){fig-align="center" width="109"}
 
 1.  The diameter of the column is 4 inches. Determine the average normal stress in the column.
 
@@ -75,13 +78,19 @@ The support column will be subjected to a compressive force F = 65 kips.
 
 1.  Cut a cross-section through the column and draw a free body diagram. Although it is clear in this case that the internal load will be 65 kips, it is best to get in the habit of writing out equilibrium equations.
 
-![](images/Updated%20CH2%20examples/example%202.1%20part%202.png){fig-align="center" width="136"}
+![](images/Updated%20CH2%20examples/example%202.1%20part%202.png){fig-align="center" width="113"}
 
 $$
-\sum F_y= N-65{~kips}=0
+\begin{aligned}
+\sum F_y = &{~} N-F = 0\\
+\sum F_y = &{~}N-65{~kips}=0\\
+&N = 65{~kips}
+\end{aligned}
 $$
 
-The column has a circular cross-section of area $A=\pi(2)^2=4 \pi{~in.}^2$.
+Recall that 65 kips = 65,000 lb. It is acceptable to keep the force in kips and calculate the stress in units of $\frac{kips}{in^2}=ksi$.
+
+The column has a circular cross-section of area $A=\pi r^2=\pi(2)^2=4 \pi{~in.}^2$.
 
 The average normal stress can now be found from:
 
@@ -104,7 +113,7 @@ Note that this is the minimum required diameter to ensure the average normal str
 :::
 :::
 
-Sometimes the loading or cross-sectional area of the body will change, resulting in a change in stress. In these cases the stress can be calculated separately in each segment of the body by first finding the internal load in each segment and then dividing the internal load by the cross-sectional area of the respective segment. Different parts of the body may experience different stresses. Generally the highest stress is of most importance as that is the stress that typically determines whether the body will break. Because we do not know in advance where the largest stress is, however, it is typically necessary to calculate the stress at each different cross-section in order to determine the highest stress. See @exm-2.2 for a demonstration.
+Sometimes the loading or cross-sectional area of the body will be different at different points in the body, resulting in different stresses. In these cases the stress can be calculated separately in each segment of the body by first finding the internal load in each segment and then dividing the internal load by the cross-sectional area of the respective segment. Different parts of the body may experience different stresses. Generally, the highest stress is of most importance as that is the stress that typically determines whether the body will break. Because we do not know in advance where the largest stress is, however, it is typically necessary to calculate the stress at each different cross-section in order to determine the highest stress. See @exm-2.2 for a demonstration.
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Example 2.2
@@ -116,7 +125,7 @@ Sometimes the loading or cross-sectional area of the body will change, resulting
 
 Two hollow pipes are welded together as shown. Pipe (1) has an outer diameter of 70 mm and an inner diameter of 40 mm while pipe (2) has an outer diameter of 110 mm and an inner diameter of 60 mm. Forces are applied at the end of each pipe and at the weld, where F~1~ = 40 kN, F~2~ = 70 kN, and F~3~ = 30 kN. Determine the average normal stress in each pipe.
 
-![](images/Updated%20CH2%20examples/example%202.2%20part%201.png){fig-align="center" width="327"}
+![](images/chapter%202%20figure%20edits%20april%202025/example%202.2%20part%201.png){fig-align="center" width="386"}
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Solution
@@ -132,9 +141,9 @@ $$
 
 The internal loads can be found by cutting a cross-section through each pipe, drawing a free body diagram, and writing an equilibrium equation.
 
-![](images/Updated%20CH2%20examples/example%202.2%20part%202.png){fig-align="center" width="270"}
+![](images/chapter%202%20figure%20edits%20april%202025/example%202.2%20part%202.png){fig-align="center" width="368"}
 
-![](images/Updated%20CH2%20examples/example%202.2%20part%203.png){fig-align="center" width="261"}
+![](images/chapter%202%20figure%20edits%20april%202025/example%202.2%20part%203.png){fig-align="center" width="365"}
 
 $$
 \begin{aligned}
@@ -147,7 +156,7 @@ Note that we may choose to draw the internal load in either tension or compressi
 
 Note also that it is acceptable to draw a free body diagram of either side of the cross-section. This will not change the result. Perhaps it would have been easier to draw the right-hand-side of section 2.
 
-![](images/Updated%20CH2%20examples/example%202.2%20part%204.png){fig-align="center" width="236"}
+![](images/chapter%202%20figure%20edits%20april%202025/example%202.2%20part%204.png){fig-align="center" width="357"}
 
 $$
 \sum F_x=30{~kN}+N_2=0 \quad \rightarrow \quad N_2=30{~kN}
@@ -170,13 +179,13 @@ $$
 ::: {.callout-warning icon="false"}
 ## Step-by-step: Average Normal Stress
 
-1.  Use equilibrium equations to determine reaction loads at any supports.
+1.  Determine reaction loads: Use equilibrium equations to determine reaction loads at any supports.
 
-2.  Cut a cross-section through the member at the point where you want to determine the internal normal stress, and draw a free body diagram of the member on either side of the cut. Be sure to include everything on the chosen side, including external loads, support reactions, and the internal normal force.
+2.  Draw free body diagram: Cut a cross-section through the member at the point where you want to determine the internal normal stress, and draw a free body diagram of the member on either side of the cut. Be sure to include everything on the chosen side, including external loads, support reactions, and the internal normal force.
 
-3.  Use equilibrium equations to determine the internal normal force (N) in the member.
+3.  Calculate internal force: Use equilibrium equations to determine the internal normal force (N) in the member.
 
-4.  Determine average normal stress using $\sigma=\frac{N}{A}$.
+4.  Calculate average stress: Determine average normal stress using $\sigma=\frac{N}{A}$.
 :::
 
 </details>
@@ -189,7 +198,7 @@ $$
 
 Average shear stress is defined as the internal shear force divided by the cross-sectional area of the body. While normal forces (and therefore normal stresses) occur when a body is under tension or compression, shear forces (and therefore shear stresses) occur when a force is tangentially applied parallel to the cross-section, resulting in a sliding motion (@fig-2.3).
 
-![(a) External loads F creating (b) an internal normal force (N) perpendicular to the cross-section. (c) External loads F~1~, F~2~, and F~3~ creating (d) an internal shear force (V) parallel to the cross-section. Note that for diagram (d) to be in equilibrium there would also need to be an internal bending moment. That has been omitted here for clarity.](images/CH2%20figures/2.3.png){#fig-2.3 fig-align="center"}
+![(A) External loads F creating (B) an internal normal force (N) perpendicular to the cross-section. (C) External loads F~1~, F~2~, and F~3~ creating (D) an internal shear force (V) parallel to the cross-section. Note that for diagram (D) to be in equilibrium there would also need to be an internal bending moment which has been omitted here.](images/April%2018%20figure%20updates/figure%202.3.png){#fig-2.3 fig-align="center" width="485"}
 
 Although the basic definition of average normal stress and average shear stress is the same (force divided by area) there are some differences. To quickly differentiate which stress we are talking about, shear stress is denoted by the Greek letter tau (τ).
 
@@ -215,7 +224,7 @@ Like normal force, internal shear force can be found by cutting a cross-section 
 
 A bridge spans a gap of L = 150 ft. The roadway may be considered simply supported and has a rectangular cross-section of base b = 10 in. and height h = 6 in. It is subjected to a uniform distributed load of w = 200 lb/ft. Determine the magnitude of the average shear stress in the cross-section at x = 30 ft and x = 80 ft.
 
-![](images/Updated%20CH2%20examples/example%202.3%20part%201.png){fig-align="center" width="333"}
+![](images/chapter%202%20figure%20edits%20april%202025/example%202.3%20part%201.png){fig-align="center" width="412"}
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Solution
@@ -228,7 +237,7 @@ The internal shear force can be found by cutting a cross-section through the poi
 
 At x = 30 ft:
 
-![](images/Updated%20CH2%20examples/example%202.3%20part%202.png){fig-align="center" width="328"}
+![](images/chapter%202%20figure%20edits%20april%202025/example%202.3%20part%202.png){fig-align="center" width="391"}
 
 $$
 \sum F_y=15,000{~lb}-6,000{~lb}-V=0 \quad \rightarrow \quad V=9,000{~lb}
@@ -244,7 +253,7 @@ $$
 
 At x = 80 ft:
 
-![](images/Updated%20CH2%20examples/example%202.3%20part%203.png){fig-align="center" width="285"}
+![](images/chapter%202%20figure%20edits%20april%202025/example%202.3%20part%203.png){fig-align="center" width="389"}
 
 $$
 \sum F_y=15,000{~lb}-16,000{~lb}-V=0 \quad \rightarrow \quad V=-1,000{~lb}
@@ -259,9 +268,9 @@ $$
 :::
 :::
 
-Shear stresses are common in both members of a structure and also in the fasteners between members. Depending on how these connections are formed we may see multiple shear planes. It is very important to correctly identify the internal force in the body. @fig-2.4 demonstrates the difference between single and double shear configurations for a pinned joint and the effects on internal shear force. See @exm-2.4 for an example where double shear occurs.
+Shear stresses are common in both members of a structure and also in the fasteners between members. Depending on how these connections are formed we may see multiple shear planes. It is very important to correctly identify the internal force in the body. @fig-2.4 demonstrates the difference between single and double shear configurations for a pinned joint and the effects on internal shear force. Notice that in the case of double shear, the internal shear force is half of the applied force, F~1~. See @exm-2.4 for an example where double shear occurs.
 
-![Pins experiencing (a) single shear and (b) double shear.](images/CH2%20figures/2.4.png){#fig-2.4 fig-align="center"}
+![(A) Pin experiencing single shear and (B) the resulting internal shear force is equal to applied force F. (C) Pin experiencing double shear and (D) the resulting internal shear force is equal to half of the applied force F~1~.](images/chapter%202%20figure%20edits%20april%202025/figure%202.4.png){#fig-2.4 fig-align="center" width="644"}
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Example 2.4
@@ -271,7 +280,7 @@ Shear stresses are common in both members of a structure and also in the fastene
 
 </p>
 
-A pin made of a tin alloy with an allowable shear stress of 3 ksi is used to connect a footrest to the frame of a motorcycle. When in motion, the footrest supports a load of 200 lb which is transferred to the pin. Determine the required diameter of the pin such that the stress will not exceed 5 ksi.
+A pin made of a tin alloy with an allowable shear stress of 3 ksi is used to connect a footrest to the frame of a motorcycle. When in motion, the footrest supports a load of 200 lb which is transferred to the pin. Determine the required diameter of the pin such that the stress will not exceed 3 ksi.
 
 ![](images/example%202.4%20(new).png){fig-align="center" width="431"}
 
@@ -279,6 +288,8 @@ A pin made of a tin alloy with an allowable shear stress of 3 ksi is used to con
 ## Solution
 
 Average shear stress can be calculated from $\tau=\frac{V}{A}$. Rearrange this equation to $A=\frac{V}{\tau}$. Start with a free body diagram of the pin in order to determine the internal shear force.
+
+![](images/chapter%202%20figure%20edits%20april%202025/example%202.4%20part%202.png){fig-align="center" width="486"}
 
 From the diagram it should be apparent that the pin is in double shear and the maximum internal shear force in the pin is 100 lb. Thus the required cross-sectional area $A=\frac{100{~lb}}{3000{~psi}}=0.0333{~in.}^2$.
 
@@ -290,13 +301,13 @@ Since $A=\frac{\pi}{4} d^2$ the required diameter is $d=\sqrt{\frac{0.0333{~in.}
 ::: {.callout-warning icon="false"}
 ## Step-by-step: Average Shear stress
 
-1.  Use equilibrium equations to determine reaction loads at any supports.
+1.  Determine reaction loads: Use equilibrium equations to determine reaction loads at any supports.
 
-2.  Cut a cross-section through the member at the point where you want to determine the internal shear stress, and draw a free body diagram of the member on either side of the cut. Be sure to include everything on the chosen side, including external loads, support reactions, and the internal shear force.
+2.  Draw free body diagram: Cut a cross-section through the member at the point where you want to determine the internal shear stress, and draw a free body diagram of the member on either side of the cut. Be sure to include everything on the chosen side, including external loads, support reactions, and the internal shear force.
 
-3.  Use equilibrium equations to determine the internal shear force (V) in the member.
+3.  Calculate internal force: Use equilibrium equations to determine the internal shear force (V) in the member.
 
-4.  Determine average normal stress using $\tau=\frac{V}{A}$
+4.  Calculate average stress: Determine average normal stress using $\tau=\frac{V}{A}$
 :::
 
 </details>
@@ -311,20 +322,62 @@ Bearing stress is similar to normal stress, except that it occurs at the contact
 
 ![Circular column sitting upon a rectangular foundation. Contact areas between a circular and rectangular surface, and between two rectangular surfaces are shown.](images/CH2%20figures/2.5.png){#fig-2.5 fig-align="center" width="271"}
 
-One common situation is contact between two curved edges, such as the bolt in @fig-2.6. In this situation it is common to use the projected contact area between the curved surfaces, which forms a rectangle of base d and height t. This greatly simplifies the calculation, but again represents an average value for the contact or bearing stress.
+One common situation is contact between two curved edges, such as the bolt in @fig-2.6. In this situation it is common to use the projected contact area between the curved surfaces, which forms a rectangle of base d and height t.
+
+$$
+A=d*t
+$$
+
+This greatly simplifies the calculation, but again represents an average value for the contact or bearing stress. See @exm-2.5 for a problem involving the bearing stress between a bolt and a plate.
 
 ![When calculating the bearing stress between curved surfaces, project a rectangle of area A = d\*t.](images/CH2%20figures/2.6.png){#fig-2.6 fig-align="center" width="407"}
+
+::: {.callout-tip collapse="true" icon="false"}
+## Example 2.5
+
+::: {#exm-2.5}
+<p>
+
+</p>
+
+A bolt of diameter d = 80 mm is used to attach a steel bar to a gusset plate. The steel bar dimensions are height h = 200 mm and thickness t = 30 mm. It is subjected to a tensile force F = 50 kN. Determine the bearing stress created in the steel bar at the pin.
+
+![](images/April%2018%20figure%20updates/example%202.5%20part%201.png){fig-align="center" width="445"}
+
+::: {.callout-tip collapse="true" icon="false"}
+## Solution
+
+Bearing stress can be calculated from $\sigma=\frac{N}{A}$ where N is the normal force between the objects and A is the projected contact area.
+
+![](images/April%2018%20figure%20updates/example%202.5%20part%202.png){fig-align="center" width="430"}
+
+The force between the pin and the bar will be $F=50~kN = 50,000~N$.
+
+The projected contact area between the pin and the plate can be found from the diameter of the pin $(80~mm=0.08~m)$ multiplied by the thickness of the plate $(30~mm=0.03~m)$.
+
+$$
+A=d*t=0.08*0.03=0.0024~m^2
+$$
+
+Now we can calculate the bearing stress:
+
+$$
+\sigma=\frac{50,000~N}{0.0024~m^2}=20.8*10^6~Pa=20.8~MPa
+$$
+:::
+:::
+:::
 
 ::: {.callout-warning icon="false"}
 ## Step-by-step: Bearing Stress
 
-1.  Use equilibrium equations to determine reaction loads at any supports.
+1.  Determine reaction loads: Use equilibrium equations to determine reaction loads at any supports.
 
-2.  Determine the contact area between the two components (A).
+2.  Determine area: Determine the contact area between the two components (A).
 
-3.  Use equilibrium equations to determine the normal force (N) between the two components.
+3.  Calculate bearing force: Use equilibrium equations to determine the normal force (N) between the two components.
 
-4.  Determine average bearing stress using $\sigma=\frac{N}{A}$.
+4.  Calculate average stress: Determine average bearing stress using $\sigma=\frac{N}{A}$.
 :::
 
 </details>
@@ -337,7 +390,7 @@ One common situation is contact between two curved edges, such as the bolt in @f
 
 We have so far been cutting cross-sections perpendicular to the external force, or parallel to it. However, there is no rule that says we have to do this. It is perfectly acceptable to cut cross-sections at an angle and there are many situations where it may make sense to do so (@fig-2.7).
 
-![(a) External loads, F, will create (b) an internal normal force, N, when a cross-section is cut vertically. (c) If the cross-section is cut along an inclined plane the internal force, P, will not be a normal force or shear force. (d) The internal force should be broken into normal (N) and shear (V) components that are perpendicular and parallel to the plane respectively.](images/CH2%20figures/2.7.png){#fig-2.7 fig-align="center"}
+![(A) External loads, F, will create (B) an internal normal force, N, when a cross-section is cut vertically. (C) If the cross-section is cut along an inclined plane the internal force, P, will not be a normal force or shear force. (D) The internal force should be broken into normal (N) and shear (V) components that are perpendicular and parallel to the plane respectively.](images/chapter%202%20figure%20edits%20april%202025/figure%202.7.png){#fig-2.7 fig-align="center" width="593"}
 
 In this scenario the internal load must still be equal and opposite to the external load in order to maintain equilibrium but, because we cut the cross-section at an angle, this internal load is neither parallel nor perpendicular to the cross-section. Therefore it is not entirely a normal force or a shear force. However, the internal force may be broken into components that are perpendicular and parallel to the cross-section.
 
@@ -375,28 +428,28 @@ $$\boxed{\tau=\frac{V}{A_p}=\frac{P \cos (\theta)}{\frac{A}{\sin (\theta)}}=\fra
 
 Note these equations assume the angle (𝜃) is measured from the axis perpendicular to area A. For a horizontal beam, area A is in the vertical plane so angle θ is measured from the horizontal axis.
 
-![When calculating the stresses on an inclined plane, it is important to use the area of the plane, Ap, rather than the area of the cross-sectional plane, A.](images/CH2%20figures/2.8.png){#fig-2.8 fig-align="center"}
+![When calculating the stresses on an inclined plane, it is important to use the area of the plane, Ap, rather than the area of the cross-sectional plane, A.](images/CH2%20figures/2.8.png){#fig-2.8 fig-align="center" width="425"}
 
-Even if the external load remains constant, we can obtain different values for the internal normal and shear forces (and therefore different values for the stresses) by changing the angle at which we cut the cross-section. We’ll explore the implications of this further in @sec-stress-transformation. For now, a demonstration of calculating the stresses on an inclined plane is given in @exm-2.5.
+Even if the external load remains constant, we can obtain different values for the internal normal and shear forces (and therefore different values for the stresses) by changing the angle at which we cut the cross-section. We’ll explore the implications of this further in @sec-stress-transformation. For now, a demonstration of calculating the stresses on an inclined plane is given in @exm-2.6.
 
 ::: {.callout-tip collapse="true" icon="false"}
-## Example 2.5
+## Example 2.6
 
-::: {#exm-2.5}
+::: {#exm-2.6}
 <p>
 
 </p>
 
 A beam is formed of two structural wooden members that are glued together along an inclined plane at angle θ = 40° and subjected to a tensile force of F = 30 kN. The height of the beam is 50 mm and its thickness is 20 mm. Determine the normal and shear stresses created along the inclined plane.
 
-![](images/CH2%20figures/example%202.5%20part%201.png){fig-align="center" width="294"}
+![](images/CH2%20figures/example%202.5%20part%201.png){fig-align="center" width="362"}
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Solution
 
 Begin by cutting a cross-section along the inclined plane and drawing a free body diagram. Remember to include the internal normal and shear forces perpendicular and parallel to the cross-section.
 
-![](images/CH2%20figures/example%202.5%20part%201%20copy.png){fig-align="center"}
+![](images/chapter%202%20figure%20edits%20april%202025/example%202.6%20part%202.png){fig-align="center" width="396"}
 
 Use equilibrium equations to determine the internal forces. It will be easiest to define axes parallel and perpendicular to the inclined plane.
 
@@ -407,7 +460,18 @@ $$
 \end{aligned}
 $$
 
-With F = 30 kN and θ = 40°, these can be solved for N = 19.3 kN and V = 23.0 kN.
+With F = 30 kN and θ = 40°, these can be solved for.
+
+$$
+\begin{aligned}
+\sum F_{x^{\prime}}= 30{~kN} \cos (40^{\circ})-V=0 \\
+V = 23.0{~kN}\\
+\sum F_{y^{\prime}}= N-30{~kN} \sin (40^{\circ})=0\\
+N=19.3{~kN}
+\end{aligned}
+$$
+
+N = 19.3 kN and V = 23.0 kN.
 
 Next, determine the cross-sectional area of the inclined plane.
 
@@ -432,15 +496,17 @@ $$
 ::: {.callout-warning icon="false"}
 ## Step-by-step: Stresses on Inclined Planes
 
-1.  Use equilibrium equations to determine reaction loads at any supports.
+1.  Determine reaction loads: Use equilibrium equations to determine reaction loads at any supports.
 
-2.  Cut a cross-section along the inclined plane and determine the angle (θ) of the plane with respect to the axis perpendicular to cross-sectional area A.
+2.  Draw free body diagram: Cut a cross-section along the inclined plane and determine the angle (θ) of the plane with respect to the axis perpendicular to cross-sectional area A.
 
-3.  Use equilibrium equations to determine the internal load (F).
+3.  Calculate internal force: Use equilibrium equations to determine the internal load (F).
 
-4.  Determine average normal stress using $\sigma=\frac{F \sin ^2(\theta)}{A}$.
+4.  Calculate average stress:
 
-5.  Determine average shear stress using $\tau=\frac{F \sin (\theta) \cos (\theta)}{A}$.
+    Determine average normal stress using $\sigma=\frac{F \sin ^2(\theta)}{A}$.
+
+    Determine average shear stress using $\tau=\frac{F \sin (\theta) \cos (\theta)}{A}$.
 :::
 
 </details>
@@ -456,9 +522,9 @@ $$
 
 Objects under load will experience stress. It is the stress level (rather than just the load by itself) that determines whether an object will break under load. We can calculate the average normal stress and average shear stress acting on a body, though a complete understanding of the stress field within a complex object often requires more advanced concepts.
 
-Stress depends on the internal load in the body, the cross-sectional area, and the orientation of the plane. Normal stress occurs when there is an internal normal force and may be tensile or compressive. Shear stress occurs when there is an internal shear force. Members may commonly experience multiple shear planes.
+Stress depends on the internal load in the body, the cross-sectional area, and the orientation of the plane. Normal stress occurs when there is an internal normal force and may be tensile or compressive. Shear stress occurs when there is an internal shear force. Members may experience multiple shear planes, in which case the internal shear force in the member is equal to the load applied to the member divided by the number of shear planes.
 
-If there are multiple loads acting on a body, or if the body has multiple cross-sectional areas at different points, different parts of the body may experience different stresses. In such cases, we may calculate the stress in each part of the body by finding the internal load and cross-sectional area in that part of the body. In this chapter we have discussed average stress. In subsequent chapters further details on stress distributions will be discussed.
+If there are multiple loads acting on a body, or if the body has different cross-sectional areas at different points, different parts of the body may experience different stresses. In such cases, we may calculate the stress in each part of the body by finding the internal load and cross-sectional area in that part of the body. In this chapter we have discussed average stress. In subsequent chapters further details on stress distributions will be discussed.
 
 Bearing stress is similar to normal stress, but occurs between two bodies.
 

@@ -21,13 +21,13 @@ editor: visual
 
 <summary>Click to expand</summary>
 
-We now know how to calculate both the bending stress (@sec-bending-loads) and shear stress (@sec-shear-loads) in a beam. In this chapter we'll consider the deformation of a beam subjected to bending and shear stresses. Under load, beams deflect from their original position (@fig-11.1). Some amount of deflection is unavoidable, but it is usually desirable to limit deflection as much as possible. Although deflection often doesn't pose a safety risk (unless the allowable stress of the beam is also exceeded) too much deflection can render a beam unfit for purpose.
+We now know how to calculate both the bending stress (@sec-bending-loads) and shear stress (@sec-shear-loads) in a beam. In this chapter we'll consider the deformation of a beam subjected to bending and shear stresses. Under load, beams deflect from their original position (@fig-11.1). Some amount of deflection is unavoidable, but it is usually desirable to limit deflection as much as possible. Although deflection often doesn't pose a safety risk (unless the allowable stress of the beam is also exceeded), too much deflection can render a beam unfit for purpose.
 
-![A model bridge showing severe deflection along its span (left). Although the bridge hasn't broken, there is too much deflection for the application. The deflection in a hockey stick during a shot (right). In this application the deflection is helpful as it stores and releases energy during the shot.](images/CH11%20PNGs/11.1.png){#fig-11.1 fig-align="center"}
+![A model bridge showing severe deflection along its span (left). Although the bridge hasn't broken, there is too much deflection for the application. The deflection in a hockey stick during a shot (right). In this application the deflection is helpful as it stores and releases energy during the shot.](images/CH11%20PNGs/11.1.png){#fig-11.1 fig-align="center" width="535"}
 
-Idealized sketches showing the shape of the deflected beam are a helpful visual aid. This deflected shape is known as the elastic curve (@fig-11.2). Sketches of the elastic curve provide a quick visual reference of how the beam will deflect and can be used to check that our numerical answers are realistic.
+The deflected shape of the beam is known as the elastic curve (@fig-11.2). Exaggerated sketches of the elastic curve provide a quick visual reference of how the beam will deflect and can be used to check that our numerical answers are realistic.
 
-![Two example beams showing the undeflected position of the centerline (dotted line) and the deflected position of the elastic curve (solid line).](images/CH11%20PNGs/11.2.png){#fig-11.2 fig-align="center"}
+![Two example beams showing the undeflected position of the centerline (dotted line) and the deflected position (elastic curve) of the beam (solid line).](images/CH11%20PNGs/11.2.png){#fig-11.2 fig-align="center" width="482"}
 
 In @sec-5.3 we learned to calculate deformation due to axial load $\left(\Delta L=\frac{F L}{A E}\right)$. In @sec-6.2 we learned to calculate deformation due to torsional load $\left(\varnothing=\frac{T L}{J G}\right)$. Note that both types of deformation depend on:
 
@@ -39,7 +39,7 @@ In @sec-5.3 we learned to calculate deformation due to axial load $\left(\Delta 
 
 -   Material properties (E, G)
 
-It is probably not surprising then that beam deflection also depends on these four things. We'll study two common techniques for calculating deflection: The method of integration (@sec-11.1 and @sec-11.2) and the method of superposition (@sec-11.3). Being able to calculate deflection is vitally important, as it allows us to predict how much a beam will deflect before we build a structure. Once we're able to calculate deflection, we'll use this to help solve some more statically indeterminate problems (@sec-11.4). Finally, in @sec-11.5, we'll build on our beam design work of @sec-9.2 by expanding our specifications to include limitations on not just bending stress, but shear stress and deflection as well.
+It is probably not surprising then that beam deflection also depends on these four things. We'll study two common techniques for calculating deflection: the method of integration (@sec-11.1 and @sec-11.2) and the method of superposition (@sec-11.3). Being able to calculate deflection is vitally important, as it allows us to predict how much a beam will deflect before we build a structure. Once we're able to calculate deflection, we'll use this to help solve some more statically indeterminate problems (@sec-11.4). Finally, in @sec-11.5, we'll build on our beam design work of @sec-9.2 by expanding our specifications to include limitations on not just bending stress, but shear stress and deflection as well.
 
 </details>
 
@@ -86,7 +86,7 @@ $$
 \frac{1}{\rho}=\frac{\frac{\partial^{2} y}{\partial x^{2}}}{\left[1+\left(\frac{\partial y}{\partial x}\right)^{2}\right]^{\frac{3}{2}}}
 $$
 
-This equation describes the exact deflection $(y)$ at any distance $(x)$ along the beam. In most engineering applications the deflection $(y)$ is very small. We can simplify this equation significantly by assuming that our deflection $(y)$ will be small and thus that $\frac{d y}{d x}$ is very small and $\left(\frac{d y}{d x}\right)^{2}$ is negligible. This simplifies the equation to
+This equation describes the exact deflection $(y)$ at any distance $(x)$ along the beam for elastic deformations. In most engineering applications the deflection $(y)$ is very small. We can simplify this equation significantly by assuming that our deflection $(y)$ will be small and thus that $\frac{d y}{d x}$ is very small and $\left(\frac{d y}{d x}\right)^{2}$ is negligible. This simplifies the equation to
 
 $$
 \frac{1}{\rho}=\frac{\frac{\partial^{2} y}{\partial x^{2}}}{[1+0]^{\frac{3}{2}}}=\frac{\partial^{2} y}{\partial x^{2}}
@@ -108,17 +108,17 @@ M(x)=E I \frac{\partial^{2} y}{\partial x^{2}} \\
 \end{gathered}}
 $$ {#eq-11.1}
 
-In these equations, $y$ represents the deflection of the beam and $\frac{d y}{d x}$ represents the slope of the deflected beam. Since the equations are functions of $x$, we can find the slope and deflection at any point along the beam.
+In these equations, $y$ represents the deflection of the beam and $\frac{\partial y}{\partial x}$ represents the slope of the deflected beam. Since the equations are functions of $x$, we can find the slope and deflection at any point along the beam.
 
 Note that each successive integral introduces a constant of integration which we must solve for. We do this through the use of boundary conditions---that is, points on the beam where we already know the slope and/or deflection. The most common boundary conditions for our applications will be:
 
--   At any support the deflection $(y)$ is zero
+-   At any support, the deflection $(y)$ is zero
 
--   At a fixed support the slope $\left(\frac{\partial y}{\partial x}\right)$ is zero
+-   At a fixed support, the slope $\left(\frac{\partial y}{\partial x}\right)$ is zero
 
 @fig-11.3 illustrates these boundary conditions. Once the constants of integration are known, we can define equations for the slope and deflection of the beam in terms of distance $(x)$ along the beam and calculate the slope and deflection at any value of $x$. See @exm-11.1 and @exm-11.2 to see this process applied to a simply supported beam and a cantilever beam respectively.
 
-![At pin and roller supports, the deflection is zero but the slope is not. At a fixed support, both the slope and deflection are zero. For a statically determinate beam in equilibrium we will always have two boundary conditions.](images/CH11%20PNGs/11.3.png){#fig-11.3 fig-align="center"}
+![At pin and roller supports, the deflection is zero but the slope is not. At a fixed support, both the slope and deflection are zero. For a statically determinate beam in equilibrium we will always have two boundary conditions.](images/CH11%20PNGs/11.3.png){#fig-11.3 fig-align="center" width="615"}
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Example 11.1
@@ -151,7 +151,7 @@ Cut a cross-section through the beam at distance x and draw a free body diagram 
 ![](images/CH11%20PNGs/example11.1-3.png){fig-align="center"}
 
 $$
-\begin{gathered} \sum M_A= M+w x\left(\frac{x}{2}\right)-\frac{w L}{2}(x)=0 \\ M =\frac{w L x}{2}-\frac{w x^2}{2}=E I \frac{\partial^2 y}{\partial x^2}\end{gathered}
+\begin{gathered} \sum M_x= M+w x\left(\frac{x}{2}\right)-\frac{w L}{2}(x)=0 \\ M =\frac{w L x}{2}-\frac{w x^2}{2}=E I \frac{\partial^2 y}{\partial x^2}\end{gathered}
 $$
 
 Integrate this equation twice:
@@ -178,7 +178,7 @@ $$
 Substitute in the given values for and solve this equation at the midpoint (x=5m):
 
 $$
-\begin{aligned} & y=\frac{1}{200 \times 10^9~\frac{N}{m^2}*350 \times 10^{-6}{~m}^4}\left[\frac{20000~\frac{N}{m}*10{~m}*(5{~m})^3}{12}-\frac{20000~\frac{N}{m}*(5{~m})^4}{24}-\frac{20000\frac{N}{m}*(10~{m})^3*5{~m}}{24}\right] \\
+\begin{aligned} & y=\frac{1}{200 \times 10^9~\frac{N}{m^2}*350 \times 10^{-6}{~m}^4}\left[\frac{20000~\frac{N}{m}*10{~m}*(5{~m})^3}{12}-\\ \frac{20000~\frac{N}{m}*(5{~m})^4}{24}-\frac{20000\frac{N}{m}*(10~{m})^3*5{~m}}{24}\right] \\
 & y=-0.0372{~m} \\
 & y=-37.2{~mm}
 \end{aligned}
@@ -207,16 +207,24 @@ Cut a cross-section through the beam at distance x and draw a free body diagram 
 ![](images/CH11%20PNGs/example11.2-2.png){fig-align="center"}
 
 $$
-\begin{gathered} \sum M_x=M+\frac{w_0 x^2}{2 L}\left(\frac{x}{3}\right)=0 \\ M=-\frac{w_0 x^3}{6 L}=E I \frac{\partial^2 y}{\partial x^2} \\ -\frac{w_0 x^4}{24 L}+C_1=E I \frac{\partial y}{\partial x} \\ -\frac{w_0 x^5}{120 L}+C_1 x+C_2=EIy\end{gathered}
+\begin{aligned}
+\sum M_x=&~M+\frac{w_0 x^2}{2 L}\left(\frac{x}{3}\right)=0 \\
+M&=-\frac{w_0 x^3}{6 L}=E I \frac{\partial^2 y}{\partial x^2} \\ 
+\int M~dx&=-\frac{w_0 x^4}{24 L}+C_1=E I \frac{\partial y}{\partial x} \\ 
+\int\int M~dx&=-\frac{w_0 x^5}{120 L}+C_1 x+C_2=EIy
+\end{aligned}
 $$
 
 Apply boundary conditions at the fixed support:
 
 $$
-\begin{gathered} \text { At } x=L, \frac{\partial y}{\partial x}=0 \quad \rightarrow \quad \frac{w_0 L^4}{24 L}+C_1=0
-\\ c_1=\frac{w_0 L^3}{24}
-\\ \text { At } x=L, y=0 \quad \rightarrow \quad \frac{w_0 L^5}{120 L}+\frac{w_0 L^3}{24}(L)+C_2=0
-\\ C_2=\frac{w_0 L^4}{120}-\frac{w_0 L^4}{24}=-\frac{4 w_0 L^4}{120}=-\frac{w_0 L^4}{30} \end{gathered}
+\begin{aligned} \text { At } x=L, \frac{\partial y}{\partial x}=0 \quad \rightarrow \quad -~&\frac{w_0 L^4}{24 L}+C_1=0\\
+C_1&=\frac{w_0 L^3}{24}\\
+\\
+\text { At } x=L, y=0 \quad \rightarrow \quad -~&\frac{w_0 L^5}{120 L}+\frac{w_0 L^3}{24}(L)+C_2=0\\
+C_2&=\frac{w_0 L^4}{120}-\frac{w_0 L^4}{24}\\
+&=-\frac{4 w_0 L^4}{120}\\
+&=-\frac{w_0 L^4}{30} \end{aligned}
 $$
 
 Substitute these constants into the deflection equation and rearrange:
@@ -236,13 +244,17 @@ $$
 :::
 :::
 
-The above examples have single continuous loads. If the loading is discontinuous we must modify our approach as there will not be one single moment equation that describes the entire beam. We saw in @sec-7.3 when drawing shear force & bending moment diagrams that we can find a different equation for the internal bending moment in each loading region (i.e., a piecewise function over the length of the beam). We must find separate moment equations for each loading region and integrate each separately. This must be done each time the loading changes (a discontinuity in the moment diagram), such as:
+The above examples have single continuous loads. If the loading is discontinuous, we must modify our approach as there will not be one single moment equation that describes the entire beam. We saw in @sec-7.3 when drawing shear force & bending moment diagrams that we can find a different equation for the internal bending moment in each loading region (i.e., a piecewise function over the length of the beam). We must find separate moment equations for each loading region and integrate each separately. This must be done each time the loading changes, such as:
 
 -   Both sides of a concentrated load
 
 -   Whenever a distributed load begins or ends
 
-See @exm-11.3 for an example of a beam with 2 loading regions. Note that in this example we will need to determine 2 internal bending moment equations and integrate each equation twice, thereby introducing four constants of integration. Two of these can still be determined by using boundary conditions, but we still need to determine the other two. This is done with continuity conditions.
+This text will consider deflection of beams made of a single material with uniform cross-sections (i.e. elastic modulus, E, and 2nd moment of area, I, remain constant). In practice, changes in E and I also necessitate additional separate equations for each change.
+
+@fig-11.4 shows a beam with two loading regions. To fully describe the deflection in this beam we will need to determine 2 internal bending moment equations - one in segment AB and one in segment BC. Each equation will be integrated twice, thereby introducing four constants of integration. Two of these can still be determined by using boundary conditions, but we still need to determine the other two. This is done with continuity conditions.
+
+![The loading on the simply supported beam is different in segment AB than in segment BC. Each segment has its own bending moment equation that must be found and integrated.](images/CH11%20PNGs/example11.3-1.png){fig-align="center" width="257"}
 
 Equation set 1 describes the internal moment, slope, and deflection of the beam from point A to point B, and equation set 2 describes the internal moment, slope, and deflection from point B to point C. Note that both sets of equations describe point B, where the loading changes. They must therefore return the same results at point B. We can therefore say that
 
@@ -252,6 +264,8 @@ $$
 y_{1} & =y_{2}
 \end{aligned}
 $$
+
+See @exm-11.3 for the full solution for this beam.
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Example 11.3
@@ -287,10 +301,10 @@ Cut a cross-section in the first loading region at distance x~1~. Draw a free bo
 
 $$
 \begin{aligned}
-\sum &M_x=M_1+20 x_1\left(\frac{x_1}{2}\right)-80 x_1=0 \\
-&M_1=80 x_1-10 x_1^2=E I \frac{\partial^2 y_1}{\partial x_1^2} \\ 
-&\frac{80 x_1^2}{2}-\frac{10 x_1^3}{3}+c_1=E I \frac{\partial y_1}{\partial x_1} \\
-&\frac{80 x_1^3}{6}-\frac{10 x_1^4}{12}+C_1 x_1+c_2=E I y_1
+\sum M_x=&~M_1+20 x_1\left(\frac{x_1}{2}\right)-80 x_1=0 \\
+M_1&=80 x_1-10 x_1^2=E I \frac{\partial^2 y_1}{\partial x_1^2} \\ 
+\int M_1~dx&=\frac{80 x_1^2}{2}-\frac{10 x_1^3}{3}+c_1=E I \frac{\partial y_1}{\partial x_1} \\
+\int\int M_1~dx&=\frac{80 x_1^3}{6}-\frac{10 x_1^4}{12}+c_1 x_1+c_2=E I y_1
 \end{aligned}
 $$
 
@@ -302,11 +316,11 @@ Set these equations aside and cut a cross-section in the second loading region a
 
 $$
 \begin{aligned}
-\sum & M_x= M_2+120\left(x_2-3\right)-80 x_2=0 \\ 
-&M_2  =80 x_2-120 x_2+360 \\ 
-&M_2 =360-40 x_2=E I \frac{\partial^2 y_2}{\partial x_2^2} \\ 
-&360 x_2-\frac{40 x_2^2}{2}+c_3=E I \frac{\partial y_2}{\partial x_2} \\ 
-&\frac{360 x_2^2}{2}-\frac{40 x_2^3}{6}+c_3 x_3+c_4  =E I y_2
+\sum M_x=&~ M_2+120\left(x_2-3\right)-80 x_2=0 \\ 
+M_2&=80 x_2-120 x_2+360 \\ 
+M_2&=360-40 x_2=E I \frac{\partial^2 y_2}{\partial x_2^2} \\ 
+\int M_2~dx&=360 x_2-\frac{40 x_2^2}{2}+c_3=E I \frac{\partial y_2}{\partial x_2} \\ 
+\int\int M_2~dx&=\frac{360 x_2^2}{2}-\frac{40 x_2^3}{6}+c_3 x_3+c_4  =E I y_2
 \end{aligned}
 $$
 
@@ -315,13 +329,14 @@ These equations are valid from 6m ≤ x~2~ ≤ 9m:
 Apply bounding conditions at the supports. One support is in loading region 1 while the other is in region 2. Be careful to use the appropriate deflection equation when applying the boundary conditions:
 
 $$
-\begin{aligned} & \text { At } x_1=0, y_1=0 \quad \rightarrow \quad c_2=0 \\ & \text { At } x_2=9, y_2=0 \quad \rightarrow \quad \frac{360(9)^2}{2}-\frac{40(4)^3}{6}+c_3(9) +C_4=0 \\ & c_4=-9 c_3-9720\end{aligned}
+\begin{aligned}  \text { At } x_1=0, y_1=0 \quad \rightarrow \quad &c_2=0 \\
+\text { At } x_2=9, y_2=0 \quad \rightarrow \quad &\frac{360(9)^2}{2}-\frac{40(4)^3}{6}+c_3(9) +C_4=0 \\ & c_4=-9 c_3-9720\end{aligned}
 $$
 
 Apply continuity conditions at the point where the loading changes (x~1~ = x~2~ = 6 m):
 
 $$
-\begin{gathered} \text { At } x_1=x_2=6 \mathrm{~m}, \frac{\partial y_1}{\partial x_1}=\frac{\partial y_2}{\partial x_2} \quad \rightarrow \quad \frac{80(6)^2}{2}-\frac{10(6)^3}{3}+c_1=360(6)-\frac{40(6)^2}{2}+c_3 \\ 1440-720+c_1=2160-720+c_3 \\ C_1=720+C_3 \\ \\  \text { At } x_1=x_2=6 \mathrm{~m}, y_1=y_2 \quad \rightarrow \quad\frac{80(6)^3}{6}-\frac{10(6)^4}{12}+c_1(6)=\frac{360(6)^2}{2} - \frac{40(6)^3}{6}+c_3(6) +C_4 \\ 2880-1080+6 C_1=6480-1440+6 C_3+C_4 \\ 1800+6 C_1=5040+6 C_3+C_4 \\\end{gathered}
+\begin{gathered} \text { At } x_1=x_2=6 \mathrm{~m}, \frac{\partial y_1}{\partial x_1}=\frac{\partial y_2}{\partial x_2} \\ \frac{80(6)^2}{2}-\frac{10(6)^3}{3}+c_1=360(6)-\frac{40(6)^2}{2}+c_3 \\ 1440-720+c_1=2160-720+c_3 \\ C_1=720+C_3 \\ \\  \text { At } x_1=x_2=6 \mathrm{~m}, y_1=y_2 \\ \frac{80(6)^3}{6}-\frac{10(6)^4}{12}+c_1(6)=\frac{360(6)^2}{2} - \frac{40(6)^3}{6}+c_3(6) +C_4 \\ 2880-1080+6 C_1=6480-1440+6 C_3+C_4 \\ 1800+6 C_1=5040+6 C_3+C_4 \\\end{gathered}
 $$
 
 Substitute in C~4~ = -9C~3~ - 9720 and C~1~ = 720 + C~3~
@@ -352,34 +367,34 @@ $$
 \begin{aligned}
 y_1&=\frac{1}{EI} {\left[\frac{80{~kN}*(5{~m})^3}{6}-\frac{10~\frac{kN}{m}*(5{~m})^4}{12}-480{~kN}\cdot{m^2}*(5{~m})\right] \\
 =-\frac{1254 \times 10^3{~N}\cdot{m}^3}{200 \times 10^9~\frac{N}{m^2}*394 \times 10^{-6}{~m}^4} } \\
-y_1 & =-0.0159{~m} \\
-& =-15.9{~mm} \\
+y_1 & =-~0.0159{~m} \\
+& =-~15.9{~mm} \\
 \end{aligned}
 $$
 :::
 :::
 :::
 
-It is not required that we make both cuts from the left. In some cases it may be easier to make one cut from the left and the other from the right. Consider the simple beam in @fig-11.4. When making a cut in the region not under the distributed load, a free body diagram to the left of the cut has many more forces than a free body diagram of the right side.
+It is not required that we make both cuts from the left. In some cases it may be easier to make one cut from the left and the other from the right. Consider the beam in @fig-11.5. When making a cut in the region not under the distributed load, a free body diagram to the left of the cut has many more forces than a free body diagram of the right side.
 
-![Simple beam showing two options for finding the internal bending moment. Note that the moment equation will be much simpler if we draw the right hand side of the cut.](images/CH11%20PNGs/11.4.png){#fig-11.4 fig-align="center" width="448"}
+![Simple beam showing two options for finding the internal bending moment. Note that the moment equation will be much simpler if we draw the right hand side of the cut.](images/CH11%20PNGs/11.4.png){#fig-11.5 fig-align="center" width="448"}
 
 The moment equation will be much simpler if we draw the right hand side of the cut. This in turn simplifies the integrations and the math involved in finding the constants of integration. We must however make one change to our continuity conditions if we measure distance x~2~ from the right. When making both cuts from the left we said that at point C the slope and deflection from calculated from equation 1 must be the same as those calculated from equation 2.
 
 $$
 \begin{aligned}
-\left(\frac{d y}{d x}\right)_{1} & =\left(\frac{d y}{d x}\right)_{2} \\
+\left(\frac{\partial y}{\partial x}\right)_{1} & =\left(\frac{\partial y}{\partial x}\right)_{2} \\
 y_{1} & =y_{2}
 \end{aligned}
 $$
 
-When measuring distance x~2~ from the right, it is still true at point C that $y_1 = y_2$ as the deflection is still downwards regardless of whether we measure our horizontal distance from the left or right. The magnitude of the slope will also be the same at point C regardless of which equation we use to calculate it. However, the direction of rotation of the slope will change from counter-clockwise to clockwise due to us changing the coordinate system (@fig-11.5). Thus our second boundary condition must become
+When measuring distance x~2~ from the right, it is still true at point C that $y_1 = y_2$ as the deflection is still downwards regardless of whether we measure our horizontal distance from the left or right. The magnitude of the slope will also be the same at point C regardless of which equation we use to calculate it. However, the direction of rotation of the slope will change from counter-clockwise to clockwise due to us changing the coordinate system (@fig-11.6). Thus our second boundary condition must become
 
 $$
-\left(\frac{d y}{d x}\right)_{1}=-\left(\frac{d y}{d x}\right)_{2}
+\left(\frac{\partial y}{\partial x}\right)_{1}=-\left(\frac{\partial y}{\partial x}\right)_{2}
 $$
 
-![Depending on which side of the cut we draw, the deflection at point C will have the same magnitude and direction. The slope at point C will have the same magnitude but opposite directions if we make one cut from the left and the other from the right.](images/CH11%20PNGs/11.5.png){#fig-11.5 fig-align="center"}
+![Depending on which side of the cut we draw, the deflection at point C will have the same magnitude and direction. The slope at point C will have the same magnitude but opposite directions if we make one cut from the left and the other from the right.](images/CH11%20PNGs/11.5.png){#fig-11.6 fig-align="center"}
 
 This negative sign is vitally important, and we will not get the correct answer if we forget to include it. [Example 11.3](#example-11.3b) has been reworked below, this time with one cut made from the right hand side instead. Compare to the previous solution to see the differences.
 
@@ -406,12 +421,12 @@ Make second cut from right-hand-side. Draw a free body diagram and use equilibri
 ![](images/CH11%20PNGs/example11.3v2-2.png){fig-align="center" width="227"}
 
 $$
-\begin{gathered}
-\sum M_x= 40 x_2-M_2=0 \\
-M_2=40 x_2=EI\frac{\partial^2 y_2}{\partial x_2{ }^2} \\
-\frac{40 x_2^2}{2}+c_3=EI \frac{\partial y_2}{\partial x_2} \\
-\frac{40 x_2^3}{6}+c_3 x_2+c_4=E I y_2 \\
-\end{gathered}
+\begin{aligned}
+\sum M_x=&~40 x_2-M_2=0 \\
+M_2&=40 x_2=EI\frac{\partial^2 y_2}{\partial x_2^2} \\
+\int M_2~dx&=\frac{40 x_2^2}{2}+c_3=EI \frac{\partial y_2}{\partial x_2} \\
+\int\int M_2~dx&=\frac{40 x_2^3}{6}+c_3 x_2+c_4=E I y_2 \\
+\end{aligned}
 $$Apply boundary conditions as before, although this time the roller support is at x~2~ = 0 since we're measuring x~2~ from the right side:
 
 $$
@@ -421,7 +436,13 @@ $$
 Apply continuity conditions at the point where the loading changes (x~1~ = 6 m, x~2~ = 3 m):
 
 $$
-\begin{gathered} \text { At } x_1=6 \mathrm{~m}, x_2=3 \mathrm{~m}, y_1=y_2 \rightarrow \frac{80(6)^3}{6}-\frac{10(6)^4}{12}+ c_1(6)=\frac{40(3)^3}{6}+c_3(3) \\ 2880-1080+6 c_1=180+3 c_3 \\ 540+2 c_1=c_3 \\ \\ \text { At } x_1=6 \mathrm{~m},  x_2=3 \mathrm{m}, \frac{d y_1}{d x_1}=-\frac{d y_2}{d x_2} \rightarrow \frac{80(6)^2}{2}-\frac{10(6)^3}{3}+c_1=-\frac{40(3)^2}{2}-c_3 \\ 1440-720+c_1=-180-c_3 \\ 900+c_1=-c_3 \\\end{gathered}
+\begin{gathered} \text { At } x_1=6~m,~x_2=3~m,~y_1=y_2\\
+\\
+\frac{80(6)^3}{6}-\frac{10(6)^4}{12}+ c_1(6)=\frac{40(3)^3}{6}+c_3(3) \\ 2880-1080+6 c_1=180+3 c_3 \\ 540+2 c_1=c_3 \\
+\\
+\text { At } x_1=6~m,~x_2=3~m,~\frac{d y_1}{d x_1}=-\frac{d y_2}{d x_2} \\
+\\
+\frac{80(6)^2}{2}-\frac{10(6)^3}{3}+c_1=-\frac{40(3)^2}{2}-c_3 \\ 1440-720+c_1=-180-c_3 \\ 900+c_1=-c_3 \\\end{gathered}
 $$
 
 Substitute in 540 + 2c~1~ = c~3~:
@@ -431,7 +452,10 @@ $$
 $$
 
 $$
-900-480 =-c_3 \\ c_3 =-420
+\begin{aligned}
+& 900-480 =-c_3 \\ 
+& c_3 =-420
+\end{aligned}
 $$
 
 Substitute constants into deflection equations:
@@ -446,8 +470,8 @@ $$
 \begin{aligned}
 y_1&=\frac{1}{EI}{\left[\frac{80{~kN}*(5{~m})^3}{6}-\frac{10~\frac{kN}{m}*(5{~m})^4}{12}-480{~kN}\cdot{m}^2*(5{~m})\right] \\
 =-\frac{1254 \times 10^3{~N}\cdot{m}^3}{200 \times 10^9~\frac{N}{m^2}*394 \times 10^{-6}{~m}^4} } \\
-y_1 & =-0.0159{~m} \\
-& =-15.9{~mm}
+y_1 & =~-0.0159{~m} \\
+& =-~15.9{~mm}
 \end{aligned}
 $$
 :::
@@ -462,12 +486,18 @@ $$
 
 3.  Set the internal bending moment $M(x)=E I \frac{d^{2} y}{d x^{2}}$ and integrate twice.
 
-4.  Use boundary conditions to determine the two constants of integration.
+4.  Use boundary conditions to determine two constants of integration.
 
-    a.  At a fixed support, slope $\left(\frac{d y}{d x}\right)=0$
+    a.  At a fixed support, slope $\left(\frac{\partial y}{\partial x}\right)=0$
     b.  At any support, deflection $(\mathrm{y})=0$
 
-5.  Determine the slope and deflection at any value of x as required.
+5.  In cases where there is more than one region of load, apply continuity conditions to determine additional constants of integration. At the point where the loading changes:
+
+    a.  $\left(\frac{\partial y_1}{\partial x_1}\right)=\left(\frac{\partial y_2}{\partial x_2}\right)$
+
+    b.  $y_1=y_2$
+
+6.  Determine the slope and deflection at any value of x as required.
 :::
 
 </details>
@@ -478,13 +508,17 @@ $$
 
 <summary>Click to expand</summary>
 
+In the previous section we used equilibrium to determine the equation of the internal bending moment and integrated this equation twice. This works well for relatively simple loading such as concentrated loads and uniformly or linearly distributed loads. For more complex loads, such as that shown in @fig-11.7, it can be difficult to determine the internal bending moment equation in this way. However, it is possible to avoid the need to do so.
+
+![Complex external loads make it difficult to use equilibrium to determine the equation on the internal bending moment.](images/CH11%20PNGs/406%20(11.7).png){#fig-11.7 fig-align="center" width="500"}
+
 In @sec-11.1 we used equilibrium equations to determine the internal bending moment in a beam as a function of x. We related this bending moment to the deflection by
 
 $$
-M(x)=E I \frac{d^{2} y}{d x^{2}}
+M(x)=E I \frac{\partial ^{2} y}{\partial x^{2}}
 $$
 
-In @sec-7.2 we learned that there is a relationship between the internal bending moment, the internal shear force, and the external load. For an external distributed load, w, we found
+In @sec-7.2 we learned that there is a relationship between the internal bending moment, the internal shear force, and the external load. For an external distributed load, w, we found:
 
 $$
 V=\int_{0}^{L} w(x) d x
@@ -494,15 +528,15 @@ $$
 M=\int_{0}^{L} V(x) d x
 $$
 
-We may therefore relate the deflection of a beam to not only the internal bending moment, but also the internal shear force and external distributed load through successive integrations. For some loading configurations it can be much simpler to integrate the distributed load equation 4 times instead of finding the equation of the internal bending moment through equilibrium and integrating twice. When doing this, remember that loads acting downwards (as most loads on beams do) are negative.
+We may therefore relate the deflection of a beam to not only the internal bending moment, but also the internal shear force and external distributed load through successive integrations. For some loading configurations it can be simpler to integrate the distributed load equation 4 times instead of finding the equation of the internal bending moment through equilibrium and integrating twice. When doing this, remember that loads acting downwards (as most loads on beams do) are negative.
 
 $$
 \boxed{\begin{aligned}
-&w(x)=E I \frac{d^{4} y}{d x^{4}} \\
-&V(x)=E I \frac{d^{3} y}{d x^{3}}=\int w(x) d x+C 1 \\
-&M(x)=E I \frac{d^{2} y}{d x^{2}}=\int V(x) d x+C 2 \\
-&\theta(x)=E I \frac{d y}{d x}=\int M(x) d x+C 3 \\
-&y(x)=\int \theta(x) d x+C 4
+&w(x)=E I \frac{\partial^{4} y}{\partial x^{4}} \\
+&V(x)=E I \frac{\partial^{3} y}{\partial x^{3}}=\int w(x)~dx+C_1 \\
+&M(x)=E I \frac{\partial^{2} y}{\partial x^{2}}=\int V(x)~dx+C_2 \\
+&EI\theta(x)=E I \frac{\partial y}{\partial x}=\int M(x)~dx+C_3 \\
+&EIy(x)=\int \theta(x)~dx+C_4
 \end{aligned}}
 $$ {#eq-11.2}
 
@@ -585,7 +619,7 @@ $$
 
     b.  At $x=0$, the bending moment will be equal to the applied moment (including a moment applied by a fixed support) if there is one, or zero otherwise.
 
-    c.  At a fixed support, slope $\left(\frac{d y}{d x}\right)=0$
+    c.  At a fixed support, slope $\left(\frac{\partial y}{\partial x}\right)=0$
 
     d.  At any support, deflection $(\mathrm{y})=0$
 
@@ -602,13 +636,13 @@ $$
 
 It should be apparent from the previous sections that finding deflection using the method of integration can become quite complicated and time-consuming if there are multiple loads. In such cases, the method of superposition is a good alternative.
 
-Beams are typically loaded in a relatively small number of standard configurations, and the deflection behavior of a beam subjected to one of these standard loads is very well understood. A subset of beam deflections have been included in @sec-slope-and-deflection-tables. @fig-11.6 shows an example of the information provided for one such beam.
+Beams are typically loaded in a relatively small number of standard configurations, and the deflection behavior of a beam subjected to one of these standard loads is very well understood. The slope and deflection equations for many common loading conditions have been derived through the methods described in @sec-11.1 and @sec-11.2 and recorded. A subset of these beam deflections have been included in @sec-slope-and-deflection-tables. @fig-11.8 shows an example of the information provided for one such beam.
 
-![@sec-slope-and-deflection-tables contains some standard loading configurations along with a sketch of the elastic curve, equations for the maximum deflection and maximum slope, and the general equation of the elastic curve.](images/Updated%20appendices%20figures/figure%2011.6.png){#fig-11.6 fig-align="center"}
+![@sec-slope-and-deflection-tables contains some standard loading configurations along with a sketch of the elastic curve, equations for the maximum deflection and maximum slope, and the general equation of the elastic curve.](images/Updated%20appendices%20figures/figure%2011.6.png){#fig-11.8 fig-align="center"}
 
-This can be useful even for more complex loading. When multiple loads act on a beam, the effect of each load on the deflection of the beam may be considered independently. Thus, even for loading more complex than the loads in @sec-slope-and-deflection-tables, it may be possible to simplify the problem by considering each load separately and calculating the deflection caused at a point by each load (@fig-11.7). These deflections can then be added together to find the overall deflection at that point. We must of course calculate the deflection at the same point for each load in order to add them together. See @exm-11.5 for a demonstration.
+This can be useful even for more complex loading. When multiple loads act on a beam, the effect of each load on the deflection of the beam may be considered independently. Thus, even for loading more complex than the loads in @sec-slope-and-deflection-tables, it may be possible to simplify the problem by considering each load separately and calculating the deflection caused at a point by each load (@fig-11.9). These deflections can then be summed to find the overall deflection at that point. We must of course calculate the deflection at the same point for each load in order to add them together. See @exm-11.5 for a demonstration.
 
-![Although @sec-slope-and-deflection-tables doesn't contain a cantilever beam with both a distributed load and a concentrated load, it does contain cantilever beams with each load separately. We may find the combined deflection by finding the deflection of each load separately and adding them together.](images/CH11%20PNGs/11.7.png){#fig-11.7 fig-align="center"}
+![Although @sec-slope-and-deflection-tables doesn't contain a cantilever beam with both a distributed load and a concentrated load, it does contain cantilever beams with each load separately. We may find the combined deflection by finding the deflection of each load separately and adding them together.](images/CH11%20PNGs/11.7.png){#fig-11.9 fig-align="center"}
 
 $$
 \begin{aligned} y_w = - \frac{wL^4}{8EI} \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad &\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad y_F=-\frac{FL^3}{3EI} \\ y_{max}=-&\frac{wL^4}{8EI} - \frac{FL^3}{3EI} \end{aligned}
@@ -622,7 +656,7 @@ $$
 
 </p>
 
-A simply supported beam is subjected to a distributed load w = 10 kN/m and a concentrated load F = 50 kN. If distance a = 6 m and b = 2 m, determine the deflection at the midpoint of the beam (x = 4 m).
+A simply supported beam is subjected to a distributed load w = 20 kN/m and a concentrated load F = 50 kN. If distance a = 6 m and b = 2 m, determine the deflection at the midpoint of the beam (x = 4 m).
 
 Assume E = 210 GPa and I = 275 x 10^6^ mm^4^.
 
@@ -655,15 +689,17 @@ $$
 \begin{aligned}
 y&=\frac{Fb}{6EIL}\left[x^3-\left(L^2-b^2\right) x\right]\\
 &=\frac{50000{~N}*2{~m}}{6*210 \times 10^9~\frac{N}{m^2}*275 \times 10^{-6}{~m^4}* 8{~m}}\left[(4{~m})^3-\left((8{~m})^2-(2{~m})^2\right) 4{~m}\right] \\
-& =-0.00635{~m} \\
-& =-6.35{~mm}
+& =-~0.00635{~m} \\
+& =-~6.35{~mm}
 \end{aligned}
 $$
 
 The total deflection at the midpoint of the beam is
 
 $$
-\begin{aligned} & y=-18.47{~mm}-6.35{~mm} \\ & y=-24.8 \mathrm{~mm}\end{aligned}
+\begin{aligned} & y=-~18.47{~mm}-6.35{~mm} \\
+& y=-~24.8~mm
+\end{aligned}
 $$
 :::
 :::
@@ -689,7 +725,7 @@ $$
 
 <summary>Click to expand</summary>
 
-A problem is statically indeterminate if there are more unknown support reactions than there are equilibrium equations to solve for them. We have seen statically indeterminate problems in @sec-5.5 and @sec-6.3. In both sections we used a similar method to solve statically indeterminate problems where we took advantage of our knowledge of deformation in order to solve for one of the reaction forces before using equilibrium equations to find the others. We'll do something similar here. We may use either an integration method similar to that of @sec-11.1 or a superposition method similar to that of @sec-11.3.
+A problem is statically indeterminate if there are more unknown support reactions than there are equilibrium equations to solve for them. We have seen statically indeterminate problems in @sec-5.5 and @sec-6.3. In both sections we used a method to solve statically indeterminate problems where we took advantage of our knowledge of deformation in order to solve for one of the reaction forces before using equilibrium equations to find the others. We'll do something similar here. We may use either an integration method similar to that of @sec-11.1 or a superposition method similar to that of @sec-11.3.
 
 In practice, engineers design structures with redundancies so that if one part fails it can be replaced without the entire structure collapsing. As such, static indeterminacy is the norm.
 
@@ -719,7 +755,11 @@ Cut a cross-section and determine the internal bending moment in terms of distan
 ![](images/CH11%20PNGs/example11.6-3.png){fig-align="center"}
 
 $$
-\begin{gathered} \sum M_x=0: \quad M+\frac{w_0 x^2}{2 L}\left(\frac{x}{3}\right)-A_y x=0 \\ M=A_y x-\frac{w_0 x^3}{6 L}=EI \frac{\partial^2 y}{\partial x^2} \\ \frac{A_y x^2}{2}-\frac{w_0 x^4}{24 L}+c_1=E I \frac{\partial y}{\partial x} \\ \frac{A_y x^3}{6}-\frac{w_0 x^5}{120 L}+c_1 x+c_2=E I y\end{gathered}
+\begin{aligned}
+\sum M_x=&~M+\frac{w_0 x^2}{2 L}\left(\frac{x}{3}\right)-A_y x=0 \\
+M&=A_y x-\frac{w_0 x^3}{6 L}=EI \frac{\partial^2 y}{\partial x^2} \\
+\int M~dx&=\frac{A_y x^2}{2}-\frac{w_0 x^4}{24 L}+c_1=E I \frac{\partial y}{\partial x} \\ 
+\int\int M~dx&=\frac{A_y x^3}{6}-\frac{w_0 x^5}{120 L}+c_1 x+c_2=E I y\end{aligned}
 $$
 
 We have 3 unknowns (A~y~, c~1~, c~2~) and 3 boundary conditions (at the roller, deflection equals zero. At the fixed support, both slope and deflection equal zero). Apply the boundary conditions:
@@ -749,11 +789,11 @@ $$
 :::
 :::
 
-This method works well for beams with a single continuous load. While it can be used for more complex loads, it quickly becomes complicated and time consuming. For these problems it is generally better to use superposition.
+This method works well for beams with a single continuous load. While it can be used for more complex loads, it quickly becomes complicated and time consuming. For these cases, superposition is recommended.
 
-The method is very similar to the methods used to solve other statically indeterminate problems in @sec-5.5 and @sec-6.3. To solve a statically indeterminate deflection problem using superposition, first identify the redundant support. We have 3 equilibrium equations and so can solve for three unknown support reactions. Any support reactions beyond this are redundant. Remove the redundant reaction and determine the deflection due to the applied loads at the point that the reaction was removed. It is best to remove a support such that the remaining beam is either simply supported or cantilever as these are the only support configuration in @sec-slope-and-deflection-tables.
+The method is very similar to the methods used to solve other statically indeterminate problems in @sec-5.5 and @sec-6.3. To solve a statically indeterminate deflection problem using superposition, first identify the redundant support. We have 3 equilibrium equations and so can solve for three unknown support reactions. Any support reactions beyond this are redundant. Remove the redundant reaction(s) and determine the deflection due to the applied loads at the point(s) that the reaction(s) were removed. It is best to remove a support such that the remaining beam is either simply supported or cantilever as these are the only support configuration in @sec-slope-and-deflection-tables.
 
-Then replace the redundant reaction and determine the deflection due to this reaction and the point that the reaction is applied. Since there is actually a support here, the total deflection must be zero. Sum both deflections and set them equal to zero. This will allow you to calculate the value of the redundant support. Once this is known the other reaction loads can be determined using equilibrium. See @exm-11.7 for a demonstration.
+Then replace the redundant reaction(s) and determine the deflection due to this reaction at the point that the reaction is applied. Since there is actually a support here, the total deflection must be zero. Sum both deflections and set them equal to zero. This will allow you to calculate the value of the redundant support. Once this is known, the other reaction loads can be determined using equilibrium. See @exm-11.7 for a demonstration.
 
 ::: {#example-11.7 .callout-tip collapse="true" icon="false"}
 ## Example 11.7
@@ -817,14 +857,14 @@ It is possible to remove a moment reaction in order to leave a simply supported 
 
 The propped cantilever beam of @exm-11.6 is shown again here. If length L = 6 ft is subjected to a linear distributed load where w~0~ = 20 kips/ft. Determine the reactions at supports A and B.
 
-![](images/CH11%20PNGs/example11.7v2-1.png){fig-align="center" width="351"}
+![](images/CH11%20PNGs/example11.7v2-1.png){fig-align="center" width="300"}
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Solution
 
 This time we'll remove the moment reaction at B to leave a simply supported beam.
 
-![](images/CH11%20PNGs/example11.7v2-2.png){fig-align="center" width="348"}
+![](images/CH11%20PNGs/example11.7v2-2.png){fig-align="center" width="304"}
 
 Finding the deflection at B would not help as it would simply be zero. Instead, use @sec-slope-and-deflection-tables to find the slope at B.
 
@@ -834,7 +874,7 @@ $$
 
 Now replace the moment reaction at B and use @sec-slope-and-deflection-tables to find the slope at B due to this moment.
 
-![](images/CH11%20PNGs/example11.7v2-3.png){fig-align="center" width="358"}
+![](images/CH11%20PNGs/example11.7v2-3.png){fig-align="center" width="334"}
 
 $$
 \theta_B=-\frac{M_B L}{3 E I}
@@ -874,11 +914,11 @@ Note that some problems may involve multiple redundant reactions. In such cases,
 
 2.  Determine the deflection at the point that the reaction was removed. Use superposition if possible, or integration otherwise.
 
-    1.  If the removed reaction was a couple, determine the slope at this point instead.
+    1.  If the removed reaction was a moment, determine the slope at this point instead.
 
 3.  Replace the redundant reaction and determine the deflection caused by this load at the point that the load acts.
 
-    1.  If the removed reaction was a couple, determine the slope at this point instead.
+    1.  If the removed reaction was a moment, determine the slope at this point instead.
 
 4.  These deflections (or slopes) must add up to the total deflection at this point. This is typically zero due to the support unless indicated otherwise. Use this to determine the magnitude of the redundant reaction.
 
@@ -887,13 +927,13 @@ Note that some problems may involve multiple redundant reactions. In such cases,
 
 </details>
 
-## Intermediate Beam design {#sec-11.5}
+## Beam Design for Bending, Shear, and Deflection {#sec-11.5}
 
 <details>
 
 <summary>Click to expand</summary>
 
-In @sec-9.2 we learned how to use the section modulus to design a beam to meet bending stress specifications. In practice, beams must also meet specifications for shear stress and deflection. Limitations will be placed on all three of these criteria and we must design our beams to meet all three simultaneously. We'll begin with rectangular cross-sections and then move on to W beams.
+In @sec-9.2 we learned how to use the section modulus to design a beam to meet bending stress specifications. In practice, beams must also meet specifications for shear stress and deflection. Limitations will be placed on all three of these criteria and we must design our beams to meet all three simultaneously. We'll begin with rectangular cross-sections and then move on to standard beams using @sec-geometric-properties-of-standard-beams.
 
 As in @sec-9.2, problems involving rectangular cross-sections will typically relate the base and height of the cross-section such that we only need to determine one dimension. Previously we designed the cross-section to resist bending stress using:
 
@@ -903,9 +943,9 @@ $$
 
 Since $I=\frac{b h^{3}}{12}$ and $c=\frac{h}{2}$ we were able to determine the required dimensions to meet the minimum required section modulus. The equation $S=\frac{I}{c}$ will simplify to $S=\frac{\frac{b h^{3}}{12}}{\frac{h}{2}}=\frac{2 b h^{3}}{12 h}=\frac{b h^{2}}{6}$ for a rectangle.
 
-To meet the minimum required shear stress we will use $\tau=\frac{V Q}{I t}$. Using the method of @sec-10.1, it can be shown for a rectangle (@fig-11.8) that $Q=y A=\frac{h}{4} \frac{b h}{2}=\frac{b h^{2}}{8}$. Since $I=\frac{b h^{3}}{12}$ and $\mathrm{t}=\mathrm{b}$, we can re-write the shear stress equation to find the maximum shear stress in a rectangular cross-section as $\tau_{\max }=\frac{V \frac{b h^{2}}{8}}{\frac{b h^{3}}{12} b}=\frac{12 V b h^{2}}{8 b^{2} h^{3}}=\frac{12 V}{8 b h}=\frac{3}{2} \frac{V}{A}$.
+To meet the minimum required shear stress we will use $\tau=\frac{V Q}{I t}$. Using the method of @sec-10.1, it can be shown for a rectangle (@fig-11.10) that $Q=y A=\frac{h}{4} \frac{b h}{2}=\frac{b h^{2}}{8}$. Since $I=\frac{b h^{3}}{12}$ and $\mathrm{t}=\mathrm{b}$, we can re-write the shear stress equation to find the maximum shear stress in a rectangular cross-section as $\tau_{\max }=\frac{V \frac{b h^{2}}{8}}{\frac{b h^{3}}{12} b}=\frac{12 V b h^{2}}{8 b^{2} h^{3}}=\frac{12 V}{8 b h}=\frac{3}{2} \frac{V}{A}$.
 
-![Rectangular cross-section showing the dimensions used for calculating the section modulus (S) and first moment of area (Q).](images/CH11%20PNGs/11.8.png){#fig-11.8 fig-align="center" width="346"}
+![Rectangular cross-section showing the dimensions used for calculating the section modulus (S) and first moment of area (Q).](images/CH11%20PNGs/11.8.png){#fig-11.10 fig-align="center" width="270"}
 
 Thus we may set $\tau_{\max }=\frac{3}{2} \frac{V}{A}$ and solve for the required dimensions to not exceed the maximum allowable shear stress.
 
@@ -927,14 +967,14 @@ Assume the beam has an allowable bending stress of 900 psi, an allowable shear s
 
 The beam has a rectangular cross-section where h = 1.5b. Determine the minimum required dimensions of the beam's cross-section to meet these specifications. Give your answer rounded up to the nearest inch to allow for realistic manufacturing tolerances.
 
-![](images/CH11%20PNGs/example11.8-1.png){fig-align="center" width="467"}
+![](images/CH11%20PNGs/example11.8-1.png){fig-align="center" width="423"}
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Solution
 
 Start by drawing shear force and bending moment diagrams to determine the maximum internal loads:
 
-![](images/CH11%20PNGs/example11.8-2.png){fig-align="center" width="418"}
+![](images/CH11%20PNGs/example11.8-2.png){fig-align="center" width="323"}
 
 V~max~ = 9 kips
 
@@ -943,19 +983,23 @@ M~max~ = 27 kip·ft
 Design for bending by using the minimum required section modulus, S~min~:
 
 $$
-S_{min}=\frac{M_{max}}{\sigma_{allow}}=\frac{27000{~lb}\cdot{ft}*12~\frac{in.}{ft}}{900~\frac{lb}{in.^2}}=360{~in.^3} \\
-360{~in.^3}=\frac{b h^2}{6}=\frac{b(1.5b)^2}{6}=\frac{2.25 \mathrm{~b}^3}{6} \\ 
- b =9.805{~in.}
+\begin{aligned}
+& S_{min}=\frac{M_{max}}{\sigma_{allow}}=\frac{27000{~lb}\cdot{ft}*12~\frac{in.}{ft}}{900~\frac{lb}{in.^2}}=360{~in.^3} \\
+& 360{~in.^3}=\frac{b h^2}{6}=\frac{b(1.5b)^2}{6}=\frac{2.25 \mathrm{~b}^3}{6} \\ 
+& b =9.865{~in.}
+\end{aligned}
 $$
 
 Design for shear:
 
 $$
-\tau_{max}=\frac{3}{2} \frac{V}{A} \\
-180~\frac{lb}{in.^2}=\frac{3}{2}*\frac{9000{~lb}}{A} \\
-A=\frac{3}{2}*\frac{9000{~lb}}{180~\frac{lb}{in.^2}}=75{~in.^2} \\
-75{~in.^2}=b h=b(1.5 b)=1.5 b^2 \\ 
-b=7.071{~in.}
+\begin{aligned}
+& \tau_{max}=\frac{3}{2} \frac{V}{A} \\
+& 180~\frac{lb}{in.^2}=\frac{3}{2}*\frac{9000{~lb}}{A} \\
+& A=\frac{3}{2}*\frac{9000{~lb}}{180~\frac{lb}{in.^2}}=75{~in.^2} \\
+& 75{~in.^2}=b h=b(1.5 b)=1.5 b^2 \\ 
+& b=7.071{~in.}
+\end{aligned}
 $$
 
 Design for deflection:
@@ -990,7 +1034,7 @@ $$
 :::
 :::
 
-For W beams we can again use the method of @sec-9.2 to select a beam from @sec-geometric-properties-of-standard-beams that meets the specifications for bending stress. Use $S_{\min }=\frac{M_{\max }}{\sigma_{allow}}$ and select a beam with $\mathrm{S}>\mathrm{S}_{\min }$.
+For standard beams we can again use the method of @sec-9.2 to select a beam from @sec-geometric-properties-of-standard-beams that meets the specifications for bending stress. Use $S_{\min }=\frac{M_{\max }}{\sigma_{allow}}$ and select a beam with $\mathrm{S}>\mathrm{S}_{\min }$.
 
 Next determine the equation for the maximum deflection of the beam under the given loading conditions. As before, use superposition and @sec-slope-and-deflection-tables whenever possible. Set the maximum allowable deflection equal to this equation and solve for the minimum required area moment of inertia, $I_{\min }$. Now select the lightest beam from @sec-geometric-properties-of-standard-beams that meets both $S_{\min }$ and $I_{\min }$.
 
@@ -1010,14 +1054,14 @@ Assume the beam has an allowable bending stress of 150 MPa, an allowable shear s
 
 Select the lightest weight W-beam from @sec-geometric-properties-of-standard-beams that meets these specifications.
 
-![](images/CH11%20PNGs/example11.9-1.png){fig-align="center" width="351"}
+![](images/CH11%20PNGs/example11.9-1.png){fig-align="center" width="215"}
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Solution
 
 Load is symmetric, so each support will hold half the load. Draw shear force and bending moment diagrams to find the maximum internal loads.
 
-![](images/CH11%20PNGs/example11.9-2.png){fig-align="center" width="342"}
+![](images/CH11%20PNGs/example11.9-2.png){fig-align="center" width="231"}
 
 V~max~ = 75 kN
 
@@ -1034,7 +1078,7 @@ $$
 
 Design for deflection:
 
-We know the maximum deflection is limited to 40 mm (0.04 m) and the beam will deflect downward. From @sec-material-properties we can see the maximum deflection for both the concentrated load and the distributed load occur in the same place. We can therefore add the two maximum deflection equations together and solve for the area moment of inertia.
+We know the maximum deflection is limited to 40 mm (0.04 m) and the beam will deflect downward. From @sec-slope-and-deflection-tables we can see the maximum deflection for both the concentrated load and the distributed load occur in the same place. We can therefore add the two maximum deflection equations together and solve for the area moment of inertia.
 
 $$
 \begin{aligned}
@@ -1057,26 +1101,27 @@ $$
 Options include:
 
 $$
-\begin{aligned}&W310\times143\quad(S=2150\times10^3~mm^3,I=347\times10^6~mm^4)\\
-&W360\times216\quad(S=3800\times10^3~mm^3,I=712\times10^6~mm^4)\\
-&W410\times114\quad(S=2200\times10^3~mm^3,I=462\times10^6~mm^4)\\
+\begin{aligned}&W310\times158\quad(S=2380\times10^3~mm^3,I=388\times10^6~mm^4)\\
+&W360\times134\quad(S=2340\times10^3~mm^3,I=416\times10^6~mm^4)\\
 &W460\times113\quad(S=2390\times10^3~mm^3,I=554\times10^6~mm^4)\\
-&W530\times150\quad(S=3720\times10^3~mm^3,I=1010\times10^6~mm^4)\\
-&W610\times101\quad(S=2520\times10^3~mm^3,I=762\times10^6~mm^4)\end{aligned}
+&W530\times101\quad(S=2290\times10^3~mm^3,I=616\times10^6~mm^4)\\
+&W610\times125\quad(S=3210\times10^3~mm^3,I=986\times10^6~mm^4)\\
+&W760\times147\quad(S=4410\times10^3~mm^3,I=1660\times10^6~mm^4)\\
+\end{aligned}
 $$
 
 Select the lightest of these beams.
 
-**Use W610 x 101.**
+**Use W530 x 101.**
 
 Check the estimated shear stress to make sure that there's no risk of exceeding the allowable shear stress:
 
 $$
 \begin{aligned}
-{\text{For }}W610\times 101, A_{web}&=t_w d \\
-&=0.0105{~m}*0.602{~m} \\
-&=0.006321{~m}^2 \\
-\tau=\frac{v_{max}}{A_{web}}=\frac{75000{~N}}{0.006321{~m^2}}&=11.9{~MPa}
+{\text{For }}W530\times 101, A_{web}&=t_w d \\
+&=0.01098{~m}*0.536{~m} \\
+&=0.0058853{~m}^2 \\
+\tau=\frac{v_{max}}{A_{web}}=\frac{75000{~N}}{0.0058853{~m^2}}&=12.7{~MPa}
 \end{aligned}
 $$
 
@@ -1098,7 +1143,7 @@ Since $\tau_{Allow}=100 ~MPa$ this will be fine. The estimated shear stress is n
 
 4.  Use the largest of the three calculated dimensions as these will be the smallest dimensions that meet all three requirements.
 
-**W-beams**
+**Standard beams**
 
 1.  Determine minimum required section modulus, $S_{\min }=\frac{M_{\max }}{\sigma_{allow}}$.
 

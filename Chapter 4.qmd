@@ -22,17 +22,17 @@ editor: visual
 
 <summary>Click to expand</summary>
 
-Engineering design of structures meant to carry load often involves the determination of geometries and sizes of the components involved that will be needed to meet the design requirements. Possible design criteria might be that the structure be capable of carrying anticipated loads without failure (e.g., an aircraft wing), that it be stiff enough to only deflect by a limited amount (e.g., a building girder), or that the material returns to its original configuration when the loading is removed (e.g., a 5 MPH bumper). Meeting these criteria requires us to understand the behavior of the material or materials that are being used within the structure. Exploring several of these basic mechanical properties is the focus of this chapter. An understanding of material behavior and these mechanical properties will enable us to relate stresses to strains, temperature change to strains, and explore the coupling that exists when subjecting materials to an arbitrary stress states.
+Design of engineering structures meant to carry load often involves the determination of geometries and sizes of the components involved that will be needed to meet the design requirements. Possible design criteria might be that the structure be capable of carrying anticipated loads without failure (e.g., an aircraft wing), that it be stiff enough to only deflect by a limited amount (e.g., a building girder), or that the material returns to its original configuration when the loading is removed (e.g., a "5 MPH bumper", which should return to its original configuration if impacted at up to 5 MPH). Meeting these criteria requires us to understand the behavior of the material or materials that are being used within the structure. Exploring several of these basic mechanical properties is the focus of this chapter. An understanding of material behavior and these mechanical properties will enable us to relate stresses to strains, temperature change to strains, and explore the coupling that exists when subjecting materials to an arbitrary stress state.
 
 The material properties described in this chapter will vary among materials. Material properties can be measured and recorded for reference in engineering handbooks. Some useful material properties for common engineering materials are recorded in @sec-material-properties.
 
-For the purposes of this book as we learn the principles, we assume that mechanical properties are constant, i.e. independent of temperature, rate of loading, etc.. This assumption works well for many engineering materials such as steel and aluminum at moderate temperatures, but temperature and rate dependence can be important at very high temperatures. Polymers, including plastics, rubber, etc. are known for their significant temperature and time or rate dependence, sometimes at common use temperatures, complicating the ability to tabulate these properties in a simple table. Practicing engineers often need to recognize and address such complications as they work with such materials.
+For the purposes of this book as we learn the principles, we assume that mechanical properties are constant, i.e. independent of temperature, rate of loading, etc.. This assumption works well for many engineering materials such as steel and aluminum at moderate temperatures, but temperature and rate dependence can be important at very high temperatures. Polymers, including plastics, rubber, etc. are known for their significant temperature and time or rate dependence, sometimes at common use temperatures, complicating presenting these properties in a simple table. Practicing engineers often need to recognize and address such complications as they work with such materials.
 
-Of particular importance is that materials in this text are assumed to be isotropic—that is, they have the same properties when loaded in different directions. Anisotropic materials, which display different properties depending on the direction of loading, are quite common but are beyond the scope of this text.
+Of particular importance is that materials in this text are assumed to be isotropic—that is, they have the same properties in all directions. Many metals, polymers, concrete, and ceramics, including as discussed in this book, are often considered to be isotropic. Anisotropic materials, which display different properties depending on the direction of loading, are quite common but are beyond the scope of this text. Examples include wood, fiber reinforced plastics such as fishing rods or airplane wing skins, and biological tissues such as tendon.
 
 @sec-4.1 discusses a common method of determining mechanical properties, known as the Tensile Test. The output of the Tensile Test - the Stress-Strain Diagram - is analyzed in @sec-4.2.
 
-Important mechanical relationships Hooke's Law, which relates stress to strain, and Poisson's ratio, which relates normal strain in the axial and lateral directions, are covered in @sec-4.3 and @sec-4.4.
+Important mechanical relationships, including Hooke's Law, which relates stress to strain, and Poisson's ratio, which relates normal strain in the axial and lateral directions, are covered in @sec-4.3 and @sec-4.4, respectively.
 
 @sec-4.5 considers the relationship between shear stress and shear strain and @sec-4.6 introduces the concept of thermal strain. In @sec-4.7 we expand Hooke's Law from @sec-4.3 to the general three-dimensional case.
 
@@ -48,19 +48,19 @@ Finally, in @sec-4.8, we consider applying a factor of safety to our designs to 
 
 A common method of measuring mechanical properties of materials is the tensile test, which involves placing a cylinder or bar of material in a load frame (such as shown in @fig-4.1 (A)) and subjecting the specimen to tensile loading. These load frames are designed in such a manner that they can mechanically extend the tensile bar, often to failure, while measuring both the imposed load and the specimen deformation. These quantities for the specimen are then used to determine the local or material level behavior of stress and strain by using the relationships covered in @sec-stress and @sec-strain. These latter quantities are often essential in engineering design because properties from appropriate tests on laboratory specimens may be used to predict the behavior of much more complex engineering components.
 
-During a typical tensile test, a specimen (such as shown in @fig-4.1 (B)) is mounted in grips that are then separated at a prescribed displacement rate. To determine stress, the recorded force at any time is divided by the cross-sectional area of the specimen. Because of the likelihood of failures at the grip due to concentrations of stress, specimens are typically "waisted" to form dogbone or dumbbell shapes. Large fillets are used to reduce stress concentrations associated with the different areas (See @sec-5.2), and failure will typically occur within the narrowed region of the specimen due to the smaller cross-sectional area. This region is often referred to as the "gage region" as this becomes the area of interest for the specimen. In addition, this specimen produces a uniform uniaxial stress state within this gage region of the specimen. The normal stress within this region is determined by:
+During a typical tensile test, a specimen (such as shown in @fig-4.1 (B)) is mounted in grips that are then separated at a prescribed displacement rate. To determine stress, the recorded force at any time is divided by the cross-sectional area of the specimen. Because of the likelihood of failures at the grip due to concentrations of stress, specimens are typically "waisted" to form dogbone or dumbbell shapes. Large fillets are used to reduce stress concentrations associated with the different areas (See @sec-5.2), and failure will typically occur within the narrowed region of the specimen due to the smaller cross-sectional area. This region is often referred to as the gage length as this becomes the area of interest for the specimen. In addition, this specimen produces a uniform uniaxial stress state within this gage region of the specimen. The normal stress within this region is determined by:
 
 $$
 \sigma=\frac{F}{A}
 $$
 
-To determine strain, devices such as mechanical extensometer's (see @fig-4.1 (C)) are mounted on the specimen, measuring the deflection and dividing it by the original distance between the contact points.  The axial normal strain is determined by dividing the measured extension by the active length of the strain measuring device, typically a portion of the gage section of the specimen:
+To determine strain, devices such as mechanical extensometer's (see @fig-4.1 (C)) are mounted on the specimen, measuring the deflection and dividing it by the original distance between the contact points.  Electrical resistance strain gages or optical methods, such as Digital Image Correlation (DIC) offer alternative means to determine strain. The axial normal strain is determined by dividing the measured extension by the active length of the strain measuring device, typically a portion of the gage section of the specimen:
 
 $$
 \varepsilon=\frac{\Delta L}{L}
 $$
 
-![Tensile tests are a common means to measure mechanic properties of materials. (A) Illustration of a tensile test frame. (B) Left to right: Examples of steel, aluminum, poly(vinyl chloride), and poly(methyl methacrylate) tensile specimens. (C) Image of a circular steel specimen mounted in grips and instrumented with a clip-on extensometer.](images/CH4%20PNGs/4.1%20new.png){#fig-4.1 fig-align="center"}
+![Tensile tests are a common means to measure mechanic properties of materials. (A) Illustration of a tensile test frame. (B) Left to right: Examples of steel, aluminum, poly(vinyl chloride), and poly(methyl methacrylate) tensile specimens. (C) Image of a circular steel specimen mounted in grips and instrumented with a clip-on extensometer.](images/CH4%20PNGs/4.1%20new.png){#fig-4.1 fig-align="center" width="622"}
 
 </details>
 
@@ -70,21 +70,21 @@ $$
 
 <summary>Click to expand</summary>
 
-The goal in conducting tests of materials, such as the tensile test described above, is to learn qualitatively how the specimen responds and to quantitatively determine important mechanical properties of the material.
+The goal in conducting tests of materials, such as the tensile test described above, is to learn qualitatively how the specimen responds to the applied loads and to quantitatively determine important mechanical properties of the material.
 
-As discussed in the introduction to this chapter, these material properties will be assumed to be constant in this text and so, once determined from a test specimen, can be used to design and analyze components made of that same material. @sec-material-properties contains material properties for a selection of these materials.
+As discussed in the introduction to this chapter, these material properties will be assumed to be constant in this text and so, once determined from a test specimen, can be used to design and analyze components made of that same material. @sec-material-properties contains material properties for a selection of these materials. Again, caution is needed as these properties can vary, sometimes substantially, depending on temperature, loading rate, prior loading history, and other factors.
 
-@fig-4.2 (A) illustrates representative stress-strain behavior for several engineering materials.
+@fig-4.2 (A) illustrates representative stress-strain behavior for several engineering materials obtained from specimens loaded at relatively slow strain rates.  Each material initially experiences a linear relationship between stress and strain, represented as a straight line on the stress/strain diagram. Some materials, such as cast iron fail at relatively small strains, whereas other materials, such as high density polyethylene (HDPE) often used for milk jugs, go to very large strains well beyond the axis limit.  Figure 4.2 (B)  shows the same data but plotted only up to a maximum strain of 5%.  This zoomed in version highlights several features: 1) many materials often exhibit a linear stress-strain behavior up to some limiting stress (or strain) level, known as the proportional limit; 2) Most of these materials exhibit a transition from this initial linear region to a more consistent plateau value (at what we will be defining as the yield strength); and that while the slope or stiffness (which we will define as the modulus) of materials can vary widely as one goes from metals to engineering plastics.  Figure 4.2 (C) shows the failure region of an aluminum alloy specimen tested to failure, illustrating a common failure mode.
 
-![Results obtained from tensile tests. (A) Illustration of a typical stress-strain behavior for some common materials. Temperatures denote anneal temperatures. (B) Tensile test of an AlMgSi alloy. This is a ductile fracture type, as seen by the local necking and the cup and cone fracture surfaces.](images/Chapter%204%20edits%20v2/figure%204.2%20v2.png){#fig-4.2 fig-align="center"}
+![Results obtained from tensile tests. (A) Illustration of a typical stress-strain behavior for some common materials. Temperatures denote anneal temperatures. (B) Same data plotted up to 5% strain.  (C) Tensile test of an AlMgSi alloy. This is a ductile fracture type, as seen by the local necking and the cup and cone fracture surfaces.](images/v3.png){#fig-4.2 fig-align="center"}
 
-Each material initially experiences a linear relationship between stress and strain, represented as a straight line on the stress/strain diagram. This linear portion is referred to as elastic deformation. One important property of elastic deformation is that if an object is loaded into the elastic region (causing a certain amount of stress and strain) and the load is subsequently removed, the object will return to its original dimensions.
+Alhough not evident in Figure 4.2 because specimens were not unloaded prior to break, engineering materials often return to zero strain when stress is removed, provided the stress does not exceed a stress equal to the elastic limit.   Within this elastic region of material response, the object will return to its original dimensions when loads are removed. Although some materials, such as rubber, may be considered elastic even if their stress-strain behavior is nonlinear, many other engineering materials often exhibit linear stress-strain behavior within the elastic region. 
 
-Materials such as glass, silicon wafers, and concrete tend to be quite brittle, breaking prior to significant permanent or plastic deformation. The behavior remains nearly linear until failure, an attribute of brittle materials. On the other hand, certain copper alloys, mild steel, and many polymers are often quite ductile, meaning that there is considerable plastic deformation beyond some limiting value of stress or strain. Unless a material is perfectly brittle, there will be a certain point beyond which the relationship between stress and strain becomes nonlinear, represented by a curve departing from linear elastic behavior on the stress/strain diagram. This nonlinear (often curved) portion is referred to as plastic deformation. If an object is loaded into the plastic region and the load is subsequently removed, any plastic deformation is permanent, and the object will not return to its original dimensions.
+Materials such as glass, silicon wafers, and concrete tend to be quite brittle, breaking prior to significant permanent or plastic deformation. The behavior remains nearly linear until failure, an attribute of brittle materials. On the other hand, certain copper or aluminum alloys, mild steel, and many polymers are often quite ductile, meaning that there is considerable plastic deformation beyond some limiting value of stress or strain. Unless a material is perfectly brittle, the stress-strain relationship will cease to be linear, as evidenced by departures from linear elastic behavior on the stress/strain diagram. This nonlinear (often curved) portion is typically irrecoverable and is referred to as plastic deformation. If an object is loaded into the plastic region and the load is subsequently removed, any plastic deformation is permanent, and the object will not return to its original dimensions.
 
 The transition between the linear region of the stress-strain curve and the subsequent behavior marks an important engineering property of the material known as the yield stress. Although considerable variations are seen among different materials, yielding is typically defined as the region within which relatively small increases in stress are associated with relatively large increases in strain. The yield strength of the material is a very important design parameter, as many engineering components are designed to operate within the linear region of material response, and hence remain elastic, i.e., the ability to return to their original configuration when loading is removed. You likely have experienced material yielding if you have ever deformed a coat hanger or paperclip such that it does not return to the original state. Such behavior is undesirable for many engineering components designed to continue operating in their original state. On the other hand, plastic deformation following yielding can be very important in terms of the fabrication process. For example sheets of steel or aluminum can be placed between molds and compressed under high pressure to deform them into the shape of an automobile panel as seen in @fig-4.3 (A), an illustration of where plastic deformation is very important. Plastic deformation can also be useful in absorbing energy, such as seen in the concertina crushing of a structural component for an automobile (see @fig-4.3 (B)). This book, however, will focus on the pre-yield, linear elastic region.
 
-![Engineering materials are often loaded beyond yield to permanently deform the material, as in (A) the stamping process for an automotive panel or in (B) the crushing of a weld-bonded hat section used to absorb energy in an automobile accident.](images/Chapter%204%20figure%20edits/figure%204.3.png){#fig-4.3 fig-align="center"}
+![Engineering materials are often loaded beyond yield to permanently deform the material, as in (A) the stamping process for an automotive panel or in (B) the crushing of a weld-bonded hat section used to absorb energy in an automobile accident.](images/Chapter%204%20figure%20edits/figure%204.3.png){#fig-4.3 fig-align="center" width="576"}
 
 Sometimes the yield region is further described by three distinct points on the stress/strain curve. The proportional limit marks the point where the relationship between stress and strain stops being linear. The elastic limit marks the point beyond which materials do not return to their original state. The yield point is typically defined using the 0.2% offset method where a straight line beginning at a strain of 0.002 (0.2%) and running parallel to the linear portion of the diagram is drawn. The point where this line intersects the stress/strain curve is defined as the yield point. Since these three points for a material often occur within a fairly narrow range of one another, this text will refer to these three points collectively as yielding, and will define the stress at this point as the yield strength. @fig-4.4 illustrates these definitions.
 
@@ -126,7 +126,7 @@ $$ {#eq-4.1}
 
 It is especially important to note that this relationship is only applicable within the linear elastic region of the material’s response. Use of this relationship beyond this region can lead to serious design mistakes. One should note that this proportionality, applicable at the material level for stress and strain, also extends to structural elements, such as bars in tension or compression, beam deflections, helical springs in which the force and deflection are related by the spring constant, and many other engineering components and structures, as will be covered in the following chapters of the book.
 
-![Illustration of the initial linear elastic portions of the sress strain curce and slopes corresponding to (a) Young's modulus for uniaxial tension; (b) shear modulus for pure shear loading](images/CH4%20PNGs/4.6.png){#fig-4.5 fig-align="center" width="486"}
+![Illustration of the initial linear elastic portions of the sress strain curce and slopes corresponding to (a) Young's modulus for uniaxial tension; (b) shear modulus for pure shear loading](images/CH4%20PNGs/4.6.png){#fig-4.5 fig-align="center" width="400"}
 
 @exm-4.1 uses Hooke’s law to determine the elastic modulus of a material where the applied load and deformation are known.
 
@@ -147,7 +147,7 @@ Two bars are welded together and fixed to a wall at A. Two loads are applied as 
 
 Cut a cross-section through bar AB and determine the internal load.
 
-![](images/CH4%20PNGs/example%204.1%20part%202.png){fig-align="center" width="332"}
+![](images/CH4%20PNGs/example%204.1%20part%202.png){fig-align="center" width="386"}
 
 $$
 \sum F_x= 100{~kN}+200{~kN}-N=0 \quad\rightarrow\quad N=300{~kN}
@@ -280,7 +280,9 @@ Soft contact lenses often consist of a hydrogel, an elastomeric network that is 
 
 $$
 \begin{aligned}
+& \tau=V/A, \;\; A=L^2\\
 & \tau=5{~N} /(0.01{~m})^2=50{~kPa} \\
+& \gamma = \frac{\Delta L}{L}\\
 & \gamma=0.3{~mm}/10{~mm}=0.03=3 \% \\
 & G=\frac{\tau}{\gamma}=50{~kPa}/0.03=1.667{~MPa}
 \end{aligned}
@@ -356,9 +358,9 @@ A 24” long aluminum bar with a coefficient of thermal expansion of 13x10^-6^/F
 ::: {.callout-tip collapse="true" icon="false"}
 ## Solution
 
-1.  $\varepsilon_T=\alpha \cdot \Delta T=13 \times 10^{-6} /^\circ{F} *\left(-75^{\circ}{F}\right)=-0.00098$
+1.  $\varepsilon_T=\alpha \cdot \Delta T\\ \varepsilon_T=13 \times 10^{-6} /^\circ{F} *\left(-75^{\circ}{F}\right)\\ \varepsilon_T=-0.00098$
 
-2.  $L_{final}-L_{initial}=\varepsilon_T \cdot 24{~in} =-0.0234 {~in}$
+2.  $\varepsilon = \frac{\Delta L}{L},\;\;\Delta L=\varepsilon *L\\ \Delta L=-0.00098*24{~in}\\ \Delta L=-0.0235 {~in}$
 :::
 :::
 :::
@@ -483,7 +485,9 @@ $$
 \begin{aligned}
 & \varepsilon_x=\frac{1}{E}\left[\sigma_x-v\left(\sigma_y+\sigma_z\right)\right] \\
 & \varepsilon=\frac{-p}{E}[1-2 v] \\
-& \varepsilon=\frac{-10 {~MPa}}{3{~GPa}}[1-2*0.38]=-~0.0008=-~0.08 \%
+& \varepsilon=\frac{-10 {~MPa}}{3{~GPa}}[1-2*0.38]=-~0.0008=-~0.08 \% \\
+& \varepsilon = \frac{\Delta L}{L}\\
+& \Delta L = \varepsilon*L=-0.0008*50 {~mm}=-0.04{~mm}
 \end{aligned}
 $$
 

@@ -41,9 +41,13 @@ Finally we’ll investigate the effects of temperature in @sec-5.6. As the tempe
 
 Axial loads create axial stresses, also known as normal stresses. As discussed in @sec-2.1, the average normal stress is calculated from
 
-$$
-\sigma=\frac{N}{A}
-$$
+$$ \boxed {\sigma=\frac{N}{A}} $$
+
+| *where*
+| *𝜎 = Average normal stress \[Pa, psi\]*
+| *N = Internal normal force \[N, lb\]*
+
+*A = Cross-sectional area \[m^2^, in.^2^\]*
 
 </details>
 
@@ -53,13 +57,17 @@ $$
 
 <summary>Click to expand</summary>
 
+### Saint-Venant's Principle
+
 The normal stress discussed in the previous section is averaged over the cross-section and assumes that stresses (and therefore strains) at the cross-section are uniform. In reality stresses and strains can vary across a cross-section, especially if the cross-section is close to an applied load, a support, or a change in geometry. At these points localized stress concentrations occur, leading to large, localized stresses and strains. The intensity of these concentrations depends on the type of loading, support, or geometry (@fig-5.2).
 
-![Each bar has a fixed support on the left, a cross-section of 30 in.², and is subjected to a force of 10,000 lb. The top bar is uniform and experiences a uniform average normal stress of \$\\sigma=\\frac{10000}{30}=333\$ psi at all points, except those close to the support and load. The bottom bar experiences the same stress at most points, but significantly higher stress concentrations close to the hole.](images/PNGs/Figure%205.2.png){#fig-5.2 fig-align="center" width="566"}
+![Each bar has a fixed support on the left, a cross-section of 30 in.², and is subjected to a force of 10,000 lb. The top bar is uniform and experiences a uniform average normal stress of $\sigma=\frac{10000}{30}=333$ psi at all points, except those close to the support and load. The bottom bar experiences the same stress at most points, but significantly higher stress concentrations close to the hole.](images/chapter%205%20figure%20edits%20after%20review/figure%205.2.png){#fig-5.2 fig-align="center"}
 
 However, these effects disappear a certain distance away from the force, support, or local geometry. It is therefore acceptable to assume uniform stress and strain (as we have been so far) provided that we also assume our cross-section is a sufficient distance away from these points. This is known as Saint-Venant’s principle, which can be formally stated as “The stresses and strains created at a point in a body by two statically equivalent loads are equivalent at points sufficiently far removed from the applied load” (@fig-5.3).
 
 ![Two statically equivalent loads applied to a bar. Close to the point of application there will be localized stresses and deformations, but at a cross-section sufficiently far away from the applied loads the internal effects are equivalent.](images/PNGs/Figure%205.3.png){#fig-5.3 fig-align="center" width="565"}
+
+### Stress Concentrations Around Changes in Geometry
 
 More advanced courses will use the theory of elasticity to study the areas of variable stress and strain, but for now we’ll continue to apply Saint-Venant’s principle and assume that our cross-sections are sufficiently far away from the applied loads that we don’t need to consider these stress concentrations. We will however address the question of stress concentrations around changes in geometry here. We’ll study two specific examples; holes and fillets. @fig-5.2 shows an example of the stress concentrations around a hole. @fig-5.4 shows an example of the stress concentrations around a fillet. A fillet is a rounded corner used to help transition between two geometries.
 
@@ -77,9 +85,9 @@ $$ {#eq-5.1}
 
 *𝜎~avg~ = Average normal stress \[Pa, psi\]*
 
-This stress concentration factor depends on the geometry at hand and can be found from curves in design handbooks (@fig-5.5). See @exm-5.1 and @exm-5.2 to see how these curves can be used.
+This stress concentration factor depends on the geometry at hand and can be found from curves in design handbooks. @fig-5.5 shows curves for holes and fillets. The average normal stress is calculated at whichever plane gives the largest value. For the case with a hole, this is the plane passing through the center of the hole. For the case with a fillet, this is a plane passing through the smaller segment of the member. See @exm-5.1 and @exm-5.2 to see how these curves can be used.
 
-![Graphs showing how the stress concentration factor, K changes based on the geometry of the object.](images/Figure%205.5%20NEW.png){#fig-5.5 fig-align="center"}
+![Graphs showing how the stress concentration factor, K changes based on the geometry of the object.](images/chapter%205%20figure%20edits%20after%20review/figure%205.5.png){#fig-5.5 fig-align="center"}
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Example 5.1
@@ -130,7 +138,7 @@ $$
 ::: {#exm-5.2}
 A 1-inch-thick connecting rod in an engine assembly has the dimensions shown. If the maximum allowable stress in the rod is 40 ksi, determine the maximum axial load that may be applied to the rod.
 
-![](images/PNGs/Example%205.2%20part%201.png){fig-align="center" width="363"}
+![](images/chapter%205%20figure%20edits%20after%20review/example%205.2%20part%201.png){fig-align="center" width="443"}
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Solution
@@ -152,7 +160,7 @@ $$
 
 For the larger circle:
 
-![](images/Example 5.2 part 3 NEW.png){fig-align="center" width="431"}
+![](images/Example%205.2%20part%203%20NEW.png){fig-align="center" width="431"}
 
 $$
 \begin{aligned}
@@ -183,6 +191,8 @@ Since the maximum allowable stress is 40 ksi, $40{~ksi}=1.075 P \quad\rightarrow
 :::
 :::
 :::
+
+It should be apparent from these examples that sharp corners and tight radii lead to high stress concentrations. When designing parts it is best to use smooth, flowing transitions where possible and avoid sharp corners in order to minimize stress concentrations.
 
 ::: {.callout-warning icon="false"}
 ## Step-by-step: Stress concentrations
@@ -226,7 +236,7 @@ $$
 
 This equation can be used to directly find the change in length of an object subjected to an axial load.
 
-In practice, there may be multiple axial loads applied to the bar. The cross-sectional area may change at different points along the bar, or perhaps there could be different materials with different elastic moduli connected in series to form the bar. In any of these cases we can split the bar into sections where each section has a constant F, A, and E. We can calculate the change in length of each section separately and sum them to find the total. See @exm-5.3 for a problem involving multiple segments of a bar.
+In practice, there may be multiple axial loads applied to the bar. The cross-sectional area may change at different points along the bar, or perhaps there could be different materials with different elastic moduli connected in series to form the bar. In any of these cases we can split the bar into sections where each section has a constant F, A, and E. We can calculate the change in length of each section separately and sum them to find the total. See @exmp-5.3 for deformation of a simple bar subjected to a single load, and @exm-5.4 for a problem involving multiple segments of a bar.
 
 $$
 \boxed{\Delta L=\sum \frac{F L}{A E}}
@@ -235,7 +245,7 @@ $$ {#eq-5.2}
 | *where*
 | *ΔL = Change in length \[m, in.\]*
 | *F = internal axial load \[N, lb\]*
-| *L = Original length \[m, in.\]\$*
+| *L = Original length \[m, in.\]*
 | *A = Cross-sectional area \[m^2^, in.^2^\]*
 | *E = Elastic modulus \[Pa, psi\]*
 
@@ -247,9 +257,66 @@ $$ {#eq-5.2}
 
 </p>
 
+A wooden beam (E = 12 GPa) of length L = 6 m has a rectangular cross-section of base b = 50 mm and height h = 80 mm. The beam is subjected to a tensile load P = 30 kN as shown. Determine the change in length of the beam.
+
+![](images/chapter%205%20figure%20edits%20after%20review/example%205.3%20part%201.png){fig-align="center" width="378"}
+
+::: {.callout-tip collapse="true" icon="false"}
+## Solution
+
+We can find the change in length of the beam using $\Delta L = \Sigma\frac{FL}{AE}$.
+
+Here there is only one load applied and the beam is made of a single material with a uniform cross-section, so F, A, and E are constant.
+
+We can find the internal load in the beam by cutting a cross-section and drawing a free body diagram.
+
+![](images/chapter%205%20figure%20edits%20after%20review/example%205.3%20part%202.png){fig-align="center" width="362"}
+
+$$
+\begin{aligned}
+\Sigma F_x &= 30 - F = 0\\
+F &=30~kN
+\end{aligned}
+$$
+
+The beam has a rectangular cross-section so the area is given by:
+
+$$
+\begin{aligned}
+A&=bh\\
+&=0.05~m*0.08~m\\
+&=0.004~m^2
+\end{aligned}
+$$
+
+We are given L = 6 m and E = 12 GPa, so the change in length of the beam is given by:
+
+$$
+\begin{aligned}
+\Delta L &= \frac{FL}{AE}\\
+&=\frac{30,000~N*6~m}{0.004~m^2*12*10^9~\frac{N}{m^2}}\\
+&=0.00375~m\\
+&=3.75~mm
+\end{aligned}
+$$
+
+The beam gets longer by 3.75 mm.
+:::
+:::
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+## Example 5.4
+
+<div>
+
+<p>
+
+</p>
+
 A component is made by welding together 2 circular rods. Rod (1) is made of steel (E = 29 x 10^6^ psi) and is hollow, with an outer diameter of 4 in. and an inner diameter of 2 in. Rod (2) is made of copper (E = 17 x 10^6^ psi) and is solid, with a diameter of 5 in. If the component is subjected to the axial loads shown, determine the total deformation of the component.
 
-![](images/PNGs/Example%205.3%20part%201.png){fig-align="center"}
+![](images/Figure%20updates%204:23:25/example%205.4%20part%201.png){fig-align="center" width="490"}
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Solution
@@ -258,7 +325,7 @@ We can find the change in length of the component using $\Delta L=\sum \frac{F L
 
 First, break the component into three segments and determine the internal load in each segment. The first segment covers the 9-inch steel rod. After the first 9 inches of the component, both the cross-sectional area and elastic modulus change so a second segment is needed. This segment covers the next 4 inches. At this point the loading changes, so a third segment is required to cover the final 10 inches of the component.
 
-![](images/PNGs/Example%205.3%20part%202.png){fig-align="center" width="444"}
+![](images/Figure%20updates%204:23:25/example%205.4%20part%202.png){fig-align="center" width="466"}
 
 $$
 \begin{gathered}
@@ -302,7 +369,8 @@ $$
 \Delta L=0.00198{~in.}+0.000719{~in.}-0.000599{~in.}=0.002{~in.}
 $$
 :::
-:::
+
+</div>
 :::
 
 ::: {.callout-warning icon="false"}
@@ -335,7 +403,7 @@ $$
 \Delta L=\frac{F L}{A E}
 $$
 
-Once the change in length of each member is known, we can find the displacement at different points on the rigid beam through simple geometry of the rigid beam (@fig-5.8). This process is demonstrated in @exm-5.4.
+Once the change in length of each member is known, we can find the displacement at different points on the rigid beam through simple geometry of the rigid beam (@fig-5.8). This process is demonstrated in @exm-5.5.
 
 ![Beam deflection in the case where only bar 2 deforms. Point B will deflect downward by amount ΔL~2~. The deflection at point C can be determined through geometry.](images/PNGs/Figure%205.8.png){#fig-5.8 fig-align="center" width="329"}
 
@@ -352,9 +420,9 @@ $$
 ![Similar triangles for calculating deflection at a point when both bars experience a change in length.](images/PNGs/Figure%205.9.png){#fig-5.9 fig-align="center" width="379"}
 
 ::: {.callout-tip collapse="true" icon="false"}
-## Example 5.4
+## Example 5.5
 
-::: {#exm-5.4}
+::: {#exm-5.5}
 <p>
 
 </p>
@@ -429,18 +497,18 @@ We’ll study two types of statically indeterminate problems. In the first type 
 
 ![An example of redundancy on a suspension bridge. There are multiple supports and multiple cables at each support, such that if one cable fails the entire structure does not collapse.](images/PNGs/architecture-bridge-suspension-bridge-france-pillar-landmark-759379-pxhere.com.jpg){#fig-5.10 fig-align="center"}
 
-In such problems, it is not possible to determine all of the reaction forces using equilibrium alone. However, we can use our knowledge of deformation to help. If a member is held between two supports then its total deformation must be zero. Since the change in length depends on the internal force in the member, this introduces an additional equation to use alongside the equilibrium equations. There are two possible approaches here.
+In such problems, it is not possible to determine all of the reaction forces using equilibrium alone. However, we can use our knowledge of deformation to help. If a member is held between two supports then its total deformation must be zero. Since the change in length depends on the internal force in the member, this constraint introduces an additional equation to use alongside the equilibrium equations. There are two possible approaches here.
 
 **Approach 1**: To determine the reaction force at the redundant support, begin by removing the redundant support from the problem and determining the deformation that would occur if the support was not there. Then replace the reaction force at the support, which will cause the member to deform in the opposite direction (@fig-5.11).
 
 ![(a) A bar held between two rigid supports. (b) A free body diagram of the beam reveals that there are two unknowns but only one equilibrium equation. (c) Removing one of the supports allows the bar to elongate. (d) Replacing the support force causes the bar to contract.](images/PNGs/Figure%205.11.png){#fig-5.11 fig-align="center" width="519"}
 
-The sum of these two deformations must equal the actual deformation of the member. If the member is held between two rigid supports, the total deformation will be zero. If there is a small gap or the supports allow a certain amount of movement, the total deformation will be equal to the size of this gap. @exm-5.5 shows this process applied to a bar made of 2 materials.
+The sum of these two deformations must equal the actual deformation of the member. If the member is held between two rigid supports, the total deformation will be zero. If there is a small gap or the supports allow a certain amount of movement, the total deformation will be equal to the size of this gap. @exm-5.6 shows this process applied to a bar made of 2 materials.
 
 ::: {.callout-tip collapse="true" icon="false"}
-## Example 5.5
+## Example 5.6
 
-::: {#exm-5.5}
+::: {#exm-5.6}
 <p>
 
 </p>
@@ -475,9 +543,9 @@ Then replace force F~1~ and calculate the deformation caused by this force. Sinc
 ![](images/PNGs/Example%205.5%20part%204.png){fig-align="center" width="210"}
 
 $$
-\Delta L=\sum \frac{F L}{A E}=\frac{F_1 *(10 * 12){~in.}}{\pi(2^2-1.5^2){~in.}^2 *(17,000)\frac{kips}{in.^2}}+\frac{\left(F_1\right) *(15 * 12){~in.}}{(6 * 6){~in.}^2 *(4,000)\frac{kips}{in.^2}} \\
-=0.001284F_1+0.00125 F_1 \\
-=0.002534 F_1
+\Delta L=\sum \frac{F L}{A E}\\ \Delta L=\frac{F_1 *(10 * 12){~in.}}{\pi(2^2-1.5^2){~in.}^2 *(17,000)\frac{kips}{in.^2}}+\frac{\left(F_1\right) *(15 * 12){~in.}}{(6 * 6){~in.}^2 *(4,000)\frac{kips}{in.^2}} \\
+\Delta L=0.001284F_1+0.00125 F_1 \\
+\Delta L=0.002534 F_1
 $$
 
 Since the structure is fixed at both ends, the actual total deformation must be zero.
@@ -518,26 +586,26 @@ $$
  & F-F_A-F_B=0\end{aligned}
 $$
 
-@exm-5.6 re-solves @exm-5.5 using this method instead.
+@exm-5.7 re-solves @exm-5.6 using this method instead.
 
 ::: {.callout-tip collapse="true" icon="false"}
-## Example 5.6
+## Example 5.7
 
-::: {#exm-5.6}
+::: {#exm-5.7}
 <p>
 
 </p>
 
 A 15-foot-tall concrete (E = 4,000 ksi) column has a square cross-section of 6 in. by 6 in. A 10-foot-tall-copper (E = 17,000 ksi) cylinder with an outer diameter of 4 in. and in inner diameter of 3 in. is attached to the top of the concrete. The structure is fixed between two supports. A force of 25 kips is applied as shown. Determine the average normal stress in each material.
 
-![](images/PNGs/Example%205.6%20part%201.png){fig-align="center" width="187"}
+![](images/PNGs/Example%205.6%20part%201.png){fig-align="center" width="162"}
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Solution
 
 As before, begin with an equilibrium equation that relates the support loads to the applied load. In this equation we use the convention that forces pointing upwards are positive and forces pointing downwards are negative.
 
-![](images/PNGs/Example%205.6%20part%202.png){fig-align="center" width="121"}
+![](images/PNGs/Example%205.6%20part%202.png){fig-align="center" width="85"}
 
 $$
 \begin{aligned}
@@ -583,7 +651,7 @@ $$
 F_1=25{~kips}-12.7{~kips}=12.3{~kips}
 $$
 
-These are the same reactions that we found in @exm-5.5 when we solved this problem using the other approach. From here we can find the stress in each material as before, noting again from our diagram that segment 2 is in compression.
+These are the same reactions that we found in @exm-5.6 when we solved this problem using the other approach. From here we can find the stress in each material as before, noting again from our diagram that segment 2 is in compression.
 
 $$
 \begin{aligned}
@@ -599,12 +667,12 @@ The second type of indeterminate problem involves two materials bonded together 
 
 ![When two materials in parallel are subjected to force F, the force is split between the two materials (F~1~ and F~2~). By equilibrium F~1~ + F~2~ = F but this is not sufficient to find the force in each material.](images/PNGs/Figure%205.13.png){#fig-5.13 fig-align="center" width="283"}
 
-We have one equilibrium equation but two unknown internal forces. However, since the materials are bonded together we can say that they must deform by the same amount. By setting the deformation for each material equal to each other we can define a second equation that involves the two internal forces and, combined with the equilibrium equation, we can now solve for both internal forces. See @exm-5.7 for a demonstration.
+We have one equilibrium equation but two unknown internal forces. However, since the materials are bonded together we can say that they must deform by the same amount. By setting the deformation for each material equal to each other we can define a second equation that involves the two internal forces and, combined with the equilibrium equation, we can now solve for both internal forces. See @exm-5.8 for a demonstration.
 
 ::: {.callout-tip collapse="true" icon="false"}
-## Example 5.7
+## Example 5.8
 
-::: {#exm-5.7}
+::: {#exm-5.8}
 <p>
 
 </p>
@@ -618,7 +686,7 @@ A 20-ft-tall concrete (E = 4,000 ksi) column has a square cross-section 6 inches
 
 The 70 kips force will be split between the two materials. We need to find the force in each material before we can calculate the stress. Start by cutting a cross-section through the column, drawing a free body diagram, and writing an equilibrium equation.
 
-![](images/PNGs/Example%205.7%20copy.png){fig-align="center" width="137"}
+![](images/PNGs/Example%205.7%20copy.png){fig-align="center" width="91"}
 
 $$
 \sum F_y= F_C+F_S=70{~kips}
@@ -709,7 +777,7 @@ Approach 2:
 
 </details>
 
-## Thermal Deformation {#sec-5.6}
+## Thermal Deformation and Thermal Stresses {#sec-5.6}
 
 <details>
 
@@ -748,12 +816,12 @@ $$ {#eq-5.3}
 
 ![Expansion joint on a bridge, allowing for thermal expansion and contraction of the bridge as temperature changes through the year.](images/5.14%20newer.png){#fig-5.14 fig-align="center" width="492"}
 
-However if we do not design a gap, or if the gap is not large enough, then the object is not free to expand or contract. As the member pushes or pulls on its supports, a physical force is created. This in turn creates a stress in the object and these stresses can be very large. Such problems are statically indeterminate as the force applied on the member by the support is unknown and can’t be found using only equilibrium. Solving these problems is very similar to solving the first type of statically indeterminate problem. First, remove a support and determine the amount of deformation that would occur due to the change in temperature if the object were free to deform. Then replace the force from the removed support, which will cause the object to deform in the other direction. The sum of these two deformations will equal the total deformation of the member as before. @exm-5.8 works through an indeterminate thermal expansion problem.
+However if we do not design a gap, or if the gap is not large enough, then the object is not free to expand or contract. As the member pushes or pulls on its supports, a physical force is created. This in turn creates a stress in the object and these stresses can be very large. Such problems are statically indeterminate as the force applied on the member by the support is unknown and can’t be found using only equilibrium. Solving these problems is very similar to solving the first type of statically indeterminate problem. First, remove a support and determine the amount of deformation that would occur due to the change in temperature if the object were free to deform. Then replace the force from the removed support, which will cause the object to deform in the other direction. The sum of these two deformations will equal the total deformation of the member as before. @exm-5.9 works through a statically indeterminate thermal expansion problem.
 
 ::: {.callout-tip collapse="true" icon="false"}
-## Example 5.8
+## Example 5.9
 
-::: {#exm-5.8}
+::: {#exm-5.9}
 Steel (E = 200 GPa, α = 11.7 x 10-6 /°C) train rails are laid end-to-end. Each rail is 20 meters long. A small section of this track is shown below. The rails are laid in winter when the temperature is 0° C. In summer, the maximum temperature is 40°C. Determine the compressive stress in the rail as a result of the temperature change if:
 
 \(a\) In a particular section of track, the rails are laid with no gap between them.

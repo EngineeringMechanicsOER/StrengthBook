@@ -76,7 +76,7 @@ From σ~x~ we have:
 $$
 \begin{aligned}
 & F_n=-\sigma x^* d A x^* \cos (\theta)=-\sigma x^* d A^{\prime} \cos (\theta) \cos (\theta) \\
-& \mathrm{Ft}=\sigma x^* \mathrm{~d} A x^* \sin (\theta)=\sigma x^* d A^{\prime} \cos (\theta) \sin (\theta)
+& F_t=\sigma x^* d A x^* \sin (\theta)=\sigma x^* d A^{\prime} \cos (\theta) \sin (\theta)
 \end{aligned}
 $$
 
@@ -93,8 +93,8 @@ From the vertical shear stress acting on the x-face we have:
 
 $$
 \begin{aligned}
-& F n=-\tau_{xy}{ }^* d A x^* \sin (\theta)=-\tau x y^* d A^{\prime} \cos (\theta) \sin (\theta) \\
-& F t=-\tau_{xy}{ }^* d A x^* \cos (\theta)=-\tau x y^* d A^{\prime} \cos (\theta) \cos (\theta)
+& F_n=-\tau_{xy}{ }^* d A x^* \sin (\theta)=-\tau x y^* d A^{\prime} \cos (\theta) \sin (\theta) \\
+& F_t=-\tau_{xy}{ }^* d A x^* \cos (\theta)=-\tau x y^* d A^{\prime} \cos (\theta) \cos (\theta)
 \end{aligned}
 $$
 
@@ -102,8 +102,8 @@ From the horizontal shear stress acting on the y face we have:
 
 $$
 \begin{aligned}
-& \mathrm{Fn}=-\tau_{xy} *^* d A x^* \cos (\theta)=-\tau x y^* d^{\prime} \sin (\theta) \cos (\theta) \\
-& F t=\tau_{xy}{ }^* d A y^* \sin (\theta)=\tau_{x y}^* d A^{\prime} \sin (\theta) \sin (\theta)
+& F_n=-\tau_{xy} * d A x^* \cos (\theta)=-\tau x y^* d^{\prime} \sin (\theta) \cos (\theta) \\
+& F_t=\tau_{xy}{ }^* d A y^* \sin (\theta)=\tau_{x y}^* d A^{\prime} \sin (\theta) \sin (\theta)
 \end{aligned}
 $$
 
@@ -174,7 +174,7 @@ The angle of incline may be measured and given relative to a variety of referenc
 
 4.  Determine the angle that goes from the x-axis to the normal axis. This angle is θ. If the direction from the x-axis to the normal axis is counterclockwise, then θ should be taken to be positive. If the direction from the x-axis to the normal axis is clockwise, then θ should be taken to be negative.
 
-![Draw a sketch of the x-axis and the normal axis to ensure you use the correct magnitude and sign for θ in the stress transformation equations.](images/CH12%20figures/figure%2012.5.png){#fig-12.5 fig-align="center" width="458"}
+![Draw a sketch of the x-axis and the normal axis to ensure you use the correct magnitude and sign for θ in the stress transformation equations.](images/12.5.png){#fig-12.5 fig-align="center" width="418"}
 
 Finally, one should note that the transformation equations were derived based on stresses given in the the x-y plane where x is the horizontal axis positive to the right and y is the vertical axis positive upwards. If a plane other than the xy plane is being used for the general stress calculations, or if the x and y axes are oriented in the opposite configuration, the rule to follow would be to substitute the stress normal to the vertical faces of the element in for the σ~x~ terms of the equations and the stress normal to the horizontal faces of the element in the σ~y~ terms of the equations. For example, given the stress element in @fig-12.6, one would substitute σ~z~ = 90 MPa in for the σx terms of the stress transformation equations, σ~x~ = -150 MPa in for the σ~y~ terms, and τ~xz~ = -16 MPa in for the τ~xy~ terms.
 
@@ -214,7 +214,16 @@ We could also base θ on the dashed normal axis, in which case the magnitude of 
 
 ![](images/CH12%20figures/example%2012.1%20part%202.png){fig-align="center" width="340"}
 
-So with σ~x~ = 128 MPa, σ~y~ = 80 MPa, τ~xy~ = -75.45 MPa, and θ = -48° (or +132°), **the stress normal to the weld is σ~n~ = 139.0 MPa. The stress parallel to the weld is τ~nt~ = 31.76 MPa.**
+$$
+\begin{aligned}
+& \sigma_n=128{~MPa} \cos ^2(-48^\circ)+80{~MPa} \sin ^2(-48^\circ)+2*-75.45{~MPa} \sin (-48^\circ) \cos (-48^\circ) \\
+&\sigma_n = 176.5{~MPa} \\
+& \tau_{n t}=-\left(128{~MPa}-80{~MPa}\right) \cos (-48^\circ) \sin (-48^\circ)-75.45{~MPa}\left(\cos ^2(-48^\circ)-\sin ^2(-48^\circ)\right) \\
+&\tau_{n_t} = 31.76{~MPa}
+\end{aligned}
+$$
+
+So with σ~x~ = 128 MPa, σ~y~ = 80 MPa, τ~xy~ = -75.45 MPa, and θ = -48° (or +132°), **the stress normal to the weld is σ~n~ = 176.5 MPa. The stress parallel to the weld is τ~nt~ = 31.76 MPa.**
 :::
 :::
 :::
@@ -259,7 +268,11 @@ Substituting σ~x~ = -1700 psi (negative since it is shown to be compressive), �
 $$
 \begin{aligned}
 & \sigma_n=\frac{\sigma_x+\sigma_y}{2}+\frac{\sigma_x-\sigma_y}{2} \cos (2 \theta)+\tau_{x y} \sin (2 \theta) \\
-& \tau_{n t}=-\frac{\sigma_x-\sigma_y}{2} \sin (2 \theta)+\tau_{x y} \cos (2 \theta)
+& \sigma_n=\frac{-1700{~psi}+800{~psi}}{2}+\frac{-1700{~psi}-800{~psi}}{2} \cos(2*54^\circ)+790{~psi}* \sin(2*54^\circ) \\
+& \sigma_n= 687.6{~psi} \\
+& \tau_{n t}=-\frac{\sigma_x-\sigma_y}{2} \sin (2 \theta)+\tau_{x y} \cos (2 \theta) \\
+& \tau_{n_t}=-\frac{-1700{~psi}-800{~psi}}{2} \sin (2*54^\circ)+790{~psi}*\cos (2*54^\circ) \\
+& \tau_{n_t}=944.7{~psi}
 \end{aligned}
 $$
 
@@ -391,39 +404,64 @@ Following the steps given at the end of @sec-12.2:
 
 1.  Find the principal planes using\
     $$
-    \operatorname{Tan}\left(2 \theta_p\right)=\frac{2 \tau_{x y}}{\left(\sigma_x-\sigma_y\right)}
+    \begin{aligned}
+    & \operatorname{tan}\left(2 \theta_p\right)=\frac{2 \tau_{x y}}{\left(\sigma_x-\sigma_y\right)} \\
+    \end{aligned}
     $$\
     \
     With σ~x~ = -80 MPa, σ~y~ = 50 MPa, and τ~xy~ = -25 MPa, we get:
 
-    θ~p~ = 10.52° based on the answer from the calculator.
-
+    ```{=tex}
+    \begin{aligned}
+    & \operatorname{tan}\left(2 \theta_p\right)=\frac{2 \tau_{x y}}{\left(\sigma_x-\sigma_y\right)} \\
+    & \tan(2\theta_p)=\frac{2*-25{~MPa}}{-80{~MPa}-50{~MPa}} \\
+    & \tan(2\theta_p)=0.3846 \\
+    & 2\theta_p=\tan^{-1}(0.3846) \\
+    &\theta_p = \frac{21.04^\circ}{2}=10.52^\circ\\
+    \end{aligned}
+    ```
     The other angle is then θ~p~ = 10.52° + 90° = 100.52°
 
     So the principal plane angles are 10.52° and 100.52°.
 
 2.  Subbing θ~p~ = 10.52° into:\
     $$
-    \sigma_n=\frac{\sigma_x+\sigma_y}{2}+\frac{\sigma_x-\sigma_y}{2} \cos (2 \theta)+\tau_{x y} \sin (2 \theta)
+    \begin{aligned}
+    & \sigma_n=\frac{\sigma_x+\sigma_y}{2}+\frac{\sigma_x-\sigma_y}{2} \cos (2 \theta)+\tau_{x y} \sin (2 \theta) \\
+    \end{aligned}
     $$
 
-    gives σ~n~ = -84.6 MPa and subbing θ~p~ = 100.52° in gives σ~n~ = 54.6 MPa.
+    gives
 
-    Since 54.6 MPa is the most positive of the two principal stresses, σ~1~ = 54.6 MPa and σ~2~ = -84.6 MPa.
+    ```{=tex}
+    \begin{aligned}
+    & \sigma_{n_1}=\frac{-80{~MPa}+50{~MPa}}{2}+\frac{-80{~MPa}-50{~MPa}}{2}\cos(2*10.52^\circ)-25{~MPa}*\sin(2*10.52^\circ) \\
+    & \sigma_{n_1}=-84.65{~MPa} \\
+    \end{aligned}
+    ```
+    and subbing θ~p~ = 100.52° in gives
 
-    The 54.6 MPa would go on the rotated x-face and the -85.6 MPa would go on the rotated y-face of the stress element rotated counterclockwise 100.52°.\
+    ```{=tex}
+    \begin{aligned}
+    & \sigma_{n_2}=\frac{-80{~MPa}+50{~MPa}}{2}+\frac{-80{~MPa}-50{~MPa}}{2}\cos(2*100.52^\circ)-25{~MPa}*\sin(2*100.52^\circ) \\
+    & \sigma_{n_2}=54.65{~MPa}
+    \end{aligned}
+    ```
+    Since 54.7 MPa is the most positive of the two principal stresses, σ~1~ = 54.7 MPa and σ~2~ = -84.7 MPa.
+
+    The 54.7 MPa would go on the rotated x-face and the -85.7 MPa would go on the rotated y-face of the stress element rotated counterclockwise 100.52°.\
     \
-    Conversely, if the stress element is rotated counterclockwise by 10.52°, the stress on the rotated x-face would be -84.6 MPa and the stress on the rotated y-face would be 54.6 MPa.
+    Conversely, if the stress element is rotated counterclockwise by 10.52°, the stress on the rotated x-face would be -84.7 MPa and the stress on the rotated y-face would be 54.6 MPa.
 
     Drawing the stress element rotated to the principal planes:
 
-    ![](images/CH12%20figures/example%2012.3%20part%202.png){width="245"}\
-    \
+    ![](images/CH12%20figures/example%2012.3%20part%202.png){fig-align="center" width="245"}
+
     Notice that the stress element looks the same no matter which angle is used for the rotation. Also note that the shear stress on the principal plane is 0.
 
 3.  Next we will find the planes of max/min in-plane shear planes as well as the corresponding shear stresses. We could use:\
     $$
-    \operatorname{Tan}\left(2 \theta_s\right)=-\frac{\left(\sigma_x-\sigma_y\right)}{2 \tau_{x y}}
+    \tan (2\theta_s)=-\frac{(\sigma_x-\sigma_y)}{2 \tau_{x y}}
     $$
 
     But since we already have the θ~p~ angles, we will use the fact that the max/min in-plane shear stress planes are +/- 45° from those. We can choose either θ~p~ angle to add and subtract the 45° to and from. The final orientation of the element would be the same. Since it is generally easier to visualize angle rotations smaller in magnitude than 90, so we will use the smaller θ~p~ value.\
@@ -434,13 +472,24 @@ Following the steps given at the end of @sec-12.2:
     \tau_{n t}=-\frac{\sigma_x-\sigma_y}{2} \sin (2 \theta)+\tau_{x y} \cos (2 \theta)
     $$
 
-    gives τ~nt~ = 69.6 MPa. Since this is a positive value, we know that this is the max in-plane shear stress and that θs = -34.5 ° should give τnt = -69.6 MPa = τ~min~ (in-plane).
+    gives $$
+    \begin{aligned}
+    &\tau_{nt}=-\frac{-80{~MPa}-50{~MPa}}{2}\sin(2*55.5^\circ)-25{~MPa}\cos(2*55.5^\circ)\\
+    &\tau_{nt}=69.6{~MPa}
+    \end{aligned}
+    $$
 
-    So if we rotate the stress element counterclockwise by 55.5°, we would draw a positive shear stress and if we rotate it clockwise 34.5 degrees, we would draw a negative shear stress.
+    Since this is a positive value, we know that this is the max in-plane shear stress and that θs = -34.5° should give τnt = -69.6 MPa = τ~min~ (in-plane).
+
+    So if we rotate the stress element counterclockwise by 55.5°, we would draw a positive shear stress and if we rotate it clockwise 34.5°, we would draw a negative shear stress.
 
 5.  The normal stress on the plane of max/min in-plane shear stress is\
     $$
-    \sigma=\sigma_{avg}=\frac{\left(\sigma_x+\sigma_y\right)}{2}=-15 \mathrm{MPa}
+    \begin{aligned}
+    &\sigma=\sigma_{avg}=\frac{\left(\sigma_x+\sigma_y\right)}{2}\\
+    &\sigma_{avg}=\frac{-80{~MPa}+50{~MPa}}{2}\\
+    &\sigma_{avg}=-15{~MPa}
+    \end{aligned}
     $$
 
 Drawing the stress rotated to the planes of max/min shear stress:
@@ -451,7 +500,7 @@ Once again, notice that the stress element looks fundamentally the same regardle
 
 **θ~p1~ = 100.52° and θ~p2~ = 10.52°**
 
-**σ~1~ = 54.6 MPa and σ~2~ = - 84.6 MPa**
+**σ~1~ = 54.7 MPa and σ~2~ = - 84.7 MPa**
 
 **θ~s~ = 55.5° and -34.5°**
 
@@ -526,7 +575,7 @@ We could alternatively use what we will call the y-point, which comes from the s
 
     Thus, the angle between the radial line that connects C and the x-point to the principal plane (normal stress axis) is 2θp. This angle can be determined by applying right triangle trigonometry principles to the right triangle used to find the radius:\
     $$
-    \tan (2 \theta p)=\frac{C+\sigma_x}{\tau_{x y}}
+    \tan (2 \theta p)=\frac{\tau_{x y}}{\sigma_x-C}
     $$\
     As discussed in @sec-12.2, the inverse tangent function will have two solutions. One of those solutions (divided by 2) will be the angle that corresponds to rotating from the x point to the σ1 side of the circle from which means that this principal angle leads to σ1 acting on the rotated x face (x’ face) of the stress element and therefore σ~2~ acts on the rotated y face (y’ face). The other solution to θ~p~ will correspond to the angle necessary to rotate from the x point to the σ2 side of the circle which will lead to σ~2~ acting on the x’ face and σ1 acting on the y’ face.
 
@@ -535,7 +584,7 @@ We could alternatively use what we will call the y-point, which comes from the s
 9.  Once these quantities are known, the use of the circle to perform stress transformations at arbitrary planes requires making similar trigonometric calculations. This process is better illustrated in @exm-12.4.
 
 ::: {#fig-12.11 layout-ncol="2" layout-valign="bottom"}
-![Mohr's circle](images/CH12%20figures/figure%2012.11%20part%201.png){#fig-12.11a fig-align="center" width="546"}
+![Mohr's circle](images/CH12%20figures/figure%2012.11%20part%201.png){#fig-12.11a fig-align="center" width="468"}
 
 ![Stress Element](images/CH12%20figures/figure%2012.11%20part%202.png){#fig-12.11b fig-align="center" width="270"}
 
@@ -556,7 +605,7 @@ However, we are still considering only cases in which the stresses act in just t
 
 It we start with the stress element already rotated in the xy plane to one of its principal planes, we know that the stresses on the x and y faces in this plane (x’ and y’ faces) will be σ1 and σ2 or vice versa. This means that σ~1~ (or σ~2~) and σ~z~ are the principal stresses on the yz plane and the σ~1~ (or σ~2~) and σ~z~ are the principal stresses on the *xz* plane. Since we are still dealing with plane stress, we know that σ~z~ = 0. In the case of plane stress then, there are principal stresses σ~1~ and σ~2~ as above, as well as σ~3~ = 0.
 
-![3D stress element with stress acting in only 2 or the 3 principal directions.](images/CH12%20figures/figure%2012.12.png){#fig-12.12 fig-align="center" width="641"}
+![3D stress element with stress acting in only 2 or the 3 principal directions.](images/CH12%20figures/figure%2012.12.png){#fig-12.12 fig-align="center" width="564"}
 
 We can draw Mohr’s circle for each of these three planes on one plot. We will consider three cases:
 
@@ -604,7 +653,7 @@ $$
 
 ![The three planes represented on Mohr’s circle for the case where the principal stresses in the xy plane are opposite signs.](images/CH12%20figures/figure%2012.15.png){#fig-12.15 fig-align="center" width="407"}
 
-More generally, given principal stresses σ~1~, σ~2~, and σ~3~ = 0, the abosulte maximum shear stress can be determined from:
+More generally, given principal stresses σ~1~, σ~2~, and σ~3~ = 0, the aboslute maximum shear stress can be determined from:
 
 $$
 \boxed{\tau_{(\max)absolute}=\left|\frac{\sigma_{\max }-\sigma_{\min }}{2}\right|}
@@ -650,81 +699,151 @@ Following the steps given in @sec-12.3:
 
 1.  The step of drawing the axes will be done as a part of step 3.
 
-2.  Identify and plot the x-point: Looking at the positive x-face, the normal stress is compressive, so the horizontal coordinate will be -60 MPa. The shear stress arrow is upwards, which would tend to rotate the element counterclockwise, so the vertical coordinate will be negative, or -30 MPa. The x-point is then (-60,-30) MPa\
-    ![](images/CH12%20figures/example%2012.4%20part%202.png){width="373"}\
-    Identify and plot the y-point: Looking at the positive y-face, the normal stress is tensile, so the horizontal coordinate will be +15 MPa. The shear stress arrow is to the right, which would tend to rotate the element clockwise, so the vertical coordinate will be positive, or +30 MPa. The y-point is then (15,30) MPa.\
-    ![](images/CH12%20figures/example%2012.4%20part%203.png){width="374"}\
+2.  Identify and plot the x-point: Looking at the positive x-face, the normal stress is compressive, so the horizontal coordinate will be -60 MPa. The shear stress arrow is upwards, which would tend to rotate the element counterclockwise, so the vertical coordinate will be negative, or -30 MPa. The x-point is then (-60,-30) MPa
+
+    ![](images/CH12%20figures/example%2012.4%20part%202.png){fig-align="center" width="373"}
+
+    Identify and plot the y-point: Looking at the positive y-face, the normal stress is tensile, so the horizontal coordinate will be +15 MPa. The shear stress arrow is to the right, which would tend to rotate the element clockwise, so the vertical coordinate will be positive, or +30 MPa. The y-point is then (15,30) MPa.
+
+    ![](images/CH12%20figures/example%2012.4%20part%203.png){fig-align="center" width="374"}
+
     The points are shown plotted in step 3.
 
 3.  Connect the two points on the circle and identify the center.\
     $$
-    C=\frac{\sigma_x+\sigma_y}{2}=\frac{-60+15}{2}=-22.5 \mathrm{MPa}
-    $$\
-    ![](images/CH12%20figures/example%2012.4%20part%204.png){width="444"}
+    \begin{aligned}
+    &C=\frac{\sigma_x+\sigma_y}{2}\\
+    &C=\frac{-60{~MPa}+15{~MPa}}{2}\\
+    &C=-22.5{~MPa}
+    \end{aligned}
+    $$
 
-4.  The radius of the circle is: $R=\sqrt{\left(\sigma_x-C\right)^2+\tau_{x y}^2}=\sqrt{(-60-(-22.5))^2+30^2}=48.02 \mathrm{MPa}$
+    ![](images/CH12%20figures/example%2012.4%20part%204.png){fig-align="center" width="444"}
 
-5.  We can now find σ1 by finding the distance from the origin to the rightmost point of the circle on the σ axis. Since C is negative, we can find distance to be C + R = -22.5 MPa + 48.02 MPa = 25.52 MPa.
+4.  The radius of the circle is:
 
-    So σ~1~ = 25.5 MPa
+    $$
+    \begin{aligned}
+    &R=\sqrt{(\sigma_x-C)^2+\tau_{xy}^2}\\
+    &R=\sqrt{(-60{~MPa}-(-22.5{~MPa}))^2+(30{~MPa})^2}\\
+    &R=48.02{~MPa}
+    \end{aligned}
+    $$
 
-    We can find σ2 by finding the distance from the origin to the leftmost point of the circle on the σ axis. This distance can be expressed as C- R  = -48.02 MPa – 22.5 MPa = -70.52 MPa
+5.  We can now find σ<sub>1</sub> by finding the distance from the origin to the rightmost point of the circle on the σ axis. Since C is negative, we can find distance to be
 
-    So σ~2~ = -70.5 MPa
+    $$
+    \begin{aligned}
+    &\sigma_1=C+R\\
+    &\sigma_1=-22.5{~MPa}+48.02{~MPa}\\
+    &\sigma_1=25.52{~MPa}
+    \end{aligned}
+    $$
+
+    We can find σ<sub>2</sub> by finding the distance from the origin to the leftmost point of the circle on the σ axis. This distance can be expressed as
+
+    $$
+    \begin{aligned}
+    &\sigma_2=C-R\\
+    &\sigma_2=-22.5{~MPa}-48.02{~MPa}\\
+    &\sigma_2=-70.52{~MPa}
+    \end{aligned}
+    $$
 
 6.  The max in-plane shear stress is the bottom most point of the circle which is simply R = 48.02 MPa, or τmax (in-plane) = 48.0 MPa.
 
     The normal stress on this plane is C = -22.5 MPa
 
-7.  The principal planes can be found as: $tan(2\theta_p)=\frac{\sigma_x-C}{\tau_{xy}}=\frac{-60{~MPa}-(-22.5{~MPa})}{30{~MPa}}$\
+7.  The principal planes can be found as:
+
+    $$
+    \begin{aligned}
+    &\tan(2\theta_p)=\frac{\sigma_x-C}{\tau_{xy}}\\
+    &\tan(2\theta_p)=\frac{-60{~MPa}-(-22.5{~MPa})}{30{~MPa}}\\
+    &\tan(2\theta_p)=-1.25\\
+    &2\theta_p=\tan^{-1}(-1.25)\\
+    &\theta_p=\frac{-51.34^\circ}{2}\\
+    &\theta_p=-25.67^\circ
+    \end{aligned}
+    $$
+
     One solution to this equation yields θp = -25.67°. This is the angle of rotation for which σ~2~ would be shown on the rotated x face. Note the negative angle means this would be a clockwise rotation.
 
-    The other solution to the equation is that angle plus 90°, which in this case yields θ~p~ = 64.33°. This is the angle of rotation for which σ1 would appear on the rotated x-face. The positive angle indicates this would be a counterclockwise rotation.\
-    ![](images/CH12%20figures/example%2012.4%20part%205.png){width="301"}
+    The other solution to the equation is that angle plus 90°, which in this case yields θ~p~ = 64.33°. This is the angle of rotation for which σ<sub>1</sub> would appear on the rotated x-face. The positive angle indicates this would be a counterclockwise rotation.
 
-8.  With the θp angles known, we can see that the 2θ~s~ = 90 - 2θ~p~, or θ~s~ = 19.33° and -70.67°. In this case, a counterclockwise rotation of the x-point would bring it to the negative side of the vertical axis which corresponds to τmax, so we can say that θ~s~ = 19.33° is the plane of max in-plane shear stress.\
-    ![](images/CH12%20figures/example%2012.4%20part%206.png){width="473"}
+    ![](images/CH12%20figures/example%2012.4%20part%205.png){fig-align="center" width="301"}
+
+8.  With the θp angles known, we can see that the 2θ~s~ = 90 - 2θ~p~, or
+
+    $$
+    \begin{aligned}
+    &2\theta_s=90-2\theta_p\\
+    &2\theta_{s_1}=90-2*-25.67^\circ\\
+    &\theta_{s_1}=\frac{141.3^\circ}{2}\\
+    &\theta_{s_1}=70.65^\circ\\
+    &2\theta_{s_2}=90-2*64.33^\circ\\
+    &\theta_{s_2}=\frac{-38.66^\circ}{2}\\
+    &\theta_{s_2}=-19.33^\circ
+    \end{aligned}
+    $$
+
+    In this case, a counterclockwise rotation of the x-point would bring it to the negative side of the vertical axis which corresponds to τmax, so we can say that θ~s~ = 70.65° is the plane of max in-plane shear stress.
+
+    ![](images/CH12%20figures/example%2012.4%20part%206.png){fig-align="center" width="473"}
 
 9.  Now we can use Mohr’s Circle to find the stress state on the plane where the stress element is rotated clockwise 40°. The circle is redrawn below for convenience.
 
-    Recalling that rotations around the circle are twice the actual rotation, we will draw in a point (denoted as x’) that represents an 80 degree rotation clockwise from the x-point. Since we know from step 7 that the x-point is rotated 2\* 25.7° below σ~2~, we also know that x’ is rotated 80 – 50.4 = 29.6° above σ~2~.\
-    ![](images/CH12%20figures/example%2012.4%20part%207.png){width="265"}\
+    Recalling that rotations around the circle are twice the actual rotation, we will draw in a point (denoted as x’) that represents an 80 degree rotation clockwise from the x-point. Since we know from step 7 that the x-point is rotated 2\*25.67° below σ~2~, we also know that x’ is rotated 80 – 51.34 = 28.66° above σ~2~.
+
+    ![](images/CH12%20figures/example%2012.4%20part%207.png){fig-align="center" width="265"}
+
     Since x’ is on the negative σ side and the positive τ side, we know that the normal stress on the x’ face is compressive and the shear stress arrow on the x’ face would tend to rotate the element clockwise (which corresponds to a negative shear stress).
 
     We can see from the circle that the shear stress is:
 
     $$
-    \tau_{x'y'}=-Rsin(29.6^\circ)=-48.08{~MPa}*sin(29.6^\circ)=-23.7{~MPa}
-    $$
+    \begin{aligned}
+    &\tau_{x^\prime y^\prime}=-R\sin(28.66^\circ)\\
+    &\tau_{x^\prime y^\prime}=-48.08{~MPa}*\sin(28.66^\circ)\\
+    &\tau_{x^\prime y^\prime}=-23.06{~MPa}
+    \end{aligned}
+    $$and
 
-    and
-
     $$
-    \sigma_{x'}=C-Rcos(29.6^\circ)=-22.5{~MPa}-48.02{~MPa}*cos(29.6^\circ)=-64.3{~MPa}
+    \begin{aligned}
+    &\sigma_{x^\prime}=C-R\cos(28.66^\circ)\\
+    &\sigma_{x^\prime}=-22.5{~MPa}-48.02{~MPa}*\cos(28.66^\circ)\\
+    &\sigma_{x^\prime}=-64.64{~MPa}
+    \end{aligned}
     $$
 
     The stress on the rotated y face, σ~y’~, is obtained by finding the distance from the origin to the y’ point which is directly across the circle from x’.
 
     $$
-    \sigma_{y'}=C+Rcos(29.6^\circ)=-22.5{~MPa}+48.02{~MPa}*cos(29.6^\circ)=19.3{~MPa}
+    \begin{aligned}
+    &\sigma_{y^\prime}=C+R\cos(28.66^\circ)\\
+    &\sigma_{y^\prime}=-22.5{~MPa}+48.02{~MPa}*\cos(28.66^\circ)\\
+    &\sigma_{y^\prime}=19.64{~MPa}
+    \end{aligned}
     $$
 
-    The rotated stress element can be drawn:\
-    ![](images/CH12%20figures/example%2012.4%20part%208.png){width="323"}
+    The rotated stress element can be drawn:
+
+    ![](images/CH12%20figures/example%2012.4%20part%208.png){fig-align="center" width="323"}
 
 **σ~1~ = 25.5 MPa on the principal plane θ~p~ = 64.3°**
 
 **σ~2~ = -70.5 MPa on the principal plane θ~p~ = -25.7°**
 
-**τ~max~ (in-plane) = 48.0 MPa on the plane θ~s~ = 19.33°**
+**τ~max~ (in-plane) = 48.0 MPa on the plane θ~s~ = 70.7°**
 
 On the plane rotated 40° clockwise from the given plane:
 
-**σ~x’~ = - 64.3 MPa**
+**σ~x’~ = -64.6 MPa**
 
-**σ~y’~ = 19.3 MPa**
+**σ~y’~ = 19.6 MPa**
 
-**τ~x’y’~ = -23.7 MPa**
+**τ~x’y’~ = -23.1 MPa**
 :::
 :::
 :::
@@ -811,8 +930,8 @@ $$
 \begin{aligned}
 & \mathrm{C}=\left(\frac{\sigma_x+\sigma_y}{2}\right) \\
 & \mathrm{R}=\sqrt{\left(C+\sigma_x\right)^2+\tau_{x y}^2} \\
-& tan(2 \theta p)=\frac{C+\sigma_x}{\tau_{x y}} \\
-& tan(2 \theta s)=\frac{\tau_{x y}}{C+\sigma_x} \\
+& tan(2 \theta p)=\frac{\tau_{x y}}{\sigma_x-C} \\
+& tan(2 \theta s)=\frac{\sigma_x-C}{\tau_{x y}} \\
 & \sigma_{1,2}=\mathrm{R} \pm \mathrm{C}
 \end{aligned}
 $$

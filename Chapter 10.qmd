@@ -3,14 +3,14 @@ format: html
 editor: visual
 ---
 
-# Shear Loads {#sec-shear-loads}
+# Shear Loading in Beams {#sec-shear-loads}
 
 ::: {.callout-note icon="false"}
 ## Learning Objectives
 
 -   Determine the first moment of area at various points on a cross-section.
 -   Explain the distribution of shear stress on a cross-section.
--   Calculate the shear stress at various points on a cross-section.
+-   Calculate the transverse shear stress at various points on a cross-section.
 -   Calculate the shear flow on a built-up cross-section.
 :::
 
@@ -20,11 +20,11 @@ editor: visual
 
 <summary>Click to expand</summary>
 
-In @sec-bending-loads we learned to calculate bending stresses in beams and how to design beams to resist bending stress. The transverse loading applied to beams will also create internal shear loads and therefore shear stresses that must be calculated and accounted for (@fig-10.1).
+In @sec-bending-loads we learned how to calculate bending stresses in beams and how to design beams to resist bending stress. Transverse loading applied to beams will also create internal shear loads and therefore shear stresses that must be calculated and accounted for (@fig-10.1).
 
 ![A beam subjected to transverse loading will experience both an internal bending moment and an internal shear force.](images/CH10%20PNGs/figure%2010.1.png){#fig-10.1 fig-align="center" width="200"}
 
-In this chapter, we’ll first review an important geometric property known as the first moment of area and demonstrate how to calculate it for common beam cross-sections in @sec-10.1. In @sec-10.2 we’ll discuss shear stresses in beams and how to calculate them. In @sec-10.3 we’ll discuss shear flow, which is useful for beams with cross-sections formed by joining two or more parts with fasteners such as nails.
+In this chapter, we’ll first review an important geometric property known as the first moment of area and demonstrate how to calculate it for common beam cross-sections in @sec-10.1. In @sec-10.2 we’ll discuss transverse shear stresses in beams and how to calculate them. In @sec-10.3 we’ll discuss shear flow, which is useful for beams with cross-sections formed by joining two or more parts with fasteners such as nails.
 
 </details>
 
@@ -34,7 +34,7 @@ In this chapter, we’ll first review an important geometric property known as t
 
 <summary>Click to expand</summary>
 
-Shear stress in an object depends on the internal shear force and the shape of the cross-section. One important geometric property used in this chapter is the first moment of area. This property was introduced in @sec-8.1 and was used when determining the centroid of an area. Recall we used @eqn-8.1 to break simple cross-sections down into a number of composite parts. When finding the centroid of these composite areas we modified the equation slightly to:
+Shear stress in an object depends on the internal shear force and the shape of the cross-section. One important geometric property used in this chapter is the first moment of area. This property was introduced in @sec-8.1 and was used when determining the centroid of an area. Recall we used @eq-8.1 to break simple cross-sections down into a number of composite parts. When finding the centroid of these composite areas we modified the equation slightly to:
 
 $$
 \bar{y}=\frac{\sum y_i A_i}{\sum A_i}=\frac{y_1 A_1+y_2 A_2+\ldots}{A_1+A_2+\ldots}
@@ -66,9 +66,11 @@ $$ {#eq-10.1}
 
 In @sec-8.1 we performed this calculation relative to some convenient reference axis in order to determine the location of the centroid of an area (such as in @exm-8.3). A~i~ represents the area of each composite part and y~i~ represents the distance from the reference axis to the centroid of each composite part.
 
-The first moment of area can actually be calculated around any axis. The maximum value will always occur at the centroid of the cross-section (i.e., the neutral axis) so many problems will involve finding the first moment of area at the neutral axis, but there are also cases where finding the first moment of area around some other axis is required. Note that the axis should be perpendicular to the shear force, so a vertical load requires us to use a horizontal axis.
+The first moment of area can actually be calculated around any axis. The maximum value will always occur at the centroid of the cross-section (i.e. the neutral axis for pure bending) so many problems will involve finding the first moment of area at the neutral axis, but there are also cases where finding the first moment of area around some other axis is required. Note that the axis should be perpendicular to the shear force, so a vertical load requires us to use a horizontal axis.
 
-To calculate the first moment of area around an axis, first draw a line through this axis. We may choose to use either the area above this axis or the area below it, whichever is simpler. The answer will be the same either way. Break this area down into composite parts (if necessary) and apply $Q=\sum y_i A_i$ where A~i~ is the area of each composite part and y~i~ is the perpendicular distance between the centroid of the overall cross-section and the centroid of each composite part. Note that we must first find the location of the centroid of the overall cross-section in order to measure this distance.
+To calculate the first moment of area around an axis, first draw a line through this axis. We may choose to use either the area above this axis or the area below it, whichever is simpler. The answer will be the same either way. Break this area down into composite parts (if necessary) and apply $Q=\sum y_i A_i$ where A~i~ is the area of each composite part and y~i~ is the perpendicular distance between the centroid of the overall cross-section and the centroid of each composite part. Note that we must first find the location of the centroid of the overall cross-section in order to measure this distance. @fig-10.2 illustrates this process for finding Q at the neutral axis and at another axis for two different cross-sections.
+
+![Process for finding the 1st moment of area, Q = yA, at the neutral axis and at a different axis of interest for two common cross-sections.](images/chapter%2010%20updates%205.12.25/figure%2010.2.png){fig-align="center"}
 
 @exm-10.1 demonstrates this process to find the first moment of area around the neutral axis of a T cross-section. This example is solved twice, once using the area below the neutral axis and once using the area above.
 
@@ -91,13 +93,14 @@ A beam has the T-shaped cross-section shown. Determine the first moment of area 
 
 First determine the y-coordinate of the centroid of the cross-section. Consider the area as two rectangles and use the method of @sec-8.1. We will choose a reference point at the bottom of the section to calculate the centroid.
 
-![](images/CH10%20PNGs/example%2010.1%20part%202.png){fig-align="center" width="295"}
+![](images/chapter%2010%20updates%205.12.25/example%2010.1.png){fig-align="center" width="351"}
 
 $$
 \begin{aligned}
 & y_1=4.5{~in.}~,~ A_1=18{~in.}^2 \\
 & y_2=10.5{~in.}~,~ A_2=30{~in.}^2 \\
-& \bar{y}=\frac{(4.5{~in.} * 18{~in.}^2)+(10.5{~in.} * 30{~in.}^2)}{18{~in.}^2+30{~in.}^2}=8.25{~in.}~~\text{from the bottom of the section (our reference point) }
+& \bar{y}=\frac{(4.5{~in.} * 18{~in.}^2)+(10.5{~in.} * 30{~in.}^2)}{18{~in.}^2+30{~in.}^2}\\ 
+& \bar{y}=8.25{~in.}~~\text{from the bottom of the section (our reference point) }
 \end{aligned}
 $$
 
@@ -163,7 +166,7 @@ Now draw a horizontal line through the point of interest. In this case the point
 
 **Area above the line:**
 
-![](images/CH10%20PNGs/example%2010.2%20part%202.png){fig-align="center" width="384"}
+![](images/chapter%2010%20updates%205.12.25/example%2010.2.png){fig-align="center" width="426"}
 
 This area is a simple rectangle. Recall that *Q=yA* where A is the area of the rectangle and y is the vertical distance between the neutral axis and the centroid of the rectangle. Note that the perpendicular distance is **always** measured to the neutral axis, not to the seam between the two boards.
 
@@ -182,21 +185,21 @@ As an additional exercise, try using the area below the seam between the two boa
 
 Simple cross-sections such as rectangles and circles are fairly commonly used for beams. For these simple cross-sections we can derive standard solutions for the maximum first moment of area (Q~max~). Recall that this always occurs at the neutral axis of the cross-section.
 
-For a rectangle of base *b* and height *h* (@fig-10.2), the neutral axis will be at $y=\frac{h}{2}$. Drawing a line along the neutral axis and taking the area above this line gives $A=b \frac{h}{2}$. The distance between the centroid of this area and the neutral axis of the cross-section will be $y=\frac{h}{4}$. Thus, for a rectangular cross-section:
+For a rectangle of base *b* and height *h* (@fig-10.3), the neutral axis will be at $y=\frac{h}{2}$. Drawing a line along the neutral axis and taking the area above this line gives $A=b \frac{h}{2}$. The distance between the centroid of this area and the neutral axis of the cross-section will be $y=\frac{h}{4}$. Thus, for a rectangular cross-section:
 
 $$
 Q_{\max }=\frac{h}{4} \frac{b h}{2}=\frac{b h^2}{8}
 $$
 
-![Determining the first moment of area around the neutral axis of a rectangular cross-section.](images/CH10%20PNGs/figure%2010.2.png){#fig-10.2 fig-align="center" width="300"}
+![Determining the first moment of area around the neutral axis of a rectangular cross-section.](images/CH10%20PNGs/figure%2010.2.png){#fig-10.3 fig-align="center" width="300"}
 
-For a circular cross-section of radius r (@fig-10.3), the area above the neutral axis is semi-circle so $A=\frac{1}{2} \pi r^2$. The distance from the centroid of the semi-circle to the neutral axis is $y=\frac{4 r}{3 \pi}$. Thus, for a circular cross-section:
+For a circular cross-section of radius r (@fig-10.4), the area above the neutral axis is semi-circle so $A=\frac{1}{2} \pi r^2$. The distance from the centroid of the semi-circle to the neutral axis is $y=\frac{4 r}{3 \pi}$. Thus, for a circular cross-section:
 
 $$
 Q_{\max }=\frac{4 r}{3 \pi} \frac{1}{2} \pi r^2=\frac{2}{3} r^3
 $$
 
-![Determining the first moment of area around the neutral axis of a circular cross-section.](images/CH10%20PNGs/figure%2010.3.png){#fig-10.3 fig-align="center" width="292"}
+![Determining the first moment of area around the neutral axis of a circular cross-section.](images/CH10%20PNGs/figure%2010.3.png){#fig-10.4 fig-align="center" width="292"}
 
 Note that both of these are only for finding the first moment of area at the neutral axis (Q~max~). If the first moment of area around any other axis is required, these shortcuts will not work, and the general process will need to be used.
 
@@ -225,27 +228,27 @@ $$
 \tau_{avg}=\frac{V}{A}
 $$
 
-This is the average shear stress on a cross-section, but shear stress actually varies along the section (@fig-10.4). For a vertical internal shear force, shear stress is zero at the top and bottom of a cross-section and maximum at the neutral axis. Shear stress varies in a parabolic fashion. The average shear stress does not provide a full picture and it is often necessary to calculate the shear stress at a specific point on the cross-section instead.
+This is the average shear stress on a cross-section, but shear stress actually varies through the height of the section (@fig-10.5). For a vertical internal shear force, the shear stress is zero at the top and bottom of a cross-section and maximum at the neutral axis. Shear stress varies in a parabolic fashion. The average shear stress does not provide a full picture and it is often necessary to calculate the shear stress at a specific point on the cross-section instead.
 
-![Parabolic variation in shear stress over a cross-section. For a vertical shear force on a uniform cross-section, the shear stress is zero at the top and bottom of the section and maximum at the neutral axis.](images/CH10%20PNGs/figure%2010.4.png){#fig-10.4 fig-align="center" width="363"}
+![Parabolic variation in shear stress over a cross-section. For a vertical shear force on a uniform cross-section, the shear stress is zero at the top and bottom of the section and maximum at the neutral axis.](images/CH10%20PNGs/figure%2010.4.png){#fig-10.5 fig-align="center" width="363"}
 
-To derive the shear stress formula, we’ll begin by examining a small 2D element on a body subjected to an internal shear force (@fig-10.5). If this element is in equilibrium, a shear force applied to one face of this element must also produce shear forces (and therefore shear stresses) on the other faces of the element.
+To derive the shear stress formula, we’ll begin by examining a small 2D element on a body subjected to an internal shear force (@fig-10.6). If this element is in equilibrium, a shear force applied to one face of this element must also produce shear forces (and therefore shear stresses) on the other faces of the element.
 
-![Element A on the beam is subjected to shear force V on the right side. For the element to be in equilibrium there must also be an equal and opposite force V on the other side. However, this element will rotate so there must be two additional forces to create an equal moment in the opposite direction.](images/CH10%20PNGs/figure%2010.5.png){#fig-10.5 fig-align="center" width="219"}
+![Element A on the beam is subjected to shear force V on the right side. For the element to be in equilibrium there must also be an equal and opposite force V on the other side. However, this element will rotate so there must be two additional forces to create an equal moment in the opposite direction.](images/CH10%20PNGs/figure%2010.5.png){#fig-10.6 fig-align="center" width="219"}
 
-Thus, an element experiencing a vertical shear stress also experiences a horizontal shear stress. This is known as the *complementary property of shear*. This effect can be seen by forming a ‘beam’ out of a stack of paper and applying a vertical force. The pieces of paper slide horizontally relative to each other (@fig-10.6).
+Thus, an element experiencing a vertical shear stress also experiences a horizontal shear stress. This is known as the *complementary property of shear*. This effect can be seen by forming a ‘beam’ out of a stack of paper and applying a vertical force. The pieces of paper slide horizontally relative to each other (@fig-10.7).
 
-![A stack of papers representing a beam. The ends of the beam are initially vertical. Load F is applied, creating an internal vertical shear force. The papers slide relative to each other horizontally, indicating that there must also be a horizontal shear force created.](images/CH10%20PNGs/figure%2010.6.png){#fig-10.6 fig-align="center" width="364"}
+![A stack of papers representing a beam. The ends of the beam are initially vertical. Load F is applied, creating an internal vertical shear force. The papers slide relative to each other horizontally, indicating that there must also be a horizontal shear force created.](images/CH10%20PNGs/figure%2010.6.png){#fig-10.7 fig-align="center" width="364"}
 
-Another example is a wooden beam that fails due to shear. In such beams, cracks tend to appear horizontally even though the applied load is vertical. This is due to horizontal shear stress between the layers of the wood (@fig-10.7).
+Another example is a wooden beam that fails due to transverse shear. In such beams, cracks tend to appear horizontally even though the applied load is vertical. This is due to horizontal shear stress between the layers of the wood (@fig-10.8).
 
-![Horizontal shear failure in a wooden beam subjected to a vertical load.](images/CH10%20PNGs/10.7%20new.jpg){#fig-10.7 fig-align="center"}
+![Horizontal shear failure in a wooden beam subjected to a vertical load.](images/CH10%20PNGs/10.7%20new.jpg){#fig-10.8 fig-align="center"}
 
-Imagine a beam subjected to an arbitrary vertical load. Consider a small cross-section of width Δx (@fig-10.8). This cross-section is subjected to an external load, an internal shear force on each side of the cross-section, and an internal bending moment on each side of the cross-section. The two shear forces and two bending moments are not necessarily equal.
+Imagine a beam subjected to an arbitrary vertical load. Consider a small cross-section of width Δx (@fig-10.9). This cross-section is subjected to an external load, an internal shear force on each side of the cross-section, and an internal bending moment on each side of the cross-section. The two shear forces and two bending moments are not necessarily equal.
 
-![Internal loads on a small cross-section of width Δx on a beam subjected to an arbitrary vertical load, w = f(x). The internal loads on the right side of the section are slightly larger than those on the left.](images/CH10%20PNGs/figure%2010.8.png){#fig-10.8 fig-align="center" width="291"}
+![Internal loads on a small cross-section of width Δx on a beam subjected to an arbitrary vertical load, w = f(x). The internal loads on the right side of the section are slightly larger than those on the left.](images/CH10%20PNGs/figure%2010.8.png){#fig-10.9 fig-align="center" width="291"}
 
-By considering horizontal equilibrium, we do not need to account for the vertical loads (V, V + ΔV, and w). The bending moments (M and M + ΔM) will create horizontal stresses (@fig-10.9) equal to
+By considering horizontal equilibrium, we do not need to account for the vertical loads (V, V + ΔV, and w). From the flexure formula (@eq-9.2) the bending moments (M and M + ΔM) will create horizontal stresses (@fig-10.10) equal to
 
 $$
 \sigma_{x 1}=\frac{M y}{I}
@@ -269,11 +272,11 @@ $$
 F_2=\int \frac{(M+\Delta M) y}{I} d A
 $$
 
-![Horizontal stresses created by moments M and (M + ΔM).](images/CH10%20PNGs/figure%2010.9.png){#fig-10.9 fig-align="center" width="345"}
+![Horizontal stresses created by moments M and (M + ΔM).](images/CH10%20PNGs/figure%2010.9.png){#fig-10.10 fig-align="center" width="345"}
 
-Each force is tensile in part of the beam and compressive in part of the beam. When calculated across the entire cross-section these forces will sum to zero. However, if we consider only part of the cross-section the forces do not sum to zero (@fig-10.10). For the beam to be in equilibrium, there must be a horizontal shear force. For now we’ll call this force F’ and derive an equation for the shear stress it creates.
+Each force is tensile in part of the beam and compressive in part of the beam. When calculated across the entire cross-section these forces will sum to zero. However, if we consider only part of the cross-section the forces do not sum to zero (@fig-10.11). For the beam to be in equilibrium, there must be a horizontal shear force. For now, we’ll call this force F’ and derive an equation for the shear stress it creates.
 
-![Forces F~1~ and F~2~ do not balance when considering only part of the element. There must be an additional internal shear force F’.](images/CH10%20PNGs/figure%2010.10.png){#fig-10.10 fig-align="center" width="392"}
+![Forces F~1~ and F~2~ do not balance when considering only part of the element. There must be an additional internal shear force F’.](images/CH10%20PNGs/figure%2010.10.png){#fig-10.11 fig-align="center" width="392"}
 
 By equilibrium:
 
@@ -291,7 +294,7 @@ $$
 F^{\prime}=\frac{\Delta M}{I} Q
 $$
 
-We can calculate the shear stress from $\tau=\frac{V}{A}$ where V = F’ and A is the area of the cross-section that force F’ acts on. This area will be width, Δx, multiplied by the thickness of the beam, t.
+We can calculate the transverse shear stress from $\tau=\frac{V}{A}$ where V = F’ and A is the area of the cross-section that force F’ acts on. This area will be width, Δx, multiplied by the thickness of the beam, t.
 
 $$
 \tau=\frac{V}{A}=\frac{F^{\prime}}{\Delta x t}=\frac{\Delta M Q}{\Delta x I t}
@@ -308,18 +311,16 @@ $$
 $$ {#eq-10.2}
 
 | *where*
-| *τ = Shear stress at a point on the cross-section \[Pa, psi\]*
+| *τ = Transverse shear stress at a point on the cross-section \[Pa, psi\]*
 | *V = Internal shear force at the cross-section \[N, lb\]*
 | *Q = 1st moment of area at the point of interest on the cross-section \[m^3^, in.^3^\]*
 | *I = Area moment of inertia of the cross-section \[m^4^, in.^4^\]*
 
 *t = thickness of the cross-section \[m, in.\]*
 
-This is the shear stress equation, allowing us to calculate the shear stress at any point on a cross-section. This is often more useful than simply calculating the average shear stress across the entire cross-section.
+This is the transverse shear stress equation, allowing us to calculate the transverse shear stress at any point on a cross-section. This is often more useful than simply calculating the average shear stress across the entire cross-section.
 
-@exm-10.3 demonstrates calculation of the maximum shear stress in a simply supported beam with a circular cross-section.
-
-@exm-10.4 demonstrates how to calculate the maximum stress is a cross-section of varying thickness.
+@exm-10.3 demonstrates calculation of the maximum transverse shear stress in a simply supported beam with a circular cross-section.
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Example 10.3
@@ -357,7 +358,7 @@ $$
 The maximum first moment of area, Q~max~, occurs at the neutral axis of the cross-section. For a circular cross-section it was demonstrated in the text that
 
 $$
-Q_{max}=\frac{2}{3}r^3=\frac{2}{3}(0.02{~m})^3=5.33\times10^6{~m}^3
+Q_{max}=\frac{2}{3}r^3=\frac{2}{3}(0.02{~m})^3=5.33\times10^{-6}{~m}^3
 $$
 
 The thickness of the cross-section at the neutral axis is equal to the diameter, t = 0.04 m.
@@ -370,6 +371,8 @@ $$
 :::
 :::
 :::
+
+Note that the first moment of area will always be at its maximum value at the neutral axis of the cross-section. Since shear stress, $\tau=\frac{VQ}{It}$, the maximum shear stress often occurs at the neutral axis too. This will be true if the thickness, t, of the cross-section is uniform (such as a rectangular cross-section) or at its thinnest at the neutral axis (such as a wide-flange beam). However, if thickness t is larger at the neutral axis than at another point in the beam, it is possible that the maximum shear stress will occur at the point where the thickness decreases even though Q will be smaller at this location than at the neutral axis. In these cases it is best to calculate the shear stress at both the neutral axis and at the location where the thickness decreases. @exm-10.4 demonstrates how to calculate the maximum transverse stress is a cross-section of varying thickness.
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Example 10.4
@@ -407,7 +410,7 @@ $$
 I=\left(\frac{1 * 5^3}{12}+5 *(2.5-6.1)^2\right)+\left(\frac{5 * 4^3}{12}+20 *(7-6.1)^2\right)=118.08{~in.}^4
 $$
 
-**The shear force at the neutral axis of the cross-section**
+**The shear stress at the neutral axis of the cross-section**
 
 Draw a line through the point of interest and use the area above this line to calculate the first moment of area.
 
@@ -429,7 +432,7 @@ $$
 
 Draw a line through the point of interest and use the area above this line to calculate the first moment of area.
 
-![](images/CH10%20PNGs/example%2010.4%20part%204.png){fig-align="center" width="312"}
+![](images/chapter%2010%20updates%205.12.25/example%2010.4.png){fig-align="center" width="377"}
 
 $$
 Q=y A=0.9{~in.} *(4 {~in.}* 5{~in.})=18{~in.}^3
@@ -456,7 +459,7 @@ Note that even though the first moment of area is smaller at this axis, the stre
 3.  Calculate the area moment of inertia, I, for the cross-section. Use the entire cross-section for this calculation as shown in @sec-8.2.
 4.  Draw a horizontal line through the point of interest and calculate the 1^st^ moment of area, Q, as shown in @sec-10.1.
 5.  Determine the thickness of the cross-section, t, at the point of interest.
-6.  Calculate the shear stress, $\tau=\frac{VQ}{It}$.
+6.  Calculate the transverse shear stress, $\tau=\frac{VQ}{It}$.
 :::
 
 </details>
@@ -467,9 +470,9 @@ Note that even though the first moment of area is smaller at this axis, the stre
 
 <summary>Click to expand</summary>
 
-Some cross-sections are formed by connecting multiple pieces together with fasteners such as nails or bolts (@fig-10.11). In such members, we must analyze not only the stresses in the cross-section itself but also the stresses in the fasteners.
+Some cross-sections are formed by connecting multiple pieces together with fasteners such as nails or bolts (@fig-10.12). In such members, we must analyze not only the stresses in the cross-section itself but also the stresses in the fasteners.
 
-![T cross-section formed by connecting two boards together with nails. There is a consistent spacing s between nails along the length of the beam.](images/CH10%20PNGs/figure%2010.11.png){#fig-10.11 fig-align="center" width="254"}
+![T cross-section formed by connecting two boards together with nails. There is a consistent spacing s between nails along the length of the beam.](images/CH10%20PNGs/figure%2010.11.png){#fig-10.12 fig-align="center" width="254"}
 
 A useful quantity in this regard is shear flow, q. Shear flow measures of how much shear force is applied per unit length of the beam, and it is measured in units of force/length \[N/m, lb/in.\]. For example, if a nail is capable of resisting a shear force up to 10 kN and there is a shear flow of 30 kN/m, it is trivial to determine that we need at least 3 nails for every meter of beam.
 
@@ -493,7 +496,7 @@ $$
 
 This equation is very similar to the shear stress equation, but the thickness of the cross-section doesn’t appear here as shear flow is measured per unit length. We will generally want to determine the shear flow at the seam where the individual pieces of the cross-section are joined together as this is where the fasteners must resist the horizontal shear force.
 
-Often we want to determine how far apart we can space the nails along the length of the beam. Since shear flow is the shear force per unit length, if we know how much shear force each fastener can resist, we can say that the shear flow is equal to the force resisted by each fastener (F~nail~) divided by the spacing between the fasteners (s). Sometimes there will be multiple rows of nails side-by-side (@fig-10.12). In this case we can multiply the force resisted by each fastener by the number of rows (r).
+Often we want to determine how far apart we can space the nails along the length of the beam. Since shear flow is the shear force per unit length, if we know how much shear force each fastener can resist, we can say that the shear flow is equal to the force resisted by each fastener (F~nail~) divided by the spacing between the fasteners (s). Sometimes there will be multiple rows of nails side-by-side (@fig-10.13). In this case we can multiply the force resisted by each fastener by the number of rows (r).
 
 $$
 \boxed{q=\frac{V Q}{I}=\frac{F_{nail} r}{s}}
@@ -509,11 +512,11 @@ $$ {#eq-10.3}
 
 *s = Spacing between nails \[m, in.\]*
 
-![T cross-section held together by two rows of nails. The rows are spaced evenly along the length of the beam by distance s.](images/CH10%20PNGs/figure%2010.12.png){#fig-10.12 fig-align="center" width="282"}
+![T cross-section held together by two rows of nails. The rows are spaced evenly along the length of the beam by distance s.](images/CH10%20PNGs/figure%2010.12.png){#fig-10.13 fig-align="center" width="282"}
 
-Sometimes fasteners may be placed horizontally (@fig-10.13). In these cases we should still draw a line along the seam perpendicular to the fastener (so vertically in this case). We can then use the area either to the left or right of this line to determine the first moment of area. Note that we still use the vertical distance between the centroid of our chosen area and the neutral axis of the cross-section.
+Sometimes fasteners may be placed horizontally (@fig-10.14). In these cases we should still draw a line along the seam perpendicular to the fastener (so vertically in this case). We can then use the area either to the left or right of this line to determine the first moment of area. Note that we still use the vertical distance between the centroid of our chosen area and the neutral axis of the cross-section. For cross-sections with an axis of symmetry, we may choose to draw one vertical line and use the area to the left (or right) of this line or we may draw two vertical lines, one at each seam, and use the area between (or outside of) these lines.
 
-![A horizontal fastener requires a vertical line along the seam and the selection of the area either to the left or right of this line. When calculating the first moment of area by Q = yA, the distance y is still in the vertical direction.](images/figure%2010.13.png){#fig-10.13 fig-align="center" width="324"}
+![A horizontal fastener requires a vertical line along the seam and the selection of the area either to the left or right of this line. When calculating the first moment of area by Q = yA, the distance y is still in the vertical direction.](images/chapter%2010%20updates%205.12.25/new%2010.14.png){#fig-10.14 fig-align="center"}
 
 @exm-10.5 works through a problem with two rows of nails at each seam.
 
@@ -657,7 +660,7 @@ Objects subjected to vertical shear stresses also experience horizontal shear st
 
 The first moment of area (Q) is an important quantity when considering shear. It can be calculated along any axis. Generally, the internal shear force is vertical, and so the first moment of area is calculated around a horizontal axis. The maximum first moment of area will occur around the neutral axis of the cross-section.
 
-Shear stress varies in a parabolic manner across the cross-section. For a vertical shear force it is zero at the top and bottom of the section. For a uniform cross-section, the maximum shear stress occurs at the neutral axis as this is where the largest first moment of area is. If the cross-section varies in thickness, the maximum shear stress may not be at the neutral axis since the shear stress increases as the thickness of the cross-section decreases.
+Transverse hear stress varies in a parabolic manner across the cross-section. For a vertical shear force it is zero at the top and bottom of the section. For a uniform cross-section, the maximum transverse shear stress occurs at the neutral axis as this is where the largest first moment of area is. If the cross-section varies in thickness, the maximum transverse shear stress may not be at the neutral axis since the transverse shear stress increases as the thickness of the cross-section decreases.
 
 Shear flow is a measure of the shear force over a unit length. It is useful when creating a cross-section by fastening two or more individual pieces together. The shear flow can be used to determine the maximum allowable spacing between the fasteners in order to ensure the fasteners do not break. In practice, this should be done alongside a calculation of the maximum shear stress in the cross-section.
 :::
@@ -684,6 +687,10 @@ Q_{\max }=\frac{2}{3} r^3
 $$
 
 Shear stress:
+
+$$
+\tau_{avg}=\frac{V}{A}
+$$
 
 $$
 \tau=\frac{V Q}{I t}

@@ -21,6 +21,8 @@ editor: visual
 
 <summary>Click to expand</summary>
 
+**Does this show up?**
+
 Like in Statics, all bodies and structures discussed in this text will be assumed to be in static equilibrium. Unlike Statics, which assumed that all bodies were rigid, bodies in this text are deformable. In order to determine how an applied loading situation affects any given body or structure, and potentially causes it to deform, we must start by applying statics to establish the distribution of forces and moments within the body. This will be the first step of many problems. This chapter will present a review of those aspects of statics concepts that will be prevalent throughout this course.
 
 External forces and moments are the forces and moments that act on the boundaries of a system. They are the loads that are applied arbitrarily (weight, wind, pressure, etc.), as well as the reactions they induce in the supporting elements (pins, rollers, welds, etc.). In the case of external reactions, the word "reaction" refers to the forces and/or moments exerted by the supports on the body in reaction to the other loading in order to keep the body in equilibrium.
@@ -43,7 +45,7 @@ Finding the external reactions will be the first step of many of the types of pr
 
 : Free body diagrams for common supports. {#tbl-1.1}
 
-Notice that while pins and fixed supports react with a force in a specific direction, both the magnitude and direction of the force are unknown until equilibrium equations are applied to solve for them. Instead of expressing the components of the unknown F in terms of the unknown θ, the reactions are normally shown as the components F~x~ and F~y~. Once they are found, the overall magnitude of the force in the pin and its direction can be calculated $\left(F=\sqrt{F_x^2+F_y^2}, \tan \theta_x=\frac{F_y}{F_x}\right)$.
+Notice that while pins and fixed supports react with a force in a specific direction, both the magnitude and direction of the force are unknown until equilibrium equations are applied to solve for them. Instead of expressing the components of the unknown F in terms of the unknown θ, the reactions are normally shown as the components F~x~ and F~y~. Once they are found, the overall magnitude of the force in the pin and its direction can be calculated $\left(F=\sqrt{F_x^2+F_y^2}, \;\;\; \tan \theta_x=\frac{F_y}{F_x}\right)$.
 
 @sec-1.1 reviews equilibrium of members and frames in two dimensions, including the analysis of two-force members and multi-force members.
 
@@ -95,10 +97,15 @@ Note that a guess needs to be made for the positive or negative sense of A~x~ an
 Starting with the moment about A will eliminate two unknowns from the equation so that tensile force T can be solved for. Then substitute the result from T into the other two equations to find A~x~ and A~y~.
 
 $$
-\begin{aligned}
-& \sum M_A=T \sin (30^{\circ}) * 3{~ft}-1,200{~lb }*2{~ft}=0 \quad\rightarrow\quad T=1,600 {~lb} \\
-& \sum F_x=-A_x-T \cos (30^{\circ})=0 \quad\rightarrow\quad A_x=-1,384.6{~lb} \\
-& \sum F_y=A_y+T \sin (30^{\circ})-1200{~lb}=0 \quad\rightarrow\quad A_y= 400{~lb}
+\begin{aligned} 
+& \sum M_A=T \sin (30^{\circ}) * 3{~ft}-1,200{~lb }*2{~ft}=0\\
+& T = 1,600 {~lb} \\
+& \sum F_x=-A_x-T \cos (30^{\circ})=0\\
+& \sum F_x=-A_x-1,600{~lb} \cos (30^{\circ})=0\\
+& A_x=-1,384.6{~lb} \\
+& \sum F_y=A_y+T \sin (30^{\circ})-1200{~lb}=0\\
+& \sum F_y=A_y+1,600{~lb} \sin (30^{\circ})-1200{~lb}=0\\
+&A_y= 400{~lb}
 \end{aligned}
 $$
 
@@ -140,7 +147,7 @@ Determine the force in pin C and in pin A.
 
 Based on this FBD, it appears that there are 4 unknowns and therefore not solvable by just 3 equilibrium equations. However, recognizing that bar AB is a two-force member (since there is a pin at A and a pin at B but no other forces acting on that bar), it can be taken as known that the line of action of the reaction force at A goes through points A and B. Thus, the FBD can be redrawn with just 3 unknowns:
 
-![](images/Updated%20CH1%20examples/example%201.2%20part%203.png){fig-align="center" width="291"}
+![](images/Updated%20CH1%20examples/example%201.2%20part%203.png){fig-align="center" width="474"}
 
 **Step 2: Apply equilibrium equations**
 
@@ -162,13 +169,15 @@ $$
 
 Recall that, for rigid bodies, forces may be slid along their line of action. We could slide force $F_A$ to point B. Doing so simplifies our moment equation since the horizontal component of $F_A$ now acts through point C.
 
-![](images/clipboard-2163853552.png)$$
+![](images/clipboard-2163853552.png){fig-align="center" width="446"}
+
+$$
 \sum M_C=-F_A \sin(50^\circ)*4{~m}+F_A \cos(50^\circ)*0+4,000{~N}*2{~m}=0
 $$
 
 This gives us the same result of $F_A=2,611{~N}$ and the rest of the problem proceeds the same way.
 
-![](images/Updated%20CH1%20examples/example%201.2%20part%204.png){fig-align="center" width="389"}
+![](images/Updated%20CH1%20examples/example%201.2%20part%204.png){fig-align="center" width="451"}
 
 **Answer: F~A~ = 1,155 N and F~C~ = 1,155 N**
 :::
@@ -247,7 +256,7 @@ To use Method of Sections, a cut is made through the truss structure and analysi
 
 </p>
 
-Determine the forces in members ED and EF. Let P~1~ = 8 kN and P~2~ = 12 kN.
+Determine the forces in members ED and EF. Let F~1~ = 8 kN and F~2~ = 12 kN.
 
 ![](images/Updated%20CH1%20examples/example%201.4%20part%201.png){fig-align="center" width="381"}
 
@@ -258,7 +267,7 @@ With method of joints, we should always work with a joint that has no more than 
 
 **FBD Joint C**
 
-![](images/Updated%20CH1%20examples/example%201.4%20part%202.png){fig-align="center" width="223"}
+![](images/Updated%20CH1%20examples/example%201.4%20part%202.png){fig-align="center" width="158"}
 
 Angle Θ can be found by setting up a right angle triangle at C with a base of 1 m and a height of 5 m. Once this angle is known, we can use equilibrium equations to find the forces in members BC and CD. 
 
@@ -267,7 +276,7 @@ $$
 \\
 \begin{aligned}
 &\sum F_y=C D \sin \left(78.7^{\circ}\right)-12=0 \quad\rightarrow\quad C D=12.2{~kN} \\
-&\sum F_x=-B C-C D \cos \left(78.7^{\circ}\right)=0 \quad\rightarrow\quad B D=-15.3{~kN}
+&\sum F_x=-B C-C D \cos \left(78.7^{\circ}\right)=0 \quad\rightarrow\quad B C=-2.39{~kN}
 \end{aligned}
 $$
 
@@ -397,9 +406,9 @@ For 3D systems, there are 6 total scalar equilibrium equations:
 
 $$
 \boxed{\begin{array}{ll}
-\sum F_x=0 & \sum M_x=0 \\
-\sum F_y=0 & \sum M_y=0 \\
-\sum F_z=0 & \sum M_z=0
+\sum F_x=0 &\;\;\; \sum M_x=0 \\
+\sum F_y=0 &\;\;\; \sum M_y=0 \\
+\sum F_z=0 &\;\;\; \sum M_z=0
 \end{array}}
 $$ {#eq-1.2}
 

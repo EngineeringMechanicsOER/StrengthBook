@@ -65,7 +65,7 @@ Find the internal shear and bending moment at points J, K, and L in the beam pic
 
 The first step is to find the external reactions at the supports A and B.
 
-![](images/CH7%20PNGs/example%207.1%20part%201%202.png){fig-align="center" width="357"}
+![](images/example%207.1%20part%202.png){fig-align="center" width="426"}
 
 $$
 \begin{aligned}
@@ -260,7 +260,7 @@ If two points are not sufficient to determine the exact shape of the curve, simp
 
 The equations found using this method are valid as long as the external loading does not change. In cases where the external loading does change, we'll need to determine a new set of equations each time the loading changes. This includes any time a distributed load begins or ends, and both sides of a concentrated force or couple. In each region of load, we will cut a cross-section at distance x and determine equations for V and M that are valid for that region. We can then solve each equation at values of x at the start and end of their valid region and build up the complete shear force and bending moment diagrams.
 
-@exm-7.2 illustrates this method.
+@exm-7.2 illustrates this method for a simply supported beam, and @exm-7.3 for a cantilever beam.
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Example 7.2
@@ -389,6 +389,55 @@ We can see that in this example, the entire length of the beam is subjected to p
 :::
 :::
 
+::: {.callout-tip collapse="true" icon="false"}
+## Example 7.3
+
+::: {#exm-7.3}
+<p>
+
+</p>
+
+Draw the shear force and bending moment diagrams for the beam shown.
+
+::: {.callout-tip collapse="true" icon="false"}
+## Solution
+
+The first step is to draw a FBD of the beam being sure to change the supports to the correct external reaction forces, as shown below
+
+We will then use static equilibrium equations to solve for the magnitude of the support reactions.
+
+$$
+\begin{aligned}
+&\Sigma F_x=B_x=0 \\
+&\Sigma F_y = -\frac{1}{2}(10~m)\left(4~\frac{kN}{m}\right) + B_y=0 \quad\rightarrow\quad B_y=20~kN \\
+&\Sigma M_B=\frac{1}{2}(10~m)\left(4~\frac{kN}{m}\right)\left(\frac{10~m}{3}\right)-M_B=0 \quad\rightarrow\quad M_B=66.7 kN \cdot m
+\end{aligned}
+$$
+
+Now we will cut a cross-section within the loading region we are concerned with. For this example, we will cut one section between A and B to get the complete shear force and bending moment diagram. This section is depicted with the dashed line. We will then use equilibrium equations to find the internal shear force as a function of x, V(x).
+
+$$
+\Sigma F_y=-V-\frac{1}{2}(x)\left(\frac{4}{10}x\right)=0 \\
+V(x)=-\frac{1}{5}x^2 \\
+\Sigma M=\frac{1}{2}(x)\left(\frac{4}{10}\right)\left(\frac{1}{3}x\right)+M=0\\
+M(x) = -\frac{1}{15}x^3
+$$
+
+Notice that you can give a quick check on your statics as V(x) is the derivative of M(x). For polynomials, this is a quick test to see if your equations make sense.
+
+We can plot our V(x) and M(x) equations on an axis from x = 0 to x = 10m.  Notice how we draw the shear diagram directly below the beam and the moment diagram directly below the shear. These three (load, shear, and moment) share the same x-axis, whereas the vertical axis for the Shear (V) and Moment (M) diagrams have different units and possibly different scales.
+
+Drawing the shear and moment diagrams directly below the beam is good practice so that you can get a complete picture of what is going on along the length of the beam.
+
+You can see that the shear diagram starts at zero then at X = 10 m, V(10) = -20 KN. The reaction that we calculated was 20 KN going up so adding in that reaction closes our shear diagram.
+
+Similarly, the moment diagram is the graph of the cubic equation from x = 0 to x = 10. When M(10) = -66.7 KN\*m, this is the same as the reaction we calculated to close our moment diagram.
+
+We can see that in this example, the entire length of the beam is subjected to neagive moment moment. Going back to our sign convention from the beginning of this chapter, a negative moment indicates a concave down behavior. When we look at the beam and the external loads it makes sense as the beam will want to bend concave down, as shown in the figure.
+:::
+:::
+:::
+
 ::: {.callout-warning icon="false"}
 ## Step-by-step: Shear Force and Bending Moment Diagrams (Equilibrium Method)
 
@@ -419,12 +468,12 @@ Further, any applied concentrated forces cause a discontinuity on the shear forc
 
 Finally, we also know from @eq-7.2 that the change in shear force between any two points is equal to the area under the distributed load between those same two points. We know from @eq-7.4 that the change in bending moment between any two points is equal to the area underneath the shear force diagram between those two points. This allows us to add numbers to our diagrams and determine the value of the shear force and bending moment at key points.
 
-When the loading is relatively simple, consisting of concentrated forces, concentrated moments, and uniformly distributed loads, we can use geometry to find the area of the load and shear diagrams since the shapes are simple. @exm-7.3 and @exm-7.4 illustrate this method.
+When the loading is relatively simple, consisting of concentrated forces, concentrated moments, and uniformly distributed loads, we can use geometry to find the area of the load and shear diagrams since the shapes are simple. @exm-7.4 and @exm-7.5 illustrate this method.
 
 ::: {#Example-7.3 .callout-tip collapse="true" icon="false"}
-## Example 7.3
+## Example 7.4
 
-::: {#exm-7.3}
+::: {#exm-7.4}
 <p>
 
 </p>
@@ -580,9 +629,9 @@ We can see that in this example, this beam is subjected to both positive and neg
 :::
 
 ::: {.callout-tip collapse="true" icon="false"}
-## Example 7.4
+## Example 7.5
 
-::: {#exm-7.4}
+::: {#exm-7.5}
 <p>
 
 </p>
