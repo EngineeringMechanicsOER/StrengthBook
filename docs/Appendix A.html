@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.7.29">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -32,17 +32,20 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="./">
 <link href="./Appendix B.html" rel="next">
 <link href="./Chapter 15.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-748b535e376f14d4692bf2b2e5fd6380.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-e1aa288a8a6a3aa5f7fec8175f5023de.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-d13a72f20fc3c7f792e67513fe0bf82c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-e1aa288a8a6a3aa5f7fec8175f5023de.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -70,41 +73,186 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="site_libs/datatables-binding-0.33/datatables.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="site_libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="site_libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
+<script src="site_libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
+<link href="site_libs/nouislider-7.0.10/jquery.nouislider.min.css" rel="stylesheet">
+<script src="site_libs/nouislider-7.0.10/jquery.nouislider.min.js"></script>
+<link href="site_libs/selectize-0.12.0/selectize.bootstrap3.css" rel="stylesheet">
+<script src="site_libs/selectize-0.12.0/selectize.min.js"></script>
+<link href="site_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+<script src="site_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="styles/custom.css">
 </head>
 
-<body class="nav-sidebar docked">
+<body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -204,7 +352,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Chapter 10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Shear Loads</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Shear Loading in Beams</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -289,15 +437,16 @@ window.Quarto = {
    
   <ul>
   <li><a href="#wide-flange-w-shapes.-us-customary-units." id="toc-wide-flange-w-shapes.-us-customary-units." class="nav-link active" data-scroll-target="#wide-flange-w-shapes.-us-customary-units."><span class="header-section-number">A.1</span> Wide-Flange (W) Shapes. US Customary Units.</a></li>
-  <li><a href="#wide-flange-w-shapes.-si-units." id="toc-wide-flange-w-shapes.-si-units." class="nav-link" data-scroll-target="#wide-flange-w-shapes.-si-units."><span class="header-section-number">A.2</span> Wide-Flange (W) Shapes. SI Units.</a></li>
-  <li><a href="#wt-shapes.-us-customary-units." id="toc-wt-shapes.-us-customary-units." class="nav-link" data-scroll-target="#wt-shapes.-us-customary-units."><span class="header-section-number">A.3</span> WT Shapes. US Customary Units.</a></li>
-  <li><a href="#wt-shapes.-si-units." id="toc-wt-shapes.-si-units." class="nav-link" data-scroll-target="#wt-shapes.-si-units."><span class="header-section-number">A.4</span> WT Shapes. SI Units.</a></li>
+  <li><a href="#wide-flange-w-shapes.-si-units" id="toc-wide-flange-w-shapes.-si-units" class="nav-link" data-scroll-target="#wide-flange-w-shapes.-si-units"><span class="header-section-number">A.2</span> Wide-Flange (W) Shapes. SI Units</a></li>
+  <li><a href="#wt-shapes.-us-customary-units" id="toc-wt-shapes.-us-customary-units" class="nav-link" data-scroll-target="#wt-shapes.-us-customary-units"><span class="header-section-number">A.3</span> WT Shapes. US Customary Units</a></li>
+  <li><a href="#wt-shapes.-si-units" id="toc-wt-shapes.-si-units" class="nav-link" data-scroll-target="#wt-shapes.-si-units"><span class="header-section-number">A.4</span> WT Shapes. SI Units</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
+
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Appendix A.html">Appendices</a></li><li class="breadcrumb-item"><a href="./Appendix A.html"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Geometric Properties of Standard Beams</span></a></li></ol></nav>
 <div class="quarto-title">
@@ -321,1722 +470,40 @@ window.Quarto = {
 <section id="wide-flange-w-shapes.-us-customary-units." class="level2" data-number="A.1">
 <h2 data-number="A.1" class="anchored" data-anchor-id="wide-flange-w-shapes.-us-customary-units."><span class="header-section-number">A.1</span> Wide-Flange (W) Shapes. US Customary Units.</h2>
 <p><img src="images/Appendices/Appendix A part 1.png" class="img-fluid" alt="Wide-flange beam cross-section" width="374"></p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 4%">
-<col style="width: 8%">
-<col style="width: 7%">
-<col style="width: 11%">
-<col style="width: 13%">
-<col style="width: 12%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 6%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 6%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;"><strong>Label</strong></th>
-<th style="text-align: center;"><strong>Area, A (in.<sup>2</sup>)</strong></th>
-<th style="text-align: center;"><strong>Depth, d (in.)</strong></th>
-<th style="text-align: center;"><strong>Flange Width, b<sub>f</sub> (in.)</strong></th>
-<th style="text-align: center;"><strong>Flange Thickness, t<sub>f</sub> (in.)</strong></th>
-<th style="text-align: center;"><strong>Web Thickness, t<sub>w</sub> (in.)</strong></th>
-<th style="text-align: center;"><strong>I<sub>x</sub> (in.<sup>4</sup>)</strong></th>
-<th style="text-align: center;"><strong>S<sub>x</sub> (in.<sup>3</sup>)</strong></th>
-<th style="text-align: center;"><strong>r<sub>x</sub> (in.)</strong></th>
-<th style="text-align: center;"><strong>I<sub>y</sub> (in.<sup>4</sup>)</strong></th>
-<th style="text-align: center;"><strong>S<sub>y</sub> (in.<sup>3</sup>)</strong></th>
-<th style="text-align: center;"><strong>r<sub>y</sub> (in.)</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">W40x431</td>
-<td style="text-align: center;">127</td>
-<td style="text-align: center;">41.3</td>
-<td style="text-align: center;">16.2</td>
-<td style="text-align: center;">2.36</td>
-<td style="text-align: center;">1.34</td>
-<td style="text-align: center;">34800</td>
-<td style="text-align: center;">1690</td>
-<td style="text-align: center;">16.6</td>
-<td style="text-align: center;">1690</td>
-<td style="text-align: center;">208</td>
-<td style="text-align: center;">3.65</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">W40x297</td>
-<td style="text-align: center;">87.3</td>
-<td style="text-align: center;">39.8</td>
-<td style="text-align: center;">15.8</td>
-<td style="text-align: center;">1.65</td>
-<td style="text-align: center;">0.930</td>
-<td style="text-align: center;">23200</td>
-<td style="text-align: center;">1170</td>
-<td style="text-align: center;">16.3</td>
-<td style="text-align: center;">1090</td>
-<td style="text-align: center;">138</td>
-<td style="text-align: center;">3.54</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">W40x264</td>
-<td style="text-align: center;">77.4</td>
-<td style="text-align: center;">40.0</td>
-<td style="text-align: center;">11.9</td>
-<td style="text-align: center;">1.73</td>
-<td style="text-align: center;">0.960</td>
-<td style="text-align: center;">19400</td>
-<td style="text-align: center;">971</td>
-<td style="text-align: center;">15.8</td>
-<td style="text-align: center;">493</td>
-<td style="text-align: center;">82.6</td>
-<td style="text-align: center;">2.52</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">W36x487</td>
-<td style="text-align: center;">143</td>
-<td style="text-align: center;">39.3</td>
-<td style="text-align: center;">17.1</td>
-<td style="text-align: center;">2.68</td>
-<td style="text-align: center;">1.50</td>
-<td style="text-align: center;">36000</td>
-<td style="text-align: center;">1830</td>
-<td style="text-align: center;">15.8</td>
-<td style="text-align: center;">2250</td>
-<td style="text-align: center;">263</td>
-<td style="text-align: center;">3.96</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">W36x247</td>
-<td style="text-align: center;">72.5</td>
-<td style="text-align: center;">36.7</td>
-<td style="text-align: center;">16.5</td>
-<td style="text-align: center;">1.35</td>
-<td style="text-align: center;">0.800</td>
-<td style="text-align: center;">16700</td>
-<td style="text-align: center;">913</td>
-<td style="text-align: center;">15.2</td>
-<td style="text-align: center;">1010</td>
-<td style="text-align: center;">123</td>
-<td style="text-align: center;">3.74</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">W36x210</td>
-<td style="text-align: center;">61.9</td>
-<td style="text-align: center;">36.7</td>
-<td style="text-align: center;">12.2</td>
-<td style="text-align: center;">1.36</td>
-<td style="text-align: center;">0.830</td>
-<td style="text-align: center;">13200</td>
-<td style="text-align: center;">719</td>
-<td style="text-align: center;">14.6</td>
-<td style="text-align: center;">411</td>
-<td style="text-align: center;">67.5</td>
-<td style="text-align: center;">2.58</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">W30x326</td>
-<td style="text-align: center;">95.9</td>
-<td style="text-align: center;">32.4</td>
-<td style="text-align: center;">15.4</td>
-<td style="text-align: center;">2.05</td>
-<td style="text-align: center;">1.14</td>
-<td style="text-align: center;">16800</td>
-<td style="text-align: center;">1040</td>
-<td style="text-align: center;">13.2</td>
-<td style="text-align: center;">1240</td>
-<td style="text-align: center;">162</td>
-<td style="text-align: center;">3.60</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">W30x173</td>
-<td style="text-align: center;">50.9</td>
-<td style="text-align: center;">30.4</td>
-<td style="text-align: center;">15.0</td>
-<td style="text-align: center;">1.07</td>
-<td style="text-align: center;">0.655</td>
-<td style="text-align: center;">8230</td>
-<td style="text-align: center;">541</td>
-<td style="text-align: center;">12.7</td>
-<td style="text-align: center;">598</td>
-<td style="text-align: center;">79.8</td>
-<td style="text-align: center;">3.42</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">W30x99</td>
-<td style="text-align: center;">29.0</td>
-<td style="text-align: center;">29.7</td>
-<td style="text-align: center;">10.5</td>
-<td style="text-align: center;">0.670</td>
-<td style="text-align: center;">0.520</td>
-<td style="text-align: center;">3990</td>
-<td style="text-align: center;">269</td>
-<td style="text-align: center;">11.7</td>
-<td style="text-align: center;">128</td>
-<td style="text-align: center;">24.5</td>
-<td style="text-align: center;">2.10</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">W24x279</td>
-<td style="text-align: center;">81.9</td>
-<td style="text-align: center;">26.7</td>
-<td style="text-align: center;">13.3</td>
-<td style="text-align: center;">2.09</td>
-<td style="text-align: center;">1.16</td>
-<td style="text-align: center;">9600</td>
-<td style="text-align: center;">718</td>
-<td style="text-align: center;">10.8</td>
-<td style="text-align: center;">823</td>
-<td style="text-align: center;">124</td>
-<td style="text-align: center;">3.17</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">W24x131</td>
-<td style="text-align: center;">38.6</td>
-<td style="text-align: center;">24.5</td>
-<td style="text-align: center;">12.9</td>
-<td style="text-align: center;">0.960</td>
-<td style="text-align: center;">0.605</td>
-<td style="text-align: center;">4020</td>
-<td style="text-align: center;">329</td>
-<td style="text-align: center;">10.2</td>
-<td style="text-align: center;">340</td>
-<td style="text-align: center;">53.0</td>
-<td style="text-align: center;">2.97</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">W24x84</td>
-<td style="text-align: center;">24.7</td>
-<td style="text-align: center;">24.1</td>
-<td style="text-align: center;">9.02</td>
-<td style="text-align: center;">0.770</td>
-<td style="text-align: center;">0.470</td>
-<td style="text-align: center;">2370</td>
-<td style="text-align: center;">196</td>
-<td style="text-align: center;">9.79</td>
-<td style="text-align: center;">94.4</td>
-<td style="text-align: center;">20.9</td>
-<td style="text-align: center;">1.95</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">W21x201</td>
-<td style="text-align: center;">59.3</td>
-<td style="text-align: center;">23.0</td>
-<td style="text-align: center;">12.6</td>
-<td style="text-align: center;">1.63</td>
-<td style="text-align: center;">0.910</td>
-<td style="text-align: center;">5310</td>
-<td style="text-align: center;">461</td>
-<td style="text-align: center;">9.47</td>
-<td style="text-align: center;">542</td>
-<td style="text-align: center;">86.1</td>
-<td style="text-align: center;">3.02</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">W21x122</td>
-<td style="text-align: center;">35.9</td>
-<td style="text-align: center;">21.7</td>
-<td style="text-align: center;">12.4</td>
-<td style="text-align: center;">0.960</td>
-<td style="text-align: center;">0.600</td>
-<td style="text-align: center;">2960</td>
-<td style="text-align: center;">273</td>
-<td style="text-align: center;">9.09</td>
-<td style="text-align: center;">305</td>
-<td style="text-align: center;">49.2</td>
-<td style="text-align: center;">2.92</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">W21x68</td>
-<td style="text-align: center;">20.0</td>
-<td style="text-align: center;">21.1</td>
-<td style="text-align: center;">8.27</td>
-<td style="text-align: center;">0.685</td>
-<td style="text-align: center;">0.430</td>
-<td style="text-align: center;">1480</td>
-<td style="text-align: center;">140</td>
-<td style="text-align: center;">8.60</td>
-<td style="text-align: center;">64.7</td>
-<td style="text-align: center;">15.7</td>
-<td style="text-align: center;">1.80</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">W18x130</td>
-<td style="text-align: center;">38.3</td>
-<td style="text-align: center;">19.3</td>
-<td style="text-align: center;">11.2</td>
-<td style="text-align: center;">1.20</td>
-<td style="text-align: center;">0.670</td>
-<td style="text-align: center;">2460</td>
-<td style="text-align: center;">256</td>
-<td style="text-align: center;">8.03</td>
-<td style="text-align: center;">278</td>
-<td style="text-align: center;">49.9</td>
-<td style="text-align: center;">2.70</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">W18x76</td>
-<td style="text-align: center;">22.3</td>
-<td style="text-align: center;">18.2</td>
-<td style="text-align: center;">11.0</td>
-<td style="text-align: center;">0.680</td>
-<td style="text-align: center;">0.425</td>
-<td style="text-align: center;">1330</td>
-<td style="text-align: center;">146</td>
-<td style="text-align: center;">7.73</td>
-<td style="text-align: center;">152</td>
-<td style="text-align: center;">27.6</td>
-<td style="text-align: center;">2.61</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">W18x40</td>
-<td style="text-align: center;">11.8</td>
-<td style="text-align: center;">17.9</td>
-<td style="text-align: center;">6.02</td>
-<td style="text-align: center;">0.525</td>
-<td style="text-align: center;">0.315</td>
-<td style="text-align: center;">612</td>
-<td style="text-align: center;">68.4</td>
-<td style="text-align: center;">7.21</td>
-<td style="text-align: center;">19.1</td>
-<td style="text-align: center;">6.35</td>
-<td style="text-align: center;">1.27</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">W16x67</td>
-<td style="text-align: center;">19.6</td>
-<td style="text-align: center;">16.3</td>
-<td style="text-align: center;">10.2</td>
-<td style="text-align: center;">0.665</td>
-<td style="text-align: center;">0.395</td>
-<td style="text-align: center;">954</td>
-<td style="text-align: center;">117</td>
-<td style="text-align: center;">6.96</td>
-<td style="text-align: center;">119</td>
-<td style="text-align: center;">23.2</td>
-<td style="text-align: center;">2.46</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">W16x40</td>
-<td style="text-align: center;">11.8</td>
-<td style="text-align: center;">16.0</td>
-<td style="text-align: center;">7.00</td>
-<td style="text-align: center;">0.505</td>
-<td style="text-align: center;">0.305</td>
-<td style="text-align: center;">518</td>
-<td style="text-align: center;">64.7</td>
-<td style="text-align: center;">6.63</td>
-<td style="text-align: center;">28.9</td>
-<td style="text-align: center;">8.25</td>
-<td style="text-align: center;">1.57</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">W16x31</td>
-<td style="text-align: center;">9.13</td>
-<td style="text-align: center;">15.9</td>
-<td style="text-align: center;">5.53</td>
-<td style="text-align: center;">0.440</td>
-<td style="text-align: center;">0.275</td>
-<td style="text-align: center;">375</td>
-<td style="text-align: center;">47.2</td>
-<td style="text-align: center;">6.41</td>
-<td style="text-align: center;">12.4</td>
-<td style="text-align: center;">4.49</td>
-<td style="text-align: center;">1.17</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">W14x90</td>
-<td style="text-align: center;">26.5</td>
-<td style="text-align: center;">14.0</td>
-<td style="text-align: center;">14.5</td>
-<td style="text-align: center;">0.710</td>
-<td style="text-align: center;">0.440</td>
-<td style="text-align: center;">999</td>
-<td style="text-align: center;">143</td>
-<td style="text-align: center;">6.14</td>
-<td style="text-align: center;">362</td>
-<td style="text-align: center;">49.9</td>
-<td style="text-align: center;">3.70</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">W14x53</td>
-<td style="text-align: center;">15.6</td>
-<td style="text-align: center;">13.9</td>
-<td style="text-align: center;">8.06</td>
-<td style="text-align: center;">0.660</td>
-<td style="text-align: center;">0.370</td>
-<td style="text-align: center;">541</td>
-<td style="text-align: center;">77.8</td>
-<td style="text-align: center;">5.89</td>
-<td style="text-align: center;">57.7</td>
-<td style="text-align: center;">14.3</td>
-<td style="text-align: center;">1.92</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">W14x34</td>
-<td style="text-align: center;">10.0</td>
-<td style="text-align: center;">14.0</td>
-<td style="text-align: center;">6.75</td>
-<td style="text-align: center;">0.455</td>
-<td style="text-align: center;">0.285</td>
-<td style="text-align: center;">340</td>
-<td style="text-align: center;">48.6</td>
-<td style="text-align: center;">5.83</td>
-<td style="text-align: center;">23.3</td>
-<td style="text-align: center;">6.91</td>
-<td style="text-align: center;">1.53</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">W12x106</td>
-<td style="text-align: center;">31.2</td>
-<td style="text-align: center;">12.9</td>
-<td style="text-align: center;">12.2</td>
-<td style="text-align: center;">0.990</td>
-<td style="text-align: center;">0.610</td>
-<td style="text-align: center;">933</td>
-<td style="text-align: center;">145</td>
-<td style="text-align: center;">5.47</td>
-<td style="text-align: center;">301</td>
-<td style="text-align: center;">49.3</td>
-<td style="text-align: center;">3.11</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">W12x53</td>
-<td style="text-align: center;">15.6</td>
-<td style="text-align: center;">12.1</td>
-<td style="text-align: center;">10.0</td>
-<td style="text-align: center;">0.575</td>
-<td style="text-align: center;">0.345</td>
-<td style="text-align: center;">425</td>
-<td style="text-align: center;">70.6</td>
-<td style="text-align: center;">5.23</td>
-<td style="text-align: center;">95.8</td>
-<td style="text-align: center;">19.2</td>
-<td style="text-align: center;">2.48</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">W12x26</td>
-<td style="text-align: center;">7.65</td>
-<td style="text-align: center;">12.2</td>
-<td style="text-align: center;">6.49</td>
-<td style="text-align: center;">0.380</td>
-<td style="text-align: center;">0.230</td>
-<td style="text-align: center;">204</td>
-<td style="text-align: center;">33.4</td>
-<td style="text-align: center;">5.17</td>
-<td style="text-align: center;">17.3</td>
-<td style="text-align: center;">5.34</td>
-<td style="text-align: center;">1.51</td>
-</tr>
-</tbody>
-</table>
+<div class="cell">
+<div class="cell-output-display">
+<div id="htmlwidget-717922b05d784db0fcb1" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-717922b05d784db0fcb1">{"x":{"filter":"top","vertical":false,"filterHTML":"<tr>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"3.84\" data-max=\"143\" data-scale=\"2\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"7.99\" data-max=\"41.3\" data-scale=\"2\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"4\" data-max=\"17.11\" data-scale=\"2\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"0.255\" data-max=\"2.68\" data-scale=\"3\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"0.23\" data-max=\"1.5\" data-scale=\"3\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"39.6\" data-max=\"36000\" data-scale=\"1\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"9.91\" data-max=\"1830\" data-scale=\"2\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"3.21\" data-max=\"16.61\" data-scale=\"2\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"2.73\" data-max=\"2250\" data-scale=\"2\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"1.37\" data-max=\"263\" data-scale=\"2\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"0.843\" data-max=\"3.96\" data-scale=\"3\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n<\/tr>","data":[["W40x431","W40x297","W40x264","W36x487","W36x247","W36x210","W30x326","W30x173","W30x99","W24x279","W24x131","W24x84","W21x201","W21x122","W21x68","W18x130","W18x76","W18x40","W16x67","W16x40","W16x31","W14x90","W14x53","W14x34","W14x22","W12x106","W12x53","W12x50","W12x26","W12x22","W10x68","W10x39","W10x30","W10x19","W8x40","W8x31","W8x21","W8x13"],[127,87.3,77.40000000000001,143,72.5,61.9,95.90000000000001,50.9,29,81.90000000000001,38.6,24.7,59.3,35.9,20,38.3,22.3,11.8,19.6,11.8,9.130000000000001,26.5,15.6,10,6.49,31.2,15.6,14.6,7.65,6.48,20,11.5,8.84,5.62,11.7,9.119999999999999,6.16,3.84],[41.3,39.8,40,39.3,36.7,36.7,32.4,30.4,29.7,26.7,24.5,24.1,23,21.7,21.1,19.3,18.2,17.9,16.3,16,15.9,14,13.9,14,13.7,12.9,12.1,12.2,12.2,12.3,10.4,9.92,10.5,10.2,8.25,8,8.279999999999999,7.99],[16.2,15.8,11.9,17.1,16.5,12.2,15.4,15,10.5,13.3,12.9,9.02,12.6,12.4,8.27,11.2,11,6.02,10.2,7,5.53,14.5,8.06,6.75,5,12.2,10,8.08,6.49,4.03,10.1,7.99,5.81,4.02,8.07,8,5.27,4],[2.36,1.65,1.73,2.68,1.35,1.36,2.05,1.07,0.67,2.09,0.96,0.77,1.63,0.96,0.6850000000000001,1.2,0.68,0.525,0.665,0.505,0.44,0.71,0.66,0.455,0.335,0.99,0.575,0.64,0.38,0.425,0.77,0.53,0.51,0.395,0.5600000000000001,0.435,0.4,0.255],[1.34,0.93,0.96,1.5,0.8,0.83,1.14,0.655,0.52,1.16,0.605,0.47,0.91,0.6,0.43,0.67,0.425,0.315,0.395,0.305,0.275,0.44,0.37,0.285,0.23,0.61,0.345,0.37,0.23,0.26,0.47,0.315,0.3,0.25,0.36,0.285,0.25,0.23],[34800,23200,19400,36000,16700,13200,16800,8230,3990,9600,4020,2370,5310,2960,1480,2460,1330,612,954,518,375,999,541,340,199,933,425,391,204,156,394,209,170,96.3,146,110,75.3,39.6],[1690,1170,971,1830,913,719,1040,541,269,718,329,196,461,273,140,256,146,68.40000000000001,117,64.7,47.2,143,77.8,48.6,29,145,70.59999999999999,64.2,33.4,25.4,75.7,42.1,32.4,18.8,35.5,27.5,18.2,9.91],[16.6,16.3,15.8,15.8,15.2,14.6,13.2,12.7,11.7,10.8,10.2,9.789999999999999,9.470000000000001,9.09,8.6,8.029999999999999,7.73,7.21,6.96,6.63,6.41,6.14,5.89,5.83,5.54,5.47,5.23,5.18,5.17,4.91,4.44,4.27,4.38,4.14,3.53,3.47,3.49,3.21],[1690,1090,493,2250,1010,411,1240,598,128,823,340,94.40000000000001,542,305,64.7,278,152,19.1,119,28.9,12.4,362,57.7,23.3,7,301,95.8,56.3,17.3,4.66,134,45,16.7,4.29,49.1,37.1,9.77,2.73],[208,138,82.59999999999999,263,123,67.5,162,79.8,24.5,124,53,20.9,86.09999999999999,49.2,15.7,49.9,27.6,6.35,23.2,8.25,4.49,49.9,14.3,6.91,2.8,49.3,19.2,13.9,5.34,2.31,26.4,11.3,5.75,2.14,12.2,9.27,3.71,1.37],[3.65,3.54,2.52,3.96,3.74,2.58,3.6,3.42,2.1,3.17,2.97,1.95,3.02,2.92,1.8,2.7,2.61,1.27,2.46,1.57,1.17,3.7,1.92,1.53,1.04,3.11,2.48,1.96,1.51,0.848,2.59,1.98,1.37,0.874,2.04,2.02,1.26,0.843]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Label<\/th>\n      <th>Area, A (in²)<\/th>\n      <th>Depth, d (in.)<\/th>\n      <th>Flange Width, bf (in.)<\/th>\n      <th>Flange Thickness, tf (in.)<\/th>\n      <th>Web Thickness, tw (in.)<\/th>\n      <th>Ix (in⁴)<\/th>\n      <th>Sx (in³)<\/th>\n      <th>rx (in.)<\/th>\n      <th>Iy (in⁴)<\/th>\n      <th>Sy (in³)<\/th>\n      <th>ry (in.)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"info":false,"paging":false,"lengthChange":false,"autoWidth":true,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6,7,8,9,10,11]},{"name":"Label","targets":0},{"name":"Area_A_in2","targets":1},{"name":"Depth_d_in","targets":2},{"name":"Flange_Width_bf_in","targets":3},{"name":"Flange_Thickness_tf_in","targets":4},{"name":"Web_Thickness_tw_in","targets":5},{"name":"Ix_in4","targets":6},{"name":"Sx_in3","targets":7},{"name":"rx_in","targets":8},{"name":"Iy_in4","targets":9},{"name":"Sy_in3","targets":10},{"name":"ry_in","targets":11}],"order":[],"orderClasses":false,"orderCellsTop":true}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
 </section>
-<section id="wide-flange-w-shapes.-si-units." class="level2" data-number="A.2">
-<h2 data-number="A.2" class="anchored" data-anchor-id="wide-flange-w-shapes.-si-units."><span class="header-section-number">A.2</span> Wide-Flange (W) Shapes. SI Units.</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 4%">
-<col style="width: 7%">
-<col style="width: 6%">
-<col style="width: 10%">
-<col style="width: 12%">
-<col style="width: 10%">
-<col style="width: 9%">
-<col style="width: 9%">
-<col style="width: 5%">
-<col style="width: 9%">
-<col style="width: 9%">
-<col style="width: 5%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Label</th>
-<th><strong>Area, A (mm<sup>2</sup>)</strong></th>
-<th><strong>Depth, d (mm)</strong></th>
-<th><strong>Flange Width, b<sub>f</sub> (mm)</strong></th>
-<th><strong>Flange Thickness, t<sub>f</sub> (mm)</strong></th>
-<th><strong>Web Thickness, t<sub>w</sub> (mm)</strong></th>
-<th><strong>I<sub>x</sub> (x10<sup>6</sup> mm<sup>4</sup>)</strong></th>
-<th><strong>S<sub>x</sub> (x10<sup>3</sup> mm<sup>3</sup>)</strong></th>
-<th><strong>r<sub>x</sub> (mm)</strong></th>
-<th><strong>I<sub>y</sub> (x10<sup>6</sup> mm<sup>4</sup>)</strong></th>
-<th><strong>S<sub>y</sub> (x10<sup>3</sup> mm<sup>3</sup>)</strong></th>
-<th><strong>r<sub>y</sub> (mm)</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>W1000x642</td>
-<td>81900</td>
-<td>1050</td>
-<td>411</td>
-<td>59.9</td>
-<td>34.0</td>
-<td>14500</td>
-<td>27700</td>
-<td>422</td>
-<td>703</td>
-<td>3410</td>
-<td>92.7</td>
-</tr>
-<tr class="even">
-<td>W1000x443</td>
-<td>56300</td>
-<td>1010</td>
-<td>401</td>
-<td>41.9</td>
-<td>23.6</td>
-<td>9660</td>
-<td>19200</td>
-<td>414</td>
-<td>454</td>
-<td>2260</td>
-<td>89.9</td>
-</tr>
-<tr class="odd">
-<td>W1000x393</td>
-<td>49900</td>
-<td>1020</td>
-<td>302</td>
-<td>43.9</td>
-<td>24.4</td>
-<td>8070</td>
-<td>15900</td>
-<td>401</td>
-<td>205</td>
-<td>1350</td>
-<td>64.0</td>
-</tr>
-<tr class="even">
-<td>W920x725</td>
-<td>92300</td>
-<td>998</td>
-<td>434</td>
-<td>68.1</td>
-<td>38.1</td>
-<td>15000</td>
-<td>30000</td>
-<td>401</td>
-<td>937</td>
-<td>4310</td>
-<td>101</td>
-</tr>
-<tr class="odd">
-<td>W920x368</td>
-<td>46800</td>
-<td>932</td>
-<td>419</td>
-<td>34.3</td>
-<td>20.3</td>
-<td>6950</td>
-<td>15000</td>
-<td>386</td>
-<td>420</td>
-<td>2020</td>
-<td>95.0</td>
-</tr>
-<tr class="even">
-<td>W920x313</td>
-<td>39900</td>
-<td>932</td>
-<td>310</td>
-<td>34.5</td>
-<td>21.1</td>
-<td>5490</td>
-<td>11800</td>
-<td>371</td>
-<td>171</td>
-<td>1110</td>
-<td>65.5</td>
-</tr>
-<tr class="odd">
-<td>W760x484</td>
-<td>61900</td>
-<td>823</td>
-<td>391</td>
-<td>29.0</td>
-<td>52.1</td>
-<td>6990</td>
-<td>17000</td>
-<td>335</td>
-<td>516</td>
-<td>2650</td>
-<td>91.4</td>
-</tr>
-<tr class="even">
-<td>W760x257</td>
-<td>32800</td>
-<td>772</td>
-<td>381</td>
-<td>27.2</td>
-<td>16.6</td>
-<td>3430</td>
-<td>8870</td>
-<td>323</td>
-<td>249</td>
-<td>1310</td>
-<td>86.9</td>
-</tr>
-<tr class="odd">
-<td>W760x147</td>
-<td>18700</td>
-<td>754</td>
-<td>267</td>
-<td>17.0</td>
-<td>13.2</td>
-<td>1660</td>
-<td>4410</td>
-<td>297</td>
-<td>53.3</td>
-<td>401</td>
-<td>53.3</td>
-</tr>
-<tr class="even">
-<td>W610x415</td>
-<td>52800</td>
-<td>678</td>
-<td>338</td>
-<td>53.1</td>
-<td>29.5</td>
-<td>4000</td>
-<td>11800</td>
-<td>274</td>
-<td>343</td>
-<td>2030</td>
-<td>80.5</td>
-</tr>
-<tr class="odd">
-<td>W610x195</td>
-<td>24900</td>
-<td>622</td>
-<td>328</td>
-<td>24.4</td>
-<td>15.4</td>
-<td>1670</td>
-<td>5390</td>
-<td>259</td>
-<td>142</td>
-<td>869</td>
-<td>75.4</td>
-</tr>
-<tr class="even">
-<td>W610x125</td>
-<td>15900</td>
-<td>612</td>
-<td>229</td>
-<td>19.6</td>
-<td>11.9</td>
-<td>986</td>
-<td>3210</td>
-<td>249</td>
-<td>39.3</td>
-<td>342</td>
-<td>49.5</td>
-</tr>
-<tr class="odd">
-<td>W530x300</td>
-<td>38300</td>
-<td>584</td>
-<td>320</td>
-<td>41.4</td>
-<td>23.1</td>
-<td>2210</td>
-<td>7550</td>
-<td>241</td>
-<td>226</td>
-<td>1410</td>
-<td>76.7</td>
-</tr>
-<tr class="even">
-<td>W530x182</td>
-<td>23200</td>
-<td>551</td>
-<td>315</td>
-<td>24.4</td>
-<td>15.2</td>
-<td>1230</td>
-<td>4470</td>
-<td>231</td>
-<td>127</td>
-<td>806</td>
-<td>74.2</td>
-</tr>
-<tr class="odd">
-<td>W530x101</td>
-<td>12900</td>
-<td>536</td>
-<td>210</td>
-<td>17.4</td>
-<td>10.98</td>
-<td>616</td>
-<td>2290</td>
-<td>218</td>
-<td>26.9</td>
-<td>257</td>
-<td>45.7</td>
-</tr>
-<tr class="even">
-<td>W460x193</td>
-<td>24700</td>
-<td>490</td>
-<td>284</td>
-<td>30.5</td>
-<td>17.0</td>
-<td>1020</td>
-<td>4200</td>
-<td>204</td>
-<td>116</td>
-<td>818</td>
-<td>68.6</td>
-</tr>
-<tr class="odd">
-<td>W460x113</td>
-<td>14400</td>
-<td>462</td>
-<td>279</td>
-<td>17.3</td>
-<td>10.8</td>
-<td>554</td>
-<td>2390</td>
-<td>196</td>
-<td>63.3</td>
-<td>452</td>
-<td>66.3</td>
-</tr>
-<tr class="even">
-<td>W460x60</td>
-<td>7610</td>
-<td>455</td>
-<td>153</td>
-<td>8.00</td>
-<td>13.3</td>
-<td>255</td>
-<td>1120</td>
-<td>183</td>
-<td>7.95</td>
-<td>104</td>
-<td>32.3</td>
-</tr>
-<tr class="odd">
-<td>W410x100</td>
-<td>12600</td>
-<td>414</td>
-<td>259</td>
-<td>16.9</td>
-<td>10.0</td>
-<td>397</td>
-<td>1920</td>
-<td>177</td>
-<td>49.5</td>
-<td>380</td>
-<td>62.5</td>
-</tr>
-<tr class="even">
-<td>W410x60</td>
-<td>7610</td>
-<td>406</td>
-<td>178</td>
-<td>12.8</td>
-<td>7.75</td>
-<td>216</td>
-<td>1060</td>
-<td>168</td>
-<td>12.0</td>
-<td>135</td>
-<td>39.9</td>
-</tr>
-<tr class="odd">
-<td>W410x46.1</td>
-<td>5890</td>
-<td>404</td>
-<td>140</td>
-<td>11.2</td>
-<td>6.99</td>
-<td>156</td>
-<td>773</td>
-<td>163</td>
-<td>5.16</td>
-<td>73.6</td>
-<td>29.7</td>
-</tr>
-<tr class="even">
-<td>W360x134</td>
-<td>17100</td>
-<td>356</td>
-<td>368</td>
-<td>18.0</td>
-<td>11.2</td>
-<td>416</td>
-<td>2340</td>
-<td>156</td>
-<td>151</td>
-<td>818</td>
-<td>94.0</td>
-</tr>
-<tr class="odd">
-<td>W360x79</td>
-<td>10100</td>
-<td>353</td>
-<td>205</td>
-<td>16.8</td>
-<td>9.40</td>
-<td>225</td>
-<td>1270</td>
-<td>150</td>
-<td>24.0</td>
-<td>234</td>
-<td>48.8</td>
-</tr>
-<tr class="even">
-<td>W360x51</td>
-<td>6450</td>
-<td>356</td>
-<td>171</td>
-<td>11.6</td>
-<td>7.24</td>
-<td>142</td>
-<td>796</td>
-<td>148</td>
-<td>9.70</td>
-<td>113</td>
-<td>38.9</td>
-</tr>
-<tr class="odd">
-<td>W310x158</td>
-<td>20100</td>
-<td>328</td>
-<td>310</td>
-<td>25.1</td>
-<td>15.5</td>
-<td>388</td>
-<td>2380</td>
-<td>139</td>
-<td>125</td>
-<td>808</td>
-<td>79.0</td>
-</tr>
-<tr class="even">
-<td>W310x79</td>
-<td>10100</td>
-<td>307</td>
-<td>254</td>
-<td>14.6</td>
-<td>8.76</td>
-<td>177</td>
-<td>1160</td>
-<td>133</td>
-<td>39.9</td>
-<td>315</td>
-<td>63.0</td>
-</tr>
-<tr class="odd">
-<td>W310x38.7</td>
-<td>4940</td>
-<td>310</td>
-<td>165</td>
-<td>9.65</td>
-<td>5.84</td>
-<td>64.9</td>
-<td>547</td>
-<td>131</td>
-<td>7.20</td>
-<td>87.5</td>
-<td>38.4</td>
-</tr>
-</tbody>
-</table>
+<section id="wide-flange-w-shapes.-si-units" class="level2" data-number="A.2">
+<h2 data-number="A.2" class="anchored" data-anchor-id="wide-flange-w-shapes.-si-units"><span class="header-section-number">A.2</span> Wide-Flange (W) Shapes. SI Units</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div id="htmlwidget-4fe321fb075b8b54fcbf" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4fe321fb075b8b54fcbf">{"x":{"filter":"top","vertical":false,"filterHTML":"<tr>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"4940\" data-max=\"92300\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"307\" data-max=\"1050\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"140\" data-max=\"434\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"8\" data-max=\"68.1\" data-scale=\"2\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"5.84\" data-max=\"52.1\" data-scale=\"2\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"64.9\" data-max=\"15000\" data-scale=\"1\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"547\" data-max=\"30000\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"131\" data-max=\"422\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"5.16\" data-max=\"937\" data-scale=\"2\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"73.6\" data-max=\"4310\" data-scale=\"1\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"29.7\" data-max=\"101\" data-scale=\"1\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n<\/tr>","data":[["W1000x642","W1000x443","W1000x393","W920x725","W920x368","W920x313","W760x484","W760x257","W760x147","W610x415","W610x195","W610x125","W530x300","W530x182","W530x101","W460x193","W460x113","W460x60","W410x100","W410x60","W410x46.1","W360x134","W360x79","W360x51","W310x158","W310x79","W310x38.7"],[81900,56300,49900,92300,46800,39900,61900,32800,18700,52800,24900,15900,38300,23200,12900,24700,14400,7610,12600,7610,5890,17100,10100,6450,20100,10100,4940],[1050,1010,1020,998,932,932,823,772,754,678,622,612,584,551,536,490,462,455,414,406,404,356,353,356,328,307,310],[411,401,302,434,419,310,391,381,267,338,328,229,320,315,210,284,279,153,259,178,140,368,205,171,310,254,165],[59.9,41.9,43.9,68.09999999999999,34.3,34.5,29,27.2,17,53.1,24.4,19.6,41.4,24.4,17.4,30.5,17.3,8,16.9,12.8,11.2,18,16.8,11.6,25.1,14.6,9.65],[34,23.6,24.4,38.1,20.3,21.1,52.1,16.6,13.2,29.5,15.4,11.9,23.1,15.2,10.98,17,10.8,13.3,10,7.75,6.99,11.2,9.4,7.24,15.5,8.76,5.84],[14500,9660,8070,15000,6950,5490,6990,3430,1660,4000,1670,986,2210,1230,616,1020,554,255,397,216,156,416,225,142,388,177,64.90000000000001],[27700,19200,15900,30000,15000,11800,17000,8870,4410,11800,5390,3210,7550,4470,2290,4200,2390,1120,1920,1060,773,2340,1270,796,2380,1160,547],[422,414,401,401,386,371,335,323,297,274,259,249,241,231,218,204,196,183,177,168,163,156,150,148,139,133,131],[703,454,205,937,420,171,516,249,53.3,343,142,39.3,226,127,26.9,116,63.3,7.95,49.5,12,5.16,151,24,9.699999999999999,125,39.9,7.2],[3410,2260,1350,4310,2020,1110,2650,1310,401,2030,869,342,1410,806,257,818,452,104,380,135,73.59999999999999,818,234,113,808,315,87.5],[92.7,89.90000000000001,64,101,95,65.5,91.40000000000001,86.90000000000001,53.3,80.5,75.40000000000001,49.5,76.7,74.2,45.7,68.59999999999999,66.3,32.3,62.5,39.9,29.7,94,48.8,38.9,79,63,38.4]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Label<\/th>\n      <th>Area, A (mm²)<\/th>\n      <th>Depth, d (mm)<\/th>\n      <th>Flange Width, bf (mm)<\/th>\n      <th>Flange Thickness, tf (mm)<\/th>\n      <th>Web Thickness, tw (mm)<\/th>\n      <th>Ix (×10⁶ mm⁴)<\/th>\n      <th>Sx (×10³ mm³)<\/th>\n      <th>rx (mm)<\/th>\n      <th>Iy (×10⁶ mm⁴)<\/th>\n      <th>Sy (×10³ mm³)<\/th>\n      <th>ry (mm)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"info":false,"paging":false,"lengthChange":false,"autoWidth":true,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6,7,8,9,10,11]},{"name":"Label","targets":0},{"name":"Area_A_mm2","targets":1},{"name":"Depth_d_mm","targets":2},{"name":"Flange_Width_bf_mm","targets":3},{"name":"Flange_Thickness_tf_mm","targets":4},{"name":"Web_Thickness_tw_mm","targets":5},{"name":"Ix_mm4","targets":6},{"name":"Sx_mm3","targets":7},{"name":"rx_mm","targets":8},{"name":"Iy_mm4","targets":9},{"name":"Sy_mm3","targets":10},{"name":"ry_mm","targets":11}],"order":[],"orderClasses":false,"orderCellsTop":true}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
 </section>
-<section id="wt-shapes.-us-customary-units." class="level2" data-number="A.3">
-<h2 data-number="A.3" class="anchored" data-anchor-id="wt-shapes.-us-customary-units."><span class="header-section-number">A.3</span> WT Shapes. US Customary Units.</h2>
+<section id="wt-shapes.-us-customary-units" class="level2" data-number="A.3">
+<h2 data-number="A.3" class="anchored" data-anchor-id="wt-shapes.-us-customary-units"><span class="header-section-number">A.3</span> WT Shapes. US Customary Units</h2>
 <p><img src="images/Appendices/Appendix A part 2.png" class="img-fluid" alt="Cross-section of a WT-beam" width="436"></p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 4%">
-<col style="width: 7%">
-<col style="width: 6%">
-<col style="width: 10%">
-<col style="width: 11%">
-<col style="width: 10%">
-<col style="width: 9%">
-<col style="width: 6%">
-<col style="width: 6%">
-<col style="width: 5%">
-<col style="width: 6%">
-<col style="width: 6%">
-<col style="width: 5%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Label</th>
-<th><strong>Area, A (in.<sup>2</sup>)</strong></th>
-<th><strong>Depth, d (in.)</strong></th>
-<th><strong>Flange Width, b<sub>f</sub> (in.)</strong></th>
-<th><strong>Flange Thickness, t<sub>f</sub> (in.)</strong></th>
-<th><strong>Web Thickness, t<sub>w</sub> (in.)</strong></th>
-<th><span class="math inline">\(\bar{y}\)</span> ( in. below top)</th>
-<th><strong>I<sub>x</sub> (in.<sup>4</sup>)</strong></th>
-<th><strong>S<sub>x</sub> (in.<sup>3</sup>)</strong></th>
-<th><strong>r<sub>x</sub> (in.)</strong></th>
-<th><strong>I<sub>y</sub> (in.<sup>4</sup>)</strong></th>
-<th><strong>S<sub>y</sub> (in.<sup>3</sup>)</strong></th>
-<th><strong>r<sub>y</sub> (in.)</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>WT22x184</td>
-<td>54.0</td>
-<td>22.2</td>
-<td>16.0</td>
-<td>2.17</td>
-<td>1.22</td>
-<td>5.57</td>
-<td>2380</td>
-<td>143</td>
-<td>6.64</td>
-<td>675</td>
-<td>84.4</td>
-<td>3.54</td>
-</tr>
-<tr class="even">
-<td>WT22x145</td>
-<td>42.6</td>
-<td>21.8</td>
-<td>15.8</td>
-<td>1.58</td>
-<td>0.865</td>
-<td>5.26</td>
-<td>1830</td>
-<td>111</td>
-<td>6.54</td>
-<td>521</td>
-<td>65.9</td>
-<td>3.49</td>
-</tr>
-<tr class="odd">
-<td>WT22x115</td>
-<td>33.9</td>
-<td>21.5</td>
-<td>15.8</td>
-<td>1.22</td>
-<td>0.710</td>
-<td>5.17</td>
-<td>1440</td>
-<td>88.6</td>
-<td>6.53</td>
-<td>398</td>
-<td>50.5</td>
-<td>3.43</td>
-</tr>
-<tr class="even">
-<td>WT18x143</td>
-<td>42.0</td>
-<td>18.9</td>
-<td>12.3</td>
-<td>1.93</td>
-<td>1.06</td>
-<td>5.02</td>
-<td>1360</td>
-<td>98.0</td>
-<td>5.69</td>
-<td>301</td>
-<td>48.9</td>
-<td>2.68</td>
-</tr>
-<tr class="odd">
-<td>WT18x105</td>
-<td>30.9</td>
-<td>18.3</td>
-<td>12.2</td>
-<td>1.36</td>
-<td>0.830</td>
-<td>4.87</td>
-<td>985</td>
-<td>73.1</td>
-<td>5.65</td>
-<td>206</td>
-<td>33.8</td>
-<td>2.58</td>
-</tr>
-<tr class="even">
-<td>WT18x85</td>
-<td>25.0</td>
-<td>18.1</td>
-<td>12.0</td>
-<td>1.10</td>
-<td>0.680</td>
-<td>4.73</td>
-<td>786</td>
-<td>58.9</td>
-<td>5.61</td>
-<td>160</td>
-<td>26.6</td>
-<td>2.53</td>
-</tr>
-<tr class="odd">
-<td>WT15x117.5</td>
-<td>34.7</td>
-<td>15.7</td>
-<td>15.1</td>
-<td>1.50</td>
-<td>0.830</td>
-<td>3.41</td>
-<td>674</td>
-<td>55.1</td>
-<td>4.41</td>
-<td>427</td>
-<td>5.8</td>
-<td>3.51</td>
-</tr>
-<tr class="even">
-<td>WT15x74</td>
-<td>21.8</td>
-<td>15.3</td>
-<td>10.5</td>
-<td>1.18</td>
-<td>0.650</td>
-<td>3.84</td>
-<td>466</td>
-<td>40.6</td>
-<td>4.63</td>
-<td>114</td>
-<td>21.7</td>
-<td>2.28</td>
-</tr>
-<tr class="odd">
-<td>WT15x58</td>
-<td>17.1</td>
-<td>15.0</td>
-<td>10.5</td>
-<td>0.850</td>
-<td>0.565</td>
-<td>3.94</td>
-<td>373</td>
-<td>33.7</td>
-<td>4.67</td>
-<td>82.1</td>
-<td>15.6</td>
-<td>2.19</td>
-</tr>
-<tr class="even">
-<td>WT13.5x89</td>
-<td>26.3</td>
-<td>13.9</td>
-<td>14.1</td>
-<td>1.19</td>
-<td>0.725</td>
-<td>3.04</td>
-<td>414</td>
-<td>38.2</td>
-<td>3.97</td>
-<td>278</td>
-<td>39.4</td>
-<td>3.25</td>
-</tr>
-<tr class="odd">
-<td>WT13.5x57</td>
-<td>16.8</td>
-<td>13.6</td>
-<td>10.1</td>
-<td>0.930</td>
-<td>0.570</td>
-<td>3.42</td>
-<td>289</td>
-<td>28.3</td>
-<td>4.15</td>
-<td>79.3</td>
-<td>15.8</td>
-<td>2.18</td>
-</tr>
-<tr class="even">
-<td>WT13.5x47</td>
-<td>13.8</td>
-<td>13.5</td>
-<td>10.0</td>
-<td>0.745</td>
-<td>0.490</td>
-<td>3.41</td>
-<td>239</td>
-<td>23.8</td>
-<td>4.16</td>
-<td>62.0</td>
-<td>12.4</td>
-<td>2.12</td>
-</tr>
-<tr class="odd">
-<td>WT12x73</td>
-<td>21.5</td>
-<td>12.4</td>
-<td>12.9</td>
-<td>1.09</td>
-<td>0.650</td>
-<td>2.66</td>
-<td>264</td>
-<td>27.2</td>
-<td>3.50</td>
-<td>195</td>
-<td>30.3</td>
-<td>3.01</td>
-</tr>
-<tr class="even">
-<td>WT12x52</td>
-<td>15.3</td>
-<td>12.0</td>
-<td>12.8</td>
-<td>0.750</td>
-<td>0.500</td>
-<td>2.59</td>
-<td>189</td>
-<td>20.0</td>
-<td>3.51</td>
-<td>130</td>
-<td>20.3</td>
-<td>2.91</td>
-</tr>
-<tr class="odd">
-<td>WT12x42</td>
-<td>12.4</td>
-<td>12.1</td>
-<td>9.02</td>
-<td>0.770</td>
-<td>0.470</td>
-<td>2.97</td>
-<td>166</td>
-<td>18.3</td>
-<td>3.67</td>
-<td>47.2</td>
-<td>10.5</td>
-<td>1.95</td>
-</tr>
-<tr class="even">
-<td>WT10.5x66</td>
-<td>19.4</td>
-<td>10.9</td>
-<td>12.4</td>
-<td>1.04</td>
-<td>0.650</td>
-<td>2.33</td>
-<td>181</td>
-<td>21.1</td>
-<td>3.06</td>
-<td>166</td>
-<td>26.7</td>
-<td>2.93</td>
-</tr>
-<tr class="odd">
-<td>WT10.5x50.5</td>
-<td>14.9</td>
-<td>10.7</td>
-<td>12.3</td>
-<td>0.800</td>
-<td>0.500</td>
-<td>2.18</td>
-<td>135</td>
-<td>15.8</td>
-<td>3.01</td>
-<td>124</td>
-<td>20.2</td>
-<td>2.89</td>
-</tr>
-<tr class="even">
-<td>WT10.5x34</td>
-<td>10.0</td>
-<td>10.6</td>
-<td>8.27</td>
-<td>0.685</td>
-<td>0.430</td>
-<td>2.59</td>
-<td>103</td>
-<td>12.9</td>
-<td>3.20</td>
-<td>32.4</td>
-<td>7.83</td>
-<td>1.80</td>
-</tr>
-<tr class="odd">
-<td>WT9x79</td>
-<td>23.2</td>
-<td>9.86</td>
-<td>11.3</td>
-<td>1.44</td>
-<td>0.810</td>
-<td>2.17</td>
-<td>160</td>
-<td>20.8</td>
-<td>2.63</td>
-<td>174</td>
-<td>30.7</td>
-<td>2.74</td>
-</tr>
-<tr class="even">
-<td>WT9x53</td>
-<td>15.6</td>
-<td>9.37</td>
-<td>11.2</td>
-<td>0.940</td>
-<td>0.590</td>
-<td>1.97</td>
-<td>104</td>
-<td>14.1</td>
-<td>2.59</td>
-<td>110</td>
-<td>19.7</td>
-<td>2.66</td>
-</tr>
-<tr class="odd">
-<td>WT9x38</td>
-<td>11.1</td>
-<td>9.11</td>
-<td>11.0</td>
-<td>0.680</td>
-<td>0.425</td>
-<td>1.80</td>
-<td>71.8</td>
-<td>9.83</td>
-<td>2.54</td>
-<td>76.2</td>
-<td>13.8</td>
-<td>2.61</td>
-</tr>
-<tr class="even">
-<td>WT7x88</td>
-<td>25.9</td>
-<td>7.61</td>
-<td>15.7</td>
-<td>1.31</td>
-<td>0.830</td>
-<td>1.43</td>
-<td>80.5</td>
-<td>13.0</td>
-<td>1.76</td>
-<td>419</td>
-<td>53.5</td>
-<td>4.02</td>
-</tr>
-<tr class="odd">
-<td>WT7x60</td>
-<td>17.7</td>
-<td>7.24</td>
-<td>14.7</td>
-<td>0.940</td>
-<td>0.590</td>
-<td>1.24</td>
-<td>51.7</td>
-<td>8.61</td>
-<td>1.71</td>
-<td>247</td>
-<td>33.7</td>
-<td>3.74</td>
-</tr>
-<tr class="even">
-<td>WT7x41</td>
-<td>12.0</td>
-<td>7.16</td>
-<td>10.1</td>
-<td>0.855</td>
-<td>0.510</td>
-<td>1.39</td>
-<td>41.2</td>
-<td>7.14</td>
-<td>1.85</td>
-<td>74.1</td>
-<td>14.6</td>
-<td>2.48</td>
-</tr>
-<tr class="odd">
-<td>WT5x44</td>
-<td>13.0</td>
-<td>5.42</td>
-<td>10.3</td>
-<td>0.990</td>
-<td>0.605</td>
-<td>1.06</td>
-<td>20.8</td>
-<td>4.77</td>
-<td>1.27</td>
-<td>89.9</td>
-<td>17.4</td>
-<td>2.63</td>
-</tr>
-<tr class="even">
-<td>WT5x30</td>
-<td>8.84</td>
-<td>5.11</td>
-<td>10.1</td>
-<td>0.680</td>
-<td>0.420</td>
-<td>0.884</td>
-<td>12.9</td>
-<td>3.04</td>
-<td>1.21</td>
-<td>58.1</td>
-<td>11.5</td>
-<td>2.57</td>
-</tr>
-<tr class="odd">
-<td>WT5x15</td>
-<td>4.42</td>
-<td>5.24</td>
-<td>5.81</td>
-<td>0.510</td>
-<td>0.300</td>
-<td>1.10</td>
-<td>9.28</td>
-<td>2.24</td>
-<td>1.45</td>
-<td>8.35</td>
-<td>2.87</td>
-<td>1.37</td>
-</tr>
-</tbody>
-</table>
+<div class="cell">
+<div class="cell-output-display">
+<div id="htmlwidget-bb9fa1cdb08c953ce0bf" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-bb9fa1cdb08c953ce0bf">{"x":{"filter":"top","vertical":false,"filterHTML":"<tr>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"4.42\" data-max=\"54\" data-scale=\"2\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"5.11\" data-max=\"22.2\" data-scale=\"2\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"5.81\" data-max=\"16\" data-scale=\"2\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"0.51\" data-max=\"2.17\" data-scale=\"3\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"0.3\" data-max=\"1.22\" data-scale=\"3\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"0.884\" data-max=\"5.57\" data-scale=\"3\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"9.27\" data-max=\"2380\" data-scale=\"2\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"2.24\" data-max=\"143\" data-scale=\"2\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"1.21\" data-max=\"6.64\" data-scale=\"2\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"8.35\" data-max=\"675\" data-scale=\"2\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"2.87\" data-max=\"84.4\" data-scale=\"2\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"1.37\" data-max=\"4.02\" data-scale=\"2\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n<\/tr>","data":[["WT22x184","WT22x145","WT22x115","WT18x143","WT18x105","WT18x85","WT15x117.5","WT15x74","WT15x58","WT13.5x89","WT13.5x57","WT13.5x47","WT12x73","WT12x52","WT12x42","WT10.5x66","WT10.5x50.5","WT10.5x34","WT9x79","WT9x53","WT9x38","WT7x88","WT7x60","WT7x41","WT5x44","WT5x30","WT5x15"],[54,42.6,33.9,42,30.9,25,34.7,21.8,17.1,26.3,16.8,13.8,21.5,15.3,12.4,19.4,14.9,10,23.2,15.6,11.1,25.9,17.7,12,13,8.84,4.42],[22.2,21.8,21.5,18.9,18.3,18.1,15.7,15.3,15,13.9,13.6,13.5,12.4,12,12.1,10.9,10.7,10.6,9.859999999999999,9.369999999999999,9.109999999999999,7.61,7.24,7.16,5.42,5.11,5.24],[16,15.8,15.8,12.3,12.2,12,15.1,10.5,10.5,14.1,10.1,10,12.9,12.8,9.02,12.4,12.3,8.27,11.3,11.2,11,15.7,14.7,10.1,10.3,10.1,5.81],[2.17,1.58,1.22,1.93,1.36,1.1,1.5,1.18,0.85,1.19,0.93,0.745,1.09,0.75,0.77,1.04,0.8,0.51,1.44,0.9399999999999999,0.68,1.31,0.9399999999999999,0.855,0.99,0.68,0.51],[1.22,0.865,0.71,1.06,0.83,0.68,0.83,0.65,0.5649999999999999,0.725,0.57,0.49,0.65,0.5,0.47,0.65,0.5,0.43,0.8100000000000001,0.59,0.425,0.83,0.59,0.51,0.605,0.42,0.3],[5.57,5.26,5.17,5.02,4.87,4.73,3.41,3.84,3.94,3.04,3.42,3.41,2.66,2.59,2.97,2.33,2.18,2.59,2.17,1.97,1.8,1.43,1.24,1.39,1.06,0.884,1.1],[2380,1830,1440,1360,985,786,674,466,373,414,289,239,264,189,166,181,135,103,160,104,71.8,80.5,51.7,41.2,20.8,12.9,9.279999999999999],[143,111,88.59999999999999,98,73.09999999999999,58.9,55.1,40.6,33.7,38.2,28.3,23.8,27.2,20,18.3,21.1,15.8,12.9,20.8,14.1,9.83,13,8.609999999999999,7.14,4.77,3.04,2.24],[6.64,6.54,6.53,5.69,5.65,5.61,4.41,4.63,4.67,3.97,4.15,4.16,3.5,3.51,3.67,3.06,3.01,3.2,2.63,2.59,2.54,1.76,1.71,1.85,1.27,1.21,1.45],[675,521,398,301,206,160,427,114,82.09999999999999,278,79.3,62,195,130,47.2,166,124,32.4,174,110,76.2,419,247,74.09999999999999,89.90000000000001,58.1,8.35],[84.40000000000001,65.90000000000001,50.5,48.9,33.8,26.6,5.8,21.7,15.6,39.4,15.8,12.4,30.3,20.3,10.5,26.7,20.2,7.83,30.7,19.7,13.8,53.5,33.7,14.6,17.4,11.5,2.87],[3.54,3.49,3.43,2.68,2.58,2.53,3.51,2.28,2.19,3.25,2.18,2.12,3.01,2.91,1.95,2.93,2.89,1.8,2.74,2.66,2.61,4.02,3.74,2.48,2.63,2.57,1.37]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Label<\/th>\n      <th>Area, A (in²)<\/th>\n      <th>Depth, d (in.)<\/th>\n      <th>Flange Width, bf (in.)<\/th>\n      <th>Flange Thickness, tf (in.)<\/th>\n      <th>Web Thickness, tw (in.)<\/th>\n      <th>ȳ (in. below top)<\/th>\n      <th>Ix (in⁴)<\/th>\n      <th>Sx (in³)<\/th>\n      <th>rx (in.)<\/th>\n      <th>Iy (in⁴)<\/th>\n      <th>Sy (in³)<\/th>\n      <th>ry (in.)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"info":false,"paging":false,"lengthChange":false,"autoWidth":true,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6,7,8,9,10,11,12]},{"name":"Label","targets":0},{"name":"Area_A_in2","targets":1},{"name":"Depth_d_in","targets":2},{"name":"Flange_Width_bf_in","targets":3},{"name":"Flange_Thickness_tf_in","targets":4},{"name":"Web_Thickness_tw_in","targets":5},{"name":"ybar_in","targets":6},{"name":"Ix_in4","targets":7},{"name":"Sx_in3","targets":8},{"name":"rx_in","targets":9},{"name":"Iy_in4","targets":10},{"name":"Sy_in3","targets":11},{"name":"ry_in","targets":12}],"order":[],"orderClasses":false,"orderCellsTop":true}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
 </section>
-<section id="wt-shapes.-si-units." class="level2" data-number="A.4">
-<h2 data-number="A.4" class="anchored" data-anchor-id="wt-shapes.-si-units."><span class="header-section-number">A.4</span> WT Shapes. SI Units.</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 4%">
-<col style="width: 6%">
-<col style="width: 6%">
-<col style="width: 9%">
-<col style="width: 10%">
-<col style="width: 9%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 4%">
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 4%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Label</th>
-<th><strong>Area, A (mm<sup>2</sup>)</strong></th>
-<th><strong>Depth, d (mm)</strong></th>
-<th><strong>Flange Width, b<sub>f</sub> (mm)</strong></th>
-<th><strong>Flange Thickness, t<sub>f</sub> (mm)</strong></th>
-<th><strong>Web Thickness, t<sub>w</sub> (mm)</strong></th>
-<th><span class="math inline">\(\bar{y}\)</span> (mm below top)</th>
-<th><strong>I<sub>x</sub> (x10<sup>6</sup> mm<sup>4</sup>)</strong></th>
-<th><strong>S<sub>x</sub> (x10<sup>3</sup> mm<sup>3</sup>)</strong></th>
-<th><strong>r<sub>x</sub> (mm)</strong></th>
-<th><strong>I<sub>y</sub> (x10<sup>6</sup> mm<sup>4</sup>)</strong></th>
-<th><strong>S<sub>y</sub> (x10<sup>3</sup> mm<sup>3</sup>)</strong></th>
-<th><strong>r<sub>y</sub> (mm)</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>WT550x274</td>
-<td>34800</td>
-<td>564</td>
-<td>406</td>
-<td>50.0</td>
-<td>27.9</td>
-<td>141</td>
-<td>991</td>
-<td>2340</td>
-<td>169</td>
-<td>281</td>
-<td>1380</td>
-<td>89.9</td>
-</tr>
-<tr class="even">
-<td>WT550x216.5</td>
-<td>27500</td>
-<td>554</td>
-<td>401</td>
-<td>40.1</td>
-<td>22.0</td>
-<td>134</td>
-<td>762</td>
-<td>1820</td>
-<td>166</td>
-<td>217</td>
-<td>1080</td>
-<td>88.6</td>
-</tr>
-<tr class="odd">
-<td>WT550x171.5</td>
-<td>21900</td>
-<td>546</td>
-<td>401</td>
-<td>31.0</td>
-<td>18.0</td>
-<td>131</td>
-<td>599</td>
-<td>1450</td>
-<td>166</td>
-<td>166</td>
-<td>828</td>
-<td>87.1</td>
-</tr>
-<tr class="even">
-<td>WT460x212.5</td>
-<td>27100</td>
-<td>480</td>
-<td>312</td>
-<td>49.0</td>
-<td>26.9</td>
-<td>128</td>
-<td>566</td>
-<td>1610</td>
-<td>145</td>
-<td>125</td>
-<td>801</td>
-<td>68.1</td>
-</tr>
-<tr class="odd">
-<td>WT460x156.5</td>
-<td>19900</td>
-<td>465</td>
-<td>310</td>
-<td>34.5</td>
-<td>21.1</td>
-<td>124</td>
-<td>410</td>
-<td>1200</td>
-<td>144</td>
-<td>85.7</td>
-<td>554</td>
-<td>65.5</td>
-</tr>
-<tr class="even">
-<td>WT460x126.5</td>
-<td>16100</td>
-<td>460</td>
-<td>305</td>
-<td>27.9</td>
-<td>17.3</td>
-<td>120</td>
-<td>327</td>
-<td>965</td>
-<td>142</td>
-<td>66.6</td>
-<td>436</td>
-<td>64.3</td>
-</tr>
-<tr class="odd">
-<td>WT380x175</td>
-<td>22400</td>
-<td>399</td>
-<td>384</td>
-<td>38.1</td>
-<td>21.1</td>
-<td>86.6</td>
-<td>281</td>
-<td>903</td>
-<td>112</td>
-<td>178</td>
-<td>931</td>
-<td>89.2</td>
-</tr>
-<tr class="even">
-<td>WT380x110</td>
-<td>14100</td>
-<td>389</td>
-<td>267</td>
-<td>30.0</td>
-<td>16.5</td>
-<td>97.5</td>
-<td>194</td>
-<td>665</td>
-<td>118</td>
-<td>47.5</td>
-<td>356</td>
-<td>57.9</td>
-</tr>
-<tr class="odd">
-<td>WT380x86.5</td>
-<td>11000</td>
-<td>381</td>
-<td>267</td>
-<td>21.6</td>
-<td>14.4</td>
-<td>100</td>
-<td>155</td>
-<td>552</td>
-<td>119</td>
-<td>34.2</td>
-<td>256</td>
-<td>55.6</td>
-</tr>
-<tr class="even">
-<td>WT345x132.5</td>
-<td>17000</td>
-<td>353</td>
-<td>358</td>
-<td>30.2</td>
-<td>18.4</td>
-<td>77.2</td>
-<td>172</td>
-<td>626</td>
-<td>101</td>
-<td>116</td>
-<td>646</td>
-<td>82.6</td>
-</tr>
-<tr class="odd">
-<td>WT345x85</td>
-<td>10800</td>
-<td>345</td>
-<td>257</td>
-<td>23.6</td>
-<td>14.5</td>
-<td>86.9</td>
-<td>120</td>
-<td>464</td>
-<td>105</td>
-<td>33.0</td>
-<td>259</td>
-<td>55.4</td>
-</tr>
-<tr class="even">
-<td>WT345x70</td>
-<td>8900</td>
-<td>343</td>
-<td>254</td>
-<td>18.9</td>
-<td>12.4</td>
-<td>86.6</td>
-<td>99.5</td>
-<td>390</td>
-<td>106</td>
-<td>25.8</td>
-<td>203</td>
-<td>53.8</td>
-</tr>
-<tr class="odd">
-<td>WT305x108.5</td>
-<td>13900</td>
-<td>315</td>
-<td>328</td>
-<td>27.7</td>
-<td>16.5</td>
-<td>67.6</td>
-<td>110</td>
-<td>446</td>
-<td>88.9</td>
-<td>81.2</td>
-<td>497</td>
-<td>76.5</td>
-</tr>
-<tr class="even">
-<td>WT305x77.5</td>
-<td>9870</td>
-<td>305</td>
-<td>325</td>
-<td>19.1</td>
-<td>12.7</td>
-<td>65.8</td>
-<td>78.7</td>
-<td>328</td>
-<td>89.2</td>
-<td>54.1</td>
-<td>333</td>
-<td>73.9</td>
-</tr>
-<tr class="odd">
-<td>WT305x62.5</td>
-<td>8000</td>
-<td>307</td>
-<td>229</td>
-<td>19.6</td>
-<td>11.9</td>
-<td>75.4</td>
-<td>69.1</td>
-<td>300</td>
-<td>93.2</td>
-<td>19.6</td>
-<td>172</td>
-<td>49.5</td>
-</tr>
-<tr class="even">
-<td>WT265x98</td>
-<td>12500</td>
-<td>277</td>
-<td>315</td>
-<td>26.4</td>
-<td>16.5</td>
-<td>59.2</td>
-<td>75.3</td>
-<td>346</td>
-<td>77.7</td>
-<td>69.1</td>
-<td>438</td>
-<td>74.4</td>
-</tr>
-<tr class="odd">
-<td>WT265x75</td>
-<td>9610</td>
-<td>272</td>
-<td>312</td>
-<td>20.3</td>
-<td>12.7</td>
-<td>55.4</td>
-<td>56.2</td>
-<td>259</td>
-<td>76.5</td>
-<td>51.6</td>
-<td>331</td>
-<td>73.4</td>
-</tr>
-<tr class="even">
-<td>WT265x50.5</td>
-<td>6450</td>
-<td>269</td>
-<td>210</td>
-<td>17.4</td>
-<td>10.9</td>
-<td>65.8</td>
-<td>42.9</td>
-<td>211</td>
-<td>81.3</td>
-<td>13.5</td>
-<td>128</td>
-<td>45.7</td>
-</tr>
-<tr class="odd">
-<td>WT230x117.5</td>
-<td>15000</td>
-<td>250</td>
-<td>287</td>
-<td>36.6</td>
-<td>20.6</td>
-<td>55.1</td>
-<td>66.6</td>
-<td>341</td>
-<td>66.8</td>
-<td>72.4</td>
-<td>503</td>
-<td>69.6</td>
-</tr>
-<tr class="even">
-<td>WT230x79</td>
-<td>10100</td>
-<td>238</td>
-<td>284</td>
-<td>23.9</td>
-<td>15.0</td>
-<td>50.0</td>
-<td>43.3</td>
-<td>231</td>
-<td>65.8</td>
-<td>45.8</td>
-<td>323</td>
-<td>67.6</td>
-</tr>
-<tr class="odd">
-<td>WT230x56.5</td>
-<td>7160</td>
-<td>231</td>
-<td>279</td>
-<td>17.3</td>
-<td>10.8</td>
-<td>45.7</td>
-<td>29.9</td>
-<td>161</td>
-<td>64.5</td>
-<td>31.7</td>
-<td>226</td>
-<td>66.3</td>
-</tr>
-<tr class="even">
-<td>WT180x131</td>
-<td>16700</td>
-<td>193</td>
-<td>399</td>
-<td>33.3</td>
-<td>21.1</td>
-<td>36.3</td>
-<td>33.5</td>
-<td>213</td>
-<td>44.7</td>
-<td>174</td>
-<td>877</td>
-<td>102</td>
-</tr>
-<tr class="odd">
-<td>WT180x89.5</td>
-<td>11400</td>
-<td>184</td>
-<td>373</td>
-<td>23.9</td>
-<td>15.0</td>
-<td>31.5</td>
-<td>21.5</td>
-<td>141</td>
-<td>43.4</td>
-<td>103</td>
-<td>552</td>
-<td>95.0</td>
-</tr>
-<tr class="even">
-<td>WT180x61</td>
-<td>7740</td>
-<td>182</td>
-<td>257</td>
-<td>21.7</td>
-<td>13.0</td>
-<td>35.3</td>
-<td>17.1</td>
-<td>117</td>
-<td>47.0</td>
-<td>30.8</td>
-<td>239</td>
-<td>63.0</td>
-</tr>
-<tr class="odd">
-<td>WT125x65.5</td>
-<td>8390</td>
-<td>138</td>
-<td>262</td>
-<td>25.1</td>
-<td>15.4</td>
-<td>26.9</td>
-<td>8.66</td>
-<td>78.2</td>
-<td>32.3</td>
-<td>37.2</td>
-<td>285</td>
-<td>66.8</td>
-</tr>
-<tr class="even">
-<td>WT125x44.5</td>
-<td>5700</td>
-<td>130</td>
-<td>257</td>
-<td>17.3</td>
-<td>10.7</td>
-<td>22.5</td>
-<td>5.37</td>
-<td>49.8</td>
-<td>30.7</td>
-<td>24.2</td>
-<td>188</td>
-<td>65.3</td>
-</tr>
-<tr class="odd">
-<td>WT125x224</td>
-<td>2850</td>
-<td>133</td>
-<td>148</td>
-<td>13.0</td>
-<td>7.62</td>
-<td>27.9</td>
-<td>3.86</td>
-<td>36.7</td>
-<td>36.8</td>
-<td>3.48</td>
-<td>47.0</td>
-<td>34.8</td>
-</tr>
-</tbody>
-</table>
+<section id="wt-shapes.-si-units" class="level2" data-number="A.4">
+<h2 data-number="A.4" class="anchored" data-anchor-id="wt-shapes.-si-units"><span class="header-section-number">A.4</span> WT Shapes. SI Units</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div id="htmlwidget-43f140629cb1f873fec3" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-43f140629cb1f873fec3">{"x":{"filter":"top","vertical":false,"filterHTML":"<tr>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"2850\" data-max=\"34800\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"130\" data-max=\"564\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"148\" data-max=\"406\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"13\" data-max=\"50\" data-scale=\"1\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"7.62\" data-max=\"27.9\" data-scale=\"2\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"22.5\" data-max=\"141\" data-scale=\"1\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"3.86\" data-max=\"991\" data-scale=\"2\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"36.7\" data-max=\"2340\" data-scale=\"1\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"30.7\" data-max=\"169\" data-scale=\"1\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"3.48\" data-max=\"281\" data-scale=\"2\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"47\" data-max=\"1380\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"34.8\" data-max=\"102\" data-scale=\"1\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n<\/tr>","data":[["WT550x274","WT550x216.5","WT550x171.5","WT460x212.5","WT460x156.5","WT460x126.5","WT380x175","WT380x110","WT380x86.5","WT345x132.5","WT345x85","WT345x70","WT305x108.5","WT305x77.5","WT305x62.5","WT265x98","WT265x75","WT265x50.5","WT230x117.5","WT230x79","WT230x56.5","WT180x131","WT180x89.5","WT180x61","WT125x65.5","WT125x44.5","WT125x224"],[34800,27500,21900,27100,19900,16100,22400,14100,11000,17000,10800,8900,13900,9870,8000,12500,9610,6450,15000,10100,7160,16700,11400,7740,8390,5700,2850],[564,554,546,480,465,460,399,389,381,353,345,343,315,305,307,277,272,269,250,238,231,193,184,182,138,130,133],[406,401,401,312,310,305,384,267,267,358,257,254,328,325,229,315,312,210,287,284,279,399,373,257,262,257,148],[50,40.1,31,49,34.5,27.9,38.1,30,21.6,30.2,23.6,18.9,27.7,19.1,19.6,26.4,20.3,17.4,36.6,23.9,17.3,33.3,23.9,21.7,25.1,17.3,13],[27.9,22,18,26.9,21.1,17.3,21.1,16.5,14.4,18.4,14.5,12.4,16.5,12.7,11.9,16.5,12.7,10.9,20.6,15,10.8,21.1,15,13,15.4,10.7,7.62],[141,134,131,128,124,120,86.59999999999999,97.5,100,77.2,86.90000000000001,86.59999999999999,67.59999999999999,65.8,75.40000000000001,59.2,55.4,65.8,55.1,50,45.7,36.3,31.5,35.3,26.9,22.5,27.9],[991,762,599,566,410,327,281,194,155,172,120,99.5,110,78.7,69.09999999999999,75.3,56.2,42.9,66.59999999999999,43.3,29.9,33.5,21.5,17.1,8.66,5.37,3.86],[2340,1820,1450,1610,1200,965,903,665,552,626,464,390,446,328,300,346,259,211,341,231,161,213,141,117,78.2,49.8,36.7],[169,166,166,145,144,142,112,118,119,101,105,106,88.90000000000001,89.2,93.2,77.7,76.5,81.3,66.8,65.8,64.5,44.7,43.4,47,32.3,30.7,36.8],[281,217,166,125,85.7,66.59999999999999,178,47.5,34.2,116,33,25.8,81.2,54.1,19.6,69.09999999999999,51.6,13.5,72.40000000000001,45.8,31.7,174,103,30.8,37.2,24.2,3.48],[1380,1080,828,801,554,436,931,356,256,646,259,203,497,333,172,438,331,128,503,323,226,877,552,239,285,188,47],[89.90000000000001,88.59999999999999,87.09999999999999,68.09999999999999,65.5,64.3,89.2,57.9,55.6,82.59999999999999,55.4,53.8,76.5,73.90000000000001,49.5,74.40000000000001,73.40000000000001,45.7,69.59999999999999,67.59999999999999,66.3,102,95,63,66.8,65.3,34.8]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Label<\/th>\n      <th>Area, A (mm²)<\/th>\n      <th>Depth, d (mm)<\/th>\n      <th>Flange Width, bf (mm)<\/th>\n      <th>Flange Thickness, tf (mm)<\/th>\n      <th>Web Thickness, tw (mm)<\/th>\n      <th>ȳ (mm below top)<\/th>\n      <th>Ix (×10⁶ mm⁴)<\/th>\n      <th>Sx (×10³ mm³)<\/th>\n      <th>rx (mm)<\/th>\n      <th>Iy (×10⁶ mm⁴)<\/th>\n      <th>Sy (×10³ mm³)<\/th>\n      <th>ry (mm)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"info":false,"paging":false,"lengthChange":false,"autoWidth":true,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6,7,8,9,10,11,12]},{"name":"Label","targets":0},{"name":"Area_A_mm2","targets":1},{"name":"Depth_d_mm","targets":2},{"name":"Flange_Width_bf_mm","targets":3},{"name":"Flange_Thickness_tf_mm","targets":4},{"name":"Web_Thickness_tw_mm","targets":5},{"name":"ybar_mm","targets":6},{"name":"Ix_10e6_mm4","targets":7},{"name":"Sx_10e3_mm3","targets":8},{"name":"rx_mm","targets":9},{"name":"Iy_10e6_mm4","targets":10},{"name":"Sy_10e3_mm3","targets":11},{"name":"ry_mm","targets":12}],"order":[],"orderClasses":false,"orderCellsTop":true}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
 </section>
 <section id="references" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="references">References</h2>
@@ -2045,8 +512,9 @@ window.Quarto = {
 Click to expand
 </summary>
 <p><strong>Table data</strong></p>
-<p>“Copyright © American Institute of Steel Construction Reprinted with permission. All rights reserved.”</p>
-<p><strong>Figures</strong> Appendix A figures: Kindred Grey. 2024. CC BY-NC-SA.</p>
+<p>Copyright © American Institute of Steel Construction Reprinted with permission. All rights reserved.</p>
+<p><strong>Figures</strong></p>
+<p>All figures in this appendix were created by Kindred Grey in 2025 and released under a CC BY-NC-SA license.</p>
 </details>
 
 
@@ -2054,383 +522,255 @@ Click to expand
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
     }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const disableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'prefetch';
-    }
-  }
-  const enableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'stylesheet';
-    }
-  }
-  const manageTransitions = (selector, allowTransitions) => {
-    const els = window.document.querySelectorAll(selector);
-    for (let i=0; i < els.length; i++) {
-      const el = els[i];
-      if (allowTransitions) {
-        el.classList.remove('notransition');
-      } else {
-        el.classList.add('notransition');
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-  }
-  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-    let newTheme = '';
-    if(darkModeDefault) {
-      newTheme = isAlternate ? baseTheme : alternateTheme;
-    } else {
-      newTheme = isAlternate ? alternateTheme : baseTheme;
-    }
-    const changeGiscusTheme = () => {
-      // From: https://github.com/giscus/giscus/issues/336
-      const sendMessage = (message) => {
-        const iframe = document.querySelector('iframe.giscus-frame');
-        if (!iframe) return;
-        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      sendMessage({
-        setConfig: {
-          theme: newTheme
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
       });
     }
-    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-    if (isGiscussLoaded) {
-      changeGiscusTheme();
-    }
-  }
-  const toggleColorMode = (alternate) => {
-    // Switch the stylesheets
-    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-    manageTransitions('#quarto-margin-sidebar .nav-link', false);
-    if (alternate) {
-      enableStylesheet(alternateStylesheets);
-      for (const sheetNode of alternateStylesheets) {
-        if (sheetNode.id === "quarto-bootstrap") {
-          toggleBodyColorMode(sheetNode);
-        }
-      }
-    } else {
-      disableStylesheet(alternateStylesheets);
-      toggleBodyColorPrimary();
-    }
-    manageTransitions('#quarto-margin-sidebar .nav-link', true);
-    // Switch the toggles
-    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-    for (let i=0; i < toggles.length; i++) {
-      const toggle = toggles[i];
-      if (toggle) {
-        if (alternate) {
-          toggle.classList.add("alternate");     
-        } else {
-          toggle.classList.remove("alternate");
-        }
-      }
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455)
-    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-      manageTransitions("body", false);
-      window.scrollTo(0, 1);
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        manageTransitions("body", true);
-      }, 40);  
-    }
-  }
-  const isFileUrl = () => { 
-    return window.location.protocol === 'file:';
-  }
-  const hasAlternateSentinel = () => {  
-    let styleSentinel = getColorSchemeSentinel();
-    if (styleSentinel !== null) {
-      return styleSentinel === "alternate";
-    } else {
-      return false;
-    }
-  }
-  const setStyleSentinel = (alternate) => {
-    const value = alternate ? "alternate" : "default";
-    if (!isFileUrl()) {
-      window.localStorage.setItem("quarto-color-scheme", value);
-    } else {
-      localAlternateSentinel = value;
-    }
-  }
-  const getColorSchemeSentinel = () => {
-    if (!isFileUrl()) {
-      const storageValue = window.localStorage.getItem("quarto-color-scheme");
-      return storageValue != null ? storageValue : localAlternateSentinel;
-    } else {
-      return localAlternateSentinel;
-    }
-  }
-  const darkModeDefault = false;
-  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-  // Dark / light mode switch
-  window.quartoToggleColorScheme = () => {
-    // Read the current dark / light value 
-    let toAlternate = !hasAlternateSentinel();
-    toggleColorMode(toAlternate);
-    setStyleSentinel(toAlternate);
-    toggleGiscusIfUsed(toAlternate, darkModeDefault);
-  };
-  // Ensure there is a toggle, if there isn't float one in the top right
-  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-    const a = window.document.createElement('a');
-    a.classList.add('top-right');
-    a.classList.add('quarto-color-scheme-toggle');
-    a.href = "";
-    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-    const i = window.document.createElement("i");
-    i.classList.add('bi');
-    a.appendChild(i);
-    window.document.body.appendChild(a);
-  }
-  // Switch to dark mode if need be
-  if (hasAlternateSentinel()) {
-    toggleColorMode(true);
-  } else {
-    toggleColorMode(false);
-  }
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
         }
-        return container.innerHTML
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -2438,185 +778,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./Chapter 15.html" class="pagination-link" aria-label="Columns">

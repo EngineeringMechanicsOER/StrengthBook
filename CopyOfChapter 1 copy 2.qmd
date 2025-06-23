@@ -1,0 +1,651 @@
+---
+format: html
+editor: visual
+---
+
+# Statics Review {#sec-statics}
+
+::: {.callout-note icon="false"}
+## Learning Objectives
+
+-   Define external and internal force and moment reactions
+-   Calculate external reactions
+-   Determine internal pin and two-force member reactions for structures made up of connected members
+-   Determine internal reactions in continuous bodies
+-   Calculate reactions in three dimensions
+:::
+
+## Introduction {.unnumbered}
+
+<details open>
+
+<summary>Click to expand</summary>
+
+All bodies and structures discussed in this text will be assumed to be in static equilibrium, which means that they experience no acceleration (sum of all forces and moments are equal to zero). Any body that is not moving or that is moving at constant velocity is in static equilibrium. However, unlike the case in a standard Statics course in which all bodies are assumed to be rigid, bodies in this text are expected to be deformable, which means that they may stretch, contract, twist, bend, break, buckle, etc. In order to determine how an applied loading situation affects any given body or structure, and potentially causes it to deform, we must start by applying statics to establish the distribution of forces and moments within the body. This will be the first step of many problems. This chapter will present a review of those aspects of statics concepts that will be prevalent throughout this course.
+
+@sec-1.1 reviews the concept of external loads and how to model them on Free Body Diagrams.
+
+@sec-1.2 reviews equilibrium of structures in two dimensions, including the analysis of two-force members and multi-force members.
+
+@sec-1.3 addresses internal loads, including normal force, shear force, and bending moment.
+
+@sec-1.4 reviews equilibrium in three dimensions.
+
+</details>
+
+## External Reactions and Free Body Diagrams {#sec-1.1}
+
+<details>
+
+<summary>Click to expand</summary>
+
+External forces and moments are the forces and moments that act on the boundaries of a system. They are the loads that are applied to the main structure (weight, wind, pressure, etc.), as well as the reactions they induce in the supporting elements (pins, rollers, welds, etc.). In the case of external reactions, the word "reaction" refers to the forces and/or moments exerted by the supports on the body *in reaction* to the applied loading in order to keep the body in equilibrium.
+
+Finding the external reactions will be the first step of many of the types of problems that will be covered in this text. This process will entail first drawing a free body diagram of the body. A free body diagram (FBD) is a sketch of the body "freed" from its supports, which shows all the applied and reaction forces and moments that are to be considered in the analysis. In cases where some loads are considered to be insignificant compared to other loads acting on the body (for example, weight sometimes falls into this category), those loads would not be included on the FBD.
+
+The importance of drawing FBD’s as a first step when calculating internal and external loads and reactions cannot be overstated. Drawing the diagrams establishes which loads and reactions are being included in the analysis, along with their assumed directions. With the diagrams drawn, one can maintain consistency when summing forces and moments in applying equilibrium equations, which helps ensure accurate results.
+
+Some commonly encountered supports and the corresponding reactions and FBD representations are:
+
+-   **Pin Support:** Pin supports resists any kind of lateral movement of the body relative to the pin at the pin location. The direction of the overall reaction force (F) is generally unknown, so it is represented as a set of perpendicular force components (F~x~ and F~y~ in the figure below, but can be represented as any set of perpendicular components).
+
+    ![](images/CH1%20PNGs/table%201.1%20part%201.png)
+
+-   **Normal Supports:** Normal supports generally consist of surfaces that the body simply rests on (like a beam on a roller) and/or supports that are themselves not fixed to any other surface (like a rocker). Similar to pin supports, normal supports prevent movement of the body relative to the support at the support site. However, normal supports are different than pins in that only movement in the direction normal to the support site is prevented. Consequently, the reaction force (F) is known to act strictly perpendicular to the supporting surface.
+
+    ![](images/CH1%20PNGs/table%201.1%20part%202.png)
+
+-   **Cable:** A cable provides a tensile force reaction (T). It only pulls on the body, never pushes. The reaction force acts in a direction following the path of the cable extending away from the body and towards the external attachment point.
+
+    ![](images/CH1%20PNGs/table%201.1%20part%203.png){width="535"}
+
+-   **Fixed Support:** A fixed support is capable of resisting both lateral movement and rotation, so the reactions consist of a reaction force (F) and a reaction moment couple (M). Just as for the pinned support, the direction of the overall reaction force is not necessarily known, so the force is represented by a set of perpendicular components. It is important to remember that the reaction moment couple is an unknown that must be solved for, just like the reaction force components, and must be included in the moment equation about any point on the body.
+
+    ![](images/CH1%20PNGs/table%201.1%20part%204.png)
+
+Note that when components of the reaction force are found individually, such as for the pin support and fixed support, the overall magnitude of the force F can be calculated as:
+
+$F=\sqrt{F_x^2+F_y^2}$
+
+and its direction (angle measured from the horizontal axis) can be calculated as:
+
+$\tan \theta=\frac{F_y}{F_x}$.
+
+In the examples provided in the rest of the chapter, note how the FBD's are drawn. It should be noted that the given geometrical details of a body such as lengths and angles are also often included on Free Body Diagrams. However, in this text, these features are frequently excluded since they are included with the given information in the problem and we wish to focus on the representation of the loading. Readers are encouraged to keep in mind that the geometrical details may be considered required features of FBD's in some courses and by some instructors.
+
+</details>
+
+## Equilibrium in Two Dimensions {#sec-1.2}
+
+<details>
+
+<summary>Click to expand</summary>
+
+Once the FBD is drawn, the next step is to apply the equilibrium equations. In two dimensions (x-y plane), these are:
+
+$$
+\begin{align}
+\boxed{\sum F_x=0 \quad\sum F_y=0 \quad
+\sum M_{any~point}=0}
+\end{align}
+$$ {#eq-1.1}
+
+Since there are three equations, a statically determinate problem should have no more than 3 unknowns.
+
+@exm-1.1 illustrates the process of finding external reactions.
+
+::: {#example-1.1 .callout-tip collapse="true" icon="false"}
+## Example 1.1
+
+::: {#exm-1.1}
+<p>
+
+</p>
+
+A 3 ft beam is supported by a pin connection at the wall at point A and a cable at point C as shown. A load is applied 2 ft away from point A. Find the force in pin A as well as the tensile force in the cable.
+
+![](images/chapter%201%20figure%20updates%20post%20review/example%201.1%20part%201.png){fig-align="center" width="300"}
+
+::: {.callout-tip collapse="true" icon="false"}
+## Solution
+
+**Step 1: Draw the FBD**
+
+The beam is supported with a pin at A, so that support is represented on the FBD with force components A~x~ and A~y~. Note that a guess needs to be made for whether A~x~ goes right or left and whether A~y~ goes up or down. The actual directions of A~x~ and A~y~ will be determined based on whether we get positive or negative answers for the values. A positive answer means the direction was correctly assumed and a negative answer means the force acts in the opposite direction.
+
+Cables always exert a force that pulls away from the body. In the FBD below, the cable is represented by force *T*.
+
+![](images/chapter%201%20figure%20updates%20post%20review/example%201.1%20part%202.png){fig-align="center" width="297"}
+
+**Step 2: Apply equilibrium equations**
+
+If we start with the moment about A equilibrium equation, we can solve for the tensile force T since Ax and Ay do not contribute to the moment about A. Then substituting T into the two force equilibrium equations allows us to find A~x~ and A~y~.
+
+$$
+\begin{aligned}
+& \sum M_A=T \sin (30^{\circ}) * 3{~ft}-1,200{~lb }*2{~ft}=0\\[10pt]& T = 1,600 {~lb}\\[20pt]
+& \sum F_x=-A_x-T \cos (30^{\circ})=0\\& -A_x-1,600{~lb} \cos (30^{\circ})=0\\& A_x=-1,385.6{~lb} \\[20pt]& \sum F_y=A_y+T \sin (30^{\circ})-1200{~lb}=0\\& A_y+1,600{~lb} \sin (30^{\circ})-1200{~lb}=0\\& A_y= 400{~lb}
+\end{aligned}
+$$
+
+Since a negative answer was obtained for A~x~, we know that that force component acts in the opposite direction of our assumed direction on the FBD. Thus, A~x~ acts in the positive x direction.
+
+The total force in pin A is then $F_A=\sqrt{A_x^2+A_y^2}=1,442{~lb}$
+
+**Answer: T = 1,600 lb, FA = 1,442 lb**
+:::
+:::
+:::
+
+### Two Force Members
+
+One special type of pin connection for which the direction of the reaction force is known is one in which the pin is connected to a **two-force member**. Contrary to the name, a two-force member is not necessarily a member on which only two forces are applied, but rather it is a member on which any number of forces are applied at only two distinct locations. A two-force member can be any shape, as is demonstrated in @fig-1.1. One easy way to recognize a two-force member is to note the presence of only two pinned points but no other locations at which a force or moment couple is applied. Once a member is recognized to be a two-force member, it can be concluded that the resultant force at both pins will be equal in magnitude (so F~A~ = F~B~ in @fig-1.1) and opposite in direction and follow a line of action that goes through the pins. For a straight member, it can also be concluded that the force within the two-force member (internal reaction as will be discussed in @sec-1.3) is equal to the reaction force in the pin.
+
+![Illustrations of two force members showing the line of action of the reaction force (red arrows) due to applied forces (black arrows) passing through the joints. Note that F~A~ = F~B~.](images/CH1%20PNGs/figure%201.1.png){#fig-1.1 fig-align="center" width="642"}
+
+The presence and recognition of two force members simplifies equilibrium calculations as it allows one to reduce the number of unknowns before doing any calculations. This is demonstrated in @exm-1.2 below.
+
+::: {#example-1.2 .callout-tip collapse="true" icon="false"}
+## Example 1.2
+
+::: {#exm-1.2}
+<p>
+
+</p>
+
+Determine the force in pin C and in pin A.
+
+![](images/Updated%20CH1%20examples/example%201.2%20part%201.png){fig-align="center" width="440"}
+
+::: {.callout-tip collapse="true" icon="false"}
+## Solution
+
+**Step 1: Draw the FBD**
+
+![](images/Updated%20CH1%20examples/example%201.2%20part%202.png){fig-align="center" width="472"}
+
+Based on this FBD, it appears that there are 4 unknowns and therefore not solvable by just 3 equilibrium equations. However, recognizing that bar AB is a two-force member (since there is a pin at A and a pin at B but no other forces acting on that bar), it can be taken as known that the line of action of the reaction force at A goes through points A and B. Thus, the FBD can be redrawn with just 3 unknowns:
+
+![](images/Updated%20CH1%20examples/example%201.2%20part%203.png){fig-align="center" width="474"}
+
+**Step 2: Apply equilibrium equations**
+
+$$
+\begin{aligned}
+& \sum M_C=F_A \cos \left(50^{\circ}\right)*(5{~m}) \sin \left(50^{\circ}\right)-F_A \sin \left(50^{\circ}\right) *\left(4{~m}+5{~m}\left(\cos \left(50^{\circ}\right)\right)-4,000{~ N}*2{~m}=0\right. \\
+& \sum F_x=F_A \cos \left(50^{\circ}\right)+C_x=0 \\
+& \sum F_y=F_A \sin \left(50^{\circ}\right)-4,000{~N}+C_y=0
+\end{aligned}
+$$
+
+Solving the first equation for F~A~ yields F~A~ = 2,611 N
+
+Substituting this result into the force equations yields C~x~ = - 1,678 N and C~y~ = 2,000 N.
+
+Knowing C~x~ and C~y~, we can find the overall pin force F~C~.
+
+$$
+F_C=\sqrt{C_x^2+C_y^2}=2,611{~N}
+$$
+
+Note that the negative result for C~x~ indicates that that reaction component actually goes in the opposite direction from how it was drawn on the FBD. If we were going to use it for any further calculations, rather than modifying the FBD, we would continue to assume the same direction drawn on the FBD but substitute in the negative value.
+
+As an alternative way of solving this problem (which is discussed in greater detail in @sec1.3), one can separate bars AB and BC (imagine taking the pin out at point B) and draw the FBD of just bar BC as shown below. Once again, since bar AB is a two force member, we know that F~B~ follows a line of action that goes through points A and B and that F~A~ = F~B~. We can solve for F~A~ by solving for F~B~.
+
+![](images/clipboard-2163853552.png){fig-align="center" width="446"}
+
+$$
+\sum M_C= F_B \sin(50^\circ)*4{~m}+F_B \cos(50^\circ)*0+4,000{~N}*2{~m}=0
+$$
+
+This gives us the same result of $F_A= 2,611{~N}$ and the rest of the problem proceeds the same way.
+
+**Answer: F~A~ = 2,611 N and F~C~ = 2.611 N**
+:::
+:::
+:::
+
+</details>
+
+## Internal Reactions {#sec-1.3}
+
+<details>
+
+<summary>Click to expand</summary>
+
+Internal reactions can refer to forces and moments at connection points between members (such as a pin connecting multiple members of a frame, machine, or truss), as well as to reactions at any point in a continuous body (for example a point in the middle of a beam). These reactions are the forces and/or moments necessary to hold a structure or a body together and are ultimately the aspect of loading that is needed to determine if and how a body will deform or even break.
+
+### Internal reactions at pinned connections
+
+When one draws an FBD of an entire structure that consists of connected members, the forces at pins that connect one member to another are not included because the connected members exert equal and opposite forces on each other that cancel each other out in equilibrium equations. However, the pins that connect the members together do still experience reaction forces that need to be known in order to ensure the integrity of the structure. To find the reaction forces in these internal pins:
+
+-   Draw the FBD's of the individual members (imagine the pins were pulled out and consider each member separately). With the members disconnected, the reaction forces at the connecting pins no longer get canceled out when applying equilibrium equations to the individual members. The reaction forces are drawn on the FBD's in the same way as was described for support pins in @sec1.1.
+
+    -   However, since the connected members do ultimately exert equal and opposite forces on each other, the reaction forces of pins common to two members are drawn in opposite directions on the FBD's of those members.
+
+-   With the FBD's drawn, write and solve equilibrium equations for each body. Since three equilibrium equations can be applied for each FBD drawn, one could theoretically solve for 3 times the number of unknowns as separate FBD's.
+
+    -   Keep in mind that the FBD of the whole structure may still be useful to help solve for some of the unknowns.
+
+    -   In addition, as was discussed previously, when one of the connected members is a two-force member, the reaction at the pin will be known to follow a line of action that goes through the points of application of the forces on the two-force member.
+
+@exm-1.3 as well as the alternative method used for @exm-1.2 demonstrate these concepts.
+
+::: {#example-1.3 .callout-tip collapse="true" icon="false"}
+## Example 1.3
+
+::: {#exm-1.3}
+<p>
+
+</p>
+
+A plant hanger is secured to a wall with a pin and additionally supported by a brace that is pin connected to the hanger at B and to the wall at C. Determine the external reactions at A and C as well as the reaction in the internal pin B.
+
+![](images/CH1%20PNGs/example%201.3%20part%201.png){fig-align="center" width="315"}
+
+::: {.callout-tip collapse="true" icon="false"}
+## Solution
+
+If we do not notice that BC is a two-force member, we would approach the problem by separating the brace from the hanger and drawing an FBD of each part separately. Notice that B~x~ and B~y~ are drawn in opposite directions in the two different diagrams since the pin will exert an equal and opposite force on each bar.
+
+![](images/CH1%20PNGs/example%201.3%20part%202.png){fig-align="center" width="563"}
+
+There are now 6 unknowns and 6 equilibrium equations (3 equations per body) available to use per bar, so the problem is technically solvable. However, since BC is a two force member (there is a pin force at B and a pin force at C but no other forces at any other point on the bar), it can be taken as known that the reaction force at B follows a line of action that goes through B and C. We can also conclude that the force in pin C is equal to the force in pin B. The FBD of bar AB can be redrawn:
+
+![](images/CH1%20PNGs/example%201.3%20part%203.png){fig-align="center" width="306"}
+
+With the components B~x~ and B~y~ replaced with the resultant force F~B~ with known direction, the number of unknowns on bar AB is reduced to 3. These unknowns can be solved for using the equilibrium equations:
+
+$$
+\begin{aligned}
+& \sum M_A=F_B\left(\frac{4}{5}\right)*3{~ft}-50{~lb}*7{~ft}=0 \\
+& \sum F_x=-A_x+F_B\left(\frac{3}{5}\right)=0 \\
+& \sum F_y=A_y+F_B\left(\frac{4}{5}\right)-50{~lb}=0
+\end{aligned}
+$$
+
+Solving the equations yields F~B~ = 145.8 lb, A~x~ = 87.5 lb, and A~y~ = -66.7 lb. Therefore, the pin force in pin B is 145.8 lb and the pin force in A is $\mathrm{A}=\sqrt{A_x^2+A_y^2}=110{~lb}$. Since BC is a two-force member, F~C~ = F~B~.
+
+**Answer: F~A~ = 110 lb, F~B~ = F~C~ = 146.8 lb**
+:::
+:::
+:::
+
+### Internal reactions in truss structures
+
+Truss structures are made up of only two force members. The two main methods of determining internal reactions in planar (2D) truss structures are Method of Joints and Method of Sections. In using Method of Joints, an FBD is drawn of the connecting pins (joints) within the truss. Since all the members connected at any given pin will be two-force members, the reactions can be drawn in known directions. However, since the forces all pass through the same point on the body, the moment equilibrium equation is not useful, so only the forces equilibrium equations can be used for each joint. This means that only two unknowns can be solved for at each joint. The Method of Joints is most useful when the forces of all the truss members are sought or if the only forces sought are attached to a joint with only two members.
+
+To use Method of Sections, a cut is made through the truss structure and analysis is based on the FBD of the intact part of the structure that is to the left of the cut or the intact part of the structure to the right of the cut. The FBD of either given side will show the applied forces and the reaction forces from the members that were cut through. These reactions will be equal in magnitude but opposite in direction between the two sides of the cut. The side to examine is usually based on which one will not require having to find external reactions (if there is a free end to the truss) and/or which one is least complicated to deal with in terms of geometry or applied loads. All three equilibrium equations can generally be effectively applied with Method of Sections, so three unknowns can be solved for with any given cut. It can also be helpful to keep in mind that moments can be taken about points that lie outside of the isolated section, which can lead to more efficient solutions.
+
+@exm-1.4 demonstrates the use of both Method of Joints and Method of Sections to solve for forces in truss members.
+
+::: {#example-1.4 .callout-tip collapse="true" icon="false"}
+## Example 1.4
+
+::: {#exm-1.4}
+<p>
+
+</p>
+
+Determine the forces in members DE and BE. Let F~1~ = 8 kN and F~2~ = 12 kN.
+
+![](images/Updated%20CH1%20examples/example%201.4%20part%201.png){fig-align="center" width="381"}
+
+::: {.callout-tip collapse="true" icon="false"}
+## Solution - Method of Joints
+
+With method of joints, we should always work with a joint that has no more than two unknown forces acting on it. These unknown forces come from either members attached to the joint or from external support reactions. Joint C is a good place to start here, as there are only two unknown forces: BC and CD.
+
+**FBD Joint C**
+
+![](images/Updated%20CH1%20examples/example%201.4%20part%202.png){fig-align="center" width="158"}
+
+Angle Θ can be found by setting up a right angle triangle at C with a base of 1 m and a height of 5 m. Once this angle is known, we can use equilibrium equations to find the forces in members BC and CD. 
+
+$$
+\theta=\tan ^{-1}\left(\frac{5}{1}\right)=78.7^{\circ} \\
+\\
+\begin{aligned}
+&\sum F_y=C D \sin \theta-12=0 \quad\rightarrow\quad C D=12.2{~kN} \\
+&\sum F_x=-B C-C D \cos \theta=0 \quad\rightarrow\quad B C=-2.4{~kN}
+\end{aligned}
+$$
+
+Since the forces are shown to be tensile in the FBD (the forces are pointed away from the joint), the negative answer indicates that force BC is actually compressive.
+
+Now that force CD is known to be 12.2 kN in tension, there are two remaining unknowns at joint D: BD and DE.
+
+**FBD Joint D**
+
+![](images/Updated%20CH1%20examples/example%201.4%20part%203.png){fig-align="center" width="348"}
+
+We know the 12.2 kN force is at angle Θ=78.7° from horizontal. Angle α can be found by considering right angle triangle BDE which has a base of 4 m and a height of 5 m. Once this angle is known, we can use equilibrium equations to find the forces in members BD and DE.
+
+$$
+\alpha=\tan ^{-1}\left(\frac{5}{4}\right)=51.3^{\circ} \\
+\\
+\begin{aligned}
+\sum F_y&=-B C \sin \theta-B D \sin \alpha=0 \quad \\
+&=-12.2 \sin \left(78.7^{\circ}\right)-B D \sin \left(51.3^{\circ}\right)=0 \quad\rightarrow\quad B D=-15.4{~kN} \\
+\sum F_x&=-D E-B D \cos \left(51.3^{\circ}\right)+12.2 \cos \left(78.7^{\circ}\right)=0 \\
+&=-D E-(-15.4) \cos \left(51.3^{\circ}\right)+12.2 \cos \left(78.7^{\circ}\right)=0 \quad\rightarrow\quad D E=12{~kN}
+\end{aligned}
+$$
+
+Force BD is 15.3 kN in compression and force DE is 12 kN in tension. Now we need to find force BE. There are two remaining unknowns at joint B: AB and BE.
+
+**FBD Joint B**
+
+![](images/Updated%20CH1%20examples/example%201.4%20part%204.png){fig-align="center" width="432"}
+
+$$
+\begin{aligned}\sum F_y&=B E-8+B D \sin \alpha=0 \quad \\&=B E-8+(-15.4) \sin \left(51.3^{\circ}\right)=0 \quad\rightarrow\quad B E=20{~kN} \\\end{aligned}
+$$
+
+**Answer: DE = 12 kN (Tensile), BE = 20 kN (Tensile)**
+:::
+
+::: {.callout-tip collapse="true" icon="false"}
+## Solution - Method of Sections
+
+While Method of Joints can be used here, it is inefficient. We needed to draw and analyze free body diagrams of joints C, D, and B and keep track of the forces at these joints as well as whether each force was in tension or compression.
+
+Method of Sections may be used as an alternative to find forces BE and DE. To apply Method of Sections, we should cut through no more than 3 unknown members and draw a free body diagram with no more than 3 total unknowns. For this problem, make a cut through the truss that passes through members AB, BE, and DE.
+
+![](images/Updated%20CH1%20examples/example%201.4%20part%205.png){fig-align="center" width="437"}
+
+Once that cut is made, a choice needs to be made to draw an FBD for the intact part of the truss to the left of the cut or the intact part of the truss to the right of the cut  Either way, the external forces on the side would need to be shown on the FBD as well as the force of each member that was cut through.
+
+If we chose the left side, there would be unknowns AB, BE, and DE, as well as unknown reactions Ax, Fx, and Fy. However, on the right side there are no unknown support reactions so the only unknowns are forces AB, BE, and DE.
+
+![](images/Updated%20CH1%20examples/example%201.4%20part%206.png){fig-align="center" width="450"}
+
+$$
+\begin{aligned}
+& \sum M_B=-(12*5)+(DE*5)=0 \quad\rightarrow\quad D E=12{~kN} \\
+& \sum F_y=BE-8-12=0 \quad\rightarrow\quad B E=20{~kN}
+\end{aligned}
+$$
+
+Once again, the forces are drawn on the FBD in the tensile direction, so the positive answers indicate the forces are indeed tensile.
+
+**Answer: DE = 12 kN (Tensile), BE = 20 kN (Tensile)**
+:::
+:::
+:::
+
+### Internal reactions in continuous bodies
+
+Internal reactions also exist within a body or structure. These reactions are necessary to hold the body together and will vary from point to point in a body depending on the distribution of external loading. As shown in @fig-1.2, the reactions at any given point can be examined by making a cut at the point of interest in the body. One can think of any point within a body as acting as a fixed support for the rest of the body. That is, every point must potentially exert a force parallel to the cross section where the cut is made which is the shear force V, a force perpendicular to the cross section where the cut is made which is the normal force N, and a reaction moment where the cut is made which is the bending moment M. Moreover, as was discussed for internal pin reactions and the cut made for Method of Sections for trusses, the reactions at a cut will be equal and opposite on either side of the cut.
+
+![Cross-sections showing the internal loads on a continuous body](images/CH1%20PNGs/figure%201.2.png){#fig-1.2 fig-align="center" width="483"}
+
+To determine the reactions, the FBD of the part of the beam to the left of the cut can be drawn and used, or the part of the beam to the right of the cut can be drawn and used. As was discussed with Method of Sections for trusses, the choice of which side of the cut to examine is based primarily on which side appears easiest and most efficient to analyze. Once the FBD of the cut section is drawn, the three equilibrium equations can be applied to determine the internal reactions. The determination of shear and bending moments in beams will be reviewed in more detail in @sec-beams. The focus of @exm-1.5 is on the determination of the normal force, as this will be important in @sec-stress and @sec-strain.
+
+::: {#example-1.5 .callout-tip collapse="true" icon="false"}
+## Example 1.5
+
+::: {#exm-1.5}
+<p>
+
+</p>
+
+Two solid bars make up the axial assembly loaded as shown. Determine the normal force in each bar. State whether the force is tensile or compressive.
+
+![](images/Updated%20CH1%20examples/example%201.5%20part%201.png){fig-align="center" width="429"}
+
+::: {.callout-tip collapse="true" icon="false"}
+## Solution
+
+Though the assembly is not a beam, determining the internal reactions will work in the same way. In this particular case, all the forces are in the normal direction (no shear force) and due to the central placement of the 50 kN and 180 kN forces, there will be also be no bending moment. Consequently, only the normal reaction force will be drawn on the FBDs.
+
+To find the internal load in a segment, cut a cross-section within that segment. Since the external loading (and therefore the internal loading) changes at point B, we'll make one cut in segment AB and another in segment BC.
+
+Making the cut in section AB and drawing the FBD allows us to determine the normal force in section AB. Note that drawing the left section of the cut for the FBD results in avoiding needing to know the external reactions at wall C.
+
+![](images/Updated%20CH1%20examples/example%201.5%20part%202.png){fig-align="center" width="199"}
+
+$$
+\sum F_x=-50{~kN}+N_{AB}=0 \quad\rightarrow\quad N_{AB}=50{~kN}
+$$
+
+Making the cut in section BC and drawing the FBD allows us to determine the normal force in section BC. Once again, drawing the left section of the cut for the FBD results in avoiding needing to know the external reactions at wall C.
+
+![](images/Updated%20CH1%20examples/example%201.5%20part%203.png){fig-align="center" width="303"}
+
+$$
+\sum F_x=-50{~kN}+180{~kN}+N_{BC}=0 \quad\rightarrow\quad N_{BC}=-130{~kN}
+$$
+
+For both AB and BC, the internal normal force was assumed tensile in the FBD and equilibrium equation. In the case of N~AB~, the positive answer confirms that it is tensile. In the case of N~BC~, the negative answer reveals that it is compressive.
+
+**Answer: N~AB~ = 50 kN (T), N~BC~ = 130 kN (C)**
+:::
+:::
+:::
+
+</details>
+
+## Equilibrium and Reactions in Three Dimensions {#sec-1.4}
+
+<details>
+
+<summary>Click to expand</summary>
+
+While we can often model structures as being two dimensional as was done in the previous examples, many real life structures will be subject to forces and moments in all directions, necessitating the consideration of 3 dimensional forces and 3 dimensional moments.
+
+For 3D systems, there are 6 total scalar equilibrium equations:
+
+$$
+\boxed{\begin{array}{ll}
+\sum F_x=0 &\;\;\; \sum M_x=0 \\
+\sum F_y=0 &\;\;\; \sum M_y=0 \\
+\sum F_z=0 &\;\;\; \sum M_z=0
+\end{array}}
+$$ {#eq-1.2}
+
+Recall that the moment vector describes the axis around which the body tends to rotate. Each individual component represents the tendency of the body to rotate around the specified axis. In 3D, there are three internal forces and three internal moments (@fig-1.3). There is one normal force (N~x~) perpendicular to the cross-section and two shear forces (V~y~ and V~z~) parallel to the cross-section. There are two bending moments (M~y~ and M~z~) which act around the axes parallel to the cross-section and one torsional moment (T~x~) which acts around the axis perpendicular to the cross-section. We will study each of these loads in detail in this textbook.
+
+![In 3D there are three internal forces (normal force N~x~ and two shear forces V~y~ and V~z~) and three internal moments (torsional moment T~x~ and two bending moments M~y~ and M~z~)](images/CH1%20PNGs/figure%201.3.png){#fig-1.3 fig-align="center" width="510"}
+
+Note that the choice of coordinate system here is arbitrary (as long as it is a right handed coordinate system). Loads are defined as normal, shear, bending, or torsion based on the effect they have on the body. For example, the normal force always acts in the direction perpendicular to the cross-section of the body, having the effect of exending or compressing the body. In the case of @fig-1.3, the x-axis is the axis perpendicular to the cross-section, so the force in the x direction is the normal force. If the axes or the body were oriented differently, the x component of the force could be a shear force instead of a normal force.
+
+While summing the reaction forces in 3D is a straight-forward process of adding forces in each direction, summing moments in 3D can prove to be more complicated. To sum moments, there are generally two options. One option is to use the cross product to calculate moments: $\vec{M}=\vec{r} \times \vec{F}$. Any position vector that goes from the point the moment is about to any point on the line of action of the force (F) will work for $\vec{r}$ in the cross product. Considering @fig-1.4, we could say:
+
+$$
+\begin{aligned}
+\vec{M_O}&=\vec{r_1}\times\vec{F}\\
+&=\vec{r_2}\times\vec{F}\\
+&=\vec{r_3}\times\vec{F}\
+\end{aligned}\\
+$$
+
+Using the cross product to calculate moment will result in a vector expression for the moment equation that gives all three components at one time along with the correct signs to indicate clockwise (negative) or counterclockwise (positive) rotation. Note that the clockwise or counterclockwise direction of rotation is based on the perspective of looking from the positive end of the axis towards the negative.
+
+The second option to calculate moments is to perform scalar calculations in which the sum of the moments about the x, y, and z axis is calculated individually. To use this option, it might be helpful to recall:
+
+1.  The general scalar equation for moment is M = F\*d, where d is the perpendicular distance between the point the moment is being taken about and the line of action of the force (see @fig-1.4). One can also use M = F r sin α where r is the distance from the point the moment is being taken about to any point on the force and α is the angle between the corresponding position vector $\vec{r}$ and the force vector. In @fig-1.4, various $\alpha$ and r pairs can be seen. Note that either $\alpha$ or it's complement angle can be used since the sine of the angle will be the same either way.
+
+2.  Forces do not cause moments about points they go through or axes they act through.
+
+3.  Forces do not cause moments about axes they are parallel to (i.e., F~x~ wouldn't cause a moment around an x-axis no matter where the point is).
+
+4.  When taking the moment about a point, the origin of the coordinate axes should be moved to that point for the purpose of determining the distance between the axis and the force.
+
+![The moment around O due to the force (F) can be calculated using the vector expressions of r and F or the scalar expressions](images/CH1%20PNGs/figure-1.4.png){#fig-1.4}
+
+Given all the reminders above, one can apply the following equations:
+
+$\sum M_x= \pm F_y * z \pm F_z * y$ where *z* and *y* are the respective distances from the x-axis at the point in question to *F~y~* and *F~z~* components of the force respectively.
+
+$\sum M_y= \pm F_x * z \pm F_z * x$ where *z* and *x* are the respective distances from the y-axis at the point in question to *F~x~* and *F~z~* components of the force respectively.
+
+$\sum M_z= \pm F_x * y \pm F_y * x$ where *y* and *x* are the respective distances from the z-axis at the point in question to the *F~x~* and *F~y~* components of the force respectively.
+
+The ± is decided based on the right-hand rule (see text below for guidance) or visual inspection. As mentioned above, when using visual inspection, the direction of rotation is judged by looking from the positive end of the axis towards the negative end. A counterclockwise rotation is considered to be positive and a clockwise rotation is considered to be negative.
+
+To apply the right-hand rule:
+
+1.  Orient your right hand so that the fingers are aligned with the moment arm with the palm at the point and the fingertips extending towards the force. The moment arm is the axis along which the perpendicular distance to the axis would be determined. For example, if finding M~x~ due to F~y~, the moment arm is in the z direction.
+
+2.  The thumb is aligned with the axis of rotation (axis around which the moment is being calculated).
+
+3.  Curl your fingers in the direction of the force. If your thumb must be pointed in the positive axis direction to perform this action, the moment is counterclockwise. If your thumb must be pointed in the negative axis direction, the moment is clockwise. Typical convention designates counterclockwise rotation to be positive and clockwise to be negative.
+
+These concepts are further reviewed in @exm-1.6.
+
+::: {#example-1.6 .callout-tip collapse="true" icon="false"}
+## Example 1.6
+
+::: {#exm-1.6}
+<p>
+
+</p>
+
+Determine the internal reactions at point P, located at the center of the cross-section of the rectangular bar and 1.75 ft from the fixed support, if **F** = -150**i** - 225**j** + 300**k** lb.
+
+![](images/CH1%20PNGs/example%201.6%20part%201.png){fig-align="center" width="484"}
+
+::: {.callout-tip collapse="true" icon="false"}
+## Solution
+
+To determine the internal reactions at P, a cut is made at P that is parallel to the cross section. Since the left side of the cut would include the wall but the right side of the cut would be free with no external reactions to determine, the right side section will be used.
+
+![](images/CH1%20PNGs/example%201.6%20part%202.png){fig-align="center" width="388"}
+
+The force reactions at P will just be equal (but opposite in direction) to the force shown since there is only one. The moment reactions can be found by taking the moments about point P.
+
+The moment about the x axis at point P is:
+
+$$
+\sum M_{Px} = \pm ~F_yz \pm F_zy = 0 = -[(225{~lb})(3{~in})(\frac{1{~ft}}{12{~in}})]+[(300{~lb})(2{~in})(\frac{1{~ft}}{12{~in}})]+M_{Px}=0\\[20pt]
+M_{Px}= 6.25{~lb·ft}
+$$
+
+The moment about the y axis at point P is:
+
+$$
+\sum M_{Py} = \pm ~F_xz \pm F_zx = 0 = (150{~lb})(3{~in})(\frac{1{~ft}}{12{~in}})]-[(300{~lb})(1.25{~ft})]+M_{Py}=0\\[20pt]
+M_{Py}= 337.5{~lb·ft}
+$$
+
+The moment about the z axis at point P is:
+
+$$
+\sum M_{Pz} = \pm F_xy \pm F_yx = 0 = [(150{~lb})(2{~in})(\frac{1{~ft}}{12{~in}})]-[(225{~lb})(1.25{~ft})]+M_{Pz}=0\\[20pt]
+M_{Pz}= 256.25{~lb·ft}
+$$
+
+The sign on the individual multiplicative terms in each equation are determined by right hand rule or visualization.
+
+**Answer:**
+
+P~x~ = 150 lb
+
+P~y~ = 225 lb
+
+P~z~ = 300 lb
+
+M~Px~ = 6.25 lb·ft
+
+M~Py~ = 337.5 lb·ft
+
+M~Pz~ = 256.25 lb·ft
+:::
+:::
+:::
+
+</details>
+
+## Summary {.unnumbered}
+
+<details>
+
+<summary>Click to expand</summary>
+
+::: {.callout-note icon="false"}
+## Key takeaways
+
+Bodies in this text are in static equilibrium and subjected to external forces and moments which can cause deformations. In order to determine the type and extent of deformation, we will need to understant how to calculate external and internal reactions to loading.
+
+External reactions can be found by drawing Free Body Diagrams of the whole structure and applying equilibrium equations.
+
+Internal reactions can be found by separating parts (for structures made of connected members) or making cuts (for solid bodies or truss structures when method of sections is used) and applying equilibrium to the separated parts or sections.
+
+In the case of connected members, it can be helpful to the process to recognize two force members and understand how they simplify analysis.
+
+The effects of these internal loads on deformable bodies is the focus of this text.
+:::
+
+::: {.callout-note icon="false"}
+## Key equations
+
+Static equilibrium:
+
+$$
+\begin{array}{ll}
+\sum F_x=0 & \sum M_x=0 \\
+\sum F_y=0 & \sum M_y=0 \\
+\sum F_z=0 & \sum M_z=0
+\end{array}
+$$
+
+2D Scalar Moment Equations:
+
+$$
+M=(F)(d)\\
+M=Fr\sin \alpha\\
+$$
+
+3D Scalar Moment Equations:
+
+$$
+\sum M_x = \pm F_z*y \pm F_y*z\\
+\sum M_y = \pm F_z*x \pm F_x*z\\
+\sum M_z = \pm F_x*y \pm F_y*x\\
+$$
+
+Vector Moment Equation:
+
+$$
+\vec{M}=\vec{r}\times\vec{F}\\
+$$
+
+Force magnitude:
+
+$$
+F = \sqrt{F_x^2+F_y^2}
+$$
+:::
+
+</details>
+
+## References {.unnumbered}
+
+<details>
+
+<summary>Click to expand</summary>
+
+**Figures**
+
+Table 1.1: Free body diagrams for common supports. Kindred Grey. 2024. CC BY-NC-SA.
+
+Example 1.1: Kindred Grey. 2024. CC BY-NC-SA.
+
+Figure 1.1: Illustrations of two force members showing the line of action of the reaction force passing through the joints. Kindred Grey. 2024. CC BY-NC-SA.
+
+Example 1.2: Kindred Grey. 2024. CC BY-NC-SA.
+
+Example 1.3: Kindred Grey. 2024. CC BY-NC-SA.
+
+Example 1.4: Kindred Grey. 2024. CC BY-NC-SA.
+
+Figure 1.2: Cross-sections showing the internal loads on a continuous body. Kindred Grey. 2024. CC BY-NC-SA.
+
+Example 1.5: Kindred Grey. 2024. CC BY-NC-SA.
+
+Figure 1.3: In 3D there are three internal forces (normal force N~x~ and two shear forces V~y~ and V~z~) and three internal moments (torsional moment T~x~ and two bending moments M~y~ and M~z~). Kindred Grey. 2024. CC BY-NC-SA.
+
+Example 1.6: Kindred Grey. 2024. CC BY-NC-SA.
+
+</details>

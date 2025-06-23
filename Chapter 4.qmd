@@ -22,13 +22,13 @@ editor: visual
 
 <summary>Click to expand</summary>
 
-Design of engineering structures meant to carry load often involves the determination of geometries and sizes of the components involved that will be needed to meet the design requirements. Possible design criteria might be that the structure be capable of carrying anticipated loads without failure (e.g., an aircraft wing), that it be stiff enough to only deflect by a limited amount (e.g., a building girder), or that the material returns to its original configuration when the loading is removed (e.g., a "5 MPH bumper", which should return to its original configuration if impacted at up to 5 MPH). Meeting these criteria requires us to understand the behavior of the material or materials that are being used within the structure. Exploring several of these basic mechanical properties is the focus of this chapter. An understanding of material behavior and these mechanical properties will enable us to relate stresses to strains, temperature change to strains, and explore the coupling that exists when subjecting materials to an arbitrary stress state.
+The engineering design of load-bearing structures typically involves determining the geometries and sizes of the components involved in order to meet design requirements. For example, it may be required that the structure is capable of carrying anticipated loads without failure (e.g., an aircraft wing), that it is stiff enough to only deflect by a limited amount (e.g., a building girder), or that the material returns to its original configuration when the loading is removed (e.g., a spring). In order to meet these design requirements, we must understand the behavior of the material or materials that are being used within the structure. Exploring several of these basic mechanical properties is the focus of this chapter. An understanding of material behavior and these mechanical properties will enable us to relate stresses to strains, temperature change to strains, and explore the coupling that exists when subjecting materials to an arbitrary stress state.
 
-The material properties described in this chapter will vary among materials. Material properties can be measured and recorded for reference in engineering handbooks. Some useful material properties for common engineering materials are recorded in @sec-material-properties.
+The mechanical properties described in this chapter will vary among materials. Mechanical properties can be measured and recorded for reference in engineering handbooks. Some useful properties for common engineering materials are recorded in @sec-material-properties.
 
-For the purposes of this book as we learn the principles, we assume that mechanical properties are constant, i.e. independent of temperature, rate of loading, etc.. This assumption works well for many engineering materials such as steel and aluminum at moderate temperatures, but temperature and rate dependence can be important at very high temperatures. Polymers, including plastics, rubber, etc. are known for their significant temperature and time or rate dependence, sometimes at common use temperatures, complicating presenting these properties in a simple table. Practicing engineers often need to recognize and address such complications as they work with such materials.
+For the purposes of this book as we learn the principles, we assume that mechanical properties are constant, i.e. independent of temperature, rate of loading, etc. This assumption works well for many engineering materials such as steel and aluminum at moderate temperatures, but not necessarily at very high temperatures. In addition, the mechanical properties of polymers, including plastics and rubber, are known for their temperature, time and rate dependence. That is, their properties change as these factors vary, often at common use temperatures. This makes it challenging to present their properties in a simple table. Practicing engineers often need to recognize and address such complications as they work with such materials.
 
-Of particular importance is that materials in this text are assumed to be isotropic—that is, they have the same properties in all directions. Many metals, polymers, concrete, and ceramics, including as discussed in this book, are often considered to be isotropic. Anisotropic materials, which display different properties depending on the direction of loading, are quite common but are beyond the scope of this text. Examples include wood, fiber reinforced plastics such as fishing rods or airplane wing skins, and biological tissues such as tendon.
+Of particular importance is that materials in this text are assumed to be isotropic, which means they have the same properties in all directions. Many metals, polymers, concrete, and ceramics, including as discussed in this book, are often considered to be isotropic. Anisotropic materials, which display different properties depending on the direction of loading, are quite common but are beyond the scope of this text. Examples include wood, fiber reinforced plastics such as fishing rods or airplane wing skins, and biological tissues such as tendon.
 
 @sec-4.1 discusses a common method of determining mechanical properties, known as the Tensile Test. The output of the Tensile Test - the Stress-Strain Diagram - is analyzed in @sec-4.2.
 
@@ -46,25 +46,27 @@ Finally, in @sec-4.8, we consider applying a factor of safety to our designs to 
 
 <summary>Click to expand</summary>
 
-A common method of measuring mechanical properties of materials is the tensile test, which involves placing a cylinder or bar of material in a load frame (such as shown in @fig-4.1 (A)) and subjecting the specimen to tensile loading. These load frames are designed in such a manner that they can mechanically extend the tensile bar, often to failure, while measuring both the imposed load and the specimen deformation. These quantities for the specimen are then used to determine the local or material level behavior of stress and strain by using the relationships covered in @sec-stress and @sec-strain. These latter quantities are often essential in engineering design because properties from appropriate tests on laboratory specimens may be used to predict the behavior of much more complex engineering components.
+A common method of measuring mechanical properties of materials is the tensile test, which involves placing a cylinder or bar of material in a load frame (such as shown in @fig-4.1 (A)) and subjecting the specimen to tensile loading. A specimen (such as shown in @fig-4.1 (B)) is mounted in grips that are then separated at a prescribed displacement rate. Because of the likelihood of failures at the grip due to concentrations of stress, specimens are typically "waisted" to form dogbone or dumbbell shapes. Large fillets are used to reduce stress concentrations associated with the different areas (see @sec-5.2), and failure will typically occur within the narrowed region of the specimen due to the smaller cross-sectional area. This region is often referred to as the gauge length as this becomes the area of interest for the specimen.
 
-During a typical tensile test, a specimen (such as shown in @fig-4.1 (B)) is mounted in grips that are then separated at a prescribed displacement rate. To determine stress, the recorded force at any time is divided by the cross-sectional area of the specimen. Because of the likelihood of failures at the grip due to concentrations of stress, specimens are typically "waisted" to form dogbone or dumbbell shapes. Large fillets are used to reduce stress concentrations associated with the different areas (See @sec-5.2), and failure will typically occur within the narrowed region of the specimen due to the smaller cross-sectional area. This region is often referred to as the gage length as this becomes the area of interest for the specimen. In addition, this specimen produces a uniform uniaxial stress state within this gage region of the specimen. The normal stress within this region is determined by:
+The applied tensile load is steadily increased and the applied load and the deformation of the specimen are measured and recorded at regular intervals. To determine deformation, a device such as a mechanical extensometer (see @fig-4.1 (C)) is mounted on the specimen.The specimen produces a uniform uniaxial stress state within the gauge region of the specimen. For each data point, the load is used to calculate the average normal stress from @eq-2.1:
 
 $$
-\sigma=\frac{F}{A}
+\sigma=\frac{N}{A}
 $$
 
-To determine strain, devices such as mechanical extensometer's (see @fig-4.1 (C)) are mounted on the specimen, measuring the deflection and dividing it by the original distance between the contact points.  Electrical resistance strain gages or optical methods, such as Digital Image Correlation (DIC) offer alternative means to determine strain. The axial normal strain is determined by dividing the measured extension by the active length of the strain measuring device, typically a portion of the gage section of the specimen:
+The deformation is used to calculate the average normal strain from @eq-3.1, where $\Delta L$ is the deformation measured by the strain gauge over the active length of the extensometer, L.
 
 $$
 \varepsilon=\frac{\Delta L}{L}
 $$
 
+These quantities are essential in engineering design because properties from appropriate tests on laboratory specimens may be used to predict the behavior of much more complex engineering components.
+
 ![Tensile tests are a common means to measure mechanic properties of materials. (A) Illustration of a tensile test frame. (B) Left to right: Examples of steel, aluminum, poly(vinyl chloride), and poly(methyl methacrylate) tensile specimens. (C) Image of a circular steel specimen mounted in grips and instrumented with a clip-on extensometer.](images/CH4%20PNGs/4.1%20new.png){#fig-4.1 fig-align="center" width="622"}
 
 </details>
 
-## Stress/Strain Diagram {#sec-4.2}
+## Stress-Strain Diagram {#sec-4.2}
 
 <details>
 
@@ -74,23 +76,49 @@ The goal in conducting tests of materials, such as the tensile test described ab
 
 As discussed in the introduction to this chapter, these material properties will be assumed to be constant in this text and so, once determined from a test specimen, can be used to design and analyze components made of that same material. @sec-material-properties contains material properties for a selection of these materials. Again, caution is needed as these properties can vary, sometimes substantially, depending on temperature, loading rate, prior loading history, and other factors.
 
-@fig-4.2 (A) illustrates representative stress-strain behavior for several engineering materials obtained from specimens loaded at relatively slow strain rates.  Each material initially experiences a linear relationship between stress and strain, represented as a straight line on the stress/strain diagram. Some materials, such as cast iron fail at relatively small strains, whereas other materials, such as high density polyethylene (HDPE) often used for milk jugs, go to very large strains well beyond the axis limit.  Figure 4.2 (B)  shows the same data but plotted only up to a maximum strain of 5%.  This zoomed in version highlights several features: 1) many materials often exhibit a linear stress-strain behavior up to some limiting stress (or strain) level, known as the proportional limit; 2) Most of these materials exhibit a transition from this initial linear region to a more consistent plateau value (at what we will be defining as the yield strength); and that while the slope or stiffness (which we will define as the modulus) of materials can vary widely as one goes from metals to engineering plastics.  Figure 4.2 (C) shows the failure region of an aluminum alloy specimen tested to failure, illustrating a common failure mode.
+The stress and strain data collected from a tensile test can be plotted to create a stress-strain diagram. @fig-4.2 illustrates an exaggerated stress-strain curve for a steel specimen. Let's discuss the shape of the curve, the behavior of the material, and the material properties that can be determined from this plot.
 
-![Results obtained from tensile tests. (A) Illustration of a typical stress-strain behavior for some common materials. Temperatures denote anneal temperatures. (B) Same data plotted up to 5% strain.  (C) Tensile test of an AlMgSi alloy. This is a ductile fracture type, as seen by the local necking and the cup and cone fracture surfaces.](images/v3.png){#fig-4.2 fig-align="center"}
+### Yield Stress
 
-Alhough not evident in Figure 4.2 because specimens were not unloaded prior to break, engineering materials often return to zero strain when stress is removed, provided the stress does not exceed a stress equal to the elastic limit.   Within this elastic region of material response, the object will return to its original dimensions when loads are removed. Although some materials, such as rubber, may be considered elastic even if their stress-strain behavior is nonlinear, many other engineering materials often exhibit linear stress-strain behavior within the elastic region. 
+There is initially a linear relationship between stress and strain, represented as a straight line on the stress-strain diagram. Following this is a plateau where a relatively small increase in stress results in a large increase in strain. The transition between the linear region of the stress-strain curve and the subsequent behavior marks an important engineering property of the material known as the yield stress, 𝜎~yield~.
 
-Materials such as glass, silicon wafers, and concrete tend to be quite brittle, breaking prior to significant permanent or plastic deformation. The behavior remains nearly linear until failure, an attribute of brittle materials. On the other hand, certain copper or aluminum alloys, mild steel, and many polymers are often quite ductile, meaning that there is considerable plastic deformation beyond some limiting value of stress or strain. Unless a material is perfectly brittle, the stress-strain relationship will cease to be linear, as evidenced by departures from linear elastic behavior on the stress/strain diagram. This nonlinear (often curved) portion is typically irrecoverable and is referred to as plastic deformation. If an object is loaded into the plastic region and the load is subsequently removed, any plastic deformation is permanent, and the object will not return to its original dimensions.
+There are actually three values worth mentioning here:
 
-The transition between the linear region of the stress-strain curve and the subsequent behavior marks an important engineering property of the material known as the yield stress. Although considerable variations are seen among different materials, yielding is typically defined as the region within which relatively small increases in stress are associated with relatively large increases in strain. The yield strength of the material is a very important design parameter, as many engineering components are designed to operate within the linear region of material response, and hence remain elastic, i.e., the ability to return to their original configuration when loading is removed. You likely have experienced material yielding if you have ever deformed a coat hanger or paperclip such that it does not return to the original state. Such behavior is undesirable for many engineering components designed to continue operating in their original state. On the other hand, plastic deformation following yielding can be very important in terms of the fabrication process. For example sheets of steel or aluminum can be placed between molds and compressed under high pressure to deform them into the shape of an automobile panel as seen in @fig-4.3 (A), an illustration of where plastic deformation is very important. Plastic deformation can also be useful in absorbing energy, such as seen in the concertina crushing of a structural component for an automobile (see @fig-4.3 (B)). This book, however, will focus on the pre-yield, linear elastic region.
+1.  The point where the relationship between stress and strain stops being linear is known as the proportional limit, 𝜎~PL~.
+
+2.  Following the proportional limit is the elastic limit, 𝜎~EL~. If a material is loaded so that the stress does not exceed the elastic limit and then the load is removed, the object will return to its original dimensions. The elastic limit marks the point beyond which materials do not return to their original state.
+
+3.  The yield point is typically defined using the 0.2% offset method where a straight line beginning at a strain of 0.002 (0.2%) and running parallel to the linear portion of the diagram is drawn. The point where this line intersects the stress-strain curve is defined as the yield point.
+
+Since these three points for a material often occur within a fairly narrow range of one another, this text will refer to these three points collectively as yielding. We will use the yield stress as this is the easiest of the three points to consistently identify when working with real data.
+
+![Idealized stress-strain curve for a steel specimen, indicating the proportional limit (𝜎~PL~), elastic limit (𝜎~EL~), yield stress (𝜎~yield~), ultimate tensile strength (𝜎~ultimate~), and fracture stress (𝜎~fracture~).](images/4.4%20new.png){#fig-4.2 fig-align="center" width="500"}
+
+### Elastic and Plastic Deformation
+
+Prior to yielding, the material undergoes elastic deformation. If the load is removed during elastic deformation, the object will return to its original dimensions. This makes the yield strength of the material a very important design parameter, as many engineering components are designed to operate within the linear region of material response, and hence remain elastic.
+
+When loaded past the yield point, the material continues to experience increasing stress and strain, although it is no longer a linear relationship. Deformation beyond the yield point is permanent. This is known as plastic deformation. If an object is loaded beyond its yield point and and the load is then removed, any elastic deformation is recovered but any plastic deformation is not. The dimensions of the object have been permanently changed. You likely have experienced material yielding if you have ever deformed a coat hanger or paperclip such that it does not return to the original state. Such behavior is undesirable for many engineering components designed to continue operating in their original state, and we will commonly consider the yield stress to be the maximum acceptable stress in a component.
+
+On the other hand, plastic deformation following yielding can be very important in terms of the fabrication process. For example sheets of steel or aluminum can be placed between molds and compressed under high pressure to deform them into the shape of an automobile panel as seen in @fig-4.3 (A). Plastic deformation can also be useful in absorbing energy, such as seen in the concertina crushing of a structural component for an automobile (see @fig-4.3 (B)). This book, however, will focus on the pre-yield, linear elastic region.
 
 ![Engineering materials are often loaded beyond yield to permanently deform the material, as in (A) the stamping process for an automotive panel or in (B) the crushing of a weld-bonded hat section used to absorb energy in an automobile accident.](images/Chapter%204%20figure%20edits/figure%204.3.png){#fig-4.3 fig-align="center" width="576"}
 
-Sometimes the yield region is further described by three distinct points on the stress/strain curve. The proportional limit marks the point where the relationship between stress and strain stops being linear. The elastic limit marks the point beyond which materials do not return to their original state. The yield point is typically defined using the 0.2% offset method where a straight line beginning at a strain of 0.002 (0.2%) and running parallel to the linear portion of the diagram is drawn. The point where this line intersects the stress/strain curve is defined as the yield point. Since these three points for a material often occur within a fairly narrow range of one another, this text will refer to these three points collectively as yielding, and will define the stress at this point as the yield strength. @fig-4.4 illustrates these definitions.
+If we continue to load the specimen into the plastic region, the stress and strain continue to increase up until some maximum stress known as the ultimate tensile stress, 𝜎~UTS~. Past this point the material undergoes necking, a thinning of the cross-section, and so the load it can withstand actually decreases. This continues until the fracture point, 𝜎~fracture~.
 
-![Illustration of the proportional limit, the elastic limit, and the yield region of material response.](images/4.4%20new.png){#fig-4.4 fig-align="center" width="575"}
+### Ductile and Brittle Materials
 
-Other metrics are also often quantitatively evaluated from stress-strain diagrams, including the ultimate strength, $\sigma_{ult}$, the maximum stress achieved prior to failure and the strain at break, $\varepsilon_{break}$ which is a measure of the ultimate elongation capabilities of the material (though is often dependent on the size of the specimen’s gage length.
+@fig-4.2 shows an idealized stress-strain diagram for a steel specimen. The diagrams for other materials will look a little different as their mechanical properties are all different. @fig-4.4 (A) illustrates representative stress-strain behavior for several engineering materials. These are drawn to scale and the popout shows an enlarged view of the elastic region.
+
+Each material initially experiences a linear relationship between stress and strain, but the yield stress is significantly higher for some materials than others. Materials with a high yield stress are of course more appropriate for high-stress applications.
+
+![Results obtained from tensile tests. (A) Illustration of a typical stress-strain behavior for some common materials. Temperatures denote anneal temperatures. (B) Same data plotted up to 5% strain.  (C) Tensile test of an AlMgSi alloy. This is a ductile fracture type, as seen by the local necking and the cup and cone fracture surfaces.](images/v3.png){#fig-4.4 fig-align="center"}
+
+Consider the plastic deformation for the materials shown in @fig-4.4. Some materials, such as cast iron fail at relatively small strains, whereas other materials, such as high density polyethylene (HDPE) often used for milk jugs, go to very large strains well beyond the axis limit.
+
+Brittle materials are those with short plastic regions, indicating that they break without experiencing much plastic deformation. The behavior remains nearly linear until failure.
+
+Ductile materials are those with long plastic regions, indicating that they experience significant plastic deformation before breaking. @fig-4.4 (B) shows the failure region of an aluminum alloy specimen tested to failure, illustrating necking and ductile failure. This can be useful in many engineering applications where, if the yield stress is accidentally exceeded, the material will deform significantly and can allow time for the component to be replaced before it breaks. Consider the difference between dropping a ceramic mug on a hard floor compared to a mug made of aluminum or tin. The ceramic mug is likely to shatter, while the tin mug may end up with a permanent dent (indicating that its yield stress was exceeded and it experienced plastic deformation) but will still be functional.
 
 </details>
 
@@ -100,11 +128,11 @@ Other metrics are also often quantitatively evaluated from stress-strain diagram
 
 <summary>Click to expand</summary>
 
-The slope of the linear region of this stress/strain diagram represents an important material property known as Young's modulus or the modulus of elasticity, which will be designated by E. The elastic modulus can be thought of as a measure of stiffness of the material. A high elastic modulus for ‘stiff’ materials is represented by a steep slope. That is, a large increase in stress with only a small increase in strain. A low elastic modulus for ‘soft’ materials is represented by a shallow slope indicating a small increase in stress but a large increase in strain.
+The slope of the linear region of this stress/strain diagram represents an important material property known as the elastic modulus (also known as Young's modulus or the modulus of elasticity), which will be designated by E. [Thomas Young](https://en.wikipedia.org/wiki/Thomas_Young_(scientist)) (1773-1829) was a British scientist, who noted the proportionality between applied force and extension, which he recorded as "ut tensio sic vis”, meaning "as is the extension, so is the force".
 
-[Thomas Young](https://en.wikipedia.org/wiki/Thomas_Young_(scientist)) (1773-1829) was a British scientist, who noted the proportionality between applied force and extension, which he recorded as "ut tensio sic vis”, meaning "as is the extension, so is the force".
+The elastic modulus can be thought of as a measure of stiffness of the material. A high elastic modulus for ‘stiff’ materials is represented by a steep slope. That is, a large increase in stress with only a small increase in strain. A low elastic modulus for ‘soft’ materials is represented by a shallow slope indicating a small increase in stress but a large increase in strain.
 
-The linear elastic region of material response is of enormous importance for most engineering structures. Loading significantly beyond this proportional limit can result in pronounced yielding and permanent deformation that is often unacceptable, unless one is using this deformation to absorb energy (as in automobile frame involved in collision). Young's modulus or the modulus of elasticity is illustrated in @fig-4.5 (A), which plots a portion of the normal stress versus normal strain, for example from a tensile test.
+The linear elastic region of material response is of enormous importance for most engineering structures. Loading significantly beyond this proportional limit can result in pronounced yielding and permanent deformation that is often unacceptable, unless one is using this deformation to absorb energy (as in automobile frame involved in collision). The elastic modulus is illustrated in @fig-4.5, which plots a portion of the normal stress versus normal strain, for example from a tensile test.
 
 $$
 E=\frac{\sigma}{\varepsilon}
@@ -124,9 +152,11 @@ $$ {#eq-4.1}
 
 *𝜀 = Normal strain*
 
-It is especially important to note that this relationship is only applicable within the linear elastic region of the material’s response. Use of this relationship beyond this region can lead to serious design mistakes. One should note that this proportionality, applicable at the material level for stress and strain, also extends to structural elements, such as bars in tension or compression, beam deflections, helical springs in which the force and deflection are related by the spring constant, and many other engineering components and structures, as will be covered in the following chapters of the book.
+This equation is appropriate for uniaxial stress (i.e. when the load applied only in a single direction and the strain is measured in that direction). @sec-4.7 expands this relationship to cases where normal stresses are present in more than one direction.
 
-![Illustration of the initial linear elastic portions of the sress strain curce and slopes corresponding to (a) Young's modulus for uniaxial tension; (b) shear modulus for pure shear loading](images/CH4%20PNGs/4.6.png){#fig-4.5 fig-align="center" width="400"}
+It is especially important to note that this relationship is only applicable within the linear elastic region of the material’s response. This relationship, applicable at the material level for stress and strain, also extends to structural elements, such as bars in tension or compression, beam deflections, helical springs in which the force and deflection are related by the spring constant, and many other engineering components and structures, as will be covered in the following chapters of the book.
+
+![Illustration of the initial linear elastic portions of the stress strain curve and slope corresponding to elastic modulus for uniaxial tension.](images/chapter%204%20figure%20updates%20post%20review/figure%204.5.png){#fig-4.5 fig-align="center" width="159"}
 
 @exm-4.1 uses Hooke’s law to determine the elastic modulus of a material where the applied load and deformation are known.
 
@@ -181,19 +211,25 @@ $$
 
 <summary>Click to expand</summary>
 
-When you stretch a rubber band, you will note that the elastomer elongates in the axial direction but that the cross-sectional area contracts. That is, there is a normal strain in the longitudinal (length) direction and also in the lateral (width or thickness) direction. There is a coupling between these normal strains in perpendicular directions. Poisson’s ratio is the material property that describes the proportional relationship between longitudinal and lateral strains. Named after Siméon Denis Poisson (1781-1840), the French mathematician and physicist, Poisson’s ratio is defined as the negative of the lateral strain divided by the longitudinal strain for a uniaxial eight loaded material. It may be expressed as:
+When you stretch a rubber band, you'll notice that the band gets longer in the direction of the applied force, but the width of the band decreases. That is, there is a normal strain in the axial (length) direction and also in the lateral (width or thickness) direction. There is a coupling between these normal strains in perpendicular directions. Poisson’s ratio is the material property that describes the proportional relationship between axial and lateral strains. Named after [Siméon Denis Poisson](https://en.wikipedia.org/wiki/Sim%C3%A9on_Denis_Poisson) (1781-1840), the French mathematician and physicist, Poisson’s ratio is defined as the negative of the lateral strain divided by the axial strain for a uniaxially loaded material. It may be expressed as:
 
 $$
-\boxed{\nu=-\frac{\varepsilon_{lateral}}{\varepsilon_{longitudinal}}}
+\boxed{\nu=-\frac{\varepsilon_{lateral}}{\varepsilon_{axial}}}
 $$ {#eq-4.2}
 
 | *where*
 | *𝜈 = Poisson's ratio*
 | *𝜀~lateral~ = Lateral normal strain*
 
-*𝜀~longitudinal~ = Longitudinal normal strain*
+*𝜀~axial~ = Axial normal strain*
 
-Note that this relationship is appropriate for a uniaxially loaded specimen (i.e., when a load is applied in only the longitudinal direction). @sec-4.7 expands this relationship to cases where normal stresses are present in more than one direction. Poisson’s ratio is a material property that depends on the material as well as its structure. Theoretically, Poisson’s ratio can range from –1 to ½ for isotropic materials, but usually ranges from near zero for foams to nearly ½ for soft materials such as elastomers and gels. Most metals fall in the range from 0.2 to 0.35. A positive value of Poisson’s ratio means that as the material is extended in one direction, there will be a contraction in lateral directions. Most solid materials have positive Poisson’s ratios, though negative values have been reported in auxetic materials, such as certain meta-materials fabricated using additive manufacturing processes. Although beyond the scope of this course, such materials offer intriguing design possibilities. See @exm-4.2 for a simple application of Poisson’s ratio.
+Recall that strains are positive if the dimension gets longer and negative if it gets shorter. For most common engineering materials, applying a tensile force causes the object to get longer and thinner, while applying a compressive force causes it to get shorter and wider. This is shown in @fig-4.6. Thus, for these materials, either the axial or lateral strain will be positive and the other will be negative.
+
+![Illustration of axial and lateral strains for (A) Tensile loading and (B) Compressive loading. Solid lines show original (undeformed) shape and dotted lines show deformed shape. Note that one strain is positive (elongating) and the other is negative (shortening) in both cases.](images/chapter%204%20figure%20updates%20post%20review/figure%204.6.png){#fig-4.6 fig-align="center" width="388"}
+
+Note that this relationship is appropriate for a uniaxially loaded specimen. @sec-4.7 expands this relationship to cases where normal stresses are present in more than one direction.
+
+Poisson’s ratio depends on the material as well as its structure. Theoretically, Poisson’s ratio can range from –1 to +0.5 for isotropic materials, but usually ranges from near zero for foams to almost exactly 0.5 for soft materials such as elastomers and gels. Most metals fall in the range from 0.2 to 0.35. A positive value of Poisson’s ratio means that as the material is extended in one direction, there will be a contraction in lateral directions. See @exm-4.2 for a simple application of Poisson’s ratio.
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Example 4.2
@@ -212,9 +248,15 @@ A circular polymeric rod with a diameter of 10 mm is subjected to a uniaxial for
 
 The longitudinal strain is given as: ε~longitudinal~ = 0.005
 
-The lateral strain is determined from the reduction in diameter divided by the original diameter, and is negative because it is contracting: $\varepsilon_{lateral}=\frac{-0.02{~mm}}{10{~mm}}=-0.002$
+The lateral strain is determined from the reduction in diameter divided by the original diameter, and is negative because it is contracting:
 
-Poisson’s ratio is then easily determined as: $\nu=-\frac{\varepsilon_{lateral}}{\varepsilon_{longitudinal}}=-\frac{-0.002}{0.005}=0.4$
+$$
+\varepsilon_{lateral}=-\frac{0.02~mm}{10~mm}=-0.002
+$$
+
+Poisson’s ratio is then easily determined as:
+
+$$\nu=-\frac{\varepsilon_{lateral}}{\varepsilon_{axial}}=-\frac{-0.002}{0.005}=0.4$$
 :::
 :::
 :::
@@ -222,11 +264,11 @@ Poisson’s ratio is then easily determined as: $\nu=-\frac{\varepsilon_{lateral
 ::: {.callout-warning icon="false"}
 ## Step-by-step:
 
-1.  Determine the longitudinal strain $\varepsilon_{long}=\frac{\Delta L}{L}$
+1.  Determine the axial strain, based on the change in length (L): $\varepsilon_{axial}=\frac{\Delta L}{L}$
 
-2.  Determine the lateral strain $\varepsilon_{l a t}=\frac{\Delta d}{d}$
+2.  Determine the lateral strain, based on the change in diameter (D), height (H), or width (W): $\varepsilon_{l a t}=\frac{\Delta D}{D}=\frac{\Delta H}{H}=\frac{\Delta W}{W}$
 
-3.  Calculate Poisson’s ratio $\nu=-\frac{\varepsilon_{lat}}{\varepsilon_{long}}$
+3.  Calculate Poisson’s ratio: $\nu=-\frac{\varepsilon_{lateral}}{\varepsilon_{axial}}$
 :::
 
 </details>
@@ -237,7 +279,7 @@ Poisson’s ratio is then easily determined as: $\nu=-\frac{\varepsilon_{lateral
 
 <summary>Click to expand</summary>
 
-In addition to considering normal stresses and strains, an understanding of the relationship between shear stresses and shear strains is also needed. A similar experiment can be performed to produce a diagram of shear stress against shear strain. The slope of a shear stress versus shear strain diagram is referred to as the shear modulus or modulus of rigidity, and will be designated by G. The corresponding slope of a shear stress versus shear strain plot is referred to as the shear modulus or modulus of rigidity, as shown in @fig-4.5 (B).
+In addition to considering normal stresses and strains, an understanding of the relationship between shear stresses and shear strains is also needed. Like the tensile test for normal stress and strain, a shear test can be performed to produce a diagram of shear stress against shear strain. The slope of a shear stress versus shear strain diagram is referred to as the shear modulus or modulus of rigidity, and will be designated by G. The corresponding slope of a shear stress versus shear strain plot is referred to as the shear modulus or modulus of rigidity, as shown in @fig-4.7 (B).
 
 $$
 \boxed{\tau=G \gamma}
@@ -249,7 +291,9 @@ $$ {#eq-4.3}
 
 *𝛾 = shear strain*
 
-It should be noted that Young’s modulus, the shear modulus, and Poisson’s ratio are not all independent of one another. For isotropic materials, there are only two independent, linear elastic properties; knowing any two allows one to calculate the others. It can be shown that:
+![Illustration of the initial linear elastic portions of the sress strain curce and slopes corresponding to (a) Young's modulus for uniaxial tension; (b) shear modulus for pure shear loading](images/CH4%20PNGs/4.6.png){#fig-4.7 fig-align="center" width="400"}
+
+It should be noted that elastic modulus, the shear modulus, and Poisson’s ratio are not all independent of one another. For isotropic materials, there are only two independent, linear elastic properties; knowing any two allows one to calculate the others. It can be shown that:
 
 $$
 \boxed{G=\frac{E}{2(1+v)}}
@@ -273,19 +317,34 @@ See @exm-4.3 for a problem involving the shear modulus.
 
 Soft contact lenses often consist of a hydrogel, an elastomeric network that is imbibed with water, expanding its volume and making the lens more soft and compliant. Suppose a 10 mm cube of the dry elastomer were subjected to a shearing action as shown. Shearing forces of 5 N each are applied to the four faces of the cube, resulting in a displacement of 0.3 mm. What is the shear modulus of this elastomeric block?
 
-![](images/Chapter%204%20edits%20v2/example%204.3%20v2.png){fig-align="center" width="406"}
+![](images/chapter%204%20figure%20updates%20post%20review/example%204.3.png){fig-align="center" width="486"}
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Solution
 
+First determine the shear stress:
+
 $$
 \begin{aligned}
-& \tau=V/A, \;\; A=L^2\\
-& \tau=5{~N} /(0.01{~m})^2=50{~kPa} \\
-& \gamma = \frac{\Delta L}{L}\\
-& \gamma=0.3{~mm}/10{~mm}=0.03=3 \% \\
-& G=\frac{\tau}{\gamma}=50{~kPa}/0.03=1.667{~MPa}
+&A=L^2=(0.01~m)^2 \\
+&\tau=\frac{V}{A} \\
+& \tau=\frac{5{~N}}{(0.01{~m})^2}=50{~kPa} \\
 \end{aligned}
+$$
+
+Then determine the shear strain:
+
+$$
+\begin{aligned}
+& \gamma = \frac{\Delta x}{L}\\
+& \gamma=\frac{0.3{~mm}}{10{~mm}}=0.03 \\
+\end{aligned}
+$$
+
+Finally, calculate the shear modulus:
+
+$$
+G=\frac{\tau}{\gamma}=50{~kPa}/0.03=1.667{~MPa}
 $$
 :::
 :::
@@ -296,8 +355,8 @@ $$
 
 1.  Determine the internal load in the member by equilibrium
 2.  Determine the shear stress in the member by $\tau=\frac{V}{A}$
-3.  Determine the normal strain in the member by $\varepsilon=\frac{\Delta L}{L}$
-4.  Use Hooke’s law to calculate the elastic modulus, $\sigma=E \varepsilon$
+3.  Determine the shear strain in the member by $\gamma=\frac{\Delta x}{L}$
+4.  Use Hooke’s law to calculate the shear modulus, $\tau=G \gamma$
 :::
 
 </details>
@@ -308,7 +367,7 @@ $$
 
 <summary>Click to expand</summary>
 
-In addition to relationships arising between stress and strain, other factors can affect dimensional changes of materials as well as changes in the stresses present in a structure. Most materials will expand, for example, when their temperature is increased. Many engineering structures will experience significant temperature variations during their life, beginning with thermal processes involved in their manufacture, cyclic temperature changes (e.g., day/night or summer/winter), or because of their usage, such as an engine block heating up or cooling down. Though dimensional changes from temperature often appear to be quite small, they can lead to significant changes in stress state, and in fact numerous failures result not from applied mechanical loading but from thermal exposure issues. Though beyond the current scope, other dimensional changes can also result from other environmental factors, such as the expansion of a material as water is absorbed, or from the application of electric fields for materials that exhibit piezoelectric properties.
+In addition to relationships arising between load, stress, and strain, other factors can affect dimensional changes of materials as well as changes in the stresses present in a structure. Most materials will expand, for example, when their temperature is increased. Many engineering structures will experience significant temperature variations during their life, beginning with thermal processes involved in their manufacture, cyclic temperature changes (e.g., day/night or summer/winter), or because of their usage, such as an engine block heating up or cooling down. Though dimensional changes from temperature often appear to be quite small, they can lead to significant changes in stress state, and in fact numerous failures result not from applied mechanical loading but from thermal exposure issues. Though beyond the current scope, other dimensional changes can also result from other environmental factors, such as the expansion of a material as water is absorbed, or from the application of electric fields for materials that exhibit piezoelectric properties.
 
 Vibrational energy of atoms increases as temperature increases, typically leading to slightly greater atomic separation distances. This expansion leads to dimensional changes in the material, and the behavior is characterized by the material’s coefficient of thermal expansion (CTE). The linear CTE is often designated by $\alpha$ and is defined as the change in strain per unit change in temperature. As with the other material properties discussed in this chapter, $\alpha$ is assumed to be constant for any given material.
 
@@ -358,9 +417,13 @@ A 24” long aluminum bar with a coefficient of thermal expansion of 13x10^-6^/F
 ::: {.callout-tip collapse="true" icon="false"}
 ## Solution
 
-1.  $\varepsilon_T=\alpha \cdot \Delta T\\ \varepsilon_T=13 \times 10^{-6} /^\circ{F} *\left(-75^{\circ}{F}\right)\\ \varepsilon_T=-0.00098$
+1.  Thermal strain can be calculated from $\varepsilon_T=\alpha \Delta T$
 
-2.  $\varepsilon = \frac{\Delta L}{L},\;\;\Delta L=\varepsilon *L\\ \Delta L=-0.00098*24{~in}\\ \Delta L=-0.0235 {~in}$
+    $\varepsilon_T=\alpha \cdot \Delta T\\ \varepsilon_T=13 \times 10^{-6} /^\circ{F} *\left(-75^{\circ}{F}\right)\\ \varepsilon_T=-0.00098$
+
+2.  Change in length can be determined from $\varepsilon=\frac{\Delta L}{L}$
+
+    $\varepsilon = \frac{\Delta L}{L} \quad \rightarrow\quad\Delta L=\varepsilon L\\ \Delta L=-0.00098*24{~in}\\ \Delta L=-0.0235 {~in}$
 :::
 :::
 :::
@@ -372,7 +435,7 @@ A 24” long aluminum bar with a coefficient of thermal expansion of 13x10^-6^/F
 
 2.  Look up the coefficient of thermal expansion (𝛼) for the material
 
-3.  Calculate the thermal strain, $\varepsilon=\alpha \Delta T$
+3.  Calculate the thermal strain, $\varepsilon_T=\alpha \Delta T$
 
 4.  Calculate the change in length from $\varepsilon=\frac{\Delta L}{L} \rightarrow \Delta L=\varepsilon L$
 :::
@@ -385,17 +448,17 @@ A 24” long aluminum bar with a coefficient of thermal expansion of 13x10^-6^/F
 
 <summary>Click to expand</summary>
 
-Materials are often tested under idealized conditions, such as uniaxial tension or shearing resulting from torsional loading. These tests are important because they provide material properties necessary for engineering design. Such simple stress states are less common in actual engineered components, where more complex, multiaxial stress states are present, as shown in @fig-4.6.
+Materials are often tested under idealized conditions, such as uniaxial tension or shearing resulting from torsional loading. These tests are important because they provide material properties necessary for engineering design. Such simple stress states are less common in actual engineered components, where more complex, multiaxial stress states are present, as shown in @fig-4.8.
 
-![Illustration of a general, multiaxial stress state, showing normal and shear stresses acting on the positive x-, y-, and z-planes. Note that equal and opposite stresses exist on the hidden faces of the element.](images/Chapter%204%20figure%20edits/figure%204.7.png){#fig-4.6 fig-align="center" width="526"}
+![Illustration of a general, multiaxial stress state, showing normal and shear stresses acting on the positive x-, y-, and z-planes. Note that equal and opposite stresses exist on the hidden faces of the element.](images/chapter%204%20figure%20updates%20post%20review/figure%204.8.png){#fig-4.8 fig-align="center" width="463"}
 
-Here there are three normal stresses, referred to with a single subscript indicating their direction (σ~x~, σ~y~, and σ~z~). There are six shear stresses, designated by τ, which are referred to with two subscripts, one indicating the plane or ‘face’ that the stress acts on and the other indicating the direction that it acts in. For example, on the y-z plane (the x-face) there is the normal stress σ~x~ and two shear stresses, τ~xy~ and τ~xz~. The first subscript indicates that these shear stresses act on the x-face and the second subscript indicates that they point in the y- and z-directions respectively.
+Here there are three normal stresses, referred to with a single subscript indicating their direction (σ~x~, σ~y~, and σ~z~), although some texts will use repeated subscripts for these (σ~xx~, σ~yy~, and σ~zz~). There are six shear stresses, designated by τ, which are referred to with two subscripts, one indicating the plane or ‘face’ that the stress acts on and the other indicating the direction that it acts in. For example, on the y-z plane (the x-face) there is the normal stress σ~x~ and two shear stresses, τ~xy~ and τ~xz~. The first subscript indicates that these shear stresses act on the x-face and the second subscript indicates that they point in the y- and z-directions respectively.
 
-Consider the x-y plane of the stress element in @fig-4.6. This 2D plane is shown in @fig-4.7. It experiences two normal stresses (σ~x~ and σ~y~) and two shear stresses (τ~xy~ and τ~yx~). τ~xy~ will cause the element to rotate counterclockwise while τ~yx~ will cause the element to rotate clockwise. For an element in equilibrium, these two stresses must be equal in order for these rotation effects to balance. Expanding this to the other planes we may say τ~xy~ = τ~yx~, τ~xz~ = τ~zx~, and τ~yz~ = τ~zy~.
+Consider the x-y plane of the stress element in @fig-4.8. This 2D plane is shown in @fig-4.9. It experiences two normal stresses (σ~x~ and σ~y~) and two shear stresses (τ~xy~ and τ~yx~). τ~xy~ will cause the element to rotate counterclockwise while τ~yx~ will cause the element to rotate clockwise. For an element in equilibrium, these two stresses must be equal in order for these rotation effects to balance. Expanding this to the other planes we may say τ~xy~ = τ~yx~, τ~xz~ = τ~zx~, and τ~yz~ = τ~zy~.
 
-![2D view of the x-y plane of a 3D stress element.](images/Chapter%204%20figure%20edits/figure%204.8.png){#fig-4.7 fig-align="center" width="392"}
+![2D view of the x-y plane of a 3D stress element.](images/Chapter%204%20figure%20edits/figure%204.8.png){#fig-4.9 fig-align="center" width="392"}
 
-Having learned the concept of Poisson’s ratio, we recognize that there is a coupling between normal stresses in one direction and the normal strains in other directions. We have reviewed this in the context of the response to the application of a uniaxial stress state—a normal stress applied in only one direction. For example, if there is a normal stress in the x-direction there will also be a normal strain in the x-direction and also in the y- and z-directions.
+Having learned the concept of Poisson’s ratio, we recognize that a normal stress in one direction will create normal strains in all 3 directions (x, y, and z). We have reviewed this in the context of the response to the application of a uniaxial stress state—a normal stress applied in only one direction. For example, if there is a normal stress in the x-direction there will be a normal strain in the x-direction and also in the y- and z-directions.
 
 Specifically:
 
@@ -472,26 +535,26 @@ $$ {#eq-4.8}
 
 </p>
 
-A solid, 50 mm polycarbonate cube is subjected to a compressive stress of $p=10 \mathrm{MPa}$ on all sides. Assuming the material has a Young’s modulus of 3 GPa and a Poisson’s ratio of 0.38, what is the change in length of one of the edges?
+A solid, 50 mm polycarbonate cube is subjected to a compressive stress of $\sigma=10 \mathrm{MPa}$ on all sides. Assuming the material has a Young’s modulus of 3 GPa and a Poisson’s ratio of 0.38, what is the change in length of one of the edges?
 
 ![](images/Chapter%204%20figure%20edits/example%204.5.png){fig-align="center" width="370"}
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Solution
 
-First, we note that a compressive stress acts in all directions, so $\sigma_x=\sigma_y=\sigma_z=-p=-10{~MPa}$. We can choose any one of the generalized Hooke’s law equations to determine the strain in the corresponding direction but note that all normal strains will be the same.
+First, we note that a compressive stress acts in all directions, so $\sigma_x=\sigma_y=\sigma_z=-10{~MPa}$. We can choose any one of the generalized Hooke’s law equations to determine the strain in the corresponding direction but note that all normal strains will be the same.
 
 $$
 \begin{aligned}
 & \varepsilon_x=\frac{1}{E}\left[\sigma_x-v\left(\sigma_y+\sigma_z\right)\right] \\
-& \varepsilon=\frac{-p}{E}[1-2 v] \\
+& \varepsilon=\frac{-\sigma}{E}[1-2 v] \\
 & \varepsilon=\frac{-10 {~MPa}}{3{~GPa}}[1-2*0.38]=-~0.0008=-~0.08 \% \\
 & \varepsilon = \frac{\Delta L}{L}\\
-& \Delta L = \varepsilon*L=-0.0008*50 {~mm}=-0.04{~mm}
+& \Delta L = \varepsilon L=-0.0008*50 {~mm}=-0.04{~mm}
 \end{aligned}
 $$
 
-If one used the simple uniaxial Hooke’s law, $\sigma=\mathrm{E} \varepsilon$, one would erroneously obtain a strain of -0.33% and a change in length of –0.167 mm, more than four times the correct answer!
+If one used the simple uniaxial Hooke’s law, $\sigma=\mathrm{E} \varepsilon$, one would erroneously obtain a strain of $\varepsilon=\frac{\sigma}{E}=\frac{-~10~MPa}{3~GPa}=-~0.033=-~0.33\%$ and a change in length of –0.167 mm, more than four times the correct answer!
 :::
 :::
 :::
@@ -512,23 +575,21 @@ If one used the simple uniaxial Hooke’s law, $\sigma=\mathrm{E} \varepsilon$, 
 
 <summary>Click to expand</summary>
 
-Safety is of primary importance in engineering practice, and various engineering principles and codes are built on the necessity of considering the safety of products we design. The concept is that we would determine the location and magnitude of the maximum stresses under the most stringent anticipated loading conditions and compare these predicted values with the failure stress, such as the yield or ultimate strength of a material. Rather than allowing the maximum anticipated stress to equal the failure stress, however, products are often designed so that the maximum allowable stress is only some fraction of the failure stress, leading to a more conservative design. Essentially, the failure stress is scaled back by the factor of safety (F.S.), a quantity that is greater than one.
+Safety is of primary importance in engineering practice, and various engineering principles and codes are built on the necessity of considering the safety of products we design. Using the methods in this book, we can predict the stresses in a component. Rather than allowing the maximum anticipated stress to equal the failure stress, however, we apply a factor of safety (FS) such that the maximum allowable stress in the component is only a fraction of the failure stress. The factor of safety varies depending on the application, consequences of failure, uncertainty around loading, industry standards, and many other factors.
 
 $$
-\boxed{\sigma_{allow}=\frac{\sigma_{fail}}{F . S .}}
+\boxed{\sigma_{allow}=\frac{\sigma_{fail}}{FS}}
 $$ {#eq-4.9}
 
 | *where*
 | *𝜎~allow~ = Allowable stress \[Pa, psi\]*
 | *𝜎~fail~ = Failure stress \[Pa, psi\]*
 
-*F.S. = Factor of safety*
+*FS = Factor of safety*
 
-Example problem 4.6 demonstrates a simple calculation of the factor of safety based on the failure and allowable stresses in a component. In practice it is also common to work the other way and, starting with a defined factor of safety and failure stress, calculate the allowable stress in a component made of a given material.
+A larger factor of safety makes the structure less likely to fail, but may add weight, cost, or limit functionality. If the FS value is too small, the margin of safety for the design may become unacceptable. Unexpected overload situations, engineering design and assumption errors, and general wear and tear of a material over time, including in challenging environments, could lead to failure and consequences ranging from negative publicity to loss of life. The factor of safety must always be greater than 1. Values of slightly over 1 up to 10+ are common.
 
-Making the factor of safety larger, in principle, should make the structure less likely to fail, but there are often weight, cost, environmental, and functional penalties associated with higher F.S. values. If the F.S. value is too small, the margin of safety for the design may become unacceptable. Unexpected overload situations, engineering design and assumption errors, and general wear and tear of a material over time, including in challenging environments, could lead to failure. The consequences of failures can range from minor inconveniences all the way to major catastrophes with significant loss of life and property. Negative publicity and attitudes towards even minor failures can be of concern to customers and significantly reduce future product sales, so product engineering involves risk assessment and mitigation, in addition to production costs and other factors.
-
-Safe design philosophies are often industry-specific and may be much more involved and complicated than our simple factor of safety concept conveys. For our purposes, suffice it to say that larger factors of safety are often used when there is less certainty about our designs, the loads our structures might sustain, or the severity of environmental and use conditions. Larger factors of safety are often required when the consequences of failure are considered to be greater. For example, design of a theatre that could be filled with hundreds of people might use a higher F.S. than that employed for a storage building that is seldom occupied. @exm-4.6 demonstrates the use of factor of safety in a design.
+@exm-4.6 demonstrates a simple calculation of the factor of safety based on the failure and allowable stresses in a component.
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Example 4.6
@@ -538,7 +599,7 @@ Safe design philosophies are often industry-specific and may be much more involv
 
 </p>
 
-A 2 mm diameter steel wire is used to suspend a mass of 40 kg. Using the yield strength of 200 MPa as the allowable stress, what is the factor of safety of the wire (ignoring end and dynamic effects)?
+A 2 mm diameter steel wire is used to suspend a mass of 40 kg. Using the yield strength of 200 MPa as the failure stress, what is the factor of safety of the wire?
 
 ![](images/Chapter%204%20edits%20v2/example%204.6%20v2.png){fig-align="center" width="149"}
 
@@ -548,20 +609,64 @@ A 2 mm diameter steel wire is used to suspend a mass of 40 kg. Using the yield s
 First determine the normal force in the wire caused by the mass.
 
 $$
-P=40{~kg} * 9.81~\frac{{m}}{{s}^2}=392~\frac{{kg} \cdot {m}}{{s}^2}=392{~N} \\
-$$
-
-The stress in the wire can be calculated from:
+N=40{~kg} * 9.81~\frac{{m}}{{s}^2}=392~\frac{{kg} \cdot {m}}{{s}^2}=392{~N} \\
+$$The stress in the wire can be calculated from:
 
 $$
 \sigma=\frac{N}{A}=\frac{392{~N}}{\pi*(0.001{~m})^2}=124.8{~MPa}
 $$
 
-Since the allowable stress in the wire is 200 MPa, the factor of safety can be determined from:
+Since the failure stress in the wire is 200 MPa, the factor of safety can be determined from:
 
 $$
 F.S.=\frac{\sigma_{fail}}{\sigma_{allow}}=\frac{200{~MPa}}{124.8{~MPa}}=1.60
 $$
+:::
+:::
+:::
+
+In practice it is also common to work the other way. Given a material with a known failure stress and a desired factor of safety, we can determine the allowable stress in the component and then design our component to meet this requirement. This is demonstrated in @exm-4.7.
+
+::: {.callout-tip collapse="true" icon="false"}
+## Example 4.7
+
+::: {#exm-4.7}
+<p>
+
+</p>
+
+A square timber column is used to support a deck. The timber has a failure stress in compression of 1200 psi. Using a factor of safety of 2.5, determine the required dimensions of the square cross-section if the column experiences a compressive load of 3000 lb.
+
+::: {.callout-tip collapse="true" icon="false"}
+## Solution
+
+Use the failure stress and factor of safety to determine the allowable stress in the column.
+
+$$
+\sigma_{allow}=\frac{\sigma_{fail}}{FS}=\frac{1200~psi}{2.5}=480~psi
+$$
+
+Next determine the required cross-sectional area of the column so that the stress does not exceed 480 psi.
+
+$$
+\begin{aligned}
+\sigma&=\frac{N}{A} \\
+A&=\frac{N}{\sigma} \\
+&=\frac{3000~lb}{480~psi} \\
+&=6.25~in.^2
+\end{aligned}
+$$
+
+Finally, determine the dimension of each side of the square cross-section.
+
+$$
+A=L^2 \\
+L=\sqrt{A}=\sqrt{6.25} = 2.5~ in.
+$$
+
+The column cross-section must be at least 2.5 in. on each side so that the stress doesn't exceed the allowable stress of 480 psi.
+
+We may safely make the dimension larger than 2.5 in. which reduces the stress further but also increases weight and cost. We may not make the dimension any smaller than 2.5 in. as this will result in a stress greater than 480 psi.
 :::
 :::
 :::
@@ -585,7 +690,7 @@ $$
 ::: {.callout-note icon="false"}
 ## Key Takeaways
 
-The mechanical properties of materials need to be known for engineering design purposes. For many applications, the linear elastic properties are the first step in characterizing a material and in designing to determine stresses resulting from imposed displacements or strains and deflections caused by imposed loading scenarios.
+The mechanical properties of materials need to be known for engineering design purposes. For many applications, the linear elastic properties are the first step in characterizing a material and in determining stresses resulting from imposed displacements or strains and deflections caused by imposed loading scenarios.
 
 Tensile tests of material samples are a common means to measure material behavior, both in the linear elastic region and beyond.
 
@@ -593,7 +698,7 @@ Tensile tests can provide the normal stress-strain behavior, and the Young’s m
 
 The proportional limit, elastic limit, and yield point of some engineering materials are quite similar, and the yield strength will be used throughout the book to denote this region of material response.
 
-Because safe designs often involve materials being used below their yield strength, the linear elastic properties—moduli and Poisson’s ratio—are important parameters for engineering design.
+Because safe designs often involve materials being used below their yield strength, the linear elastic properties—elastic modulus, shear modulus, and Poisson’s ratio—are important parameters for engineering design.
 
 Poisson’s ratio characterizes the coupling between normal stresses in one direction and strains in lateral directions through the generalized Hooke’s law.
 
@@ -672,30 +777,10 @@ $$
 
 **Figures**
 
-Figure 4.1: Tensile tests are a common means to measure mechanic properties of materials. A: Credit Instron ®. All rights reserved. Permission granted for this use case. B: David Dillard. 2024. CC BY-NC-SA. C: Mac McCord. 2024. CC BY-NC-SA.
+All figures in this chapter were created by Kindred Grey in 2025 and released under a CC BY-NC-SA license, except for:
 
-Figure 4.2: Results obtained from tensile tests. A: Mac McCord. 2024. CC BY-NC-SA. B: Sigmund. 2011. CC BY-SA 3.0. <https://commons.wikimedia.org/wiki/File:Al_tensile_test.jpg>.
-
-Figure 4.3: Engineering materials are often loaded beyond yield to permanently deform the material, as in (A) the stamping process for an automotive panel or in (B) the crushing of a weld-bonded hat section used to absorb energy in an automobile accident. A: © Porsche/Schuler. 2019. Used under Fair Use. Retrieved from <https://www.autonews.com/suppliers/porsche-deal-lets-tool-supplier-shine>. B: © Ford Motor Company. Released under CC BY-NC-SA 4.0.
-
-Figure 4.4: Illustration of the proportional limit, the elastic limit, and the yield region of material response. Kindred Grey. 2024. CC BY-NC-SA.
-
-Figure 4.5: Illustration of the initial linear elastic portions of the sress strain curce and slopes corresponding to (a) Young’s modulus for uniaxial tension; (b) shear modulus for pure shear loading. Kindred Grey. 2024. CC BY-NC-SA.
-
-Example 4.1: Kindred Grey. 2024. CC BY-NC-SA.
-
-Example 4.2: Kindred Grey. 2024. CC BY-NC-SA.
-
-Example 4.3: Kindred Grey. 2024. CC BY-NC-SA.
-
-Example 4.4: Kindred Grey. 2024. CC BY-NC-SA.
-
-Figure 4.6: Illustration of a general, multiaxial stress state, showing normal and shear stresses acting on the positive x-, y-, and z-planes. Kindred Grey. 2024. CC BY-NC-SA.
-
-Figure 4.7: 2D view of the x-y plane of a 3D stress element. Kindred Grey. 2024. CC BY-NC-SA.
-
-Example 4.5: Kindred Grey. 2024. CC BY-NC-SA.
-
-Example 4.6: Kindred Grey. 2024. CC BY-NC-SA.
+-   Figure 4.1: Tensile tests are a common means to measure mechanic properties of materials. A: Credit Instron ®. All rights reserved. Permission granted for this use case. B: David Dillard. 2024. CC BY-NC-SA. C: Mac McCord. 2024. CC BY-NC-SA.
+-   Figure 4.3: Engineering materials are often loaded beyond yield to permanently deform the material, as in (A) the stamping process for an automotive panel or in (B) the crushing of a weld-bonded hat section used to absorb energy in an automobile accident. A: © Porsche USA. Reproduced under fair use. Retrieved from <https://www.autonews.com/suppliers/porsche-deal-lets-tool-supplier-shine>. B: © Ford Motor Company. Released under CC BY-NC-SA 4.0.
+-   Figure 4.4: Results obtained from tensile tests. A: Kindred Grey. 2024. CC BY-NC-SA. B: Sigmund. 2011. CC BY-SA 3.0. <https://commons.wikimedia.org/wiki/File:Al_tensile_test.jpg>.
 
 </details>

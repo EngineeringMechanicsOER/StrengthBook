@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.7.29">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -32,17 +32,20 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="./">
 <link href="./Appendix A.html" rel="next">
 <link href="./Chapter 14.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-748b535e376f14d4692bf2b2e5fd6380.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-e1aa288a8a6a3aa5f7fec8175f5023de.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-d13a72f20fc3c7f792e67513fe0bf82c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-e1aa288a8a6a3aa5f7fec8175f5023de.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -104,7 +107,168 @@ window.Quarto = {
 <link rel="stylesheet" href="styles/custom.css">
 </head>
 
-<body class="nav-sidebar docked">
+<body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -204,7 +368,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Chapter 10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Shear Loads</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Shear Loading in Beams</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -293,7 +457,7 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#stability" id="toc-stability" class="nav-link" data-scroll-target="#stability"><span class="header-section-number">15.1.1</span> Stability</a></li>
   <li><a href="#eulers-formula" id="toc-eulers-formula" class="nav-link" data-scroll-target="#eulers-formula"><span class="header-section-number">15.1.2</span> Euler’s Formula</a></li>
-  <li><a href="#bucking-direction" id="toc-bucking-direction" class="nav-link" data-scroll-target="#bucking-direction"><span class="header-section-number">15.1.3</span> Bucking Direction</a></li>
+  <li><a href="#buckling-direction" id="toc-buckling-direction" class="nav-link" data-scroll-target="#buckling-direction"><span class="header-section-number">15.1.3</span> Buckling Direction</a></li>
   <li><a href="#critical-stress" id="toc-critical-stress" class="nav-link" data-scroll-target="#critical-stress"><span class="header-section-number">15.1.4</span> Critical Stress</a></li>
   </ul></li>
   <li><a href="#sec-15.2" id="toc-sec-15.2" class="nav-link" data-scroll-target="#sec-15.2"><span class="header-section-number">15.2</span> Effect of Supports</a>
@@ -307,6 +471,7 @@ window.Quarto = {
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
+
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -375,7 +540,7 @@ Click to expand
 <div id="fig-15.2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-15.2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/CH15s PNGs/figure 15.2.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
+<img src="images/chapter 15 figure edits post review/figure 15.2 new.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="479">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-15.2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;15.2: Buckling of a ruler.
@@ -426,7 +591,7 @@ P&gt;\frac{k L}{4}
 <p><span class="math display">\[
 P_{c r}=\frac{k L}{4}
 \]</span></p>
-<p>Thus, if the load P exceeds P<sub>cr</sub>, then the system will be unstable, and if P is less than P<sub>cr</sub>, then the system will be stable. We will use P<sub>cr</sub> in the next section to determine the bucking load of columns.</p>
+<p>Thus, if the load P exceeds P<sub>cr</sub>, then the system will be unstable, and if P is less than P<sub>cr</sub>, then the system will be stable. We will use P<sub>cr</sub> in the next section to determine the buckling load of columns.</p>
 </section>
 <section id="eulers-formula" class="level3" data-number="15.1.2">
 <h3 data-number="15.1.2" class="anchored" data-anchor-id="eulers-formula"><span class="header-section-number">15.1.2</span> Euler’s Formula</h3>
@@ -434,7 +599,7 @@ P_{c r}=\frac{k L}{4}
 <div id="fig-15.4" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-15.4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/CH15s PNGs/figure 15.4.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
+<img src="images/CH15s PNGs/figure 15.4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="487">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-15.4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;15.4: Pinned-pinned axially loaded column.
@@ -490,11 +655,11 @@ y=C_1 \sin \left(\sqrt{\frac{P}{E I}} x\right)+C_2 \cos \left(\sqrt{\frac{P}{E I
 <em>E = Elastic modulus of the material [Pa, psi]</em><br>
 <em>I = Area moment of inertia for the column [m<sup>4</sup>, in.<sup>4</sup>]. Note if I<sub>x</sub> and I<sub>y</sub> are different, use the smaller value.</em></div>
 <p><em>L = Unsupported length of the column&nbsp; (pinned=pinned connection) [m, in.]</em></p>
-<p>This is named after the Swiss mathematician <a href="https://en.wikipedia.org/wiki/Leonhard_Euler">Leonhard Euler</a> who developed this formula in 1744. Other bucking modes can exist (n = 2, n = 3, n = 4, etc.) but are less common as the load required for those higher modes would be much larger. The first three bucking loads can be seen in <a href="#fig-15.5" class="quarto-xref">Figure&nbsp;<span>15.5</span></a>.</p>
+<p>This is named after the Swiss mathematician <a href="https://en.wikipedia.org/wiki/Leonhard_Euler">Leonhard Euler</a> who developed this formula in 1744. Other buckling modes can exist (n = 2, n = 3, n = 4, etc.) but are less common as the load required for those higher modes would be much larger. The first three buckling loads can be seen in <a href="#fig-15.5" class="quarto-xref">Figure&nbsp;<span>15.5</span></a>.</p>
 <div id="fig-15.5" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-15.5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/CH15s PNGs/figure 15.5.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
+<img src="images/CH15s PNGs/figure 15.5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="536">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-15.5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;15.5: First three buckling modes
@@ -502,13 +667,13 @@ Figure&nbsp;15.5: First three buckling modes
 </figure>
 </div>
 </section>
-<section id="bucking-direction" class="level3" data-number="15.1.3">
-<h3 data-number="15.1.3" class="anchored" data-anchor-id="bucking-direction"><span class="header-section-number">15.1.3</span> Bucking Direction</h3>
-<p>Columns that are pinned at both ends and have circular or square cross sections (where the moments of inertia are the same about any axis) could buckle in any direction. However, columns that do not have a symmetric cross-section will take place in the plane perpendicular to the principal axis of the minimum moment of inertia. For example, the ruler in <a href="#fig-15.2" class="quarto-xref">Figure&nbsp;<span>15.2</span></a> has a rectangular cross-section. When a compressive force is applied to the ruler, it will buckle about the axis with the smaller moment of inertia. The axis of bucking might not be obvious for sections that are not symmetric. During buckling analysis, it’s essential to evaluate both directions to determine the axis with the lowest moment of inertia. Subsequently, this axis is utilized for computing the critical buckling load. <a href="#fig-15.6" class="quarto-xref">Figure&nbsp;<span>15.6</span></a> illustrates column buckling of wood supports.</p>
+<section id="buckling-direction" class="level3" data-number="15.1.3">
+<h3 data-number="15.1.3" class="anchored" data-anchor-id="buckling-direction"><span class="header-section-number">15.1.3</span> Buckling Direction</h3>
+<p>Columns pinned at both ends with circular or square cross-sections (equal moments of inertia) can buckle in any direction. For columns with asymmetric cross-sections, buckling occurs in the plane perpendicular to the axis with the smallest moment of inertia. For example, a ruler in <a href="#fig-15.2" class="quarto-xref">Figure&nbsp;<span>15.2</span></a> with a rectangular cross-section buckles about its weaker axis under compression. For non-symmetric sections, both axes should be analyzed to find the smallest moment of inertia, which is then used to calculate the critical buckling load. <a href="#fig-15.6" class="quarto-xref">Figure&nbsp;<span>15.6</span></a> shows buckling in wood supports.</p>
 <div id="fig-15.6" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-15.6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/CH15s PNGs/figure 15.6.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img">
+<img src="images/CH15s PNGs/figure 15.6.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="479">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-15.6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;15.6: Buckling of wooden studs.
@@ -518,7 +683,7 @@ Figure&nbsp;15.6: Buckling of wooden studs.
 </section>
 <section id="critical-stress" class="level3" data-number="15.1.4">
 <h3 data-number="15.1.4" class="anchored" data-anchor-id="critical-stress"><span class="header-section-number">15.1.4</span> Critical Stress</h3>
-<p>We can use the Euler bucking equation to calculate the critical stress for a column by setting I=Ar<sup>2</sup> where A is the cross-sectional area and r is the radius of gyration. For a more comprehensive discussion on the radious of gyration, see the <a href="https://engineeringstatics.org/radius-of-gyration-sec.html">Engineering Statics</a> book by Baker and Haynes.</p>
+<p>We can use the Euler buckling equation to calculate the critical stress for a column by setting I=Ar<sup>2</sup> where A is the cross-sectional area and r is the radius of gyration. For a more comprehensive discussion on the radius of gyration, see the <a href="https://engineeringstatics.org/radius-of-gyration-sec.html">Engineering Statics</a> book by Baker and Haynes.</p>
 <p><span class="math display">\[
 \sigma_{c r}=\frac{P_{c r}}{A}=\frac{\pi^2 E\left(A r^2\right)}{A L^2}
 \]</span></p>
@@ -536,7 +701,7 @@ Figure&nbsp;15.6: Buckling of wooden studs.
 <div id="fig-15.7" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-15.7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/CH15s PNGs/figure 15.7.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
+<img src="images/chapter 15 figure edits post review/figure 15.7 new.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="428">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-15.7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;15.7: Plot of critical stress.
@@ -593,7 +758,7 @@ Solution
 &amp; r_y=1.37{~in.}
 \end{aligned}
 \]</span></p>
-<p>We will start with calculating the critical load using Euler’s Bucking Formula. Note that we can confidently say that this column will buckle about the y-axis since the moment of inertia in the y-direction is the smallest.</p>
+<p>We will start with calculating the critical load using Euler’s Buckling Formula. Note that we can confidently say that this column will buckle about the y-axis since the moment of inertia in the y-direction is the smallest.</p>
 <p><span class="math display">\[
 \begin{aligned}
 &amp; P_{cr}=\frac{\pi^2 E I}{L^2}=\frac{\pi^2(29000{~ksi})(16.7{~in.}^4)}{\left(8{~ft}* 12\frac{in.}{ft}\right)^2} \\
@@ -602,7 +767,7 @@ Solution
 \]</span></p>
 <p>This represents the load at which any increase in applied load will cause the column to buckle. We will calculate the stress associated with this critical load.</p>
 <p><span class="math display">\[
-\sigma_{c r}=\frac{P_{cr}}{A}=\frac{518.6{~kips}}{8.8{~in.^2}}=58.7{~ksi}
+\sigma_{c r}=\frac{P_{cr}}{A}=\frac{518.6{~kips}}{8.84{~in.^2}}=58.7{~ksi}
 \]</span></p>
 <p>Since this stress is larger than the yield stress of the steel (σ<sub>y</sub> = 50 ksi) the column will not buckle first. It will fail due to yielding. We can calculate the force using the stress of an axial member formula discussed in <a href="Chapter 2.html" class="quarto-xref"><span>Chapter 2</span></a>.</p>
 <p><span class="math display">\[
@@ -646,7 +811,7 @@ Step-by-step: Buckling of pin-supported columns
 <summary>
 Click to expand
 </summary>
-<p>We derived Euler’s equation for bucking with pinned-pinned supports (the simplest case). However, in many cases, columns are supported by other end conditions. Just as we derived Euler’s formula for bucking by solving a differential equation for the pinned-pinned conditions, the same can be done for other types of support cases. We will derive one more here.</p>
+<p>We derived Euler’s equation for buckling with pinned-pinned supports (the simplest case). However, in many cases, columns are supported by other end conditions. Just as we derived Euler’s formula for buckling by solving a differential equation for the pinned-pinned conditions, the same can be done for other types of support cases. We will derive one more here.</p>
 <p>Let’s consider the case where a column is fixed at one end and free at the other end as shown in <a href="#fig-15.8" class="quarto-xref">Figure&nbsp;<span>15.8</span></a> (A). Summing moments at the cut end of the free body diagram in <a href="#fig-15.8" class="quarto-xref">Figure&nbsp;<span>15.8</span></a> (B) we get M=P(δ-y).</p>
 <div id="fig-15.8" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
@@ -692,7 +857,7 @@ P_{c r}=\frac{\pi^2 E I}{(2 L)^2}
 <p>Other support conditions can be derived in a similar manner.</p>
 <section id="effective-length" class="level3" data-number="15.2.1">
 <h3 data-number="15.2.1" class="anchored" data-anchor-id="effective-length"><span class="header-section-number">15.2.1</span> Effective Length</h3>
-<p>The critical load equation for the fixed-free column differs from the equation for the pinned-pinned column only by the length L being multiplied by a factor of 2. We will adjust the column length L to denote the distance between the points on the column where the moment is zero. This distance is referred to as the <strong><em>effective length</em></strong>, L<sub>e</sub>. For a pinned-pinned column, L = L<sub>e</sub>, as illustrated in <a href="#fig-15.9" class="quarto-xref">Figure&nbsp;<span>15.9</span></a>. As derived above, for a column with a fixed base and a free end, L<sub>e</sub> = 2L. Two other common end conditions are depicted in this figure relating L to L<sub>e</sub>. We can use one general equation for any support condition by replacing the effective length with KL, where K represents the effective length factor.</p>
+<p>The critical load equation for a fixed-free column differs from a pinned-pinned column only by multiplying the length L by 2. The effective length, L<sub>e</sub>, is the distance between points where the moment is zero. For a pinned-pinned column, L = L<sub>e</sub>, as illustrated in <a href="#fig-15.9" class="quarto-xref">Figure&nbsp;<span>15.9</span></a>, while for a fixed-free column, L<sub>e</sub>= 2L. Other common end conditions also relate L to L<sub>e</sub>. A general equation applies to any support condition by replacing the effective length with KL, where K is the effective length factor.</p>
 <p><span id="eq-15.3"><span class="math display">\[
 \boxed{P_{c r}=\frac{\pi^2 E I}{(K L)^2}}
 \tag{15.3}\]</span></span></p>
@@ -704,7 +869,7 @@ P_{c r}=\frac{\pi^2 E I}{(2 L)^2}
 <div id="fig-15.9" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-15.9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/CH15s PNGs/figure 15.9.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
+<img src="images/chapter 15 figure edits post review/figure 15.9.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-15.9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;15.9: Effective length of columns for various end conditions.
@@ -744,11 +909,6 @@ Solution
 <p>We will consult the table in <a href="Appendix A.html" class="quarto-xref"><span>Appendix A</span></a> to get the section properties of a W10x30 section.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH15s PNGs/example 15.2 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="162"></p>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
 <p><img src="images/CH15s PNGs/example 15.2 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="306"></p>
 </figure>
 </div>
@@ -761,10 +921,10 @@ Solution
 &amp; r_y=1.37{~in.}
 \end{aligned}
 \]</span></p>
-<p>We will start with calculating the critical load using Euler’s Bucking Formula. Note that we can confidently say that this column will buckle about the y-axis since the moment of inertia in the y-direction is the smallest.</p>
+<p>We will start with calculating the critical load using Euler’s Buckling Formula. Note that we can confidently say that this column will buckle about the y-axis since the moment of inertia in the y-direction is the smallest.</p>
 <p><span class="math display">\[
 \begin{aligned}
-&amp; P_{cr}=\frac{\pi^2 E I^2}{(k L)^2}=\frac{\pi^2(29000{~ksi})(16.7{~in.^4})}{\left(2*8{~ft}*12~\frac{in.}{ft}\right)^2} \\
+&amp; P_{cr}=\frac{\pi^2 E I}{(k L)^2}=\frac{\pi^2(29000{~ksi})(16.7{~in.^4})}{\left(2*8{~ft}*12~\frac{in.}{ft}\right)^2} \\
 &amp; P_{c r}=129.7{~kips} \\
 &amp;
 \end{aligned}
@@ -829,21 +989,21 @@ Solution
 <p><img src="images/CH15s PNGs/example 15.3 copy.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="305"></p>
 </figure>
 </div>
-<p>We will consult the table in <a href="Appendix A.html" class="quarto-xref"><span>Appendix A</span></a> to get the section properties of a W12x50 section. We will start with calculating the critical load using Euler’s Bucking Formula. The brace at the midpoint of the column changes the length of the column in the weak direction. This doesn’t make it obvious which axis the column will buckle about so we will need to check both the strong and weak directions.</p>
+<p>We will consult the table in <a href="Appendix A.html" class="quarto-xref"><span>Appendix A</span></a> to get the section properties of a W12x50 section. We will start with calculating the critical load using Euler’s Buckling Formula. The brace at the midpoint of the column changes the length of the column in the weak direction. This doesn’t make it obvious which axis the column will buckle about so we will need to check both the strong and weak directions.</p>
 <p><strong>Strong axis</strong></p>
 <p><span class="math display">\[
 \begin{aligned}
-&amp; P_{cr}=\frac{\pi^2 E I^2}{(k L)^2}=\frac{\pi^2(29000{~ksi})(391{~in.}^4)}{\left(0.7*25{~ft}*~12~\frac{in.}{ft}\right)^2} \\
+&amp; P_{cr}=\frac{\pi^2 E I}{(KL)^2}=\frac{\pi^2(29000{~ksi})(391{~in.}^4)}{\left(0.7*25{~ft}*~12~\frac{in.}{ft}\right)^2} \\
 &amp; P_{c r}=2,538{~kips} \\
 &amp;
 \end{aligned}
 \]</span></p>
-<p>We use the general form of Euler’s bucking equation. Since the end supports are pinned-fixed, we use K = 0.7. We calculated that the critical load in the strong direction to be 2,538 kips.</p>
+<p>We use the general form of Euler’s buckling equation. Since the end supports are pinned-fixed, we use K = 0.7. We calculated that the critical load in the strong direction to be 2,538 kips.</p>
 <p>We will compare this to buckling about the weak axis. The values of I, K, and L will change. The L value changes because the column is braced at the midpoint, so the column has a shorter distance to buckle about. The K value can be tricky. There were no details about the brace; we don’t know if the brace will provide an end condition like a fixed or pinned end. So, we will calculate the worst case, which would be a pinned-pinned end condition (this makes the denominator the largest, so the result will be the smallest).</p>
 <p><strong>Weak axis</strong></p>
 <p><span class="math display">\[
 \begin{aligned}
-&amp; P_{cr}=\frac{\pi^2 E I^2}{(k L)^2}=\frac{\pi^2(29000{~ksi})(56.3{~in.^4})}{\left(1*12.5{~ft}*12\frac{in.}{ft}\right)^2} \\
+&amp; P_{cr}=\frac{\pi^2 EI}{(KL)^2}=\frac{\pi^2(29000{~ksi})(56.3{~in.^4})}{\left(1*12.5{~ft}*12\frac{in.}{ft}\right)^2} \\
 &amp; P_{c r}=716{~kips} \\
 \end{aligned}
 \]</span></p>
@@ -855,12 +1015,12 @@ Solution
 &amp; P_{yield}=730{~kips}
 \end{aligned}
 \]</span></p>
-<p>We calculated a yielding load of 730 kips. Interpreting these results: The column is adequate for a 650 kip load. Failure would first occur by bucking in the weak direction if the load were increased to 716 kips. It should be noted that we did not apply any safety factors. In civil engineering, design codes for steel columns designate how to apply safety factors to the loading and the capacity.</p>
-<p>What would happen to the capacity of the columns if the brace was not there? We will recalculate the critical load for bucking bout the weak direction.</p>
+<p>We calculated a yielding load of 730 kips. Interpreting these results: The column is adequate for a 650 kip load. Failure would first occur by buckling in the weak direction if the load were increased to 716 kips. It should be noted that we did not apply any safety factors. In civil engineering, design codes for steel columns designate how to apply safety factors to the loading and the capacity.</p>
+<p>What would happen to the capacity of the columns if the brace was not there? We will recalculate the critical load for buckling bout the weak direction.</p>
 <p><strong>No brace</strong></p>
 <p><span class="math display">\[
 \begin{aligned}
-&amp; P_{cr}=\frac{\pi^2 E I^2}{(k L)^2}=\frac{\pi^2(29000{~ksi})(56.3{in.^4})}{\left(0.7*25{~ft}*12~\frac{in.}{ft}\right)^2} \\
+&amp; P_{cr}=\frac{\pi^2 E I}{(KL)^2}=\frac{\pi^2(29000{~ksi})(56.3{in.^4})}{\left(0.7*25{~ft}*12~\frac{in.}{ft}\right)^2} \\
 &amp; P_{c r}=365{~kips} \\
 \end{aligned}
 \]</span></p>
@@ -930,7 +1090,7 @@ Note
 </div>
 <div class="callout-body-container callout-body">
 <p><strong>Key equations</strong></p>
-<p>Euler’s Bucking Formula: General Case</p>
+<p>Euler’s Buckling Formula: General Case</p>
 <p><span class="math display">\[
 P_{c r}=\frac{\pi^2 E I}{(K L)^2}
 \]</span></p>
@@ -949,18 +1109,12 @@ P_{c r}=\frac{\pi^2 E I}{(K L)^2}
 Click to expand
 </summary>
 <p><strong>Figures</strong></p>
-<p>Figure 15.1: Examples of columns. A: Unknown author. 2020. Pixabay license. <a href="https://pixabay.com/photos/bridge-tunnel-columns-structure-5441571/" class="uri">https://pixabay.com/photos/bridge-tunnel-columns-structure-5441571/</a>. B: ds_30. 2020. Pixabay license. <a href="https://pixabay.com/photos/buildings-concrete-construction-4839276/" class="uri">https://pixabay.com/photos/buildings-concrete-construction-4839276/</a>. C: G41rn8. 2009. CC BY-SA. <a href="https://commons.wikimedia.org/wiki/File:Hangzhou_2009_1794.jpg.">https://commons.wikimedia.org/wiki/File:Hangzhou_2009_1794.jpg</a>.</p>
-<p>Figure 15.2: Buckling of a ruler. Amy Richardson. 2024. CC BY-NC-SA.</p>
-<p>Figure 15.3: Free body diagram of a simplified column. Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Figure 15.4: Pinned-pinned axially loaded column. Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Figure 15.5: First three buckling modes. Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Figure 15.6: Buckling of wooden studs. scottnj. 2010. CC BY-NC-ND. <a href="https://flic.kr/p/8heJAn" class="uri">https://flic.kr/p/8heJAn</a>.</p>
-<p>Figure 15.7: Plot of critical stress. Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Example 15.1: Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Figure 15.8: Column with a fixed base and a free end. Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Figure 15.9: Effective length of columns for various end conditions. Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Example 15.2: Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Example 15.3: Kindred Grey. 2024. CC BY-NC-SA.</p>
+<p>All figures in this chapter were created by Kindred Grey in 2025 and released under a CC BY-NC-SA license, except for:</p>
+<ul>
+<li><p>Figure 15.1: Examples of columns. A: Unknown author. 2020. Pixabay license. <a href="https://pixabay.com/photos/bridge-tunnel-columns-structure-5441571/" class="uri">https://pixabay.com/photos/bridge-tunnel-columns-structure-5441571/</a>. B: ds_30. 2020. Pixabay license. <a href="https://pixabay.com/photos/buildings-concrete-construction-4839276/" class="uri">https://pixabay.com/photos/buildings-concrete-construction-4839276/</a>. C: G41rn8. 2009. CC BY-SA. <a href="https://commons.wikimedia.org/wiki/File:Hangzhou_2009_1794.jpg.">https://commons.wikimedia.org/wiki/File:Hangzhou_2009_1794.jpg</a>.</p></li>
+<li><p>Figure 15.2: Buckling of a ruler. Amy Richardson. 2024. CC BY-NC-SA.</p></li>
+<li><p>Figure 15.6: Buckling of wooden studs. scottnj. 2010. CC BY-NC-ND. <a href="https://flic.kr/p/8heJAn" class="uri">https://flic.kr/p/8heJAn</a>.</p></li>
+</ul>
 </details>
 
 
@@ -968,383 +1122,255 @@ Click to expand
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
     }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const disableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'prefetch';
-    }
-  }
-  const enableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'stylesheet';
-    }
-  }
-  const manageTransitions = (selector, allowTransitions) => {
-    const els = window.document.querySelectorAll(selector);
-    for (let i=0; i < els.length; i++) {
-      const el = els[i];
-      if (allowTransitions) {
-        el.classList.remove('notransition');
-      } else {
-        el.classList.add('notransition');
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-  }
-  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-    let newTheme = '';
-    if(darkModeDefault) {
-      newTheme = isAlternate ? baseTheme : alternateTheme;
-    } else {
-      newTheme = isAlternate ? alternateTheme : baseTheme;
-    }
-    const changeGiscusTheme = () => {
-      // From: https://github.com/giscus/giscus/issues/336
-      const sendMessage = (message) => {
-        const iframe = document.querySelector('iframe.giscus-frame');
-        if (!iframe) return;
-        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      sendMessage({
-        setConfig: {
-          theme: newTheme
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
       });
     }
-    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-    if (isGiscussLoaded) {
-      changeGiscusTheme();
-    }
-  }
-  const toggleColorMode = (alternate) => {
-    // Switch the stylesheets
-    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-    manageTransitions('#quarto-margin-sidebar .nav-link', false);
-    if (alternate) {
-      enableStylesheet(alternateStylesheets);
-      for (const sheetNode of alternateStylesheets) {
-        if (sheetNode.id === "quarto-bootstrap") {
-          toggleBodyColorMode(sheetNode);
-        }
-      }
-    } else {
-      disableStylesheet(alternateStylesheets);
-      toggleBodyColorPrimary();
-    }
-    manageTransitions('#quarto-margin-sidebar .nav-link', true);
-    // Switch the toggles
-    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-    for (let i=0; i < toggles.length; i++) {
-      const toggle = toggles[i];
-      if (toggle) {
-        if (alternate) {
-          toggle.classList.add("alternate");     
-        } else {
-          toggle.classList.remove("alternate");
-        }
-      }
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455)
-    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-      manageTransitions("body", false);
-      window.scrollTo(0, 1);
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        manageTransitions("body", true);
-      }, 40);  
-    }
-  }
-  const isFileUrl = () => { 
-    return window.location.protocol === 'file:';
-  }
-  const hasAlternateSentinel = () => {  
-    let styleSentinel = getColorSchemeSentinel();
-    if (styleSentinel !== null) {
-      return styleSentinel === "alternate";
-    } else {
-      return false;
-    }
-  }
-  const setStyleSentinel = (alternate) => {
-    const value = alternate ? "alternate" : "default";
-    if (!isFileUrl()) {
-      window.localStorage.setItem("quarto-color-scheme", value);
-    } else {
-      localAlternateSentinel = value;
-    }
-  }
-  const getColorSchemeSentinel = () => {
-    if (!isFileUrl()) {
-      const storageValue = window.localStorage.getItem("quarto-color-scheme");
-      return storageValue != null ? storageValue : localAlternateSentinel;
-    } else {
-      return localAlternateSentinel;
-    }
-  }
-  const darkModeDefault = false;
-  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-  // Dark / light mode switch
-  window.quartoToggleColorScheme = () => {
-    // Read the current dark / light value 
-    let toAlternate = !hasAlternateSentinel();
-    toggleColorMode(toAlternate);
-    setStyleSentinel(toAlternate);
-    toggleGiscusIfUsed(toAlternate, darkModeDefault);
-  };
-  // Ensure there is a toggle, if there isn't float one in the top right
-  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-    const a = window.document.createElement('a');
-    a.classList.add('top-right');
-    a.classList.add('quarto-color-scheme-toggle');
-    a.href = "";
-    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-    const i = window.document.createElement("i");
-    i.classList.add('bi');
-    a.appendChild(i);
-    window.document.body.appendChild(a);
-  }
-  // Switch to dark mode if need be
-  if (hasAlternateSentinel()) {
-    toggleColorMode(true);
-  } else {
-    toggleColorMode(false);
-  }
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
         }
-        return container.innerHTML
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1352,185 +1378,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./Chapter 14.html" class="pagination-link" aria-label="Combined Loads">

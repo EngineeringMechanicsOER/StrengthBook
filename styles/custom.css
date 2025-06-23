@@ -1,3 +1,5 @@
+/* Custom color for the 'note' callout background and border. Used for Learning Objectives.*/
+
 div.callout-note.callout-style-default > .callout-header {
     background-color: #cae6ff; !important /* Replace this with your desired color */
 }
@@ -6,3 +8,54 @@ div.callout-note.callout-style-default > .callout-header {
 div.callout-note.callout {
     border-left-color: #147be1;
 }
+
+
+/* Highlights selected chapter in sidebar. Can change background and border color by editing hex values */
+.sidebar-link.active {
+  background-color: #f0f8ff;
+  font-weight: bold;
+  border-left: 4px solid #66afe9;
+}
+
+
+/* Highlights chapter in sidebar when hovering over chapter. Can change background and border color by editing hex values */
+.sidebar-link:hover {
+  background-color: #f0f8ff;  /* Light blue highlight on hover */
+  font-weight: bold;
+  border-left: 4px solid #66afe9;
+  padding-left: 12px;
+  transition: all 0.2s ease;
+}
+
+
+/* Changes color of table headers */
+table tr.header {
+  background-color: #e3f2fd;
+  color: #000;
+  font-weight: bold;
+}
+
+/* Zooms in on text/equations when table uses hover property */
+table.table-hover tbody tr:hover {
+  transform: scale(1.3);
+  transform-origin: left center;
+  z-index: 1; /* Bring row above others */
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+/* Smooth reset for all rows */
+table.table-hover tbody tr {
+  transition: transform 0.2s ease;
+}
+
+/* Vertically center content in all table cells */
+table.table-hover td {
+  vertical-align: middle;
+}
+
+/* Change font size for all tables with class 'hover' */
+table.table-hover {
+  font-size: 1.2rem;  /* or 90%, 14px, etc. */
+}
+

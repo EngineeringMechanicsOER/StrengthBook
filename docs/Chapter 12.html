@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.7.29">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -32,17 +32,20 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="./">
 <link href="./Chapter 13.html" rel="next">
 <link href="./Chapter 11.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-748b535e376f14d4692bf2b2e5fd6380.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-e1aa288a8a6a3aa5f7fec8175f5023de.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-d13a72f20fc3c7f792e67513fe0bf82c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-e1aa288a8a6a3aa5f7fec8175f5023de.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -104,7 +107,168 @@ window.Quarto = {
 <link rel="stylesheet" href="styles/custom.css">
 </head>
 
-<body class="nav-sidebar docked">
+<body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -204,7 +368,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Chapter 10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Shear Loads</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Shear Loading in Beams</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -289,10 +453,15 @@ window.Quarto = {
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#sec-12.1" id="toc-sec-12.1" class="nav-link" data-scroll-target="#sec-12.1"><span class="header-section-number">12.1</span> Stress Transformations</a></li>
-  <li><a href="#sec-12.2" id="toc-sec-12.2" class="nav-link" data-scroll-target="#sec-12.2"><span class="header-section-number">12.2</span> Principal Stresses and Max/Min Shear Stress</a></li>
-  <li><a href="#sec-12.3" id="toc-sec-12.3" class="nav-link" data-scroll-target="#sec-12.3"><span class="header-section-number">12.3</span> Mohr’s Circle</a></li>
-  <li><a href="#sec-12.4" id="toc-sec-12.4" class="nav-link" data-scroll-target="#sec-12.4"><span class="header-section-number">12.4</span> Mohr’s Circle in 3-Dimensions and Absolute Max Shear Stress</a></li>
+  <li><a href="#sec-12.1" id="toc-sec-12.1" class="nav-link" data-scroll-target="#sec-12.1"><span class="header-section-number">12.1</span> Stress Elements for 2D Stress States</a></li>
+  <li><a href="#sec-12.2" id="toc-sec-12.2" class="nav-link" data-scroll-target="#sec-12.2"><span class="header-section-number">12.2</span> Stress Transformation Equations</a>
+  <ul class="collapse">
+  <li><a href="#sec-12.2.1" id="toc-sec-12.2.1" class="nav-link" data-scroll-target="#sec-12.2.1"><span class="header-section-number">12.2.1</span> <strong>Derivation of Equations</strong></a></li>
+  <li><a href="#sec-12.2.2" id="toc-sec-12.2.2" class="nav-link" data-scroll-target="#sec-12.2.2"><span class="header-section-number">12.2.2</span> Using the Stress Transformation Equations</a></li>
+  </ul></li>
+  <li><a href="#sec-12.3" id="toc-sec-12.3" class="nav-link" data-scroll-target="#sec-12.3"><span class="header-section-number">12.3</span> Principal Stresses and Max/Min Shear Stress</a></li>
+  <li><a href="#sec-12.4" id="toc-sec-12.4" class="nav-link" data-scroll-target="#sec-12.4"><span class="header-section-number">12.4</span> Mohr’s Circle</a></li>
+  <li><a href="#sec-12.5" id="toc-sec-12.5" class="nav-link" data-scroll-target="#sec-12.5"><span class="header-section-number">12.5</span> Mohr’s Circle in 3-Dimensions and Absolute Max Shear Stress</a></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
@@ -300,6 +469,7 @@ window.Quarto = {
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
+
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -343,110 +513,120 @@ Learning Objectives
 <summary>
 Click to expand
 </summary>
-<p>In <a href="Chapter 4.html#sec-4.7" class="quarto-xref"><span>Section 4.7</span></a> we discussed the general state of stress. <a href="Chapter 4.html#fig-4.6" class="quarto-xref">Figure&nbsp;<span>4.6</span></a> shows a 3D stress element subjected to the general state of stress – that is, 3 normal stresses (σ<sub>x</sub>, σ<sub>y</sub>, and σ<sub>z)</sub> and 6 shear stresses τ<sub>xy</sub>, τ<sub>xz</sub>, τ<sub>yx</sub> and τ<sub>yz</sub>, τ<sub>zx</sub> and τ<sub>zy</sub>.</p>
-<p><a href="Chapter 4.html#fig-4.7" class="quarto-xref">Figure&nbsp;<span>4.7</span></a> shows a stress element for the simplified case of plane stress – that is, stresses acting in a single plane. Under plane stress, the element experiences normal stresses σ<sub>x</sub> and σ<sub>y</sub>, and shear stress τ<sub>xy</sub> = τ<sub>xz</sub>.</p>
-<p>These stress elements are a convenient way to show the stresses at a particular orientation of the stress element, often in the x-y plane. However, we sometimes want to know the stresses at different orientations. For example, in <a href="Chapter 2.html#sec-2.4" class="quarto-xref"><span>Section 2.4</span></a> we learned how to calculate the stresses on inclined planes. There we were calculating the stresses at specific orientations that were not in the x-y directions, but rather at some angle relative to the x-y directions.</p>
-<p>In this chapter we will develop a more general approach where we can begin with the stresses in any given direction (usually starting with the x-y directions is simplest) and use these stresses to calculate the stresses at different orientations of the stress element. This process is known as stress transformation.</p>
-<p>In <a href="#sec-12.1" class="quarto-xref"><span>Section 12.1</span></a> we will develop equations that allow us to begin with normal and shear stresses in the x-y directions and transform them to determine the stresses at any other orientation.</p>
-<p>In <a href="#sec-12.2" class="quarto-xref"><span>Section 12.2</span></a> we will expand on these equations in order to determine the maximum and minimum stresses, as well as the orientations that they occur at.</p>
-<p>In <a href="#sec-12.3" class="quarto-xref"><span>Section 12.3</span></a> we will discuss an alternative graphical method for performing stress transformation, known as Mohr’s circle.</p>
-<p>In <a href="#sec-12.4" class="quarto-xref"><span>Section 12.4</span></a> we will use Mohr’s circle to expand our analysis and look at the stresses not only in the original 2D plane, but also at the out-of-plane stresses.</p>
-</details>
-</section>
-<section id="sec-12.1" class="level2" data-number="12.1">
-<h2 data-number="12.1" class="anchored" data-anchor-id="sec-12.1"><span class="header-section-number">12.1</span> Stress Transformations</h2>
+<p>In the preceding chapters, we have discussed how to find normal stress and shear stress due to various loading situations. We have also seen how those stresses can vary depending on the location of the point on the body in question. The combination of normal stress and shear stress that exists at a point is referred to as the general stress state. When we restrict analysis to 2D states of stress, we can represent the stress state on a 2D stress element as discussed in <a href="Chapter 4.html#sec-4.7" class="quarto-xref"><span>Section 4.7</span></a> and illustrated in <a href="Chapter 4.html#fig-4.7" class="quarto-xref">Figure&nbsp;<span>4.7</span></a> for the xy plane.</p>
+<p>The plane of the stress state is based on the coordinate system chosen for calculating the stresses. The coordinate system is most often chosen based on what is considered to be the most straight forward system for the given loading directions and geometrical orientation of the body. However, the plane for which the stresses are most easily calculated is not always the only plane for which we we would want to know the stress state.</p>
+<p>For example, <a href="#fig-12.1" class="quarto-xref">Figure&nbsp;<span>12.1</span></a> shows an air duct which is part of a heat pump system and is subject to internal air pressure. The welded seams are wound in a helical pattern that forms an angle with the horizontal axis. In <a href="Chapter 13.html" class="quarto-xref"><span>Chapter 13</span></a>, simple equations to calculate stress in the xy-plane due to pressure are developed. However, in this case, it is additionally important to know the stresses in the directions parallel and perpendicular to the weld seams (the x’y’ plane) to ensure that the joint could tolerate the loading. It would be useful to be able to transform the stresses we can most easily calculate in x and y directions to the x’ and y’ directions.</p>
+<div id="fig-12.1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-12.1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/chapter 12 figure edits/figure 12.1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="268">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12.1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.1: A pressurized duct is fabricated with welding in a helical pattern
+</figcaption>
+</figure>
+</div>
+<p>In this chapter, we will start by discussing in more detail how to represent a 2D stress state on a stress element (<a href="#sec-12.1" class="quarto-xref"><span>Section 12.1</span></a>).</p>
+<p>Then we will derive stress transformation equations that allow us to use a given stress state in one plane to find the corresponding stress state in different planes (<a href="#sec-12.2" class="quarto-xref"><span>Section 12.2</span></a>). This process is known as <u>stress transformation</u>.</p>
+<p>We will also derive equations that allow us to determine the planes on which the maximum and minimum normal and shear stresses occur and the corresponding stress states (<a href="#sec-12.3" class="quarto-xref"><span>Section 12.3</span></a>). The maximum and minimum normal stresses are known as principal stresses.</p>
+<p>In <a href="#sec-12.4" class="quarto-xref"><span>Section 12.4</span></a>, we will discuss an alternative graphical method for performing stress transformation, known as Mohr’s circle.</p>
+<p>In <a href="#sec-12.5" class="quarto-xref"><span>Section 12.5</span></a>, we will use Mohr’s circle to expand our analysis and look at the stresses not only in the original 2D plane, but also at the out-of-plane stresses.</p>
 <details>
 <summary>
 Click to expand
 </summary>
-<p>The choice of a coordinate system to use when calculating stresses for a given loading condition is often chosen based on convenience, or what is considered to be the most straight forward system for the given loading directions and the geometrical orientation of the body. For example, consider the simple case of an axial load applied to a rectangular bar as shown in <a href="#fig-12.1" class="quarto-xref">Figure&nbsp;<span>12.1</span></a>. It is convenient to use a coordinate system in which one axis aligns with the longitudinal axis of the bar and the other two axis aligned with the edges of the cross-section. With this coordinate system, the general stress state can be quickly determined to consist of only a normal stress in the x direction. We can represent the state of stress at a given point, say point H, on a stress element. Remember that this stress element is actually a 3D object even though we typically draw a 2D plane view of the element.</p>
-<div id="fig-12.1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-12.1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/CH12 figures/figure 12.1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="559">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12.1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;12.1: For simplicity, the x,y,z coordinate axes are cbosen to line up with the direction of loading and the longitudinal axis of the bar
-</figcaption>
-</figure>
-</div>
-<p>However, the coordinate systems that are the most straightforward to base stress calculations on do not always represent the directions for which the stress levels are the most critical. In the above example, if the bar consists of two sections glued together at an angle, or if the bar is made of wood or composite material with the grains or fibers running at angle to the horizontal, one might be concerned with the level of stress parallel and/or perpendicular to the joint surface (or grains/fibers).</p>
-<p><a href="#fig-12.2" class="quarto-xref">Figure&nbsp;<span>12.2</span></a> shows an air duct which is part of a heat pump system and is subject to internal air pressure. Pressure vessels will be discussed in <a href="Chapter 13.html" class="quarto-xref"><span>Chapter 13</span></a> and it will be shown that equations to calculate stress based on pressure and geometrical parameters in the longitudinal and hoop directions can be straightforwardly derived. However, as is the case for the duct in the figure, pressure vessels can often be made with welded seams wound in a helical pattern that forms an angle with the horizontal and vertical axes. It would be important to know the stresses in the directions parallel and perpendicular to these seams to ensure that the joint could tolerate the loading.</p>
+</details></details></section>
+<section id="sec-12.1" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="sec-12.1"><span class="header-section-number">12.1</span> Stress Elements for 2D Stress States</h2>
+<p>A square stress element shows the normal stress and shear stress at a point for a 2D stress state. Here we will discuss the important aspects of the stress element:</p>
+<p>1) Plane of the element:</p>
+<p>The coordinate axes on the stress element represent the plane on the body where the point is located, with the positive directions indicated by arrows and axes labels. To determine the plane a point is on, one needs to observe the axes on a square element on the side of the body when viewing it straight on. <a href="#fig-12.2" class="quarto-xref">Figure&nbsp;<span>12.2</span></a> illustrates 3 points on a body, each on a different plane (xy, yz, and xz).</p>
 <div id="fig-12.2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-12.2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/CH12 figures/figure 12.2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="405">
+<img src="images/chapter 12 figure edits/figure 12.2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="206">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12.2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;12.2: A pressurized duct is fabricated with welding in a helical pattern
+Figure&nbsp;12.2: Points on 3 planes of a body
 </figcaption>
 </figure>
 </div>
-<p>Now we’ll use trigonometry to develop a general set of equations to transform stresses from one set of coordinate axes to another. Consider a stress element representing the state of stress at a point in the <em>xy</em> plane as shown in <a href="#fig-12.3" class="quarto-xref">Figure&nbsp;<span>12.3</span></a>. If we want to use the known stresses in the <em>xy</em> coordinate system to find the stresses parallel and perpendicular to a different plane, represented by the incline shown on the element, we can cut through the element at the appropriate angle and consider the free body diagram on the cut section. The FBD of the cut element shows the known stresses on the uncut sides of the element and the unknown internal reaction normal and shear stresses, σ<sub>n</sub> and τ<sub>nt</sub>, on the cut side of the element. The internal reactions are represented in the directions for which we want to know the stress state.</p>
+<p>2) Positive and negative faces</p>
+<p>We refer to the edges of the element as positive faces and negative faces depending on which way the coordinate axes are oriented. For example, if the vertical coordinate axis is positive upwards, then the top edge of element is the positive face for that coordinate axis and the bottom edge is the negative face. This is illustrated for two different planes in <a href="#fig-12.3" class="quarto-xref">Figure&nbsp;<span>12.3</span></a>.</p>
+<p>3) Normal stresses</p>
+<p>Normal stresses that are positive (tensile) are illustrated by arrows that point away from the element. Negative normal stresses (compressive) point towards the element. Normal stresses directed in the horizontal direction are shown on the left/right edges of the element and normal stresses directed in the vertical direction are shown on the top/bottom edges.</p>
+<p>4) Shear stress</p>
+<p>As explained in <a href="Chapter 4.html#sec-4.7" class="quarto-xref"><span>Section 4.7</span></a>, the shear stress will be the same on all sides of the stress element. The manner in which the shear stress arrows are oriented around the body indicate the sign. A positive shear stress is one for which the shear stress arrow goes in a positive direction on a positive face or in a negative direction on a negative face. No matter which face you choose to examine, you should reach the same conclusion. The magnitude of the shear stress is usually specified in one corner of the element.</p>
+<p>For example, in <a href="#fig-12.3" class="quarto-xref">Figure&nbsp;<span>12.3</span></a>, we can see that for the positive shear stress example, the shear stress arrow on the +x-face goes in the + y direction and the shear stress arrow on the -(x-face) goes in the -y direction. Either way, a positive shear stress is indicated and we would get the same result examining the y-faces.</p>
+<p>For the negative shear stress example, the shear stress arrow on the +x-face goes in the -z direction and the shear stress arrow on the -(x-face) goes in the +z direction. Either way, a negative shear stress is indicated and we would get the same result examining the z-faces.</p>
 <div id="fig-12.3" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-12.3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/CH12 figures/figure 12.3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="612">
+<img src="images/chapter 12 figure edits/figure 12.3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="472">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12.3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;12.3: Stress element cut along plane of interest
+Figure&nbsp;12.3: Positive and negative faces and shear stress signs
 </figcaption>
 </figure>
 </div>
-<p>Consider the area of the cut side of the element on which σ<sub>n</sub> and τ<sub>nt</sub> act to be dA’. By applying trigonometry we can say that the area of the side on which σ<sub>x</sub> acts, dA<sub>x</sub>, is:</p>
-<p><span class="math display">\[
-d A_x=d A^{\prime}(\sin \beta)=d A^{\prime} \cos (\theta)
-\]</span></p>
-<p>and the area of the side on which σ<sub>y</sub> acts is:</p>
-<p><span class="math display">\[
-d A_x=d A^{\prime}(\cos \beta)=d A^{\prime} \sin (\theta)
-\]</span></p>
-<p>We can apply equilibrium to obtain expressions for σ<sub>n</sub> and τ<sub>nt</sub> if we express the stress components as forces and resolve those forces into the n and t directions. The force corresponding to each direction of stress is obtained by multiplying the stress with the area it acts on (i.e., the force corresponding to σ<sub>x</sub> is σ<sub>x</sub>*dA<sub>x</sub>).</p>
-<p>From σ<sub>x</sub> we have:</p>
-<p><span class="math display">\[
-\begin{aligned}
-&amp; F_n=-\sigma x^* d A x^* \cos (\theta)=-\sigma x^* d A^{\prime} \cos (\theta) \cos (\theta) \\
-&amp; \mathrm{Ft}=\sigma x^* \mathrm{~d} A x^* \sin (\theta)=\sigma x^* d A^{\prime} \cos (\theta) \sin (\theta)
-\end{aligned}
-\]</span></p>
-<p>From σ<sub>y</sub> we have:</p>
-<p><span class="math display">\[
-\begin{aligned}
-&amp; F_n=-\sigma y^* d A y^* \sin (\theta)=-\sigma y^* d A^{\prime} \sin (\theta) \sin (\theta) \\
-&amp; F t=-\sigma y^* d A y^* \cos (\theta)=-\sigma y^* d A^{\prime} \cos (\theta) \sin (\theta)
-\end{aligned}
-\]</span></p>
-<p>From the vertical shear stress acting on the x-face we have:</p>
-<p><span class="math display">\[
-\begin{aligned}
-&amp; F n=-\tau_{xy}{ }^* d A x^* \sin (\theta)=-\tau x y^* d A^{\prime} \cos (\theta) \sin (\theta) \\
-&amp; F t=-\tau_{xy}{ }^* d A x^* \cos (\theta)=-\tau x y^* d A^{\prime} \cos (\theta) \cos (\theta)
-\end{aligned}
-\]</span></p>
-<p>From the horizontal shear stress acting on the y face we have:</p>
-<p><span class="math display">\[
-\begin{aligned}
-&amp; \mathrm{Fn}=-\tau_{xy} *^* d A x^* \cos (\theta)=-\tau x y^* d^{\prime} \sin (\theta) \cos (\theta) \\
-&amp; F t=\tau_{xy}{ }^* d A y^* \sin (\theta)=\tau_{x y}^* d A^{\prime} \sin (\theta) \sin (\theta)
-\end{aligned}
-\]</span></p>
-<p>Applying equilibrium in the n and t directions:</p>
-<p><span class="math display">\[
-\begin{gathered}
-\sum F_n=-\sigma_x * d A^{\prime} * \cos ^2(\theta)-\sigma_y * d A^{\prime} * \sin ^2(\theta)-2 \tau_{x y} * d A^{\prime} * \cos (\theta) \sin (\theta)=0 \\
-\sum F_t=\sigma_x * d A^{\prime} * \cos (\theta) \sin (\theta)-\sigma_y * d A^{\prime} * \cos (\theta) \sin (\theta)+\tau_{x y} * d A^{\prime} *\left(\sin ^2(\theta)-\cos ^2(\theta)\right) \\
-+\tau_{n t} d A^{\prime}=0
-\end{gathered}
-\]</span></p>
-<p>Solving the equations for σ<sub>n</sub> and τ<sub>nt</sub> and simplifying terms gives:</p>
-<p><span class="math display">\[
-\begin{aligned}
-&amp; \sigma_n=\sigma_x \cos ^2(\theta)+\sigma_y \sin ^2(\theta)+2 \tau_{x y} \sin (\theta) \cos (\theta) \\
+<p>An example of a fully drawn stress element can be found in <a href="#fig-12.4" class="quarto-xref">Figure&nbsp;<span>12.4</span></a>. In this case the shear stress is 𝜏<sub>xz</sub> = +16 MPa (note the positive z directed shear stress arrow on the positive x-face), and the normal stresses are 𝜎<sub>x</sub> = -150 MPa and 𝜎<sub>z</sub> = +90 Mpa.</p>
+<div id="fig-12.4" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-12.4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/CH12 figures/figure 12.4a.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="319">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12.4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.4: Example 2D stress element in the xz plane.
+</figcaption>
+</figure>
+</div>
+
+
+</section>
+<section id="sec-12.2" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="sec-12.2"><span class="header-section-number">12.2</span> Stress Transformation Equations</h2>
+<details>
+<summary>
+Click to expand
+</summary>
+<p>In section <a href="#sec-12.2.1" class="quarto-xref"><span>Section 12.2.1</span></a>, <u>stress transformation equations</u> are derived that allow us to use a set of stresses in one given plane (for example σ<sub>x</sub>, σ<sub>y</sub>, and τ<sub>xy</sub>) as inputs to determine stresses in any other plane of interest. Understanding the derivations will help lend clarity to the inputs and outputs of the equations. If you wish to skip the derivations, you can simply jump ahead to the results, <a href="#eq-12.1" class="quarto-xref">Equation&nbsp;<span>12.1</span></a> and/or <a href="#eq-12.2" class="quarto-xref">Equation&nbsp;<span>12.2</span></a>, which are boxed in below to make them easier to find. <a href="#sec-12.2.1" class="quarto-xref"><span>Section 12.2.1</span></a> covers the details of how to use the equations.</p>
+<section id="sec-12.2.1" class="level3" data-number="12.2.1">
+<h3 data-number="12.2.1" class="anchored" data-anchor-id="sec-12.2.1"><span class="header-section-number">12.2.1</span> <strong>Derivation of Equations</strong></h3>
+<p>Transformation of a uni-axial stress state was already examined in <a href="Chapter 2.html#sec-2.4" class="quarto-xref"><span>Section 2.4</span></a>. In that case, we took a known force acting in the axial direction and determined the stress on an inclined plane. The current derivation for a more general stress state will be based on the same idea of cutting a section and applying equilibrium.</p>
+<p><a href="#fig-12.5" class="quarto-xref">Figure&nbsp;<span>12.5</span></a> shows a stress element representing a general stress state in the xy-plane and the FBD (but with stresses instead of forces) of the element cut along the plane of interest. The n and t directions are normal and parallel to the incline, respectively, and 𝜃 and 𝛽 are complementary angles.</p>
+<div id="fig-12.5" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-12.5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/chapter 12 figure edits/figure 12.5.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12.5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.5: Stress element in the xy-plane (A), FBD of the cut section of the stress element (B), surface areas the stresses of the cut stress element act on (C).
+</figcaption>
+</figure>
+</div>
+<p>We can proceed as follows:</p>
+<p>1) Write expressions for the forces that correspond to the stresses acting on the cut element by multiplying the stresses with the area of the side of the element they act on. These areas are illustrated in <a href="#fig-12.5" class="quarto-xref">Figure&nbsp;<span>12.5</span></a> (C). We can see that σ<sub>y</sub> and the τ<sub>xy</sub> on the bottom face of the element act on area dA<sub>y</sub>, while σ<sub>x</sub> and the τ<sub>xy</sub> on the left face of the element act on area dA<sub>x</sub>.The internal forces normal and parallel to the incline act on area dA’.</p>
+<p>On the left face, we have:</p>
+<p><span class="math display">\[ F_x=-\sigma_x\ dA_x\\ F_y=-\tau_{xy}\ dA_x\\ \]</span></p>
+<p>On the bottom face we have:</p>
+<p><span class="math display">\[ F_y=-\sigma_y\ dA_y\\ F_x=-\tau_{xy}\ dA_y\\ \]</span></p>
+<p>where the negative signs for both faces are because the stresses act to the left (negative x) and down (negative y).</p>
+<p>On the inclined face we have:</p>
+<p><span class="math display">\[ \begin{aligned} &amp;F_x=\sigma_n\ dA'\ cos(\theta)-\tau_{nt}\ dA' sin(\theta)\\ &amp;F_y=\sigma_n\ dA'\ sin(\theta)+\tau_{nt}\ dA' cos(\theta)\\ \end{aligned} \]</span></p>
+<p>2) Express dA<sub>x</sub> and dA<sub>y</sub> in terms of dA’. Based on trigonometry, we have:</p>
+<p><span class="math display">\[ \begin{aligned} dA_x &amp; =dA'\sin(\beta)\\ &amp;=d A^{\prime} \cos (\theta)\\ \end{aligned} \]</span></p>
+<p><span class="math display">\[ \begin{aligned}dA_y &amp; =dA'\cos(\beta)\\&amp;=d A^{\prime} \sin (\theta)\\\end{aligned} \]</span></p>
+<p>3) Substitute these area expressions into the force equations and write the force equilibrium equations:</p>
+<p><span class="math display">\[ \begin{gathered}\sum F_x=-\sigma_x\ d A^{\prime}  \cos (\theta)-\tau_{xy}\ d A^{\prime} \sin (\theta)+\sigma_n\ dA' cos(\theta) -\tau_{n t}\  d A^{\prime} \sin (\theta)=0 \\[10pt]\sum F_y=-\tau_{xy}\ d A^{\prime}  \cos (\theta)-\sigma_y\ d A^{\prime}  \sin (\theta) +\sigma_n\ dA' sin(\theta)+\tau_{n t}\ dA'\ cos(\theta)=0\end{gathered} \]</span></p>
+<p>4) Solve the equilibrium equations for σ<sub>n</sub> and τ<sub>nt</sub> and simplify:</p>
+<p><span id="eq-12.1"><span class="math display">\[
+\boxed{\begin{aligned}
+&amp; \sigma_n=\sigma_x \cos ^2(\theta)+\sigma_y \sin ^2(\theta)+2 \tau_{x y} \sin (\theta) \cos (\theta) \\[10pt]
 &amp; \tau_{n t}=-\left(\sigma_x-\sigma_y\right) \cos (\theta) \sin (\theta)+\tau_{x y}\left(\cos ^2(\theta)-\sin ^2(\theta)\right)
-\end{aligned}
-\]</span></p>
+\end{aligned}}
+\tag{12.1}\]</span></span></p>
 <p>These equations are known as the <strong>stress transformation equations</strong>.</p>
-<p>Alternatively, implementing the trig identities:</p>
+<p>Alternatively, implementing the trigonometric identities:</p>
 <p><span class="math display">\[
 \begin{gathered}
 \cos ^2(\theta)=\frac{1+\cos (2 \theta)}{2} \\
@@ -456,12 +636,12 @@ d A_x=d A^{\prime}(\cos \beta)=d A^{\prime} \sin (\theta)
 \end{gathered}
 \]</span></p>
 <p>The transformation equations can also be expressed as:</p>
-<p><span id="eq-12.1"><span class="math display">\[
+<p><span id="eq-12.2"><span class="math display">\[
 \boxed{\begin{aligned}
-\sigma_n &amp; =\frac{\sigma_x+\sigma_y}{2}+\frac{\sigma_x-\sigma_y}{2} \cos (2 \theta)+\tau_{x y} \sin (2 \theta) \\
+\sigma_n &amp; =\frac{\sigma_x+\sigma_y}{2}+\frac{\sigma_x-\sigma_y}{2} \cos (2 \theta)+\tau_{x y} \sin (2 \theta) \\[10pt]
 \tau_{n t} &amp; =-\frac{\sigma_x-\sigma_y}{2} \sin (2 \theta)+\tau_{x y} \cos (2 \theta)
 \end{aligned}}
-\tag{12.1}\]</span></span></p>
+\tag{12.2}\]</span></span></p>
 <div class="line-block"><em>where</em><br>
 <em>𝜎<sub>n</sub> = Average normal stress perpendicular to the inclined plane [Pa, psi]</em><br>
 <em>𝜏<sub>nt</sub> = Average shear stress parallel to the inclined plane [Pa, psi]</em><br>
@@ -469,44 +649,52 @@ d A_x=d A^{\prime}(\cos \beta)=d A^{\prime} \sin (\theta)
 <em>𝜎<sub>y</sub> = Average normal stress in the y-direction, prior to any transformation [Pa, psi]</em><br>
 <em>𝜏<sub>xy</sub> = Average shear stress in the xy plane, prior to any transformation [Pa, psi]</em><br>
 <em>𝜃 = Angle between x-axis and transformed stress being caculated [</em><span class="math inline">\(^\circ\)</span><em>, rad]</em></div>
-<p>Either set of transformation equations will work. The choice over which set to use is based on personal preference.</p>
-<p>The stress transformation equations can be used to take a set of stresses calculated in the chosen coordinate system (xy) and transform them to a different coordinate system (<em>x’y’</em>), as shown in <a href="#fig-12.4" class="quarto-xref">Figure&nbsp;<span>12.4</span></a>. With θ defined to be the angle between the x-axis and the normal to the plane of interest as shown in <a href="#fig-12.3" class="quarto-xref">Figure&nbsp;<span>12.3</span></a>, the σ<sub>n</sub> equation gives the stress on the rotated x-face, which we will call the σ<sub>x’</sub>. To find σ<sub>y’</sub>, the normal stress on the rotated y-face, we can simply sub an angle of (90° + θ) into the σ<sub>n</sub> equation since the y’ axis would be rotated an additional 90° form the x-axis. Also note that substituting θ into the τ<sub>nt</sub> equation gives τ<sub>x’y’</sub>.</p>
-<div id="fig-12.4" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-12.4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/CH12 figures/figure 12.4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="462">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12.4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;12.4: The angle θ is defined to be the angle between the original x axis and the normal to the plane of interest. Subbing θ into the stress transformation equations gives σ<sub>x’</sub> and τ<sub>x’y</sub> whle subbing in ( 90° + θ) gives σ<sub>y’</sub>.
-</figcaption>
-</figure>
-</div>
-<p>Another way to quickly determine the normal stress along the y’ axis once σ<sub>x’</sub> is known is to make use of the concept of <u>stress invariance</u> which is the idea that sum of the normal stresses (σ<sub>x</sub> + σ<sub>y</sub>) remains constant regardless of the plane in which they are calculated. Put another way, the stress invariance principle allows us to say that (σ<sub>x</sub> + σ<sub>y</sub>) = (σ<sub>x’</sub> + σ<sub>y’</sub>).</p>
-<p>The angle of incline may be measured and given relative to a variety of reference axes. It is imperative that one understands which angle to substitute into the transformation equations given above. To ensure you have the correct angle, take the following steps and see <a href="#fig-12.5" class="quarto-xref">Figure&nbsp;<span>12.5</span></a>:</p>
-<ol type="1">
-<li><p>Draw a line that represents the plane of interest</p></li>
-<li><p>Draw the x-axis positive going towards the right</p></li>
-<li><p>Draw the axis normal to the plane of interest. It does not matter if you draw the normal axis as oriented counterclockwise or clockwise from the x-axis as long as you use the correct sign for the angle (see step 4).</p></li>
-<li><p>Determine the angle that goes from the x-axis to the normal axis. This angle is θ. If the direction from the x-axis to the normal axis is counterclockwise, then θ should be taken to be positive. If the direction from the x-axis to the normal axis is clockwise, then θ should be taken to be negative.</p></li>
-</ol>
-<div id="fig-12.5" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-12.5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/CH12 figures/figure 12.5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="458">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12.5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;12.5: Draw a sketch of the x-axis and the normal axis to ensure you use the correct magnitude and sign for θ in the stress transformation equations.
-</figcaption>
-</figure>
-</div>
-<p>Finally, one should note that the transformation equations were derived based on stresses given in the the x-y plane where x is the horizontal axis positive to the right and y is the vertical axis positive upwards. If a plane other than the xy plane is being used for the general stress calculations, or if the x and y axes are oriented in the opposite configuration, the rule to follow would be to substitute the stress normal to the vertical faces of the element in for the σ<sub>x</sub> terms of the equations and the stress normal to the horizontal faces of the element in the σ<sub>y</sub> terms of the equations. For example, given the stress element in <a href="#fig-12.6" class="quarto-xref">Figure&nbsp;<span>12.6</span></a>, one would substitute σ<sub>z</sub> = 90 MPa in for the σx terms of the stress transformation equations, σ<sub>x</sub> = -150 MPa in for the σ<sub>y</sub> terms, and τ<sub>xz</sub> = -16 MPa in for the τ<sub>xy</sub> terms.</p>
+<p>Either <a href="#eq-12.1" class="quarto-xref">Equation&nbsp;<span>12.1</span></a> or <a href="#eq-12.2" class="quarto-xref">Equation&nbsp;<span>12.2</span></a> will work. The choice over which set to use is based on personal preference.</p>
+</section>
+<section id="sec-12.2.2" class="level3" data-number="12.2.2">
+<h3 data-number="12.2.2" class="anchored" data-anchor-id="sec-12.2.2"><span class="header-section-number">12.2.2</span> Using the Stress Transformation Equations</h3>
+<p>While the n and t directions have been used to refer to the directions normal and parallel to an incline, a planar element will have two normal directions, as represented by x’, y’ in <a href="#fig-12.6" class="quarto-xref">Figure&nbsp;<span>12.6</span></a>. We can distinguish between the two normal stresses by the angle that is used in the stress transformation equation for 𝜎<sub>n</sub>. Based on how 𝛳 was defined in the derivation of the transformation equations, we can say:</p>
+<p><span class="math display">\[ \sigma_{x'}=\sigma_n(\theta)\\ \sigma_{y'}=\sigma_n(\theta+90^\circ)\\ \tau_{x' y'}=\tau_{nt}(\theta) \]</span></p>
 <div id="fig-12.6" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-12.6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/CH12 figures/figure 12.6.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="394">
+<img src="images/CH12 figures/figure 12.3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="437">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12.6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;12.6: Element drawn in the xz plane
+Figure&nbsp;12.6: The angle θ is defined to be the angle between the original x axis and the normal to the plane of interest. Subbing θ into the stress transformation equations gives σ<sub>x’</sub> and τ<sub>x’y</sub> while subbing in ( 90° + θ) gives σ<sub>y’</sub>.
+</figcaption>
+</figure>
+</div>
+<p>Another way to quickly determine σ<sub>y’</sub> once σ<sub>x’</sub> is known is to use the concept of <u>stress invariance,</u> which says that the sum of the normal stresses remains constant across different planes:</p>
+<p><span class="math display">\[ (\sigma_x\ +\sigma_y)=constant \]</span></p>
+<p>or:</p>
+<p><span id="eq-12.3"><span class="math display">\[ \boxed{(\sigma_{x'}\ +\sigma_{y'})=(\sigma_x\ +\sigma_y)}  \tag{12.3}\]</span></span></p>
+<p>It is imperative that one understands which angle to substitute into the transformation equations given above, including whether it is positive or negative. To ensure the correct angle and sign is used, refer to <a href="#fig-12.7" class="quarto-xref">Figure&nbsp;<span>12.7</span></a> and take the following steps:</p>
+<ol type="1">
+<li><p>Draw a line that represents one side of the plane of interest</p></li>
+<li><p>Draw the x-axis (positive to the right)</p></li>
+<li><p>Draw the axis normal to the plane of interest. It does not matter if you draw the normal axis oriented counterclockwise or clockwise from the x-axis as long as you use the correct sign for θ (see step 4).</p></li>
+<li><p>Determine the angle that goes from the x-axis to the normal axis. This angle is θ. If the direction from the x-axis to the normal axis is counterclockwise, then θ is positive. If the direction from the x-axis to the normal axis is clockwise, then θ is negative.</p></li>
+</ol>
+<div id="fig-12.7" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-12.7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/12.4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="394">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12.7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.7: Draw a sketch of the x-axis and the normal axis to ensure you use the correct magnitude and sign for θ in the stress transformation equations.
+</figcaption>
+</figure>
+</div>
+<p>In some cases, the reference stress state may not be in the xy plane, or the x and y axes may be oriented differently from the orientation in <a href="#fig-12.5" class="quarto-xref">Figure&nbsp;<span>12.5</span></a>. In these cases, some adjustments will need to be made in implementing the transformation equations to ensure consistency of inputs with how the equations were derived.</p>
+<p>As an example, consider the reference stress state in <a href="#fig-12.8" class="quarto-xref">Figure&nbsp;<span>12.8</span></a>. As given, you might question which stress to substitute in for 𝜎<sub>x</sub> and which to substitute for 𝜎<sub>y</sub>. Keeping in mind that the transformation equations were derived based on a coordinate system in which the the horizontal axis is positive to the right and the vertical axis is positive upwards, we can ensure consistency with the inputs if we re-orient the reference stress element in the same way, as is also shown in the <a href="#fig-12.8" class="quarto-xref">Figure&nbsp;<span>12.8</span></a>. We can then attribute the coordinate designated to the horizontal direction to correspond to the x terms in the transformation equations and the coordinate designated to the vertical direction to correspond to the y terms in the transformation equations. In the case of the stress state in <a href="#fig-12.8" class="quarto-xref">Figure&nbsp;<span>12.8</span></a>, we would substitute -150 MPa for 𝜎<sub>x</sub>, 90 MPa for 𝜎<sub>y</sub>, and 16 MPa for τ<sub>xy</sub>.</p>
+<div id="fig-12.8" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-12.8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/chapter 12 figure edits/figure 12.8.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12.8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.8: Element drawn in the xz plane
 </figcaption>
 </figure>
 </div>
@@ -527,7 +715,7 @@ Example 12.1
 <p><span class="theorem-title"><strong>Example 12.1</strong></span> &nbsp;</p>
 <p>
 </p>
-<p>The general stress state at a point on a hollow pipe formed with spiral welds inclined to an angle β with respect to the horizontal is shown below. For stress magnitudes given as follows: Sx = 128 MPa, <em>S<sub>y</sub></em> = 80 MPa, Sxy = 75.45 MPa, and β = 42°. Determine the stress parallel and perpendicular to weld.</p>
+<p>The general stress state at a point on a hollow pipe formed with spiral welds inclined to an angle β with respect to the horizontal is shown below. For stress magnitudes given as follows: Sx = 128 MPa, <em>S<sub>y</sub></em> = 80 MPa, Sxy = 75.45 MPa, and β = 42°, determine the stress parallel and perpendicular to weld.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/CH12 figures/example 12.1 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="519"></p>
@@ -553,14 +741,29 @@ Solution
 \end{aligned}
 \]</span></p>
 <p>Notice that the normal stresses are positive since they are both shown to be tensile on the given stress element but the shear stress is negative based on the fact that the shear stress arrow goes in the negative y direction on the positive x-face (the same conclusion can be drawn by observing any of the other faces).</p>
-<p>Before performing the calculation, the appropriate angle θ must also be found. The plane of interest in this as is the plane of the weld which is represented by the line representing the spiral. The angle θ needed to substitute into the equations is the angle between the x-axis and th normal axis to the weld. Based on the normal axis below the x-axis, we can see θ is θ = -(90 – β) = -48°. The angle is negative since it is a clockwise rotation to get from the x axis to the n-axis below.</p>
+<p>To find the angle θ to substitute into the equations, we can follow the process described in <a href="#sec-12.1" class="quarto-xref"><span>Section 12.1</span></a> .</p>
+<ol type="1">
+<li>Draw the line that represents the plane of interest. In this case, the plane of interest is the plane of the weld which is parallel to the spiral.</li>
+<li>Draw the x-axis going positive to the right</li>
+<li>Draw the axis normal (n) to the plane of interest. It does not matter if you draw the normal axis as oriented counterclockwise or clockwise from the x-axis as long as you use the correct sign for the angle (see step 4).</li>
+<li>Determine the angle that goes from the x-axis to the normal axis. This angle is θ. If the direction from the x-axis to the normal axis is counterclockwise, then θ should be taken to be positive. If the direction from the x-axis to the normal axis is clockwise, then θ should be taken to be negative.</li>
+</ol>
+<p>If we use the angle from the x-axis to the solid normal axis, the angle will be negative since that is a clockwise rotation: θ = -(90 – β) = -48°</p>
 <p>We could also base θ on the dashed normal axis, in which case the magnitude of θ would be θ = 180° – 48° = 132°. This angle is positive since the rotation from the x-axis to the dashed normal axis is counterclockwise.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH12 figures/example 12.1 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="340"></p>
+<p><img src="images/CH12 figures/example 12.1 part 2a.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="403"></p>
 </figure>
 </div>
-<p>So with σ<sub>x</sub> = 128 MPa, σ<sub>y</sub> = 80 MPa, τ<sub>xy</sub> = -75.45 MPa, and θ = -48° (or +132°), <strong>the stress normal to the weld is σ<sub>n</sub> = 139.0 MPa. The stress parallel to the weld is τ<sub>nt</sub> = 31.76 MPa.</strong></p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; \sigma_n=128{~MPa} \cos ^2(-48^\circ)+80{~MPa} \sin ^2(-48^\circ)+2*-75.45{~MPa} \sin (-48^\circ) \cos (-48^\circ) \\
+&amp;\sigma_n = 176.5{~MPa} \\[10pt]
+&amp; \tau_{n t}=-\left(128{~MPa}-80{~MPa}\right) \cos (-48^\circ) \sin (-48^\circ)-75.45{~MPa}\left(\cos ^2(-48^\circ)-\sin ^2(-48^\circ)\right) \\
+&amp;\tau_{n_t} = 31.76{~MPa}
+\end{aligned}
+\]</span></p>
+<p>So with σ<sub>x</sub> = 128 MPa, σ<sub>y</sub> = 80 MPa, τ<sub>xy</sub> = -75.45 MPa, and θ = -48° (or +132°), <strong>the stress normal to the weld is σ<sub>n</sub> = 176.5 MPa. The stress parallel to the weld is τ<sub>nt</sub> = 31.76 MPa.</strong></p>
 </div>
 </div>
 </div>
@@ -606,26 +809,32 @@ Solution
 <ol type="1">
 <li><p>Draw a line that represents the plane of interest</p></li>
 <li><p>Draw the x-axis positive going towards the right</p></li>
-<li><p>Draw the axis normal to the plane of interest. It does not matter if you draw the normal axis as oriented counterclockwise or clockwise from the x-axis as long as you use the correct sign for the angle (see step 4).</p></li>
+<li><p>Draw the axis normal (n) to the plane of interest. It does not matter if you draw the normal axis as oriented counterclockwise or clockwise from the x-axis as long as you use the correct sign for the angle (see step 4).</p></li>
 <li><p>Determine the angle that goes from the x-axis to the normal axis. This angle is θ. If the direction from the x-axis to the normal axis is counterclockwise, then θ should be taken to be positive. If the direction from the x-axis to the normal axis is clockwise, then θ should be taken to be negative.</p></li>
 </ol>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH12 figures/example 12.2 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="303"></p>
+<p><img src="images/example 12.2 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="293"></p>
 </figure>
 </div>
 <p>Either angle labeled θ in the illustration will work and produce the same results. In this example, we will use the smaller of the two:</p>
 <p>θ = 90 – β = 54°.</p>
 <p>The angle is positive since the n-axis is rotated counterclockwise from the positive x-axis.</p>
-<p>With θ determined, the only thing left to do is make the subsitutions into the stress transformation equations and calculate. Note that the σn equation will give us the normal stress on the rotated x-face (x’), so will need to also calculate σn with the angle (θ + 90°) to get σy’ or use the stress invariance concept: (σx + σy = σx’ + σy’)</p>
+<p>With θ determined, the only thing left to do is make the subsitutions into the stress transformation equations and calculate. Note that the σ<sub>n</sub> equation will give us the normal stress on the rotated x-face (σ<sub>x’</sub>), We will also need to calculate σ<sub>n</sub> with the angle (θ + 90°) to get σ<sub>y’</sub> or use the stress invariance concept: (σ<sub>x</sub> + σ<sub>y</sub> = σ<sub>x’</sub> + σ<sub>y’</sub>)</p>
 <p>Substituting σ<sub>x</sub> = -1700 psi (negative since it is shown to be compressive), σ<sub>y</sub> = 800 psi, τ<sub>xy</sub> = 790 psi, and θ = 54° into:</p>
 <p><span class="math display">\[
 \begin{aligned}
-&amp; \sigma_n=\frac{\sigma_x+\sigma_y}{2}+\frac{\sigma_x-\sigma_y}{2} \cos (2 \theta)+\tau_{x y} \sin (2 \theta) \\
-&amp; \tau_{n t}=-\frac{\sigma_x-\sigma_y}{2} \sin (2 \theta)+\tau_{x y} \cos (2 \theta)
+\sigma_n&amp;=\frac{\sigma_x+\sigma_y}{2}+\frac{\sigma_x-\sigma_y}{2} \cos (2 \theta)+\tau_{x y} \sin (2 \theta) \\[10pt]
+&amp; =\frac{-1700{~psi}+800{~psi}}{2}+\frac{-1700{~psi}-800{~psi}}{2} \cos(2*54^\circ)+790{~psi}* \sin(2*54^\circ) \\[10pt]
+&amp; = 687.6{~psi} \\[10pt]\end{aligned}\\
+\]</span> <span class="math display">\[
+\begin{aligned}
+\tau_{n t}&amp;=-\frac{\sigma_x-\sigma_y}{2} \sin (2 \theta)+\tau_{x y} \cos (2 \theta) \\[10pt]
+&amp;=-\frac{-1700{~psi}-800{~psi}}{2} \sin (2*54^\circ)+790{~psi}*\cos (2*54^\circ) \\[10pt]
+&amp;=944.7psi\\
 \end{aligned}
 \]</span></p>
-<p>Gives σ<sub>x’</sub> = 687.6 psi and τ<sub>x’y’</sub> = 945 psi.</p>
+<p>gives σ<sub>x’</sub> = 687.6 psi and τ<sub>x’y’</sub> = 945 psi.</p>
 <p>Furthermore, applying stress invariance: -1700 psi + 800 psi = 687.6 psi + σ<sub>y’</sub> gives σ<sub>y’</sub> = -1588 psi</p>
 <p><strong>σ<sub>x’</sub> = 687.6 psi</strong></p>
 <p><strong>τ<sub>x’y’</sub> = 945 psi</strong></p>
@@ -655,74 +864,75 @@ Step-by-step: Stress transformation
 </ol>
 </div>
 </div>
-</details>
+</section></details>
 </section>
-<section id="sec-12.2" class="level2" data-number="12.2">
-<h2 data-number="12.2" class="anchored" data-anchor-id="sec-12.2"><span class="header-section-number">12.2</span> Principal Stresses and Max/Min Shear Stress</h2>
+
+<section id="sec-12.3" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="sec-12.3"><span class="header-section-number">12.3</span> Principal Stresses and Max/Min Shear Stress</h2>
 <details>
 <summary>
 Click to expand
 </summary>
-<p>Often, the plane we would be the most concerned with is the one on which the normal stress or the shear stress is at a maximum or minimum. The maximum and minimum normal stresses are referred to as the principal stresses (σ<sub>1</sub> and σ<sub>2</sub>) and the planes on which they act (described by angle of rotation of the stress element, θ<sub>p1</sub> and θ<sub>p2</sub>) are the principal planes. The maximum and minimum shear stresses are simply referred to as the maximum and minimum shear stress, respectively, and the planes on which they occur are referred to simply as the planes of maximum and minimum shear stress (denoted as θ<sub>s1</sub> and θ<sub>s2</sub>).</p>
-<p>It is important to note that in this section, only rotations within a two dimensional plane are being considered. As will be seen in <a href="#sec-12.4" class="quarto-xref"><span>Section 12.4</span></a>, the principal planes and principal stresses are the same even when considering out of plane rotation of the stress element (see <a href="#fig-12.7" class="quarto-xref">Figure&nbsp;<span>12.7</span></a>), but the max shear stress could be different. Therefore, the max and min sheer stress as determined by the below derived equations will be referred to as the max/min <em>in-plane</em> shear stress.</p>
-<div id="fig-12.7" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<p>Often, the plane we are the most concerned with is the one on which the normal stress or the shear stress is at a maximum because that is the one on which failure is most likely occur. The maximum and minimum normal stresses are referred to as the principal stresses (σ<sub>1</sub> and σ<sub>2</sub>) and the planes on which they act (described by angle of rotation of the stress element, θ<sub>p1</sub> and θ<sub>p2</sub>) are the principal planes. The maximum and minimum shear stresses are simply referred to as the maximum and minimum shear stress, respectively, and the planes on which they occur are referred to simply as the planes of maximum and minimum shear stress (denoted as θ<sub>s1</sub> and θ<sub>s2</sub>).</p>
+<p>It is important to note that in this section, only rotations within a two dimensional plane are being considered. As will be seen in <a href="#sec-12.5" class="quarto-xref"><span>Section 12.5</span></a>, the principal planes and principal stresses are the same even when considering out of plane rotation of the stress element (see <a href="#fig-12.9" class="quarto-xref">Figure&nbsp;<span>12.9</span></a>), but the max shear stress could be different. Therefore, the max and min sheer stress as determined by the below derived equations will be referred to as the max/min <em>in-plane</em> shear stress.</p>
+<div id="fig-12.9" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-12.7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/CH12 figures/figure 12.7.png" class="quarto-figure quarto-figure-center figure-img" width="571" height="207">
+<div aria-describedby="fig-12.9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/CH12 figures/figure 12.6.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12.7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;12.7: The max shear stress obtained from in-plane rotations of the stress element may not be the same as the max shear stress when considering out of plane rotation as well. This section describes how to find the max/min in-plane shear stress.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12.9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.9: The max shear stress obtained from in-plane rotations of the stress element may not be the same as the max shear stress when considering out of plane rotation as well. This section describes how to find the max/min in-plane shear stress.
 </figcaption>
 </figure>
 </div>
-<p>As we rotate the stress element and the angle θ changes, the stress changes in a predictable way. <a href="#fig-12.8" class="quarto-xref">Figure&nbsp;<span>12.8</span></a> shows the variation of normal stress σx’ with angle θ. The principal stresses can be seen to occur at specific values of θ. These angles will be 90° apart from one another. A similar graph could be drawn for τx’y’.</p>
-<div id="fig-12.8" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<p>As we rotate the stress element and the angle θ changes, the stress changes in a predictable way. <a href="#fig-12.10" class="quarto-xref">Figure&nbsp;<span>12.10</span></a> shows the variation of normal stress σ<sub>x’</sub> with angle θ. The principal stresses can be seen to occur at specific values of θ. These angles will be 90° apart from one another. A similar graph could be drawn for τ<sub>x’y’</sub>.</p>
+<div id="fig-12.10" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-12.8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/CH12 figures/figure 12.8.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="374">
+<div aria-describedby="fig-12.10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/CH12 figures/figure 12.7.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="469">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12.8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;12.8: Plot showing how normal stress σx’ varies with angle θ.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12.10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.10: Plot showing how normal stress σx’ varies with angle θ.
 </figcaption>
 </figure>
 </div>
-<p>Since these stresses are maximums and minimums (i.e., the slope of the curve is zero at these points) and since the transformation equations derived in <a href="#sec-12.1" class="quarto-xref"><span>Section 12.1</span></a> are functions in terms of the plane rotation angle θ, we can simply take the derivates of the two equations and set them equal to zero to find the angles at which we would get the maximum and minimum of each type of stress. Using the second set of transformation equations derived in <a href="#sec-12.1" class="quarto-xref"><span>Section 12.1</span></a> (though the first set would yield the same results):</p>
+<p>Since these stresses are maximums and minimums (i.e., the slope of the curve is zero at these points) and since the transformation equations derived in <a href="#sec-12.2.1" class="quarto-xref"><span>Section 12.2.1</span></a> are functions in terms of the plane rotation angle θ, we can simply take the derivatives of the two equations and set them equal to zero to find the angles at which we would get the maximum and minimum of each type of stress. Using the second set of transformation equations derived in <a href="#sec-12.2.1" class="quarto-xref"><span>Section 12.2.1</span></a> (though the first set would yield the same results):</p>
 <p><span class="math display">\[
 \begin{aligned}
-&amp; \frac{d \sigma_n}{d \theta}=-\left(\sigma_x-\sigma_y\right) \sin \left(2 \theta_p\right)+2 \tau_{x y} \cos \left(2 \theta_p\right)=0 \\
+&amp; \frac{d \sigma_n}{d \theta}=-\left(\sigma_x-\sigma_y\right) \sin \left(2 \theta_p\right)+2 \tau_{x y} \cos \left(2 \theta_p\right)=0 \\[10pt]
 &amp; \frac{d \tau_{n t}}{d \theta}=-\left(\sigma_x-\sigma_y\right) \cos \left(2 \theta_s\right)-2 \tau_{x y} \sin \left(2 \theta_s\right)=0
 \end{aligned}
 \]</span></p>
-<p>Notice that θ is subscripted with a p in the first equation since this theta represents a principal plane as defined above. Similarly, θ is subscripted with and S in the second equation since this theta represents a plane of max or min in-plane shear stress.</p>
-<p>These equations can be rearranged to isolate Tan (2θ) on one side and subsequently used to find θp and θs values:</p>
-<p><span id="eq-12.2"><span class="math display">\[
+<p>Notice that θ is subscripted with a p in the first equation since this angle represents a principal plane as defined above. Similarly, θ is subscripted with an S in the second equation since this angle represents a plane of max or min in-plane shear stress.</p>
+<p>These equations can be rearranged to isolate tan (2θ) on one side and subsequently used to find θ<sub>p</sub> and θ<sub>s</sub> values:</p>
+<p><span id="eq-12.4"><span class="math display">\[
 \boxed{\begin{aligned}
-\tan \left(2 \theta_p\right) &amp; =\frac{2 \tau_{x y}}{\left(\sigma_x-\sigma_y\right)} \\
+\tan \left(2 \theta_p\right) &amp; =\frac{2 \tau_{x y}}{\left(\sigma_x-\sigma_y\right)} \\[10pt]
 \tan \left(2 \theta_s\right) &amp; =-\frac{\left(\sigma_x-\sigma_y\right)}{2 \tau_{x y}}
 \end{aligned}}
-\tag{12.2}\]</span></span></p>
+\tag{12.4}\]</span></span></p>
 <div class="line-block"><em>where</em><br>
 <em>𝜃<sub>p</sub> = Orientation of one of the principal planes, with respect to the x-axis [</em><span class="math inline">\(^\circ\)</span><em>, rad]</em><br>
 <em>𝜃<sub>s</sub> = Orientation of one of the maximum shear planes, with respect to the x-axis [</em><span class="math inline">\(^\circ\)</span><em>, rad]</em><br>
 <em>𝜏<sub>xy</sub> = Average shear stress in the xy plane, prior to any transformation [Pa, psi]</em><br>
 <em>𝜎<sub>x</sub> = Average normal stress in the x-direction, prior to any transformation [Pa, psi]</em><br>
 <em>𝜎<sub>y</sub> = Average normal stress in the y-direction, prior to any transformation [Pa, psi]</em></div>
-<p>Once the angles associated with the planes of extreme stresses are determined, they can be substituted into the stress transformation equation of <a href="#sec-12.1" class="quarto-xref"><span>Section 12.1</span></a> along with the stresses in the given plane to find the principal stresses and max/min shear stress.</p>
+<p>Once the angles associated with the planes of extreme stresses are determined, they can be substituted into <a href="#eq-12.1" class="quarto-xref">Equation&nbsp;<span>12.1</span></a> or <a href="#eq-12.2" class="quarto-xref">Equation&nbsp;<span>12.2</span></a> along with the stresses in the given plane to find the principal stresses and max/min shear stress.</p>
 <p>A few calculation details that it will be helpful to remember are:</p>
 <ol type="1">
-<li><p>The inverse tangent function has two possible solutions. One solution would be the angle that will be reported by a calculator, and the other possible answer is the angle that is that angle plus or minus 180°. So if you use your calculator to solve the Tan (2θp) equation, you would take half that to get the first principle angle and then add or subtract 90 degrees to that principal angle to get the second. The same idea applies to finding the two θ<sub>s</sub> angles.</p></li>
+<li><p>The inverse tangent function has two possible solutions. One solution would be the angle that will be reported by a calculator, and the other possible answer is the angle that is that angle plus or minus 180°. So if you use your calculator to solve the tan (2θp) equation, you would take half that to get the first principal angle and then add or subtract 90 degrees to that principal angle to get the second. The same idea applies to finding the two θ<sub>s</sub> angles.</p></li>
 <li><p>By convention, the <em>most positive</em> of the two principal stresses is denoted as σ<sub>1</sub>. The other principal stress is then σ<sub>2</sub>. The angle that produces that σ<sub>1</sub> stress is θ<sub>p1</sub> and the angle that produces σ<sub>2</sub> is θ<sub>p2</sub>.</p></li>
 <li><p>The max and min in-plane shear stresses will always turn out to be equal in magnitude by opposite in sign, or in other words, the minimum shear stress is always the negative of the maximum shear stress. As with the principal planes and stresses, one would need to substitute one of the θ<sub>s</sub> angles into the shear stress transformation equation to determine which angle corresponds to the maximum in-plane shear stress and which corresponds to the minimum.</p></li>
 <li><p>The angles of maximum and minimum shear stresses are 90° apart from each other, and 45° apart from the principal directions. If one principal direction is found to be, for example, 40° then the other principal direction can be determined as either (40° + 90° =) 130° or (40° - 90° =) -50°. The angles of maximum and minimum in-plane shear stress can then be determined as either (40° + 45° =) 95° or (40° - 45° =) - 5°. It is also acceptable to add or subtract 45° from 130° or from – 50°.</p></li>
 <li><p>Given the variety of different of possible correct angles, we will use a convention that principal directions and angles of maximum and minimum shear stress will be calculated in the range – 90° ≤ θ ≤ + 90°.</p></li>
 </ol>
 <p>If desired, the principal stresses and max./min. shear stresses can be calculated directly without first finding the principal directions:</p>
-<p><span id="eq-12.3"><span class="math display">\[
+<p><span id="eq-12.5"><span class="math display">\[
 \boxed{\begin{gathered}
-\sigma_{1,2}=\frac{\sigma_x+\sigma_y}{2} \pm \sqrt{\left(\frac{\sigma_x-\sigma_y}{2}\right)^2+\tau_{x y}{ }^2} \\
+\sigma_{1,2}=\frac{\sigma_x+\sigma_y}{2} \pm \sqrt{\left(\frac{\sigma_x-\sigma_y}{2}\right)^2+\tau_{x y}{ }^2} \\[10pt]
 \tau_{x \prime y^{\prime}}= \pm \sqrt{\left(\frac{\sigma_x-\sigma_y}{2}\right)^2+\tau_{x y}{ }^2}
 \end{gathered}}
-\tag{12.3}\]</span></span></p>
+\tag{12.5}\]</span></span></p>
 <div class="line-block"><em>where</em><br>
 <em>𝜎<sub>1,2</sub> = Principal stresses [Pa, psi]</em><br>
 <em>𝜎<sub>x</sub> = Average normal stress in the x-direction, prior to any transformation [Pa, psi]</em><br>
@@ -731,7 +941,7 @@ Figure&nbsp;12.8: Plot showing how normal stress σx’ varies with angle θ.
 <p>Some useful conclusions that can be drawn simply by studying the principal plane and plane of max/min shear stress equations are as follows:</p>
 <ol type="1">
 <li><p>If the shear stress transformation equation given in <a href="#sec-12.1" class="quarto-xref"><span>Section 12.1</span></a> is set equal to 0 in order to find the plane at which shear stress is equal to 0, we would arrive at the same equation as the Tan(2θ<sub>p</sub>) found above. We can then conclude that <u>shear stress is 0 on the principal planes</u>. It can also be said that if the shear stress is found to be 0 on any given plane, then that plane must be a principal plane.</p></li>
-<li><p>The equation for Tan(2θ<sub>s</sub>) is the negative inverse of the equation for Tan (2θ<sub>p</sub>). This means that 2θ<sub>s</sub> = 2θ<sub>p</sub> ± 90° or θ<sub>s</sub> = θ<sub>p</sub> ± 45°. Recognizing this can allow one to calculate one set of angles more efficiently once the other is found.</p></li>
+<li><p>The equation for tan (2θ<sub>s</sub>) is the negative inverse of the equation for tan (2θ<sub>p</sub>). This means that 2θ<sub>s</sub> = 2θ<sub>p</sub> ± 90° or θ<sub>s</sub> = θ<sub>p</sub> ± 45°. Recognizing this can allow one to calculate one set of angles more efficiently once the other is found.</p></li>
 <li><p>If either of the θ<sub>s</sub> angles are substituted into the normal stress transformation equation, the normal stress would work out to be the average stress <span class="math inline">\(\left(\frac{\sigma_x+\sigma_y}{2}\right)\)</span>. Once again, this recognition can help make determining the total stress state on the plane of max/min shear stress more efficient.</p></li>
 </ol>
 <p><a href="#exm-12.3" class="quarto-xref">Example&nbsp;<span>12.3</span></a> demonstrates the calculation of the principal stresses, the maximum in-plane shear stress, and the orientations that these stresses occur at.</p>
@@ -773,52 +983,88 @@ Solution
 <ol type="1">
 <li><p>Find the principal planes using<br>
 <span class="math display">\[
-\operatorname{Tan}\left(2 \theta_p\right)=\frac{2 \tau_{x y}}{\left(\sigma_x-\sigma_y\right)}
+\begin{aligned}
+&amp; \operatorname{tan}\left(2 \theta_p\right)=\frac{2 \tau_{x y}}{\left(\sigma_x-\sigma_y\right)} \\
+\end{aligned}
 \]</span><br>
 <br>
 With σ<sub>x</sub> = -80 MPa, σ<sub>y</sub> = 50 MPa, and τ<sub>xy</sub> = -25 MPa, we get:</p>
-<p>θ<sub>p</sub> = 10.52° based on the answer from the calculator.</p>
+<p><span class="math display">\[
+\begin{aligned}\tan (2\theta_p)&amp;=\frac{2\tau_{xy}}{(\sigma_x-\sigma_y)}\\[10pt]
+&amp;=\frac{2*-25 MPa}{(-80 MPa - 50 MPa)}\\[10pt]
+&amp;=.3846\end{aligned}
+\]</span></p>
+<p><span class="math display">\[
+2\theta_p=tan^{-1}(.3846) = 21.038^\circ\\
+\theta_p=10.52^\circ
+\]</span></p>
+<p>So one of the principal angles is 𝜃<sub>p</sub> = 10.52°.</p>
 <p>The other angle is then θ<sub>p</sub> = 10.52° + 90° = 100.52°</p>
-<p>So the principal plane angles are 10.52° and 100.52°.</p></li>
+<p>Thus, the principal plane angles are 10.52° and 100.52°.</p></li>
 <li><p>Subbing θ<sub>p</sub> = 10.52° into:<br>
 <span class="math display">\[
-\sigma_n=\frac{\sigma_x+\sigma_y}{2}+\frac{\sigma_x-\sigma_y}{2} \cos (2 \theta)+\tau_{x y} \sin (2 \theta)
+\begin{aligned}
+&amp; \sigma_n=\frac{\sigma_x+\sigma_y}{2}+\frac{\sigma_x-\sigma_y}{2} \cos (2 \theta)+\tau_{x y} \sin (2 \theta) \\
+\end{aligned}
 \]</span></p>
-<p>gives σ<sub>n</sub> = -84.6 MPa and subbing θ<sub>p</sub> = 100.52° in gives σ<sub>n</sub> = 54.6 MPa.</p>
-<p>Since 54.6 MPa is the most positive of the two principal stresses, σ<sub>1</sub> = 54.6 MPa and σ<sub>2</sub> = -84.6 MPa.</p>
-<p>The 54.6 MPa would go on the rotated x-face and the -85.6 MPa would go on the rotated y-face of the stress element rotated counterclockwise 100.52°.<br>
+<p>gives:</p>
+<p><span class="math display">\[
+\begin{aligned}&amp; \sigma_{n_1}=\frac{-80{~MPa}+50{~MPa}}{2}+\frac{-80{~MPa}-50{~MPa}}{2}\cos(2*10.52^\circ)-25{~MPa}*\sin(2*10.52^\circ) \\[10pt]
+&amp; \sigma_{n_1}=-84.65{~MPa} \\\end{aligned}
+\]</span></p>
+<p>and subbing θ<sub>p</sub> = 100.52° into the same equation gives:</p>
+<p><span class="math display">\[
+\begin{aligned}&amp; \sigma_{n_2}=\frac{-80{~MPa}+50{~MPa}}{2}+\frac{-80{~MPa}-50{~MPa}}{2}\cos(2*100.52^\circ)-25{~MPa}*\sin(2*100.52^\circ) \\[10pt]
+&amp; \sigma_{n_2}=54.65{~MPa}\end{aligned}
+\]</span></p>
+<p>Since 54.7 MPa is the more positive of the two principal stresses, σ<sub>1</sub> = 54.7 MPa and σ<sub>2</sub> = -84.7 MPa.</p>
+<p>Based on the above results, we know that rotating the stress element counterclockwise by 10.52° results in σ<sub>2</sub> = -84.7 MPa on the x’ face and σ<sub>1</sub> = 54.7 MPa on the y’ face.<br>
 <br>
-Conversely, if the stress element is rotated counterclockwise by 10.52°, the stress on the rotated x-face would be -84.6 MPa and the stress on the rotated y-face would be 54.6 MPa.</p>
-<p>Drawing the stress element rotated to the principal planes:</p>
-<p><img src="images/CH12 figures/example 12.3 part 2.png" class="img-fluid" width="245"><br>
-<br>
-Notice that the stress element looks the same no matter which angle is used for the rotation. Also note that the shear stress on the principal plane is 0.</p></li>
+Conversely, if the stress element is rotated counterclockwise by 100.52°, the stress on the x’ face would be 54.7 MPa and the stress on the y’ face would be -84.7 MPa.</p>
+<p>Drawing the stress element rotated to the principal plane θ<sub>p</sub> = 10.52°:</p>
+<p><img src="images/chapter 12 figure edits/example 12.3 part 2.png" class="img-fluid" width="354"></p>
+<p>Notice that the stress element looks the same no matter which angle is used for the rotation. Also note that the shear stress on the principal plane is 0.</p></li>
 <li><p>Next we will find the planes of max/min in-plane shear planes as well as the corresponding shear stresses. We could use:<br>
 <span class="math display">\[
-\operatorname{Tan}\left(2 \theta_s\right)=-\frac{\left(\sigma_x-\sigma_y\right)}{2 \tau_{x y}}
+\tan (2\theta_s)=-\frac{(\sigma_x-\sigma_y)}{2 \tau_{x y}}
 \]</span></p>
-<p>But since we already have the θ<sub>p</sub> angles, we will use the fact that the max/min in-plane shear stress planes are +/- 45° from those. We can choose either θ<sub>p</sub> angle to add and subtract the 45° to and from. The final orientation of the element would be the same. Since it is generally easier to visualize angle rotations smaller in magnitude than 90, so we will use the smaller θ<sub>p</sub> value.<br>
+<p>But since we already have the θ<sub>p</sub> angles, we can also more easily use:</p>
+<p><span class="math display">\[
+\theta_S=\theta_p \pm 45^\circ
+\]</span></p>
+<p>We can choose either θ<sub>p</sub> angle to add and subtract the 45° to and from. The final orientation of the element would be the same. Since it is generally easier to visualize angle rotations smaller in magnitude than 90°, we will use the smaller θ<sub>p</sub> value,</p>
+<p><br>
 So θ<sub>s</sub> = 10.52° +/- 45° = 55.5° and -34.5°.</p></li>
 <li><p>Subbing θ<sub>s</sub> = 55.5° into:<br>
 <span class="math display">\[
 \tau_{n t}=-\frac{\sigma_x-\sigma_y}{2} \sin (2 \theta)+\tau_{x y} \cos (2 \theta)
 \]</span></p>
-<p>gives τ<sub>nt</sub> = 69.6 MPa. Since this is a positive value, we know that this is the max in-plane shear stress and that θs = -34.5 ° should give τnt = -69.6 MPa = τ<sub>min</sub> (in-plane).</p>
-<p>So if we rotate the stress element counterclockwise by 55.5°, we would draw a positive shear stress and if we rotate it clockwise 34.5 degrees, we would draw a negative shear stress.</p></li>
-<li><p>The normal stress on the plane of max/min in-plane shear stress is<br>
+<p>gives <span class="math display">\[
+\begin{aligned}
+&amp;\tau_{nt}=-\frac{-80{~MPa}-50{~MPa}}{2}\sin(2*55.5^\circ)-25{~MPa}\cos(2*55.5^\circ)\\
+&amp;\tau_{nt}=69.6{~MPa}
+\end{aligned}
+\]</span></p>
+<p>Since this is a positive value, we know that this is the max in-plane shear stress and that θ<sub>s</sub> = -34.5° should give τ<sub>nt</sub> = -69.6 MPa = τ<sub>min</sub> (in-plane).</p>
+<p>If we rotate the stress element counterclockwise by 55.5°, we would draw a positive shear stress and if we rotate it clockwise 34.5°, we would draw a negative shear stress.</p></li>
+<li><p>The normal stress on the plane of max/min in-plane shear stress is:<br>
 <span class="math display">\[
-\sigma=\sigma_{avg}=\frac{\left(\sigma_x+\sigma_y\right)}{2}=-15 \mathrm{MPa}
+\begin{aligned}
+&amp;\sigma=\sigma_{avg}=\frac{\left(\sigma_x+\sigma_y\right)}{2}\\
+&amp;\sigma_{avg}=\frac{-80{~MPa}+50{~MPa}}{2}\\
+&amp;\sigma_{avg}=-15{~MPa}
+\end{aligned}
 \]</span></p></li>
 </ol>
 <p>Drawing the stress rotated to the planes of max/min shear stress:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH12 figures/example 12.3 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="350"></p>
+<p><img src="images/chapter 12 figure edits/exampler 12.3 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="359"></p>
 </figure>
 </div>
 <p>Once again, notice that the stress element looks fundamentally the same regardless of which θ<sub>s</sub> angle is used.</p>
 <p><strong>θ<sub>p1</sub> = 100.52° and θ<sub>p2</sub> = 10.52°</strong></p>
-<p><strong>σ<sub>1</sub> = 54.6 MPa and σ<sub>2</sub> = - 84.6 MPa</strong></p>
+<p><strong>σ<sub>1</sub> = 54.7 MPa and σ<sub>2</sub> = - 84.7 MPa</strong></p>
 <p><strong>θ<sub>s</sub> = 55.5° and -34.5°</strong></p>
 <p><strong>τ<sub>max</sub> (in-plane) = 69.6 MPa</strong></p>
 <p><strong>τ<sub>min</sub> (in-plane) = - 69.6 MPa</strong></p>
@@ -842,9 +1088,9 @@ Step-by-step: Principal Stresses and max/min shear stress
 <div class="callout-body-container callout-body">
 <p>Given a general stress state (σx, σy, and τxy) at a point in the x-y plane where x is the horizontal axis positive to the right and y is the vertical axis positive upwards:</p>
 <ol type="1">
-<li><p>Use the Tan(2θ<sub>p</sub>) equation to find the planes of principal stresses. The angle reported by the calculator provides twice one of the angles. The other is determined by adding or subtracting 90° from the first.</p></li>
+<li><p>Use the tan(2θ<sub>p</sub>) equation to find the planes of principal stresses. The angle reported by the calculator provides twice one of the angles. The other is determined by adding or subtracting 90° from the first.</p></li>
 <li><p>Substitute the two θ<sub>p</sub> angles into the σ<sub>n</sub> transformation equation to determine the principal stresses. The most positive of the two is deemed σ<sub>1</sub> and the other is σ<sub>2</sub>. Alternatively, only sub one of the angles into the stress transformation to get one of the principal stresses. The other principal stress can be calculated using stress invariance.</p></li>
-<li><p>Use the Tan(2θ<sub>s</sub>) equation to find the planes of max/min in-plane shear stress. Alternatively, add/subtract 45° to one of the principal plane angles.</p></li>
+<li><p>Use the tan(2θ<sub>s</sub>) equation to find the planes of max/min in-plane shear stress. Alternatively, add/subtract 45° to one of the principal plane angles.</p></li>
 <li><p>Substitute one of the θs angles into the τ<sub>nt</sub> equation to determine whether it leads to the max in-plane shear stress or the min. The other angle will lead to a shear stress of equal magnitude but opposite sign.</p></li>
 <li><p>Calculate the average stress. This stress is the normal stress on the x’ and y’ faces when the element is rotated to the planes of max/min in-plane shear stress.</p></li>
 </ol>
@@ -852,187 +1098,117 @@ Step-by-step: Principal Stresses and max/min shear stress
 </div>
 </details>
 </section>
-<section id="sec-12.3" class="level2" data-number="12.3">
-<h2 data-number="12.3" class="anchored" data-anchor-id="sec-12.3"><span class="header-section-number">12.3</span> Mohr’s Circle</h2>
+<section id="sec-12.4" class="level2" data-number="12.4">
+<h2 data-number="12.4" class="anchored" data-anchor-id="sec-12.4"><span class="header-section-number">12.4</span> Mohr’s Circle</h2>
 <details>
 <summary>
 Click to expand
 </summary>
-<p>As an alternative to using equations to determine principal planes and stresses as well as max/min shear planes and stresses, one can use a graphical method known as Mohr’s Circle. The stress transformation equations can be seen to actually be equations of a circle where the perimeter of the circle consists of coordinates points that correspond to normal stress on the horizontal axis and shear stress on the vertical axis. The advantage of using Mohr’s Circle is that it does not involve needing to recall equations and can be quick and efficient to use with some practice.</p>
-<p>To construct the circle (refer to the fully constructed Mohr’s circle in <a href="#fig-12.11" class="quarto-xref">Figure&nbsp;<span>12.11</span></a>):</p>
-<ol type="1">
-<li><p>To start, draw a set of coordinate axes where normal stress will be on the horizontal axis and shear stress will be on horizontal axis. Note in 12.9 that the shear stress is labeled with a (CW) for clockwise on the positive side and a (CCW) for counterclockwise on the negative side as a reminder of how the signs on the vertical coordinates are determined.</p></li>
-<li><p>Plot the center of the circle, C, which will lie on the normal stress axis at a point equal to the average normal stress.<br>
-<span class="math display">\[
-C=\left(\frac{\sigma_x+\sigma_y}{2}, 0\right)
-\]</span></p></li>
-<li><p>Next, one coordinate point on the circle needs to be established based on the given stress state and plotted on the axes. This point, which we will call the <u>x-point,</u> will come from the stresses drawn on the positive x-face of the stress element. The normal stress is positive if tensile and negative if compressive. The sign on the vertical coordinate, the shear stress, will depend on the direction of rotation that the shear stress on the x-face will cause. If it would tend to rotate the element clockwise, it will be plotted on the positive side of the vertical axis and vice versa.</p>
-<p>On the representative stress element in <a href="#fig-12.9" class="quarto-xref">Figure&nbsp;<span>12.9</span></a> below, the normal stress on the x face is tensile and the upwards shear stress would tend to cause the element rotate counterclockwise, so the x-point is (+σ<sub>x</sub>, -τ<sub>xy</sub>).</p></li>
-</ol>
-<div id="fig-12.9" class="quarto-float quarto-figure quarto-figure-center anchored">
+<p>As an alternative to using equations to determine principal planes and stresses as well as max/min shear planes and stresses, one can use a graphical method known as Mohr’s Circle. This method is based on the fact that the stress transformation equations are actually parametric equations of a circle. The perimeter of the circle consists of coordinate points that correspond to normal stress on the horizontal axis and shear stress on the vertical axis. The advantage of using Mohr’s Circle is that it does not involve needing to recall equations and can be quick and efficient to use with some practice.</p>
+<p>To illustrate the construction of Mohr’s circle, we will use the reference stress state element in <a href="#fig-12.11" class="quarto-xref">Figure&nbsp;<span>12.11</span></a>.</p>
+<div id="fig-12.11" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-12.9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/CH12 figures/figure 12.9.png" class="img-fluid figure-img" width="696">
+<div aria-describedby="fig-12.11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/CH12 figures/figure 12.8a.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="352">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12.9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;12.9: Positive x-face of a stress element showing the normal and shear stresses used to plot the coordinate point on Mohr’s circle. On this face, the normal stress is positive and the shear stress causes the element to rotate counterclockwise.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12.11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.11: Reference stress state element
 </figcaption>
 </figure>
 </div>
-<p>We could alternatively use what we will call the y-point, which comes from the stresses acting on the positive y-face of the stress element with the same sign conventions above. For the representative stress element of <a href="#fig-12.9" class="quarto-xref">Figure&nbsp;<span>12.9</span></a>, the normal stress on the y face (<a href="#fig-12.10" class="quarto-xref">Figure&nbsp;<span>12.10</span></a>) is drawn in the tensile direction and the rightwards shear stress would tend to cause the element to rotate clockwise, so the y-point is (+σ<sub>y</sub>, +τ<sub>xy</sub>).</p>
-<div id="fig-12.10" class="quarto-float quarto-figure quarto-figure-center anchored">
+<p>Now we can take the following steps (the fully constructed circle can be found in <a href="#fig-12.16" class="quarto-xref">Figure&nbsp;<span>12.16</span></a>):</p>
+<ol type="1">
+<li><p>To start, draw a set of coordinate axes where normal stress will be on the horizontal axis and shear stress will be on horizontal axis. Note in <a href="#fig-12.14" class="quarto-xref">Figure&nbsp;<span>12.14</span></a> that the shear stress is labeled with a (CW) for clockwise on the positive side and a (CCW) for counterclockwise on the negative side. The reason is explained in step 2 below.</p></li>
+<li><p>Plot the <u>x-point.</u> The x-point represents the stresses applied to the x-face of the stress element, as shown in <a href="#fig-12.12" class="quarto-xref">Figure&nbsp;<span>12.12</span></a>, with coordinates (𝜎<sub>x</sub>, 𝜏<sub>xy</sub>). The normal stress coordinate is positive if tensile and negative if compressive. The sign of the shear stress coordinate depends on the direction of rotation that the shear stress on the x-face will cause. If it causes the element to rotate clockwise, it is positive, and if causes the element to rotate counterclockwise, it is negative..</p>
+<p>On the stress element in <a href="#fig-12.11" class="quarto-xref">Figure&nbsp;<span>12.11</span></a>, the normal stress on the x-face is tensile and the upwards shear stress tends to cause the element to rotate counterclockwise, so the x-point is (+σ<sub>x</sub>, -τ<sub>xy</sub>).</p>
+<div id="fig-12.12" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-12.10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/CH12 figures/figure 12.10.png" class="img-fluid figure-img" width="348">
+<div aria-describedby="fig-12.12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/CH12 figures/figure 12.9 revised.png" class="img-fluid figure-img" width="294">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12.10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;12.10: The positive y-face of a stress element showing the normal and shear stresses used to plot the coordinate point on Mohr’s circle. On this face, the normal stress is positive and the shear stress causes the element to rotate clockwise.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12.12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.12: Stresses applied to positive x-face form the x-point.
+</figcaption>
+</figure>
+</div></li>
+<li><p>Plot the <u>y-point</u>. Similarly to the x-point, the y-point generally consists of coordinates (𝜎<sub>y</sub>, 𝜏<sub>xy</sub>). The sign convention is the same as for the x-point, but the sign of the shear stress coordinate depends on the rotation caused by the shear stress on the positive y-face. As illustrated in <a href="#fig-12.13" class="quarto-xref">Figure&nbsp;<span>12.13</span></a> for the stress element given in <a href="#fig-12.11" class="quarto-xref">Figure&nbsp;<span>12.11</span></a>, the normal stress on the y face is tensile and the rightwards shear stress tends to cause the element to rotate clockwise, so the y-point is (+σ<sub>y</sub>, +τ<sub>xy</sub>).</p></li>
+</ol>
+<div id="fig-12.13" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-12.13-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/CH12 figures/figure 12.9.png" class="img-fluid figure-img" width="323">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12.13-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.13: Stresses applied to positive y-face form the xy-point.
+</figcaption>
+</figure>
+</div>
+<div id="fig-12.14" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="369">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-12.14-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/chapter 12 figure edits/figure 12.14.png" id="fig-12.14" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" width="369">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-12.14-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.14
 </figcaption>
 </figure>
 </div>
 <ol start="4" type="1">
-<li><p>Once the center and either the x-point or y-point are plotted, draw a line that connects them. This line is the radius of the circle. This radius, R, can be determined using of the Pythagorean Theorem on the triangle formed between C, σ<sub>x</sub>, and the x-point. Since the radius of the circle will be constant, we can now draw the rest of the circle.<br>
+<li><p>Draw the circle around the diameter formed by connecting the x- and y-points.The center of the circle is the average normal stress:</p>
+<p><span class="math display">\[
+C=(\frac{\sigma_x+\sigma_y}{2},0)
+\]</span></p>
+<p>Note that use of the variable “C” below refers to the average nomal stress, <span class="math inline">\(\frac{\sigma+\sigma_y}{2}\)</span> .</p>
+<p>Note that the radial line that goes from C to the x-point represents the reference x-axis and the radius from C to the y-point represents the reference y-axis.</p></li>
+<li><p>The radius, R, can be determined using of the Pythagorean Theorem on the triangle formed between C, σ<sub>x</sub>, and the x-point.<br>
 <span class="math display">\[
 R=\sqrt{\left(\sigma_x-C\right)^2+\tau_{x y}^2}
-\]</span></p></li>
-<li><p>Recalling that the shear stress is zero on the principal plane, we can observe that that corresponds exactly to the normal stress axis so we can identify σ<sub>1</sub> to be the normal stress on the right extreme of the circle and σ<sub>2</sub> to be the normal stress on the left extreme of the circle. Furthermore, based on inspection of the circle and the known points, we can see that σ<sub>1</sub> = C + R and σ<sub>2</sub> = C - R.</p></li>
-<li><p>It can also be seen that the max and min in-plane shear stress would be at the bottom and top of the circle, respectively, so we can say that τ<sub>max</sub> = +R and τ<sub>min</sub> = -R.</p>
-<p>The max shear stress is at the bottom since a positive shear stress on the positive x-face would cause the stress element to rotate counterclockwise.</p>
-<p>The circle also confirms that the normal stress on the plane of max/min in-plane shear stress is <span class="math inline">\(\mathrm{C}=\sigma_{avg}=\frac{\sigma_x+\sigma_y}{2}\)</span></p></li>
-<li><p>To find the angles of the principal planes and max/min shear stress, or to use the circle to perform stress transformations to arbitrary planes, one must note that rotations around the circle represent twice the actual amount of rotation required to get from the stress state in one plane to the stress state in the rotated plane. Furthermore, rotations counterclockwise from the x-point are considered to be positive angles and the rotations clockwise from the x-point are considered to be negative angles.</p>
-<p>Thus, the angle between the radial line that connects C and the x-point to the principal plane (normal stress axis) is 2θp. This angle can be determined by applying right triangle trigonometry principles to the right triangle used to find the radius:<br>
-<span class="math display">\[
-\tan (2 \theta p)=\frac{C+\sigma_x}{\tau_{x y}}
-\]</span><br>
-As discussed in <a href="#sec-12.2" class="quarto-xref"><span>Section 12.2</span></a>, the inverse tangent function will have two solutions. One of those solutions (divided by 2) will be the angle that corresponds to rotating from the x point to the σ1 side of the circle from which means that this principal angle leads to σ1 acting on the rotated x face (x’ face) of the stress element and therefore σ<sub>2</sub> acts on the rotated y face (y’ face). The other solution to θ<sub>p</sub> will correspond to the angle necessary to rotate from the x point to the σ2 side of the circle which will lead to σ<sub>2</sub> acting on the x’ face and σ1 acting on the y’ face.</p></li>
-<li><p>The angle to the plane of max/min in-plane shear stress can be found in a similar manner. By visual inspection one can see that the tan(2θs) will be the inverse of tan(2θp). Alternatively, it can be calculated as 2θs = 90° - 2θp. One should note, however, the directions of the angles for rotation. &nbsp;Recalling the convention used to apply sign to the shear stress coordinate, the angle that goes from the x-point to the negative side of the shear stress axis will correspond to the rotation that results in the maximum in-plane shear stress and vice versa.</p></li>
-<li><p>Once these quantities are known, the use of the circle to perform stress transformations at arbitrary planes requires making similar trigonometric calculations. This process is better illustrated in <a href="#exm-12.4" class="quarto-xref">Example&nbsp;<span>12.4</span></a>.</p></li>
-</ol>
-<div id="fig-12.11" class="quarto-layout-panel">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-12.11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="quarto-layout-row quarto-layout-valign-bottom">
-<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-12.11" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-12.11a" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-subfloat-fig figure">
-<div aria-describedby="fig-12.11a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/CH12 figures/figure 12.11 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" data-ref-parent="fig-12.11" width="546">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-12.11a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(a) Mohr’s circle
-</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-12.11" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-12.11b" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-subfloat-fig figure">
-<div aria-describedby="fig-12.11b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/CH12 figures/figure 12.11 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" data-ref-parent="fig-12.11" width="270">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-12.11b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(b) Stress Element
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12.11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;12.11: Fully constructed Mohr’s circle for the representative stress element shown
-</figcaption>
-</figure>
-</div>
-</details>
-</section>
-<section id="sec-12.4" class="level2" data-number="12.4">
-<h2 data-number="12.4" class="anchored" data-anchor-id="sec-12.4"><span class="header-section-number">12.4</span> Mohr’s Circle in 3-Dimensions and Absolute Max Shear Stress</h2>
-<details>
-<summary>
-Click to expand
-</summary>
-<p>The methods discussed so far in Sections 12.2 and 12.3 provide the maximum in-plane shear stress that arises from planar rotations in the 2D plane, but as discussed in <a href="#sec-12.2" class="quarto-xref"><span>Section 12.2</span></a>, the actual maximum shear stress may result from an out of plane rotation. Thus, while this text is generally restricted to planar (2D) stress states, we need to consider a 3D stress element in order to determine the absolute maximum shear stress.</p>
-<p>However, we are still considering only cases in which the stresses act in just two of the three principal directions. For the sake of this discussion, we will say that the stresses act in only the x and y directions, though it could generally be any combination of two axes. If stresses act only in the x and y directions, then a 3D stress element would include these stresses on the x and y faces, but the normal stress on the z face would be zero and the shear stress in the <em>xz</em> and <em>yz</em> planes would also be zero (see <a href="#fig-12.12" class="quarto-xref">Figure&nbsp;<span>12.12</span></a>). Recalling the earlier finding that if the shear stress is 0 on a given plane, the plane is a principal plane, we can say that the <em>xz</em> plane and the <em>yz</em> planes are principal planes with respect to rotation of the element around the y and x axes respectively.</p>
-<p>It we start with the stress element already rotated in the xy plane to one of its principal planes, we know that the stresses on the x and y faces in this plane (x’ and y’ faces) will be σ1 and σ2 or vice versa. This means that σ<sub>1</sub> (or σ<sub>2</sub>) and σ<sub>z</sub> are the principal stresses on the yz plane and the σ<sub>1</sub> (or σ<sub>2</sub>) and σ<sub>z</sub> are the principal stresses on the <em>xz</em> plane. Since we are still dealing with plane stress, we know that σ<sub>z</sub> = 0. In the case of plane stress then, there are principal stresses σ<sub>1</sub> and σ<sub>2</sub> as above, as well as σ<sub>3</sub> = 0.</p>
-<div id="fig-12.12" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-12.12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/CH12 figures/figure 12.12.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="641">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12.12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;12.12: 3D stress element with stress acting in only 2 or the 3 principal directions.
-</figcaption>
-</figure>
-</div>
-<p>We can draw Mohr’s circle for each of these three planes on one plot. We will consider three cases:</p>
-<ol type="1">
-<li><p>σ<sub>1</sub> and σ<sub>2</sub> on based on the xy plane are both positive</p></li>
-<li><p>σ<sub>1</sub> and σ<sub>2</sub> on based on the xy plane are both negative</p></li>
-<li><p>σ<sub>1</sub> and σ<sub>2</sub> on based on the xy plane are opposite signs</p></li>
-</ol>
-<p><strong>Case 1:</strong></p>
-<p>Referring to <a href="#fig-12.13" class="quarto-xref">Figure&nbsp;<span>12.13</span></a>, the larger inner circle is Mohr’s circle for the x-y plane as can be noted by the fact that the max and min normal stresses on that circle are σ1 and σ2, respectively. The smaller inner circle is Mohr’s circle for either the x-z or the y-z plane (whichever one has σ<sub>2</sub> as the principal stress on the non-z face). The largest circle is Mohr’s circle for the other of the two non xy planes. We can see in this case that the largest shear stress is given by the radius of the largest circle which is σ<sub>1</sub>/2.</p>
-<p>So in the case that σ<sub>1</sub> and σ<sub>2</sub> are both positive, the absolute max shear stress is:</p>
-<p><span class="math display">\[
-\tau_{(\max )absolute}=\left|\frac{\sigma_1}{2}\right|
 \]</span></p>
-<p>The absolute value is there since we now the max shear stress must be a positive shear stress given that the max and min shear stresses are negatives of each other.</p>
-<div id="fig-12.13" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-12.13-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/CH12 figures/figure 12.13.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="381">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12.13-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;12.13: The three planes represented on Mohr’s circle for the case where both the principal stresses in the xy plane are positive.
-</figcaption>
-</figure>
-</div>
-<p><strong>Case 2:</strong></p>
-<p>Referring to <a href="#fig-12.14" class="quarto-xref">Figure&nbsp;<span>12.14</span></a>, all the statements made in Case 1 still hold true except that the radius of the largest circle is now σ<sub>2</sub>/2.</p>
-<p>So in the case that σ1 and σ2 are both positive, the absolute max shear stress is:</p>
-<p><span class="math display">\[
-\tau_{(\max )absolute}=\left|\frac{\sigma_2}{2}\right|
-\]</span></p>
-<div id="fig-12.14" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-12.14-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/CH12 figures/figure 12.14.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="385">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12.14-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;12.14: The three planes represented on Mohr’s circle for the case where both the principal stresses in the xy plane are negative.
-</figcaption>
-</figure>
-</div>
-<p><strong>Case 3:</strong></p>
-<p>Referring to <a href="#fig-12.15" class="quarto-xref">Figure&nbsp;<span>12.15</span></a>, this case is different than the other two because in this case, the Mohr’s circle for the xy plane is the largest circle. This means that the absolute max shear stress and the maximum in-plane shear stress are the same.</p>
-<p>So in the case that σ<sub>1</sub> and σ<sub>2</sub> are opposite in sign, the absolute max shear stress is:</p>
-<p><span class="math display">\[
-\tau_{(\max )absolute}=\left|\frac{\sigma_1-\sigma_2}{2}\right|
-\]</span></p>
-<div id="fig-12.15" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<div id="fig-12.15" class="quarto-float quarto-figure quarto-figure-center anchored" width="479">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-12.15-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/CH12 figures/figure 12.15.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="407">
+<img src="images/chapter 12 figure edits/figure 12.15.png" id="fig-12.15" class="img-fluid figure-img" width="479">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12.15-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;12.15: The three planes represented on Mohr’s circle for the case where the principal stresses in the xy plane are opposite signs.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-12.15-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.15
+</figcaption>
+</figure>
+</div></li>
+<li><p>Recalling that the shear stress is zero on the principal plane, we can see that principal plane is simply the normal stress axis. Thus, we can identify σ<sub>1</sub> to be the point on the right extreme of the circle and σ<sub>2</sub> to be the point on the left extreme of the circle (see figure):</p>
+<p><span class="math display">\[
+\sigma_1=C+R\\
+\sigma_2=C-R\\
+\]</span></p>
+<p>These points can be found on <a href="#fig-12.13" class="quarto-xref">Figure&nbsp;<span>12.13</span></a>.</p></li>
+<li><p>The max and min in-plane shear stress is at the bottom and top of the circle, respectively:</p>
+<p><span class="math display">\[
+\tau_{max}=+R\\
+\tau_{min}=-R\\
+\]</span></p>
+<p>The max shear stress is at the bottom because of the shear stress plotting convention discussed in steps 2 and 3.</p>
+<p>The vertical diameter that connects 𝜏<sub>max</sub> and 𝜏<sub>min</sub> is the plane of max/min in-plane shear stress.</p>
+<p>Since that plane passes through the center of the circle, we can confirm that the normal stress on the plane of max/min shear stress is <span class="math inline">\(\mathrm{C}=\sigma_{avg}=\frac{\sigma_x+\sigma_y}{2}\)</span>.</p>
+<p>These points can be found on <a href="#fig-12.16" class="quarto-xref">Figure&nbsp;<span>12.16</span></a>.</p></li>
+<li><p>Rotations around the circle represent twice the actual amount of rotation between planes. Furthermore, rotations counterclockwise from the x-point are positive angles and rotations clockwise from the x-point are negative angles.</p>
+<p>Thus, the angle between the principal plane and the x-point on the circle is 2θp. This angle can be determined by applying right triangle trigonometry principles to the right triangle used to find the radius:<br>
+<span class="math display">\[
+\tan (2 \theta p)=\frac{\tau_{x y}}{\sigma_x-C}
+\]</span><br>
+Looking at <a href="#fig-12.16" class="quarto-xref">Figure&nbsp;<span>12.16</span></a>, we can see that in this case, the 2𝜃<sub>p</sub> angle is a counterclockwise rotation from the reference x-axis to the principal axis, so if we were to draw the stress element rotated counterclockwise to 𝜃<sub>p</sub> , 𝜎<sub>1</sub> would be drawn on the x’ face and 𝜎<sub>2</sub> would be drawn on the y’ face.</p></li>
+<li><p>The angle to the plane of max/min in-plane shear stress, θ<sub>s</sub>, can be found in a similar manner. Visual inspection shows that 2θ<sub>s</sub> will be the complement of 2θ<sub>p</sub>. Recalling the convention used to apply sign to the shear stress coordinate, the angle that goes from the reference x-axis to the negative side of the shear stress axis will correspond to the rotation that results in the maximum in-plane shear stress and vice versa.</p>
+<p>Once these quantities are known, the use of the circle to perform stress transformations at arbitrary planes requires making similar trigonometric calculations. This process is better illustrated in <a href="#exm-12.4" class="quarto-xref">Example&nbsp;<span>12.4</span></a>.</p></li>
+</ol>
+<div id="fig-12.16" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-12.16-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/chapter 12 figure edits/figure 12.16.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="506">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12.16-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.16: Fully constructed Mohr’s circle
 </figcaption>
 </figure>
 </div>
-<p>More generally, given principal stresses σ<sub>1</sub>, σ<sub>2</sub>, and σ<sub>3</sub> = 0, the abosulte maximum shear stress can be determined from:</p>
-<p><span id="eq-12.4"><span class="math display">\[
-\boxed{\tau_{(\max)absolute}=\left|\frac{\sigma_{\max }-\sigma_{\min }}{2}\right|}
-\tag{12.4}\]</span></span></p>
-<div class="line-block"><em>where</em><br>
-<em>𝜏<sub>(max)absolute</sub> = Absolute maximum shear stress [Pa, psi]</em><br>
-<em>𝜎<sub>max</sub> = Maximum principal stress [Pa, psi]</em><br>
-<em>𝜎<sub>min</sub> = Minimum principal stress [Pa, psi]</em></div>
-<p>This works for any of the cases above:</p>
-<ul>
-<li><p>Case 1: σ<sub>max</sub> = σ<sub>1</sub>, σ<sub>min</sub> = 0</p></li>
-<li><p>Case 2: σ<sub>max</sub> = 0, σ<sub>min</sub> = σ<sub>2</sub></p></li>
-<li><p>Case 3: σ<sub>ma</sub>x = σ<sub>1</sub>, σ<sub>min</sub> = σ<sub>2</sub></p></li>
-</ul>
+<p><a href="#exm-12.4" class="quarto-xref">Example&nbsp;<span>12.4</span></a> demonstrates the use of Mohr’s Circle to find maximum/minimum stresses and to perform stress transformations.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1049,18 +1225,15 @@ Example 12.4
 <p><span class="theorem-title"><strong>Example 12.4</strong></span> &nbsp;</p>
 <p>
 </p>
-<p>For the stress state given by the stress element below, use Mohr’s Circle to find:</p>
-<ol type="1">
-<li><p>The principal planes and principal stresses. Sketch the stress element rotated to these planes.</p></li>
-<li><p>The max in-plane shear stress and the plane at which it acts. Sketch the stress element rotated to this plane.</p></li>
-<li><p>The stress state on the plane on which the stress element is rotated clockwise 40°. Sketch the stress element rotated to this plane.</p></li>
-</ol>
+<p>For the stress state given by on stress element below, use Mohr’s Circle to find:</p>
+<p>a) The principal planes and principal stresses. Sketch the stress element rotated to these planes.</p>
+<p>b) The max in-plane shear stress and the plane at which it acts. Sketch the stress element rotated to this plane.</p>
+<p>c) The stress state on the plane on which the stress element is rotated clockwise 40°. Sketch the stress element rotated to this plane.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/CH12 figures/example 12.4 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="320"></p>
 </figure>
 </div>
-<p><a href="#exm-12.4" class="quarto-xref">Example&nbsp;<span>12.4</span></a> demonstrates the use of Mohr’s circle for a stress transformation problem.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1073,58 +1246,146 @@ Solution
 </div>
 <div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Following the steps given in <a href="#sec-12.3" class="quarto-xref"><span>Section 12.3</span></a>:</p>
+<p>For parts a and b, follow the steps given in <a href="#sec-12.3" class="quarto-xref"><span>Section 12.3</span></a>:</p>
 <ol type="1">
 <li><p>The step of drawing the axes will be done as a part of step 3.</p></li>
-<li><p>Identify and plot the x-point: Looking at the positive x-face, the normal stress is compressive, so the horizontal coordinate will be -60 MPa. The shear stress arrow is upwards, which would tend to rotate the element counterclockwise, so the vertical coordinate will be negative, or -30 MPa. The x-point is then (-60,-30) MPa<br>
-<img src="images/CH12 figures/example 12.4 part 2.png" class="img-fluid" width="373"><br>
-Identify and plot the y-point: Looking at the positive y-face, the normal stress is tensile, so the horizontal coordinate will be +15 MPa. The shear stress arrow is to the right, which would tend to rotate the element clockwise, so the vertical coordinate will be positive, or +30 MPa. The y-point is then (15,30) MPa.<br>
-<img src="images/CH12 figures/example 12.4 part 3.png" class="img-fluid" width="374"><br>
-The points are shown plotted in step 3.</p></li>
+<li><p>Identify and plot the x-point: Looking at the positive x-face, the normal stress is compressive, so the horizontal coordinate will be -60 MPa. The shear stress arrow is upwards, which would tend to rotate the element counterclockwise, so the vertical coordinate will be negative, or -30 MPa. The x-point is then (-60,-30) MPa.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH12 figures/example 12.4 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="373"></p>
+</figure>
+</div></li>
+<li><p>Identify and plot the y-point: Looking at the positive y-face, the normal stress is tensile, so the horizontal coordinate will be +15 MPa. The shear stress arrow is to the right, which would tend to rotate the element clockwise, so the vertical coordinate will be positive, or +30 MPa. The y-point is then (15,30) MPa.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH12 figures/example 12.4 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="374"></p>
+</figure>
+</div></li>
 <li><p>Connect the two points on the circle and identify the center.<br>
 <span class="math display">\[
-C=\frac{\sigma_x+\sigma_y}{2}=\frac{-60+15}{2}=-22.5 \mathrm{MPa}
-\]</span><br>
-<img src="images/CH12 figures/example 12.4 part 4.png" class="img-fluid" width="444"></p></li>
-<li><p>The radius of the circle is: <span class="math inline">\(R=\sqrt{\left(\sigma_x-C\right)^2+\tau_{x y}^2}=\sqrt{(-60-(-22.5))^2+30^2}=48.02 \mathrm{MPa}\)</span></p></li>
-<li><p>We can now find σ1 by finding the distance from the origin to the rightmost point of the circle on the σ axis. Since C is negative, we can find distance to be C + R = -22.5 MPa + 48.02 MPa = 25.52 MPa.</p>
-<p>So σ<sub>1</sub> = 25.5 MPa</p>
-<p>We can find σ2 by finding the distance from the origin to the leftmost point of the circle on the σ axis. This distance can be expressed as C- R &nbsp;= -48.02 MPa – 22.5 MPa = -70.52 MPa</p>
-<p>So σ<sub>2</sub> = -70.5 MPa</p></li>
-<li><p>The max in-plane shear stress is the bottom most point of the circle which is simply R = 48.02 MPa, or τmax (in-plane) = 48.0 MPa.</p>
-<p>The normal stress on this plane is C = -22.5 MPa</p></li>
-<li><p>The principal planes can be found as: <span class="math inline">\(tan(2\theta_p)=\frac{\sigma_x-C}{\tau_{xy}}=\frac{-60{~MPa}-(-22.5{~MPa})}{30{~MPa}}\)</span><br>
-One solution to this equation yields θp = -25.67°. This is the angle of rotation for which σ<sub>2</sub> would be shown on the rotated x face. Note the negative angle means this would be a clockwise rotation.</p>
-<p>The other solution to the equation is that angle plus 90°, which in this case yields θ<sub>p</sub> = 64.33°. This is the angle of rotation for which σ1 would appear on the rotated x-face. The positive angle indicates this would be a counterclockwise rotation.<br>
-<img src="images/CH12 figures/example 12.4 part 5.png" class="img-fluid" width="301"></p></li>
-<li><p>With the θp angles known, we can see that the 2θ<sub>s</sub> = 90 - 2θ<sub>p</sub>, or θ<sub>s</sub> = 19.33° and -70.67°. In this case, a counterclockwise rotation of the x-point would bring it to the negative side of the vertical axis which corresponds to τmax, so we can say that θ<sub>s</sub> = 19.33° is the plane of max in-plane shear stress.<br>
-<img src="images/CH12 figures/example 12.4 part 6.png" class="img-fluid" width="473"></p></li>
-<li><p>Now we can use Mohr’s Circle to find the stress state on the plane where the stress element is rotated clockwise 40°. The circle is redrawn below for convenience.</p>
-<p>Recalling that rotations around the circle are twice the actual rotation, we will draw in a point (denoted as x’) that represents an 80 degree rotation clockwise from the x-point. Since we know from step 7 that the x-point is rotated 2* 25.7° below σ<sub>2</sub>, we also know that x’ is rotated 80 – 50.4 = 29.6° above σ<sub>2</sub>.<br>
-<img src="images/CH12 figures/example 12.4 part 7.png" class="img-fluid" width="265"><br>
-Since x’ is on the negative σ side and the positive τ side, we know that the normal stress on the x’ face is compressive and the shear stress arrow on the x’ face would tend to rotate the element clockwise (which corresponds to a negative shear stress).</p>
-<p>We can see from the circle that the shear stress is:</p>
-<p><span class="math display">\[
-\tau_{x'y'}=-Rsin(29.6^\circ)=-48.08{~MPa}*sin(29.6^\circ)=-23.7{~MPa}
+\begin{aligned}
+&amp;C=\frac{\sigma_x+\sigma_y}{2}\\
+&amp;C=\frac{-60{~MPa}+15{~MPa}}{2}\\
+&amp;C=-22.5{~MPa}
+\end{aligned}
 \]</span></p>
-<p>and</p>
-<p><span class="math display">\[
-\sigma_{x'}=C-Rcos(29.6^\circ)=-22.5{~MPa}-48.02{~MPa}*cos(29.6^\circ)=-64.3{~MPa}
-\]</span></p>
-<p>The stress on the rotated y face, σ<sub>y’</sub>, is obtained by finding the distance from the origin to the y’ point which is directly across the circle from x’.</p>
-<p><span class="math display">\[
-\sigma_{y'}=C+Rcos(29.6^\circ)=-22.5{~MPa}+48.02{~MPa}*cos(29.6^\circ)=19.3{~MPa}
-\]</span></p>
-<p>The rotated stress element can be drawn:<br>
-<img src="images/CH12 figures/example 12.4 part 8.png" class="img-fluid" width="323"></p></li>
+<p><img src="images/chapter 12 figure edits/example 12.4 part 4.png" class="img-fluid" width="439"></p></li>
+<li><p>The radius of the circle is:</p></li>
 </ol>
-<p><strong>σ<sub>1</sub> = 25.5 MPa on the principal plane θ<sub>p</sub> = 64.3°</strong></p>
-<p><strong>σ<sub>2</sub> = -70.5 MPa on the principal plane θ<sub>p</sub> = -25.7°</strong></p>
-<p><strong>τ<sub>max</sub> (in-plane) = 48.0 MPa on the plane θ<sub>s</sub> = 19.33°</strong></p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;R=\sqrt{(\sigma_x-C)^2+\tau_{xy}^2}\\[10pt]
+&amp;R=\sqrt{(-60{~MPa}-(-22.5{~MPa}))^2+(30{~MPa})^2}\\[10pt]
+&amp;R=48.02{~MPa}
+\end{aligned}
+\]</span></p>
+<p>6. We can now find σ<sub>1</sub>, which is the distance from the origin to the rightmost point of the circle on the σ axis. Since C is negative, we can find distance to be:</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;\sigma_1=C+R\\
+&amp;\sigma_1=-22.5{~MPa}+48.02{~MPa}\\
+&amp;\sigma_1=25.52{~MPa}
+\end{aligned}
+\]</span></p>
+<p>We can find σ<sub>2</sub>, which is the distance from the origin to the leftmost point of the circle on the σ axis. This distance can be expressed as:</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;\sigma_2=C-R\\
+&amp;\sigma_2=-22.5{~MPa}-48.02{~MPa}\\
+&amp;\sigma_2=-70.52{~MPa}
+\end{aligned}
+\]</span></p>
+<ol start="7" type="1">
+<li>The max in-plane shear stress is the bottom most point of the circle which is simply R = 48.02 MPa, or τ<sub>max</sub> (in-plane) = 48.0 MPa.</li>
+</ol>
+<p>The normal stress on this plane is C = -22.5 MPa.</p>
+<ol start="8" type="1">
+<li>Find the principal planes. One of them can be found by using the triangle drawn in the third quadrant of the circle:</li>
+</ol>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;\tan(2\theta_p)=\frac{\tau_{xy}}{\sigma_x-C}\\
+&amp;\tan(2\theta_p)=\frac{30{~MPa}}{-60{~MPa}-(-22.5{~MPa})}\\
+&amp;\tan(2\theta_p)=-.8\\[20pt]
+&amp;2\theta_p=\tan^{-1}(-.8)\\
+&amp;\theta_p=\frac{-38.66^\circ}{2}\\
+&amp;\theta_p=-19.33^\circ
+\end{aligned}\]</span></p>
+<p>Note the negative angle means this would be a clockwise rotation.</p>
+<p>This principal plane angle brings the x-point to σ<sub>2</sub> , so if we rotate the stress element clockwise 19.33°, σ<sub>2</sub> would be shown on the x’ face.</p>
+<p>The other principal plane is that -19.33° + 90°= 70.67°. This is the angle of rotation for which σ<sub>1</sub> would appear on the rotated x’-face. The positive angle indicates this would be a counterclockwise rotation. Both rotations are shown in the figure below.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/chapter 12 figure edits/example 12.4 part 5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="302"></p>
+</figure>
+</div>
+<ol start="9" type="1">
+<li>With the θ<sub>p</sub> angles known, we can see that the 2θ<sub>s</sub> = 90 - |2θ<sub>p</sub>| or</li>
+</ol>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;2\theta_s=90-|2\theta_p|\\
+&amp;2\theta_{s}=90-|2*-19.33^\circ|\\
+&amp;2\theta_{s}=51.34^\circ\\
+\end{aligned}
+\]</span></p>
+<p>In this case, a counterclockwise rotation of the x-point would bring it to the negative side of the shear stress axis which corresponds to τ<sub>max</sub>, so we can say that θ<sub>s</sub> = 25.67° is the plane of max in-plane shear stress. This rotation is shown in the figure below.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/example 12.4 part 6.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="366"></p>
+</figure>
+</div>
+<p>The completed Mohr’s circle:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/chapter 12 figure edits/example 12.4 part 7.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="420"></p>
+</figure>
+</div>
+<p>Part c, stress transformation 40° clockwise:</p>
+<p>Recalling that rotations around the circle are twice the actual rotation, we will draw in a point (denoted as x’) that is rotated 80° clockwise from the x-point. This point has coordinates (σ<sub>x’</sub>, 𝜏<sub>xy’</sub>). Since we know from step 7 that the x-point is 38.66° below σ<sub>2</sub>, we find that x’ is 80° – 38.66° = 41.34° above σ<sub>2</sub>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/CH12 figures/example 12.4 part 8a.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="550"></p>
+</figure>
+</div>
+<p>Since x’ has a negative σ coordinate, we know that the normal stress on the x’ face is compressive. Since x’ has a positive τ coordinate, the shear stress arrow on the x’ face would tend to rotate the element clockwise, which corresponds to a negative shear stress.</p>
+<p>Using trigonometry based on the circle, 𝜏<sub>x’y’</sub> is:</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;\tau_{x^\prime y^\prime}=-R\sin(41.34^\circ)\\
+&amp;\tau_{x^\prime y^\prime}=-48.02{~MPa}*\sin(41.34^\circ)\\
+&amp;\tau_{x^\prime y^\prime}=-31.72{~MPa}
+\end{aligned}
+\]</span>and the normal stress on the x’ face is:</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;\sigma_{x^\prime}=C-R\cos(28.66^\circ)\\
+&amp;\sigma_{x^\prime}=-22.5{~MPa}-48.02{~MPa}*\cos(41.34^\circ)\\
+&amp;\sigma_{x^\prime}=-58.57{~MPa}
+\end{aligned}
+\]</span></p>
+<p>The normal stress on the y’ face can be similarly found:</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;\sigma_{y^\prime}=C+R\cos(41.34^\circ)\\
+&amp;\sigma_{y^\prime}=-22.5{~MPa}+48.02{~MPa}*\cos(41.36^\circ)\\
+&amp;\sigma_{y^\prime}=13.57{~MPa}
+\end{aligned}
+\]</span></p>
+<p>The rotated stress element is shown below:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/chapter 12 figure edits/example 12.4 part 9.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="308"></p>
+</figure>
+</div>
+<p><strong>Answers:</strong></p>
+<p><strong>σ<sub>1</sub> = 25.5 MPa on the principal plane θ<sub>p</sub> = 70.67°</strong></p>
+<p><strong>σ<sub>2</sub> = -70.5 MPa on the principal plane θ<sub>p</sub> = -19.33°</strong></p>
+<p><strong>τ<sub>max</sub> (in-plane) = 48.0 MPa on the plane θ<sub>s</sub> = 51.34°</strong></p>
 <p>On the plane rotated 40° clockwise from the given plane:</p>
-<p><strong>σ<sub>x’</sub> = - 64.3 MPa</strong></p>
-<p><strong>σ<sub>y’</sub> = 19.3 MPa</strong></p>
-<p><strong>τ<sub>x’y’</sub> = -23.7 MPa</strong></p>
+<p><strong>σ<sub>x’</sub> = -58.6 MPa</strong></p>
+<p><strong>σ<sub>y’</sub> = 13.57 MPa</strong></p>
+<p><strong>τ<sub>x’y’</sub> = -31.71 MPa</strong></p>
 </div>
 </div>
 </div>
@@ -1132,6 +1393,96 @@ Since x’ is on the negative σ side and the positive τ side, we know that the
 </div>
 </div>
 </div>
+</details>
+</section>
+<section id="sec-12.5" class="level2" data-number="12.5">
+<h2 data-number="12.5" class="anchored" data-anchor-id="sec-12.5"><span class="header-section-number">12.5</span> Mohr’s Circle in 3-Dimensions and Absolute Max Shear Stress</h2>
+<details>
+<summary>
+Click to expand
+</summary>
+<p>Many materials yield or fail in shear rather than normal stress, so knowing the absolute maximum shear stress the material is subjected to is important. The methods discussed in Sections 12.2 and 12.3 provide the maximum in-plane shear stress that arises from rotations in the 2D plane (rotation around the z-axis in <a href="#fig-12.17" class="quarto-xref">Figure&nbsp;<span>12.17</span></a>). However, as discussed in <a href="#sec-12.2" class="quarto-xref"><span>Section 12.2</span></a>, the actual maximum shear stress may result from an out of plane rotation (rotation around the x or y axes in <a href="#fig-12.17" class="quarto-xref">Figure&nbsp;<span>12.17</span></a>). To account for this potential circumstance, we need to evaluate a 3D stress element despite the fact that we are still restricting analysis to 2D stress states.</p>
+<p>For the sake of this discussion, we will consider a reference stress state with stresses only in the xy plane, though it could generally be any other 2D plane. To further simplify the discussion, we will say that the stress element is already rotated around the z-axis to the principal stress state such that σ<sub>x</sub> = σ<sub>1</sub> and σ<sub>y</sub> =σ<sub>2</sub>. The resulting 3D stress cube and representations of the xz and yz planes are shown in <a href="#fig-12.17" class="quarto-xref">Figure&nbsp;<span>12.17</span></a>. Given the plane stress restriction, 𝜏<sub>xz</sub> =𝜏<sub>yz</sub> =0, which means that the xz and yz planes are also at principal stress states. Designating the principal stress in the z direction to be σ<sub>3</sub>, we can see that the principal stresses in the xz plane are σ<sub>2</sub> and σ<sub>3</sub> and the principal stresses in the yz plane are σ<sub>1</sub> and σ<sub>3</sub>. For the reference stress state (plane stress), σ<sub>3</sub> = 0 on all planes.</p>
+<p>As the stress cube rotates around the x-axis, σ<sub>z</sub> will vary between 0 at 𝜃 =0° and σ<sub>2</sub> at 𝜃 = 90°. Meanwhile, σ<sub>y</sub> will vary in the opposite way and σ<sub>x</sub> will remain unchanged. Similarly, as the stress cube rotates around the y axis, σ<sub>z</sub> will vary between 0 at 𝜃 =0° and σ<sub>1</sub> at 𝜃 = 90° while σ<sub>x</sub> varies in the opposite way and σ<sub>y</sub> remains unchanged.</p>
+<div id="fig-12.17" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-12.17-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/chapter 12 figure edits/figure 12.17.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12.17-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.17: 3D stress element with stress acting in only 2 or the 3 principal directions.
+</figcaption>
+</figure>
+</div>
+<p>We can draw Mohr’s circle for each of the three planes in <a href="#fig-12.17" class="quarto-xref">Figure&nbsp;<span>12.17</span></a> on one plot. Just as the ciricle represents rotation of the stress element around the z-axis for stresses in the xy plane, if represents rotation around the y axis for the xz plane and rotation around the x axis for the yz plane. We will consider three cases:</p>
+<ol type="1">
+<li><p>σ<sub>1</sub> and σ<sub>2</sub> are both positive</p></li>
+<li><p>σ<sub>1</sub> and σ<sub>2</sub> are both negative</p></li>
+<li><p>σ<sub>1</sub> and σ<sub>2</sub> have opposite signs</p></li>
+</ol>
+<p><strong>Case 1:</strong></p>
+<p>Referring to <a href="#fig-12.18" class="quarto-xref">Figure&nbsp;<span>12.18</span></a>, the larger inner circle is Mohr’s circle for the x-y plane as can be noted by the fact that the max and min normal stresses on that circle are σ<sub>1</sub> and σ<sub>2</sub>, respectively. The smaller inner circle is Mohr’s circle for the y-z plane which has 0 and σ<sub>2</sub> at the extremes. The largest circle is Mohr’s circle for the xz plane which has 0 and σ<sub>1</sub> at the extremes. We can see in this case that the largest shear stress is given by the radius of the largest circle which is σ<sub>1</sub>/2.</p>
+<p>So in the case that σ<sub>1</sub> and σ<sub>2</sub> are both positive, the absolute max shear stress is:</p>
+<p><span class="math display">\[
+\tau_{(\max )absolute}=\left|\frac{\sigma_1}{2}\right|
+\]</span></p>
+<p>The absolute value is there since we know the max shear stress must be a positive shear stress given that the max and min shear stresses are negatives of each other.</p>
+<div id="fig-12.18" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-12.18-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/chapter 12 figure edits/figure 12.18.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="323">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12.18-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.18: The three planes represented on Mohr’s circle for the case where both the principal stresses in the xy plane are positive.
+</figcaption>
+</figure>
+</div>
+<p><strong>Case 2:</strong></p>
+<p>Referring to <a href="#fig-12.19" class="quarto-xref">Figure&nbsp;<span>12.19</span></a>, all the statements made in Case 1 still hold true except that the radius of the largest circle is now σ<sub>2</sub>/2.</p>
+<p>So in the case that σ<sub>1</sub> and σ<sub>2</sub> are both negative, the absolute max shear stress is:</p>
+<p><span class="math display">\[
+\tau_{(\max )absolute}=\left|\frac{\sigma_2}{2}\right|
+\]</span></p>
+<div id="fig-12.19" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-12.19-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/chapter 12 figure edits/figure 12.19.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="389">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12.19-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.19: The three planes represented on Mohr’s circle for the case where both the principal stresses in the xy plane are negative.
+</figcaption>
+</figure>
+</div>
+<p><strong>Case 3:</strong></p>
+<p>Referring to <a href="#fig-12.20" class="quarto-xref">Figure&nbsp;<span>12.20</span></a>, this case is different than the other two because in this case, the Mohr’s circle for the xy plane is the largest circle. This means that the absolute max shear stress and the maximum in-plane shear stress are the same.</p>
+<p>So in the case that σ<sub>1</sub> and σ<sub>2</sub> are opposite in sign, the absolute max shear stress is:</p>
+<p><span class="math display">\[
+\tau_{(\max )absolute}=\left|\frac{\sigma_1-\sigma_2}{2}\right|
+\]</span></p>
+<div id="fig-12.20" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-12.20-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/chapter 12 figure edits/figure 12.20.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="402">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12.20-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.20: The three planes represented on Mohr’s circle for the case where the principal stresses in the xy plane are opposite signs.
+</figcaption>
+</figure>
+</div>
+<p>More generally, given principal stresses σ<sub>1</sub>, σ<sub>2</sub>, and σ<sub>3</sub> = 0, the absolute maximum shear stress can be determined from:</p>
+<p><span id="eq-12.6"><span class="math display">\[
+\boxed{\tau_{(\max)absolute}=\left|\frac{\sigma_{\max }-\sigma_{\min }}{2}\right|}
+\tag{12.6}\]</span></span></p>
+<div class="line-block"><em>where</em><br>
+<em>𝜏<sub>(max)absolute</sub> = Absolute maximum shear stress [Pa, psi]</em><br>
+<em>𝜎<sub>max</sub> = Maximum principal stress [Pa, psi]</em><br>
+<em>𝜎<sub>min</sub> = Minimum principal stress [Pa, psi]</em></div>
+<p>This works for any of the cases above:</p>
+<ul>
+<li><p>Case 1: σ<sub>max</sub> = σ<sub>1</sub>, σ<sub>min</sub> = 0</p></li>
+<li><p>Case 2: σ<sub>max</sub> = 0, σ<sub>min</sub> = σ<sub>2</sub></p></li>
+<li><p>Case 3: σ<sub>max</sub> = σ<sub>1</sub>, σ<sub>min</sub> = σ<sub>2</sub></p></li>
+</ul>
 <div class="callout callout-style-default callout-warning no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1222,8 +1573,8 @@ Key equations
 \begin{aligned}
 &amp; \mathrm{C}=\left(\frac{\sigma_x+\sigma_y}{2}\right) \\
 &amp; \mathrm{R}=\sqrt{\left(C+\sigma_x\right)^2+\tau_{x y}^2} \\
-&amp; tan(2 \theta p)=\frac{C+\sigma_x}{\tau_{x y}} \\
-&amp; tan(2 \theta s)=\frac{\tau_{x y}}{C+\sigma_x} \\
+&amp; tan(2 \theta p)=\frac{\tau_{x y}}{\sigma_x-C} \\
+&amp; tan(2 \theta s)=\frac{\sigma_x-C}{\tau_{x y}} \\
 &amp; \sigma_{1,2}=\mathrm{R} \pm \mathrm{C}
 \end{aligned}
 \]</span></p>
@@ -1238,25 +1589,10 @@ Key equations
 Click to expand
 </summary>
 <p><strong>Figures</strong></p>
-<p>Figure 12.1: For simplicity, the x,y,z coordinate axes are cbosen to line up with the direction of loading and the longitudinal axis of the bar. Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Figure 12.2: A pressurized duct is fabricated with welding in a helical pattern. Sneha Davison. 2024. CC BY-NC-SA.</p>
-<p>Figure 12.3: Stress element cut along plane of interest. Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Figure 12.4: The angle θ is defined to be the angle between the original x axis and the normal to the plane of interest. Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Figure 12.5: Draw a sketch of the x-axis and the normal axis to ensure you use the correct magnitude and sign for θ in the stress transformation equations. Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Figure 12.6: Element drawn in the xz plane. Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Example 12.1: Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Example 12.2: Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Figure 12.7: The max shear stress obtained from in-plane rotations of the stress element may not be the same as the max shear stress when considering out of plane rotation as well. Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Figure 12.8: Plot showing how normal stress σx’ varies with angle θ. Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Example 12.3: Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Figure 12.9: Positive x-face of a stress element showing the normal and shear stresses used to plot the coordinate point on Mohr’s circle. Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Figure 12.10: The positive y-face of a stress element showing the normal and shear stresses used to plot the coordinate point on Mohr’s circle. Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Figure 12.11: Fully constructed Mohr’s circle for the representative stress element shown. Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Figure 12.12: 3D stress element with stress acting in only 2 or the 3 principal directions. Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Figure 12.13: The three planes represented on Mohr’s circle for the case where both the principal stresses in the xy plane are positive. Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Figure 12.14: The three planes represented on Mohr’s circle for the case where both the principal stresses in the xy plane are negative. Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Figure 12.15: The three planes represented on Mohr’s circle for the case where the principal stresses in the xy plane are opposite signs. Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Example 12.4: Kindred Grey. 2024. CC BY-NC-SA.</p>
+<p>All figures in this chapter were created by Kindred Grey in 2025 and released under a CC BY-NC-SA license, except for:</p>
+<ul>
+<li>Figure 12.1: A pressurized duct is fabricated with welding in a helical pattern. Sneha Davison. 2024. CC BY-NC-SA.</li>
+</ul>
 </details>
 
 
@@ -1264,383 +1600,255 @@ Click to expand
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
     }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const disableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'prefetch';
-    }
-  }
-  const enableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'stylesheet';
-    }
-  }
-  const manageTransitions = (selector, allowTransitions) => {
-    const els = window.document.querySelectorAll(selector);
-    for (let i=0; i < els.length; i++) {
-      const el = els[i];
-      if (allowTransitions) {
-        el.classList.remove('notransition');
-      } else {
-        el.classList.add('notransition');
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-  }
-  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-    let newTheme = '';
-    if(darkModeDefault) {
-      newTheme = isAlternate ? baseTheme : alternateTheme;
-    } else {
-      newTheme = isAlternate ? alternateTheme : baseTheme;
-    }
-    const changeGiscusTheme = () => {
-      // From: https://github.com/giscus/giscus/issues/336
-      const sendMessage = (message) => {
-        const iframe = document.querySelector('iframe.giscus-frame');
-        if (!iframe) return;
-        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      sendMessage({
-        setConfig: {
-          theme: newTheme
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
       });
     }
-    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-    if (isGiscussLoaded) {
-      changeGiscusTheme();
-    }
-  }
-  const toggleColorMode = (alternate) => {
-    // Switch the stylesheets
-    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-    manageTransitions('#quarto-margin-sidebar .nav-link', false);
-    if (alternate) {
-      enableStylesheet(alternateStylesheets);
-      for (const sheetNode of alternateStylesheets) {
-        if (sheetNode.id === "quarto-bootstrap") {
-          toggleBodyColorMode(sheetNode);
-        }
-      }
-    } else {
-      disableStylesheet(alternateStylesheets);
-      toggleBodyColorPrimary();
-    }
-    manageTransitions('#quarto-margin-sidebar .nav-link', true);
-    // Switch the toggles
-    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-    for (let i=0; i < toggles.length; i++) {
-      const toggle = toggles[i];
-      if (toggle) {
-        if (alternate) {
-          toggle.classList.add("alternate");     
-        } else {
-          toggle.classList.remove("alternate");
-        }
-      }
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455)
-    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-      manageTransitions("body", false);
-      window.scrollTo(0, 1);
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        manageTransitions("body", true);
-      }, 40);  
-    }
-  }
-  const isFileUrl = () => { 
-    return window.location.protocol === 'file:';
-  }
-  const hasAlternateSentinel = () => {  
-    let styleSentinel = getColorSchemeSentinel();
-    if (styleSentinel !== null) {
-      return styleSentinel === "alternate";
-    } else {
-      return false;
-    }
-  }
-  const setStyleSentinel = (alternate) => {
-    const value = alternate ? "alternate" : "default";
-    if (!isFileUrl()) {
-      window.localStorage.setItem("quarto-color-scheme", value);
-    } else {
-      localAlternateSentinel = value;
-    }
-  }
-  const getColorSchemeSentinel = () => {
-    if (!isFileUrl()) {
-      const storageValue = window.localStorage.getItem("quarto-color-scheme");
-      return storageValue != null ? storageValue : localAlternateSentinel;
-    } else {
-      return localAlternateSentinel;
-    }
-  }
-  const darkModeDefault = false;
-  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-  // Dark / light mode switch
-  window.quartoToggleColorScheme = () => {
-    // Read the current dark / light value 
-    let toAlternate = !hasAlternateSentinel();
-    toggleColorMode(toAlternate);
-    setStyleSentinel(toAlternate);
-    toggleGiscusIfUsed(toAlternate, darkModeDefault);
-  };
-  // Ensure there is a toggle, if there isn't float one in the top right
-  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-    const a = window.document.createElement('a');
-    a.classList.add('top-right');
-    a.classList.add('quarto-color-scheme-toggle');
-    a.href = "";
-    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-    const i = window.document.createElement("i");
-    i.classList.add('bi');
-    a.appendChild(i);
-    window.document.body.appendChild(a);
-  }
-  // Switch to dark mode if need be
-  if (hasAlternateSentinel()) {
-    toggleColorMode(true);
-  } else {
-    toggleColorMode(false);
-  }
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
         }
-        return container.innerHTML
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1648,185 +1856,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./Chapter 11.html" class="pagination-link" aria-label="Beam Deflection">

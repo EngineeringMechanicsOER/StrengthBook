@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.7.29">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -32,17 +32,20 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="./">
 <link href="./Chapter 3.html" rel="next">
 <link href="./Chapter 1.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-748b535e376f14d4692bf2b2e5fd6380.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-e1aa288a8a6a3aa5f7fec8175f5023de.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-d13a72f20fc3c7f792e67513fe0bf82c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-e1aa288a8a6a3aa5f7fec8175f5023de.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -104,7 +107,168 @@ window.Quarto = {
 <link rel="stylesheet" href="styles/custom.css">
 </head>
 
-<body class="nav-sidebar docked">
+<body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -204,7 +368,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Chapter 10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Shear Loads</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Shear Loading in Beams</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -301,6 +465,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title"><span id="sec-stress" class="quarto-section-identifier"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Stress</span></span></h1>
@@ -344,8 +509,8 @@ Learning Objectives
 <summary>
 Click to expand
 </summary>
-<p>Having reviewed static equilibrium in <a href="Chapter 1.html" class="quarto-xref"><span>Chapter 1</span></a>, we now know how to find the internal loads in a body using equilibrium. When determining whether a body can resist the loads applied to it, the internal load is only part of the solution. The dimensions of the body and the inherent properties of the material it is made from are also important.</p>
-<p>In this chapter we’ll explore the concept of stress, which can help us determine whether an object will physically break when subjected to a load. We’ll cover average normal stress (stress perpendicular to the cross-section) in <a href="#sec-2.1" class="quarto-xref"><span>Section 2.1</span></a> and average shear stress (stress parallel to the cross-section) in <a href="#sec-2.2" class="quarto-xref"><span>Section 2.2</span></a>. We’ll then discuss bearing stress (the stress between two bodies in contact with each other) in <a href="#sec-2.3" class="quarto-xref"><span>Section 2.3</span></a> and finish with the average normal and shear stresses on an inclined cross-section in <a href="#sec-2.4" class="quarto-xref"><span>Section 2.4</span></a>.</p>
+<p>Having reviewed static equilibrium in <a href="Chapter 1.html" class="quarto-xref"><span>Chapter 1</span></a>, we know how to find the internal loads in a body using equilibrium. When determining whether a body can resist the loads applied to it, the internal load is only part of the solution. The dimensions of the body and the inherent properties of the material it is made from are also important.</p>
+<p>In this chapter we will explore the concept of stress, which can help us determine whether an object will physically break when subjected to a load. We’ll cover average normal stress (stress perpendicular to the cross-section) in <a href="#sec-2.1" class="quarto-xref"><span>Section 2.1</span></a> and average shear stress (stress parallel to the cross-section) in <a href="#sec-2.2" class="quarto-xref"><span>Section 2.2</span></a>. We’ll then discuss bearing stress (the stress between two bodies in contact with each other) in <a href="#sec-2.3" class="quarto-xref"><span>Section 2.3</span></a> and finish with the average normal and shear stresses on an inclined cross-section in <a href="#sec-2.4" class="quarto-xref"><span>Section 2.4</span></a>.</p>
 </details>
 </section>
 <section id="sec-2.1" class="level2" data-number="2.1">
@@ -354,21 +519,22 @@ Click to expand
 <summary>
 Click to expand
 </summary>
-<p>Average normal stress is defined as the internal normal force divided by the cross-sectional area of the body. It is given the Greek letter sigma (σ). Stress increases as the force increases or as the cross-sectional area decreases.</p>
+<p>Average normal stress is defined as the internal normal force divided by the cross-sectional area of the body. By convention, it is represented by the Greek letter sigma (σ). Stress increases as the force increases or as the cross-sectional area decreases.</p>
 <p><span id="eq-2.1"><span class="math display">\[
 \boxed
 {\sigma=\frac{N}{A}}
 \tag{2.1}\]</span></span></p>
 <div class="line-block"><em>where</em><br>
 <em>𝜎 = Average normal stress [Pa, psi]</em><br>
-<em>N = Internal normal force [N, lb]</em><br>
-<em>A = Cross-sectional area [m<sup>2</sup>, in.<sup>2</sup>]</em></div>
-<p>As such the SI units of stress are N/m<sup>2</sup>, more commonly referred to as the Pascal (Pa) where 1 Pa = 1 N/m<sup>2</sup>. The US customary units for stress are lb/in<sup>2</sup>, commonly written as psi. Since stresses can get very large, it is common to use prefixes such as kilo (k) and mega (M) to represent 10<sup>3</sup> and 10<sup>6</sup> respectively. A stress of 15,000,000 Pa is written as 15 MPa. A stress of 35,000 psi is written as 35 ksi.</p>
-<p>Normal stress occurs perpendicular to the cross-section and so is associated with either a pulling or pushing motion (<a href="#fig-2.1" class="quarto-xref">Figure&nbsp;<span>2.1</span></a>). Normal forces that pull on a cross-section are known as tensile forces and create a tensile normal stress. Normal forces that push on a cross-section are known as compressive forces and create a compressive normal stress. The normal stress calculated above is really an average normal stress as the force is distributed over the cross-section, but we generally simplify this to a concentrated force that creates the same normal stress at every point on the cross-section (<a href="#fig-2.2" class="quarto-xref">Figure&nbsp;<span>2.2</span></a>).</p>
+<em>N = Internal normal force [N, lb]</em></div>
+<p><em>A = Cross-sectional area [m<sup>2</sup>, in.<sup>2</sup>]</em></p>
+<p>As such the SI units of stress are N/m<sup>2</sup>, more commonly referred to as the Pascal (Pa) where 1 Pa = 1 N/m<sup>2</sup>. The US customary units for stress are lb/in<sup>2</sup>, commonly written as psi which is short for pounds per square inch. Since stresses can get very large, it is common to use prefixes such as kilo (k) and mega (M) to represent 10<sup>3</sup> and 10<sup>6</sup> respectively. A stress of 15,000,000 Pa is written as 15 MPa. A stress of 35,000 psi is written as 35 ksi.</p>
+<p>Normal stress occurs perpendicular to the cross-section and so is associated with either a pulling or pushing motion (<a href="#fig-2.1" class="quarto-xref">Figure&nbsp;<span>2.1</span></a>). Normal forces that pull on a cross-section are known as tensile forces and create a tensile normal stress. Normal forces that push on a cross-section are known as compressive forces and create a compressive normal stress. By convention, tensile normal forces and stresses are psoitive, while compressive normal forces and stresses are negative.</p>
+<p>The normal stress calculated above is really an average normal stress as the force is distributed over the cross-section, but we generally simplify this to a concentrated force that creates the same normal stress at every point on the cross-section (<a href="#fig-2.2" class="quarto-xref">Figure&nbsp;<span>2.2</span></a>).</p>
 <div id="fig-2.1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-2.1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/CH2 figures/2.1.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
+<img src="images/CH2 figures/2.1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="528">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-2.1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2.1: Forces pulling on a cross-section cause tension, while forces pushing on a cross-section cause compression. Both are very common. Left: A crane cable during a lift experiences tension. Right: The support columns under a bridge experience compression.
@@ -378,7 +544,7 @@ Figure&nbsp;2.1: Forces pulling on a cross-section cause tension, while forces p
 <div id="fig-2.2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-2.2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/CH2 figures/2.2.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
+<img src="images/CH2 figures/2.2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="225">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-2.2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2.2: The internal load is equally distributed over the cross-sectional area, but may be represented as a single concentrated load acting at the center (N in this case). The stress is therefore an average normal stress.
@@ -405,7 +571,7 @@ Example 2.1
 <p>The support column will be subjected to a compressive force F = 65 kips.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/Updated CH2 examples/example 2.1 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="174"></p>
+<p><img src="images/Updated CH2 examples/example 2.1 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="109"></p>
 </figure>
 </div>
 <ol type="1">
@@ -424,18 +590,21 @@ Solution
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<ol type="1">
-<li>Cut a cross-section through the column and draw a free body diagram. Although it is clear in this case that the internal load will be 65 kips, it is best to get in the habit of writing out equilibrium equations.</li>
-</ol>
+<p>Cut a cross-section through the column and draw a free body diagram. Although it is clear in this case that the internal load will be 65 kips, it is best to get in the habit of writing out equilibrium equations.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/Updated CH2 examples/example 2.1 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="136"></p>
+<p><img src="images/Updated CH2 examples/example 2.1 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="113"></p>
 </figure>
 </div>
 <p><span class="math display">\[
-\sum F_y= N-65{~kips}=0
+\begin{aligned}
+\sum F_y = &amp;{~} N-F = 0\\
+\sum F_y = &amp;{~}N-65{~kips}=0\\
+&amp;N = 65{~kips}
+\end{aligned}
 \]</span></p>
-<p>The column has a circular cross-section of area <span class="math inline">\(A=\pi(2)^2=4 \pi{~in.}^2\)</span>.</p>
+<p>Recall that 65 kips = 65,000 lb. It is acceptable to keep the force in kips and calculate the stress in units of <span class="math inline">\(\frac{kips}{in^2}=ksi\)</span>.</p>
+<p>The column has a circular cross-section of area <span class="math inline">\(A=\pi r^2=\pi(2)^2=4 \pi{~in.}^2\)</span>.</p>
 <p>The average normal stress can now be found from:</p>
 <p><span class="math display">\[
 \sigma=\frac{N}{A}=\frac{65{~kips}}{4 \pi{~in.}^2}=5.17{~ksi}
@@ -456,7 +625,7 @@ Solution
 </div>
 </div>
 </div>
-<p>Sometimes the loading or cross-sectional area of the body will change, resulting in a change in stress. In these cases the stress can be calculated separately in each segment of the body by first finding the internal load in each segment and then dividing the internal load by the cross-sectional area of the respective segment. Different parts of the body may experience different stresses. Generally the highest stress is of most importance as that is the stress that typically determines whether the body will break. Because we do not know in advance where the largest stress is, however, it is typically necessary to calculate the stress at each different cross-section in order to determine the highest stress. See <a href="#exm-2.2" class="quarto-xref">Example&nbsp;<span>2.2</span></a> for a demonstration.</p>
+<p>Sometimes the loading or cross-sectional area of the body will be different at different points in the body, resulting in different stresses. In these cases the stress can be calculated separately in each segment of the body by first finding the internal load in each segment and then dividing the internal load by the cross-sectional area of the respective segment. Different parts of the body may experience different stresses. Generally, the highest stress is of most importance as that is the stress that typically determines whether the body will break. Because we do not know in advance where the largest stress is, however, it is typically necessary to calculate the stress at each different cross-section in order to determine the highest stress. See <a href="#exm-2.2" class="quarto-xref">Example&nbsp;<span>2.2</span></a> for a demonstration.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -476,7 +645,7 @@ Example 2.2
 <p>Two hollow pipes are welded together as shown. Pipe (1) has an outer diameter of 70 mm and an inner diameter of 40 mm while pipe (2) has an outer diameter of 110 mm and an inner diameter of 60 mm. Forces are applied at the end of each pipe and at the weld, where F<sub>1</sub> = 40 kN, F<sub>2</sub> = 70 kN, and F<sub>3</sub> = 30 kN. Determine the average normal stress in each pipe.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/Updated CH2 examples/example 2.2 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="327"></p>
+<p><img src="images/chapter 2 figure edits april 2025/example 2.2 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="386"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -501,12 +670,12 @@ Solution
 <p>The internal loads can be found by cutting a cross-section through each pipe, drawing a free body diagram, and writing an equilibrium equation.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/Updated CH2 examples/example 2.2 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="270"></p>
+<p><img src="images/chapter 2 figure edits april 2025/example 2.2 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="368"></p>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/Updated CH2 examples/example 2.2 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="261"></p>
+<p><img src="images/chapter 2 figure edits april 2025/example 2.2 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="365"></p>
 </figure>
 </div>
 <p><span class="math display">\[
@@ -519,7 +688,7 @@ Solution
 <p>Note also that it is acceptable to draw a free body diagram of either side of the cross-section. This will not change the result. Perhaps it would have been easier to draw the right-hand-side of section 2.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/Updated CH2 examples/example 2.2 part 4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="236"></p>
+<p><img src="images/chapter 2 figure edits april 2025/example 2.2 part 4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="357"></p>
 </figure>
 </div>
 <p><span class="math display">\[
@@ -551,10 +720,10 @@ Step-by-step: Average Normal Stress
 </div>
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li><p>Use equilibrium equations to determine reaction loads at any supports.</p></li>
-<li><p>Cut a cross-section through the member at the point where you want to determine the internal normal stress, and draw a free body diagram of the member on either side of the cut. Be sure to include everything on the chosen side, including external loads, support reactions, and the internal normal force.</p></li>
-<li><p>Use equilibrium equations to determine the internal normal force (N) in the member.</p></li>
-<li><p>Determine average normal stress using <span class="math inline">\(\sigma=\frac{N}{A}\)</span>.</p></li>
+<li><p>Determine reaction loads: Use equilibrium equations to determine reaction loads at any supports.</p></li>
+<li><p>Draw free body diagram: Cut a cross-section through the member at the point where you want to determine the internal normal stress, and draw a free body diagram of the member on either side of the cut. Be sure to include everything on the chosen side, including external loads, support reactions, and the internal normal force.</p></li>
+<li><p>Calculate internal force: Use equilibrium equations to determine the internal normal force (N) in the member.</p></li>
+<li><p>Calculate average stress: Determine average normal stress using <span class="math inline">\(\sigma=\frac{N}{A}\)</span>.</p></li>
 </ol>
 </div>
 </div>
@@ -570,10 +739,10 @@ Click to expand
 <div id="fig-2.3" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-2.3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/CH2 figures/2.3.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
+<img src="images/April 18 figure updates/figure 2.3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="485">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-2.3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.3: (a) External loads F creating (b) an internal normal force (N) perpendicular to the cross-section. (c) External loads F<sub>1</sub>, F<sub>2</sub>, and F<sub>3</sub> creating (d) an internal shear force (V) parallel to the cross-section. Note that for diagram (d) to be in equilibrium there would also need to be an internal bending moment. That has been omitted here for clarity.
+Figure&nbsp;2.3: (A) External loads F creating (B) an internal normal force (N) perpendicular to the cross-section. (C) External loads F<sub>1</sub>, F<sub>2</sub>, and F<sub>3</sub> creating (D) an internal shear force (V) parallel to the cross-section. Note that for diagram (D) to be in equilibrium there would also need to be an internal bending moment which has been omitted here.
 </figcaption>
 </figure>
 </div>
@@ -605,7 +774,7 @@ Example 2.3
 <p>A bridge spans a gap of L = 150 ft. The roadway may be considered simply supported and has a rectangular cross-section of base b = 10 in. and height h = 6 in. It is subjected to a uniform distributed load of w = 200 lb/ft. Determine the magnitude of the average shear stress in the cross-section at x = 30 ft and x = 80 ft.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/Updated CH2 examples/example 2.3 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="333"></p>
+<p><img src="images/chapter 2 figure edits april 2025/example 2.3 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="412"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -626,7 +795,7 @@ Solution
 <p>At x = 30 ft:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/Updated CH2 examples/example 2.3 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="328"></p>
+<p><img src="images/chapter 2 figure edits april 2025/example 2.3 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="391"></p>
 </figure>
 </div>
 <p><span class="math display">\[
@@ -640,7 +809,7 @@ Solution
 <p>At x = 80 ft:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/Updated CH2 examples/example 2.3 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="285"></p>
+<p><img src="images/chapter 2 figure edits april 2025/example 2.3 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="389"></p>
 </figure>
 </div>
 <p><span class="math display">\[
@@ -657,14 +826,14 @@ Solution
 </div>
 </div>
 </div>
-<p>Shear stresses are common in both members of a structure and also in the fasteners between members. Depending on how these connections are formed we may see multiple shear planes. It is very important to correctly identify the internal force in the body. <a href="#fig-2.4" class="quarto-xref">Figure&nbsp;<span>2.4</span></a> demonstrates the difference between single and double shear configurations for a pinned joint and the effects on internal shear force. See <a href="#exm-2.4" class="quarto-xref">Example&nbsp;<span>2.4</span></a> for an example where double shear occurs.</p>
+<p>Shear stresses are common in both members of a structure and also in the fasteners between members. Depending on how these connections are formed we may see multiple shear planes. It is very important to correctly identify the internal force in the body. <a href="#fig-2.4" class="quarto-xref">Figure&nbsp;<span>2.4</span></a> demonstrates the difference between single and double shear configurations for a pinned joint and the effects on internal shear force. Notice that in the case of double shear, the internal shear force is half of the applied force, F<sub>1</sub>. See <a href="#exm-2.4" class="quarto-xref">Example&nbsp;<span>2.4</span></a> for an example where double shear occurs.</p>
 <div id="fig-2.4" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-2.4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/CH2 figures/2.4.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
+<img src="images/chapter 2 figure edits april 2025/figure 2.4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="644">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-2.4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.4: Pins experiencing (a) single shear and (b) double shear.
+Figure&nbsp;2.4: (A) Pin experiencing single shear and (B) the resulting internal shear force is equal to applied force F. (C) Pin experiencing double shear and (D) the resulting internal shear force is equal to half of the applied force F<sub>1</sub>.
 </figcaption>
 </figure>
 </div>
@@ -684,7 +853,7 @@ Example 2.4
 <p><span class="theorem-title"><strong>Example 2.4</strong></span> &nbsp;</p>
 <p>
 </p>
-<p>A pin made of a tin alloy with an allowable shear stress of 3 ksi is used to connect a footrest to the frame of a motorcycle. When in motion, the footrest supports a load of 200 lb which is transferred to the pin. Determine the required diameter of the pin such that the stress will not exceed 5 ksi.</p>
+<p>A pin made of a tin alloy with an allowable shear stress of 3 ksi is used to connect a footrest to the frame of a motorcycle. When in motion, the footrest supports a load of 200 lb which is transferred to the pin. Determine the required diameter of the pin such that the stress will not exceed 3 ksi.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/example 2.4 (new).png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="431"></p>
@@ -703,6 +872,11 @@ Solution
 <div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Average shear stress can be calculated from <span class="math inline">\(\tau=\frac{V}{A}\)</span>. Rearrange this equation to <span class="math inline">\(A=\frac{V}{\tau}\)</span>. Start with a free body diagram of the pin in order to determine the internal shear force.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/chapter 2 figure edits april 2025/example 2.4 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="486"></p>
+</figure>
+</div>
 <p>From the diagram it should be apparent that the pin is in double shear and the maximum internal shear force in the pin is 100 lb. Thus the required cross-sectional area <span class="math inline">\(A=\frac{100{~lb}}{3000{~psi}}=0.0333{~in.}^2\)</span>.</p>
 <p>Since <span class="math inline">\(A=\frac{\pi}{4} d^2\)</span> the required diameter is <span class="math inline">\(d=\sqrt{\frac{0.0333{~in.}^2 * 4}{\pi}}=0.206{~in}\)</span>.</p>
 </div>
@@ -723,10 +897,10 @@ Step-by-step: Average Shear stress
 </div>
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li><p>Use equilibrium equations to determine reaction loads at any supports.</p></li>
-<li><p>Cut a cross-section through the member at the point where you want to determine the internal shear stress, and draw a free body diagram of the member on either side of the cut. Be sure to include everything on the chosen side, including external loads, support reactions, and the internal shear force.</p></li>
-<li><p>Use equilibrium equations to determine the internal shear force (V) in the member.</p></li>
-<li><p>Determine average normal stress using <span class="math inline">\(\tau=\frac{V}{A}\)</span></p></li>
+<li><p>Determine reaction loads: Use equilibrium equations to determine reaction loads at any supports.</p></li>
+<li><p>Draw free body diagram: Cut a cross-section through the member at the point where you want to determine the internal shear stress, and draw a free body diagram of the member on either side of the cut. Be sure to include everything on the chosen side, including external loads, support reactions, and the internal shear force.</p></li>
+<li><p>Calculate internal force: Use equilibrium equations to determine the internal shear force (V) in the member.</p></li>
+<li><p>Calculate average stress: Determine average normal stress using <span class="math inline">\(\tau=\frac{V}{A}\)</span></p></li>
 </ol>
 </div>
 </div>
@@ -749,7 +923,11 @@ Figure&nbsp;2.5: Circular column sitting upon a rectangular foundation. Contact 
 </figcaption>
 </figure>
 </div>
-<p>One common situation is contact between two curved edges, such as the bolt in <a href="#fig-2.6" class="quarto-xref">Figure&nbsp;<span>2.6</span></a>. In this situation it is common to use the projected contact area between the curved surfaces, which forms a rectangle of base d and height t. This greatly simplifies the calculation, but again represents an average value for the contact or bearing stress.</p>
+<p>One common situation is contact between two curved edges, such as the bolt in <a href="#fig-2.6" class="quarto-xref">Figure&nbsp;<span>2.6</span></a>. In this situation it is common to use the projected contact area between the curved surfaces, which forms a rectangle of base d and height t.</p>
+<p><span class="math display">\[
+A=d*t
+\]</span></p>
+<p>This greatly simplifies the calculation, but again represents an average value for the contact or bearing stress. See <a href="#exm-2.5" class="quarto-xref">Example&nbsp;<span>2.5</span></a> for a problem involving the bearing stress between a bolt and a plate.</p>
 <div id="fig-2.6" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-2.6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -759,6 +937,62 @@ Figure&nbsp;2.5: Circular column sitting upon a rectangular foundation. Contact 
 Figure&nbsp;2.6: When calculating the bearing stress between curved surfaces, project a rectangle of area A = d*t.
 </figcaption>
 </figure>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example 2.5
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div id="exm-2.5" class="theorem example">
+<p><span class="theorem-title"><strong>Example 2.5</strong></span> &nbsp;</p>
+<p>
+</p>
+<p>A bolt of diameter d = 80 mm is used to attach a steel bar to a gusset plate. The steel bar dimensions are height h = 200 mm and thickness t = 30 mm. It is subjected to a tensile force F = 50 kN. Determine the bearing stress created in the steel bar at the pin.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/April 18 figure updates/example 2.5 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="445"></p>
+</figure>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Bearing stress can be calculated from <span class="math inline">\(\sigma=\frac{N}{A}\)</span> where N is the normal force between the objects and A is the projected contact area.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/April 18 figure updates/example 2.5 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="430"></p>
+</figure>
+</div>
+<p>The force between the pin and the bar will be <span class="math inline">\(F=50~kN = 50,000~N\)</span>.</p>
+<p>The projected contact area between the pin and the plate can be found from the diameter of the pin <span class="math inline">\((80~mm=0.08~m)\)</span> multiplied by the thickness of the plate <span class="math inline">\((30~mm=0.03~m)\)</span>.</p>
+<p><span class="math display">\[
+A=d*t=0.08*0.03=0.0024~m^2
+\]</span></p>
+<p>Now we can calculate the bearing stress:</p>
+<p><span class="math display">\[
+\sigma=\frac{50,000~N}{0.0024~m^2}=20.8*10^6~Pa=20.8~MPa
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="callout callout-style-default callout-warning no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -771,10 +1005,10 @@ Step-by-step: Bearing Stress
 </div>
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li><p>Use equilibrium equations to determine reaction loads at any supports.</p></li>
-<li><p>Determine the contact area between the two components (A).</p></li>
-<li><p>Use equilibrium equations to determine the normal force (N) between the two components.</p></li>
-<li><p>Determine average bearing stress using <span class="math inline">\(\sigma=\frac{N}{A}\)</span>.</p></li>
+<li><p>Determine reaction loads: Use equilibrium equations to determine reaction loads at any supports.</p></li>
+<li><p>Determine area: Determine the contact area between the two components (A).</p></li>
+<li><p>Calculate bearing force: Use equilibrium equations to determine the normal force (N) between the two components.</p></li>
+<li><p>Calculate average stress: Determine average bearing stress using <span class="math inline">\(\sigma=\frac{N}{A}\)</span>.</p></li>
 </ol>
 </div>
 </div>
@@ -790,10 +1024,10 @@ Click to expand
 <div id="fig-2.7" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-2.7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/CH2 figures/2.7.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
+<img src="images/chapter 2 figure edits april 2025/figure 2.7.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="593">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-2.7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.7: (a) External loads, F, will create (b) an internal normal force, N, when a cross-section is cut vertically. (c) If the cross-section is cut along an inclined plane the internal force, P, will not be a normal force or shear force. (d) The internal force should be broken into normal (N) and shear (V) components that are perpendicular and parallel to the plane respectively.
+Figure&nbsp;2.7: (A) External loads, F, will create (B) an internal normal force, N, when a cross-section is cut vertically. (C) If the cross-section is cut along an inclined plane the internal force, P, will not be a normal force or shear force. (D) The internal force should be broken into normal (N) and shear (V) components that are perpendicular and parallel to the plane respectively.
 </figcaption>
 </figure>
 </div>
@@ -816,7 +1050,7 @@ A_p=\frac{A}{\sin (\theta)}
 <em>𝜎 = Average normal stress on the inclined plane [Pa, psi]</em><br>
 <em>τ = Average shear stress on the inclined plane [Pa, psi]</em><br>
 <em>N = Internal normal force perpendicular to the inclined plane [N, lb]</em><br>
-<em>V = Internal shear force perpendicular to the inclined plane [N, lb]</em><br>
+<em>V = Internal shear force parallel to the inclined plane [N, lb]</em><br>
 <em>A<sub>p</sub> = Area of the inclined plane [m<sup>2</sup>, in.<sup>2</sup>]</em><br>
 <em>A = Cross-sectional area [m<sup>2</sup>, in<sup>2</sup>]</em><br>
 <em>P = Internal load perpendicular to cross-sectional area A [N, lb]</em></div>
@@ -825,38 +1059,38 @@ A_p=\frac{A}{\sin (\theta)}
 <div id="fig-2.8" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-2.8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/CH2 figures/2.8.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
+<img src="images/CH2 figures/2.8.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="425">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-2.8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2.8: When calculating the stresses on an inclined plane, it is important to use the area of the plane, Ap, rather than the area of the cross-sectional plane, A.
 </figcaption>
 </figure>
 </div>
-<p>Even if the external load remains constant, we can obtain different values for the internal normal and shear forces (and therefore different values for the stresses) by changing the angle at which we cut the cross-section. We’ll explore the implications of this further in <a href="Chapter 12.html" class="quarto-xref"><span>Chapter 12</span></a>. For now, a demonstration of calculating the stresses on an inclined plane is given in <a href="#exm-2.5" class="quarto-xref">Example&nbsp;<span>2.5</span></a>.</p>
+<p>Even if the external load remains constant, we can obtain different values for the internal normal and shear forces (and therefore different values for the stresses) by changing the angle at which we cut the cross-section. We’ll explore the implications of this further in <a href="Chapter 12.html" class="quarto-xref"><span>Chapter 12</span></a>. For now, a demonstration of calculating the stresses on an inclined plane is given in <a href="#exm-2.6" class="quarto-xref">Example&nbsp;<span>2.6</span></a>.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example 2.5
+Example 2.6
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="exm-2.5" class="theorem example">
-<p><span class="theorem-title"><strong>Example 2.5</strong></span> &nbsp;</p>
+<div id="exm-2.6" class="theorem example">
+<p><span class="theorem-title"><strong>Example 2.6</strong></span> &nbsp;</p>
 <p>
 </p>
 <p>A beam is formed of two structural wooden members that are glued together along an inclined plane at angle θ = 40° and subjected to a tensile force of F = 30 kN. The height of the beam is 50 mm and its thickness is 20 mm. Determine the normal and shear stresses created along the inclined plane.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH2 figures/example 2.5 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="294"></p>
+<p><img src="images/CH2 figures/example 2.5 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="362"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -865,12 +1099,12 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Begin by cutting a cross-section along the inclined plane and drawing a free body diagram. Remember to include the internal normal and shear forces perpendicular and parallel to the cross-section.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH2 figures/example 2.5 part 1 copy.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="images/chapter 2 figure edits april 2025/example 2.6 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="396"></p>
 </figure>
 </div>
 <p>Use equilibrium equations to determine the internal forces. It will be easiest to define axes parallel and perpendicular to the inclined plane.</p>
@@ -880,12 +1114,20 @@ Solution
 \sum F_{y^{\prime}}= N-F \sin (\theta)=0
 \end{aligned}
 \]</span></p>
-<p>With F = 30 kN and θ = 40°, these can be solved for N = 19.3 kN and V = 23.0 kN.</p>
+<p>With F = 30 kN and θ = 40°, these can be solved for.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\sum F_{x^{\prime}}= 30{~kN} \cos (40^{\circ})-V=0 \\
+V = 23.0{~kN}\\
+\sum F_{y^{\prime}}= N-30{~kN} \sin (40^{\circ})=0\\
+N=19.3{~kN}
+\end{aligned}
+\]</span></p>
+<p>N = 19.3 kN and V = 23.0 kN.</p>
 <p>Next, determine the cross-sectional area of the inclined plane.</p>
 <p><span class="math display">\[
 A_p=\frac{A}{\sin (\theta)}
-\]</span></p>
-<p>With <span class="math inline">\(A = 0.05{~m}*0.02{~m} = 0.001{~m}^2\)</span> and <span class="math inline">\(θ = 40°\)</span>, <span class="math inline">\(Ap = 0.00156{~m}^2\)</span>.</p>
+\]</span>With <span class="math inline">\(A = 0.05{~m}*0.02{~m} = 0.001{~m}^2\)</span> and <span class="math inline">\(θ = 40°\)</span>, <span class="math inline">\(Ap = 0.00156{~m}^2\)</span>.</p>
 <p>Finally, determine the average normal stress and the average shear stress.</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -911,11 +1153,12 @@ Step-by-step: Stresses on Inclined Planes
 </div>
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li><p>Use equilibrium equations to determine reaction loads at any supports.</p></li>
-<li><p>Cut a cross-section along the inclined plane and determine the angle (θ) of the plane with respect to the axis perpendicular to cross-sectional area A.</p></li>
-<li><p>Use equilibrium equations to determine the internal load (F).</p></li>
-<li><p>Determine average normal stress using <span class="math inline">\(\sigma=\frac{F \sin ^2(\theta)}{A}\)</span>.</p></li>
-<li><p>Determine average shear stress using <span class="math inline">\(\tau=\frac{F \sin (\theta) \cos (\theta)}{A}\)</span>.</p></li>
+<li><p>Determine reaction loads: Use equilibrium equations to determine reaction loads at any supports.</p></li>
+<li><p>Draw free body diagram: Cut a cross-section along the inclined plane and determine the angle (θ) of the plane with respect to the axis perpendicular to cross-sectional area A.</p></li>
+<li><p>Calculate internal force: Use equilibrium equations to determine the internal load (F).</p></li>
+<li><p>Calculate average stress:</p>
+<p>Determine average normal stress using <span class="math inline">\(\sigma=\frac{F \sin ^2(\theta)}{A}\)</span>.</p>
+<p>Determine average shear stress using <span class="math inline">\(\tau=\frac{F \sin (\theta) \cos (\theta)}{A}\)</span>.</p></li>
 </ol>
 </div>
 </div>
@@ -938,8 +1181,8 @@ Key takeaways
 </div>
 <div class="callout-body-container callout-body">
 <p>Objects under load will experience stress. It is the stress level (rather than just the load by itself) that determines whether an object will break under load. We can calculate the average normal stress and average shear stress acting on a body, though a complete understanding of the stress field within a complex object often requires more advanced concepts.</p>
-<p>Stress depends on the internal load in the body, the cross-sectional area, and the orientation of the plane. Normal stress occurs when there is an internal normal force and may be tensile or compressive. Shear stress occurs when there is an internal shear force. Members may commonly experience multiple shear planes.</p>
-<p>If there are multiple loads acting on a body, or if the body has multiple cross-sectional areas at different points, different parts of the body may experience different stresses. In such cases, we may calculate the stress in each part of the body by finding the internal load and cross-sectional area in that part of the body. In this chapter we have discussed average stress. In subsequent chapters further details on stress distributions will be discussed.</p>
+<p>Stress depends on the internal load in the body, the cross-sectional area, and the orientation of the plane. Normal stress occurs when there is an internal normal force and may be tensile or compressive. Shear stress occurs when there is an internal shear force. Members may experience multiple shear planes, in which case the internal shear force in the member is equal to the load applied to the member divided by the number of shear planes.</p>
+<p>If there are multiple loads acting on a body, or if the body has different cross-sectional areas at different points, different parts of the body may experience different stresses. In such cases, we may calculate the stress in each part of the body by finding the internal load and cross-sectional area in that part of the body. In this chapter we have discussed average stress. In subsequent chapters further details on stress distributions will be discussed.</p>
 <p>Bearing stress is similar to normal stress, but occurs between two bodies.</p>
 <p>We may calculate stresses along inclined planes by cutting a cross-section at an angle. Determining the stresses at different angles will be important later in our studies.</p>
 </div>
@@ -984,19 +1227,13 @@ Key equations
 Click to expand
 </summary>
 <p><strong>Figures</strong></p>
-<p>Figure 2.1: Forces pulling on a cross-section cause tension, while forces pushing on a cross-section cause compression. Left image: Orangeaurochs. 2012. CC BY 2.0. <a href="https://flic.kr/p/dqmXdM" class="uri">https://flic.kr/p/dqmXdM</a>. Right image: Unknown author. 2017. Public domain. <a href="https://pxhere.com/en/photo/993074" class="uri">https://pxhere.com/en/photo/993074</a>. Diagrams: Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Figure 2.2: The internal load is equally distributed over the cross-sectional area, but may be represented as a single concentrated load acting at the center (N in this case). Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Example 2.1: Jbarta. 2010. CC BY-SA 3.0. <a href="https://en.wikipedia.org/wiki/File:Permanent-column-form.jpg" class="uri">https://en.wikipedia.org/wiki/File:Permanent-column-form.jpg</a>.</p>
-<p>Example 2.2: Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Figure 2.3: (a) External loads F creating (b) an internal normal force (N) perpendicular to the cross-section. Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Example 2.3: Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Figure 2.4: Pins experiencing (a) single shear and (b) double shear. Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Example 2.4: James Lord. 2024. CC BY-NC-SA.</p>
-<p>Figure 2.5: Circular column sitting upon a rectangular foundation. Jiří Sedláček - Frettie. 2010. CC BY-SA 3.0. <a href="https://commons.wikimedia.org/wiki/File:Footing_of_column_in_collections_of_Muzeum_Vyso%C4%8Diny_in_T%C5%99eb%C3%AD%C4%8D,_T%C5%99eb%C3%AD%C4%8D_District.jpg" class="uri">https://commons.wikimedia.org/wiki/File:Footing_of_column_in_collections_of_Muzeum_Vyso%C4%8Diny_in_T%C5%99eb%C3%AD%C4%8D,_T%C5%99eb%C3%AD%C4%8D_District.jpg</a>.</p>
-<p>Figure 2.6: When calculating the bearing stress between curved surfaces, project a rectangle of area A = d*t. Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Figure 2.7: (a) External loads, F, will create (b) an internal normal force, N, when a cross-section is cut vertically. Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Figure 2.8: When calculating the stresses on an inclined plane, it is important to use the area of the plane, Ap, rather than the area of the cross-sectional plane, A. Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Example 2.5: Kindred Grey. 2024. CC BY-NC-SA.</p>
+<p>All figures in this chapter were created by Kindred Grey in 2025 and released under a CC BY-NC-SA license, except for:</p>
+<ul>
+<li><p>Figure 2.1: Forces pulling on a cross-section cause tension, while forces pushing on a cross-section cause compression. Left image: Orangeaurochs. 2012. CC BY 2.0. <a href="https://flic.kr/p/dqmXdM" class="uri">https://flic.kr/p/dqmXdM</a>. Right image: Unknown author. 2017. Public domain. <a href="https://pxhere.com/en/photo/993074" class="uri">https://pxhere.com/en/photo/993074</a>. Diagrams: Kindred Grey. 2024. CC BY-NC-SA.</p></li>
+<li><p>Example 2.1: Jbarta. 2010. CC BY-SA 3.0. <a href="https://en.wikipedia.org/wiki/File:Permanent-column-form.jpg" class="uri">https://en.wikipedia.org/wiki/File:Permanent-column-form.jpg</a>.</p></li>
+<li><p>Example 2.4: Image: James Lord. CC BY NC-SA.</p></li>
+<li><p>Figure 2.5: Circular column sitting upon a rectangular foundation. Jiří Sedláček - Frettie. 2010. CC BY-SA 3.0. <a href="https://commons.wikimedia.org/wiki/File:Footing_of_column_in_collections_of_Muzeum_Vyso%C4%8Diny_in_T%C5%99eb%C3%AD%C4%8D,_T%C5%99eb%C3%AD%C4%8D_District.jpg" class="uri">https://commons.wikimedia.org/wiki/File:Footing_of_column_in_collections_of_Muzeum_Vyso%C4%8Diny_in_T%C5%99eb%C3%AD%C4%8D,_T%C5%99eb%C3%AD%C4%8D_District.jpg</a>.</p></li>
+</ul>
 </details>
 
 
@@ -1004,383 +1241,255 @@ Click to expand
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
     }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const disableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'prefetch';
-    }
-  }
-  const enableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'stylesheet';
-    }
-  }
-  const manageTransitions = (selector, allowTransitions) => {
-    const els = window.document.querySelectorAll(selector);
-    for (let i=0; i < els.length; i++) {
-      const el = els[i];
-      if (allowTransitions) {
-        el.classList.remove('notransition');
-      } else {
-        el.classList.add('notransition');
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-  }
-  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-    let newTheme = '';
-    if(darkModeDefault) {
-      newTheme = isAlternate ? baseTheme : alternateTheme;
-    } else {
-      newTheme = isAlternate ? alternateTheme : baseTheme;
-    }
-    const changeGiscusTheme = () => {
-      // From: https://github.com/giscus/giscus/issues/336
-      const sendMessage = (message) => {
-        const iframe = document.querySelector('iframe.giscus-frame');
-        if (!iframe) return;
-        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      sendMessage({
-        setConfig: {
-          theme: newTheme
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
       });
     }
-    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-    if (isGiscussLoaded) {
-      changeGiscusTheme();
-    }
-  }
-  const toggleColorMode = (alternate) => {
-    // Switch the stylesheets
-    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-    manageTransitions('#quarto-margin-sidebar .nav-link', false);
-    if (alternate) {
-      enableStylesheet(alternateStylesheets);
-      for (const sheetNode of alternateStylesheets) {
-        if (sheetNode.id === "quarto-bootstrap") {
-          toggleBodyColorMode(sheetNode);
-        }
-      }
-    } else {
-      disableStylesheet(alternateStylesheets);
-      toggleBodyColorPrimary();
-    }
-    manageTransitions('#quarto-margin-sidebar .nav-link', true);
-    // Switch the toggles
-    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-    for (let i=0; i < toggles.length; i++) {
-      const toggle = toggles[i];
-      if (toggle) {
-        if (alternate) {
-          toggle.classList.add("alternate");     
-        } else {
-          toggle.classList.remove("alternate");
-        }
-      }
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455)
-    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-      manageTransitions("body", false);
-      window.scrollTo(0, 1);
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        manageTransitions("body", true);
-      }, 40);  
-    }
-  }
-  const isFileUrl = () => { 
-    return window.location.protocol === 'file:';
-  }
-  const hasAlternateSentinel = () => {  
-    let styleSentinel = getColorSchemeSentinel();
-    if (styleSentinel !== null) {
-      return styleSentinel === "alternate";
-    } else {
-      return false;
-    }
-  }
-  const setStyleSentinel = (alternate) => {
-    const value = alternate ? "alternate" : "default";
-    if (!isFileUrl()) {
-      window.localStorage.setItem("quarto-color-scheme", value);
-    } else {
-      localAlternateSentinel = value;
-    }
-  }
-  const getColorSchemeSentinel = () => {
-    if (!isFileUrl()) {
-      const storageValue = window.localStorage.getItem("quarto-color-scheme");
-      return storageValue != null ? storageValue : localAlternateSentinel;
-    } else {
-      return localAlternateSentinel;
-    }
-  }
-  const darkModeDefault = false;
-  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-  // Dark / light mode switch
-  window.quartoToggleColorScheme = () => {
-    // Read the current dark / light value 
-    let toAlternate = !hasAlternateSentinel();
-    toggleColorMode(toAlternate);
-    setStyleSentinel(toAlternate);
-    toggleGiscusIfUsed(toAlternate, darkModeDefault);
-  };
-  // Ensure there is a toggle, if there isn't float one in the top right
-  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-    const a = window.document.createElement('a');
-    a.classList.add('top-right');
-    a.classList.add('quarto-color-scheme-toggle');
-    a.href = "";
-    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-    const i = window.document.createElement("i");
-    i.classList.add('bi');
-    a.appendChild(i);
-    window.document.body.appendChild(a);
-  }
-  // Switch to dark mode if need be
-  if (hasAlternateSentinel()) {
-    toggleColorMode(true);
-  } else {
-    toggleColorMode(false);
-  }
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
         }
-        return container.innerHTML
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1388,185 +1497,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./Chapter 1.html" class="pagination-link" aria-label="Statics Review">

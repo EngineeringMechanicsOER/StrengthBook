@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.7.29">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -32,17 +32,20 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="./">
 <link href="./Chapter 15.html" rel="next">
 <link href="./Chapter 13.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-748b535e376f14d4692bf2b2e5fd6380.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-e1aa288a8a6a3aa5f7fec8175f5023de.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-d13a72f20fc3c7f792e67513fe0bf82c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-e1aa288a8a6a3aa5f7fec8175f5023de.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -104,7 +107,168 @@ window.Quarto = {
 <link rel="stylesheet" href="styles/custom.css">
 </head>
 
-<body class="nav-sidebar docked">
+<body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -204,7 +368,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Chapter 10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Shear Loads</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Shear Loading in Beams</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -289,25 +453,28 @@ window.Quarto = {
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#sec-14.1" id="toc-sec-14.1" class="nav-link" data-scroll-target="#sec-14.1"><span class="header-section-number">14.1</span> Combined Normal Stress</a>
+  <li><a href="#sec-14.1" id="toc-sec-14.1" class="nav-link" data-scroll-target="#sec-14.1"><span class="header-section-number">14.1</span> Coordinate Axes and Directions</a></li>
+  <li><a href="#sec-14.2" id="toc-sec-14.2" class="nav-link" data-scroll-target="#sec-14.2"><span class="header-section-number">14.2</span> Combined Normal Stress</a>
   <ul class="collapse">
-  <li><a href="#sec-14.1.1" id="toc-sec-14.1.1" class="nav-link" data-scroll-target="#sec-14.1.1"><span class="header-section-number">14.1.1</span> Generalized Bending Stress Equation</a></li>
-  <li><a href="#sec-14.1.2" id="toc-sec-14.1.2" class="nav-link" data-scroll-target="#sec-14.1.2"><span class="header-section-number">14.1.2</span> Eccentric Loading</a></li>
+  <li><a href="#sec-14.2.1" id="toc-sec-14.2.1" class="nav-link" data-scroll-target="#sec-14.2.1"><span class="header-section-number">14.2.1</span> Generalized Bending Stress Equation</a></li>
+  <li><a href="#sec-14.2.2" id="toc-sec-14.2.2" class="nav-link" data-scroll-target="#sec-14.2.2"><span class="header-section-number">14.2.2</span> Assessing Bending Stress Signs For Generalized Bending Stress Equation</a></li>
+  <li><a href="#sec-14.2.3" id="toc-sec-14.2.3" class="nav-link" data-scroll-target="#sec-14.2.3"><span class="header-section-number">14.2.3</span> Eccentric Loading</a></li>
   </ul></li>
-  <li><a href="#sec-14.2" id="toc-sec-14.2" class="nav-link" data-scroll-target="#sec-14.2"><span class="header-section-number">14.2</span> General Shear Stress</a>
+  <li><a href="#sec-14.3" id="toc-sec-14.3" class="nav-link" data-scroll-target="#sec-14.3"><span class="header-section-number">14.3</span> General Shear Stress</a>
   <ul class="collapse">
-  <li><a href="#sec-14.2.1" id="toc-sec-14.2.1" class="nav-link" data-scroll-target="#sec-14.2.1"><span class="header-section-number">14.2.1</span> Shear Stress due to Torsion</a></li>
-  <li><a href="#sec-14.2.2" id="toc-sec-14.2.2" class="nav-link" data-scroll-target="#sec-14.2.2"><span class="header-section-number">14.2.2</span> Shear Stress due to Transverse Shear</a></li>
-  <li><a href="#sec-14.2.3" id="toc-sec-14.2.3" class="nav-link" data-scroll-target="#sec-14.2.3"><span class="header-section-number">14.2.3</span> Combined Shear Stress</a></li>
+  <li><a href="#sec-14.3.1" id="toc-sec-14.3.1" class="nav-link" data-scroll-target="#sec-14.3.1"><span class="header-section-number">14.3.1</span> Shear Stress due to Torsion</a></li>
+  <li><a href="#sec-14.3.2" id="toc-sec-14.3.2" class="nav-link" data-scroll-target="#sec-14.3.2"><span class="header-section-number">14.3.2</span> Shear Stress due to Transverse Shear</a></li>
+  <li><a href="#sec-14.3.3" id="toc-sec-14.3.3" class="nav-link" data-scroll-target="#sec-14.3.3"><span class="header-section-number">14.3.3</span> Combined Shear Stress</a></li>
   </ul></li>
-  <li><a href="#sec-14.3" id="toc-sec-14.3" class="nav-link" data-scroll-target="#sec-14.3"><span class="header-section-number">14.3</span> General Combined Stress</a></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">14.4</span> Summary</a></li>
+  <li><a href="#sec-14.4" id="toc-sec-14.4" class="nav-link" data-scroll-target="#sec-14.4"><span class="header-section-number">14.4</span> General Combined Stress</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">14.5</span> Summary</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
+
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -351,107 +518,147 @@ Learning Objectives
 <summary>
 Click to expand
 </summary>
-<p>In this chapter, we will use of all of the previously discussed methods to determine normal and shear stress resulting from axial forces (<a href="Chapter 5.html" class="quarto-xref"><span>Chapter 5</span></a>), bending moments (<a href="Chapter 9.html" class="quarto-xref"><span>Chapter 9</span></a>), pressure (<a href="Chapter 13.html" class="quarto-xref"><span>Chapter 13</span></a>), transverse loads (<a href="Chapter 10.html" class="quarto-xref"><span>Chapter 10</span></a>), and torsion (<a href="Chapter 6.html" class="quarto-xref"><span>Chapter 6</span></a>) to determine an overall general stress state for any given point on a structure.</p>
-<p>In <a href="#sec-14.1" class="quarto-xref"><span>Section 14.1</span></a>, the various sources of normal stress are reviewed and expanded on. They will be reframed in terms of general axes so as to clarify which other stresses they may combine with. In <a href="#sec-14.1.1" class="quarto-xref"><span>Section 14.1.1</span></a> we will revisit bending stress to express the unsymmetric bending stress equation in terms of general cross-sectional axes (recall in <a href="Chapter 9.html" class="quarto-xref"><span>Chapter 9</span></a>, the cross-sectional axes were always y and z). In <a href="#sec-14.1.2" class="quarto-xref"><span>Section 14.1.2</span></a>, eccentric loading, which is a specific instance of combined normal stress in which normal forces result in bending, will be considered.</p>
-<p>In <a href="#sec-14.2" class="quarto-xref"><span>Section 14.2</span></a>, we will focus on combining the various sources of shear stress to determine the total shear stress. To expand on the concepts discussed and used in <a href="Chapter 6.html" class="quarto-xref"><span>Chapter 6</span></a> and <a href="Chapter 10.html" class="quarto-xref"><span>Chapter 10</span></a>, we will perform calculations based on both possible transverse loading directions as well as torsion. As in <a href="#sec-14.1" class="quarto-xref"><span>Section 14.1</span></a>, this will be done with a general set of coordinate axes.</p>
-<p>In <a href="#sec-14.3" class="quarto-xref"><span>Section 14.3</span></a>, we will further expand the above cases to situations in which all combinations of loading are possible and the general stress state is determined.</p>
+<p>In this chapter, we will use of all of the previously discussed concepts to determine the total normal stress and the total shear stress for a body subjected to various types of loading simultaneously. Axial forces (<span class="quarto-unresolved-ref">?sec-axial-loads</span>), bending moments (<a href="Chapter 9.html" class="quarto-xref"><span>Chapter 9</span></a>), and pressure (<a href="Chapter 13.html" class="quarto-xref"><span>Chapter 13</span></a>) may be applied in various combinations to give total normal stress. Transverse loads (<a href="Chapter 10.html" class="quarto-xref"><span>Chapter 10</span></a>) in multiple directions and torsion (<a href="Chapter 6.html" class="quarto-xref"><span>Chapter 6</span></a>) can combine to give total shear stress.</p>
+<p>As part of understanding which loads lead to which types of stresses and in which directions, it will be important to have a good understanding of coordinate axes. In particular, we will want to be able to distinguish between the longitudinal axis and the cross-sectional axes. This can change from body to body as different coordinate axes are used, but it can also change within an individual body based on changes in geometry. In <a href="#sec-14.1" class="quarto-xref"><span>Section 14.1</span></a>, we will review how to distinguish between the coordinate axes as well as define generic terms such that we can express equations in a more generalalized manner.</p>
+<p>In <a href="#sec-14.2" class="quarto-xref"><span>Section 14.2</span></a>, the various sources of normal stress are reviewed and expanded on. They will be re-framed in terms of general axes so as to clarify which other stresses they may combine with. In <a href="#sec-14.2.1" class="quarto-xref"><span>Section 14.2.1</span></a> we will revisit bending stress to express the unsymmetric bending stress equation in terms of general cross-sectional axes. In <a href="#sec-14.2.2" class="quarto-xref"><span>Section 14.2.2</span></a>, eccentric loading, which is a specific instance of combined normal stress in which normal forces result in bending, will be considered.</p>
+<p>In <a href="#sec-14.3" class="quarto-xref"><span>Section 14.3</span></a>, we will focus on combining the various sources of shear stress to determine the total shear stress. To expand on the concepts discussed and used in <a href="Chapter 6.html" class="quarto-xref"><span>Chapter 6</span></a> and <a href="Chapter 10.html" class="quarto-xref"><span>Chapter 10</span></a>, we will perform calculations based on both possible transverse loading directions as well as torsion. As in <a href="#sec-14.2" class="quarto-xref"><span>Section 14.2</span></a>, this will be done with a general set of coordinate axes.</p>
+<p>In <a href="#sec-14.4" class="quarto-xref"><span>Section 14.4</span></a>, we will further expand the above cases to situations in which all combinations of loading are possible and the general stress state is determined.</p>
 <p>Note that the determination of the internal reactions for the general problems presented in this chapter will require the use of 3D equilibrium equations, particularly for determining bending moments and torsion. You may find it helpful to review <a href="Chapter 1.html#sec-1.3" class="quarto-xref"><span>Section 1.3</span></a> to understand these calculations.</p>
 </details>
 </section>
 <section id="sec-14.1" class="level2" data-number="14.1">
-<h2 data-number="14.1" class="anchored" data-anchor-id="sec-14.1"><span class="header-section-number">14.1</span> Combined Normal Stress</h2>
+<h2 data-number="14.1" class="anchored" data-anchor-id="sec-14.1"><span class="header-section-number">14.1</span> Coordinate Axes and Directions</h2>
 <details>
 <summary>
 Click to expand
 </summary>
-<p>All forms of normal stress previously discussed act in the longitudinal (also referred to as axial) direction except for the hoop stress from pressure. The longitudinal direction is the direction normal to the cross-sectional location of the point for which stress is being evaluated.</p>
-<p>To be able to discuss directions and stress components in general terms, we will consider the loadings and stresses in terms of the longitudinal direction (L) at the point in the structure being considered, the centroidal vertical axis of the cross-section (V), and the centroidal horizontal axis of the cross-section (H). The specific axes that these terms refer to depends on how the axes are specified generally for a structure as well as the location of the point in question.</p>
-<p>For example, consider the structure in <a href="#fig-14.1" class="quarto-xref">Figure&nbsp;<span>14.1</span></a> with the x, y, z axes oriented at the origin as shown. For point P on the structure, the longitudinal axis is the x-axis and the vertical and horizontal axes of the cross-section are the y-axis and z-axis, respectively. On the other hand, for point Q, the longitudinal axis is the y-axis and the vertical and horizontal axes of the cross-section are the z-axis and x-axis, respectively.</p>
+<p>To generalize the discussion for any set of coordinate axes, we will use generic terms for the various directions, as shown in <a href="#fig-14.1" class="quarto-xref">Figure&nbsp;<span>14.1</span></a>. The vertical axis of the cross-section will be referred to as the V axis, the horizontal axis of the cross-section will be referred to as the H axis, and the longitudinal (axial) direction will be referred to as the L axis.</p>
+<p>The longitudinal direction, synonymous with axial direction, is the direction perpendicular to a cross-section which is cut at a point of interest on a body. The cross-sectional axes are the axes one would draw on the cross-section once the cut is made.</p>
 <div id="fig-14.1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-14.1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/CH14 PNGs/figure 14.1.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
+<img src="images/chapter 14 figure edits/figure 14.1.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-14.1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;14.1: The longitudinal (L), horizontal (H), and vertical (V) axes depend on how the axes are arranged globally for the structure as well as the specific location of the point in question.
+Figure&nbsp;14.1: To maintain generality, we will use V to denote the vertical axis of the cross-section, H to denote the horizontal axis of the cross-section, and L to denote the longitudinal axis of the body based on the cross-section of interest.
 </figcaption>
 </figure>
 </div>
-<p>We have seen that axial load, bending moments, and pressure all result in normal stresses. We can express the 2D normal stress state for any given point as:</p>
-<p><span class="math display">\[
-\sigma_L=\frac{\sum F_L}{A}+\sigma_{bending}+\frac{p r}{2 t}
-\]</span></p>
-<p>in the longitudinal direction and:</p>
-<p><span class="math display">\[
-\sigma_{hoop}=\frac{p r}{t}
-\]</span></p>
-<p>in the direction of the other planar axis of the point in question. For the example given in <a href="#fig-14.1" class="quarto-xref">Figure&nbsp;<span>14.1</span></a>, both points are in the x-y plane, but the hoop direction is the y direction for point P and the x direction for point Q.</p>
-<p>In the above stress equation, F<sub>L</sub> is the total force in the direction normal to the cross-section (same direction as the longitudinal direction). It is positive if the total normal force is tensile and negative if compressive. In addition, A is the cross-sectional area, p is the internal pressure, r is the inside radius of a pipe, and t is the wall thickness of a pipe. The pressure term will always be positive for internal pressure. Of course, for a solid cross-section, or a hollow cross-section with no pressure, the hoop stress and the last term of the longitudinal stress would be 0.</p>
-<p>To help break down this analysis, <a href="#sec-14.1.1" class="quarto-xref"><span>Section 14.1.1</span></a> presents further clarification on finding bending stress for general coordinate axes. <a href="#sec-14.1.2" class="quarto-xref"><span>Section 14.1.2</span></a> discusses the specific combined loading case of an axial force that also results in bending.</p>
-<section id="sec-14.1.1" class="level3" data-number="14.1.1">
-<h3 data-number="14.1.1" class="anchored" data-anchor-id="sec-14.1.1"><span class="header-section-number">14.1.1</span> Generalized Bending Stress Equation</h3>
-<p>In <a href="Chapter 9.html#sec-9.1" class="quarto-xref"><span>Section 9.1</span></a> , an equation for bending stress based on having bending around the cross-sectional axes of y and z was derived. That equation is:</p>
-<p><span class="math display">\[
-\sigma_x=-\frac{M_z y}{I_z}+\frac{M_y z}{I_y}
-\]</span></p>
-<p>The negative sign in front of the M<sub>z</sub> expression and the plus in front of the M<sub>y</sub> expression are specifically related to the y and z cross-sectional axes as oriented as they were in <a href="Chapter 9.html" class="quarto-xref"><span>Chapter 9</span></a>, with the z-axis positive horizontally to the left and the y axis positive vertically upwards. However, because cross-sectional axes for any given point on a structure can vary based on both how the global axes are specified and on the location of the point within the structure, we will need to know how to apply the bending stress equation for a general set of axes before we can combine this stress with other sources of normal stress.</p>
-<p>In any given loading situation, the bending moments are the moments around the cross-sectional centroidal axes. If the cross-sectional centroidal axes are thought of generally as the vertical axis (V) and the horizontal axis (H) as shown in <a href="#fig-14.2" class="quarto-xref">Figure&nbsp;<span>14.2</span></a>, the resulting stress would be in the longitudinal direction (L), and we can express the unsymmetric bending stress equation as:</p>
-<p><span id="eq-14.1"><span class="math display">\[
-\boxed{\sigma_{L(bending})= \pm\left|\frac{M_V d_H}{I_V}\right| \pm\left|\frac{M_H d_V}{I_H}\right|}
-\tag{14.1}\]</span></span></p>
-<div class="line-block"><em>where</em><br>
-<em>𝜎<sub>𝐿</sub> = Bending stress in the longitudinal direction [Pa, psi]</em><br>
-<em>M<sub>V</sub> = Bending moment around the vertical axis [N⸱m, lb⸱in.]</em><br>
-<em>M<sub>H</sub> = Bending moment around the horizontal axis [N⸱m, lb⸱in.]</em><br>
-<em>d<sub>H</sub> = Horizontal distance between the point on the cross-section for which the stress is being calculated and the V axis [m, in.]</em><br>
-<em>d<sub>V</sub> = Vertical distance between the point on the cross-section for which the stress is being calculated and the H axis [m, in.]</em><br>
-<em>I<sub>V</sub> = the moment of inertia about the vertical axis [m<sup>4</sup>, in.<sup>4</sup>]</em><br>
-<em>I<sub>H</sub> = Area moment of inertia about the horizontal axis [m<sup>4</sup>, in.<sup>4</sup>]</em></div>
+<p>These directions could change from point to point depending on the location of the point and the geometry of the body. For example, consider the structure in <a href="#fig-14.2" class="quarto-xref">Figure&nbsp;<span>14.2</span></a> with the x, y, z axes oriented at the origin as shown. If we want to examine point P on the structure, we make a vertical cut at point P. The direction normal to the cut surface is the x-direction, so the x axis is the longitudinal axis. When you view the cut surface looking down the x-axis, you see the y and z axes on the cross-section, so those are the cross-sectional axes.</p>
+<p>On the other hand, for point Q, we must make a horizontal cut to examine that point. The normal direction then is the vertical, or yaxis. and the cross-sectional axes are the x and z axes.</p>
 <div id="fig-14.2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-14.2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/CH14 PNGs/figure 14.2.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
+<img src="images/chapter 14 figure edits/figure 14.2.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-14.2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;14.2: General coordinate axes and the distances used in the bending stress equation
+Figure&nbsp;14.2: The longitudinal (L), horizontal (H), and vertical (V) axes depend on how the axes are arranged globally for the structure as well as the specific location of the point in question.
 </figcaption>
 </figure>
 </div>
-<p>The sign on each individual term needs to be determined by inspection of the bending direction. The side of the cross section that would be on the “inside” of the bend will be in compression and vice versa. <a href="#fig-14.3" class="quarto-xref">Figure&nbsp;<span>14.3</span></a> illustrates the sense of the bending moment around the horizontal axis that would result in compression above the H axis and tension below. <a href="#fig-14.4" class="quarto-xref">Figure&nbsp;<span>14.4</span></a> illustrates the sense of bending moment around the vertical axis that would result in tension to the left of the V axis and compression to the right. The bending moment is shown for a section above and below a cut on a vertical structure and to the left and right of a cut on a horizontally oriented structure. The opposite directions of bending moment would lead to the opposite signs of stress.</p>
+<p>In the following sections, we will express equations in terms of these generic directions so that they will apply to any orientation of coordinate axes.</p>
+</details>
+</section>
+<section id="sec-14.2" class="level2" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="sec-14.2"><span class="header-section-number">14.2</span> Combined Normal Stress</h2>
+<details>
+<summary>
+Click to expand
+</summary>
+<p>In previous chapters, individual sources of longitudinal normal stress were considered: axial loads (@sec-axial-loading), bending loads (<a href="Chapter 9.html" class="quarto-xref"><span>Chapter 9</span></a>), and pressure loads (<a href="Chapter 13.html" class="quarto-xref"><span>Chapter 13</span></a>). With all three of these forms of loading present, we would calculate the total longitudinal stress as:</p>
+<p><span class="math display">\[
+\sigma_L =\frac{\sum F_L}{A}+\sigma_{bending}+\frac{p r}{2 t}
+\]</span></p>
+<p>where:</p>
+<p>𝜎<sub>L</sub> = total normal stress in longitudinal direction {Pa, psi]</p>
+<p>F<sub>L</sub> = force in the longitudinal direction {N, lb]</p>
+<p>A = cross-sectional area [m<sup>2</sup>, in<sup>2</sup>]</p>
+<p>𝜎<sub>bending</sub> = bending stress (discussed in more detail below) [Pa, psi]</p>
+<p>p = internal pressure [Pa, psi]</p>
+<p>r = inner radius of pipe or pressure vessel [m, in]</p>
+<p>t = wall thickness of pipe or pressure vessel [m, in]</p>
+<p>If there is pressure loading, in addition to the contribution to the longitudinal normal stress indicated above, there will also be normal stress in the cross-sectional directions equal to the hoop stress.</p>
+<p><span class="math display">\[\sigma_V=\sigma_H=\sigma_{hoop}=\frac{pr}
+{t}\]</span></p>
+<p>Of course, for problems with no pressure, the pressure terms would be excluded.</p>
+<p>Of the three longitudinal normal stresses, bending stresses tend to be the most complex to understand in terms of calculation inputs and signs, especially with varying coordinate axes directions. <a href="#sec-14.2.1" class="quarto-xref"><span>Section 14.2.1</span></a> re-visits the concept of bending stress in order to discuss how to generalize the equations presented in <a href="Chapter 9.html" class="quarto-xref"><span>Chapter 9</span></a> to any orientation of body with any arrangement of coordinate axes.</p>
+<section id="sec-14.2.1" class="level3" data-number="14.2.1">
+<h3 data-number="14.2.1" class="anchored" data-anchor-id="sec-14.2.1"><span class="header-section-number">14.2.1</span> Generalized Bending Stress Equation</h3>
+<p>In <a href="Chapter 9.html#sec-9.1" class="quarto-xref"><span>Section 9.1</span></a> , an equation for bending stress in the x direction based on bending around the cross-sectional axes y and z was derived. That equation is:</p>
+<p><span class="math display">\[
+\sigma_x=-\frac{M_z y}{I_z}+\frac{M_y z}{I_y}
+\]</span></p>
+<p>This form of the equation, with the indicated sign in front of each term, is specific to the cross-sectional axes oriented with the z axis positive left and the y axis positive upwards. The negative in front of the M<sub>z</sub> term and the positive in front of the M<sub>y</sub> term are part of the derived equation and when the correct signs for M<sub>z</sub>, M<sub>y</sub>, y, and z are inserted, the correct sign of the stress is obtained (positive for tensile and negative for compressive). In <a href="Chapter 9.html" class="quarto-xref"><span>Chapter 9</span></a>, no other cross-sectional axes were considered so that focus on the general concept of bending stress could be more easily maintained.</p>
+<p>When the cross-sectional axes are not y and z, we apply the same general form of the above bending stress equation. However, for a different set of axes, not only do we need to change the bending moment and moment of inertia axes in the equation, we need to reconsider the signs. In any given bending load situation, the bending moments are the moments around the centroidal axes of the cross-section (V and H) and the resulting normal stress is in the longitudinal direction (L).</p>
+<p>We can then re-phrase the bending stress equation as:</p>
+<p><span id="eq-14.1"><span class="math display">\[
+\boxed{\sigma_{(bending)}= \pm\left|\frac{M_V\ d_H}{I_V}\right| \pm\left|\frac{M_H\ d_V}{I_H}\right|}
+\tag{14.1}\]</span></span></p>
+<div class="line-block"><em>where</em><br>
+<em>𝜎(<sub>bending)</sub> = Bending stress in the longitudinal direction [Pa, psi]</em><br>
+<em>M<sub>V</sub> = Bending moment around the vertical axis [N⸱m, lb⸱in.]</em><br>
+<em>M<sub>H</sub> = Bending moment around the horizontal axis [N⸱m, lb⸱in.]</em><br>
+<em>d<sub>H</sub> = Horizontal distance between the point of interest on the cross-section and the V axis [m, in.]</em><br>
+<em>d<sub>V</sub> = Vertical distance between the point of interest on the cross-section and the H axis [m, in.]</em><br>
+<em>I<sub>V</sub> = the moment of inertia about the vertical axis [m<sup>4</sup>, in.<sup>4</sup>]</em><br>
+<em>I<sub>H</sub> = Area moment of inertia about the horizontal axis [m<sup>4</sup>, in.<sup>4</sup>]</em><br>
+</div>
+<p>The absolute values are used for the bending stress terms with the ⨦ in front to indicate that we will calculate the magnitude of each bending stress term and then assess the signs of the terms independently. The assessment of the signs will be done by visualizing the bending direction, or by using visualization tools which will be described below. Recall that compressive stresses are considered negative and tensile stresses are positive.</p>
+<p><a href="#fig-14.3" class="quarto-xref">Figure&nbsp;<span>14.3</span></a> illustrates the distances dH and dV for the case where the stress at the example point P on the cross-section is being calculated.</p>
+<p>It will also be helpful to note that the bending stress at a point that lies directly on a centroidal axis will be zero for bending around that axis. This is evident from the fact that d<sub>H</sub> =0 for a point on the V axis and d<sub>V</sub> =0 for a point on the H axis.</p>
 <div id="fig-14.3" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-14.3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/CH14 PNGs/figure 14.3.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
+<img src="images/chapter 14 figure edits/figure 14.3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="236">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-14.3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;14.3: Sense of bending moment around the horizontal (H) axis that would result in tension below the H axis and compression above
+Figure&nbsp;14.3: The distances dH and dV that would go in @eq-14.1 when calculating the bending stress for point P on the cross-section
 </figcaption>
 </figure>
 </div>
+</section>
+<section id="sec-14.2.2" class="level3" data-number="14.2.2">
+<h3 data-number="14.2.2" class="anchored" data-anchor-id="sec-14.2.2"><span class="header-section-number">14.2.2</span> Assessing Bending Stress Signs For Generalized Bending Stress Equation</h3>
+<p>The sign on each of the two bending stress terms in <a href="#eq-14.1" class="quarto-xref">Equation&nbsp;<span>14.1</span></a> needs to be determined by inspection of the bending direction. In <a href="Chapter 9.html#sec-9.1" class="quarto-xref"><span>Section 9.1</span></a>, we saw that a bending moment around the horizontal axis causes the normal stress to vary along the vertical axis of the cross-section. In <a href="Chapter 9.html#sec-9.3" class="quarto-xref"><span>Section 9.3</span></a>, we saw that a bending moment around the vertical axis causes normal stress to vary across the horizontal axis of the cross section. Which side is in tension versus compression in each case depends on the direction (clockwise versus counterclockwise) of the bending moment as well as the orientation of the body.</p>
+<p>If we can visualize the expected bending due to loading, we can assess if a point will be the “inside” of the bend (compression) or on the “outside” of the bend (tension). For example, in <a href="#fig-14.4" class="quarto-xref">Figure&nbsp;<span>14.4</span></a>, the rightwards horizontal force results in bending around the V axis of the cross-section. The direction of the bending is such that all points to the right of the V axis on the cross-section are on the inside of the bend (compression) and all points to the left of the V axis on the cross-section are on the outside of the bend (tension).</p>
+<p>In <a href="#fig-14.5" class="quarto-xref">Figure&nbsp;<span>14.5</span></a>, the force in the V direction results in a bending moment around the H axis. The direction of the bending is such that all points above the H axis on the cross-section are on the inside of the bend (compression) and all points below the H axis on the cross-section are on the outside of the bend (tension).</p>
 <div id="fig-14.4" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-14.4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/CH14 PNGs/figure 14.4.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
+<img src="images/chapter 14 figure edits/figure 14.4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="493">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-14.4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;14.4: Sense of bending moment around the vertical (V) axis that results in tension to the left of the V axis and compression to the right
+Figure&nbsp;14.4: Bending around the V axis
 </figcaption>
 </figure>
 </div>
-<p>If visualization is difficult, one can use the following tool:</p>
-<ol type="1">
-<li>Draw the <strong>applied</strong> moment arrows around the V and H axes on the cross-section in the correct sense. Make sure to draw them such that they go over (or in front of) the bending axis (as opposed to under or behind)</li>
-<li>The side (top/bottom for moments around the H axis and left/right for the moments around the V axis) the arrows point into are the compressive sides and the sides the tails of the arrows are on are the tensile sides.</li>
-</ol>
-<p>The use of this tool will be demonstrated for the bending stress calculation in <a href="#exm-14.1" class="quarto-xref">Example&nbsp;<span>14.1</span></a>.</p>
-<p>It will also be helpful to note that the bending stress for a point that lies directly on a centroidal axis will be zero for bending around that axis since the bending axis is the neutral axis for that direction of bending, as shown in <a href="#fig-14.5" class="quarto-xref">Figure&nbsp;<span>14.5</span></a>.</p>
 <div id="fig-14.5" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-14.5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/CH14 PNGs/figure 14.5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="369">
+<img src="images/chapter 14 figure edits/figure 14.5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="518">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-14.5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;14.5: Bending moments cause zero stress along the centroidal axis that they act around.
+Figure&nbsp;14.5: Bending around the H axis
+</figcaption>
+</figure>
+</div>
+<p>If visualization is difficult, one can use the following tool (refer to <a href="#fig-14.6" class="quarto-xref">Figure&nbsp;<span>14.6</span></a>):</p>
+<ol type="1">
+<li>Draw the cross-section as viewed from the end towards the origin. For example, in the case of the columns in <a href="#fig-14.4" class="quarto-xref">Figure&nbsp;<span>14.4</span></a> and <a href="#fig-14.5" class="quarto-xref">Figure&nbsp;<span>14.5</span></a>, we would draw the top-down view of the cross-section.</li>
+<li>Draw the bending moment arrows around the V and H axes on the sketch of the cross-section. Exaggerate the arrows so they go all the way across.
+<ul>
+<li>Make sure to draw the bending moment arrows such that they go over (or in front of) the bending axis (as opposed to under or behind)</li>
+</ul></li>
+<li>The side the arrowhead points to is the compressive side and the side the tail of the arrow is on is the tensile side.</li>
+</ol>
+<p>The use of this tool will be demonstrated for the bending stress calculation in <a href="#exm-14.1" class="quarto-xref">Example&nbsp;<span>14.1</span></a>.</p>
+<div id="fig-14.6" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-14.6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/chapter 14 figure edits/figure 14.6.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="425">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-14.6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;14.6: Bending moments around vertical and horizontal axes shown with exaggerated moment arrows
 </figcaption>
 </figure>
 </div>
@@ -471,10 +678,10 @@ Example 14.1
 <p><span class="theorem-title"><strong>Example 14.1</strong></span> &nbsp;</p>
 <p>
 </p>
-<p>The internal bending moments on a 32 mm diameter solid steel rod are found to be M<sub>x</sub> = 376 kN mm and M<sub>z</sub> = 204 kN mm as shown. Determine the bending stress at points P and Q.</p>
+<p>The <u>internal bending moments</u> on a 32 mm diameter solid steel rod are found to be M<sub>x</sub> = 376 kN mm (clockwise) and M<sub>z</sub> = 204 kN mm (counterclockwise) as shown. Determine the bending stress at points P and Q.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH14 PNGs/example 14.1 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="464"></p>
+<p><img src="images/chapter 14 figure edits/example 14.1 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="405"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -489,34 +696,62 @@ Solution
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Drawing the cross-section, we can see that the vertical axis of the cross section is the z-axis and the horizontal axis of the cross section is the x-axis. The resulting stress is in the longitudinal direction, which is the y-axis. The bending stress equation can then be expressed as:</p>
+<p>1) Normally, we would draw the FBD of the cut section to find the internal bending moments. In this case, for simplicity, the internal moments are already given.</p>
+<p>2) Write the general bending stress equation and eliminate unnecessary terms.</p>
 <p><span class="math display">\[
-\sigma_y= \pm\left|\frac{M_z x}{I_z}\right| \pm\left|\frac{M_x z}{I_x}\right|
+\sigma_L= \pm\left|\frac{M_H\ dV}{I_H}\right| \pm\left|\frac{M_V\ dH}{I_V}\right|
 \]</span></p>
-<p>The magnitudes of the bending moments are given. With the circular cross-section, the moment of inertia of both cross-sectional axes are:</p>
+<p>Looking at the cross-section, we can see that the cross-sectional vertical axis is the z-axis and the cross-sectional horizontal axis is the x axis. The longitudinal axis is the y axis:</p>
 <p><span class="math display">\[
-I_x=I_y=\frac{\pi}{4} r^4=\frac{\pi}{4}(16{~mm})^4=51.47 \times 10^3{~mm}^4=51.47 \times 10^{-9}{~m}^4
+\sigma_y= \pm\left|\frac{M_z\ dx}{I_z}\right| \pm\left|\frac{M_x\ dz}{I_x}\right|
 \]</span></p>
-<p>For point P, because it is on the centroidal z-axis, we know that it experiences no stress from M<sub>z</sub>. Given the clockwise bending moment around the x-axis, the beam can be visualized as bending in a manner such that point P will be on the “inside” of the bend, or in compression.</p>
-<p>If the visualization is difficult, we can also use the “tool” described in <a href="#sec-14.1" class="quarto-xref"><span>Section 14.1</span></a>. Noting that the applied moment in this case is in the same direction as the bending moment (since equilibrium dictates that the moment at the fixed support is opposite of what is applied and the bending moment is opposite of the fixed support, we can conclude that the bending moment and applied moment would be in the same direction), we can draw the moment arrow across the cross-section. Note that this arrow should be drawn going over the x-axis. Drawing the arrow on the cross-section in this way, we can see that the arrowhead would point towards P, so all points above the x-axis, including P, are in compression from this moment.</p>
+<p><strong>Evaluating point P:</strong></p>
+<p>Because P is on the centroidal z-axis, dx = 0, so the general bending stress equation reduces to:</p>
+<p><span class="math display">\[
+\sigma_y= \pm\left|\frac{M_x\ dz}{I_x}\right|
+\]</span></p>
+<p>3) Assess the sign:</p>
+<p>With the clockwise bending moment around the x-axis, the beam can be visualized as bending “backwards” such that point P will be on the “inside” of the bend, or in compression. An approximation of the resulting shape is sketched below as it would appear from the side view (looking down the x-axis).</p>
+<p>Alternatively, draw the cross-section with the exaggerated moment arrow clockwise around the x axis. Since the arrowhead would be pointed towards P, the point is in compression.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH14 PNGs/example 14.1 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="443"></p>
+<p><img src="images/chapter 14 figure edits/example 14.1 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="411"></p>
 </figure>
 </div>
-<p>The z distance from the x-axis to be P is the radius. We can then calculate the normal stress at point P to be:</p>
+<p>4) Calculate:</p>
+<p>|Mx| = given = (376 kN mm)(1000 N/kN) = 376000 N mm</p>
+<p>dz = radius = 16 mm</p>
+<p>I<sub>x</sub> =<span class="math inline">\(\frac{\pi}{64}d^4=\frac{\pi}{64}(32mm)^4=51.47\times10^3mm^4\)</span></p>
 <p><span class="math display">\[
-\sigma_{yP}=-\left|\frac{M_x z}{I_x}\right|=-\frac{376{~N}\cdot{m}*(0.016{~m})}{51.47 \times 10^{-9}{~m}^4}=-117{~MPa}
+\begin{aligned}
+\sigma_{y_P}&amp;=-\frac{376000{~N}\cdot{mm}\ (16mm)}{51.47 \times 10^{3}{~mm}^4}\\[10pt]
+&amp;=-117{~N/mm^2}\\[10pt]
+&amp;=-117\ MPa
+\end{aligned}
 \]</span></p>
-<p>Similarly, point Q will experience no stress from M<sub>x</sub> since it is on the x-axis, but it will feel stress from M<sub>z</sub>. The x distance from the z-axis to point Q is also the radius. The sign on the stress can be determined by visualizing the bending to be as shown in the front view below and noting that point Q would be on the outside part of the bend. Alternatively, drawing the moment arrow on the cross-section as was done for point P above reveals that point Q is on the tail side of the arrow, so in tension.</p>
+<p><strong>Evaluating Point Q:</strong></p>
+<p>Because point Q is on the centroidal x axis, dz = 0, so the general bending stress equation reduces to:</p>
+<p><span class="math display">\[
+\sigma_{y_Q}=\pm\left|\frac{M_z\ dx}{I_z}\right|
+\]</span></p>
+<p>3) Assess the sign:</p>
+<p>With the counterclockwise bending moment around the z-axis, the beam can be visulized as bending into somewhat of a backwards “C” shape as viewed from the front (down the z-axis). Point Q would be on the outside of the bend, or in tension.</p>
+<p>Alternatively, draw the cross-section with the exaggerated moment arrow counterclockwise around the z-axis. Since Q is at the tail-side, the point is in tension.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH14 PNGs/example 14.1 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="416"></p>
+<p><img src="images/chapter 14 figure edits/example 14.1 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="458"></p>
 </figure>
 </div>
-<p>The normal stress at point Q is thus calculated to be:</p>
+<p>4) Calculate:</p>
+<p>|Mz| = given = (204 kN mm)(1000 N/kN) = 204000 N mm</p>
+<p>dx = radius = 16 mm</p>
+<p>For circular cross-section, I<sub>z</sub> = I<sub>x</sub> = 51.47 x 10<sup>3</sup> mm<sup>4</sup></p>
 <p><span class="math display">\[
-\sigma_{y Q}=+\left|\frac{M_z x}{I_z}\right|=\frac{204{~N}\cdot{m}*(0.016{~mm})}{51.47 \times 10^{-9}{~m}^4}=63.4{~MPa}
+\begin{aligned}
+\sigma_{y_Q}&amp;=\frac{204000{~N}\cdot{mm}*(16{~mm})}{51.47 \times 10^{3}{~mm}^4}\\[10pt]
+&amp;=63.4\ N/mm^2\\[10pt]
+&amp;=63.4{~MPa}
+\end{aligned}
 \]</span></p>
 <p><strong>σ<sub>yP</sub> = 116.9 MPa (compression)</strong></p>
 <p><strong>σ<sub>yQ</sub> = 63.4 MPa (tension)</strong></p>
@@ -528,21 +763,25 @@ I_x=I_y=\frac{\pi}{4} r^4=\frac{\pi}{4}(16{~mm})^4=51.47 \times 10^3{~mm}^4=51.4
 </div>
 </div>
 </section>
-<section id="sec-14.1.2" class="level3" data-number="14.1.2">
-<h3 data-number="14.1.2" class="anchored" data-anchor-id="sec-14.1.2"><span class="header-section-number">14.1.2</span> Eccentric Loading</h3>
-<p>When the line of action of an axial load does not pass through the centroid of a cross section, it will result in both a normal reaction force and a bending moment. For example, consider the traffic light and corresponding free body diagram shown in <a href="#fig-14.6" class="quarto-xref">Figure&nbsp;<span>14.6</span></a>.</p>
-<div id="fig-14.6" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<section id="sec-14.2.3" class="level3" data-number="14.2.3">
+<h3 data-number="14.2.3" class="anchored" data-anchor-id="sec-14.2.3"><span class="header-section-number">14.2.3</span> Eccentric Loading</h3>
+<p>When the line of action of an axial load does not pass through the centroid of a cross section, it will result in both a normal reaction force and a bending moment. For example, consider the traffic light and corresponding free body diagram shown in <a href="#fig-14.7" class="quarto-xref">Figure&nbsp;<span>14.7</span></a>.</p>
+<div id="fig-14.7" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-14.6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div aria-describedby="fig-14.7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/CH14 PNGs/figure 14.6.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-14.6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;14.6: The vertical pole is subject to direct axial stress and bending stress
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-14.7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;14.7: The vertical pole is subject to direct axial stress and bending stress
 </figcaption>
 </figure>
 </div>
-<p>The vertical support pole is subjected to normal forces from the weights of the traffic lights (the weight of the horizontal poles, cameras, etc., are assumed to be negligible for this example) as well as to bending moments around both cross-sectional axes (x and z) that result from the fact that the weights are not directly centered on the centroidal axes of the support pole. The total normal stress in the longitudinal direction, σ<sub>y</sub>, at any given point on the pole would be given by the stress from the total normal force (<span class="math inline">\(\frac{\sum F_y}{A}\)</span>) plus the bending stress from the bending moment around the z axis that results from W<sub>1</sub> and W<sub>2</sub> and the bending moment around the x axis that results from W<sub>3</sub>.</p>
-<p>In terms of the general axes discussed in <a href="#sec-14.1.1" class="quarto-xref"><span>Section 14.1.1</span></a>, we have:</p>
+<p>The vertical support pole is subjected to normal forces from the weights of the traffic lights (the weight of the horizontal poles, cameras, etc., are assumed to be negligible for this example). There are also bending moments around both cross-sectional axes (x and z) that result from the fact that the weights are not directly centered on the the support pole.</p>
+<p>The total normal stress in the longitudinal direction, σ<sub>y</sub>, at any given point on the pole would be given by:</p>
+<p><span class="math display">\[
+\sigma_L =\frac{\sum F_L}{A}+\sigma_{bending}
+\]</span></p>
+<p>In terms of the general axes discussed in <a href="#sec-14.1" class="quarto-xref"><span>Section 14.1</span></a>, and substituting in <a href="#eq-14.1" class="quarto-xref">Equation&nbsp;<span>14.1</span></a> for the bending stress, we have:</p>
 <p><span id="eq-14.2"><span class="math display">\[
 \boxed{\sigma_L= \pm\left|\frac{F_L}{A}\right| \pm\left|\frac{M_V d_H}{I_V}\right| \pm\left|\frac{M_H d_V}{I_H}\right|}
 \tag{14.2}\]</span></span></p>
@@ -558,7 +797,7 @@ Figure&nbsp;14.6: The vertical pole is subject to direct axial stress and bendin
 <em>I<sub>H</sub> = Area moment of inertia about the horizontal axis [m<sup>4</sup>, in.<sup>4</sup>]</em></div>
 <p>The sign for the first term is positive if the total force is tensile (directed away from the cross-section) and negative if the total force is compressive (pointed towards the cross-section).</p>
 <p><a href="#exm-14.2" class="quarto-xref">Example&nbsp;<span>14.2</span></a> and <a href="#exm-14.3" class="quarto-xref">Example&nbsp;<span>14.3</span></a> demonstrate the calculation of normal stress in eccentric loading problems.</p>
-<p><a href="#exm-14.4" class="quarto-xref">Example&nbsp;<span>14.4</span></a> goes through the process of calculating each of the components of normal stress and then combining them to determine the normal stress state at particular point.</p>
+<p><a href="#exm-14.4" class="quarto-xref">Example&nbsp;<span>14.4</span></a> demonstrates a loading that includes pressure as part of the loading combination and drawing the resulting stress element.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -575,10 +814,10 @@ Example 14.2
 <p><span class="theorem-title"><strong>Example 14.2</strong></span> &nbsp;</p>
 <p>
 </p>
-<p>The structure is subjected to vertical forces as shown. Determine the total normal stress at points P and Q on the cross-section of the vertical portion of the structure.</p>
+<p>The structure is fixed to the ground and subjected to the 75 lb and 50 lb vertical forces shown. Determine the total normal stress at points P and Q on the cross-section located at A-A. Assume the 40 inch horizontal section at the top remains rigid.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH14 PNGs/example 14.2 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="images/chapter 14 figure edits/example 14.2 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -593,55 +832,57 @@ Solution
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The generalized normal stress equation is:</p>
+<p>1) Draw the FBD of the structure cut at A-A and write the equilibrium equations to find the internal reactions.</p>
+<p>Below is the FBD for the section of the structure above the cut. Using the section above the cut allows us to avoid needing to calculate the reactions at the fixed support.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/chapter 14 figure edits/example 14.2 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="317"></p>
+</figure>
+</div>
+<p>In this case, reaction forces R<sub>x</sub> and R<sub>z</sub> are 0 by inspection (we can see that there are no forces applied in those directions).</p>
+<p>Similarly, reaction moments M<sub>Rx</sub> and M<sub>Ry</sub> are 0 by inspection: All the forces only act in the y direction, so M<sub>Ry</sub> = 0. All the forces pass through the x-axis, so M<sub>Rx</sub> = 0.</p>
+<p>Calculating R<sub>y</sub> and M<sub>Rz</sub>:</p>
+<p><span class="math display">\[\begin{aligned}\sum F_y=R_y-75{~lb}-50{~lb}=0 \quad\rightarrow\quad R_y=125{~lb}\end{aligned}\]</span> <span class="math display">\[\begin{aligned}\sum\ M_z &amp;=\sum\pm(Fy*x)+\sum \pm\ (Fx*y)+M_{Rz}=0\\[10pt]
+&amp;=(75{~lb}*15{~in.})-(50{~lb}*25{~in.})+M_{Rz}=0 \quad\rightarrow\quad M_ {Rz}=125{~lb}\cdot{in.}\end{aligned}\]</span></p>
+<p>Remember when calculating reaction moments to calculate moments about the centroidal axes of the cross-section no matter where on the cross-section the point of interest is.</p>
+<p>2) Write the generalized normal stress equation and eliminate unnecessary terms:</p>
 <p><span class="math display">\[
 \sigma_L= \pm\left|\frac{F_L}{A}\right| \pm\left|\frac{M_V d_H}{I_V}\right| \pm\left|\frac{M_H d_V}{I_H}\right|
 \]</span></p>
-<p>In this case, the longitudinal axis (L) is the y-axis. The vertical axis of the cross-section (V) is the z-axis and the horizontal axis (H) is the x-axis.</p>
-<p>To apply the equation, the internal reactions N, Mx, and Mz are needed. Since the internal reactions remain constant along the vertical portion of the structure, we can cut anywhere along its length to determine these internal reactions. The reaction moment around the x axis, Mx, can be determined to be 0 by inspection since all the forces pass through the centroidal x-axis of the cross-section. When finding the bending moments, it is important to remember that the moments needed are the moments around the centroidal axes of the cross-section.</p>
+<p>In this case, the longitudinal axis (L) is the y-axis. The vertical axis of the cross-section is the z-axis and the horizontal axis is the x-axis. With M<sub>Rx</sub> = 0, we have:</p>
+<p><span class="math display">\[
+\sigma_y= \pm\left|\frac{R_y}{A}\right| \pm\left|\frac{M_{Rz}\ d_x}{I_z}\right|
+\]</span></p>
+<p>3) Assess signs:</p>
+<p>According the equilibrium equations applied in step 2:</p>
+<p>R<sub>y</sub> points <u>towards the cut section</u> so it is compressive (negative). In addition, the force will affect all points on the cross-section in the same way, so the Ry/A term will be negative for both points P and Q.</p>
+<p>M<sub>Rz</sub> is counterclockwise for the section of the body above the cut at A-A, but this means that it is clockwise for the section below the cut (equal/opposite reactions).</p>
+<p>It tends to be easier to correctly visualize bending direction if we consider the direction of the bending moment for the section of the body attached to the fixed support. In this case, that bending moment is clockwise, so we visualize the tower as also bending clockwise.</p>
+<p>We also use that direction of bending moment for drawing the moment on the cross-section when using the visualization tool discussed and used previously.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH14 PNGs/exampe 14.2 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="243"></p>
+<p><img src="images/chapter 14 figure edits/example 14.2 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
-<p><span class="math display">\[
-\begin{gathered}
-\sum F_y=N-75{~lb}-50{~lb}=0 \quad\rightarrow\quad N=125{~lb} \\
-\sum M_z=(75{~lb}*15{~in.})-(50{~lb}*25{~in.})+M z=0 \quad\rightarrow\quad M z=125{~lb}\cdot{in.}
-\end{gathered}
-\]</span></p>
-<p>Since both N and Mz are positive, the respective directions drawn on the FBD are confirmed to be correct. Thus, the normal force is compressive (pointed towards the cut section) and the bending moment is counterclockwise around the z-axis.</p>
-<p>The total normal stress at point P can then be calculated with the following inputs:</p>
-<p><span class="math inline">\(F_L = N = 125{~lbs}\)</span></p>
-<p><span class="math inline">\(A = 6{~in.}*8{~in.} = 48{~in.^2}\)</span></p>
-<p><span class="math inline">\(M_V = M_x = 125{~lb}\cdot{in.}\)</span></p>
-<p><span class="math inline">\(d_x =\text{ x-distance between point P and the z-axis} = 2{~in.}\)</span></p>
-<p><span class="math inline">\(I_z = \frac{1}{12}*(6{~in.})*(8{~in.^3}) = 256{~in.^4}\)</span></p>
-<p>The normal force N is compressive, so that term in the stress equation is made negative. With the counter-clockwise bending moment on the upper section, one can visualize that the bending would take on a “C” shape with point P on the outside of the bend, so point P would be in tension from the bending moment and that term in the equation is made positive.</p>
-<p>As mentioned in <a href="#sec-14.1.1" class="quarto-xref"><span>Section 14.1.1</span></a>, another way to determine the sign on the bending stress is to draw the direction of the overall applied moment on the cross-section. In this case, the total applied moment around the z-axis is:</p>
-<p><span class="math display">\[
-\begin{aligned}
-M=(75{~lb}*15{~in.})-(50{~lb}*25{~in.})&amp;=-125{~lb}\cdot{in.} \\
-&amp;=125{~lb}\cdot{in.}~~\text{clockwise }
-\end{aligned}
-\]</span></p>
-<p>Drawing the clockwise moment on the cross-section we see that the left side of the cross-section is on the tail side of the arrow, so we can conclude that all points to the left of the centroidal z-axis will be in tension. Note that for this tool to work, the arrow must always be drawn to be going “over” the axis as opposed to under.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/CH14 PNGs/exampe 14.2 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="274"></p>
-</figure>
-</div>
+<p>Based on the above, we can see that point P will be in tension from the bending stress and point Q will be compression.</p>
+<p>4) Calculate the stress:</p>
+<p>In addition to R<sub>y</sub> and M<sub>Rz</sub>, we need:</p>
+<p>A = (6in.)(8in.) = 48 in.<sup>2</sup></p>
+<p>d<sub>x</sub> for point P = x-distance between P and the z-axis = 2 in</p>
+<p>d<sub>x</sub> for point Q = x-distance between Q and the z-axis = 4 in</p>
+<p><span class="math inline">\(I_z = \frac{1}{12}bh^3=\frac{1}{12}(6{~in.})(8{~in.})^3 = 256{~in.^4}\)</span></p>
+<p>Evaluating point P:</p>
 <p><span class="math display">\[
 \sigma_{yP}=-\left|\frac{125{~lb}}{48{~in.^2}}\right|+\left|\frac{(125{~lb}\cdot{in.})(2{~in.})}{256{~in.^4}}\right| \\
 \sigma_{yP}=-1.63{~psi}
 \]</span></p>
-<p>The negative answer indicates that the stress is compressive.</p>
-<p>To calculate the stress at point Q, all inputs to the equation remain the same except for dx. The x distance between the centroidal z-axis and point Q is 4 in. In addition, the sign on the bending stress is negative instead of positive since point K is on the inside of the bend (or on the arrow side of the cross-section drawn with the applied moment). Thus,</p>
+<p>Evaluating point Q:</p>
 <p><span class="math display">\[
 \sigma_{yQ}=-\left|\frac{125{~lb}}{48{~in.^2}}\right|-\left|\frac{(125{~lb}\cdot{in.})(4{~in.})}{256{~in.^4}}\right| \\
 \sigma_{yQ}=-4.56{~psi}
 \]</span></p>
-<p><strong>σyP = -3.49 psi, σyQ = -6.42 psi</strong></p>
+<p>The negative answers indicates that the stress at both points is ovearll compressive.</p>
+<p><strong>Answers: σ<sub>yP</sub> = -1.63 psi, σ<sub>yQ</sub> = -4.56 psi</strong></p>
 </div>
 </div>
 </div>
@@ -665,10 +906,11 @@ Example 14.3
 <p><span class="theorem-title"><strong>Example 14.3</strong></span> &nbsp;</p>
 <p>
 </p>
-<p>A force pulls up on point P on the post with rectangular cross section as shown. Determine the normal stress at point A.</p>
+<p>A post is fixed to the ground and subjected to a 180 kN force pulling up at point P, shown on the cross-section.</p>
+<p>Determine the normal stress at point A.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH14 PNGs/example 14.3 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="images/chapter 14 figure edits/example 14.3 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -683,36 +925,44 @@ Solution
 </div>
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>In this problem, there are three sources of normal stress: the bending stress from bending around the y axis, the bending stress from bending around the x axis, and the axial stress from the 180 kN force acting normal to the cross-section.</p>
-<p>For the given loading, the internal reactions will be the same for any z location, so we can make a cut anywhere to determine the bending moment and normal force reaction</p>
-<p><span class="math display">\[
-\begin{aligned}
-&amp;\sum M_X=(180{~kN}*50{~mm})+M_x=0 \quad\rightarrow\quad M_X=-9000{~kN}\cdot{mm} \\
-&amp;\sum M_Z=(180{~kN}*40{~mm})+M_z=0 \quad\rightarrow\quad M_Z=-7200{~kN}\cdot{mm} \\
-&amp;\sum F_Y=180{~kN}-N=0 \quad\rightarrow\quad N=180{~kN}
-\end{aligned}
-\]</span></p>
+<p>1) Draw the FBD of the structure cut at an arbitrary y-location and write the equilibrium equations to find the internal reactions.</p>
+<p>For the given loading, the internal reactions will be the same for any y location, so we can make a cut anywhere to determine the bending moments and normal force reaction.</p>
+<p>FBD above the cut:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH14 PNGs/example 14.3 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="230"></p>
+<p><img src="images/chapter 14 figure edits/example 14.3 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="255"></p>
 </figure>
 </div>
-<p>By inspection of the applied moments, we can visualize that the bending around the x-axis is such that the post would bend towards us and points along the back edge where point A is would be in tension.</p>
-<p>We can also visualize that the bending around the z-axis is such that the post would bend in a backwards C shape and points to the left of the centroidal z-axis would be in compression. We can also observe the the normal force reaction is tensile.</p>
+<p>The reaction forces R<sub>z</sub> and R<sub>x</sub> are 0 by inspection and the reaction moment M<sub>Ry</sub> is also zero by inspection since the only applied force acts in the y direction.</p>
+<p><span class="math inline">\(\begin{aligned}\sum F_y=180 kN - R_y=0\quad\rightarrow\quad R_y=180 kN\end{aligned}\)</span></p>
+<p><span class="math inline">\(\begin{aligned}\sum M_x&amp;=\sum\pm(Fy*z)+\sum\pm(Fz*y)+M_{Rx}\\[10pt]&amp;=(180{~kN}*50{~mm})+M_{Rx}=0 \quad\rightarrow\quad M_{Rx}=-9000{~kN}\cdot{mm} \end{aligned}\)</span></p>
+<p><span class="math inline">\(\begin{aligned}\sum M_z&amp;=\sum\pm(F_x*y)+\sum\pm(F_y*x)+M_{Rz}=0\\[10pt]&amp;=(180kN*40mm)+M_{Rz}=0\quad\rightarrow\quad M_{Rz}=-7200\ kN\cdot mm\end{aligned}\)</span></p>
+<p>2) Write the generalized normal stress equation:</p>
 <p>Applying the generalized normal stress equation (with the pressure term omitted):</p>
 <p><span class="math display">\[
-\sigma_{L A}= \pm\left|\frac{F_L}{A}\right| \pm\left|\frac{M_V d_H}{I_V}\right| \pm\left|\frac{M_H d_V}{I_H}\right|
+\sigma_{L}= \pm\left|\frac{F_L}{A}\right| \pm\left|\frac{M_V d_H}{I_V}\right| \pm\left|\frac{M_H d_V}{I_H}\right|
 \]</span></p>
-<p>In this case, the longitudinal axis of the post is the y-axis, the vertical axis of the cross-section is the y-axis, and the horizontal axis of the cross-section is x-axis. The dH in the equation is the x distance between centroidal z-axis and point A. The dV in the equation is the z distance between the centroidal x-axis and point A.</p>
+<p>In this case, the longitudinal axis of the post is the y-axis, the vertical axis of the cross-section is the z axis, and the horizontal axis of the cross-section is the x-axis. So we have:</p>
 <p><span class="math display">\[
 \begin{aligned}
-&amp;\sigma_{yA}=\left|\frac{N}{A}\right|-\left|\frac{M_z d_x}{I_z}\right|+\left|\frac{M_x d_z}{I_x}\right| \\
-&amp;\sigma_{yA}=\left|\frac{180,000{~N}}{(0.2{~m})(0.15{~m})}\right| \left|\frac{7200{~N}\cdot{m}*0.085{~m}}{\frac{1}{12}(0.15{~m})(0.2 {~m})^3}\right|+\left| \frac{9000{~N}\cdot{m}*0.075{~m})}{\frac{1}{12}(0.2{~m})(0.15{~m})^3}\right| \\
-&amp;\sigma_{y A}=11.9{~MPa}
+&amp;\sigma_{yA}=\pm\left|\frac{R_y}{A}\right|\pm\left|\frac{M_z d_x}{I_z}\right|\pm\left|\frac{M_x d_z}{I_x}\right| \\
 \end{aligned}
 \]</span></p>
+<p>3) Assess the signs:</p>
+<p>According to the equilibrium analysis, R<sub>y</sub> points away from the cross-section, so that force results in tensile stress (positive).</p>
+<p>The bending moments were both found to be negative(clockwise) for the section of the body above the cut. As was discussed in <a href="#exm-14.2" class="quarto-xref">Example&nbsp;<span>14.2</span></a>, to easier visualize the bending, we will use the direction of the bending moments on the section of the body below the cut (where the fixed support is). These reaction moments will be opposite in direction to what we found in step 1.</p>
+<p>Below the cut, we will have M<sub>Rx</sub> = 9000 kN mm (counterclockwise) which will put point A in tension.</p>
+<p>We will also have M<sub>Rz</sub> = 7200 kN mm (counterclockwise) which will put point A in compression.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/chapter 14 figure edits/example 14.3 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p><span class="math display">\[
+\sigma_{yA}=\left|\frac{180,000{~N}}{(0.2{~m})(0.15{~m})}\right|- \left|\frac{7200{~N}\cdot{m}*0.085{~m}}{\frac{1}{12}(0.15{~m})(0.2 {~m})^3}\right|+\left| \frac{9000{~N}\cdot{m}*0.075{~m})}{\frac{1}{12}(0.2{~m})(0.15{~m})^3}\right| \\[10pt]\sigma_{y A}=11.9 MPa
+\]</span></p>
 <p>The stress works out to be positive and therefore tensile.</p>
-<p><strong>σ<sub>yA</sub> =11.9 MPa</strong></p>
+<p><strong>Answer: σ<sub>yA</sub> =11.9 MPa</strong></p>
 </div>
 </div>
 </div>
@@ -736,10 +986,10 @@ Example 14.4
 <p><span class="theorem-title"><strong>Example 14.4</strong></span> &nbsp;</p>
 <p>
 </p>
-<p>For the pressurized pipe loaded as shown, determine the normal stresses at point H. Noting that there would be no shear stress at point H for this loading, represent the general stress state of point H on a stress element. The pipe has an outside diameter of 200 mm and a wall thickness of 10 mm. The load Pz = 18 kN and the internal pressure in the pipe is 1500 kPa.</p>
+<p>For the pressurized pipe loaded as shown, determine the total normal stress at point K. Noting that there would be no shear stress at point K for this loading, represent the general stress state of point H on a stress element. The pipe has an outside diameter of 200 mm and a wall thickness of 10 mm. The load P<sub>z</sub> = 18 kN and the internal pressure in the pipe is 1500 kPa.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH14 PNGs/example 14.4 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="423"></p>
+<p><img src="images/chapter 14 figure edits/example 14.4 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="443"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -754,48 +1004,49 @@ Solution
 </div>
 <div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Consider the general normal stress equation:</p>
-<p><span class="math display">\[
-\sigma_L= \pm\left|\frac{F_L}{A}\right| \pm\left|\frac{M_V d_H}{I_V}\right| \pm\left|\frac{M_H d_V}{I_H}\right| \pm \frac{p r}{2 t}
-\]</span></p>
-<p>In this problem, the longitudinal direction is the z direction and the horizontal and vertical axes of the cross-section where H is located are the x-axis and y-axis, respectively. Since there is pressure loading in this problem, there is also normal stress in the hoop direction (x and y-directions).</p>
-<p>So we have:</p>
-<p><span class="math display">\[
-\begin{aligned}
-\sigma_{long} &amp; = \pm\left|\frac{F_z}{A}\right| \pm\left|\frac{\left|M_y d_x\right|}{I_y}\right| \pm\left|\frac{\mid M_x d_y}{I_x}\right| \pm \frac{p r}{2 t} \\
-\sigma_{hoop} &amp; =\frac{p r}{t}
-\end{aligned}
-\]</span></p>
-<p>Cutting through the part of the pipe where point H is located and applying equilibrium provides the following results for the internal reactions:</p>
+<p>1) Draw the FBD of the structure cut at point K and write the equilibrium equations to find the internal reactions.</p>
+<p>FBD above the cut:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH14 PNGs/example 14.4 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="243"></p>
+<p><img src="images/chapter 14 figure edits/example 14.4 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="335"></p>
 </figure>
 </div>
+<p>There are no forces in the x or y directions, so Rx= Ry =0.</p>
+<p>The 18kN force is parallel to the z-axis and goes through the x-axis so M<sub>Rz</sub> =M<sub>Rx</sub> = 0.</p>
+<p>M<sub>Ry</sub> is not zero; however, point K is on the y-axis, so this point will not be affected by M<sub>Ry</sub> (the x distance from the y-axis to K on the cross-section is 0).</p>
+<p>Thus, we do not need to calculate any moment reactions.</p>
+<p><span class="math inline">\(\sum F_y=R_y-18{~kN}=0 \quad\rightarrow\quad R_y=18{~kN}\)</span></p>
+<p>2) Write the general normal stress equation and eliminate unnecessary terms. Note that since we have pressure loading, there will be normal stress in the cross-sectional directions (hoop stress) as well as in the longitudinal direction:</p>
+<p><span class="math display">\[
+\sigma_L= \pm\left|\frac{F_L}{A}\right| \pm\left|\frac{M_V d_H}{I_V}\right| \pm\left|\frac{M_H d_V}{I_H}\right| + \frac{p r}{2 t}
+\]</span></p>
+<p><span class="math display">\[
+\sigma_{V}=\sigma_{H}=\sigma_{hoop}=\frac{pr}{t}
+\]</span></p>
+<p>In this problem, the longitudinal direction is the z direction and the cross-sectional directions are x and y. Eliminating both bending stress terms:</p>
 <p><span class="math display">\[
 \begin{aligned}
-&amp;\sum F_y=N-18{~kN}=0 \quad\rightarrow\quad N=18{~kN} \\
-&amp;\sum M_y=(18{~kN}*1.8{~m})+M_y=0 \quad\rightarrow\quad M_y=-32.4{~kN}\cdot{m}
+\sigma_{zK} = \pm\left|\frac{R_z}{A}\right| + \frac{p r}{2 t} \\[10pt]
+\sigma_{x} =\sigma_y=\frac{p r}{t}
 \end{aligned}
 \]</span></p>
-<p>Note that force is only applied in the z-direction so no other force reactions were drawn. There is also no force that results in a moment around the x-axis or z-axis, so Mx and Mz were also omitted from the FBD.</p>
-<p>The normal force is positive based on the drawn direction, so it is compressive. The bending moment around the y-axis was drawn counterclockwise around the y axis, but the result is negative, so the bending moment is actually clockwise. However, since point H lies on the y-axis, there will be no stress at point H from this bending moment.&nbsp;</p>
-<p>Thus the longitudinal stress (z-direction) becomes:</p>
+<p>3) Assess signs:</p>
+<p>According to the equilibrium analysis, R<sub>z</sub> points towards the cut section, so the first term in the stress equation will be negative. Internal pressure stress will always be positive.</p>
+<p>4) Calculate:</p>
 <p><span class="math display">\[
 \begin{aligned}
-\sigma_{long}&amp;=-\left|\frac{F_L}{A}\right|+\frac{pr}{2t} \\
-&amp;=-\frac{18,000{~N}}{\pi\left(0.1^2-0.09^2\right){~m^2}}+\frac{(1,500,000{~Pa})(0.1{~m})}{2(0.01{~m})} \\
+\sigma_{zK}&amp;=-\left|\frac{R_z}{A}\right|+\frac{pr}{2t} \\[10pt]
+&amp;=-\frac{18,000{~N}}{\pi\left(0.1^2-0.09^2\right){~m^2}}+\frac{(1,500,000{~Pa})(0.1{~m})}{2(0.01{~m})} \\[10pt]
 &amp;=4.48{~MPa}
 \end{aligned}
 \]</span></p>
-<p>The hoop stress (x-direction) is:</p>
 <p><span class="math display">\[
-\sigma_{hoop}=\frac{pr}{t}=\frac{(1,500,000{~Pa})(0.1{~m})}{0.01{~m}}=15{~MPa}
+\sigma_x=\frac{pr}{t}=\frac{(1,500,000{~Pa})(0.1{~m})}{0.01{~m}}=15{~MPa}
 \]</span></p>
-<p>Now we can sketch a stress element at point H in the x-z plane.</p>
+<p>5) Sketch the stress element, noting that point K is in the xz-plane.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH14 PNGs/example 14.4 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="301"></p>
+<p><img src="images/chapter 14 figure edits/example 14.4 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="359"></p>
 </figure>
 </div>
 </div>
@@ -816,80 +1067,70 @@ Step-by-step: <strong>Combined normal stress</strong>
 </div>
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li><p>Identify the longitudinal axis based on the global coordinate axes for the structure and the location of the point. Remember that all but the stress components except the pressure related hoop stress will act in the longitudinal direction.</p></li>
 <li><p>Cut the structure at the point of interest and determine the internal reactions.</p>
 <ul>
 <li><p>The sum of the forces in the longitudinal direction will give the total normal force.</p></li>
-<li><p>The sum of the moments about each of the cross-sectional centroidal axes will give the bending moments, MV about the vertical axis and MH about the horizontal axis.</p></li>
+<li><p>The sum of the moments about each of the cross-sectional centroidal axes will give the bending moments: M<sub>V</sub> about the vertical axis and M<sub>H</sub> about the horizontal axis.</p></li>
 </ul></li>
-<li><p>Determine the normal stress in the longitudinal direction based directly on the normal force, <span class="math inline">\(\sigma_L=\frac{F_L}{A}\)</span></p></li>
-<li><p>For each bending moment axis for which the bending moment is not zero and the point in question does not lie on the bending axis, determine the moment of inertia about that axis and determine the perpendicular distance between the point and the bending axis.</p></li>
-<li><p>Sub in the values from the steps 2b and 4 in the general bending stress equation:<br>
-<span class="math display">\[
-\sigma_{L(bending)}= \pm\left|\frac{M_V d_H}{I_V}\right| \pm\left|\frac{\mid M_H d_V}{I_H}\right|
-\]</span><br>
-Determine the sign by visualization of the bending shape or by drawing the moment on the cross-section and using the tool described in <a href="#sec-14.1.1" class="quarto-xref"><span>Section 14.1.1</span></a>.</p></li>
-<li><p>If there is applied pressure, determine the longitudinal stress from pressure, <span class="math inline">\(\sigma_L=\frac{p r}{2 t}\)</span> Add the stresses calculated in steps 3, 5, and 6 to get the total longitudinal normal stress,<br>
-<span class="math display">\[
-\sigma_L= \pm\left|\frac{N}{A}\right| \pm\left|\frac{M_V d_H}{I_V}\right|+\left|\frac{M_H d_V}{I_H}\right|+\frac{p r}{2 t}
-\]</span></p></li>
-<li><p>If there is pressure, calculate the hoop stress to get the normal stress in the direction of the other planar axis of the point:<br>
-<span class="math display">\[
-\sigma_{hoop}=\frac{p r}{t}
-\]</span></p></li>
+<li><p>Write the general normal stress equation for the longitudinal and cross-sectional directions and eliminate unnecessary terms (terms from loading that is not applied or that does not affect the point in question).</p>
+<p><span class="math inline">\(\sigma_L= \pm\left|\frac{F_L}{A}\right| \pm\left|\frac{M_V d_H}{I_V}\right| \pm\left|\frac{M_H d_V}{I_H}\right| + \frac{p r}{2 t}\)</span></p>
+<p><span class="math inline">\(\sigma_{V}=\sigma_{H}=\sigma_{hoop}=\frac{pr}{t}\)</span></p></li>
+<li><p>Assess signs, assigning a positive sign to tensile terms and a negative sign to compressive terms.</p>
+<ul>
+<li><p>For longitudinal forces, this is determined based on if the internal reaction forces points to (compression) or away from (tensile) the cut section.</p></li>
+<li><p>For bending moments, this done by visualizing if the point will be on the inside part of the bend (compression) or outside part of the bend (tension). Drawing the bending moment arrow on the cross-section can be helpful in making this determination.</p></li>
+<li><p>Internal pressure is always positive</p></li>
+</ul></li>
+<li><p>Calculate, subbing in the reactions determined in step 1 and the relevant geometerical quantities.</p></li>
+<li><p>If needed, represent the stress state on a stress element.</p></li>
 </ol>
 </div>
 </div>
 </section></details>
 </section>
 
-<section id="sec-14.2" class="level2" data-number="14.2">
-<h2 data-number="14.2" class="anchored" data-anchor-id="sec-14.2"><span class="header-section-number">14.2</span> General Shear Stress</h2>
+<section id="sec-14.3" class="level2" data-number="14.3">
+<h2 data-number="14.3" class="anchored" data-anchor-id="sec-14.3"><span class="header-section-number">14.3</span> General Shear Stress</h2>
 <details>
 <summary>
 Click to expand
 </summary>
-<p>Shear stress due to torsion was discussed in <a href="Chapter 6.html" class="quarto-xref"><span>Chapter 6</span></a> while shear stress due to transverse loading was discussed in <a href="Chapter 10.html" class="quarto-xref"><span>Chapter 10</span></a>. In this section, the considerations that go into determining the total shear stress that arise when both forms of loading will be discussed.</p>
-<section id="sec-14.2.1" class="level3" data-number="14.2.1">
-<h3 data-number="14.2.1" class="anchored" data-anchor-id="sec-14.2.1"><span class="header-section-number">14.2.1</span> Shear Stress due to Torsion</h3>
-<p>As discussed in <a href="Chapter 6.html#sec-6.1" class="quarto-xref"><span>Section 6.1</span></a>, shear stress due to torsion can be calculated as:</p>
+<p>Shear stress due to torsion was discussed in <a href="Chapter 6.html" class="quarto-xref"><span>Chapter 6</span></a> while shear stress due to transverse loading was discussed in <a href="Chapter 10.html" class="quarto-xref"><span>Chapter 10</span></a>. In this section, the additional considerations that go into determining the total shear stress when both forms of loading are present will be discussed.</p>
+<section id="sec-14.3.1" class="level3" data-number="14.3.1">
+<h3 data-number="14.3.1" class="anchored" data-anchor-id="sec-14.3.1"><span class="header-section-number">14.3.1</span> Shear Stress due to Torsion</h3>
+<p>As discussed in <a href="Chapter 6.html#sec-6.1" class="quarto-xref"><span>Section 6.1</span></a>, shear stress due to torsion in a circular shaft can be calculated as (<a href="Chapter 6.html#eq-6.1" class="quarto-xref">Equation&nbsp;<span>6.1</span></a>):</p>
 <p><span class="math display">\[
 \tau_{(torsional)}=\frac{T \rho}{J}
 \]</span></p>
-<p>For general problems, one may need to calculate T, so it is important to remember that torque is the moment about the longitudinal axis of a body, or that component of the moment that causes the body to twist. Since this form of shear stress will be combined with transverse shear stress to get the total, understanding the sign on the shear stress will be important.</p>
-<p>Recall that when a stress element is drawn, a positive shear stress is one for which the shear stress arrow goes in the positive vertical direction on a positive vertical face and in the positive horizontal direction on a positive horizontal face. The positive or negative directions and faces are established by the positive sense of the axes which define the plane the point is in.</p>
-<p>To determine which way a shear stress arrow would be drawn for a given stress element, one must cut the body at one edge of the stress element and visualize the direction in which the load would be applied across the cut.</p>
-<p>For example, in <a href="#fig-14.7" class="quarto-xref">Figure&nbsp;<span>14.7</span></a>, when the cylinder is cut at the top of the stress element, we examine the bottom section of the cylinder and note that the reaction torque at the cut surface goes in the opposite direction to that which is applied at the bottom surface. This results in a counterclockwise reaction torque at the cut which means that the top section tends to want to twist (and exert a force) from left to right across the top element edge. If the vertical axis is positive upwards, the top face is a positive face. In addition, if the horizontal axis is positive to the right, the rightwards shear force arrow is in the positive direction. Together this means that the shear stress can be concluded to be positive since we would have a positive shear force on a positive face.</p>
-<p>Similarly, when the cut is made at the bottom edge of the element, we can examine the top section of the cylinder for which equilibrium dictates that there is a clockwise reaction moment at the cut edge. This means that the bottom section tends to want twist from right to left across the bottom element edge. If the vertical axis is positive upwards so that the top face is a positive face, and the horizontal axis is positive to the right, the leftwards shear force would be a negative force acting on a negative face, so the shear stress would still be concluded to be positive.</p>
-<div id="fig-14.7" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<p>where:</p>
+<p><span class="math inline">\(T=Torque=\sum M_L\)</span> (N m, lb in.)</p>
+<p>𝜌 = radial distance to point on cross-section (m, in.)</p>
+<p>J = polar moment of inertia for circular cross-section (m<sup>4</sup>, in.<sup>4</sup>)</p>
+<p>For general problems, one may need to sum moments to calculate T, so it is important to remember that torque is the moment about the longitudinal axis of a body, or that component of the moment that causes the body to twist. Since this form of shear stress will be combined with transverse shear stress to get the total, understanding the sign of the shear stress will be important.</p>
+<p>As discussed in <a href="Chapter 12.html#sec-12.1" class="quarto-xref"><span>Section 12.1</span></a>, the sign of shear stress is based on the orientation of the shear stress arrows on the stress element.To determine in which direction to draw a shear stress arrow on a stress element for a particular point, one must cut the body at one edge of the stress element that represents the point and visualize the direction in which the shear load would act across the cut.</p>
+<p>For example, in <a href="#fig-14.7" class="quarto-xref">Figure&nbsp;<span>14.7</span></a>, the stress element is shown to be in the L-H plane. When the cylinder is cut at the top of the stress element, we examine the bottom section of the cylinder and note that the reaction torque at the cut surface goes in the opposite direction to that which is applied at the bottom surface. This results in a counterclockwise reaction torque at the cut, which means that the top section tends to want to twist (and exert a force) from left to right across the top edge of the element.</p>
+<p>If the longitudinal axis is positive upwards, the top face is a positive face. In addition, if the horizontal axis is positive to the right, the rightwards shear force arrow is in the positive direction. Together this means that the shear stress can be concluded to be positive since we would have a positive shear force on a positive face.</p>
+<p>Similarly, when the cut is made at the bottom edge of the element, we can examine the top section of the cylinder for which equilibrium dictates that there is a clockwise reaction moment at the cut edge. This means that the bottom section tends to want twist from right to left across the bottom element edge. If the L axis is positive upwards so that the top face is a positive face, and the H axis is positive to the right, the leftwards shear force would be a negative force acting on a negative face, so the shear stress would still be concluded to be positive.</p>
+<p>If the H axis were to be oriented to be positive to the left instead, then this same shear stress would be negative. The same can be said if the H axis is positive to the right but the L axis is positive downwards.</p>
+<div id="fig-14.8" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-14.7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/CH14 PNGs/figure 14.7.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="430">
+<div aria-describedby="fig-14.8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/chapter 14 figure edits/figure 14.8.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-14.7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;14.7: Signs for shear stress
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-14.8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;14.8: Observation of the direction of the shear load acting on the stress element indicates the sign of the shear stress.
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="sec-14.2.2" class="level3" data-number="14.2.2">
-<h3 data-number="14.2.2" class="anchored" data-anchor-id="sec-14.2.2"><span class="header-section-number">14.2.2</span> Shear Stress due to Transverse Shear</h3>
-<p>In <a href="Chapter 10.html" class="quarto-xref"><span>Chapter 10</span></a>, the equation <span class="math inline">\(\tau=\frac{V Q}{I t}\)</span> was evaluated to find the shear stress due to transverse shear force V. In that chapter, only one direction of shear force was considered for each problem and the sign on shear stress was not considered. For general loading, we may have two directions of transverse shear force corresponding to the two cross-sectional axes directions, as shown in <a href="#fig-14.8" class="quarto-xref">Figure&nbsp;<span>14.8</span></a>, so we will need to apply the transverse shear stress equation for both directions and also understand the signs so that we can combine them with each other and with the torsional shear stress.</p>
-<div id="fig-14.8" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-14.8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/CH14 PNGs/figure 14.8.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="386">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-14.8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;14.8: Shear forces in two directions on cross-section
-</figcaption>
-</figure>
-</div>
+<section id="sec-14.3.2" class="level3" data-number="14.3.2">
+<h3 data-number="14.3.2" class="anchored" data-anchor-id="sec-14.3.2"><span class="header-section-number">14.3.2</span> Shear Stress due to Transverse Shear</h3>
+<p>In <a href="Chapter 10.html" class="quarto-xref"><span>Chapter 10</span></a>, the equation <span class="math inline">\(\tau=\frac{V Q}{I t}\)</span> (<a href="Chapter 10.html#eq-10.2" class="quarto-xref">Equation&nbsp;<span>10.2</span></a>) was evaluated to find the shear stress due to transverse shear force V. In that chapter, only one direction of shear force was considered for each problem and the sign of the shear stress was not considered. For general loading, we may have two directions of transverse shear force corresponding to the two cross-sectional axes directions, as shown on the illustration of the bar in <a href="#fig-14.9" class="quarto-xref">Figure&nbsp;<span>14.9</span></a>, so we will need to apply the transverse shear stress equation for both directions and also understand the signs so that we can combine them with each other and with the torsional shear stress.</p>
 <p>When applying the transverse shear stress equations for specific directions of shear force, it is helpful to keep the following in mind:</p>
 <ol type="1">
-<li>The cut one makes to determine the first moment of area Q will be perpendicular to the direction of shear force.</li>
-<li>The area moment of inertia will be the moment of inertia around the axis perpendicular to the shear force.</li>
-<li>The thickness, as before, refers to the thickness of the solid part of the cross section that one cuts through to calculate Q.</li>
+<li>The cut one makes to determine the first moment of area Q will be perpendicular to the direction of shear force direction (illustrated on the cross-sections in <a href="#fig-14.9" class="quarto-xref">Figure&nbsp;<span>14.9</span></a>).</li>
+<li>The area moment of inertia (I) will be the moment of inertia around the axis perpendicular to the shear force direction.</li>
+<li>The thickness (t), as before, refers to the thickness of the solid part of the cross section that one cuts through to calculate Q (illustrated on the cross-sections in <a href="#fig-14.9" class="quarto-xref">Figure&nbsp;<span>14.9</span></a>).</li>
 </ol>
 <p>Using the same reference axes as with the general normal stress equation (H for horizontal centroidal axis and V for vertical centroidal axis), the transverse shear stress equation can be written as follows:</p>
 <p><span id="eq-14.3"><span class="math display">\[
@@ -905,19 +1146,60 @@ Figure&nbsp;14.8: Shear forces in two directions on cross-section
 <em>I<sub>H</sub> = Area moment of inertia about the horizontal centroidal axis [m<sup>4</sup>, in.<sup>4</sup>]</em><br>
 <em>t<sub>V</sub> = Vertical thickness of the cross-section [m, in.]</em><br>
 <em>t<sub>H</sub> = Horizontal thickness of the cross-section [m, in.]</em></div>
-<p>The signs on the shear stress are determined similarly to the manner described in <a href="#sec-14.2.1" class="quarto-xref"><span>Section 14.2.1</span></a> for torsion. The direction of the internal shear force is determined by equilibrium and this direction relative to the positive axes and faces on the stress element are used to establish direction.</p>
-<p>It will be helpful to note that for any point on a cross-section that is on an edge that a transverse shear force goes through (or for a circular cross-section, any point on the outer diameter that lies in the path of the force), the transverse shear stress due to that direction of shear force is 0. This is illustrated in <a href="#fig-14.9" class="quarto-xref">Figure&nbsp;<span>14.9</span></a>. This is because the specified points would be on free surfaces in these cases. For example, for a vertical shear force, the bending would be around the horizontal axis, so the top and bottom surfaces would be considered free surfaces with no shear force acting above the top surface or below the bottom surface. The same would hold true for the left and right surfaces in the case of a horizontal shear forces that would result in bending around the vertical axis.</p>
 <div id="fig-14.9" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-14.9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/CH14 PNGs/figure 14.9.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="513">
+<img src="images/figure 14.9 copy.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="461">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-14.9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;14.9: Locations of zero transverse shear stress
+Figure&nbsp;14.9: Both directions of transverse shear force applied to a bar and the corresponding cuts on the cross-section used to find Q.
 </figcaption>
 </figure>
 </div>
-<p><a href="#exm-14.5" class="quarto-xref">Example&nbsp;<span>14.5</span></a> demonstrates the calculation of transverse shear stress with multiple directions of shear force.</p>
+<p>When assessing the contributions to shear stress present for any given point, a simplifying observation that can be made is:</p>
+<p>1) If a point is on the top or bottom edge of a non-circular cross-section, or is the top or bottom point of a circular cross-section, it will experience no transverse shear stress from a vertical shear force.</p>
+<p>2) If a point is on the left or right edge of a non-circular cross-section, or is the left most or right most point of a circular cross-section, it will feel no transverse shear stress from a horizontall shear force.</p>
+<p>For example, in <a href="#fig-14.9" class="quarto-xref">Figure&nbsp;<span>14.9</span></a>, point P will experience no shear stress from V<sub>V</sub> and point S will feel no shear stress from V<sub>H</sub>. <a href="#fig-14.10" class="quarto-xref">Figure&nbsp;<span>14.10</span></a> further illustrates the statements above.</p>
+<p>The reason is that, in the case of a vertical shear force, the top and bottom edges of the cross-section are free edges since bending results only around the H axis. Similarly, in the case of a horizontal shear force, the left and right edges of the cross-section are free surfaces since bending results only around the V axis. For a circular cross-sections, the idea is similar, but only applies to the points at the top/bottom and left/right positions along the centroidal axes on the perimeter.</p>
+<div id="fig-14.10" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-14.10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/chapter 14 figure edits/figure 14.14.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="461">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-14.10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;14.10: Locations of zero transverse shear stress depending based of direction of shear force
+</figcaption>
+</figure>
+</div>
+<p>The signs on the shear stress are determined similarly to the manner described in <a href="#sec-14.2.1" class="quarto-xref"><span>Section 14.2.1</span></a> for torsion. The direction of the internal shear force is determined by equilibrium and the resulting shear stress would be drawn in that same direction on the cut surface of the element. For example, in <a href="#fig-14.9" class="quarto-xref">Figure&nbsp;<span>14.9</span></a>, point S is on the V-L plane. <span class="quarto-unresolved-ref">?fig-14.11</span> shows the element drawn from the side view, down the H axis. The vertical shear force acts downwards on the right side of the stress element. If the axes are oriented such that the longitudinal axis is positive to the right, the right side of the stress element is the +L face. If the vertical axis of the cross-section is positive upwards, than V<sub>V</sub> in the shown direction results in a negative shear stress.</p>
+<p>Similarly, point P is on the H-L plane. In <span class="quarto-unresolved-ref">?fig-14.11</span>, the stress element is drawn from the top-down view (viewing down the V axis). The horizontal shear force acts upwards on the right side of the stress element. If the right side is the +L face, and top is the +H face, then the shear stress based on the shown loading is positive and vice versa.</p>
+<div id="fig14.11" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/figure 14.10.png" class="img-fluid figure-img" width="503"></p>
+<figcaption>Stress elements for points S and P in Figure 14.9. The blue arrows correspond to the direction of the shear stress inducing shear force for the respective point on the face that it acts on if we make a cut at the point.</figcaption>
+</figure>
+</div>
+</section>
+<section id="sec-14.3.3" class="level3" data-number="14.3.3">
+<h3 data-number="14.3.3" class="anchored" data-anchor-id="sec-14.3.3"><span class="header-section-number">14.3.3</span> Combined Shear Stress</h3>
+<p>Now we can consider the case of bodies having both torsion and transverse shear stresses. Given a general loading, one may need to calculate the torque and also identify which of the forces constitute transverse shear forces. It will be helpful to remember that the transverse shear forces are the forces in the directions of the cross-sectional axes and torsion is the moment about the longitudinal axis.</p>
+<p>The total shear stress acts in the plane of the point of interest. It can be calculated as:</p>
+<p><span id="eq-14.4"><span class="math display">\[ \boxed{\tau= \pm\left|\frac{T \rho}{J}\right| \pm\left|\frac{V_H Q_V}{I_V t_V}\right| \pm\left|\frac{V_V Q_H}{I_H t_H}\right|}  \tag{14.4}\]</span></span></p>
+<div class="line-block"><em>where</em><br>
+<em>𝜏 = Shear stress at point of interest [Pa, psi]</em><br>
+T = Internal torque [N·m, lb·in.]<br>
+𝜌 = Radial distance from centroid to point of interest [m, in.]<br>
+J = Polar moment of inertia <em>[m<sup>4</sup>, in.<sup>4</sup>]</em><br>
+<em>V<sub>H</sub> = Internal horizontal shear force [N, lb]</em><br>
+<em>V<sub>V</sub> = Internal vertical shear force [N, lb]</em><br>
+<em>Q<sub>V</sub> = First moment of area about the vertical axis passing through the point of interest [m<sup>3</sup>, in.<sup>3</sup>]</em><br>
+<em>Q<sub>H</sub> = First moment of area about the horizontal axis passing through the point of interest [m<sup>3</sup>, in.<sup>3</sup>]</em><br>
+<em>I<sub>V</sub> = Area moment of inertia about the vertical centroidal axis [m<sup>4</sup>, in.<sup>4</sup>]</em><br>
+<em>I<sub>H</sub> = Area moment of inertia about the horizontal centroidal axis [m<sup>4</sup>, in.<sup>4</sup>]</em><br>
+<em>t<sub>V</sub> = Vertical thickness of the cross-section [m, in.]</em><br>
+<em>t<sub>H</sub> = Horizontal thickness of the cross-section [m, in.]</em></div>
+<p><a href="#exm-14.5" class="quarto-xref">Example&nbsp;<span>14.5</span></a> demonstrates the calculation of total shear stress when torsion and transverse shear are both acting.</p>
+<p><a href="#exm-14.6" class="quarto-xref">Example&nbsp;<span>14.6</span></a> demonstrates the calculation of transverse shear stress with multiple directions of shear force.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -934,10 +1216,10 @@ Example 14.5
 <p><span class="theorem-title"><strong>Example 14.5</strong></span> &nbsp;</p>
 <p>
 </p>
-<p>Two forces are applied to a rectangular post as shown. Determine the shear stress at points P and S.</p>
+<p>A solid steel bar with an outside diameter of  6.70 in. is fixed to the wall. A 900 lb force acts vertically and a 1500 lb force acts in the positive x direction as shown. Determine the maximum shear stress at points J and K on the outside of the pipe.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH14 PNGs/example 14.5 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="497"></p>
+<p><img src="images/chapter 14 figure edits/example 14.5 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -952,68 +1234,71 @@ Solution
 </div>
 <div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>To find shear stresses at points P and Q, which are at the same vertical location on the post, we must first cut the post at that vertical location and find the internal reactions by applying equilibrium. The illustration below shows the section below the cut made at the cross-section where points P and Q are located. The reactions at the support due to the applied loading must be in the opposite direction to the loading for equilibrium and the internal reactions at the cut section will be opposite to the support reactions. Note that there are also bending moments around the x and y axes due to the applied forces, but those result in normal stress, not shear stress.</p>
+<p>1.) Cut the body at the cross-section where K and J are located and draw the FBD of the cut section.</p>
+<p>We will examine the section to the right of the cut to avoid needing to find the reactions at the wall.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH14 PNGs/example 14.5 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="247"></p>
+<p><img src="images/chapter 14 figure edits/example 14.5 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="390"></p>
 </figure>
 </div>
-<p>Given that there is no torsion in this problem, the general shear stress equation can be written:</p>
+<p>The cross-sectional axes are the x and z axes, so these are the bending moment and transverse shear directions. The y axis is perpendicular to the cross-section, so it is the longitudinal axis.</p>
+<p>Before proceeding with equilibrium calculations, we note that we are only asked to find shear stress. Therefore, we do not need to know the bending moments M<sub>Rx</sub> and M<sub>Rz</sub> and we do not need to know the normal force R<sub>y</sub>.</p>
+<p>The shear forces are the forces in the cross-sectional directions (R<sub>x</sub> and R<sub>z</sub>). We find them by applying the force equilibrium equations:</p>
+<p><span class="math inline">\(\begin{aligned}&amp; \sum F_x=R_x+1500 lb=0\quad\rightarrow\quad R_x=V_x=-1500 lb \\&amp; \sum F_z=R_z+900{~lb}=0 \quad\rightarrow\quad R_z=V_z=-900{~lb}\end{aligned}\)</span></p>
+<p>The torque is the moment about the longitudinal axis (M<sub>Ry</sub>). We find it by applying the moment equilibrium equation for the y axis. Note that in the FBD, the direction of M<sub>RY</sub> is assumed to act counterclockwise around the y axis when viewing from the positive end to the negative (right to left).</p>
+<p><span class="math inline">\(\sum M_y=M_{Ry}+(900{~lb})(18{~in.})=0 \quad\rightarrow\quad M_{Ry}=T=-16,200{~lb\ in} \\\)</span>The negative result means that the torque acting at the cut side of the FBD we drew is clockwise around the y axis when viewing from the positive side towards the negative (right to left).</p>
+<p>2) Write the general shear stress equation and eliminate unnecessary terms:</p>
 <p><span class="math display">\[
-\tau= \pm\left|\frac{V_H Q_V}{I_V t_V}\right| \pm\left|\frac{V_V Q_H}{I_H t_H}\right|
+\tau= \pm\left|\frac{T \rho}{J}\right| \pm\left|\frac{V_H Q_V}{I_V t_V}\right| \pm\left|\frac{V_V Q_H}{I_H t_H}\right|
 \]</span></p>
-<p>Where the horizontal axis of the cross-section is the y–axis and the vertical axis of the cross section is the x-axis.</p>
-<p>For any point on the cross-section, we can substitute:</p>
-<p><span class="math inline">\(V_H = V_y = 78{~kN}\)</span></p>
-<p><span class="math inline">\(V_V = V_x = 94{~kN}\)</span></p>
-<p><span class="math inline">\(I_H=I_y=\frac{1}{12}(160{~mm})^3(120{~mm})=40.96 \times 10^6{~mm}^4=40.96 \times 10^{-6}{~m}^4\)</span></p>
-<p><span class="math inline">\(I_V=I_x=\frac{1}{12}(120{~mm})^3(160{~mm})=23.04 \times10^6{~mm}^4=23.04 \times 10^{-6}{~m}^4\)</span></p>
-<p>The Q and the t terms will depend on the specific points on the cross-section.</p>
-<p><strong>Point P:</strong></p>
-<p>The x faces of the post (front and back sides) do not feel shear stress from V<sub>x</sub> since V<sub>x</sub> results in bending around the y-axis and the front and back sides would be free surfaces for such bending. In the shear stress equation, we can also see this from that fact that Q<sub>y</sub> = A’x’ would be zero for point P (A’ = 0 below the horizontal cut at H and x’ = 0 for the area above the cut).</p>
-<p>To find the shear stress from V<sub>y</sub>, we would make a vertical cut through point H and calculate</p>
+<p>The horizontal axis of the cross-section is the x-axis and the vertical axis is the z axis.</p>
+<p>Point K is on the yz plane. Since point K is on the x axis, it will not experience shear stress from V<sub>x</sub>.</p>
+<p>Point J is on the xy plane. Since point J is on z axis, it will not experience shear stress from V<sub>z</sub>.</p>
 <p><span class="math display">\[
-Q_x=A'y'=\frac{1}{2}(160{~mm})(120{~mm})*\left(\frac{1}{4}\right)(160{~mm})=384000{~mm}^3=384 \times 10^{-6}{~m}^3
+\tau_{Kyz}= \pm\left|\frac{T \rho}{J}\right| \pm\left|\frac{V_z Q_x}{I_x t_x}\right|
 \]</span></p>
-<p><span class="math inline">\(t_x = 120{~mm} = 0.12{~m}\)</span></p>
+<p><span class="math display">\[\tau_{Jxy}= \pm\left|\frac{T \rho}{J}\right| \pm\left|\frac{V_x Q_z}{I_z t_z}\right|\]</span></p>
+<p>3) Assess the signs.</p>
+<p>For the torsional stress term:</p>
+<p>If we consider the stress element for each point to be just inside of the cut section we used to find the internal reactions, as shown in the figure below, the left side of each element will be the side that the calculated internal shear loads act on.</p>
+<p>Based on the direction of torque we found, we can see that it acts in the upwards direction across the left face of both stress elements. For point K, this results in a negative contribution to the shear stress but for point J, it will be positive.</p>
+<p>For the shear forces:</p>
+<p>R<sub>z</sub> was found to act in the negative z direction so it will act downwards on the left face of the stress element for point K. This shear stress will be positive.</p>
+<p>R<sub>x</sub> was found to act in the negative x direction so it will act upwards on the left face of the stress element for point J. This shear stress will also be positive.</p>
+<p>Now we have:</p>
+<p><span class="math display">\[\tau_{Kyz}= -\frac{T \rho}{J}+\frac{V_z Q_x}{I_x t_x}
+\]</span></p>
+<p><span class="math display">\[\tau_{Jxy}= \frac{T \rho}{J} +\frac{V_x Q_z}{I_z t_z}
+\]</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH14 PNGs/example 14.5 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="images/chapter 14 figure edits/example 14.5 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="277"></p>
 </figure>
 </div>
-<p>Looking at the FBD of the cut section of the post drawn above, we can see that V<sub>y</sub> goes across the top of the stress element of P in the positive y direction. The top of the element is on the positive z-face, so we a positive force on a positive face, which makes the resulting shear stress positive.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH14 PNGs/example 14.5 part 4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="136"></p>
+<p><img src="images/chapter 14 figure edits/example 14.5 part 4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="477"></p>
 </figure>
 </div>
-<p>So</p>
-<p><span class="math display">\[
-\tau_P=\frac{V_y Q_x}{I_x t_x}=\frac{(78000{~N})(384 \times 10^{-6}{~m}^3)}{(40.96 \times 10^{-6}{~m}^4)(0.12{~m})}=6.09{~MPa}
+<p>4) Calculate:</p>
+<p>For a circular cross-section:</p>
+<p><span class="math inline">\(Q_x=Q_z=\frac{1}{12}d^3=\frac{1}{12}(6.70\ in)^3=25.06\ in^3\)</span></p>
+<p><span class="math inline">\(I_x=I_z=\frac{\pi}{64}d^4=\frac{\pi}{64}(6.7\ in)^4=98.92\)</span></p>
+<p><span class="math inline">\(J=\frac{\pi}{32}d^4=\frac{\pi}{32}(6.7\ in)^4=197.83\ in^4\)</span></p>
+<p>So for point K:</p>
+<p><span class="math display">\[\begin{aligned}\tau_{Kyz}&amp;= -\frac{T \rho}{J}+\frac{V_z Q_x}{I_x t_x}\\[10pt]
+&amp;=\frac{(-16200\ lb\ in)(\frac{6.70\ in}{2})}{197.83\ in^4}+\frac{(900\ lb)(25.06\ in^3)}{(98.92\ in^4)(6.70\ in)}\\[10pt]
+&amp;=-274.3\ psi+34.04\ psi\\[10pt]
+&amp;=-240.3\ psi
+\end{aligned}
 \]</span></p>
-<p><u>Point S:</u></p>
-<p>For point S, the shear stress from Vy will be zero by the same reasoning as used for point P and Vx (Qx = 0 for point S), so we only need to calculate the shear stress from Vx.</p>
-<p>To find the shear stress from Vx, we would make a horizontal cut through point S and calculate</p>
+<p>For point J, the torsional shear stress will be the same magnitdue, so we have:</p>
 <p><span class="math display">\[
-Q y=A'x'=(160{~mm})(30{~mm})*(60{~mm}-15{~mm})=216000{~mm}^3=216 \times 10^{-6}{~m}^3
+\begin{aligned}\tau_{Jxy}&amp;=274.3\ psi+\frac{(1500\ lb)(25.06\ in^3)}{(98.92\ in^4)(6.7\ in)}\\
+&amp;=331.0\ psi
+\end{aligned}
 \]</span></p>
-<p><span class="math inline">\(t_y = 160{~mm} = 0.16{~m}\)</span></p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/CH14 PNGs/example 14.5 part 5.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
-<p>Again looking at the FBD of the cut post above, we can see that Vx goes across the top of the stress element for S in the negative x direction. So we a negative force on a positive face, which makes the resulting shear stress negative</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/CH14 PNGs/example 14.5 part 6.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="243"></p>
-</figure>
-</div>
-<p>So</p>
-<p><span class="math display">\[
-\tau_S=-\frac{V_x Q_y}{I_y t_y}=-\frac{(94000{~N})(216 \times 10^{-6}{~m}^3)}{(23.04 \times 10^{-6}{~m}^4)(0.16{~m})}=-5.51{~MPa}
-\]</span></p>
-<p><strong>τ<sub>P</sub> = 6.09 MPa, τ<sub>S</sub> = -5.51 MPa</strong></p>
+<p><strong>Answers:</strong> <strong>τ<sub>Kyz</sub> = -240.27 psi, τ<sub>Jxy</sub> = 331.02 psi</strong></p>
 </div>
 </div>
 </div>
@@ -1021,28 +1306,6 @@ Q y=A'x'=(160{~mm})(30{~mm})*(60{~mm}-15{~mm})=216000{~mm}^3=216 \times 10^{-6}{
 </div>
 </div>
 </div>
-</section>
-<section id="sec-14.2.3" class="level3" data-number="14.2.3">
-<h3 data-number="14.2.3" class="anchored" data-anchor-id="sec-14.2.3"><span class="header-section-number">14.2.3</span> Combined Shear Stress</h3>
-<p>Now we can consider the case of bodies having both torsion and transverse shear stresses. Given a general loading, one may need to calculate the torque and also identify which of the forces constitute transverse shear forces. It will be helpful to remember that the transverse shear forces are the forces in the directions of the cross-sectional axes and torsion is that component of moment that is about the longitudinal axis.</p>
-<p>The total shear stress equation is:</p>
-<p><span id="eq-14.4"><span class="math display">\[
-\boxed{\tau= \pm\left|\frac{T \rho}{J}\right| \pm\left|\frac{V_H Q_V}{I_V t_V}\right| \pm\left|\frac{V_V Q_H}{I_H t_H}\right|}
-\tag{14.4}\]</span></span></p>
-<div class="line-block"><em>where</em><br>
-<em>𝜏 = Shear stress at point of interest [Pa, psi]</em><br>
-T = Internal torque [N·m, lb·in.]<br>
-𝜌 = Radial distance from centroid to point of interest [m, in.]<br>
-J = Polar moment of inertia <em>[m<sup>4</sup>, in.<sup>4</sup>]</em><br>
-<em>V<sub>H</sub> = Internal horizontal shear force [N, lb]</em><br>
-<em>V<sub>V</sub> = Internal vertical shear force [N, lb]</em><br>
-<em>Q<sub>V</sub> = First moment of area about the vertical axis passing through the point of interest [m<sup>3</sup>, in.<sup>3</sup>]</em><br>
-<em>Q<sub>H</sub> = First moment of area about the horizontal axis passing through the point of interest [m<sup>3</sup>, in.<sup>3</sup>]</em><br>
-<em>I<sub>V</sub> = Area moment of inertia about the vertical centroidal axis [m<sup>4</sup>, in.<sup>4</sup>]</em><br>
-<em>I<sub>H</sub> = Area moment of inertia about the horizontal centroidal axis [m<sup>4</sup>, in.<sup>4</sup>]</em><br>
-<em>t<sub>V</sub> = Vertical thickness of the cross-section [m, in.]</em><br>
-<em>t<sub>H</sub> = Horizontal thickness of the cross-section [m, in.]</em></div>
-<p><a href="#exm-14.6" class="quarto-xref">Example&nbsp;<span>14.6</span></a> demonstrates the calculation of total shear stress when torsion and transverse shear are both acting.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1059,10 +1322,10 @@ Example 14.6
 <p><span class="theorem-title"><strong>Example 14.6</strong></span> &nbsp;</p>
 <p>
 </p>
-<p>A solid steel bar with an outside diameter of 6.70 in. is loaded as shown. Determine the maximum shear stress at points J and K on the outside of the pipe.</p>
+<p>Two forces are applied to a rectangular post as shown. Determine the shear stress at points P and S.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH14 PNGs/example 14.6 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="images/chapter 14 figure edits/example 14.6 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -1077,77 +1340,85 @@ Solution
 </div>
 <div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>First we need to find the internal reactions at the location of the points in question. To find the internal reactions, we will first draw the whole body FBD and apply equilibrium to find the reactions at the support. Then we will cut the body at the location of points J,K and apply equilibrium to the cut section to find the internal reactions. All the reactions are calculated below even though we only need Vx, Vz, and My to find the shear stresses.</p>
+<p>1) Draw the FBD of the structure cut at at the vertical location where P and S are located and apply equilibrium to find the internal reactions.</p>
+<p>FBD of the section above the cut:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH14 PNGs/example 14.6 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="images/chapter 14 figure edits/example 14.6 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="332"></p>
 </figure>
 </div>
-<p>To find reactions at support:</p>
+<p>The cross-sectional axes are the x and y axes, so these are the bending moment and transverse shear directions. The z axis is perpendicular to the cross-section, so it is the longitudinal axis.</p>
+<p>As with the previous example, we note that we are only being asked for shear stress, so the bending moments M<sub>Rx</sub> and M<sub>Ry</sub> are not necessary to find for this problem. (However, this problem is re-visited in <a href="#exm-14.7" class="quarto-xref">Example&nbsp;<span>14.7</span></a> and those moments are found in that example).</p>
+<p>Finding the internal shear forces using force equilibrium equations:</p>
+<p><span class="math inline">\(\sum F_x=R_x-94\ kN=0\quad\rightarrow\quad R_x=V_x=94 kN\)</span></p>
+<p><span class="math inline">\(\sum F_y=R_y+78\ kN=0\quad\rightarrow\quad R_y=V_y=-78\ kN\)</span></p>
+<p>Since both of the applied forces go through the centroidal z axis, neither will create a moment around that axis, so:</p>
+<p>M<sub>Ry</sub> = T = 0</p>
+<p>2) Write the general shear stress equation and eliminate unnecessary terms. Given that there is no torsion in this problem, the general shear stress equation can be written:</p>
 <p><span class="math display">\[
-\begin{aligned}
-&amp; \sum F_x=R_x+1500{lb}=0 \quad\rightarrow\quad R_x=-1500{~lb} \\
-&amp; \sum F_y=R_y=0 \\
-&amp; \sum F_z=R_z+900{~lb}=0 \quad\rightarrow\quad R_z=-900{~lb}
-\end{aligned}
+\tau= \pm\left|\frac{V_H Q_V}{I_V t_V}\right| \pm\left|\frac{V_V Q_H}{I_H t_H}\right|
+\]</span></p>
+<p>Where the horizontal axis of the cross-section is the y–axis and the vertical axis of the cross section is the x-axis.</p>
+<p>As discussed in <a href="#sec-14.3.2" class="quarto-xref"><span>Section 14.3.2</span></a>, since point P is on the bottom edge of the cross-section, it will not experience shear stress from V<sub>x</sub>.</p>
+<p>Point S is on the right edge of the cross-section, so it will not experience shear stress from V<sub>y</sub>.</p>
+<p>This leaves us with:</p>
+<p><span class="math display">\[\tau_{Pyz}=\pm \left|\frac{V_y\ Qx}{I_x\ t_x}\right|
 \]</span></p>
 <p><span class="math display">\[
-\begin{aligned}
-&amp; \sum M_x=M_{Rx}+(900{~lb})(80{~in.})=0 \quad\rightarrow\quad M_{Rx}=-72,000{~lb}\cdot{in.} \\
-&amp; \sum M_y=M_{Ry}+(900{~lb})(18{~in.})=0 \quad\rightarrow\quad M_{Ry}=-16,200{~lb}\cdot{in.} \\
-&amp; \sum M_z=M_{Rz}-(1500{~lb})(80{~in.})=0 \quad\rightarrow\quad {Mz}=120,000{~lb}\cdot{in.}
-\end{aligned}
+\tau_{Sxz}=\pm \left|\frac{V_x\ Qy}{I_y\ t_y}\right|
 \]</span></p>
-<p>To find reactions at cut section:</p>
-<p><span class="math display">\[
-\begin{aligned}
-&amp; \sum F_x=R_x+V_x=-1500{~lb}+V x=0 \quad\rightarrow\quad V x=1500{~lb} \\
-&amp; \sum F_y=R_y+V_y=0 \quad\rightarrow\quad V y=0 \\
-&amp; \sum F_z=R_z+V_z=-900{~lb}+V_z=0 \quad\rightarrow\quad V_z=900{~lb}
-\end{aligned}
+<p>3) Assess the signs.</p>
+<p>Since we used the top section of the cut to calculate internal reactions, we consider the stress elements to be at the bottom of the section, just inside the cut surface. The shear forces then act on the bottom face of the stress elements.</p>
+<p>Vy was found to act in the negative y direction, so it gets drawn directed to the left at the bottom of the P stress element. This results in a positive shear stress for point P.</p>
+<p><span class="math display">\[\tau_{Pyz}=\frac{V_y\ Qx}{I_x\ t_x}
 \]</span></p>
-<p><span class="math display">\[
-\begin{aligned}
-&amp; \sum M_x=M_{Rx}+V_z(10{~in.})+M_x=-72,000{~lb}\cdot{in.}+900{~lb}(10{~in.})+M_x=0 \quad\rightarrow\quad M_x=63,000{~lb}\cdot{in.} \\
-&amp; \sum M_y=M_{Ry}+M_y=-16,200{~lb}\cdot{in}+M_y=0 \quad\rightarrow\quad M_y=16,200{~lb}\cdot{in.} \\
-&amp; \sum M_z=M_{Rz}-V_x(10{~in.})+M_z=120,000{~lb}\cdot{in.}-1500{~lb}(10{~in.})+M_z=0 \quad\rightarrow\quad M_z=-105,000{~lb}\cdot{in.}
-\end{aligned}
+<p>Vx was found to act in the positive x direction. so it gets drawn directed to the left at the bottom of the S stress element. This results in a negative shear stress for point S.</p>
+<p><span class="math display">\[\tau_{Sxz}=-\frac{V_x\ Qy}{I_y\ t_y}
 \]</span></p>
-<p>The longitudinal direction based on the part of the rod on the y-axis is the y-axis, so the torsional moment is M<sub>y</sub>. Both points J and K will experience the same magnitude of shear stress from the torsion, however, it is possible for the signs to be different for the two different points depending on orientation. The magnitude of the shear stress is:</p>
-<p><span class="math display">\[
-\tau_{torsion}= \pm\left|\frac{Tc}{J}\right|=\pm\left|\frac{M_y(c)}{J}\right|= \pm\left|\frac{16,200{~lb}\cdot{in.}*(3.35{~in.})}{\frac{\pi}{32}(6.7{~in.})^4}\right|= \pm 274{~psi}
-\]</span></p>
-<p>Considering the stress element for each point with the counterclockwise torque resulting in a downwards directed force across the cut face of the element, we can note that there would be a negative z force on a positive y face for point K and a positive x force on a positive y face for point J. So</p>
-<p><span class="math inline">\(τ_{K(torsion)} = - 274{~psi}~~\text and~~ τ_{J(torsion)} = + 274{~psi}\)</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH14 PNGs/example 14.6 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="images/chapter 14 figure edits/example 14.6 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="215"></p>
 </figure>
 </div>
-<p>Now turning our attention to the shear stresses from the transverse forces, we note the cross sectional axes are the x- and z-axes, so the transverse shear forces are those that are in the x- and z-directions. We can also note that with K being on the x-axis of the cross section, it will not experience transverse shear stress from V<sub>x</sub>. Similarly, point J will not experience transverse shears tress from V<sub>y</sub>. In addition, since the cross-section is circular, we know that for both points:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/chapter 14 figure edits/example 14.6 part 4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="214"></p>
+</figure>
+</div>
+<p>4) Calculate.</p>
+<p>With:</p>
+<p><span class="math inline">\(V_H = V_y = 78{~kN}\)</span></p>
+<p><span class="math inline">\(V_V = V_x = 94{~kN}\)</span></p>
+<p><span class="math inline">\(I_H=I_y=\frac{1}{12}(160{~mm})(120{~mm})^3=23.04 \times 10^6{~mm}^4=23.04 \times 10^{-6}{~m}^4\)</span></p>
+<p><span class="math inline">\(I_V=I_x=\frac{1}{12}(160{~mm})^3(120{~mm})=40.96 \times10^6{~mm}^4=40.96 \times 10^{-6}{~m}^4\)</span></p>
+<p>For point P we need Q<sub>x</sub> and t<sub>x</sub>. Cutting vertically through point P on the cross-section:</p>
 <p><span class="math display">\[
-\begin{aligned}
-&amp; Q_{max}=\frac{1}{12} d^3=\frac{1}{12}(6.7{~in.})^3=25.06{~in.^3} \\
-&amp; t=d=6.7{~in.}^3 \\
-&amp; I_x=I_z=\frac{\pi}{64} d^4=\frac{\pi}{64}(6.7{in.})^4=98.92{~in.^4} \\
-&amp;
+\begin{aligned}&amp;Q_x=A'y'=\frac{1}{2}(160{~mm})(120{~mm})*\left(\frac{1}{4}\right)(160{~mm})=384000{~mm}^3=384 \times 10^{-6}{~m}^3\\[10pt]
+&amp;t_x=120\ mm = .12\ m
 \end{aligned}
 \]</span></p>
-<p>Since V<sub>z</sub> acts in the positive z direction on the positive y face for point K, the transverse shear stress for point K is positive. Since V<sub>x</sub> acts in the positive x direction on the y face for point Y, the transverse shear stress for point J is also positive.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/example 14.6 edits/example 4.6 part ?.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="226"></p>
+</figure>
+</div>
+<p>For point S we need Q<sub>y</sub> and t<sub>y</sub>. Cutting horizontally through point S on the cross-section:</p>
+<p><span class="math inline">\(\begin{aligned}&amp;Q y=A'x'=(160{~mm})(30{~mm})*(60{~mm}-15{~mm})=216000{~mm}^3=216 \times 10^{-6}{~m}^3\\[10pt]&amp;ty=160\ mm=.16\ m\end{aligned}\)</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/example 14.6 edits/example 14.6 part ??.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="242"></p>
+</figure>
+</div>
+<p>So</p>
 <p><span class="math display">\[
-\begin{aligned}
-&amp; \tau_{K(transverse)}= \pm\left|\frac{V_z Q_{circle}}{I_{circle} d}\right|=+\frac{900{~lb}(25.06{~in.}^3)}{98.92{~in.}^4(6.7 {~in})}=34.03{~psi} \\
-&amp; \tau_{J(transverse)}= \pm\left|\frac{V_x Q_{circle}}{I_{circle} d}\right|=+\frac{1500{~lb}(25.06{~in.}^3)}{98.92{~in.}^4(6.7 {~in.})}=56.72{~psi}
-\end{aligned}
+\tau_{Pyz}=\frac{V_y Q_x}{I_x t_x}=\frac{(78000{~N})(384 \times 10^{-6}{~m}^3)}{(40.96 \times 10^{-6}{~m}^4)(0.12{~m})}=6.09{~MPa}
 \]</span></p>
-<p>Finally, we can calculate the total shear stress for each point by summing the torsional shear stress with the transverse shear stress:</p>
 <p><span class="math display">\[
-\begin{aligned}
-&amp; \tau_K=\tau_{(torsion)}+\tau_{(tranverse)}=-274.3{~psi}+34.03{~psi}=-240.27{~psi} \\
-&amp; \tau_J=\tau_{(torsion)}+\tau_{(tranverse)}=274.3{~psi}+56.72{~psi}=331.02{~psi}
-\end{aligned}
+\tau_{Sxz}=-\frac{V_x Q_y}{I_y t_y}=-\frac{(94000{~N})(216 \times 10^{-6}{~m}^3)}{(23.04 \times 10^{-6}{~m}^4)(0.16{~m})}=-5.51{~MPa}
 \]</span></p>
-<p><strong>τ<sub>K</sub> = -240.27 psi, τ<sub>J</sub> = 331.02 psi</strong></p>
+<p><strong>Answers:</strong></p>
+<p><strong>τ<sub>Pyz</sub> = 6.09 MPa</strong></p>
+<p><strong>τ<sub>Sxz</sub>~ = -5.51 MPa</strong></p>
 </div>
 </div>
 </div>
@@ -1166,30 +1437,31 @@ Step-by-step: Combined shear stress
 </div>
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li>Cut the body at the location of the point of interest and determine the internal reactions at that point.</li>
-<li>Note that for this text, this step will apply to round shafts only. Calculate the shear stress due to torsion using <span class="math inline">\(\tau= \pm\left|\frac{T c}{J}\right|\)</span> Remember that given applied forces, the torque would be calculated as the moment about the longitudinal axis of the body.</li>
-<li>Determine the sign on the shear stress by drawing the stress element and reflecting the direction of the reaction torque on the cut side of the element and then applying the convention for positive and negative shear stress.</li>
-<li>Determine the transverse shear stress with respect to both cross-sectional axes using the equation:<br>
-<span class="math display">\[
-\tau= \pm\left|\frac{V_H Q_V}{I_V t_V}\right| \pm\left|\frac{V_V Q_H}{I_H t_H}\right|
-\]</span><br>
-Remember that if the point in question is on an edge that the transverse shear force passes through (or if the point is on a particular centroidal axis of a circular cross-section), the shear stress from that direction of shear force will be 0.</li>
-<li>Determine the sign on the shear stress for each direction of shear force by drawing the stress element and reflecting the direction of the reaction shear force on the cut side of the element and then applying the convention for positive and negative shear stress.</li>
-<li>Add the torsional shear stress to the transverse shear stress to get the total.</li>
+<li><p>Cut the body at the location of the point of interest and determine the internal reactions at that point.</p></li>
+<li><p>Write the generalized shear stress equation and eliminate unnecessary terms (terms from loading that is not applied or that does not affect the point in question).</p>
+<p><span class="math display">\[
+\tau= \pm\left|\frac{T \rho}{J}\right| \pm\left|\frac{V_H Q_V}{I_V t_V}\right| \pm\left|\frac{V_V Q_H}{I_H t_H}\right|
+\]</span></p>
+<ol type="1">
+<li>Remember that if the point in question is on an edge that the transverse shear force passes through (or if the point is on a particular centroidal axis of a circular cross-section), the shear stress from that direction of shear force will be 0.</li>
+</ol></li>
+<li><p>Assess the signs by drawing the direction in which the shear stress acts on the cut side of the stress element.</p></li>
+<li><p>Calculate.</p>
+<p>Remember when finding Q to cut through the point in the direction perpendicular to th shear force.</p></li>
 </ol>
 </div>
 </div>
 </section></details>
 </section>
 
-<section id="sec-14.3" class="level2" data-number="14.3">
-<h2 data-number="14.3" class="anchored" data-anchor-id="sec-14.3"><span class="header-section-number">14.3</span> General Combined Stress</h2>
+<section id="sec-14.4" class="level2" data-number="14.4">
+<h2 data-number="14.4" class="anchored" data-anchor-id="sec-14.4"><span class="header-section-number">14.4</span> General Combined Stress</h2>
 <details>
 <summary>
 Click to expand
 </summary>
 <p>Once the total normal stress and total shear stress at a specified point is calculated, the general stress state can be represented on a stress element and used to determine principal stresses, principal planes, and max/min shear stresses.</p>
-<p>In <a href="#exm-14.7" class="quarto-xref">Example&nbsp;<span>14.7</span></a>, the problem from <a href="#exm-14.5" class="quarto-xref">Example&nbsp;<span>14.5</span></a> is extended to find the principal stresses and max/min shear stresses.</p>
+<p>In <a href="#exm-14.7" class="quarto-xref">Example&nbsp;<span>14.7</span></a>, the problem from <a href="#exm-14.6" class="quarto-xref">Example&nbsp;<span>14.6</span></a> is extended to find the principal stresses and max/min shear stresses.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1206,10 +1478,10 @@ Example 14.7
 <p><span class="theorem-title"><strong>Example 14.7</strong></span> &nbsp;</p>
 <p>
 </p>
-<p>Revisit <a href="#exm-14.5" class="quarto-xref">Example&nbsp;<span>14.5</span></a> to find the principal stresses and max/min shear stresses for point P on the post:</p>
+<p>Revisit <a href="#exm-14.6" class="quarto-xref">Example&nbsp;<span>14.6</span></a> to find the principal stresses and max/min shear stresses for point P on the post:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH14 PNGs/example 14.7 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="images/chapter 14 figure edits/example 14.6 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -1224,37 +1496,52 @@ Solution
 </div>
 <div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>In <a href="#exm-14.5" class="quarto-xref">Example&nbsp;<span>14.5</span></a> the total shear stress for point P was found to be positive 6.094 MPa.</p>
-<p>To find the principal stresses, we must finish finding the general stress state by also finding the normal stresses and then use the principal stress equations or Mohr’s Circle.</p>
-<p>The normal stress for this problem only arises from the bending around the x- and y-axes (the cross-sectional axes) since there is no force in the longitudinal z-direction and there is no pressure involved. The bending stress will be in the z-direction since that is the longitudinal direction.</p>
-<p>In addition, since P is on the x-axis, it will experience no stress from the moment around the x-axis, M<sub>x</sub>, so all the normal stress comes from the bending around the y axis, M<sub>y</sub>.</p>
-<p>As discussed in <a href="#exm-14.5" class="quarto-xref">Example&nbsp;<span>14.5</span></a>, if we consider the FBD of the section cut at P shown below, we know by inspection that the internal reactions at P will be the same magnitude and direction as the applied. This is because the reactions at the support will be equal and opposite to the applied and the internal reactions are the opposite of those.</p>
+<p>In <a href="#exm-14.6" class="quarto-xref">Example&nbsp;<span>14.6</span></a> the total shear stress for point P was found to be positive 10.83MPa.</p>
+<p>To find the principal stresses, we must:</p>
+<p>1) finish finding the general stress state by also finding the total normal stress and</p>
+<p>2) use the principal stress equations or Mohr’s Circle.</p>
+<p>To complete the first task:</p>
+<p>1) Again, use the FBD of the section of the post above the cut made at the vertical location of P and S.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH14 PNGs/example 14.7 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="222"></p>
+<p><img src="images/chapter 14 figure edits/example 14.6 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="332"></p>
 </figure>
 </div>
-<p>The internal moment reaction around the y-axis, My, can then be calculated as:</p>
+<p>We know from <a href="#exm-14.6" class="quarto-xref">Example&nbsp;<span>14.6</span></a> that R<sub>x</sub> = 94 kN and R<sub>y</sub> = - 78 kN.</p>
+<p>By inspection, we can see that R<sub>z</sub> = 0.</p>
+<p>Point P is on the vertical axis of the cross-section (x axis), so we know that it will not experience any bending stress from M<sub>Rx</sub> .</p>
+<p>As noted in the previous example, M<sub>Ry</sub> = 0 by inspection, but it would not contribute to the normal stress in any case since that would be a torsional moment.</p>
+<p>Thus, the only bending moment reaction we need to calculate is M<sub>Ry</sub> . Using the moment equilibrium equation for the y-axis:</p>
+<p><span class="math inline">\(\begin{aligned}\sum M_y&amp;=(-94{~kN})(150{~mm})+M_{Ry}=0\\ &amp;=-14,100{~kN\ mm}+M_{Ry}=0\quad\rightarrow\quad M_{Ry}=14,100{~kN\ mm}\end{aligned}\)</span></p>
+<p>The generalized normal stress equation (with no pressures) is:</p>
+<p><span class="math display">\[
+\sigma_{L}= \pm\left|\frac{F_L}{A}\right| \pm\left|\frac{M_V d_H}{I_V}\right| \pm\left|\frac{M_H d_V}{I_H}\right|
+\]</span></p>
+<p>With no force in the longitudinal direction and point P located on the x axis (see discussion above), we can reduce the equation to:</p>
+<p><span class="math display">\[
+\sigma_z=\pm \left |\frac{M_Ry\ x}{I_y}\right|
+\]</span></p>
+<p>To assess the sign, we note that we determined the reaction moment at the cut surface of the upper section of post to be positive, or counterclockwise. That means the reaction moment at the cut surface for the lower section of post (beneath the cut at P and S) will be negative, or clockwise. As mentioned in <a href="#exm-14.2" class="quarto-xref">Example&nbsp;<span>14.2</span></a> and <a href="#exm-14.3" class="quarto-xref">Example&nbsp;<span>14.3</span></a>, we want to use the bending moment on the lower section to visualize the bending since it is attached to the fixed support.</p>
+<p>With a clockwise moment around the y-axis for the lower section of post, we visualize the curve of the bend to go “backwards” around the y-axis. From the side view (looking down the y-axis), the post would look like it curves around to the right, placing point P on the outside of the bend (tension).</p>
+<p>Alternatively, drawing the cross-section from the top-down view with the clockwise moment arrow drawn around the y-axis shows that point P is on the ithe tail of the cross-section, confirming tension at this point.</p>
+<p>So <span class="math inline">\(\sigma_z=\frac{M_Ry\ x}{I_y}\)</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/example 14.6 edits/??.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="247"></p>
+</figure>
+</div>
+<p>Recalling <span class="math inline">\(I_y = 23.04 \times 10^{-6}{~m^4}\)</span> from <a href="#exm-14.6" class="quarto-xref">Example&nbsp;<span>14.6</span></a>, the normal stress at P is then:</p>
 <p><span class="math display">\[
 \begin{aligned}
-\sum M_y=(-94{~kN})(150{~mm})&amp;=-14,100{~kN}\cdot{mm} \\
-&amp;=14,100{~kN}\cdot{mm}~~\text{clockwise}
+&amp;\sigma_{Pz}=\frac{M_y x}{I_y}\\
+&amp;\sigma_{Pz}=\frac{14,100{~N}\cdot{m}(0.06{~m})}{23.04 \times 10^{-6}{~m^4}}\\
+&amp;\sigma_{Pz}=36.77{~MPa}
 \end{aligned}
-\]</span></p>
-<p>The bending stress for point P will be positive since the clockwise moment around the y-axis means that the post will curve into the plane of the screen and look as shown below from the positive y side view. The cross-section is also shown with the tail of the representative moment arrow on the P side of the cross-section, indicating that everything below the y-axis will be in tension.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/CH14 PNGs/example 14.7 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
-<p>Recalling <span class="math inline">\(I_y = 40.96 \times 10^{-6}{~m^4}\)</span> from <a href="#exm-14.5" class="quarto-xref">Example&nbsp;<span>14.5</span></a>, the normal stress at P is then:</p>
-<p><span class="math display">\[
-\sigma_{P z}=\frac{M_y x}{I_y}=\frac{14,100{~N}\cdot{m}(0.06{~m})}{40.96 \times 10^{-6}{~m^4}}=20.7{~MPa}
 \]</span></p>
 <p>Now that the total shear stress and total normal stress are known, the stress state can be represented on a stress element.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH14 PNGs/example 14.7 part 4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="266"></p>
+<p><img src="images/chapter 14 figure edits/example 14.6?.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="280"></p>
 </figure>
 </div>
 <p>Applying the simplified version of the principal stress equations and the max/min shear equation (in terms of the general xy plane), we get:</p>
@@ -1267,14 +1554,16 @@ Solution
 <p>In this case, since the point P is in the y-z plane instead of the x-y plane, we can replace the x subscripts with y and the y subscripts with z, so the equations become:</p>
 <p><span class="math display">\[
 \begin{aligned}
-&amp; \sigma_{1,2}=\frac{\sigma_y+\sigma_z}{2} \pm \sqrt{\left(\frac{\sigma_y-\sigma_z}{2}\right)^2+\tau_{y z}^2}=\frac{20.7{~MPa}+0}{2} \pm \sqrt{\left(\frac{20.7{~MPa}-0}{2}\right)^2+(6.094{~MPa})^2}=22.26{~MPa},-1.661{~MPa} \\
-&amp; \tau_{\max , \min }= \pm \sqrt{\left(\frac{\sigma_y-\sigma_z}{2}\right)^2+\tau_{y z}^2}=\sqrt{\left(\frac{20.7{~MPa}-0}{2}\right)^2+(6.094{~MPa})^2}=12.01{~MPa},-12.01{~MPa}
+&amp; \sigma_{1,2}=\frac{36.77{~MPa}+0}{2} \pm \sqrt{(\frac{36.77{~MPa}-0}{2})^2+(6.094{~MPa})^2}\\
+&amp;\sigma_{1,2}=37.75{~MPa}, -.984{~MPa} \\
+&amp; \tau_{\max , \min }=\sqrt{(\frac{36.77{~MPa}-0}{2})^2+(6.094{~MPa})^2}\\
+&amp;\tau_{max,min}=19.37{~MPa},-19.37{~MPa}
 \end{aligned}
 \]</span></p>
-<p><strong>σ<sub>1</sub> = 22.36 MPa</strong></p>
-<p><strong>σ<sub>2</sub> = 22.36 MPa</strong></p>
-<p><strong>τ<sub>min</sub> = -12.01 MPa</strong></p>
-<p><strong>τ<sub>max</sub> = 12.01 MPa</strong></p>
+<p><strong>σ<sub>1</sub> = 37.75 MPa</strong></p>
+<p><strong>σ<sub>2</sub> = -.984 MPa</strong></p>
+<p><strong>τ<sub>min</sub> = -19.37 MPa</strong></p>
+<p><strong>τ<sub>max</sub> = 19.37 MPa</strong></p>
 </div>
 </div>
 </div>
@@ -1284,8 +1573,8 @@ Solution
 </div>
 </details>
 </section>
-<section id="summary" class="level2" data-number="14.4">
-<h2 data-number="14.4" class="anchored" data-anchor-id="summary"><span class="header-section-number">14.4</span> Summary</h2>
+<section id="summary" class="level2" data-number="14.5">
+<h2 data-number="14.5" class="anchored" data-anchor-id="summary"><span class="header-section-number">14.5</span> Summary</h2>
 <details>
 <summary>
 Click to expand
@@ -1303,7 +1592,7 @@ Key takeaways
 <p>The overall general stress state for any given point on a loaded body is found by calculating and combining all forms of normal stress and all forms of shear stress.</p>
 <p>The combined normal stress at a point comes from normal forces, bending stress, and pressure. Normal forces are the forces perpendicular to the cross-section the point in question is on. These are also the forces in the longitudinal direction. The bending moment contribution to normal stress comes from bending moments around the centroidal cross-sectional axes. Both normal forces and bending moments will result in stress in the longitudinal direction with respect to the location of the cross-section.</p>
 <p>Pressure will result in normal stress in two directions (hoop and axial). The axial stress will combine with the normal stress from normal forces and bending moments to result in an overall longitudinal stress. The hoop stress will be the only stress in that direction for the situations considered in this text.</p>
-<p>Since the stresses are added together, it is important to also understand the sign of each stress. Compressive stresses are negative and tensile stresses are positive. In bending, one can visualize the bending shape of a body to determine if a point will be in tension or compression or use the visual aid described in <a href="#sec-14.1.1" class="quarto-xref"><span>Section 14.1.1</span></a>. Internal pressure will always be tensile.</p>
+<p>Since the stresses are added together, it is important to also understand the sign of each stress. Compressive stresses are negative and tensile stresses are positive. In bending, one can visualize the bending shape of a body to determine if a point will be in tension or compression or use the visual aid described in <a href="#sec-14.1" class="quarto-xref"><span>Section 14.1</span></a>. Internal pressure will always be tensile.</p>
 <p>The combined shear stress at a point comes from torsion and transverse shear forces. The torsional moment is the moment about the longitudinal axis. The transverse shear forces are the forces in the directions of the cross-sectional axes. The signs for shear stress are determined by drawing the stress element and considering the direction of the internal torque or shear force on the cut edge of the element relative to the positive and negative faces of the element.</p>
 </div>
 </div>
@@ -1341,21 +1630,7 @@ Key equations
 Click to expand
 </summary>
 <p><strong>Figures</strong></p>
-<p>Figure 14.1: The longitudinal (L), horizontal (H), and vertical (V) axes depend on how the axes are arranged globally for the structure as well as the specific location of the point in question. Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Figure 14.2: General coordinate axes and the distances used in the bending stress equation. Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Figure 14.3: Sense of bending moment around the horizontal (H) axis that would result in tension below the H axis and compression above. Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Figure 14.4: Sense of bending moment around the vertical (V) axis that results in tension to the left of the V axis and compression to the right. Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Figure 14.5: Bending moments cause zero stress along the centroidal axis that they act around. Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Example 14.1: Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Figure 14.6: The vertical pole is subject to direct axial stress and bending stress. Left: James Lord. 2024. CC BY-NC-SA. Right: Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Example 14.2: Kindred Grey. 2024. CC BY-NC-SA. Example 14.3: Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Example 14.4: Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Figure 14.7: Signs for shear stress. Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Figure 14.8: Shear forces in two directions on cross-section. Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Figure 14.9: Locations of zero transverse shear stress. Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Example 14.5: Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Example 14.6: Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Example 14.7: Kindred Grey. 2024. CC BY-NC-SA.</p>
+<p>All figures in this chapter were created by Kindred Grey in 2025 and released under a CC BY-NC-SA license.</p>
 </details>
 
 
@@ -1363,383 +1638,255 @@ Click to expand
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
     }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const disableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'prefetch';
-    }
-  }
-  const enableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'stylesheet';
-    }
-  }
-  const manageTransitions = (selector, allowTransitions) => {
-    const els = window.document.querySelectorAll(selector);
-    for (let i=0; i < els.length; i++) {
-      const el = els[i];
-      if (allowTransitions) {
-        el.classList.remove('notransition');
-      } else {
-        el.classList.add('notransition');
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-  }
-  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-    let newTheme = '';
-    if(darkModeDefault) {
-      newTheme = isAlternate ? baseTheme : alternateTheme;
-    } else {
-      newTheme = isAlternate ? alternateTheme : baseTheme;
-    }
-    const changeGiscusTheme = () => {
-      // From: https://github.com/giscus/giscus/issues/336
-      const sendMessage = (message) => {
-        const iframe = document.querySelector('iframe.giscus-frame');
-        if (!iframe) return;
-        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      sendMessage({
-        setConfig: {
-          theme: newTheme
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
       });
     }
-    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-    if (isGiscussLoaded) {
-      changeGiscusTheme();
-    }
-  }
-  const toggleColorMode = (alternate) => {
-    // Switch the stylesheets
-    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-    manageTransitions('#quarto-margin-sidebar .nav-link', false);
-    if (alternate) {
-      enableStylesheet(alternateStylesheets);
-      for (const sheetNode of alternateStylesheets) {
-        if (sheetNode.id === "quarto-bootstrap") {
-          toggleBodyColorMode(sheetNode);
-        }
-      }
-    } else {
-      disableStylesheet(alternateStylesheets);
-      toggleBodyColorPrimary();
-    }
-    manageTransitions('#quarto-margin-sidebar .nav-link', true);
-    // Switch the toggles
-    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-    for (let i=0; i < toggles.length; i++) {
-      const toggle = toggles[i];
-      if (toggle) {
-        if (alternate) {
-          toggle.classList.add("alternate");     
-        } else {
-          toggle.classList.remove("alternate");
-        }
-      }
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455)
-    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-      manageTransitions("body", false);
-      window.scrollTo(0, 1);
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        manageTransitions("body", true);
-      }, 40);  
-    }
-  }
-  const isFileUrl = () => { 
-    return window.location.protocol === 'file:';
-  }
-  const hasAlternateSentinel = () => {  
-    let styleSentinel = getColorSchemeSentinel();
-    if (styleSentinel !== null) {
-      return styleSentinel === "alternate";
-    } else {
-      return false;
-    }
-  }
-  const setStyleSentinel = (alternate) => {
-    const value = alternate ? "alternate" : "default";
-    if (!isFileUrl()) {
-      window.localStorage.setItem("quarto-color-scheme", value);
-    } else {
-      localAlternateSentinel = value;
-    }
-  }
-  const getColorSchemeSentinel = () => {
-    if (!isFileUrl()) {
-      const storageValue = window.localStorage.getItem("quarto-color-scheme");
-      return storageValue != null ? storageValue : localAlternateSentinel;
-    } else {
-      return localAlternateSentinel;
-    }
-  }
-  const darkModeDefault = false;
-  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-  // Dark / light mode switch
-  window.quartoToggleColorScheme = () => {
-    // Read the current dark / light value 
-    let toAlternate = !hasAlternateSentinel();
-    toggleColorMode(toAlternate);
-    setStyleSentinel(toAlternate);
-    toggleGiscusIfUsed(toAlternate, darkModeDefault);
-  };
-  // Ensure there is a toggle, if there isn't float one in the top right
-  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-    const a = window.document.createElement('a');
-    a.classList.add('top-right');
-    a.classList.add('quarto-color-scheme-toggle');
-    a.href = "";
-    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-    const i = window.document.createElement("i");
-    i.classList.add('bi');
-    a.appendChild(i);
-    window.document.body.appendChild(a);
-  }
-  // Switch to dark mode if need be
-  if (hasAlternateSentinel()) {
-    toggleColorMode(true);
-  } else {
-    toggleColorMode(false);
-  }
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
         }
-        return container.innerHTML
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1747,185 +1894,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./Chapter 13.html" class="pagination-link" aria-label="Thin-Walled Pressure Vessels">

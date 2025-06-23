@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.7.29">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>10&nbsp; Shear Loads – Strength of Materials</title>
+<title>10&nbsp; Shear Loading in Beams – Strength of Materials</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,17 +32,20 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="./">
 <link href="./Chapter 11.html" rel="next">
 <link href="./Chapter 9.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-748b535e376f14d4692bf2b2e5fd6380.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-e1aa288a8a6a3aa5f7fec8175f5023de.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-d13a72f20fc3c7f792e67513fe0bf82c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-e1aa288a8a6a3aa5f7fec8175f5023de.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -104,7 +107,168 @@ window.Quarto = {
 <link rel="stylesheet" href="styles/custom.css">
 </head>
 
-<body class="nav-sidebar docked">
+<body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -113,7 +277,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Chapter 10.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Shear Loads</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Chapter 10.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Shear Loading in Beams</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -204,7 +368,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Chapter 10.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Shear Loads</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Shear Loading in Beams</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -300,9 +464,10 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-shear-loads" class="quarto-section-identifier"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Shear Loads</span></span></h1>
+<h1 class="title"><span id="sec-shear-loads" class="quarto-section-identifier"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Shear Loading in Beams</span></span></h1>
 </div>
 
 
@@ -332,7 +497,7 @@ Learning Objectives
 <ul>
 <li>Determine the first moment of area at various points on a cross-section.</li>
 <li>Explain the distribution of shear stress on a cross-section.</li>
-<li>Calculate the shear stress at various points on a cross-section.</li>
+<li>Calculate the transverse shear stress at various points on a cross-section.</li>
 <li>Calculate the shear flow on a built-up cross-section.</li>
 </ul>
 </div>
@@ -343,7 +508,7 @@ Learning Objectives
 <summary>
 Click to expand
 </summary>
-<p>In <a href="Chapter 9.html" class="quarto-xref"><span>Chapter 9</span></a> we learned to calculate bending stresses in beams and how to design beams to resist bending stress. The transverse loading applied to beams will also create internal shear loads and therefore shear stresses that must be calculated and accounted for (<a href="#fig-10.1" class="quarto-xref">Figure&nbsp;<span>10.1</span></a>).</p>
+<p>In <a href="Chapter 9.html" class="quarto-xref"><span>Chapter 9</span></a> we learned how to calculate bending stresses in beams and how to design beams to resist bending stress. Transverse loading applied to beams will also create internal shear loads and therefore shear stresses that must be calculated and accounted for (<a href="#fig-10.1" class="quarto-xref">Figure&nbsp;<span>10.1</span></a>).</p>
 <div id="fig-10.1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-10.1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -354,7 +519,7 @@ Figure&nbsp;10.1: A beam subjected to transverse loading will experience both an
 </figcaption>
 </figure>
 </div>
-<p>In this chapter, we’ll first review an important geometric property known as the first moment of area and demonstrate how to calculate it for common beam cross-sections in <a href="#sec-10.1" class="quarto-xref"><span>Section 10.1</span></a>. In <a href="#sec-10.2" class="quarto-xref"><span>Section 10.2</span></a> we’ll discuss shear stresses in beams and how to calculate them. In <a href="#sec-10.3" class="quarto-xref"><span>Section 10.3</span></a> we’ll discuss shear flow, which is useful for beams with cross-sections formed by joining two or more parts with fasteners such as nails.</p>
+<p>In this chapter, we’ll first review an important geometric property known as the first moment of area and demonstrate how to calculate it for common beam cross-sections in <a href="#sec-10.1" class="quarto-xref"><span>Section 10.1</span></a>. In <a href="#sec-10.2" class="quarto-xref"><span>Section 10.2</span></a> we’ll discuss transverse shear stresses in beams and how to calculate them. In <a href="#sec-10.3" class="quarto-xref"><span>Section 10.3</span></a> we’ll discuss shear flow, which is useful for beams with cross-sections formed by joining two or more parts with fasteners such as nails.</p>
 </details>
 </section>
 <section id="sec-10.1" class="level2" data-number="10.1">
@@ -363,7 +528,7 @@ Figure&nbsp;10.1: A beam subjected to transverse loading will experience both an
 <summary>
 Click to expand
 </summary>
-<p>Shear stress in an object depends on the internal shear force and the shape of the cross-section. One important geometric property used in this chapter is the first moment of area. This property was introduced in <a href="Chapter 8.html#sec-8.1" class="quarto-xref"><span>Section 8.1</span></a> and was used when determining the centroid of an area. Recall we used <span class="citation" data-cites="eqn-8.1">@eqn-8.1</span> to break simple cross-sections down into a number of composite parts. When finding the centroid of these composite areas we modified the equation slightly to:</p>
+<p>Shear stress in an object depends on the internal shear force and the shape of the cross-section. One important geometric property used in this chapter is the first moment of area. This property was introduced in <a href="Chapter 8.html#sec-8.1" class="quarto-xref"><span>Section 8.1</span></a> and was used when determining the centroid of an area. Recall we used <a href="Chapter 8.html#eq-8.1" class="quarto-xref">Equation&nbsp;<span>8.1</span></a> to break simple cross-sections down into a number of composite parts. When finding the centroid of these composite areas we modified the equation slightly to:</p>
 <p><span class="math display">\[
 \bar{y}=\frac{\sum y_i A_i}{\sum A_i}=\frac{y_1 A_1+y_2 A_2+\ldots}{A_1+A_2+\ldots}
 \]</span></p>
@@ -384,8 +549,18 @@ Q=\int y d A
 <em>y = Vertical distance from neutral axis to centroid of area A [m, in.]</em></div>
 <p><em>A = Area above (or below) point of interest [m<sup>2</sup>, in.<sup>2</sup>]</em></p>
 <p>In <a href="Chapter 8.html#sec-8.1" class="quarto-xref"><span>Section 8.1</span></a> we performed this calculation relative to some convenient reference axis in order to determine the location of the centroid of an area (such as in <a href="Chapter 8.html#exm-8.3" class="quarto-xref">Example&nbsp;<span>8.3</span></a>). A<sub>i</sub> represents the area of each composite part and y<sub>i</sub> represents the distance from the reference axis to the centroid of each composite part.</p>
-<p>The first moment of area can actually be calculated around any axis. The maximum value will always occur at the centroid of the cross-section (i.e., the neutral axis) so many problems will involve finding the first moment of area at the neutral axis, but there are also cases where finding the first moment of area around some other axis is required. Note that the axis should be perpendicular to the shear force, so a vertical load requires us to use a horizontal axis.</p>
-<p>To calculate the first moment of area around an axis, first draw a line through this axis. We may choose to use either the area above this axis or the area below it, whichever is simpler. The answer will be the same either way. Break this area down into composite parts (if necessary) and apply <span class="math inline">\(Q=\sum y_i A_i\)</span> where A<sub>i</sub> is the area of each composite part and y<sub>i</sub> is the perpendicular distance between the centroid of the overall cross-section and the centroid of each composite part. Note that we must first find the location of the centroid of the overall cross-section in order to measure this distance.</p>
+<p>The first moment of area can actually be calculated around any axis. The maximum value will always occur at the centroid of the cross-section (i.e.&nbsp;the neutral axis for pure bending) so many problems will involve finding the first moment of area at the neutral axis, but there are also cases where finding the first moment of area around some other axis is required. Note that the axis should be perpendicular to the shear force, so a vertical load requires us to use a horizontal axis.</p>
+<p>To calculate the first moment of area around an axis, first draw a line through this axis. We may choose to use either the area above this axis or the area below it, whichever is simpler. The answer will be the same either way. Break this area down into composite parts (if necessary) and apply <span class="math inline">\(Q=\sum y_i A_i\)</span> where A<sub>i</sub> is the area of each composite part and y<sub>i</sub> is the perpendicular distance between the centroid of the overall cross-section and the centroid of each composite part. Note that we must first find the location of the centroid of the overall cross-section in order to measure this distance. <a href="#fig-10.2" class="quarto-xref">Figure&nbsp;<span>10.2</span></a> illustrates this process for finding Q at the neutral axis and at another axis for two different cross-sections.</p>
+<div id="fig-10.2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-10.2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/chapter 10 updates 5.12.25/figure 10.2.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-10.2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;10.2: Process for finding the 1st moment of area, Q = yA, at the neutral axis and at a different axis of interest for two common cross-sections.
+</figcaption>
+</figure>
+</div>
 <p><a href="#exm-10.1" class="quarto-xref">Example&nbsp;<span>10.1</span></a> demonstrates this process to find the first moment of area around the neutral axis of a T cross-section. This example is solved twice, once using the area below the neutral axis and once using the area above.</p>
 <p><a href="#exm-10.2" class="quarto-xref">Example&nbsp;<span>10.2</span></a> uses the same cross-section and demonstrates calculating the first moment of area around a different axis on the cross-section.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -425,14 +600,15 @@ Solution
 <p>First determine the y-coordinate of the centroid of the cross-section. Consider the area as two rectangles and use the method of <a href="Chapter 8.html#sec-8.1" class="quarto-xref"><span>Section 8.1</span></a>. We will choose a reference point at the bottom of the section to calculate the centroid.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH10 PNGs/example 10.1 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="295"></p>
+<p><img src="images/chapter 10 updates 5.12.25/example 10.1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="351"></p>
 </figure>
 </div>
 <p><span class="math display">\[
 \begin{aligned}
 &amp; y_1=4.5{~in.}~,~ A_1=18{~in.}^2 \\
 &amp; y_2=10.5{~in.}~,~ A_2=30{~in.}^2 \\
-&amp; \bar{y}=\frac{(4.5{~in.} * 18{~in.}^2)+(10.5{~in.} * 30{~in.}^2)}{18{~in.}^2+30{~in.}^2}=8.25{~in.}~~\text{from the bottom of the section (our reference point) }
+&amp; \bar{y}=\frac{(4.5{~in.} * 18{~in.}^2)+(10.5{~in.} * 30{~in.}^2)}{18{~in.}^2+30{~in.}^2}\\
+&amp; \bar{y}=8.25{~in.}~~\text{from the bottom of the section (our reference point) }
 \end{aligned}
 \]</span></p>
 <p>Note that since this section is simple, only two shapes, we didn’t create a table as we did in <a href="Chapter 8.html#sec-8.1" class="quarto-xref"><span>Section 8.1</span></a>. This is a simplified version of the table, but the calculation is exactly the same.</p>
@@ -515,7 +691,7 @@ Solution
 <p><strong>Area above the line:</strong></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH10 PNGs/example 10.2 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="384"></p>
+<p><img src="images/chapter 10 updates 5.12.25/example 10.2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="426"></p>
 </figure>
 </div>
 <p>This area is a simple rectangle. Recall that <em>Q=yA</em> where A is the area of the rectangle and y is the vertical distance between the neutral axis and the centroid of the rectangle. Note that the perpendicular distance is <strong>always</strong> measured to the neutral axis, not to the seam between the two boards.</p>
@@ -535,31 +711,31 @@ Solution
 </div>
 </div>
 <p>Simple cross-sections such as rectangles and circles are fairly commonly used for beams. For these simple cross-sections we can derive standard solutions for the maximum first moment of area (Q<sub>max</sub>). Recall that this always occurs at the neutral axis of the cross-section.</p>
-<p>For a rectangle of base <em>b</em> and height <em>h</em> (<a href="#fig-10.2" class="quarto-xref">Figure&nbsp;<span>10.2</span></a>), the neutral axis will be at <span class="math inline">\(y=\frac{h}{2}\)</span>. Drawing a line along the neutral axis and taking the area above this line gives <span class="math inline">\(A=b \frac{h}{2}\)</span>. The distance between the centroid of this area and the neutral axis of the cross-section will be <span class="math inline">\(y=\frac{h}{4}\)</span>. Thus, for a rectangular cross-section:</p>
+<p>For a rectangle of base <em>b</em> and height <em>h</em> (<a href="#fig-10.3" class="quarto-xref">Figure&nbsp;<span>10.3</span></a>), the neutral axis will be at <span class="math inline">\(y=\frac{h}{2}\)</span>. Drawing a line along the neutral axis and taking the area above this line gives <span class="math inline">\(A=b \frac{h}{2}\)</span>. The distance between the centroid of this area and the neutral axis of the cross-section will be <span class="math inline">\(y=\frac{h}{4}\)</span>. Thus, for a rectangular cross-section:</p>
 <p><span class="math display">\[
 Q_{\max }=\frac{h}{4} \frac{b h}{2}=\frac{b h^2}{8}
-\]</span></p>
-<div id="fig-10.2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-10.2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/CH10 PNGs/figure 10.2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="300">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-10.2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;10.2: Determining the first moment of area around the neutral axis of a rectangular cross-section.
-</figcaption>
-</figure>
-</div>
-<p>For a circular cross-section of radius r (<a href="#fig-10.3" class="quarto-xref">Figure&nbsp;<span>10.3</span></a>), the area above the neutral axis is semi-circle so <span class="math inline">\(A=\frac{1}{2} \pi r^2\)</span>. The distance from the centroid of the semi-circle to the neutral axis is <span class="math inline">\(y=\frac{4 r}{3 \pi}\)</span>. Thus, for a circular cross-section:</p>
-<p><span class="math display">\[
-Q_{\max }=\frac{4 r}{3 \pi} \frac{1}{2} \pi r^2=\frac{2}{3} r^3
 \]</span></p>
 <div id="fig-10.3" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-10.3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/CH10 PNGs/figure 10.3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="292">
+<img src="images/CH10 PNGs/figure 10.2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="300">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-10.3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;10.3: Determining the first moment of area around the neutral axis of a circular cross-section.
+Figure&nbsp;10.3: Determining the first moment of area around the neutral axis of a rectangular cross-section.
+</figcaption>
+</figure>
+</div>
+<p>For a circular cross-section of radius r (<a href="#fig-10.4" class="quarto-xref">Figure&nbsp;<span>10.4</span></a>), the area above the neutral axis is semi-circle so <span class="math inline">\(A=\frac{1}{2} \pi r^2\)</span>. The distance from the centroid of the semi-circle to the neutral axis is <span class="math inline">\(y=\frac{4 r}{3 \pi}\)</span>. Thus, for a circular cross-section:</p>
+<p><span class="math display">\[
+Q_{\max }=\frac{4 r}{3 \pi} \frac{1}{2} \pi r^2=\frac{2}{3} r^3
+\]</span></p>
+<div id="fig-10.4" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-10.4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/CH10 PNGs/figure 10.3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="292">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-10.4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;10.4: Determining the first moment of area around the neutral axis of a circular cross-section.
 </figcaption>
 </figure>
 </div>
@@ -596,62 +772,62 @@ Click to expand
 <p><span class="math display">\[
 \tau_{avg}=\frac{V}{A}
 \]</span></p>
-<p>This is the average shear stress on a cross-section, but shear stress actually varies along the section (<a href="#fig-10.4" class="quarto-xref">Figure&nbsp;<span>10.4</span></a>). For a vertical internal shear force, shear stress is zero at the top and bottom of a cross-section and maximum at the neutral axis. Shear stress varies in a parabolic fashion. The average shear stress does not provide a full picture and it is often necessary to calculate the shear stress at a specific point on the cross-section instead.</p>
-<div id="fig-10.4" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-10.4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/CH10 PNGs/figure 10.4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="363">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-10.4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;10.4: Parabolic variation in shear stress over a cross-section. For a vertical shear force on a uniform cross-section, the shear stress is zero at the top and bottom of the section and maximum at the neutral axis.
-</figcaption>
-</figure>
-</div>
-<p>To derive the shear stress formula, we’ll begin by examining a small 2D element on a body subjected to an internal shear force (<a href="#fig-10.5" class="quarto-xref">Figure&nbsp;<span>10.5</span></a>). If this element is in equilibrium, a shear force applied to one face of this element must also produce shear forces (and therefore shear stresses) on the other faces of the element.</p>
+<p>This is the average shear stress on a cross-section, but shear stress actually varies through the height of the section (<a href="#fig-10.5" class="quarto-xref">Figure&nbsp;<span>10.5</span></a>). For a vertical internal shear force, the shear stress is zero at the top and bottom of a cross-section and maximum at the neutral axis. Shear stress varies in a parabolic fashion. The average shear stress does not provide a full picture and it is often necessary to calculate the shear stress at a specific point on the cross-section instead.</p>
 <div id="fig-10.5" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-10.5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/CH10 PNGs/figure 10.5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="219">
+<img src="images/CH10 PNGs/figure 10.4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="363">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-10.5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;10.5: Element A on the beam is subjected to shear force V on the right side. For the element to be in equilibrium there must also be an equal and opposite force V on the other side. However, this element will rotate so there must be two additional forces to create an equal moment in the opposite direction.
+Figure&nbsp;10.5: Parabolic variation in shear stress over a cross-section. For a vertical shear force on a uniform cross-section, the shear stress is zero at the top and bottom of the section and maximum at the neutral axis.
 </figcaption>
 </figure>
 </div>
-<p>Thus, an element experiencing a vertical shear stress also experiences a horizontal shear stress. This is known as the <em>complementary property of shear</em>. This effect can be seen by forming a ‘beam’ out of a stack of paper and applying a vertical force. The pieces of paper slide horizontally relative to each other (<a href="#fig-10.6" class="quarto-xref">Figure&nbsp;<span>10.6</span></a>).</p>
+<p>To derive the shear stress formula, we’ll begin by examining a small 2D element on a body subjected to an internal shear force (<a href="#fig-10.6" class="quarto-xref">Figure&nbsp;<span>10.6</span></a>). If this element is in equilibrium, a shear force applied to one face of this element must also produce shear forces (and therefore shear stresses) on the other faces of the element.</p>
 <div id="fig-10.6" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-10.6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/CH10 PNGs/figure 10.6.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="364">
+<img src="images/CH10 PNGs/figure 10.5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="219">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-10.6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;10.6: A stack of papers representing a beam. The ends of the beam are initially vertical. Load F is applied, creating an internal vertical shear force. The papers slide relative to each other horizontally, indicating that there must also be a horizontal shear force created.
+Figure&nbsp;10.6: Element A on the beam is subjected to shear force V on the right side. For the element to be in equilibrium there must also be an equal and opposite force V on the other side. However, this element will rotate so there must be two additional forces to create an equal moment in the opposite direction.
 </figcaption>
 </figure>
 </div>
-<p>Another example is a wooden beam that fails due to shear. In such beams, cracks tend to appear horizontally even though the applied load is vertical. This is due to horizontal shear stress between the layers of the wood (<a href="#fig-10.7" class="quarto-xref">Figure&nbsp;<span>10.7</span></a>).</p>
+<p>Thus, an element experiencing a vertical shear stress also experiences a horizontal shear stress. This is known as the <em>complementary property of shear</em>. This effect can be seen by forming a ‘beam’ out of a stack of paper and applying a vertical force. The pieces of paper slide horizontally relative to each other (<a href="#fig-10.7" class="quarto-xref">Figure&nbsp;<span>10.7</span></a>).</p>
 <div id="fig-10.7" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-10.7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/CH10 PNGs/10.7 new.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img">
+<img src="images/CH10 PNGs/figure 10.6.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="364">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-10.7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;10.7: Horizontal shear failure in a wooden beam subjected to a vertical load.
+Figure&nbsp;10.7: A stack of papers representing a beam. The ends of the beam are initially vertical. Load F is applied, creating an internal vertical shear force. The papers slide relative to each other horizontally, indicating that there must also be a horizontal shear force created.
 </figcaption>
 </figure>
 </div>
-<p>Imagine a beam subjected to an arbitrary vertical load. Consider a small cross-section of width Δx (<a href="#fig-10.8" class="quarto-xref">Figure&nbsp;<span>10.8</span></a>). This cross-section is subjected to an external load, an internal shear force on each side of the cross-section, and an internal bending moment on each side of the cross-section. The two shear forces and two bending moments are not necessarily equal.</p>
+<p>Another example is a wooden beam that fails due to transverse shear. In such beams, cracks tend to appear horizontally even though the applied load is vertical. This is due to horizontal shear stress between the layers of the wood (<a href="#fig-10.8" class="quarto-xref">Figure&nbsp;<span>10.8</span></a>).</p>
 <div id="fig-10.8" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-10.8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/CH10 PNGs/figure 10.8.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="291">
+<img src="images/CH10 PNGs/10.7 new.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-10.8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;10.8: Internal loads on a small cross-section of width Δx on a beam subjected to an arbitrary vertical load, w = f(x). The internal loads on the right side of the section are slightly larger than those on the left.
+Figure&nbsp;10.8: Horizontal shear failure in a wooden beam subjected to a vertical load.
 </figcaption>
 </figure>
 </div>
-<p>By considering horizontal equilibrium, we do not need to account for the vertical loads (V, V + ΔV, and w). The bending moments (M and M + ΔM) will create horizontal stresses (<a href="#fig-10.9" class="quarto-xref">Figure&nbsp;<span>10.9</span></a>) equal to</p>
+<p>Imagine a beam subjected to an arbitrary vertical load. Consider a small cross-section of width Δx (<a href="#fig-10.9" class="quarto-xref">Figure&nbsp;<span>10.9</span></a>). This cross-section is subjected to an external load, an internal shear force on each side of the cross-section, and an internal bending moment on each side of the cross-section. The two shear forces and two bending moments are not necessarily equal.</p>
+<div id="fig-10.9" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-10.9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/CH10 PNGs/figure 10.8.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="291">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-10.9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;10.9: Internal loads on a small cross-section of width Δx on a beam subjected to an arbitrary vertical load, w = f(x). The internal loads on the right side of the section are slightly larger than those on the left.
+</figcaption>
+</figure>
+</div>
+<p>By considering horizontal equilibrium, we do not need to account for the vertical loads (V, V + ΔV, and w). From the flexure formula (<a href="Chapter 9.html#eq-9.2" class="quarto-xref">Equation&nbsp;<span>9.2</span></a>) the bending moments (M and M + ΔM) will create horizontal stresses (<a href="#fig-10.10" class="quarto-xref">Figure&nbsp;<span>10.10</span></a>) equal to</p>
 <p><span class="math display">\[
 \sigma_{x 1}=\frac{M y}{I}
 \]</span></p>
@@ -667,24 +843,24 @@ F_1=\int \frac{M y}{I} d A
 <p><span class="math display">\[
 F_2=\int \frac{(M+\Delta M) y}{I} d A
 \]</span></p>
-<div id="fig-10.9" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-10.9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/CH10 PNGs/figure 10.9.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="345">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-10.9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;10.9: Horizontal stresses created by moments M and (M + ΔM).
-</figcaption>
-</figure>
-</div>
-<p>Each force is tensile in part of the beam and compressive in part of the beam. When calculated across the entire cross-section these forces will sum to zero. However, if we consider only part of the cross-section the forces do not sum to zero (<a href="#fig-10.10" class="quarto-xref">Figure&nbsp;<span>10.10</span></a>). For the beam to be in equilibrium, there must be a horizontal shear force. For now we’ll call this force F’ and derive an equation for the shear stress it creates.</p>
 <div id="fig-10.10" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-10.10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/CH10 PNGs/figure 10.10.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="392">
+<img src="images/CH10 PNGs/figure 10.9.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="345">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-10.10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;10.10: Forces F<sub>1</sub> and F<sub>2</sub> do not balance when considering only part of the element. There must be an additional internal shear force F’.
+Figure&nbsp;10.10: Horizontal stresses created by moments M and (M + ΔM).
+</figcaption>
+</figure>
+</div>
+<p>Each force is tensile in part of the beam and compressive in part of the beam. When calculated across the entire cross-section these forces will sum to zero. However, if we consider only part of the cross-section the forces do not sum to zero (<a href="#fig-10.11" class="quarto-xref">Figure&nbsp;<span>10.11</span></a>). For the beam to be in equilibrium, there must be a horizontal shear force. For now, we’ll call this force F’ and derive an equation for the shear stress it creates.</p>
+<div id="fig-10.11" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-10.11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/CH10 PNGs/figure 10.10.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="392">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-10.11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;10.11: Forces F<sub>1</sub> and F<sub>2</sub> do not balance when considering only part of the element. There must be an additional internal shear force F’.
 </figcaption>
 </figure>
 </div>
@@ -700,7 +876,7 @@ Figure&nbsp;10.10: Forces F<sub>1</sub> and F<sub>2</sub> do not balance when co
 <p><span class="math display">\[
 F^{\prime}=\frac{\Delta M}{I} Q
 \]</span></p>
-<p>We can calculate the shear stress from <span class="math inline">\(\tau=\frac{V}{A}\)</span> where V = F’ and A is the area of the cross-section that force F’ acts on. This area will be width, Δx, multiplied by the thickness of the beam, t.</p>
+<p>We can calculate the transverse shear stress from <span class="math inline">\(\tau=\frac{V}{A}\)</span> where V = F’ and A is the area of the cross-section that force F’ acts on. This area will be width, Δx, multiplied by the thickness of the beam, t.</p>
 <p><span class="math display">\[
 \tau=\frac{V}{A}=\frac{F^{\prime}}{\Delta x t}=\frac{\Delta M Q}{\Delta x I t}
 \]</span></p>
@@ -712,14 +888,13 @@ F^{\prime}=\frac{\Delta M}{I} Q
 \boxed{\tau=\frac{VQ}{It}}
 \tag{10.2}\]</span></span></p>
 <div class="line-block"><em>where</em><br>
-<em>τ = Shear stress at a point on the cross-section [Pa, psi]</em><br>
+<em>τ = Transverse shear stress at a point on the cross-section [Pa, psi]</em><br>
 <em>V = Internal shear force at the cross-section [N, lb]</em><br>
 <em>Q = 1st moment of area at the point of interest on the cross-section [m<sup>3</sup>, in.<sup>3</sup>]</em><br>
 <em>I = Area moment of inertia of the cross-section [m<sup>4</sup>, in.<sup>4</sup>]</em></div>
 <p><em>t = thickness of the cross-section [m, in.]</em></p>
-<p>This is the shear stress equation, allowing us to calculate the shear stress at any point on a cross-section. This is often more useful than simply calculating the average shear stress across the entire cross-section.</p>
-<p><a href="#exm-10.3" class="quarto-xref">Example&nbsp;<span>10.3</span></a> demonstrates calculation of the maximum shear stress in a simply supported beam with a circular cross-section.</p>
-<p><a href="#exm-10.4" class="quarto-xref">Example&nbsp;<span>10.4</span></a> demonstrates how to calculate the maximum stress is a cross-section of varying thickness.</p>
+<p>This is the transverse shear stress equation, allowing us to calculate the transverse shear stress at any point on a cross-section. This is often more useful than simply calculating the average shear stress across the entire cross-section.</p>
+<p><a href="#exm-10.3" class="quarto-xref">Example&nbsp;<span>10.3</span></a> demonstrates calculation of the maximum transverse shear stress in a simply supported beam with a circular cross-section.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -771,7 +946,7 @@ I=\frac{\pi}{4} r^4=\frac{\pi}{4}(0.02{~m})^4=1.257 \times 10^{-7}{~m}^4
 \]</span></p>
 <p>The maximum first moment of area, Q<sub>max</sub>, occurs at the neutral axis of the cross-section. For a circular cross-section it was demonstrated in the text that</p>
 <p><span class="math display">\[
-Q_{max}=\frac{2}{3}r^3=\frac{2}{3}(0.02{~m})^3=5.33\times10^6{~m}^3
+Q_{max}=\frac{2}{3}r^3=\frac{2}{3}(0.02{~m})^3=5.33\times10^{-6}{~m}^3
 \]</span></p>
 <p>The thickness of the cross-section at the neutral axis is equal to the diameter, t = 0.04 m.</p>
 <p>With all of the terms known, we can now calculate the maximum shear stress in the beam.</p>
@@ -785,6 +960,7 @@ Q_{max}=\frac{2}{3}r^3=\frac{2}{3}(0.02{~m})^3=5.33\times10^6{~m}^3
 </div>
 </div>
 </div>
+<p>Note that the first moment of area will always be at its maximum value at the neutral axis of the cross-section. Since shear stress, <span class="math inline">\(\tau=\frac{VQ}{It}\)</span>, the maximum shear stress often occurs at the neutral axis too. This will be true if the thickness, t, of the cross-section is uniform (such as a rectangular cross-section) or at its thinnest at the neutral axis (such as a wide-flange beam). However, if thickness t is larger at the neutral axis than at another point in the beam, it is possible that the maximum shear stress will occur at the point where the thickness decreases even though Q will be smaller at this location than at the neutral axis. In these cases it is best to calculate the shear stress at both the neutral axis and at the location where the thickness decreases. <a href="#exm-10.4" class="quarto-xref">Example&nbsp;<span>10.4</span></a> demonstrates how to calculate the maximum transverse stress is a cross-section of varying thickness.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -840,7 +1016,7 @@ Solution
 <p><span class="math display">\[
 I=\left(\frac{1 * 5^3}{12}+5 *(2.5-6.1)^2\right)+\left(\frac{5 * 4^3}{12}+20 *(7-6.1)^2\right)=118.08{~in.}^4
 \]</span></p>
-<p><strong>The shear force at the neutral axis of the cross-section</strong></p>
+<p><strong>The shear stress at the neutral axis of the cross-section</strong></p>
 <p>Draw a line through the point of interest and use the area above this line to calculate the first moment of area.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -859,7 +1035,7 @@ Q=y A=\frac{2.9{~in.}}{2} *(2.9{~in.} * 5{~in.})=21.025{~in.}^3
 <p>Draw a line through the point of interest and use the area above this line to calculate the first moment of area.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH10 PNGs/example 10.4 part 4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="312"></p>
+<p><img src="images/chapter 10 updates 5.12.25/example 10.4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="377"></p>
 </figure>
 </div>
 <p><span class="math display">\[
@@ -894,7 +1070,7 @@ Step-by-step: Shear stress
 <li>Calculate the area moment of inertia, I, for the cross-section. Use the entire cross-section for this calculation as shown in <a href="Chapter 8.html#sec-8.2" class="quarto-xref"><span>Section 8.2</span></a>.</li>
 <li>Draw a horizontal line through the point of interest and calculate the 1<sup>st</sup> moment of area, Q, as shown in <a href="#sec-10.1" class="quarto-xref"><span>Section 10.1</span></a>.</li>
 <li>Determine the thickness of the cross-section, t, at the point of interest.</li>
-<li>Calculate the shear stress, <span class="math inline">\(\tau=\frac{VQ}{It}\)</span>.</li>
+<li>Calculate the transverse shear stress, <span class="math inline">\(\tau=\frac{VQ}{It}\)</span>.</li>
 </ol>
 </div>
 </div>
@@ -906,14 +1082,14 @@ Step-by-step: Shear stress
 <summary>
 Click to expand
 </summary>
-<p>Some cross-sections are formed by connecting multiple pieces together with fasteners such as nails or bolts (<a href="#fig-10.11" class="quarto-xref">Figure&nbsp;<span>10.11</span></a>). In such members, we must analyze not only the stresses in the cross-section itself but also the stresses in the fasteners.</p>
-<div id="fig-10.11" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<p>Some cross-sections are formed by connecting multiple pieces together with fasteners such as nails or bolts (<a href="#fig-10.12" class="quarto-xref">Figure&nbsp;<span>10.12</span></a>). In such members, we must analyze not only the stresses in the cross-section itself but also the stresses in the fasteners.</p>
+<div id="fig-10.12" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-10.11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div aria-describedby="fig-10.12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/CH10 PNGs/figure 10.11.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="254">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-10.11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;10.11: T cross-section formed by connecting two boards together with nails. There is a consistent spacing s between nails along the length of the beam.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-10.12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;10.12: T cross-section formed by connecting two boards together with nails. There is a consistent spacing s between nails along the length of the beam.
 </figcaption>
 </figure>
 </div>
@@ -931,7 +1107,7 @@ F^{\prime}=\frac{\Delta M}{I} Q
 q=\frac{V Q}{I}
 \]</span></p>
 <p>This equation is very similar to the shear stress equation, but the thickness of the cross-section doesn’t appear here as shear flow is measured per unit length. We will generally want to determine the shear flow at the seam where the individual pieces of the cross-section are joined together as this is where the fasteners must resist the horizontal shear force.</p>
-<p>Often we want to determine how far apart we can space the nails along the length of the beam. Since shear flow is the shear force per unit length, if we know how much shear force each fastener can resist, we can say that the shear flow is equal to the force resisted by each fastener (F<sub>nail</sub>) divided by the spacing between the fasteners (s). Sometimes there will be multiple rows of nails side-by-side (<a href="#fig-10.12" class="quarto-xref">Figure&nbsp;<span>10.12</span></a>). In this case we can multiply the force resisted by each fastener by the number of rows (r).</p>
+<p>Often we want to determine how far apart we can space the nails along the length of the beam. Since shear flow is the shear force per unit length, if we know how much shear force each fastener can resist, we can say that the shear flow is equal to the force resisted by each fastener (F<sub>nail</sub>) divided by the spacing between the fasteners (s). Sometimes there will be multiple rows of nails side-by-side (<a href="#fig-10.13" class="quarto-xref">Figure&nbsp;<span>10.13</span></a>). In this case we can multiply the force resisted by each fastener by the number of rows (r).</p>
 <p><span id="eq-10.3"><span class="math display">\[
 \boxed{q=\frac{V Q}{I}=\frac{F_{nail} r}{s}}
 \tag{10.3}\]</span></span></p>
@@ -943,24 +1119,24 @@ q=\frac{V Q}{I}
 <em>F<sub>nail</sub> = Horizontal shear force resisted by each nail [N, lb]</em><br>
 <em>r = Number of rows of nails resisting the shear force</em></div>
 <p><em>s = Spacing between nails [m, in.]</em></p>
-<div id="fig-10.12" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-10.12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/CH10 PNGs/figure 10.12.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="282">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-10.12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;10.12: T cross-section held together by two rows of nails. The rows are spaced evenly along the length of the beam by distance s.
-</figcaption>
-</figure>
-</div>
-<p>Sometimes fasteners may be placed horizontally (<a href="#fig-10.13" class="quarto-xref">Figure&nbsp;<span>10.13</span></a>). In these cases we should still draw a line along the seam perpendicular to the fastener (so vertically in this case). We can then use the area either to the left or right of this line to determine the first moment of area. Note that we still use the vertical distance between the centroid of our chosen area and the neutral axis of the cross-section.</p>
 <div id="fig-10.13" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-10.13-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/figure 10.13.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="324">
+<img src="images/CH10 PNGs/figure 10.12.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="282">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-10.13-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;10.13: A horizontal fastener requires a vertical line along the seam and the selection of the area either to the left or right of this line. When calculating the first moment of area by Q = yA, the distance y is still in the vertical direction.
+Figure&nbsp;10.13: T cross-section held together by two rows of nails. The rows are spaced evenly along the length of the beam by distance s.
+</figcaption>
+</figure>
+</div>
+<p>Sometimes fasteners may be placed horizontally (<a href="#fig-10.14" class="quarto-xref">Figure&nbsp;<span>10.14</span></a>). In these cases we should still draw a line along the seam perpendicular to the fastener (so vertically in this case). We can then use the area either to the left or right of this line to determine the first moment of area. Note that we still use the vertical distance between the centroid of our chosen area and the neutral axis of the cross-section. For cross-sections with an axis of symmetry, we may choose to draw one vertical line and use the area to the left (or right) of this line or we may draw two vertical lines, one at each seam, and use the area between (or outside of) these lines.</p>
+<div id="fig-10.14" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-10.14-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/chapter 10 updates 5.12.25/new 10.14.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-10.14-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;10.14: A horizontal fastener requires a vertical line along the seam and the selection of the area either to the left or right of this line. When calculating the first moment of area by Q = yA, the distance y is still in the vertical direction.
 </figcaption>
 </figure>
 </div>
@@ -1159,7 +1335,7 @@ Key Takeaways
 <div class="callout-body-container callout-body">
 <p>Objects subjected to vertical shear stresses also experience horizontal shear stresses.</p>
 <p>The first moment of area (Q) is an important quantity when considering shear. It can be calculated along any axis. Generally, the internal shear force is vertical, and so the first moment of area is calculated around a horizontal axis. The maximum first moment of area will occur around the neutral axis of the cross-section.</p>
-<p>Shear stress varies in a parabolic manner across the cross-section. For a vertical shear force it is zero at the top and bottom of the section. For a uniform cross-section, the maximum shear stress occurs at the neutral axis as this is where the largest first moment of area is. If the cross-section varies in thickness, the maximum shear stress may not be at the neutral axis since the shear stress increases as the thickness of the cross-section decreases.</p>
+<p>Transverse hear stress varies in a parabolic manner across the cross-section. For a vertical shear force it is zero at the top and bottom of the section. For a uniform cross-section, the maximum transverse shear stress occurs at the neutral axis as this is where the largest first moment of area is. If the cross-section varies in thickness, the maximum transverse shear stress may not be at the neutral axis since the transverse shear stress increases as the thickness of the cross-section decreases.</p>
 <p>Shear flow is a measure of the shear force over a unit length. It is useful when creating a cross-section by fastening two or more individual pieces together. The shear flow can be used to determine the maximum allowable spacing between the fasteners in order to ensure the fasteners do not break. In practice, this should be done alongside a calculation of the maximum shear stress in the cross-section.</p>
 </div>
 </div>
@@ -1187,6 +1363,9 @@ Q_{\max }=\frac{2}{3} r^3
 \]</span></p>
 <p>Shear stress:</p>
 <p><span class="math display">\[
+\tau_{avg}=\frac{V}{A}
+\]</span></p>
+<p><span class="math display">\[
 \tau=\frac{V Q}{I t}
 \]</span></p>
 <p>Shear flow:</p>
@@ -1204,24 +1383,11 @@ q=\frac{V Q}{I}=\frac{F_{nail} r}{s}
 Click to expand
 </summary>
 <p><strong>Figures</strong></p>
-<p>Figure 10.1: A beam subjected to transverse loading will experience both an internal bending moment and an internal shear force. Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Example 10.1: Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Example 10.2: Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Figure 10.2: Determining the first moment of area around the neutral axis of a rectangular cross-section. Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Figure 10.3: Determining the first moment of area around the neutral axis of a circular cross-section. Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Figure 10.4: Parabolic variation in shear stress over a cross-section. Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Figure 10.5: Element A on the beam is subjected to shear force V on the right side. Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Figure 10.6: A stack of papers representing a beam. Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Figure 10.7: Horizontal shear failure in a wooden beam subjected to a vertical load. Figure 8 in Adam Derkowski, Marcin Kuliński, Adrian Trociński, Jakub Kawalerczyk, and Radosław Mirski. 2022. Mechanical Characterization of Glued Laminated Beams Containing Selected Wood Species in the Tension Zone. Materials 15(18), 6380. <a href="https://doi.org/10.3390/ma15186380" class="uri">https://doi.org/10.3390/ma15186380</a>. CC BY 4.0.</p>
-<p>Figure 10.8: Internal loads on a small cross-section of width Δx on a beam subjected to an arbitrary vertical load, w = f(x). Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Figure 10.9: Horizontal stresses created by moments M and (M + ΔM). Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Figure 10.10: Forces F<sub>1</sub> and F<sub>2</sub> do not balance when considering only part of the element. Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Example 10.3: Kindred Grey. 2024. CC BY-NC-SA. Example 10.4: Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Figure 10.11: T cross-section formed by connecting two boards together with nails. Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Figure 10.12: T cross-section held together by two rows of nails. Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Figure 10.13: A horizontal fastener requires a vertical line along the seam and the selection of the area either to the left or right of this line. Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Example 10.5: Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Example 10.6: Kindred Grey. 2024. CC BY-NC-SA.</p>
+<p>All figures in this chapter were created by Kindred Grey in 2025 and released under a CC BY-NC-SA license, except for:</p>
+<ul>
+<li><p>Figure 10.7: A stack of papers representing a beam. James Lord. 2024. CC BY-NC-SA.</p></li>
+<li><p>Figure 10.8: Horizontal shear failure in a wooden beam subjected to a vertical load. Figure 8 in Adam Derkowski, Marcin Kuliński, Adrian Trociński, Jakub Kawalerczyk, and Radosław Mirski. 2022. Mechanical Characterization of Glued Laminated Beams Containing Selected Wood Species in the Tension Zone. Materials 15(18), 6380. <a href="https://doi.org/10.3390/ma15186380" class="uri">https://doi.org/10.3390/ma15186380</a>. CC BY 4.0.</p></li>
+</ul>
 </details>
 
 
@@ -1229,383 +1395,255 @@ Click to expand
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
     }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const disableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'prefetch';
-    }
-  }
-  const enableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'stylesheet';
-    }
-  }
-  const manageTransitions = (selector, allowTransitions) => {
-    const els = window.document.querySelectorAll(selector);
-    for (let i=0; i < els.length; i++) {
-      const el = els[i];
-      if (allowTransitions) {
-        el.classList.remove('notransition');
-      } else {
-        el.classList.add('notransition');
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-  }
-  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-    let newTheme = '';
-    if(darkModeDefault) {
-      newTheme = isAlternate ? baseTheme : alternateTheme;
-    } else {
-      newTheme = isAlternate ? alternateTheme : baseTheme;
-    }
-    const changeGiscusTheme = () => {
-      // From: https://github.com/giscus/giscus/issues/336
-      const sendMessage = (message) => {
-        const iframe = document.querySelector('iframe.giscus-frame');
-        if (!iframe) return;
-        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      sendMessage({
-        setConfig: {
-          theme: newTheme
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
       });
     }
-    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-    if (isGiscussLoaded) {
-      changeGiscusTheme();
-    }
-  }
-  const toggleColorMode = (alternate) => {
-    // Switch the stylesheets
-    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-    manageTransitions('#quarto-margin-sidebar .nav-link', false);
-    if (alternate) {
-      enableStylesheet(alternateStylesheets);
-      for (const sheetNode of alternateStylesheets) {
-        if (sheetNode.id === "quarto-bootstrap") {
-          toggleBodyColorMode(sheetNode);
-        }
-      }
-    } else {
-      disableStylesheet(alternateStylesheets);
-      toggleBodyColorPrimary();
-    }
-    manageTransitions('#quarto-margin-sidebar .nav-link', true);
-    // Switch the toggles
-    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-    for (let i=0; i < toggles.length; i++) {
-      const toggle = toggles[i];
-      if (toggle) {
-        if (alternate) {
-          toggle.classList.add("alternate");     
-        } else {
-          toggle.classList.remove("alternate");
-        }
-      }
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455)
-    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-      manageTransitions("body", false);
-      window.scrollTo(0, 1);
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        manageTransitions("body", true);
-      }, 40);  
-    }
-  }
-  const isFileUrl = () => { 
-    return window.location.protocol === 'file:';
-  }
-  const hasAlternateSentinel = () => {  
-    let styleSentinel = getColorSchemeSentinel();
-    if (styleSentinel !== null) {
-      return styleSentinel === "alternate";
-    } else {
-      return false;
-    }
-  }
-  const setStyleSentinel = (alternate) => {
-    const value = alternate ? "alternate" : "default";
-    if (!isFileUrl()) {
-      window.localStorage.setItem("quarto-color-scheme", value);
-    } else {
-      localAlternateSentinel = value;
-    }
-  }
-  const getColorSchemeSentinel = () => {
-    if (!isFileUrl()) {
-      const storageValue = window.localStorage.getItem("quarto-color-scheme");
-      return storageValue != null ? storageValue : localAlternateSentinel;
-    } else {
-      return localAlternateSentinel;
-    }
-  }
-  const darkModeDefault = false;
-  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-  // Dark / light mode switch
-  window.quartoToggleColorScheme = () => {
-    // Read the current dark / light value 
-    let toAlternate = !hasAlternateSentinel();
-    toggleColorMode(toAlternate);
-    setStyleSentinel(toAlternate);
-    toggleGiscusIfUsed(toAlternate, darkModeDefault);
-  };
-  // Ensure there is a toggle, if there isn't float one in the top right
-  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-    const a = window.document.createElement('a');
-    a.classList.add('top-right');
-    a.classList.add('quarto-color-scheme-toggle');
-    a.href = "";
-    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-    const i = window.document.createElement("i");
-    i.classList.add('bi');
-    a.appendChild(i);
-    window.document.body.appendChild(a);
-  }
-  // Switch to dark mode if need be
-  if (hasAlternateSentinel()) {
-    toggleColorMode(true);
-  } else {
-    toggleColorMode(false);
-  }
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
         }
-        return container.innerHTML
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1613,185 +1651,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./Chapter 9.html" class="pagination-link" aria-label="Bending Loads">

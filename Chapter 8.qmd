@@ -137,17 +137,12 @@ Next, we will create a table with columns titled Shape, $A$ (mm^2^), $\bar{y}$ (
 
 Find centroid (x̄=0 due to symmetry).
 
-+--------------+-----------------+------------------+---------------------------+
-| Shape        | $A{~(mm^2)}$    | $\bar{y}{~(mm)}$ | $A\bar{y}{~(mm^3)}$       |
-+==============+=================+==================+===========================+
-| 1            | 4,000           | 20               | 80,000                    |
-+--------------+-----------------+------------------+---------------------------+
-| 2            | 2,800           | 110              | 308,000                   |
-+--------------+-----------------+------------------+---------------------------+
-| 3            | 7,200           | 200              | 1,440,000                 |
-+--------------+-----------------+------------------+---------------------------+
-|              | $\sum A$=14,000 |                  | $\sum A\bar{y}$=1,828,000 |
-+--------------+-----------------+------------------+---------------------------+
+| Shape | $A{~(mm^2)}$    | $\bar{y}{~(mm)}$ | $A\bar{y}{~(mm^3)}$       |
+|-------|-----------------|------------------|---------------------------|
+| 1     | 4,000           | 20               | 80,000                    |
+| 2     | 2,800           | 110              | 308,000                   |
+| 3     | 7,200           | 200              | 1,440,000                 |
+|       | $\sum A$=14,000 |                  | $\sum A\bar{y}$=1,828,000 |
 
 Finally, to calculate the centroid coordinates, we will utilize @eq-8.1 by summing the second and last columns in our table.
 
@@ -179,7 +174,7 @@ Find the centroid of the shape below.
 
 This section does not have any axis of symmetry, so we will need to find both the $\bar{x}$ and the $\bar{y}$. We first need to establish a coordinate system whose origin is our reference point, RP. In this example, we will use the coordinate axis in the problem to illustrate when $\bar{x}$ will be negative.
 
-We then divide the section into simpler shapes for which we know the centroid's location. In this case, we will break this up into the square, triangle, and circle labeled 1, 2, and 3 in the figure. Note that the circle is a hole, and the area will be represented as negative.
+We then divide the section into simpler shapes for which we know the centroid's location (@sec-centroids-moments-inertia.). In this case, we will break this up into the square, triangle, and circle labeled 1, 2, and 3 in the figure. Note that the circle is a hole, and the area will be represented as negative.
 
 ![](images/CH%208%20PNGs/example%208.3%20part%202.png){fig-align="center" width="487"}
 
@@ -193,17 +188,13 @@ The figure below shows how the $\bar{y}$ for each shape is calculated.
 
 Finally, to calculate the centroid coordinates, we will utilize @eq-8.1 by summing the Area, $A\bar{x}$, and $A\bar{y}$ columns see the table below.
 
-+-----------+-----------+---------------+-------------------+------------------------+-------------------+-----------------------+
+|           |           |               |                   |                        |                   |                       |
+|-----------|-----------|---------------|-------------------|------------------------|-------------------|-----------------------|
 | **Shape** | **Shape** | $A{~(in.^2)}$ | $\bar{x}{~(in.)}$ | $A\bar{x}{~(in.^3)}$   | $\bar{y}{~(in.)}$ | $A\bar{y}{~(in.^3)}$  |
-+-----------+-----------+---------------+-------------------+------------------------+-------------------+-----------------------+
 |           | 1         | 64            | -4                | -256                   | 4                 | 256                   |
-+-----------+-----------+---------------+-------------------+------------------------+-------------------+-----------------------+
 |           | 2         | 24            | 2                 | 48                     | (2/3)(8) = 16/3   | 128                   |
-+-----------+-----------+---------------+-------------------+------------------------+-------------------+-----------------------+
 |           | 3         | -4π           | -4                | 16π                    | 4                 | -16π                  |
-+-----------+-----------+---------------+-------------------+------------------------+-------------------+-----------------------+
 |           |           | $\sum A$=75.4 |                   | $\sum A\bar{x}$=-258.3 |                   | $\sum A\bar{y}$=333.7 |
-+-----------+-----------+---------------+-------------------+------------------------+-------------------+-----------------------+
 
 $$
 \begin{aligned}
@@ -214,7 +205,7 @@ $$
 
 We found the centroid to be -2.09 inches in the x-direction from the reference point, this indicates that the centroid will be to the left of the y-axis. The y-component of the centroid is 4.43 inches in the y-direction from the reference point. The figure below shows the location of the centroid for this section.
 
-![](images/CH%208%20PNGs/example%208.3%20part%205.png){fig-align="center" width="507"}
+![](images/chapter%208%20figure%20edits%20post%20review/example%208.3%20part%205.png){fig-align="center" width="505"}
 :::
 :::
 :::
@@ -259,7 +250,7 @@ As noted previously, structural sections are often combinations of these standar
 
 To establish the parallel axis theorem, we will examine the moment of inertia *I* of an area *A* relative to an axis *x*, as illustrated in @fig-8.6.
 
-![The moment of inertia of an area A about an axis x can be derived from its moment of inertia about the centroidal axis x' through a computation involving the distance dy between the axes.](images/CH%208%20PNGs/figure%208.6.png){#fig-8.6 fig-align="center" width="430"}
+![The moment of inertia of an area A about an axis x can be derived from its moment of inertia about the centroidal axis x' through a computation involving the distance dy between the axes.](images/chapter%208%20figure%20edits%20post%20review/figure%208.6.png){#fig-8.6 fig-align="center" width="414"}
 
 The centroid of the area is at C, where the x’-y’ axis is drawn; note that x’ is parallel to x and y’ is parallel to y. The x-y’ axes will be termed the centroidal axes and a distance of dx and dy from the x-y axes, respectively. The distance between the element dA and the x’-axis is denoted as y’. Now we have $y=y^{\prime}+d_y$. Substituting into @eq-8.2, we have:
 
@@ -316,19 +307,19 @@ We found that the centroid is located 3.75 inches from the bottom of the section
 
 The formulas for moment of inertia of each shape are with respect to the shape’s centroid not the overall section’s centroid. We will need to make and adjustment using the parallel-axis theorem to transform the rotational axis from the shape’s centroid to the section’s centroid. We will present this method in terms of a table.
 
-+-----------+---------------+---------------------+---------------+-----------------------------+
-| Shape     | $A{~(in.^2)}$ | $I_x{~(in.^4)}$     | $d_y{~(in.)}$ | $I_x+Ad_y^2{~(in.^4)}$      |
-+===========+===============+=====================+===============+=============================+
-| 1         | (3)(4.5) =    | (1/12)(3)(4.5)^3^ = | 1.5           | 22.78125 + (13.5)(1.5)^2^ = |
-|           |               |                     |               |                             |
-|           | 13.5          | 22.78125            |               | 53.15625                    |
-+-----------+---------------+---------------------+---------------+-----------------------------+
-| 2         | (9)(1.5) =    | (1/12)(9)(1.5)^3^ = | 1.5           | 2.53125 + (13.5)(1.5)^2^ =  |
-|           |               |                     |               |                             |
-|           | 13.5          | 2.53125             |               | 32.90625                    |
-+-----------+---------------+---------------------+---------------+-----------------------------+
-|           |               |                     |               | I~x~=86.0625 in^4^          |
-+-----------+---------------+---------------------+---------------+-----------------------------+
++-------+---------------+---------------------+---------------+-----------------------------+
+| Shape | $A{~(in.^2)}$ | $I_x{~(in.^4)}$     | $d_y{~(in.)}$ | $I_x+Ad_y^2{~(in.^4)}$      |
++=======+===============+=====================+===============+=============================+
+| 1     | (3)(4.5) =    | (1/12)(3)(4.5)^3^ = | 1.5           | 22.78125 + (13.5)(1.5)^2^ = |
+|       |               |                     |               |                             |
+|       | 13.5          | 22.78125            |               | 53.15625                    |
++-------+---------------+---------------------+---------------+-----------------------------+
+| 2     | (9)(1.5) =    | (1/12)(9)(1.5)^3^ = | 1.5           | 2.53125 + (13.5)(1.5)^2^ =  |
+|       |               |                     |               |                             |
+|       | 13.5          | 2.53125             |               | 32.90625                    |
++-------+---------------+---------------------+---------------+-----------------------------+
+|       |               |                     |               | I~x~=86.0625 in^4^          |
++-------+---------------+---------------------+---------------+-----------------------------+
 
 The calculation and visualizations for each d~y~ term are shown in the figure below
 
@@ -362,23 +353,23 @@ We found that the centroid is located 130.6 mm from the bottom of the section an
 
 The formulas for moment of inertia of each shape are with respect to the shape’s centroid not the overall section’s centroid. We will need to make and adjustment using the parallel-axis theorem to transform the rotational axis from the shape’s centroid to the section’s centroid. We will present this method in terms of a table, first for I~x~.
 
-+-----------+---------------+----------------------+--------------+--------------------------------+
-| Shape     | $A{~(in.^2)}$ | $I_x{~(in.^3)}$      | $d_y{~(mm)}$ | $I_x+Ad_y^2{~(mm^4)}$          |
-+===========+===============+======================+==============+================================+
-| 1         | (100)(40) =   | (1/12)(100)(40)^3^ = | 110.57       | 533,333 + (4,000)(110.57)^2^ = |
-|           |               |                      |              |                                |
-|           | 4,000         | 533,333              |              | 49,436,233                     |
-+-----------+---------------+----------------------+--------------+--------------------------------+
-| 2         | (20)(140) =   | (1/12)(20)(140)^3^ = | 20.57        | 4573,333 + (2,800)(20.57)^2^ = |
-|           |               |                      |              |                                |
-|           | 2,800         | 4,573,333            |              | 5,758,083                      |
-+-----------+---------------+----------------------+--------------+--------------------------------+
-| 3         | (180)(40) =   | (1/12)(180)(40)^3^ = | 69.43        | 960,000 + (7,200)(69.43)^2^ =  |
-|           |               |                      |              |                                |
-|           | 7,200         | 960,000              |              | 35,667,779                     |
-+-----------+---------------+----------------------+--------------+--------------------------------+
-|           |               |                      |              | I~x~ = 90,862,095 mm^4^        |
-+-----------+---------------+----------------------+--------------+--------------------------------+
++-------+---------------+----------------------+--------------+--------------------------------+
+| Shape | $A{~(in.^2)}$ | $I_x{~(in.^3)}$      | $d_y{~(mm)}$ | $I_x+Ad_y^2{~(mm^4)}$          |
++=======+===============+======================+==============+================================+
+| 1     | (100)(40) =   | (1/12)(100)(40)^3^ = | 110.57       | 533,333 + (4,000)(110.57)^2^ = |
+|       |               |                      |              |                                |
+|       | 4,000         | 533,333              |              | 49,436,233                     |
++-------+---------------+----------------------+--------------+--------------------------------+
+| 2     | (20)(140) =   | (1/12)(20)(140)^3^ = | 20.57        | 4573,333 + (2,800)(20.57)^2^ = |
+|       |               |                      |              |                                |
+|       | 2,800         | 4,573,333            |              | 5,758,083                      |
++-------+---------------+----------------------+--------------+--------------------------------+
+| 3     | (180)(40) =   | (1/12)(180)(40)^3^ = | 69.43        | 960,000 + (7,200)(69.43)^2^ =  |
+|       |               |                      |              |                                |
+|       | 7,200         | 960,000              |              | 35,667,779                     |
++-------+---------------+----------------------+--------------+--------------------------------+
+|       |               |                      |              | I~x~ = 90,862,095 mm^4^        |
++-------+---------------+----------------------+--------------+--------------------------------+
 
 The calculation and visualizations for each d~y~ term are shown in the figure below.
 
@@ -386,23 +377,23 @@ The calculation and visualizations for each d~y~ term are shown in the figure be
 
 We will do the same process to calculate I~y~.
 
-+-----------+--------------+----------------------+--------------+-----------------------------+
-| Shape     | $A{~(mm^2)}$ | $I_y{~(mm^4)}$       | $d_x{~(mm)}$ | $I_y+Ad_x^2{~(mm^4)}$       |
-+===========+==============+======================+==============+=============================+
-| 1         | (100)(40) =  | (1/12)(40)(100)^3^ = | 0            | 3,333,333 + (4,000)(0)^2^ = |
-|           |              |                      |              |                             |
-|           | 4,000        | 3,333,333            |              | 3,333,333                   |
-+-----------+--------------+----------------------+--------------+-----------------------------+
-| 2         | (20)(140) =  | (1/12)(140)(20)^3^ = | 0            | 93,333 + (2,800)(0)^2^ =    |
-|           |              |                      |              |                             |
-|           | 2,800        | 93,333               |              | 93,333                      |
-+-----------+--------------+----------------------+--------------+-----------------------------+
-| 3         | (180)(40) =  | (1/12)(40)(180)^3^ = | 0            | 19,440,000 + (7,200)(0^2^ = |
-|           |              |                      |              |                             |
-|           | 7,200        | 19,440,000           |              | 19,440,000                  |
-+-----------+--------------+----------------------+--------------+-----------------------------+
-|           |              |                      |              | I~y~ = 22,866,667 mm^4^     |
-+-----------+--------------+----------------------+--------------+-----------------------------+
++-------+--------------+----------------------+--------------+-----------------------------+
+| Shape | $A{~(mm^2)}$ | $I_y{~(mm^4)}$       | $d_x{~(mm)}$ | $I_y+Ad_x^2{~(mm^4)}$       |
++=======+==============+======================+==============+=============================+
+| 1     | (100)(40) =  | (1/12)(40)(100)^3^ = | 0            | 3,333,333 + (4,000)(0)^2^ = |
+|       |              |                      |              |                             |
+|       | 4,000        | 3,333,333            |              | 3,333,333                   |
++-------+--------------+----------------------+--------------+-----------------------------+
+| 2     | (20)(140) =  | (1/12)(140)(20)^3^ = | 0            | 93,333 + (2,800)(0)^2^ =    |
+|       |              |                      |              |                             |
+|       | 2,800        | 93,333               |              | 93,333                      |
++-------+--------------+----------------------+--------------+-----------------------------+
+| 3     | (180)(40) =  | (1/12)(40)(180)^3^ = | 0            | 19,440,000 + (7,200)(0^2^ = |
+|       |              |                      |              |                             |
+|       | 7,200        | 19,440,000           |              | 19,440,000                  |
++-------+--------------+----------------------+--------------+-----------------------------+
+|       |              |                      |              | I~y~ = 22,866,667 mm^4^     |
++-------+--------------+----------------------+--------------+-----------------------------+
 
 Notice that the values for d~x~ are all zero when calculating I~y~. This is because the centroid of each shape coincides with the centroid of the entire section therefore the distance between them is zero.
 :::
@@ -426,53 +417,53 @@ Determine the I~x~ and I~y~ of the shaded area with respect to the shape's centr
 
 Since we want to find the moment of inertia in the x and y directions with respect to the section’s centroid, we first need to calculate the centroid. We did this in @exm-8.3, the results are shown below.
 
-![](images/CH%208%20PNGs/example%208.6%20part%202.png){fig-align="center" width="450"}
+![](images/chapter%208%20figure%20edits%20post%20review/example%208.6%20part%202.png){fig-align="center" width="398"}
 
-We found that the centroid is located 2.09 inches to the left of the y-axis and 4.43 inches up from the x-axis. The next step is to break the section into common shapes as noted in the figure below. Notice that shape 3 is a hole so we will need to subtract the moment of inertia and area.
+We found that the centroid is located 2.09 inches to the left of the y-axis and 4.43 inches up from the x-axis. The next step is to break the section into common shapes (@sec-centroids-moments-inertia.) as noted in the figure below. Notice that shape 3 is a hole so we will need to subtract the moment of inertia and area.
 
 ![](images/CH%208%20PNGs/example%208.6%20part%203.png){fig-align="center" width="545"}
 
 The formulas for moment of inertia of each shape are with respect to the shape’s centroid not the overall section’s centroid. We will need to make and adjustment using the parallel-axis theorem to transform the rotational axis from the shape’s centroid to the section’s centroid.  We will present this method in terms of a table, first for I~x~ then I~y~.
 
-+----------+----------+---------------+-------------------+---------------+--------------------------+
-| Shape    | Shape    | $A{~(in.^2)}$ | $I_x{~(in.^4)}$   | $d_y{~(in.)}$ | $I_x+Ad_y^2{~(in.^4)}$   |
-+==========+==========+===============+===================+===============+==========================+
-|          | 1        | 64            | (1/12)(8)(8)^3^ = | 0.43          | 341.3 + (64)(0.43)^2^ =  |
-|          |          |               |                   |               |                          |
-|          |          |               | 341.3             |               | 353.1                    |
-+----------+----------+---------------+-------------------+---------------+--------------------------+
-|          | 2        | 24            | (1/36)(6)(8)^3^ = | 0.90          | 85.3 + (24)(0.9)^2^ =    |
-|          |          |               |                   |               |                          |
-|          |          |               | 85.3              |               | 104.7                    |
-+----------+----------+---------------+-------------------+---------------+--------------------------+
-|          | 3        | -4π           | (-π/4)(2)^4^ =    | 0.43          | -12.6 + (-4π)(0.43)^2^ = |
-|          |          |               |                   |               |                          |
-|          |          |               | -12.6             |               | -14.9                    |
-+----------+----------+---------------+-------------------+---------------+--------------------------+
-|          |          |               |                   |               | I~x~ = 442.9 in^4^       |
-+----------+----------+---------------+-------------------+---------------+--------------------------+
++-------+-------+---------------+-------------------+---------------+--------------------------+
+| Shape | Shape | $A{~(in.^2)}$ | $I_x{~(in.^4)}$   | $d_y{~(in.)}$ | $I_x+Ad_y^2{~(in.^4)}$   |
++=======+=======+===============+===================+===============+==========================+
+|       | 1     | 64            | (1/12)(8)(8)^3^ = | 0.43          | 341.3 + (64)(0.43)^2^ =  |
+|       |       |               |                   |               |                          |
+|       |       |               | 341.3             |               | 353.1                    |
++-------+-------+---------------+-------------------+---------------+--------------------------+
+|       | 2     | 24            | (1/36)(6)(8)^3^ = | 0.90          | 85.3 + (24)(0.9)^2^ =    |
+|       |       |               |                   |               |                          |
+|       |       |               | 85.3              |               | 104.7                    |
++-------+-------+---------------+-------------------+---------------+--------------------------+
+|       | 3     | -4π           | (-π/4)(2)^4^ =    | 0.43          | -12.6 + (-4π)(0.43)^2^ = |
+|       |       |               |                   |               |                          |
+|       |       |               | -12.6             |               | -14.9                    |
++-------+-------+---------------+-------------------+---------------+--------------------------+
+|       |       |               |                   |               | I~x~ = 442.9 in^4^       |
++-------+-------+---------------+-------------------+---------------+--------------------------+
 
-+----------+----------+---------------+-------------------+---------------+--------------------------+
-| Shape    | Shape    | $A{~(in.^2)}$ | $I_y{~(in.^4)}$   | $d_x{~(in.)}$ | $I_y+Ad_x^2{~(in.^4)}$   |
-+==========+==========+===============+===================+===============+==========================+
-|          | 1        | 64            | (1/12)(8)(8)^3^ = | 0.57          | 341.3 + (64)(0.57)^2^ =  |
-|          |          |               |                   |               |                          |
-|          |          |               | 341.3             |               | 362.1                    |
-+----------+----------+---------------+-------------------+---------------+--------------------------+
-|          | 2        | 24            | (1/36)(8)(6)^3^ = | 1.43          | 48 + (24)(1.43)^2^ =     |
-|          |          |               |                   |               |                          |
-|          |          |               | 48                |               | 97.1                     |
-+----------+----------+---------------+-------------------+---------------+--------------------------+
-|          | 3        | -4π           | (-1/4π)(2)^4^ =   | 0.57          | -12.6 + (-4π)(0.57)^2^ = |
-|          |          |               |                   |               |                          |
-|          |          |               | -12.6             |               | -16.7                    |
-+----------+----------+---------------+-------------------+---------------+--------------------------+
-|          |          |               |                   |               | I~y~ = 442.5 in^4^       |
-+----------+----------+---------------+-------------------+---------------+--------------------------+
++-------+-------+---------------+-------------------+---------------+--------------------------+
+| Shape | Shape | $A{~(in.^2)}$ | $I_y{~(in.^4)}$   | $d_x{~(in.)}$ | $I_y+Ad_x^2{~(in.^4)}$   |
++=======+=======+===============+===================+===============+==========================+
+|       | 1     | 64            | (1/12)(8)(8)^3^ = | 0.57          | 341.3 + (64)(0.57)^2^ =  |
+|       |       |               |                   |               |                          |
+|       |       |               | 341.3             |               | 362.1                    |
++-------+-------+---------------+-------------------+---------------+--------------------------+
+|       | 2     | 24            | (1/36)(8)(6)^3^ = | 1.43          | 48 + (24)(1.43)^2^ =     |
+|       |       |               |                   |               |                          |
+|       |       |               | 48                |               | 97.1                     |
++-------+-------+---------------+-------------------+---------------+--------------------------+
+|       | 3     | -4π           | (-π/4)(2)^4^ =    | 0.57          | -12.6 + (-4π)(0.57)^2^ = |
+|       |       |               |                   |               |                          |
+|       |       |               | -12.6             |               | -16.7                    |
++-------+-------+---------------+-------------------+---------------+--------------------------+
+|       |       |               |                   |               | I~y~ = 442.5 in^4^       |
++-------+-------+---------------+-------------------+---------------+--------------------------+
 
 The calculation and visualizations for each d~x~ and d~y~ terms are shown in the figure below.
 
-![](images/CH%208%20PNGs/example%208.6%20part%204.png){fig-align="center"}
+![](images/chapter%208%20figure%20edits%20post%20review/example%208.6%20part%204.png){fig-align="center"}
 :::
 :::
 :::
@@ -561,28 +552,8 @@ $$
 
 **Figures**
 
-Figure 8.1: Isometric view of concrete barriers used in roadway construction. Pushcreativity. 2008. CC BY-SA 3.0. <https://commons.wikimedia.org/wiki/File:Concrete_step_barrier_3D_cross_section.jpg>.
+All figures in this chapter were created by Kindred Grey in 2025 and released under a CC BY-NC-SA license, except for:
 
-Figure 8.2: Centroids lie upon axes of symmetry. Kindred Grey. 2024. CC BY-NC-SA.
-
-Figure 8.3: Reproduction of one of the shapes in @sec-centroids-moments-inertia. Kindred Grey. 2024. CC BY-NC-SA.
-
-Example 8.1: Kindred Grey. 2024. CC BY-NC-SA.
-
-Example 8.2: Kindred Grey. 2024. CC BY-NC-SA.
-
-Example 8.3: Kindred Grey. 2024. CC BY-NC-SA.
-
-Figure 8.4: Moments of inertia of an area dA. Kindred Grey. 2024. CC BY-NC-SA.
-
-Figure 8.5: Reproduction of one of the shapes in @sec-centroids-moments-inertia. Kindred Grey. 2024. CC BY-NC-SA.
-
-Figure 8.6: The moment of inertia of an area A about an axis x can be derived from its moment of inertia about the centroidal axis x’ through a computation involving the distance dy between the axes. Kindred Grey. 2024. CC BY-NC-SA.
-
-Example 8.4: Kindred Grey. 2024. CC BY-NC-SA.
-
-Example 8.5: Kindred Grey. 2024. CC BY-NC-SA.
-
-Example 8.6: Kindred Grey. 2024. CC BY-NC-SA.
+-   Figure 8.1: Isometric view of concrete barriers used in roadway construction. Pushcreativity. 2008. CC BY-SA 3.0. <https://commons.wikimedia.org/wiki/File:Concrete_step_barrier_3D_cross_section.jpg>.
 
 </details>

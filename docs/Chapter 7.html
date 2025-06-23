@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.7.29">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -32,17 +32,20 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="./">
 <link href="./Chapter 8.html" rel="next">
 <link href="./Chapter 6.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-748b535e376f14d4692bf2b2e5fd6380.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-e1aa288a8a6a3aa5f7fec8175f5023de.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-d13a72f20fc3c7f792e67513fe0bf82c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-e1aa288a8a6a3aa5f7fec8175f5023de.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -104,7 +107,168 @@ window.Quarto = {
 <link rel="stylesheet" href="styles/custom.css">
 </head>
 
-<body class="nav-sidebar docked">
+<body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -204,7 +368,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Chapter 10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Shear Loads</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Shear Loading in Beams</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -309,6 +473,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title"><span id="sec-beams" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Beams</span></span></h1>
@@ -373,7 +538,7 @@ Figure&nbsp;7.1: Examples of structural beams
 <img src="images/CH7 PNGs/figure 7.3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="286">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-7.2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7.2: Sign convention for internal shear force (V) and bending moment (M)
+Figure&nbsp;7.2: Positive sign convention for internal shear force (V) and bending moment (M)
 </figcaption>
 </figure>
 </div>
@@ -388,7 +553,7 @@ Figure&nbsp;7.2: Sign convention for internal shear force (V) and bending moment
 <summary>
 Click to expand
 </summary>
-<p>One way to find internal shear and bending forces is to cut sections and analyze the free-body diagrams, as we did in previous chapters of this book. The first step for a statically determinate beam is to find the external reactions. To determine the internal forces at any point along the beam, cut the section at that point and draw the free-body diagram from that point to one end of the beam. We will include the internal shear force, V, and internal bending moment, M, at the cut section and then use equilibrium equations to solve for those internal loads. This process is demonstrated in <a href="#exm-7.1" class="quarto-xref">Example&nbsp;<span>7.1</span></a>.</p>
+<p>One way to find internal shear and bending forces is to cut sections and analyze the free-body diagrams, as we did in previous chapters of this book. The first step for a statically determinate (all forces can be found using only equilibrium equations) beam is to find the external reactions. To determine the internal forces at any point along the beam, cut the section at that point and draw the free-body diagram from that point to one end of the beam. We will include the internal shear force, V, and internal bending moment, M, at the cut section and then use equilibrium equations to solve for those internal loads. This process is demonstrated in <a href="#exm-7.1" class="quarto-xref">Example&nbsp;<span>7.1</span></a>.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -408,7 +573,7 @@ Example 7.1
 <p>Find the internal shear and bending moment at points J, K, and L in the beam pictured below.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH7 PNGs/example 7.1 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="358"></p>
+<p><img src="images/chapter 7 figure updates post review/example 7.1 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="357"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -426,7 +591,7 @@ Solution
 <p>The first step is to find the external reactions at the supports A and B.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH7 PNGs/example 7.1 part 1 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="357"></p>
+<p><img src="images/chapter 7 figure updates post review/example 7.1 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="356"></p>
 </figure>
 </div>
 <p><span class="math display">\[
@@ -441,7 +606,7 @@ Solution
 <p>To find the internal shear, we will sum forces in the y-direction. To find the internal moment, we will sum moments at point J.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH7 PNGs/example 7.1 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="139"></p>
+<p><img src="images/chapter 7 figure updates post review/example 7.1 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="346"></p>
 </figure>
 </div>
 <p><span class="math display">\[
@@ -454,26 +619,26 @@ Solution
 <p>To find the internal shear, we will sum forces in the y-direction. To find the internal moment, we will sum moments at point K.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH7 PNGs/example 7.1 part 4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="277"></p>
+<p><img src="images/chapter 7 figure updates post review/example 7.1 part 4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="344"></p>
 </figure>
 </div>
 <p><span class="math display">\[
 \begin{aligned}
 &amp;\sum F_y=33{~kips}-40{~kips}-V_k=0 \quad\rightarrow\quad V_k=-7{~kips} \\
-&amp;\sum M_k=-33{~kips}*10{~ft}+40{~kips}*6{ft})+M_k \quad\rightarrow\quad M_k=90{~kip}\cdot{ft}
+&amp;\sum M_k=-(33{~kips}*10{~ft})+(40{~kips}*6{ft})+M_k \quad\rightarrow\quad M_k=90{~kip}\cdot{ft}
 \end{aligned}
 \]</span></p>
 <p><strong>Section L</strong></p>
 <p>To find the internal shear, we will sum forces in the y-direction. To find the internal moment, we will sum moments at point L.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH7 PNGs/example 7.1 part 5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="375"></p>
+<p><img src="images/chapter 7 figure updates post review/example 7.1 part 5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="348"></p>
 </figure>
 </div>
 <p><span class="math display">\[
 \begin{aligned}
 &amp;\sum F_y=33{~kips}-40{~kips}-10{~kips}-V_L=0 \quad\rightarrow\quad V_L=-17{~kips} \\
-&amp;\sum M_L=-33{~kips}*19{~ft})+40{~kips}*15{~ft}+10{~kips}*1{ft}+M_L=0 \quad\rightarrow\quad
+&amp;\sum M_L=-(33{~kips}*19{~ft})+(40{~kips}*15{~ft})+(10{~kips}*1{ft})+M_L=0 \quad\rightarrow\quad
 M_L=17{~kip}\cdot{ft}
 \end{aligned}
 \]</span></p>
@@ -520,15 +685,15 @@ Figure&nbsp;7.3: Small segment of a beam subjected to an arbitrary distributed l
 \]</span></p>
 <p>Dividing both sides by Δx and then letting Δx approach zero gives us:</p>
 <p><span class="math display">\[
-\frac{\Delta v}{\Delta x}=\frac{d v}{d x}=w
+\frac{\Delta V}{\Delta x}=\frac{d V}{d x}=w
 \]</span></p>
 <p>We could then rearrange this by multiplying both sides of the equation by dx.</p>
 <p><span class="math display">\[
-d v=w d x
+d V=w d x
 \]</span></p>
 <p>Now we can integrate between any two points A and B on the beam:</p>
 <p><span id="eq-7.2"><span class="math display">\[
-\boxed{\underbrace{\Delta v}_{\substack{\text{change in} \\ \text{shear}}}=\int\underbrace{w d x}_{\substack{\text{area under} \\ \text {loading curve}}}}
+\boxed{\underbrace{\Delta V}_{\substack{\text{change in} \\ \text{shear}}}=\int\underbrace{w d x}_{\substack{\text{area under} \\ \text {loading curve}}}}
 \tag{7.2}\]</span></span></p>
 <p>This equation is valid for distributed loads and not when there is a discontinuity in the shear diagram that is caused by concentrated loads. This relationship should only be used between concentrated loads.</p>
 </section>
@@ -581,7 +746,7 @@ Figure&nbsp;7.5: Relationship between load, shear, and moment
 </div>
 <p>We can combine these relationships with what we know about derivatives and integrals from our calculus course. Here are some items of note:</p>
 <ul>
-<li><p>The slope of the shear diagram at any point is the derivative of the shear function evaluated at that point. This is equal to the sign and magnitude of the distributed load. If there is no load on a section of the beam then the slope of the shear diagram would be zero.</p></li>
+<li><p>The slope of the shear diagram is equal to the sign and magnitude of the distributed load. If there is no load on a section of the beam then the slope of the shear diagram would be zero.</p></li>
 <li><p>Similarly, the slope of the moment diagram at any point is the derivative of the moment function evaluated at that point. This is equal to the sign and magnitude of the shear at that point.</p></li>
 <li><p>The area under the distributed load between two points is equal to the change in the shear between those same two points.</p></li>
 <li><p>The area under the shear diagram between two points is equal to the change in the moment between those same two points.</p></li>
@@ -607,11 +772,11 @@ Click to expand
 <li><p>For x<sup>0</sup> we get a flat horizontal line</p></li>
 <li><p>For x<sup>1</sup> we get a straight diagonal line</p></li>
 <li><p>For x<sup>2</sup> we get a curved line</p></li>
-<li><p>For x<sup>3</sup> we get a steeper curve</p></li>
+<li><p>For x<sup>3</sup> we get a cubic curve</p></li>
 </ul>
 <p>If two points are not sufficient to determine the exact shape of the curve, simply solve the equations at a 3rd point (for example, where x = L/2). We can solve the equations at as many points as necessary but 2 - 3 points, along with knowledge of the general shape of the line, are typically sufficient.</p>
 <p>The equations found using this method are valid as long as the external loading does not change. In cases where the external loading does change, we’ll need to determine a new set of equations each time the loading changes. This includes any time a distributed load begins or ends, and both sides of a concentrated force or couple. In each region of load, we will cut a cross-section at distance x and determine equations for V and M that are valid for that region. We can then solve each equation at values of x at the start and end of their valid region and build up the complete shear force and bending moment diagrams.</p>
-<p><a href="#exm-7.2" class="quarto-xref">Example&nbsp;<span>7.2</span></a> illustrates this method.</p>
+<p><a href="#exm-7.2" class="quarto-xref">Example&nbsp;<span>7.2</span></a> illustrates this method for a simply supported beam, and <a href="#exm-7.3" class="quarto-xref">Example&nbsp;<span>7.3</span></a> for a cantilever beam.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -631,7 +796,7 @@ Example 7.2
 <p>Draw the shear force and bending moment diagrams for the beam shown.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH7 PNGs/example 7.2 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="316"></p>
+<p><img src="images/chapter 7 figure updates post review/example 7.2 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="365"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -649,7 +814,7 @@ Solution
 <p>The first step is to draw a FBD of the beam being sure to change the supports to the correct external reaction forces, as shown below.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH7 PNGs/example 7.2 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="399"></p>
+<p><img src="images/chapter 7 figure updates post review/example 7.2 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="365"></p>
 </figure>
 </div>
 <p>We will then use static equilibrium equations to solve for the magnitude of the support reactions.</p>
@@ -662,14 +827,14 @@ Solution
 \]</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH7 PNGs/example 7.2 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="399"></p>
+<p><img src="images/June 13 figure edits/example 7.2 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="374"></p>
 </figure>
 </div>
 <p>Now we will cut a cross-section within the loading region we are concerned with. When choosing sections be sure to cut within the uniform load and between loads and reactions. For this example, we will need to cut three sections to get the complete shear and moment diagram. These sections are depicted with the green lines. We will then use equilibrium equations to find the internal shear force as a function of x, V(x).</p>
 <p><strong>Section between A and C</strong></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH7 PNGs/example 7.2 part 4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="265"></p>
+<p><img src="images/June 13 figure edits/example 7.2 part 4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="366"></p>
 </figure>
 </div>
 <p><span class="math display">\[
@@ -681,7 +846,7 @@ Solution
 <p>Notice that you can give a quick check on your statics as V(x) is the derivative of M(x). For polynomials, this is a quick test to see if your equations make sense.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH7 PNGs/example 7.2 part 5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="389"></p>
+<p><img src="images/chapter 7 figure updates post review/example 7.2 part 5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="367"></p>
 </figure>
 </div>
 <p>We can plot our V(x) and M(x) equations on an axis from x = 0 to x = 6ft. Solving our equations at these points gives:</p>
@@ -712,7 +877,7 @@ Solution
 \]</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH7 PNGs/example 7.2 part 7.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="410"></p>
+<p><img src="images/chapter 7 figure updates post review/example 7.2 part 7.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="329"></p>
 </figure>
 </div>
 <p>Again, we can add the section from C to D using our V(x) and M(x) equations. You will notice that since there are no applied loads on the beam from C to D, the shear diagram is constant. This means that the moment diagram is linear between x = 6 and x = 8 ft.</p>
@@ -727,7 +892,7 @@ Solution
 <p><strong>Section</strong> <strong>between D and B</strong></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH7 PNGs/example 7.2 part 8.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="398"></p>
+<p><img src="images/chapter 7 figure updates post review/example 7.2 part 8.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="326"></p>
 </figure>
 </div>
 <p><span class="math display">\[
@@ -740,7 +905,7 @@ Solution
 \]</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH7 PNGs/example 7.2 part 9.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="405"></p>
+<p><img src="images/chapter 7 figure updates post review/example 7.2 part 9.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="333"></p>
 </figure>
 </div>
 <p>Finally, we will graph the V(x) and M(x) equations we obtained from point D to point B (x = 8 to x = 10 ft).</p>
@@ -756,10 +921,99 @@ Solution
 <p>These diagrams are used in the design of the beam and its components.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH7 PNGs/example 7.2 part 10.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="402"></p>
+<p><img src="images/chapter 7 figure updates post review/example 7.2 part 10.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="311"></p>
 </figure>
 </div>
 <p>We can see that in this example, the entire length of the beam is subjected to positive moment. Going back to our sign convention from the beginning of this chapter, a positive moment indicates a concave up behavior. When we look at the beam and the external loads it makes sense as the beam will want to bend concave up between supports, as shown in the figure.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example 7.3
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div id="exm-7.3" class="theorem example">
+<p><span class="theorem-title"><strong>Example 7.3</strong></span> &nbsp;</p>
+<p>
+</p>
+<p>Draw the shear force and bending moment diagrams for the beam shown.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/chapter 7 figure updates post review/example 7.3 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="345"></p>
+</figure>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The first step is to draw a FBD of the beam being sure to change the supports to the correct external reaction forces, as shown below.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/chapter 7 figure updates post review/example 7.3 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="344"></p>
+</figure>
+</div>
+<p>We will then use static equilibrium equations to solve for the magnitude of the support reactions.</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;\Sigma F_x=B_x=0 \\
+&amp;\Sigma F_y = -\frac{1}{2}(10~m)\left(4~\frac{kN}{m}\right) + B_y=0 \quad\rightarrow\quad B_y=20~kN \\
+&amp;\Sigma M_B=\frac{1}{2}(10~m)\left(4~\frac{kN}{m}\right)\left(\frac{10~m}{3}\right)-M_B=0 \quad\rightarrow\quad M_B=66.7 kN \cdot m
+\end{aligned}
+\]</span></p>
+<p>Now we will cut a cross-section within the loading region we are concerned with. For this example, we will cut one section between A and B to get the complete shear force and bending moment diagram. This section is depicted with the dashed line. We will then use equilibrium equations to find the internal shear force as a function of x, V(x).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/chapter 7 figure updates post review/example 7.3 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="342"></p>
+</figure>
+</div>
+<p><strong>Section between A and B</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/chapter 7 figure updates post review/example 7.3 part 4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="342"></p>
+</figure>
+</div>
+<p><span class="math display">\[
+\Sigma F_y=-V-\frac{1}{2}(x)\left(\frac{4}{10}x\right)=0 \\
+V(x)=-\frac{1}{5}x^2 \\
+\Sigma M=\frac{1}{2}(x)\left(\frac{4}{10}\right)\left(\frac{1}{3}x\right)+M=0\\
+M(x) = -\frac{1}{15}x^3
+\]</span></p>
+<p>Notice that you can give a quick check on your statics as V(x) is the derivative of M(x). For polynomials, this is a quick test to see if your equations make sense.</p>
+<p>We can plot our V(x) and M(x) equations on an axis from x = 0 to x = 10m. Notice how we draw the shear diagram directly below the beam and the moment diagram directly below the shear. These three (load, shear, and moment) share the same x-axis, whereas the vertical axis for the Shear (V) and Moment (M) diagrams have different units and possibly different scales.</p>
+<p>Drawing the shear and moment diagrams directly below the beam is good practice so that you can get a complete picture of what is going on along the length of the beam.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/chapter 7 figure updates post review/example 7.3 part 5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="300"></p>
+</figure>
+</div>
+<p>You can see that the shear diagram starts at zero then at X = 10 m, V(10) = -20 KN. The reaction that we calculated was 20 KN going up so adding in that reaction closes our shear diagram.</p>
+<p>Similarly, the moment diagram is the graph of the cubic equation from x = 0 to x = 10. When M(10) = -66.7 KN*m, this is the same as the reaction we calculated to close our moment diagram.</p>
+<p>We can see that in this example, the entire length of the beam is subjected to negative moment. Going back to our sign convention from the beginning of this chapter, a negative moment indicates a concave down behavior. When we look at the beam and the external loads it makes sense as the beam will want to bend concave down, as shown in the figure.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/chapter 7 figure updates post review/example 7.3 part 6.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="284"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
@@ -794,25 +1048,25 @@ Step-by-step: Shear Force and Bending Moment Diagrams (Equilibrium Method)
 <summary>
 Click to expand
 </summary>
-<p>An alternative, and often quicker, method for drawing shear force and bending moment diagrams is known as the graphical method. Due to the relationship between load, shear force, and bending moment, we can use one diagram to draw the next.</p>
-<p>Specifically, we saw in <a href="#sec-7.2" class="quarto-xref"><span>Section 7.2</span></a> that <span class="math inline">\(\frac{dV}{dx}=w\)</span> and <span class="math inline">\(\frac{dM}{dx}=V\)</span>. That is, the change in shear with respect to x (i.e.&nbsp;the slope of the shear diagram at any given point) is equal to any applied distributed load at that point and the change in bending moment with respect to x (i.e.&nbsp;the slope of the bending moment diagram at any given point) is equal to the shear force at that point.</p>
-<p>Further, any applied concentrated forces cause a discontinuity on the shear force diagram (an upwards applied load causes the diagram to jump up). Any applied couples cause a discontinuity on the bending moment diagram (a clockwise applied couple causes the diagram to jump up). This allows us to draw the shape of the shear force diagram based on the applied loads, and the shape of the bending moment diagram based on the shear force diagram.</p>
+<p>An alternative, often faster, method for drawing shear force and bending moment diagrams is the graphical method. This approach leverages the relationships between load, shear force, and bending moment, allowing us to derive one diagram from another.</p>
+<p>Specifically, we saw in <a href="#sec-7.2" class="quarto-xref"><span>Section 7.2</span></a> that <span class="math inline">\(\frac{dV}{dx}=w\)</span> and <span class="math inline">\(\frac{dM}{dx}=V\)</span>. That is, the slope of the shear force diagram at any point equals the applied distributed load at that point and tThe slope of the bending moment diagram at any point equals the shear force at that point.</p>
+<p>Further, any applied concentrated force causes a jump in the shear diagram—an upward force results in an upward jump. Any applied couples causes a jump in the bending moment diagram—a clockwise moment causes an upward jump. This allows us to draw the shape of the shear force diagram based on the applied loads, and the shape of the bending moment diagram based on the shear force diagram.</p>
 <p>Finally, we also know from <a href="#eq-7.2" class="quarto-xref">Equation&nbsp;<span>7.2</span></a> that the change in shear force between any two points is equal to the area under the distributed load between those same two points. We know from <a href="#eq-7.4" class="quarto-xref">Equation&nbsp;<span>7.4</span></a> that the change in bending moment between any two points is equal to the area underneath the shear force diagram between those two points. This allows us to add numbers to our diagrams and determine the value of the shear force and bending moment at key points.</p>
-<p>When the loading is relatively simple, consisting of concentrated forces, concentrated moments, and uniformly distributed loads, we can use geometry to find the area of the load and shear diagrams since the shapes are simple. <a href="#exm-7.3" class="quarto-xref">Example&nbsp;<span>7.3</span></a> and <a href="#exm-7.4" class="quarto-xref">Example&nbsp;<span>7.4</span></a> illustrate this method.</p>
+<p>When the loading is relatively simple, consisting of concentrated forces, concentrated moments, and uniformly distributed loads, we can use geometry to find the area of the load and shear diagrams since the shapes are simple. <a href="#exm-7.4" class="quarto-xref">Example&nbsp;<span>7.4</span></a> and <a href="#exm-7.5" class="quarto-xref">Example&nbsp;<span>7.5</span></a> illustrate this method.</p>
 <div id="Example-7.3" class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example 7.3
+Example 7.4
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="exm-7.3" class="theorem example">
-<p><span class="theorem-title"><strong>Example 7.3</strong></span> &nbsp;</p>
+<div id="exm-7.4" class="theorem example">
+<p><span class="theorem-title"><strong>Example 7.4</strong></span> &nbsp;</p>
 <p>
 </p>
 <p>Draw the shear force and bending moment diagrams for the beam shown.</p>
@@ -827,7 +1081,7 @@ Example 7.3
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -836,7 +1090,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The first step is to draw a FBD of the beam, being sure to change the supports to the correct external reaction forces, as shown below.</p>
 <p>We will then use static equilibrium equations to solve for the magnitude of the support reactions.</p>
@@ -954,7 +1208,7 @@ Solution
 <p><img src="images/CH7 PNGs/example 7.3 part 13.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="419"></p>
 </figure>
 </div>
-<p>Our final product is in the figure on the left. For a complete shear and moment diagram your axis should be labeled, including units, and the pertinent values indicated on each diagram. As we mentioned earlier it is best to draw these right below the beam so it is easy to see what the internal shear and bending moment forces are in relation to a location on the beam.</p>
+<p>Our final product is in the figure above. For a complete shear and moment diagram your axis should be labeled, including units, and the pertinent values indicated on each diagram. As we mentioned earlier it is best to draw these right below the beam so it is easy to see what the internal shear and bending moment forces are in relation to a location on the beam.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/CH7 PNGs/example 7.3 part 14.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="365"></p>
@@ -969,29 +1223,29 @@ Solution
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example 7.4
+Example 7.5
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="exm-7.4" class="theorem example">
-<p><span class="theorem-title"><strong>Example 7.4</strong></span> &nbsp;</p>
+<div id="exm-7.5" class="theorem example">
+<p><span class="theorem-title"><strong>Example 7.5</strong></span> &nbsp;</p>
 <p>
 </p>
 <p>Draw the shear force and bending moment diagrams for the beam shown.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH7 PNGs/example 7.4 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="356"></p>
+<p><img src="images/chapter 7 figure updates post review/example 7.5 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="356"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1000,12 +1254,12 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>This beam a little different than other examples in this chapter as the support is a fixed end and includes a force-couple system at point C. However, the processes that we presented here still apply in this situation.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH7 PNGs/example 7.4 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="438"></p>
+<p><img src="images/chapter 7 figure updates post review/example 7.5 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="378"></p>
 </figure>
 </div>
 <p>The first step is to draw a FBD of the beam, being sure to change the supports to the correct external reaction forces, as shown to the left. The 2 kips that acts on the arm at point B will cause a force on beam AD at the connection point, C. Additionally there will be a concentrated moment from this force that also acts at point C. The magnitude of this concentrated moment is (2kips)*(1 ft) or 2 k*ft counter clockwise.</p>
@@ -1019,7 +1273,7 @@ Solution
 \]</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH7 PNGs/example 7.4 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="441"></p>
+<p><img src="images/chapter 7 figure updates post review/example 7.5 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="407"></p>
 </figure>
 </div>
 <p>We can now build the shear diagram. Keep in mind that the concentrated moments (at point A and C) do not contribute to the shear diagram.</p>
@@ -1028,7 +1282,7 @@ Solution
 <p>At point D there is a concentrated load of 5 kips down. This will bring our shear diagram to a close at zero.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH7 PNGs/example 7.4 part 4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="382"></p>
+<p><img src="images/chapter 7 figure updates post review/example 7.5 part 4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="376"></p>
 </figure>
 </div>
 <p>We will build the moment diagram with the combination of the area of the shear diagram and the concentrated moments.</p>
@@ -1042,13 +1296,13 @@ Solution
 <p>The shear diagram is constant, so the moment diagram will be linear with a slope of +7 kips/ft.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH7 PNGs/example 7.4 part 5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="377"></p>
+<p><img src="images/chapter 7 figure updates post review/example 7.5 part 5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="376"></p>
 </figure>
 </div>
 <p>At point C, there is an applied concentrated moment of 2 kip·ft counter-clockwise. This will create a discontinuity in the moment diagram by dropping down 2 (-13 – 2 = -15 kip·ft).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH7 PNGs/example 7.4 part 6.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="372"></p>
+<p><img src="images/chapter 7 figure updates post review/example 7.5 part 6.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="374"></p>
 </figure>
 </div>
 <p><strong>Between C and D</strong></p>
@@ -1060,7 +1314,7 @@ Solution
 <p>The shear diagram is constant, so the moment diagram will be linear with a slope of +5 kip/ft.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH7 PNGs/example 7.4 part 7.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="386"></p>
+<p><img src="images/chapter 7 figure updates post review/example 7.5 part 7.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="385"></p>
 </figure>
 </div>
 <p>The final shear and moment diagram is in the figure to the left. You will notice that this cantilever structure with downward loads will bend concave down. This indicates that the entire beam will be in negative moment—which is what our moment diagram indicates.</p>
@@ -1095,7 +1349,7 @@ Step-by-step: Shear Force and Bending Moment Diagrams (Graphical Method)
 </ul></li>
 <li><p>Once the shear force diagram is complete, use it to draw the bending moment diagram. Begin at the left end of the beam and move to the right, obeying these rules</p>
 <ul>
-<li><p>An applied couple causes a discontinuity on the moment diagram. A clockwise couple causes a jump upwards</p></li>
+<li><p>An applied couple causes a discontinuity on the moment diagram. A clockwise couple causes a jump upwards and a counterclockwise couple causes a jump down.</p></li>
 <li><p>The slope of the moment diagram at any point is equal to the shear force at that point. As the shear force changes, the slope of the moment diagram will change too</p>
 <ul>
 <li><p>If the shear force is zero, the bending moment will be constant</p></li>
@@ -1170,15 +1424,10 @@ d M=V d x
 Click to expand
 </summary>
 <p><strong>Figures</strong></p>
-<p>Figure 7.1: Examples of structural beams. A: Washington State Dept of Transportation. 2023. CC BY-NC-ND. <a href="https://flic.kr/p/2ojECo3" class="uri">https://flic.kr/p/2ojECo3</a>. B: Government of Prince Edward Island. 2017. CC BY-NC-ND. <a href="https://flic.kr/p/R3NFRw" class="uri">https://flic.kr/p/R3NFRw</a>. C: Jack E Boucher. 1985. Public domain. <a href="https://commons.wikimedia.org/wiki/File:FallingwaterCantilever570320cv.jpg" class="uri">https://commons.wikimedia.org/wiki/File:FallingwaterCantilever570320cv.jpg</a>.</p>
-<p>Figure 7.2: Sign convention for internal shear force (V) and bending moment (M). Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Example 7.1: Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Figure 7.3: Small segment of a beam subjected to an arbitrary distributed load. Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Figure 7.4: Free body diagram of a small segment of a beam subjected to an arbitrary distributed load. Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Figure 7.5: Relationship between load, shear, and moment. Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Example 7.2: Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Example 7.3: Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Example 7.4: Kindred Grey. 2024. CC BY-NC-SA.</p>
+<p>All figures in this chapter were created by Kindred Grey in 2025 and released under a CC BY-NC-SA license, except for:</p>
+<ul>
+<li>Figure 7.1: Examples of structural beams. A: Washington State Dept of Transportation. 2023. CC BY-NC-ND. <a href="https://flic.kr/p/2ojECo3" class="uri">https://flic.kr/p/2ojECo3</a>. B: Government of Prince Edward Island. 2017. CC BY-NC-ND. <a href="https://flic.kr/p/R3NFRw" class="uri">https://flic.kr/p/R3NFRw</a>. C: Jack E Boucher. 1985. Public domain. <a href="https://commons.wikimedia.org/wiki/File:FallingwaterCantilever570320cv.jpg" class="uri">https://commons.wikimedia.org/wiki/File:FallingwaterCantilever570320cv.jpg</a>.</li>
+</ul>
 </details>
 
 
@@ -1186,383 +1435,255 @@ Click to expand
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
     }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const disableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'prefetch';
-    }
-  }
-  const enableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'stylesheet';
-    }
-  }
-  const manageTransitions = (selector, allowTransitions) => {
-    const els = window.document.querySelectorAll(selector);
-    for (let i=0; i < els.length; i++) {
-      const el = els[i];
-      if (allowTransitions) {
-        el.classList.remove('notransition');
-      } else {
-        el.classList.add('notransition');
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-  }
-  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-    let newTheme = '';
-    if(darkModeDefault) {
-      newTheme = isAlternate ? baseTheme : alternateTheme;
-    } else {
-      newTheme = isAlternate ? alternateTheme : baseTheme;
-    }
-    const changeGiscusTheme = () => {
-      // From: https://github.com/giscus/giscus/issues/336
-      const sendMessage = (message) => {
-        const iframe = document.querySelector('iframe.giscus-frame');
-        if (!iframe) return;
-        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      sendMessage({
-        setConfig: {
-          theme: newTheme
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
       });
     }
-    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-    if (isGiscussLoaded) {
-      changeGiscusTheme();
-    }
-  }
-  const toggleColorMode = (alternate) => {
-    // Switch the stylesheets
-    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-    manageTransitions('#quarto-margin-sidebar .nav-link', false);
-    if (alternate) {
-      enableStylesheet(alternateStylesheets);
-      for (const sheetNode of alternateStylesheets) {
-        if (sheetNode.id === "quarto-bootstrap") {
-          toggleBodyColorMode(sheetNode);
-        }
-      }
-    } else {
-      disableStylesheet(alternateStylesheets);
-      toggleBodyColorPrimary();
-    }
-    manageTransitions('#quarto-margin-sidebar .nav-link', true);
-    // Switch the toggles
-    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-    for (let i=0; i < toggles.length; i++) {
-      const toggle = toggles[i];
-      if (toggle) {
-        if (alternate) {
-          toggle.classList.add("alternate");     
-        } else {
-          toggle.classList.remove("alternate");
-        }
-      }
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455)
-    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-      manageTransitions("body", false);
-      window.scrollTo(0, 1);
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        manageTransitions("body", true);
-      }, 40);  
-    }
-  }
-  const isFileUrl = () => { 
-    return window.location.protocol === 'file:';
-  }
-  const hasAlternateSentinel = () => {  
-    let styleSentinel = getColorSchemeSentinel();
-    if (styleSentinel !== null) {
-      return styleSentinel === "alternate";
-    } else {
-      return false;
-    }
-  }
-  const setStyleSentinel = (alternate) => {
-    const value = alternate ? "alternate" : "default";
-    if (!isFileUrl()) {
-      window.localStorage.setItem("quarto-color-scheme", value);
-    } else {
-      localAlternateSentinel = value;
-    }
-  }
-  const getColorSchemeSentinel = () => {
-    if (!isFileUrl()) {
-      const storageValue = window.localStorage.getItem("quarto-color-scheme");
-      return storageValue != null ? storageValue : localAlternateSentinel;
-    } else {
-      return localAlternateSentinel;
-    }
-  }
-  const darkModeDefault = false;
-  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-  // Dark / light mode switch
-  window.quartoToggleColorScheme = () => {
-    // Read the current dark / light value 
-    let toAlternate = !hasAlternateSentinel();
-    toggleColorMode(toAlternate);
-    setStyleSentinel(toAlternate);
-    toggleGiscusIfUsed(toAlternate, darkModeDefault);
-  };
-  // Ensure there is a toggle, if there isn't float one in the top right
-  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-    const a = window.document.createElement('a');
-    a.classList.add('top-right');
-    a.classList.add('quarto-color-scheme-toggle');
-    a.href = "";
-    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-    const i = window.document.createElement("i");
-    i.classList.add('bi');
-    a.appendChild(i);
-    window.document.body.appendChild(a);
-  }
-  // Switch to dark mode if need be
-  if (hasAlternateSentinel()) {
-    toggleColorMode(true);
-  } else {
-    toggleColorMode(false);
-  }
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
         }
-        return container.innerHTML
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1570,185 +1691,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./Chapter 6.html" class="pagination-link" aria-label="Torsion">

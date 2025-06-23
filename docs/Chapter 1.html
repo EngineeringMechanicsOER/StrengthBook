@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.7.29">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -32,17 +32,20 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="./">
 <link href="./Chapter 2.html" rel="next">
 <link href="./index.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-748b535e376f14d4692bf2b2e5fd6380.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-e1aa288a8a6a3aa5f7fec8175f5023de.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-d13a72f20fc3c7f792e67513fe0bf82c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-e1aa288a8a6a3aa5f7fec8175f5023de.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -104,7 +107,168 @@ window.Quarto = {
 <link rel="stylesheet" href="styles/custom.css">
 </head>
 
-<body class="nav-sidebar docked">
+<body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -204,7 +368,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Chapter 10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Shear Loads</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Shear Loading in Beams</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -289,17 +453,21 @@ window.Quarto = {
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#sec-1.1" id="toc-sec-1.1" class="nav-link" data-scroll-target="#sec-1.1"><span class="header-section-number">1.1</span> Equilibrium in Two Dimensions</a>
+  <li><a href="#sec-1.1" id="toc-sec-1.1" class="nav-link" data-scroll-target="#sec-1.1"><span class="header-section-number">1.1</span> External Reactions and Free Body Diagrams</a></li>
+  <li><a href="#sec-1.2" id="toc-sec-1.2" class="nav-link" data-scroll-target="#sec-1.2"><span class="header-section-number">1.2</span> Equilibrium in Two Dimensions</a>
   <ul class="collapse">
-  <li><a href="#two-force-members" id="toc-two-force-members" class="nav-link" data-scroll-target="#two-force-members"><span class="header-section-number">1.1.1</span> Two Force Members</a></li>
+  <li><a href="#two-force-members" id="toc-two-force-members" class="nav-link" data-scroll-target="#two-force-members"><span class="header-section-number">1.2.1</span> Two Force Members</a></li>
   </ul></li>
-  <li><a href="#sec-1.2" id="toc-sec-1.2" class="nav-link" data-scroll-target="#sec-1.2"><span class="header-section-number">1.2</span> Internal Reactions</a>
+  <li><a href="#sec-1.3" id="toc-sec-1.3" class="nav-link" data-scroll-target="#sec-1.3"><span class="header-section-number">1.3</span> Internal Reactions</a>
   <ul class="collapse">
-  <li><a href="#internal-reactions-at-a-connection-with-two-force-members" id="toc-internal-reactions-at-a-connection-with-two-force-members" class="nav-link" data-scroll-target="#internal-reactions-at-a-connection-with-two-force-members"><span class="header-section-number">1.2.1</span> Internal reactions at a connection with two force members</a></li>
-  <li><a href="#internal-reactions-in-truss-structures" id="toc-internal-reactions-in-truss-structures" class="nav-link" data-scroll-target="#internal-reactions-in-truss-structures"><span class="header-section-number">1.2.2</span> Internal reactions in truss structures</a></li>
-  <li><a href="#internal-reactions-in-continuous-bodies" id="toc-internal-reactions-in-continuous-bodies" class="nav-link" data-scroll-target="#internal-reactions-in-continuous-bodies"><span class="header-section-number">1.2.3</span> Internal reactions in continuous bodies</a></li>
+  <li><a href="#internal-reactions-at-pinned-connections" id="toc-internal-reactions-at-pinned-connections" class="nav-link" data-scroll-target="#internal-reactions-at-pinned-connections"><span class="header-section-number">1.3.1</span> Internal reactions at pinned connections</a></li>
+  <li><a href="#internal-reactions-in-truss-structures" id="toc-internal-reactions-in-truss-structures" class="nav-link" data-scroll-target="#internal-reactions-in-truss-structures"><span class="header-section-number">1.3.2</span> Internal reactions in truss structures</a></li>
+  <li><a href="#internal-reactions-in-continuous-bodies" id="toc-internal-reactions-in-continuous-bodies" class="nav-link" data-scroll-target="#internal-reactions-in-continuous-bodies"><span class="header-section-number">1.3.3</span> Internal reactions in continuous bodies</a></li>
   </ul></li>
-  <li><a href="#sec-1.3" id="toc-sec-1.3" class="nav-link" data-scroll-target="#sec-1.3"><span class="header-section-number">1.3</span> Equilibrium and Reactions in Three Dimensions</a></li>
+  <li><a href="#sec-1.4" id="toc-sec-1.4" class="nav-link" data-scroll-target="#sec-1.4"><span class="header-section-number">1.4</span> Equilibrium and Reactions in Three Dimensions</a>
+  <ul class="collapse">
+  <li><a href="#calculating-moments" id="toc-calculating-moments" class="nav-link" data-scroll-target="#calculating-moments"><span class="header-section-number">1.4.1</span> Calculating Moments</a></li>
+  </ul></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
@@ -307,6 +475,7 @@ window.Quarto = {
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
+
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -352,74 +521,57 @@ Learning Objectives
 <summary>
 Click to expand
 </summary>
-<p>Like in Statics, all bodies and structures discussed in this text will be assumed to be in static equilibrium. Unlike Statics, which assumed that all bodies were rigid, bodies in this text are deformable. In order to determine how an applied loading situation affects any given body or structure, and potentially causes it to deform, we must start by applying statics to establish the distribution of forces and moments within the body. This will be the first step of many problems. This chapter will present a review of those aspects of statics concepts that will be prevalent throughout this course.</p>
-<p>External forces and moments are the forces and moments that act on the boundaries of a system. They are the loads that are applied arbitrarily (weight, wind, pressure, etc.), as well as the reactions they induce in the supporting elements (pins, rollers, welds, etc.). In the case of external reactions, the word “reaction” refers to the forces and/or moments exerted by the supports on the body in reaction to the other loading in order to keep the body in equilibrium.</p>
-<p>Finding the external reactions will be the first step of many of the types of problems that will be covered in this text. This process will entail first drawing a free body diagram (FBD) of the body, or a sketch of the body freed from its supports, which shows the applied and reaction forces and moments. The reactions that correspond to the most common supports are illustrated below in <a href="#tbl-1.1" class="quarto-xref">Table&nbsp;<span>1.1</span></a></p>
-<div id="tbl-1.1" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-1.1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1.1: Free body diagrams for common supports.
-</figcaption>
-<div aria-describedby="tbl-1.1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="caption-top table">
-<colgroup>
-<col style="width: 21%">
-<col style="width: 53%">
-<col style="width: 24%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Support</th>
-<th>Reactions</th>
-<th>Free body diagram</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Pin</td>
-<td>Force acting in an unknown direction. Since the direction is unknown, show as x and y components on the FBD</td>
-<td><img src="images/CH1 PNGs/table 1.1 part 1.png" class="img-fluid figure-img" width="9000"></td>
-</tr>
-<tr class="even">
-<td><p>Normal supports</p>
-<p>(including rollers, rockers, and smooth contact surface)</p></td>
-<td>Force in the direction normal to the support. Since the direction is known (normal to the support), show as total force in the known direction.</td>
-<td><img src="images/CH1 PNGs/table 1.1 part 2.png" class="img-fluid figure-img" width="9000"></td>
-</tr>
-<tr class="odd">
-<td>Cables</td>
-<td>Force in the direction of the cable. Should always be drawn in tension.</td>
-<td><img src="images/CH1 PNGs/table 1.1 part 3.png" class="img-fluid figure-img" width="9000"></td>
-</tr>
-<tr class="even">
-<td>Fixed support</td>
-<td>Force in an unknown direction (so draw x and y components of force) as well as reaction couple moment</td>
-<td><img src="images/CH1 PNGs/table 1.1 part 4.png" class="img-fluid figure-img" width="9000"></td>
-</tr>
-</tbody>
-</table>
-</div>
-</figure>
-</div>
-<p>Notice that while pins and fixed supports react with a force in a specific direction, both the magnitude and direction of the force are unknown until equilibrium equations are applied to solve for them. Instead of expressing the components of the unknown F in terms of the unknown θ, the reactions are normally shown as the components F<sub>x</sub> and F<sub>y</sub>. Once they are found, the overall magnitude of the force in the pin and its direction can be calculated <span class="math inline">\(\left(F=\sqrt{F_x^2+F_y^2}, \tan \theta_x=\frac{F_y}{F_x}\right)\)</span>.</p>
-<p><a href="#sec-1.1" class="quarto-xref"><span>Section 1.1</span></a> reviews equilibrium of members and frames in two dimensions, including the analysis of two-force members and multi-force members.</p>
-<p><a href="#sec-1.2" class="quarto-xref"><span>Section 1.2</span></a> addresses internal loads, including normal force, shear force, and bending moment.</p>
-<p><a href="#sec-1.3" class="quarto-xref"><span>Section 1.3</span></a> reviews equilibrium in three dimensions.</p>
+<p>All bodies and structures discussed in this text will be assumed to be in static equilibrium, which means that they experience no acceleration (sum of all forces and moments are equal to zero). Any body that is not moving or that is moving at constant velocity is in static equilibrium. However, unlike the case in a standard Statics course in which all bodies are assumed to be rigid, bodies in this text are expected to be deformable, which means that they may stretch, contract, twist, bend, break, buckle, etc. In order to determine how an applied loading situation affects any given body or structure, and potentially causes it to deform, we must start by applying statics to establish the distribution of forces and moments within the body. This will be the first step of many problems. This chapter will present a review of those aspects of statics concepts that will be prevalent throughout this course.</p>
+<p><a href="#sec-1.1" class="quarto-xref"><span>Section 1.1</span></a> reviews the concept of external loads and how to model them on Free Body Diagrams.</p>
+<p><a href="#sec-1.2" class="quarto-xref"><span>Section 1.2</span></a> reviews equilibrium of structures in two dimensions, including the analysis of two-force members and multi-force members.</p>
+<p><a href="#sec-1.3" class="quarto-xref"><span>Section 1.3</span></a> addresses internal loads, including normal force, shear force, and bending moment.</p>
+<p><a href="#sec-1.4" class="quarto-xref"><span>Section 1.4</span></a> reviews equilibrium in three dimensions.</p>
 </details>
 </section>
 <section id="sec-1.1" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="sec-1.1"><span class="header-section-number">1.1</span> Equilibrium in Two Dimensions</h2>
+<h2 data-number="1.1" class="anchored" data-anchor-id="sec-1.1"><span class="header-section-number">1.1</span> External Reactions and Free Body Diagrams</h2>
+<details>
+<summary>
+Click to expand
+</summary>
+<p>External forces and moments are the forces and moments that act on the boundaries of a system. They are the loads that are applied to the main structure (weight, wind, pressure, etc.), as well as the reactions they induce in the supporting elements (pins, rollers, welds, etc.). In the case of external reactions, the word “reaction” refers to the forces and/or moments exerted by the supports on the body <em>in reaction</em> to the applied loading in order to keep the body in equilibrium.</p>
+<p>Finding the external reactions will be the first step of many of the types of problems that will be covered in this text. This process will entail first drawing a free body diagram of the body. A free body diagram (FBD) is a sketch of the body “freed” from its supports, which shows all the applied and reaction forces and moments that are to be considered in the analysis. In cases where some loads are considered to be insignificant compared to other loads acting on the body (for example, weight sometimes falls into this category), those loads would not be included on the FBD.</p>
+<p>The importance of drawing FBD’s as a first step when calculating internal and external loads and reactions cannot be overstated. Drawing the diagrams establishes which loads and reactions are being included in the analysis, along with their assumed directions. With the diagrams drawn, one can maintain consistency when summing forces and moments in applying equilibrium equations, which helps ensure accurate results.</p>
+<p>Some commonly encountered supports and the corresponding reactions and FBD representations are:</p>
+<ul>
+<li><p><strong>Pin Supports:</strong> Pin supports resists any kind of lateral movement of the body relative to the pin at the pin location. The direction of the overall reaction force (F) is generally unknown, so it is represented as a set of perpendicular force components (F<sub>x</sub> and F<sub>y</sub> in the figure below, but can be represented as any set of perpendicular components).</p>
+<p><img src="images/CH1 PNGs/table 1.1 part 1.png" class="img-fluid"></p></li>
+<li><p><strong>Normal Supports:</strong> Normal supports generally consist of surfaces that the body simply rests on (like a beam on a roller) and/or supports that are themselves not fixed to any other surface (like a rocker). Similar to pin supports, normal supports prevent movement of the body relative to the support at the support site. However, normal supports are different than pins in that only movement in the direction normal to the support site is prevented. Consequently, the reaction force (F) is known to act strictly perpendicular to the supporting surface.</p>
+<p><img src="images/June 13 figure edits/chapter 1 unnumbered.png" class="img-fluid"></p></li>
+<li><p><strong>Cable:</strong> A cable provides a tensile force reaction (T). It only pulls on the body, never pushes. The reaction force acts in a direction following the path of the cable extending away from the body and towards the external attachment point.</p>
+<p><img src="images/CH1 PNGs/table 1.1 part 3.png" class="img-fluid"></p></li>
+<li><p><strong>Fixed Support:</strong> A fixed support is capable of resisting both lateral movement and rotation, so the reactions consist of a reaction force (F) and a reaction moment couple (M). Just as for the pinned support, the direction of the overall reaction force is not necessarily known, so the force is represented by a set of perpendicular components. It is important to remember that the reaction moment couple is an unknown that must be solved for, just like the reaction force components, and must be included in the moment equation about any point on the body.</p></li>
+</ul>
+<p><img src="images/CH1 PNGs/table 1.1 part 4.png" class="img-fluid"></p>
+<p>Note that when components of the reaction force are found individually, such as for the pin support and fixed support, the overall magnitude of the force F can be calculated as:</p>
+<p><span class="math inline">\(F=\sqrt{F_x^2+F_y^2}\)</span>.</p>
+<p>and its direction (angle measured from the horizontal axis) can be calculated as:</p>
+<p><span class="math inline">\(\tan \theta_x=\frac{F_y}{F_x}\)</span></p>
+<p>In the examples provided in the rest of the chapter, note how the FBD’s are drawn. It should be noted that the given geometrical details of a body such as lengths and angles are also often included on Free Body Diagrams. However, in this text, these features are frequently excluded since they are included with the given information in the problem and we wish to focus on the representation of the loading. Readers are encouraged to keep in mind that the geometrical details may be considered required features of FBD’s in some courses and by some instructors.</p>
+</details>
+</section>
+<section id="sec-1.2" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="sec-1.2"><span class="header-section-number">1.2</span> Equilibrium in Two Dimensions</h2>
 <details>
 <summary>
 Click to expand
 </summary>
 <p>Once the FBD is drawn, the next step is to apply the equilibrium equations. In two dimensions (x-y plane), these are:</p>
 <p><span id="eq-1.1"><span class="math display">\[
-\boxed{\sum F_x=0 \quad \sum F_y=0 \quad \sum M_{any~point}=0}
+\begin{align}
+\boxed{\sum F_x=0 \quad\sum F_y=0 \quad
+\sum M_{any~point}=0}
+\end{align}
 \tag{1.1}\]</span></span></p>
+<p>A review of finding moments is given in <a href="#sec-1.4" class="quarto-xref"><span>Section 1.4</span></a>.</p>
 <p>Since there are three equations, a statically determinate problem should have no more than 3 unknowns.</p>
 <p><a href="#exm-1.1" class="quarto-xref">Example&nbsp;<span>1.1</span></a> illustrates the process of finding external reactions.</p>
-<div id="example-1.1" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -438,7 +590,7 @@ Example 1.1
 <p>A 3 ft beam is supported by a pin connection at the wall at point A and a cable at point C as shown. A load is applied 2 ft away from point A. Find the force in pin A as well as the tensile force in the cable.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH1 PNGs/example 1.1 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="264"></p>
+<p><img src="images/chapter 1 figure updates/example 1.1 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="310"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -454,24 +606,21 @@ Solution
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>Step 1: Draw the FBD</strong></p>
-<p>Note that a guess needs to be made for the positive or negative sense of A<sub>x</sub> and A<sub>y</sub>, but the tensile force from a cable should always be shown to pull away from the body. The correct sense of A<sub>x</sub> and A<sub>y</sub> will be determined by obtaining positive or negative answers for the values. A positive answer means the direction was correctly assumed and a negative answer means the force should be in the opposite direction.</p>
+<p>The beam is supported with a pin at A, so that support is represented on the FBD with force components Ax and Ay. Note that an assumption needs to be made for whether A<sub>x</sub> goes right or left and whether A<sub>y</sub> goes up or down. The actual directions of A<sub>x</sub> and A<sub>y</sub> will be determined based on whether we get positive or negative answers for the values. A positive answer means the direction was correctly assumed and a negative answer means the force should be in the opposite direction.</p>
+<p>Cables always exert a force that pulls away from the body. In the FBD below, the cable is represented by force T.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH1 PNGs/example 1.1 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="254"></p>
+<p><img src="images/chapter 1 figure updates/example 1.1 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="317"></p>
 </figure>
 </div>
 <p><strong>Step 2: Apply equilibrium equations</strong></p>
-<p>Starting with the moment about A will eliminate two unknowns from the equation so that tensile force T can be solved for. Then substitute the result from T into the other two equations to find A<sub>x</sub> and A<sub>y</sub>.</p>
+<p>If we start with the moment about A equilibrium equation, we can solve for the tensile force T since Ax and Ay do not contribute to the moment about A. Then substituting T into the two force equilibrium equations allows us to find A<sub>x</sub> and A<sub>y</sub>.</p>
 <p><span class="math display">\[
-\begin{aligned}
-&amp; \sum M_A=T \sin (30^{\circ}) * 3{~ft}-1,200{~lb }*2{~ft}=0 \quad\rightarrow\quad T=1,600 {~lb} \\
-&amp; \sum F_x=-A_x-T \cos (30^{\circ})=0 \quad\rightarrow\quad A_x=-1,384.6{~lb} \\
-&amp; \sum F_y=A_y+T \sin (30^{\circ})-1200{~lb}=0 \quad\rightarrow\quad A_y= 400{~lb}
-\end{aligned}
+\begin{aligned}&amp; \sum M_A=T \sin (30^{\circ}) * 3{~ft}-1,200{~lb }*2{~ft}=0\\[10pt]&amp; T = 1,600 {~lb}\\[20pt]&amp; \sum F_x=-A_x-T \cos (30^{\circ})=0\\&amp; -A_x-1,600{~lb} \cos (30^{\circ})=0\\&amp; A_x=-1,385.6{~lb} \\[20pt]&amp; \sum F_y=A_y+T \sin (30^{\circ})-1200{~lb}=0\\&amp; A_y+1,600{~lb} \sin (30^{\circ})-1200{~lb}=0\\&amp; A_y= 400{~lb}\end{aligned}
 \]</span></p>
-<p>Since a negative answer was obtained for A<sub>x</sub>, that force actually acts in the positive x direction.</p>
-<p>The total force in pin A is then <span class="math inline">\(F_A=\sqrt{A_x^2+A_y^2}=1,441{~lb}\)</span></p>
-<p><strong>Answer: T = 1,600 lb, FA = 1,441 lb</strong></p>
+<p>Since a negative answer was obtained for A<sub>x</sub>, we know that it acts in the opposite direction from our assumed direction on the FBD. Thus, A<sub>x</sub> acts in the positive x direction.</p>
+<p>The total force in pin A is then <span class="math inline">\(F_A=\sqrt{A_x^2+A_y^2}=1,442{~lb}\)</span></p>
+<p><strong>Answer: T = 1,600 lb, FA = 1,442 lb</strong></p>
 </div>
 </div>
 </div>
@@ -479,21 +628,21 @@ Solution
 </div>
 </div>
 </div>
-<section id="two-force-members" class="level3" data-number="1.1.1">
-<h3 data-number="1.1.1" class="anchored" data-anchor-id="two-force-members"><span class="header-section-number">1.1.1</span> Two Force Members</h3>
-<p>One special type of pin connection for which the direction of the reaction force is known is one in which the pin is connected to a <strong>two-force member</strong>. Contrary to the name, a two-force member is not necessarily a member on which only two forces are applied, but rather it is a member on which forces are applied at only two locations. A two-force member can be any shape, as is demonstrated in <a href="#fig-1.1" class="quarto-xref">Figure&nbsp;<span>1.1</span></a>. One easy way to recognize a two-force member is to note the presence of only two connection points (such as two pins) but no other locations at which a force or moment couple is applied. Once a member is recognized to be a two-force member, it can be concluded that the resultant force at both connection points will be equal in magnitude (so F<sub>A</sub> = F<sub>B</sub> in <a href="#fig-1.1" class="quarto-xref">Figure&nbsp;<span>1.1</span></a>) and opposite in direction and follow a line of action that goes through the connections. For a straight member, it can also be concluded that the force within the two-force member (internal reaction as will be discussed in <a href="#sec-1.1" class="quarto-xref"><span>Section 1.1</span></a>) is equal to the reaction force in the pin.</p>
+<section id="two-force-members" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="two-force-members"><span class="header-section-number">1.2.1</span> Two Force Members</h3>
+<p>One special type of pin connection for which the direction of the reaction force is known is one in which the pin is connected to a <strong>two-force member</strong>. Contrary to the name, a two-force member is not necessarily a member on which only two forces are applied, but rather it is a member on which any number of forces are applied at only two distinct locations. A two-force member can be any shape, as is demonstrated in <a href="#fig-1.1" class="quarto-xref">Figure&nbsp;<span>1.1</span></a>. One easy way to recognize a two-force member is to note the presence of only two pinned points but no other locations at which a force or moment couple is applied. Once a member is recognized to be a two-force member, it can be concluded that the resultant force at both pins will be equal in magnitude (so F<sub>A</sub> = F<sub>B</sub> in <a href="#fig-1.1" class="quarto-xref">Figure&nbsp;<span>1.1</span></a>) and opposite in direction and follow a line of action that goes through the pins. For a straight member, it can also be concluded that the force within the two-force member (internal reaction as will be discussed in <a href="#sec-1.3" class="quarto-xref"><span>Section 1.3</span></a>) is equal to the reaction force in the pin.</p>
 <div id="fig-1.1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-1.1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/CH1 PNGs/figure 1.1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="642">
+<img src="images/chapter 1 figure updates/figure 1.1.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-1.1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.1: Illustrations of two force members showing the line of action of the reaction force passing through the joints. Note that F<sub>A</sub> = F<sub>B</sub>.
+Figure&nbsp;1.1: Illustrations of two force members showing the line of action of the reaction force (red arrows) due to applied forces (black arrows) passing through the joints. Note that F<sub>A</sub> = F<sub>B</sub>.
 </figcaption>
 </figure>
 </div>
-<p>The presence and recognition of two force members can make some otherwise statically indeterminate problems become statically determinate. This is demonstrated in <a href="#exm-1.2" class="quarto-xref">Example&nbsp;<span>1.2</span></a> below.</p>
-<div id="example-1.2" class="callout callout-style-default callout-tip no-icon callout-titled">
+<p>The presence and recognition of two force members simplifies equilibrium calculations as it allows one to reduce the number of unknowns before doing any calculations. This is demonstrated in <a href="#exm-1.2" class="quarto-xref">Example&nbsp;<span>1.2</span></a> below.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -536,33 +685,35 @@ Solution
 <p>Based on this FBD, it appears that there are 4 unknowns and therefore not solvable by just 3 equilibrium equations. However, recognizing that bar AB is a two-force member (since there is a pin at A and a pin at B but no other forces acting on that bar), it can be taken as known that the line of action of the reaction force at A goes through points A and B. Thus, the FBD can be redrawn with just 3 unknowns:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/Updated CH1 examples/example 1.2 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="291"></p>
+<p><img src="images/Updated CH1 examples/example 1.2 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="474"></p>
 </figure>
 </div>
 <p><strong>Step 2: Apply equilibrium equations</strong></p>
 <p><span class="math display">\[
 \begin{aligned}
-&amp; \sum M_C=F_A \cos \left(50^{\circ}\right)*(5{~m}) \sin \left(50^{\circ}\right)-F_A \sin \left(50^{\circ}\right) *\left(4{~m}+5{~m}\left(\cos \left(50^{\circ}\right)\right)-4,000{~ N}*2{~m}=0\right. \\
+&amp; \sum M_C=F_A \cos \left(50^{\circ}\right)*(5{~m}) \sin \left(50^{\circ}\right)-F_A \sin \left(50^{\circ}\right) *\left(4{~m}+5{~m}\left(\cos \left(50^{\circ}\right)\right)+4,000{~ N}*2{~m}=0\right. \\
 &amp; \sum F_x=F_A \cos \left(50^{\circ}\right)+C_x=0 \\
 &amp; \sum F_y=F_A \sin \left(50^{\circ}\right)-4,000{~N}+C_y=0
 \end{aligned}
 \]</span></p>
-<p>Solving (1) for F<sub>A</sub> yields F<sub>A</sub> = 2,611 N</p>
-<p>Substituting this result into (1) and (2) yields C<sub>x</sub> = - 1,678 N and C<sub>y</sub> = 2,000 N</p>
+<p>Solving the first equation for F<sub>A</sub> yields F<sub>A</sub> = 2,611 N</p>
+<p>Substituting this result into the force equations yields C<sub>x</sub> = - 1,678 N and C<sub>y</sub> = 2,000 N.</p>
+<p>Knowing C<sub>x</sub> and C<sub>y</sub>, we can find the overall pin force F<sub>C</sub>.</p>
 <p><span class="math display">\[
 F_C=\sqrt{C_x^2+C_y^2}=2,611{~N}
 \]</span></p>
-<p>Recall that, for rigid bodies, forces may be slid along their line of action. We could slide force <span class="math inline">\(F_A\)</span> to point B. Doing so simplifies our moment equation since the horizontal component of <span class="math inline">\(F_A\)</span> now acts through point C.</p>
-<p><img src="images/clipboard-2163853552.png" class="img-fluid"><span class="math display">\[
-\sum M_C=-F_A \sin(50^\circ)*4{~m}+F_A \cos(50^\circ)*0+4,000{~N}*2{~m}=0
-\]</span></p>
-<p>This gives us the same result of <span class="math inline">\(F_A=2,611{~N}\)</span> and the rest of the problem proceeds the same way.</p>
+<p>Note that the negative result for C<sub>x</sub> indicates that it actually goes in the opposite direction from how it was drawn on the FBD. If we were going to use it for any further calculations, rather than modifying the FBD, we would continue to assume the same direction drawn on the FBD but substitute in the negative value.</p>
+<p>As an alternative way of solving this problem (which is discussed in greater detail in <a href="#sec-1.3" class="quarto-xref"><span>Section 1.3</span></a>), one can separate bars AB and BC (imagine taking the pin out at point B) and draw the FBD of just bar BC as shown below. Once again, since bar AB is a two force member, we know that FB follows a line of action that goes through points A and B and that FA = FB. We can solve for FA by solving for FB.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/Updated CH1 examples/example 1.2 part 4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="389"></p>
+<p><img src="images/example 1.2 part 3 may 30.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="445"></p>
 </figure>
 </div>
-<p><strong>Answer: F<sub>A</sub> = 1,155 N and F<sub>C</sub> = 1,155 N</strong></p>
+<p><span class="math display">\[
+\sum M_C= F_B \sin(50^\circ)*4{~m}+F_B \cos(50^\circ)*0+4,000{~N}*2{~m}=0
+\]</span></p>
+<p>This gives us the same result of <span class="math inline">\(F_A= 2,611{~N}\)</span> and the rest of the problem proceeds the same way.</p>
+<p><strong>Answer: F<sub>A</sub> = 2,611 N and F<sub>C</sub> = 2,611 N</strong></p>
 </div>
 </div>
 </div>
@@ -573,18 +724,29 @@ F_C=\sqrt{C_x^2+C_y^2}=2,611{~N}
 </section></details>
 </section>
 
-<section id="sec-1.2" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="sec-1.2"><span class="header-section-number">1.2</span> Internal Reactions</h2>
+<section id="sec-1.3" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="sec-1.3"><span class="header-section-number">1.3</span> Internal Reactions</h2>
 <details>
 <summary>
 Click to expand
 </summary>
-<p>Internal reactions can refer to forces and moments at connection points between members (such as a pin connecting multiple members of a frame, machine, or truss), as well as to reactions at any point in a continuous body (for example a point in the middle of a beam). These reactions are the forces and/or moments necessary to hold a structure or a body together and are ultimately the aspect of loading that is needed to determine if and how a body will deform or even break.</p>
-<section id="internal-reactions-at-a-connection-with-two-force-members" class="level3" data-number="1.2.1">
-<h3 data-number="1.2.1" class="anchored" data-anchor-id="internal-reactions-at-a-connection-with-two-force-members"><span class="header-section-number">1.2.1</span> Internal reactions at a connection with two force members</h3>
-<p>Pins that connect members can be represented on an FBD in the same way as pins that connect the structure to external supports. That is, the reaction would be drawn as the two components of the overall force. However, the connected members would be considered as separate bodies, as if the connecting pin were pulled out and the members separated. The pin reactions would then be drawn on the FBD for each separated member. Since the pin would exert equal and opposite forces on the connected members, one needs to be careful to show the reaction forces in opposite directions on the FBD’s of those members. All three equilibrium equations can be applied separately to each member so one could theoretically solve for 3 times the number of unknowns as separate FBD’s drawn.</p>
-<p>However, just as was discussed above, when one of the connected members is a two-force member, the reaction at the pin will be known to follow a line of action that goes through the points of application of the forces on the two-force member. <a href="#exm-1.3" class="quarto-xref">Example&nbsp;<span>1.3</span></a> demonstrates these concepts.</p>
-<div id="example-1.3" class="callout callout-style-default callout-tip no-icon callout-titled">
+<p>Internal reactions can refer to forces and moments at connection points between members (such as a pins connecting multiple members of a frame, machine, or truss), as well as to reactions at any point in a continuous body (for example a point in the middle of a beam). These reactions are the forces and/or moments necessary to hold a structure or a body together and are ultimately the aspect of loading that is needed to determine if and how a body will deform or even break.</p>
+<section id="internal-reactions-at-pinned-connections" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="internal-reactions-at-pinned-connections"><span class="header-section-number">1.3.1</span> Internal reactions at pinned connections</h3>
+<p>When one draws an FBD of an entire structure that consists of connected members, the forces at pins that connect one member to another are not included because the connected members exert equal and opposite forces on each other that cancel each other out in equilibrium equations. However, the pins that connect the members together do still experience reaction forces that need to be known in order to ensure the integrity of the structure. To find the reaction forces in these internal pins:</p>
+<ul>
+<li><p>Draw the FBD’s of the individual members (imagine the pins were pulled out and consider each member separately). With the members disconnected, the reaction forces at the connecting pins no longer get canceled out when applying equilibrium equations to the individual members. The reaction forces are drawn on the FBD’s in the same way as was described for support pins in <a href="#sec-1.1" class="quarto-xref"><span>Section 1.1</span></a>.</p>
+<ul>
+<li>However, since the connected members do ultimately exert equal and opposite forces on each other, the reaction forces of pins common to two members are drawn in opposite directions on the FBD’s of those members.</li>
+</ul></li>
+<li><p>With the FBD’s drawn, write and solve equilibrium equations for each body. Since three equilibrium equations can be applied for each FBD drawn, one could theoretically solve for 3 times the number of unknowns as separate FBD’s.</p>
+<ul>
+<li><p>Keep in mind that the FBD of the whole structure may still be useful to help solve for some of the unknowns.</p></li>
+<li><p>In addition, as was discussed previously, when one of the connected members is a two-force member, the reaction at the pin will be known to follow a line of action that goes through the points of application of the forces on the two-force member.</p></li>
+</ul></li>
+</ul>
+<p><a href="#exm-1.3" class="quarto-xref">Example&nbsp;<span>1.3</span></a> as well as the alternative method used for <a href="#exm-1.2" class="quarto-xref">Example&nbsp;<span>1.2</span></a> demonstrate these concepts.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -603,7 +765,7 @@ Example 1.3
 <p>A plant hanger is secured to a wall with a pin and additionally supported by a brace that is pin connected to the hanger at B and to the wall at C. Determine the external reactions at A and C as well as the reaction in the internal pin B.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH1 PNGs/example 1.3 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="315"></p>
+<p><img src="images/chapter 1 figure updates/example 1.3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="319"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -638,7 +800,7 @@ Solution
 &amp; \sum F_y=A_y+F_B\left(\frac{4}{5}\right)-50{~lb}=0
 \end{aligned}
 \]</span></p>
-<p>Solving the equations (1)-(3) yields F<sub>B</sub> = 145.8 lb, A<sub>x</sub> = 87.5 lb, and A<sub>y</sub> = -66.7 lb. Therefore, the pin force in pin B is 145.8 lb and the pin force in A is <span class="math inline">\(\mathrm{A}=\sqrt{A_x^2+A_y^2}=110{~lb}\)</span>. Since BC is a two-force member, F<sub>C</sub> = F<sub>B</sub>.</p>
+<p>Solving the equations yields F<sub>B</sub> = 145.8 lb, A<sub>x</sub> = 87.5 lb, and A<sub>y</sub> = -66.7 lb. Therefore, the pin force in pin B is 145.8 lb and the pin force in A is <span class="math inline">\(\mathrm{A}=\sqrt{A_x^2+A_y^2}=110{~lb}\)</span>. Since BC is a two-force member, F<sub>C</sub> = F<sub>B</sub>.</p>
 <p><strong>Answer: F<sub>A</sub> = 110 lb, F<sub>B</sub> = F<sub>C</sub> = 146.8 lb</strong></p>
 </div>
 </div>
@@ -648,12 +810,12 @@ Solution
 </div>
 </div>
 </section>
-<section id="internal-reactions-in-truss-structures" class="level3" data-number="1.2.2">
-<h3 data-number="1.2.2" class="anchored" data-anchor-id="internal-reactions-in-truss-structures"><span class="header-section-number">1.2.2</span> Internal reactions in truss structures</h3>
-<p>Truss structures are made up of only two force members. The two main methods of determining internal reactions in planar (2D) truss structures are Method of Joints and Method of Sections. In using Method of Joints, an FBD is drawn of the connecting pins (joints) within the truss. Since all the members connected at any given pin will be two-force members, the reactions can be drawn in known directions. However, since the forces all pass through the same point on the body, the moment equilibrium equation is not useful, so only the forces equilibrium equations can be used for each joint. This means that only two unknowns can be solved for at each joint. This method is most useful when the forces of all the truss members are sought or if the only forces sought are attached to a joint with only two members.</p>
-<p>To use Method of Sections, a cut is made through the truss structure and analysis is based on the FBD of the intact part of the structure that is to the left of the cut or the intact part of the structure to the right of the cut. The FBD of either given side will show the applied forces and the reaction forces from the members that were cut through. These reactions will be equal in magnitude but opposite in direction between the two sides of the cut. The side to examine is usually based on which one will not require having to find external reactions (if there is a free end to the truss) and/or which one is least complicated to deal with in terms of geometry or applied loads. All three equilibrium equations can generally be effectively applied with Method of Sections, so three unknowns can be solved for with any given cut.</p>
+<section id="internal-reactions-in-truss-structures" class="level3" data-number="1.3.2">
+<h3 data-number="1.3.2" class="anchored" data-anchor-id="internal-reactions-in-truss-structures"><span class="header-section-number">1.3.2</span> Internal reactions in truss structures</h3>
+<p>Truss structures are made up of only two force members. The two main methods of determining internal reactions in planar (2D) truss structures are Method of Joints and Method of Sections. In using Method of Joints, an FBD is drawn of the connecting pins (joints) within the truss. Since all the members connected at any given pin will be two-force members, the reactions can be drawn in known directions. However, since the forces all pass through the same point on the body, the moment equilibrium equation is not useful, so only the forces equilibrium equations can be used for each joint. This means that only two unknowns can be solved for at each joint. The Method of Joints is most useful when the forces of all the truss members are sought or if the only forces sought are attached to a joint with only two members.</p>
+<p>To use Method of Sections, a cut is made through the truss structure and analysis is based on the FBD of the intact part of the structure that is to the left of the cut or the intact part of the structure to the right of the cut. The FBD of either given side will show the applied forces and the reaction forces from the members that were cut through. These reactions will be equal in magnitude but opposite in direction between the two sides of the cut. The side to examine is usually based on which one will not require having to find external reactions (if there is a free end to the truss) and/or which one is least complicated to deal with in terms of geometry or applied loads. All three equilibrium equations can generally be effectively applied with Method of Sections, so three unknowns can be solved for with any given cut. It can also be helpful to keep in mind that moments can be taken about points that lie outside of the isolated section, which can lead to more efficient solutions.</p>
 <p><a href="#exm-1.4" class="quarto-xref">Example&nbsp;<span>1.4</span></a> demonstrates the use of both Method of Joints and Method of Sections to solve for forces in truss members.</p>
-<div id="example-1.4" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -669,7 +831,7 @@ Example 1.4
 <p><span class="theorem-title"><strong>Example 1.4</strong></span> &nbsp;</p>
 <p>
 </p>
-<p>Determine the forces in members ED and EF. Let P<sub>1</sub> = 8 kN and P<sub>2</sub> = 12 kN.</p>
+<p>Determine the forces in members DE and BE. Let F<sub>1</sub> = 8 kN and F<sub>2</sub> = 12 kN.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/Updated CH1 examples/example 1.4 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="381"></p>
@@ -691,45 +853,46 @@ Solution - Method of Joints
 <p><strong>FBD Joint C</strong></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/Updated CH1 examples/example 1.4 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="223"></p>
+<p><img src="images/Updated CH1 examples/example 1.4 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="158"></p>
 </figure>
 </div>
-<p>Angle Θ can be found by setting up a right angle triangle at C with a base of 1 m and a height of 5 m. Once this angle is known, we can use equilibrium equations to find the forces in members BC and CD.&nbsp;</p>
+<p>Angle 𝛳 can be found by setting up a right triangle at C with a base of 1 m and a height of 5 m. Once this angle is known, we can use equilibrium equations to find the forces in members BC and CD.</p>
 <p><span class="math display">\[
 \theta=\tan ^{-1}\left(\frac{5}{1}\right)=78.7^{\circ} \\
 \\
 \begin{aligned}
-&amp;\sum F_y=C D \sin \left(78.7^{\circ}\right)-12=0 \quad\rightarrow\quad C D=12.2{~kN} \\
-&amp;\sum F_x=-B C-C D \cos \left(78.7^{\circ}\right)=0 \quad\rightarrow\quad B D=-15.3{~kN}
+&amp;\sum F_y=C D \sin \theta-12=0 \quad\rightarrow\quad C D=12.2{~kN} \\
+&amp;\sum F_x=-B C-C D \cos \theta=0 \quad\rightarrow\quad B C=-2.4{~kN}
 \end{aligned}
 \]</span></p>
-<p>Since the forces are shown to be tensile in the FBD (the forces are pointed away from the joint), the negative answer indicates that force BD is actually compressive.</p>
+<p>Since the forces are shown to be tensile in the FBD (the forces are pointed away from the joint), the negative answer indicates that force BC is actually compressive.</p>
 <p>Now that force CD is known to be 12.2 kN in tension, there are two remaining unknowns at joint D: BD and DE.</p>
 <p><strong>FBD Joint D</strong></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/Updated CH1 examples/example 1.4 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="348"></p>
+<p><img src="images/chapter 1 figure updates/example 1.4 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="348"></p>
 </figure>
 </div>
-<p>We know the 12.2 kN force is at angle Θ=78.7° from horizontal. Angle α can be found by considering right angle triangle BDE which has a base of 4 m and a height of 5 m. Once this angle is known, we can use equilibrium equations to find the forces in members BD and DE.</p>
+<p>We know the 12.2 kN force acts at an angle of 𝛳 =78.7° from the horizontal. Angle α can be found by considering right angle triangle BDE which has a base of 4 m and a height of 5 m. Once this angle is known, we can use equilibrium equations to find the forces in members BD and DE.</p>
 <p><span class="math display">\[
 \alpha=\tan ^{-1}\left(\frac{5}{4}\right)=51.3^{\circ} \\
 \\
 \begin{aligned}
-\sum F_y&amp;=-12.2 \sin \left(78.7^{\circ}\right)-B D \sin \left(51.3^{\circ}\right)=0 \quad\rightarrow\quad B D=-15.3{~kN} \\
-\sum F_x&amp;=-D E-B D \cos \left(51.3^{\circ}\right)+12.2 \cos \left(78.7^{\circ}\right)=0 \\
-&amp;=-D E-(-15.3) \cos \left(51.3^{\circ}\right)+12.2 \cos \left(78.7^{\circ}\right)=0 \quad\rightarrow\quad D E=12{~kN}
+\sum F_y&amp;=-B C \sin \theta-B D \sin \alpha=0 \quad \\
+&amp;=-12.2 \sin \left(78.7^{\circ}\right)-B D \sin \left(51.3^{\circ}\right)=0 \quad\rightarrow\quad B D=-15.4{~kN} \\
+\sum F_x&amp;=-D E-B D \cos \left(\alpha\right)+12.2 \cos (\theta)=0 \\
+&amp;=-D E-(-15.4\ kN) \cos \left(51.3^{\circ}\right)+12.2\ kN\cos \left(78.7^{\circ}\right)=0 \quad\rightarrow\quad D E=12{~kN}
 \end{aligned}
 \]</span></p>
-<p>Force BD is 15.3 kN in compression and force DE is 12 kN in tension. Now we need to find force BE. There are two remaining unknowns at joint B: AB and BE.</p>
-<p>FBD Joint B</p>
+<p>Force BD is 15.4 kN in compression and force DE is 12 kN in tension. Now we need to find force BE. There are two remaining unknowns at joint B: AB and BE.</p>
+<p><strong>FBD Joint B</strong></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/Updated CH1 examples/example 1.4 part 4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="432"></p>
+<p><img src="images/chapter 1 figure updates/example 1.4 part 4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="434"></p>
 </figure>
 </div>
 <p><span class="math display">\[
-\sum F_y=B E-8-15.3 \sin \left(51.3^{\circ}\right)=0 \quad\rightarrow\quad B E=20{~kN}
+\begin{aligned}\sum F_y&amp;=B E-8+B D \sin \alpha=0 \quad \\&amp;=B E-8+(-15.4) \sin \left(51.3^{\circ}\right)=0 \quad\rightarrow\quad B E=20{~kN} \\\end{aligned}
 \]</span></p>
 <p><strong>Answer: DE = 12 kN (Tensile), BE = 20 kN (Tensile)</strong></p>
 </div>
@@ -754,7 +917,7 @@ Solution - Method of Sections
 <p><img src="images/Updated CH1 examples/example 1.4 part 5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="437"></p>
 </figure>
 </div>
-<p>Once that cut is made, a choice needs to be made to draw an FBD for the intact part of the truss to the left of the cut or the intact part of the truss to the right of the cut&nbsp; Either way, the external forces on the side would need to be shown on the FBD as well as the force of each member that was cut through.</p>
+<p>Once that cut is made, a choice needs to be made to draw an FBD for the intact part of the truss to the left of the cut or the intact part of the truss to the right of the cut&nbsp; Either way, the external forces on the chosen side would need to be shown on the FBD as well as the force of each member that was cut through.</p>
 <p>If we chose the left side, there would be unknowns AB, BE, and DE, as well as unknown reactions Ax, Fx, and Fy. However, on the right side there are no unknown support reactions so the only unknowns are forces AB, BE, and DE.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -777,8 +940,8 @@ Solution - Method of Sections
 </div>
 </div>
 </section>
-<section id="internal-reactions-in-continuous-bodies" class="level3" data-number="1.2.3">
-<h3 data-number="1.2.3" class="anchored" data-anchor-id="internal-reactions-in-continuous-bodies"><span class="header-section-number">1.2.3</span> Internal reactions in continuous bodies</h3>
+<section id="internal-reactions-in-continuous-bodies" class="level3" data-number="1.3.3">
+<h3 data-number="1.3.3" class="anchored" data-anchor-id="internal-reactions-in-continuous-bodies"><span class="header-section-number">1.3.3</span> Internal reactions in continuous bodies</h3>
 <p>Internal reactions also exist within a body or structure. These reactions are necessary to hold the body together and will vary from point to point in a body depending on the distribution of external loading. As shown in <a href="#fig-1.2" class="quarto-xref">Figure&nbsp;<span>1.2</span></a>, the reactions at any given point can be examined by making a cut at the point of interest in the body. One can think of any point within a body as acting as a fixed support for the rest of the body. That is, every point must potentially exert a force parallel to the cross section where the cut is made which is the shear force V, a force perpendicular to the cross section where the cut is made which is the normal force N, and a reaction moment where the cut is made which is the bending moment M. Moreover, as was discussed for internal pin reactions and the cut made for Method of Sections for trusses, the reactions at a cut will be equal and opposite on the two sides of the cut.</p>
 <div id="fig-1.2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
@@ -791,7 +954,7 @@ Figure&nbsp;1.2: Cross-sections showing the internal loads on a continuous body
 </figure>
 </div>
 <p>To determine the reactions, the FBD of the part of the beam to the left of the cut can be drawn and used, or the part of the beam to the right of the cut can be drawn and used. As was discussed with Method of Sections for trusses, the choice of which side of the cut to examine is based primarily on which side appears easiest and most efficient to analyze. Once the FBD of the cut section is drawn, the three equilibrium equations can be applied to determine the internal reactions. The determination of shear and bending moments in beams will be reviewed in more detail in <a href="Chapter 7.html" class="quarto-xref"><span>Chapter 7</span></a>. The focus of <a href="#exm-1.5" class="quarto-xref">Example&nbsp;<span>1.5</span></a> is on the determination of the normal force, as this will be important in <a href="Chapter 2.html" class="quarto-xref"><span>Chapter 2</span></a> and <a href="Chapter 3.html" class="quarto-xref"><span>Chapter 3</span></a>.</p>
-<div id="example-1.5" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -825,9 +988,9 @@ Solution
 </div>
 <div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Though the assembly is not a beam, determining the internal reactions will work in the same way. In this particular case, all the forces are in the normal direction (no shear force) and due to the central placement of the 60 kN force and the symmetry of the 125 kN forces, there will be also be no bending moment. Consequently, only the normal reaction force will be drawn on the FBDs.</p>
+<p>Though the assembly is not a beam, determining the internal reactions will work in the same way. In this particular case, all the forces are in the normal direction (no shear force) and due to the central placement of the 50 kN and 180 kN forces, there will be also be no bending moment. Consequently, only the normal reaction force will be drawn on the FBD’s.</p>
 <p>To find the internal load in a segment, cut a cross-section within that segment. Since the external loading (and therefore the internal loading) changes at point B, we’ll make one cut in segment AB and another in segment BC.</p>
-<p>Making the cut in section AB and drawing the FBD allows us to determine the normal force in section AB. Note that drawing the left section of the cut for the FBD results in avoiding needing to know the external reactions at wall C.</p>
+<p>Making the cut in section AB and drawing the FBD allows us to determine the normal force in section AB. Drawing the FBD of the left section of the cut allows us to avoid needing to know the external reactions at wall C.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/Updated CH1 examples/example 1.5 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="199"></p>
@@ -836,7 +999,7 @@ Solution
 <p><span class="math display">\[
 \sum F_x=-50{~kN}+N_{AB}=0 \quad\rightarrow\quad N_{AB}=50{~kN}
 \]</span></p>
-<p>Making the cut in section BC and drawing the FBD allows us to determine the normal force in section BC. Once again, drawing the left section of the cut for the FBD results in avoiding needing to know the external reactions at wall C.</p>
+<p>Making the cut in section BC and drawing the FBD allows us to determine the normal force in section BC. Once again, we’ll draw the side to the left of the cut to avoid needing the reaction at the wall.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/Updated CH1 examples/example 1.5 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="303"></p>
@@ -846,7 +1009,7 @@ Solution
 \sum F_x=-50{~kN}+180{~kN}+N_{BC}=0 \quad\rightarrow\quad N_{BC}=-130{~kN}
 \]</span></p>
 <p>For both AB and BC, the internal normal force was assumed tensile in the FBD and equilibrium equation. In the case of N<sub>AB</sub>, the positive answer confirms that it is tensile. In the case of N<sub>BC</sub>, the negative answer reveals that it is compressive.</p>
-<p><strong>Answer: NAB = 50 kN (T), NBC = 130 kN (C)</strong></p>
+<p><strong>Answer: N<sub>AB</sub> = 50 kN (T), N<sub>BC</sub> = 130 kN (C)</strong></p>
 </div>
 </div>
 </div>
@@ -857,55 +1020,87 @@ Solution
 </section></details>
 </section>
 
-<section id="sec-1.3" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="sec-1.3"><span class="header-section-number">1.3</span> Equilibrium and Reactions in Three Dimensions</h2>
+<section id="sec-1.4" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="sec-1.4"><span class="header-section-number">1.4</span> Equilibrium and Reactions in Three Dimensions</h2>
 <details>
 <summary>
 Click to expand
 </summary>
-<p>Because real life structures will be subject to forces and moments in all directions, we will also see problems in which it will be necessary to consider 3 dimensional forces and 3 dimensional moments.</p>
+<p>While we can often model structures as being two dimensional as was done in the previous examples, many real life structures will be subjected to forces and moments in all directions, necessitating the consideration of 3 dimensional forces and 3 dimensional moments. The process of finding external and internal reactions is the same in 3D as in 2D, but there are 3 additional equilibrium equations and 3 additional reactions.</p>
 <p>For 3D systems, there are 6 total scalar equilibrium equations:</p>
 <p><span id="eq-1.2"><span class="math display">\[
 \boxed{\begin{array}{ll}
-\sum F_x=0 &amp; \sum M_x=0 \\
-\sum F_y=0 &amp; \sum M_y=0 \\
-\sum F_z=0 &amp; \sum M_z=0
+\sum F_x=0 &amp;\;\;\; \sum M_x=0 \\
+\sum F_y=0 &amp;\;\;\; \sum M_y=0 \\
+\sum F_z=0 &amp;\;\;\; \sum M_z=0
 \end{array}}
 \tag{1.2}\]</span></span></p>
-<p>Note that the moment vector describes the axis around which the body tends to rotate. Each individual component represents the tendency of the body to rotate around the specified axis. In 3D, there are three internal forces and three internal moments (<a href="#fig-1.3" class="quarto-xref">Figure&nbsp;<span>1.3</span></a>). There is one normal force (N<sub>x</sub>) perpendicular to the cross-section and two shear forces (V<sub>y</sub> and V<sub>z</sub>) parallel to the cross-section. There are two bending moments (M<sub>y</sub> and M<sub>z</sub>) which act around the axes parallel to the cross-section and one torsional moment (T<sub>x</sub>) which acts around the axis perpendicular to the cross-section. We will study each of these loads in detail over the next few chapters.</p>
+<p>Recall that the moment vector describes the axis around which the body tends to rotate. Each individual component represents the tendency of the body to rotate around the specified axis.</p>
+<p>In 3D, there are three internal forces and three internal moments (<a href="#fig-1.3" class="quarto-xref">Figure&nbsp;<span>1.3</span></a>). There is one normal force (N<sub>x</sub>) perpendicular to the cross-section and two shear forces (V<sub>y</sub> and V<sub>z</sub>) parallel to the cross-section. There are two bending moments (M<sub>y</sub> and M<sub>z</sub>) which act around the axes parallel to the cross-section and one torsional moment (T<sub>x</sub>) which acts around the axis perpendicular to the cross-section. We will study each of these loads in detail in this textbook.</p>
 <div id="fig-1.3" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-1.3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/CH1 PNGs/figure 1.3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="510">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-1.3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.3: In 3D there are three internal forces (normal force N<sub>x</sub> and two shear forces V<sub>y</sub> and V<sub>z</sub>) and three internal moments (torsional moment T<sub>x</sub> and two bending moments M<sub>y</sub> and M<sub>z</sub>)
+Figure&nbsp;1.3: In 3D, there are three internal forces (normal force N<sub>x</sub> and two shear forces V<sub>y</sub> and V<sub>z</sub>) and three internal moments (torsional moment T<sub>x</sub> and two bending moments M<sub>y</sub> and M<sub>z</sub>)
 </figcaption>
 </figure>
 </div>
-<p>Note that the choice of coordinate system here is arbitrary. Loads are defined as normal, shear, bending, or torsion based on how they act relative to the cross-section. For example, the normal force may act in the y-direction depending on how the cross-section is cut, and the torsional moment would then act around the y-axis.</p>
-<p>While summing the reaction forces in 3D is a straight-forward process of adding forces in each direction, summing moments in 3D can prove to be more complicated. To sum moments, there are generally two options. One option is to use the cross product to calculate moments: <span class="math inline">\(M=r \times F\)</span></p>
-<p>In the cross-product equation, <strong>r</strong> is the position vector from the point the moment is about to any point on the line of action of the force. Using the cross product to calculate moment will result in a vector expression for the moment equation that gives all three components at one time with the correct signs to indicate clockwise (negative) or counterclockwise (positive) rotation.</p>
+<p>Note that the choice of coordinate system here is arbitrary (as long as it is a right handed coordinate system). Loads are defined as normal, shear, bending, or torsion based on the effect they have on the body. For example, the normal force always acts in the direction perpendicular to the cross-section of the body and has the effect of extending or compressing the body. In the case of <a href="#fig-1.3" class="quarto-xref">Figure&nbsp;<span>1.3</span></a>, the x-axis is the axis perpendicular to the cross-section, so the force in the x direction is the normal force. If the axes or the body were oriented differently, the x component of the force could be a shear force instead of a normal force.</p>
+<p>While summing the reaction forces in 3D is a straight-forward process of adding forces in each direction, summing moments in 3D can prove to be more complicated. To sum moments, there are generally two options. One option is to use the cross product to calculate moments: <span class="math inline">\(\vec M=\vec r \times \vec F\)</span>.</p>
+<section id="calculating-moments" class="level3" data-number="1.4.1">
+<h3 data-number="1.4.1" class="anchored" data-anchor-id="calculating-moments"><span class="header-section-number">1.4.1</span> Calculating Moments</h3>
+<p>Any position vector that goes from the point the moment is about to any point on the line of action of the force (F) will work for <span class="math inline">\(\vec{r}\)</span> in the cross product. Considering <a href="#fig-1.4" class="quarto-xref">Figure&nbsp;<span>1.4</span></a>, we could say:</p>
+<p><span class="math display">\[
+\begin{aligned}\vec{M_O}&amp;=\vec{r_1}\times\vec{F}\\&amp;=\vec{r_2}\times\vec{F}\\&amp;=\vec{r_3}\times\vec{F}\end{aligned}\\
+\]</span></p>
+<p>Using the cross product to calculate moment will result in a vector expression for the moment equation that gives all three components at one time with the correct signs to indicate clockwise (negative) or counterclockwise (positive) rotation. The clockwise or counterclockwise direction of rotation is based on the perspective of looking from the positive end of the axis towards the negative.</p>
 <p>The second option to calculate moments is to perform scalar calculations in which the sum of the moments about the x, y, and z axis is calculated individually. To use this option, it might be helpful to recall:</p>
 <ol type="1">
-<li><p>The general scalar equation for moment is M = F*d, where d is the perpendicular distance from the axis of rotation at the point the moment is being taken about to anywhere on the line of action of the force. One can also use M = F r sin α where r is the distance from the point to any point on the force and α is the angle between the position vector <strong>r</strong> (that corresponds to the magnitude r used) and the force vector.</p></li>
+<li><p>The general scalar equation for moment is M = F*d, where d is the perpendicular distance between the point the moment is being taken about and the line of action of the force (see <a href="#fig-1.4" class="quarto-xref">Figure&nbsp;<span>1.4</span></a>). One can also use:</p>
+<p>M = F r sin α</p>
+<p>where</p>
+<p>r = any straightline distance from the point the moment is being taken about to any point on the force vector <span class="math inline">\(\vec F\)</span> and</p>
+<p>α = angle between <span class="math inline">\(\vec F\)</span> and the position vector <span class="math inline">\(\vec{r}\)</span> that corresponds to the distance r.</p>
+<p>In <a href="#fig-1.4" class="quarto-xref">Figure&nbsp;<span>1.4</span></a>, various α and r pairs can be seen. Note that either α or it’s complement angle can be used since the sine of the angle will be the same either way.</p></li>
 <li><p>Forces do not cause moments about points they go through or axes they act through.</p></li>
 <li><p>Forces do not cause moments about axes they are parallel to (i.e., F<sub>x</sub> wouldn’t cause a moment around an x-axis no matter where the point is).</p></li>
 <li><p>When taking the moment about a point, the origin of the coordinate axes should be moved to that point for the purpose of determining the distance between the axis and the force.</p></li>
 </ol>
+<div id="fig-1.4" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-1.4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/figure 1.4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="493">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-1.4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.4: The moment around O due to the force (F) can be calculated using M = r sin(⍺), M = F d, or <span class="math inline">\(\vec M = \vec r\times\vec F\)</span>
+</figcaption>
+</figure>
+</div>
 <p>Given all the reminders above, one can apply the following equations:</p>
-<p><span class="math inline">\(\sum M_x= \pm F_y * z \pm F_z * y\)</span> where z and y are the respective distances from the x-axis at the point in question to F<sub>y</sub> and F<sub>z</sub> components of the force respectively.</p>
-<p><span class="math inline">\(\sum M_y= \pm F_x * z \pm F_z * x\)</span> where z and x are the respective distances from the y-axis at the point in question to F<sub>x</sub> and F<sub>z</sub> components of the force respectively.</p>
-<p><span class="math inline">\(\sum M_z= \pm F_x * y \pm F_y * x\)</span> where y and x are the respective distances from the z-axis at the point in question to the F<sub>x</sub> and F<sub>y</sub> components of the force respectively.</p>
-<p>The ± is decided based on the right-hand rule (see text below for guidance) or visual inspection. When using visual inspection, the direction of rotation is judged by looking from the positive end of the axis towards the negative end. A counterclockwise rotation is considered to be positive and a clockwise rotation is considered to be negative.</p>
+<p><span class="math inline">\(\sum M_x= \pm F_y * z \pm F_z * y\)</span> where <em>z</em> and <em>y</em> are the distances from the x-axis at the point in question to <em>F<sub>y</sub></em> and <em>F<sub>z</sub></em>, respectively.</p>
+<p><span class="math inline">\(\sum M_y= \pm F_x * z \pm F_z * x\)</span> where <em>z</em> and <em>x</em> are the distances from the y-axis at the point in question to <em>F<sub>x</sub></em> and <em>F<sub>z</sub></em>, respectively.</p>
+<p><span class="math inline">\(\sum M_z= \pm F_x * y \pm F_y * x\)</span> where <em>y</em> and <em>x</em> are the distances from the z-axis at the point in question to the <em>F<sub>x</sub></em> and <em>F<sub>y</sub></em>, respectively.</p>
+<p>The ± is decided based on the right-hand rule (see text below for guidance) or visual inspection. As mentioned above, when using visual inspection, the direction of rotation is judged by looking from the positive end of the axis towards the negative end. A counterclockwise rotation is considered to be positive and a clockwise rotation is considered to be negative.</p>
 <p>To apply the right-hand rule:</p>
 <ol type="1">
-<li><p>Orient your right hand so that the fingers are aligned with the moment arm with the palm at the point and the fingertips extending towards the force. The moment arm is the axis along which the perpendicular distance to the axis would be determined. For example, if finding M<sub>x</sub> due to F<sub>y</sub>, the moment arm is in the z direction.</p></li>
+<li><p>Orient your right hand so that the palm is at the point the moment is about and the fingers are aligned with the moment arm, extended to the force. The moment arm is the axis along which the perpendicular distance to the axis would be determined. For example, if finding M<sub>x</sub> due to F<sub>y</sub>, the moment arm is in the z direction.</p></li>
 <li><p>The thumb is aligned with the axis of rotation (axis around which the moment is being calculated).</p></li>
-<li><p>Curl your fingers in the direction of the force. If your thumb must be pointed in the positive axis direction to perform this action, the moment is counterclockwise. If your thumb must be pointed in the negative axis direction, the moment is clockwise. Typical convention designates counterclockwise rotation to be positive and clockwise to be negative.</p></li>
+<li><p>Curl your fingers in the direction of the force. If your thumb is pointed in the positive rotation axis direction to perform this action, the moment is counterclockwise. If your thumb is pointed in the negative rotation axis direction, the moment is clockwise. Typical convention designates counterclockwise rotation to be positive and clockwise to be negative.</p></li>
 </ol>
+<div id="fig-1.5" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-1.5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/figure 1.5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="381">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-1.5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.5: Illustration of applying right hand rule
+</figcaption>
+</figure>
+</div>
 <p>These concepts are further reviewed in <a href="#exm-1.6" class="quarto-xref">Example&nbsp;<span>1.6</span></a>.</p>
-<div id="example-1.6" class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -921,10 +1116,10 @@ Example 1.6
 <p><span class="theorem-title"><strong>Example 1.6</strong></span> &nbsp;</p>
 <p>
 </p>
-<p>Determine the internal reactions at point P, located at the center of the cross-section of the rectangular bar and 1.75 ft from the fixed support, if <strong>F</strong> = -150<strong>i</strong> - 225<strong>j</strong> + Fz = 300<strong>k</strong> lb.</p>
+<p>Determine the internal reactions at point P, located at the center of the cross-section of the rectangular bar and 1.75 ft from the fixed support at the origin. Let <strong>F</strong> = -150<strong>i</strong> - 225<strong>j</strong> + 300<strong>k</strong> lb.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH1 PNGs/example 1.6 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="484"></p>
+<p><img src="images/chapter 1 figure updates/example 1.6 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="481"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -939,33 +1134,47 @@ Solution
 </div>
 <div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>To determine the internal reactions at P, a cut is made at P that is parallel to the cross section. Since the left side of the cut would include the wall but the right side of the cut would be free with no external reactions to determine, the right side section will be used.</p>
+<p>To determine the internal reactions at P, a cut is made at P that is parallel to the cross section. The section to the left of the cut includes the wall but the section to the right of the cut has no support. We will draw the FBD of the section to the right of the cut to avoid needing to know the reaction at the wall.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH1 PNGs/example 1.6 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="388"></p>
+<p><img src="images/example 1.6 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="386"></p>
 </figure>
 </div>
-<p>The force reactions at P will just be equal (but opposite in direction) to the force shown since there is only one. The moment reactions can be found by taking the moments about point P.</p>
+<p>The x-direction is normal to the cut section, so Px is the internal normal force reaction. Py and Pz are the internal shear force reactions.</p>
+<p>The force reactions Px, Py, and Pz at P can be found by applying the force equilibrium equations.</p>
+<p><span class="math display">\[
+\begin{aligned}\sum F_x &amp;= -P_x + F_x = 0\\&amp;=-P_x-150\ lbs=0\quad\rightarrow\quad P_x = -150 lbs\end{aligned}
+\]</span></p>
+<p>Px was assumed tensile (pointed away from cut section), so the negative answer here means the force is compressive.</p>
+<p><span class="math display">\[\begin{aligned}\sum F_y &amp;= P_y + F_y = 0\\&amp;=P_y-225\ lbs=0\quad\rightarrow\quad P_y = 225 lbs\end{aligned}\]</span></p>
+<p><span class="math display">\[\begin{aligned}\sum F_z &amp;= -P_z + F_z = 0\\&amp;=-P_z+300\ lbs=0\quad\rightarrow\quad P_z = 300 lbs\end{aligned}\]</span></p>
+<p>Note that shear direction forces are not designated as “tensile” or “compressive” since shear forces do not extend or compress a body. Signs on shear forces are discussed in <a href="Chapter 14.html#sec-14.1" class="quarto-xref"><span>Section 14.1</span></a>.</p>
+<p>The internal moment reactions M<sub>Px</sub>, M<sub>Py</sub>, and M<sub>Pz</sub> can be found by taking the moments about point P. The sign on the individual multiplicative terms in each equation are determined by right hand rule or visualization.</p>
 <p>The moment about the x axis at point P is:</p>
 <p><span class="math display">\[
-\sum M_{Px} = \pm ~F_yz \pm F_zy = 0 = -[(225{~lb})(3{~in})(\frac{1{~ft}}{12{~in}})]+[(300{~lb})(2{~in})(\frac{1{~ft}}{12{~in}})]+M_{px} -6.25{~lb·ft}
+\sum M_{Px} = \pm ~F_yz \pm F_zy = 0 = -[(225{~lb})(3{~in})(\frac{1{~ft}}{12{~in}})]+[(300{~lb})(2{~in})(\frac{1{~ft}}{12{~in}})]-M_{Px}=0\\[20pt]
+M_{Px}= -6.25{~lb·ft}
 \]</span></p>
+<p>The reaction M<sub>Px</sub> is subtracted because it is drawn on the FBD as counterclockwise around the negative x axis, which means it is assumed clockwise around the positive x axis. The negative answer means the reaction moment is opposite of the assumed direction, so it is actually counterclockwise around the positive x axis.</p>
 <p>The moment about the y axis at point P is:</p>
 <p><span class="math display">\[
-\sum M_{Py} = \pm ~F_xz \pm F_zx = 0 = -[(150{~lb})(3{~in})(\frac{1{~ft}}{12{~in}})]-[(300{~lb})(1.25{~ft})]+M_{py} -347.5{~lb·ft}
+\sum M_{Py} = \pm ~F_xz \pm F_zx = 0 = (150{~lb})(3{~in})(\frac{1{~ft}}{12{~in}})]-[(300{~lb})(1.25{~ft})]+M_{Py}=0\\[20pt]
+M_{Py}= 337.5{~lb·ft}
 \]</span></p>
+<p>The reaction moment M<sub>Py</sub> is added because it is drawn counterclockwise around the positive y axis. The positive answer means it is actually counterclockwise.</p>
 <p>The moment about the z axis at point P is:</p>
 <p><span class="math display">\[
-\sum M_{Pz} = \pm F_xy \pm F_yx = 0 = [(150{~lb})(2{~in})(\frac{1{~ft}}{12{~in}})]-[(225{~lb})(1.25{~ft})]+M_{pz} -2.5{~lb·ft}
+\sum M_{Pz} = \pm F_xy \pm F_yx = 0 = [(150{~lb})(2{~in})(\frac{1{~ft}}{12{~in}})]-[(225{~lb})(1.25{~ft})]-M_{Pz}=0\\[20pt]
+M_{Pz}= -256.25{~lb·ft}
 \]</span></p>
-<p>The sign on the individual multiplicative terms in each equation are determined by right hand rule or visualization.</p>
+<p>Like M<sub>Px</sub>, the reaction moment M<sub>Pz</sub> is subtracted because it is drawn on the FBD as counterclockwise around the negative z axis. The negative answer means the reaction is actually counterclockwise around the positive z axis.</p>
 <p><strong>Answer:</strong></p>
-<p>P<sub>x</sub> = 150 lb</p>
+<p>P<sub>x</sub> = 150 lb (compressive)</p>
 <p>P<sub>y</sub> = 225 lb</p>
 <p>P<sub>z</sub> = 300 lb</p>
-<p>M<sub>Px</sub> = 6.25 lb·ft</p>
-<p>M<sub>Py</sub> = 348 lb·ft</p>
-<p>M<sub>Pz</sub> = 2.5 lb·ft</p>
+<p>M<sub>Px</sub> = 6.25 lb·ft (counterclockwise)</p>
+<p>M<sub>Py</sub> = 337.5 lb·ft (counterclockwise)</p>
+<p>M<sub>Pz</sub> = 256.25 lb·ft (counterclockwise)</p>
 </div>
 </div>
 </div>
@@ -973,8 +1182,9 @@ Solution
 </div>
 </div>
 </div>
-</details>
+</section></details>
 </section>
+
 <section id="summary" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="summary">Summary</h2>
 <details>
@@ -991,21 +1201,10 @@ Key takeaways
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Bodies in this text are in static equilibrium and subjected to external forces and moments. Reaction forces and moments at supports can be determined in 2D and 3D through equilibrium equations, just like in Statics.</p>
-<p>Unlike Statics, bodies in this course are deformable. We must also determine internal loads. These can be found by cutting a cross-section at the point of interest and again applying equilibrium equations.</p>
-<p>In 2D there are two internal forces and one internal moment:</p>
-<ul>
-<li><p>Normal force (N) perpendicular to the cross-section</p></li>
-<li><p>Shear force (V) parallel to the cross-section</p></li>
-<li><p>Bending moment (M)</p></li>
-</ul>
-<p>In 3D there are three internal forces and three internal moments:</p>
-<ul>
-<li><p>Normal force (N) perpendicular to the cross-section</p></li>
-<li><p>Two shear forces (V) parallel to the cross-section</p></li>
-<li><p>Torsional moment (T) acting around the axis perpendicular to the cross-section</p></li>
-<li><p>Two bending moments (M) acting around the axes parallel to the cross-section</p></li>
-</ul>
+<p>Bodies in this text are in static equilibrium and subjected to external forces and moments which can cause deformations. In order to determine the type and extent of deformation, we will need to understant how to calculate external and internal reactions to loading.</p>
+<p>External reactions can be found by drawing Free Body Diagrams of the whole structure and applying equilibrium equations.</p>
+<p>Internal reactions can be found by separating parts (for structures made of connected members) or making cuts (for solid bodies or truss structures when method of sections is used) and applying equilibrium to the separated parts or sections.</p>
+<p>In the case of connected members, it can be helpful to the process to recognize two force members and understand how they simplify analysis.</p>
 <p>The effects of these internal loads on deformable bodies is the focus of this text.</p>
 </div>
 </div>
@@ -1027,6 +1226,14 @@ Key equations
 \sum F_z=0 &amp; \sum M_z=0
 \end{array}
 \]</span></p>
+<p>2D Scalar Moment Equations::</p>
+<p><span class="math display">\[M=(F)(d)\\M=Fr\sin \alpha\\\]</span></p>
+<p>3D Scalar Moment Equations:</p>
+<p><span class="math display">\[\sum M_x = \pm F_z*y \pm F_y*z\\\sum M_y = \pm F_z*x \pm F_x*z\\\sum M_z = \pm F_x*y \pm F_y*x\\\]</span></p>
+<p>Vector Moment Equation:</p>
+<p><span class="math display">\[\vec{M}=\vec{r}\times\vec{F}\\\]</span></p>
+<p>Force magnitude:</p>
+<p><span class="math display">\[F = \sqrt{F_x^2+F_y^2}\]</span></p>
 </div>
 </div>
 </details>
@@ -1038,16 +1245,7 @@ Key equations
 Click to expand
 </summary>
 <p><strong>Figures</strong></p>
-<p>Table 1.1: Free body diagrams for common supports. Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Example 1.1: Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Figure 1.1: Illustrations of two force members showing the line of action of the reaction force passing through the joints. Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Example 1.2: Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Example 1.3: Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Example 1.4: Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Figure 1.2: Cross-sections showing the internal loads on a continuous body. Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Example 1.5: Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Figure 1.3: In 3D there are three internal forces (normal force N<sub>x</sub> and two shear forces V<sub>y</sub> and V<sub>z</sub>) and three internal moments (torsional moment T<sub>x</sub> and two bending moments M<sub>y</sub> and M<sub>z</sub>). Kindred Grey. 2024. CC BY-NC-SA.</p>
-<p>Example 1.6: Kindred Grey. 2024. CC BY-NC-SA.</p>
+<p>All figures in this chapter except Figure 1.4 and Figure 1.5 were created by Kindred Grey in 2025 and released under a CC BY-NC-SA license.</p>
 </details>
 
 
@@ -1055,383 +1253,255 @@ Click to expand
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
     }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const disableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'prefetch';
-    }
-  }
-  const enableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'stylesheet';
-    }
-  }
-  const manageTransitions = (selector, allowTransitions) => {
-    const els = window.document.querySelectorAll(selector);
-    for (let i=0; i < els.length; i++) {
-      const el = els[i];
-      if (allowTransitions) {
-        el.classList.remove('notransition');
-      } else {
-        el.classList.add('notransition');
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-  }
-  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-    let newTheme = '';
-    if(darkModeDefault) {
-      newTheme = isAlternate ? baseTheme : alternateTheme;
-    } else {
-      newTheme = isAlternate ? alternateTheme : baseTheme;
-    }
-    const changeGiscusTheme = () => {
-      // From: https://github.com/giscus/giscus/issues/336
-      const sendMessage = (message) => {
-        const iframe = document.querySelector('iframe.giscus-frame');
-        if (!iframe) return;
-        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      sendMessage({
-        setConfig: {
-          theme: newTheme
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
       });
     }
-    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-    if (isGiscussLoaded) {
-      changeGiscusTheme();
-    }
-  }
-  const toggleColorMode = (alternate) => {
-    // Switch the stylesheets
-    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-    manageTransitions('#quarto-margin-sidebar .nav-link', false);
-    if (alternate) {
-      enableStylesheet(alternateStylesheets);
-      for (const sheetNode of alternateStylesheets) {
-        if (sheetNode.id === "quarto-bootstrap") {
-          toggleBodyColorMode(sheetNode);
-        }
-      }
-    } else {
-      disableStylesheet(alternateStylesheets);
-      toggleBodyColorPrimary();
-    }
-    manageTransitions('#quarto-margin-sidebar .nav-link', true);
-    // Switch the toggles
-    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-    for (let i=0; i < toggles.length; i++) {
-      const toggle = toggles[i];
-      if (toggle) {
-        if (alternate) {
-          toggle.classList.add("alternate");     
-        } else {
-          toggle.classList.remove("alternate");
-        }
-      }
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455)
-    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-      manageTransitions("body", false);
-      window.scrollTo(0, 1);
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        manageTransitions("body", true);
-      }, 40);  
-    }
-  }
-  const isFileUrl = () => { 
-    return window.location.protocol === 'file:';
-  }
-  const hasAlternateSentinel = () => {  
-    let styleSentinel = getColorSchemeSentinel();
-    if (styleSentinel !== null) {
-      return styleSentinel === "alternate";
-    } else {
-      return false;
-    }
-  }
-  const setStyleSentinel = (alternate) => {
-    const value = alternate ? "alternate" : "default";
-    if (!isFileUrl()) {
-      window.localStorage.setItem("quarto-color-scheme", value);
-    } else {
-      localAlternateSentinel = value;
-    }
-  }
-  const getColorSchemeSentinel = () => {
-    if (!isFileUrl()) {
-      const storageValue = window.localStorage.getItem("quarto-color-scheme");
-      return storageValue != null ? storageValue : localAlternateSentinel;
-    } else {
-      return localAlternateSentinel;
-    }
-  }
-  const darkModeDefault = false;
-  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-  // Dark / light mode switch
-  window.quartoToggleColorScheme = () => {
-    // Read the current dark / light value 
-    let toAlternate = !hasAlternateSentinel();
-    toggleColorMode(toAlternate);
-    setStyleSentinel(toAlternate);
-    toggleGiscusIfUsed(toAlternate, darkModeDefault);
-  };
-  // Ensure there is a toggle, if there isn't float one in the top right
-  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-    const a = window.document.createElement('a');
-    a.classList.add('top-right');
-    a.classList.add('quarto-color-scheme-toggle');
-    a.href = "";
-    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-    const i = window.document.createElement("i");
-    i.classList.add('bi');
-    a.appendChild(i);
-    window.document.body.appendChild(a);
-  }
-  // Switch to dark mode if need be
-  if (hasAlternateSentinel()) {
-    toggleColorMode(true);
-  } else {
-    toggleColorMode(false);
-  }
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
         }
-        return container.innerHTML
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1439,185 +1509,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./index.html" class="pagination-link" aria-label="Overview">
