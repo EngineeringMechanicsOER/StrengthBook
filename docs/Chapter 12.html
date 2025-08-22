@@ -458,6 +458,7 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#sec-12.2.1" id="toc-sec-12.2.1" class="nav-link" data-scroll-target="#sec-12.2.1"><span class="header-section-number">12.2.1</span> <strong>Derivation of Equations</strong></a></li>
   <li><a href="#sec-12.2.2" id="toc-sec-12.2.2" class="nav-link" data-scroll-target="#sec-12.2.2"><span class="header-section-number">12.2.2</span> Using the Stress Transformation Equations</a></li>
+  <li><a href="#equation-inputs-for-planes-other-than--xy" id="toc-equation-inputs-for-planes-other-than--xy" class="nav-link" data-scroll-target="#equation-inputs-for-planes-other-than--xy"><span class="header-section-number">12.2.3</span> Equation inputs for planes other than -xy</a></li>
   </ul></li>
   <li><a href="#sec-12.3" id="toc-sec-12.3" class="nav-link" data-scroll-target="#sec-12.3"><span class="header-section-number">12.3</span> Principal Stresses and Max/Min Shear Stress</a></li>
   <li><a href="#sec-12.4" id="toc-sec-12.4" class="nav-link" data-scroll-target="#sec-12.4"><span class="header-section-number">12.4</span> Mohr’s Circle</a></li>
@@ -513,9 +514,9 @@ Learning Objectives
 <summary>
 Click to expand
 </summary>
-<p>In the preceding chapters, we have discussed how to find normal stress and shear stress due to various loading situations. We have also seen how those stresses can vary depending on the location of the point on the body in question. The combination of normal stress and shear stress that exists at a point is referred to as the general stress state. When we restrict analysis to 2D states of stress, we can represent the stress state on a 2D stress element as discussed in <a href="Chapter 4.html#sec-4.7" class="quarto-xref"><span>Section 4.7</span></a> and illustrated in <a href="Chapter 4.html#fig-4.7" class="quarto-xref">Figure&nbsp;<span>4.7</span></a> for the xy plane.</p>
+<p>In the preceding chapters, we have discussed how to calculate normal and shear stresses that arise from various loading situations. We have also seen how those stresses can vary from point to point on a body or structure. The combination of normal stress and shear stress that exists at a point is referred to as the general stress state. When we restrict analysis to 2D states of stress, we can represent the stress state on a 2D stress element as discussed in <a href="Chapter 4.html#sec-4.7" class="quarto-xref"><span>Section 4.7</span></a> and illustrated in <a href="Chapter 4.html#fig-4.9" class="quarto-xref">Figure&nbsp;<span>4.9</span></a> for the xy plane.</p>
 <p>The plane of the stress state is based on the coordinate system chosen for calculating the stresses. The coordinate system is most often chosen based on what is considered to be the most straight forward system for the given loading directions and geometrical orientation of the body. However, the plane for which the stresses are most easily calculated is not always the only plane for which we we would want to know the stress state.</p>
-<p>For example, <a href="#fig-12.1" class="quarto-xref">Figure&nbsp;<span>12.1</span></a> shows an air duct which is part of a heat pump system and is subject to internal air pressure. The welded seams are wound in a helical pattern that forms an angle with the horizontal axis. In <a href="Chapter 13.html" class="quarto-xref"><span>Chapter 13</span></a>, simple equations to calculate stress in the xy-plane due to pressure are developed. However, in this case, it is additionally important to know the stresses in the directions parallel and perpendicular to the weld seams (the x’y’ plane) to ensure that the joint could tolerate the loading. It would be useful to be able to transform the stresses we can most easily calculate in x and y directions to the x’ and y’ directions.</p>
+<p>For example, <a href="#fig-12.1" class="quarto-xref">Figure&nbsp;<span>12.1</span></a> shows an air duct which is part of a heat pump system and is subject to internal air pressure. The welded seams are wound in a helical pattern that forms an angle with the horizontal (x) axis. In <a href="Chapter 13.html" class="quarto-xref"><span>Chapter 13</span></a>, basic equations to calculate stress in the xy-plane due to pressure are developed. However, in this case, it is additionally important to know the stresses in the directions parallel and perpendicular to the weld seams (x’y’ plane) to ensure that the weld could tolerate the loading. It would be useful to be able to transform the stresses we can most easily calculate in x and y directions to the x’ and y’ directions.</p>
 <div id="fig-12.1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-12.1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -530,15 +531,16 @@ Figure&nbsp;12.1: A pressurized duct is fabricated with welding in a helical pat
 <p>Then we will derive stress transformation equations that allow us to use a given stress state in one plane to find the corresponding stress state in different planes (<a href="#sec-12.2" class="quarto-xref"><span>Section 12.2</span></a>). This process is known as <u>stress transformation</u>.</p>
 <p>We will also derive equations that allow us to determine the planes on which the maximum and minimum normal and shear stresses occur and the corresponding stress states (<a href="#sec-12.3" class="quarto-xref"><span>Section 12.3</span></a>). The maximum and minimum normal stresses are known as principal stresses.</p>
 <p>In <a href="#sec-12.4" class="quarto-xref"><span>Section 12.4</span></a>, we will discuss an alternative graphical method for performing stress transformation, known as Mohr’s circle.</p>
-<p>In <a href="#sec-12.5" class="quarto-xref"><span>Section 12.5</span></a>, we will use Mohr’s circle to expand our analysis and look at the stresses not only in the original 2D plane, but also at the out-of-plane stresses.</p>
+<p>In <a href="#sec-12.5" class="quarto-xref"><span>Section 12.5</span></a>, we will use Mohr’s circle to expand our analysis and look at the shear stress not only in the original 2D plane, but also consider out-of-plane shear stress.</p>
+</details>
+</section>
+<section id="sec-12.1" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="sec-12.1"><span class="header-section-number">12.1</span> Stress Elements for 2D Stress States</h2>
 <details>
 <summary>
 Click to expand
 </summary>
-</details></details></section>
-<section id="sec-12.1" class="level2" data-number="12.1">
-<h2 data-number="12.1" class="anchored" data-anchor-id="sec-12.1"><span class="header-section-number">12.1</span> Stress Elements for 2D Stress States</h2>
-<p>A square stress element shows the normal stress and shear stress at a point for a 2D stress state. Here we will discuss the important aspects of the stress element:</p>
+<p>A square stress element shows the normal stress and shear stress at a point for a 2D stress state (see <a href="#fig-12.4" class="quarto-xref">Figure&nbsp;<span>12.4</span></a> below). Here we will discuss the important aspects of the stress element:</p>
 <p>1) Plane of the element:</p>
 <p>The coordinate axes on the stress element represent the plane on the body where the point is located, with the positive directions indicated by arrows and axes labels. To determine the plane a point is on, one needs to observe the axes on a square element on the side of the body when viewing it straight on. <a href="#fig-12.2" class="quarto-xref">Figure&nbsp;<span>12.2</span></a> illustrates 3 points on a body, each on a different plane (xy, yz, and xz).</p>
 <div id="fig-12.2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
@@ -552,13 +554,13 @@ Figure&nbsp;12.2: Points on 3 planes of a body
 </figure>
 </div>
 <p>2) Positive and negative faces</p>
-<p>We refer to the edges of the element as positive faces and negative faces depending on which way the coordinate axes are oriented. For example, if the vertical coordinate axis is positive upwards, then the top edge of element is the positive face for that coordinate axis and the bottom edge is the negative face. This is illustrated for two different planes in <a href="#fig-12.3" class="quarto-xref">Figure&nbsp;<span>12.3</span></a>.</p>
+<p>We refer to the edges of the element as positive faces and negative faces depending on which way the coordinate axes are oriented. For example, if the vertical coordinate axis is positive upwards, then the top edge of the element is the positive face for that coordinate axis and the bottom edge is the negative face. This is illustrated for two different planes in <a href="#fig-12.3" class="quarto-xref">Figure&nbsp;<span>12.3</span></a>.</p>
 <p>3) Normal stresses</p>
-<p>Normal stresses that are positive (tensile) are illustrated by arrows that point away from the element. Negative normal stresses (compressive) point towards the element. Normal stresses directed in the horizontal direction are shown on the left/right edges of the element and normal stresses directed in the vertical direction are shown on the top/bottom edges.</p>
+<p>Normal stresses that are positive (tensile) are illustrated by arrows that point away from the element. Negative normal stresses (compressive) point towards the element. Normal stresses directed in the horizontal direction are shown on the left/right faces of the element and normal stresses directed in the vertical direction are shown on the top/bottom faces.</p>
 <p>4) Shear stress</p>
-<p>As explained in <a href="Chapter 4.html#sec-4.7" class="quarto-xref"><span>Section 4.7</span></a>, the shear stress will be the same on all sides of the stress element. The manner in which the shear stress arrows are oriented around the body indicate the sign. A positive shear stress is one for which the shear stress arrow goes in a positive direction on a positive face or in a negative direction on a negative face. No matter which face you choose to examine, you should reach the same conclusion. The magnitude of the shear stress is usually specified in one corner of the element.</p>
-<p>For example, in <a href="#fig-12.3" class="quarto-xref">Figure&nbsp;<span>12.3</span></a>, we can see that for the positive shear stress example, the shear stress arrow on the +x-face goes in the + y direction and the shear stress arrow on the -(x-face) goes in the -y direction. Either way, a positive shear stress is indicated and we would get the same result examining the y-faces.</p>
-<p>For the negative shear stress example, the shear stress arrow on the +x-face goes in the -z direction and the shear stress arrow on the -(x-face) goes in the +z direction. Either way, a negative shear stress is indicated and we would get the same result examining the z-faces.</p>
+<p>As explained in <a href="Chapter 4.html#sec-4.7" class="quarto-xref"><span>Section 4.7</span></a>, the shear stress will be the same on all sides of the stress element. The manner in which the shear stress arrows are oriented around the body indicate the sign. A positive shear stress is one for which the shear stress arrow goes in a positive direction on a positive face or in a negative direction on a negative face. The arrows are drawn such that no matter which face you choose to examine, you should reach the same conclusion. The magnitude of the shear stress is usually specified in one corner of the element.</p>
+<p>For example, in <a href="#fig-12.3" class="quarto-xref">Figure&nbsp;<span>12.3</span></a>, we can see that for the positive shear stress case, the shear stress arrow on the +x-face goes in the + y direction and the shear stress arrow on the -x-face goes in the -y direction. Either way, a positive shear stress is indicated and we would get the same result examining the y-faces.</p>
+<p>For the negative shear stress case, the shear stress arrow on the +x-face goes in the -z direction and the shear stress arrow on the -(x-face) goes in the +z direction. Either way, a negative shear stress is indicated and we would get the same result examining the z-faces.</p>
 <div id="fig-12.3" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-12.3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -580,8 +582,7 @@ Figure&nbsp;12.4: Example 2D stress element in the xz plane.
 </figcaption>
 </figure>
 </div>
-
-
+</details>
 </section>
 <section id="sec-12.2" class="level2" data-number="12.2">
 <h2 data-number="12.2" class="anchored" data-anchor-id="sec-12.2"><span class="header-section-number">12.2</span> Stress Transformation Equations</h2>
@@ -589,7 +590,7 @@ Figure&nbsp;12.4: Example 2D stress element in the xz plane.
 <summary>
 Click to expand
 </summary>
-<p>In section <a href="#sec-12.2.1" class="quarto-xref"><span>Section 12.2.1</span></a>, <u>stress transformation equations</u> are derived that allow us to use a set of stresses in one given plane (for example σ<sub>x</sub>, σ<sub>y</sub>, and τ<sub>xy</sub>) as inputs to determine stresses in any other plane of interest. Understanding the derivations will help lend clarity to the inputs and outputs of the equations. If you wish to skip the derivations, you can simply jump ahead to the results, <a href="#eq-12.1" class="quarto-xref">Equation&nbsp;<span>12.1</span></a> and/or <a href="#eq-12.2" class="quarto-xref">Equation&nbsp;<span>12.2</span></a>, which are boxed in below to make them easier to find. <a href="#sec-12.2.1" class="quarto-xref"><span>Section 12.2.1</span></a> covers the details of how to use the equations.</p>
+<p>In section <a href="#sec-12.2.1" class="quarto-xref"><span>Section 12.2.1</span></a>, <u>stress transformation equations</u> are derived that allow us to use a set of stresses in one given plane (for example σ<sub>x</sub>, σ<sub>y</sub>, and τ<sub>xy</sub>) as inputs to determine stresses in any other plane of interest. Understanding the derivations will help lend clarity to the inputs and outputs of the equations. If you wish to skip the derivations, you can simply jump ahead to the results, <a href="#eq-12.1" class="quarto-xref">Equation&nbsp;<span>12.1</span></a> and/or <a href="#eq-12.2" class="quarto-xref">Equation&nbsp;<span>12.2</span></a>, which are boxed in below to make them easier to find. <a href="#sec-12.2.2" class="quarto-xref"><span>Section 12.2.2</span></a> covers the details of how to use the equations.</p>
 <section id="sec-12.2.1" class="level3" data-number="12.2.1">
 <h3 data-number="12.2.1" class="anchored" data-anchor-id="sec-12.2.1"><span class="header-section-number">12.2.1</span> <strong>Derivation of Equations</strong></h3>
 <p>Transformation of a uni-axial stress state was already examined in <a href="Chapter 2.html#sec-2.4" class="quarto-xref"><span>Section 2.4</span></a>. In that case, we took a known force acting in the axial direction and determined the stress on an inclined plane. The current derivation for a more general stress state will be based on the same idea of cutting a section and applying equilibrium.</p>
@@ -648,12 +649,12 @@ Figure&nbsp;12.5: Stress element in the xy-plane (A), FBD of the cut section of 
 <em>𝜎<sub>x</sub> = Average normal stress in the x-direction, prior to any transformation [Pa, psi]</em><br>
 <em>𝜎<sub>y</sub> = Average normal stress in the y-direction, prior to any transformation [Pa, psi]</em><br>
 <em>𝜏<sub>xy</sub> = Average shear stress in the xy plane, prior to any transformation [Pa, psi]</em><br>
-<em>𝜃 = Angle between x-axis and transformed stress being caculated [</em><span class="math inline">\(^\circ\)</span><em>, rad]</em></div>
-<p>Either <a href="#eq-12.1" class="quarto-xref">Equation&nbsp;<span>12.1</span></a> or <a href="#eq-12.2" class="quarto-xref">Equation&nbsp;<span>12.2</span></a> will work. The choice over which set to use is based on personal preference.</p>
+<em>𝜃 = Angle between x-axis and n-axis [</em><span class="math inline">\(^\circ\)</span><em>, rad]</em></div>
+<p>Either <a href="#eq-12.1" class="quarto-xref">Equation&nbsp;<span>12.1</span></a> or <a href="#eq-12.2" class="quarto-xref">Equation&nbsp;<span>12.2</span></a> will work to perform stress transformations. The choice over which set to use is based on personal preference.</p>
 </section>
 <section id="sec-12.2.2" class="level3" data-number="12.2.2">
 <h3 data-number="12.2.2" class="anchored" data-anchor-id="sec-12.2.2"><span class="header-section-number">12.2.2</span> Using the Stress Transformation Equations</h3>
-<p>While the n and t directions have been used to refer to the directions normal and parallel to an incline, a planar element will have two normal directions, as represented by x’, y’ in <a href="#fig-12.6" class="quarto-xref">Figure&nbsp;<span>12.6</span></a>. We can distinguish between the two normal stresses by the angle that is used in the stress transformation equation for 𝜎<sub>n</sub>. Based on how 𝛳 was defined in the derivation of the transformation equations, we can say:</p>
+<p>While the n and t directions have been used to refer to the directions normal and parallel to an incline, a planar element will have two normal directions, as represented by x,y and x’, y’ in <a href="#fig-12.6" class="quarto-xref">Figure&nbsp;<span>12.6</span></a>. In transforming stresses from the xy plane to the x’y’ plane, we can distinguish between the two normal stresses by the angle that is used in the stress transformation equation for 𝜎<sub>n</sub>. Based on how 𝛳 was defined in the derivation of the transformation equations, we can say:</p>
 <p><span class="math display">\[ \sigma_{x'}=\sigma_n(\theta)\\ \sigma_{y'}=\sigma_n(\theta+90^\circ)\\ \tau_{x' y'}=\tau_{nt}(\theta) \]</span></p>
 <div id="fig-12.6" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
@@ -673,7 +674,7 @@ Figure&nbsp;12.6: The angle θ is defined to be the angle between the original x
 <ol type="1">
 <li><p>Draw a line that represents one side of the plane of interest</p></li>
 <li><p>Draw the x-axis (positive to the right)</p></li>
-<li><p>Draw the axis normal to the plane of interest. It does not matter if you draw the normal axis oriented counterclockwise or clockwise from the x-axis as long as you use the correct sign for θ (see step 4).</p></li>
+<li><p>Draw the axis normal to the plane of interest. It does not matter if you draw the normal axis oriented counterclockwise or clockwise from the x-axis as long as you use the correct magnitude and sign for the corresponding θ (see step 4).</p></li>
 <li><p>Determine the angle that goes from the x-axis to the normal axis. This angle is θ. If the direction from the x-axis to the normal axis is counterclockwise, then θ is positive. If the direction from the x-axis to the normal axis is clockwise, then θ is negative.</p></li>
 </ol>
 <div id="fig-12.7" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
@@ -686,6 +687,9 @@ Figure&nbsp;12.7: Draw a sketch of the x-axis and the normal axis to ensure you 
 </figcaption>
 </figure>
 </div>
+</section>
+<section id="equation-inputs-for-planes-other-than--xy" class="level3" data-number="12.2.3">
+<h3 data-number="12.2.3" class="anchored" data-anchor-id="equation-inputs-for-planes-other-than--xy"><span class="header-section-number">12.2.3</span> Equation inputs for planes other than -xy</h3>
 <p>In some cases, the reference stress state may not be in the xy plane, or the x and y axes may be oriented differently from the orientation in <a href="#fig-12.5" class="quarto-xref">Figure&nbsp;<span>12.5</span></a>. In these cases, some adjustments will need to be made in implementing the transformation equations to ensure consistency of inputs with how the equations were derived.</p>
 <p>As an example, consider the reference stress state in <a href="#fig-12.8" class="quarto-xref">Figure&nbsp;<span>12.8</span></a>. As given, you might question which stress to substitute in for 𝜎<sub>x</sub> and which to substitute for 𝜎<sub>y</sub>. Keeping in mind that the transformation equations were derived based on a coordinate system in which the the horizontal axis is positive to the right and the vertical axis is positive upwards, we can ensure consistency with the inputs if we re-orient the reference stress element in the same way, as is also shown in the <a href="#fig-12.8" class="quarto-xref">Figure&nbsp;<span>12.8</span></a>. We can then attribute the coordinate designated to the horizontal direction to correspond to the x terms in the transformation equations and the coordinate designated to the vertical direction to correspond to the y terms in the transformation equations. In the case of the stress state in <a href="#fig-12.8" class="quarto-xref">Figure&nbsp;<span>12.8</span></a>, we would substitute -150 MPa for 𝜎<sub>x</sub>, 90 MPa for 𝜎<sub>y</sub>, and 16 MPa for τ<sub>xy</sub>.</p>
 <div id="fig-12.8" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
@@ -694,7 +698,7 @@ Figure&nbsp;12.7: Draw a sketch of the x-axis and the normal axis to ensure you 
 <img src="images/chapter 12 figure edits/figure 12.8.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12.8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;12.8: Element drawn in the xz plane
+Figure&nbsp;12.8: Stress element drawn in the xz plane based on given coordinate axes and then re-oriented
 </figcaption>
 </figure>
 </div>
@@ -715,10 +719,10 @@ Example 12.1
 <p><span class="theorem-title"><strong>Example 12.1</strong></span> &nbsp;</p>
 <p>
 </p>
-<p>The general stress state at a point on a hollow pipe formed with spiral welds inclined to an angle β with respect to the horizontal is shown below. For stress magnitudes given as follows: Sx = 128 MPa, <em>S<sub>y</sub></em> = 80 MPa, Sxy = 75.45 MPa, and β = 42°, determine the stress parallel and perpendicular to weld.</p>
+<p>The general stress state at a point on a hollow pipe formed with spiral welds inclined to an angle β with respect to the horizontal is shown below. For β = 42° and stress magnitudes given as follows: S<sub>x</sub> = 128 MPa, S<sub>y</sub> = 80 MPa, S<sub>xy</sub> = 75.45 MPa, determine the stress parallel and perpendicular to weld.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH12 figures/example 12.1 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="519"></p>
+<p><img src="images/chapter 12 figure updates 8.18.25/example 12.1 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -741,25 +745,28 @@ Solution
 \end{aligned}
 \]</span></p>
 <p>Notice that the normal stresses are positive since they are both shown to be tensile on the given stress element but the shear stress is negative based on the fact that the shear stress arrow goes in the negative y direction on the positive x-face (the same conclusion can be drawn by observing any of the other faces).</p>
-<p>To find the angle θ to substitute into the equations, we can follow the process described in <a href="#sec-12.1" class="quarto-xref"><span>Section 12.1</span></a> .</p>
+<p>To find the angle θ to substitute into the equations, we can follow the process described in <a href="#sec-12.2.2" class="quarto-xref"><span>Section 12.2.2</span></a> .</p>
 <ol type="1">
-<li>Draw the line that represents the plane of interest. In this case, the plane of interest is the plane of the weld which is parallel to the spiral.</li>
+<li>Draw the line that represents the plane of interest. In this case, the plane of interest is the plane of the weld, which is parallel to the spiral.</li>
 <li>Draw the x-axis going positive to the right</li>
-<li>Draw the axis normal (n) to the plane of interest. It does not matter if you draw the normal axis as oriented counterclockwise or clockwise from the x-axis as long as you use the correct sign for the angle (see step 4).</li>
-<li>Determine the angle that goes from the x-axis to the normal axis. This angle is θ. If the direction from the x-axis to the normal axis is counterclockwise, then θ should be taken to be positive. If the direction from the x-axis to the normal axis is clockwise, then θ should be taken to be negative.</li>
+<li>Draw the axis normal (n) to the plane of interest.</li>
+<li>Determine the angle that goes from the x-axis to the normal axis. This angle is θ.
+<ul>
+<li>If we use the angle from the x-axis to the solid normal axis, the angle will be negative since that is a clockwise rotation: θ = -(90 – β) = -48°</li>
+<li>We could also base θ on the dashed normal axis, in which case the magnitude of θ would be θ = 180° – 48° = 132°. This angle is positive since the rotation from the x-axis to the dashed normal axis is counterclockwise.</li>
+</ul></li>
 </ol>
-<p>If we use the angle from the x-axis to the solid normal axis, the angle will be negative since that is a clockwise rotation: θ = -(90 – β) = -48°</p>
-<p>We could also base θ on the dashed normal axis, in which case the magnitude of θ would be θ = 180° – 48° = 132°. This angle is positive since the rotation from the x-axis to the dashed normal axis is counterclockwise.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH12 figures/example 12.1 part 2a.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="403"></p>
+<p><img src="images/Sneha's figure revisions/example 12.1 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="267"></p>
 </figure>
 </div>
+<p>Now we can calculate:</p>
 <p><span class="math display">\[
 \begin{aligned}
-&amp; \sigma_n=128{~MPa} \cos ^2(-48^\circ)+80{~MPa} \sin ^2(-48^\circ)+2*-75.45{~MPa} \sin (-48^\circ) \cos (-48^\circ) \\
+&amp; \sigma_n=(128{~MPa}) \cos ^2(-48^\circ)+(80{~MPa}) \sin ^2(-48^\circ)+2\ (-75.45{~MPa}) \sin (-48^\circ) \cos (-48^\circ) \\
 &amp;\sigma_n = 176.5{~MPa} \\[10pt]
-&amp; \tau_{n t}=-\left(128{~MPa}-80{~MPa}\right) \cos (-48^\circ) \sin (-48^\circ)-75.45{~MPa}\left(\cos ^2(-48^\circ)-\sin ^2(-48^\circ)\right) \\
+&amp; \tau_{n t}=-\left(128{~MPa}-80{~MPa}\right) \cos (-48^\circ) \sin (-48^\circ)-(75.45{~MPa})\left(\cos ^2(-48^\circ)-\sin ^2(-48^\circ)\right) \\
 &amp;\tau_{n_t} = 31.76{~MPa}
 \end{aligned}
 \]</span></p>
@@ -787,10 +794,10 @@ Example 12.2
 <p><span class="theorem-title"><strong>Example 12.2</strong></span> &nbsp;</p>
 <p>
 </p>
-<p>The stresses shown act at a point in a stressed body as shown. Normal and shear stress magnitudes acting on horizontal and vertical planes at the point are <em>S<sub>x</sub></em> = 1700 psi, <em>S<sub>y</sub></em> = 800 psi, and <em>S<sub>xy</sub></em> = 790 psi. Determine the normal (positive if tensile, negative if compressive) and shear stresses at this point on the inclined plane shown. Assume β = 36°.</p>
+<p>Stresses at a point on a body are calculated and represented on the stress element given below. Normal and shear stress magnitudes acting on horizontal and vertical planes at the point are S<sub>x</sub> = 1700 psi, S<sub>y</sub> = 800 psi, and S<sub>xy</sub> = 790 psi. Determine the normal and shear stresses at this point for the plane rotated β = 36° from the horizontal axis as shown. Represent the stress state for the rotated plane on a stress element.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH12 figures/example 12.2 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="301"></p>
+<p><img src="images/chapter 12 figure updates 8.18.25/example 12.2 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="310"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -805,23 +812,25 @@ Solution
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>We will first determine the angle θ that we need for the stress transformation equations. Recall the the process described in <a href="#sec-12.1" class="quarto-xref"><span>Section 12.1</span></a>:</p>
+<p>We will first determine the angle θ that we need for the stress transformation equations. Recall the the process described in <a href="#sec-12.2.2" class="quarto-xref"><span>Section 12.2.2</span></a>:</p>
 <ol type="1">
 <li><p>Draw a line that represents the plane of interest</p></li>
 <li><p>Draw the x-axis positive going towards the right</p></li>
-<li><p>Draw the axis normal (n) to the plane of interest. It does not matter if you draw the normal axis as oriented counterclockwise or clockwise from the x-axis as long as you use the correct sign for the angle (see step 4).</p></li>
-<li><p>Determine the angle that goes from the x-axis to the normal axis. This angle is θ. If the direction from the x-axis to the normal axis is counterclockwise, then θ should be taken to be positive. If the direction from the x-axis to the normal axis is clockwise, then θ should be taken to be negative.</p></li>
+<li><p>Draw the axis normal (n) to the plane of interest.</p></li>
+<li><p>Determine the angle that goes from the x-axis to the normal axis. This angle is θ.</p>
+<ul>
+<li><p>Either angle labeled θ in the illustration will work and produce the same results.</p></li>
+<li><p>The angle rotated counterclockwise from the x axis is θ = 90 – β = 54°.</p></li>
+<li><p>The angel rotated clockwise from the x-axis is θ = - (90 + β) = - 126°</p></li>
+</ul></li>
 </ol>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/example 12.2 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="293"></p>
+<p><img src="images/chapter 12 figure updates 8.18.25/example 12.2 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="317"></p>
 </figure>
 </div>
-<p>Either angle labeled θ in the illustration will work and produce the same results. In this example, we will use the smaller of the two:</p>
-<p>θ = 90 – β = 54°.</p>
-<p>The angle is positive since the n-axis is rotated counterclockwise from the positive x-axis.</p>
-<p>With θ determined, the only thing left to do is make the subsitutions into the stress transformation equations and calculate. Note that the σ<sub>n</sub> equation will give us the normal stress on the rotated x-face (σ<sub>x’</sub>), We will also need to calculate σ<sub>n</sub> with the angle (θ + 90°) to get σ<sub>y’</sub> or use the stress invariance concept: (σ<sub>x</sub> + σ<sub>y</sub> = σ<sub>x’</sub> + σ<sub>y’</sub>)</p>
-<p>Substituting σ<sub>x</sub> = -1700 psi (negative since it is shown to be compressive), σ<sub>y</sub> = 800 psi, τ<sub>xy</sub> = 790 psi, and θ = 54° into:</p>
+<p>With θ determined, the only thing left to do is to make the substitutions into the stress transformation equations and calculate. Note that the σ<sub>n</sub> equation will give us the normal stress on the rotated x-face (σ<sub>x’</sub>), We will also need to calculate σ<sub>n</sub> with the angle (θ + 90°) to get σ<sub>y’</sub> or use the stress invariance concept: (σ<sub>x</sub> + σ<sub>y</sub> = σ<sub>x’</sub> + σ<sub>y’</sub>)</p>
+<p>Substituting σ<sub>x</sub> = -1700 psi (negative since it is shown to be compressive), σ<sub>y</sub> = 800 psi, τ<sub>xy</sub> = 790 psi, and θ = 54° into the stress transformation equations:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \sigma_n&amp;=\frac{\sigma_x+\sigma_y}{2}+\frac{\sigma_x-\sigma_y}{2} \cos (2 \theta)+\tau_{x y} \sin (2 \theta) \\[10pt]
@@ -836,9 +845,19 @@ Solution
 \]</span></p>
 <p>gives σ<sub>x’</sub> = 687.6 psi and τ<sub>x’y’</sub> = 945 psi.</p>
 <p>Furthermore, applying stress invariance: -1700 psi + 800 psi = 687.6 psi + σ<sub>y’</sub> gives σ<sub>y’</sub> = -1588 psi</p>
+<p><strong>Answers:</strong></p>
 <p><strong>σ<sub>x’</sub> = 687.6 psi</strong></p>
 <p><strong>τ<sub>x’y’</sub> = 945 psi</strong></p>
 <p><strong>σ<sub>y’</sub> = -1588 psi</strong></p>
+<p><strong>Stress element for rotated plane:</strong></p>
+<p>The 687.5 psi stress goes on the face rotated 54 degrees from the horizontal since this was the value obtained by substituting that angle into the stress transformation equation. It was determined to be tensile (positive), so it points away from the x’ face.</p>
+<p>The 1588 psi stress was determined to be compressive (negative), so if points towards the y’ face.</p>
+<p>The shear stress transformation equation gave us a positive result, indicating a positive shear stress, so the arrows are arranged on the stress element accordingly.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/chapter 12 figure updates 8.18.25/example 12.2 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="368"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
@@ -856,12 +875,13 @@ Step-by-step: Stress transformation
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Given a general stress state (σx, σy, and τxy) at a point in the x-y plane where x is the horizontal axis positive to the right and y is the vertical axis positive upwards:</p>
+<p>Given a general stress state (σ<sub>x</sub>, σ<sub>y</sub>, and τ<sub>xy</sub>) at a point in the xy plane* where x is the horizontal axis positive to the right and y is the vertical axis positive upwards:</p>
 <ol type="1">
 <li><p>Establish the angle θ that corresponds to the angle of rotation between the positive x-axis and the axis normal (x’) to the plane of interest. Remember to make the angle negative if the rotation is clockwise from the x axis to the normal axis and positive if the rotation is counterclockwise.</p></li>
-<li><p>Substitute in the stresses with appropriate sign and the angle θ with appropriate sign into the stress transformation equations to find σ<sub>n</sub> and τ<sub>nt</sub>. Remember that normal stresses are negative if compressive and positive if tensile, shear stresses are positive if the shear stress arrow on the positive x face points in the positive y direction and negative otherwise. This will give σ<sub>x’</sub> and τ<sub>x’y’</sub>.</p></li>
+<li><p>Substitute the stresses with appropriate signs and the angle θ with appropriate sign into the stress transformation equations to find σ<sub>n</sub> and τ<sub>nt</sub>. Remember that normal stresses are negative if compressive and positive if tensile, shear stresses are positive if the shear stress arrow on the positive x face points in the positive y direction and negative otherwise. This will give σ<sub>x’</sub> and τ<sub>x’y’</sub>.</p></li>
 <li><p>Use (θ+90°) in the σ<sub>n</sub> transformation equation or the concept of stress invariance (σx + σy = σx’ + σy’) to find σy’.</p></li>
 </ol>
+<p>*If the general stress state is given in some other plane, re-orient (rotate) the stress element so that one of the axes is positive to the right (this axis will correspond to the x-axis in the equations) and the other axis is positive upwards (this axis will correspond to the y-axis in the equations).</p>
 </div>
 </div>
 </section></details>
@@ -873,8 +893,8 @@ Step-by-step: Stress transformation
 <summary>
 Click to expand
 </summary>
-<p>Often, the plane we are the most concerned with is the one on which the normal stress or the shear stress is at a maximum because that is the one on which failure is most likely occur. The maximum and minimum normal stresses are referred to as the principal stresses (σ<sub>1</sub> and σ<sub>2</sub>) and the planes on which they act (described by angle of rotation of the stress element, θ<sub>p1</sub> and θ<sub>p2</sub>) are the principal planes. The maximum and minimum shear stresses are simply referred to as the maximum and minimum shear stress, respectively, and the planes on which they occur are referred to simply as the planes of maximum and minimum shear stress (denoted as θ<sub>s1</sub> and θ<sub>s2</sub>).</p>
-<p>It is important to note that in this section, only rotations within a two dimensional plane are being considered. As will be seen in <a href="#sec-12.5" class="quarto-xref"><span>Section 12.5</span></a>, the principal planes and principal stresses are the same even when considering out of plane rotation of the stress element (see <a href="#fig-12.9" class="quarto-xref">Figure&nbsp;<span>12.9</span></a>), but the max shear stress could be different. Therefore, the max and min sheer stress as determined by the below derived equations will be referred to as the max/min <em>in-plane</em> shear stress.</p>
+<p>Often, the plane we are the most concerned with is the one on which the normal stress or the shear stress is at a maximum because that is the one on which failure is most likely occur. The maximum and minimum normal stresses are referred to as the principal stresses (σ<sub>1</sub> and σ<sub>2</sub>) and the planes on which they act are the principal planes. The principal planes are described by angles of rotation,θ<sub>p1</sub> and θ<sub>p2,</sub> from the reference plane for which the general stress state as obtained. The maximum and minimum shear stresses are simply referred to as the maximum and minimum shear stress, respectively, and the planes on which they occur are referred to simply as the planes of maximum and minimum shear stress (denoted as angles θ<sub>s1</sub> and θ<sub>s2</sub>).</p>
+<p>It is important to note that in this section, only rotations within a two dimensional plane are considered. As will be seen in <a href="#sec-12.5" class="quarto-xref"><span>Section 12.5</span></a>, the principal planes and principal stresses are the same even when considering out of plane rotation of the stress element (see <a href="#fig-12.9" class="quarto-xref">Figure&nbsp;<span>12.9</span></a>), but the max shear stress could be different. Therefore, the max and min shear stress as determined by the below derived equations will be referred to as the max/min <em>in-plane</em> shear stress.</p>
 <div id="fig-12.9" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-12.9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -885,18 +905,18 @@ Figure&nbsp;12.9: The max shear stress obtained from in-plane rotations of the s
 </figcaption>
 </figure>
 </div>
-<p>As we rotate the stress element and the angle θ changes, the stress changes in a predictable way. <a href="#fig-12.10" class="quarto-xref">Figure&nbsp;<span>12.10</span></a> shows the variation of normal stress σ<sub>x’</sub> with angle θ. The principal stresses can be seen to occur at specific values of θ. These angles will be 90° apart from one another. A similar graph could be drawn for τ<sub>x’y’</sub>.</p>
+<p>As we rotate the stress element, the normal stress changes in a manner predictable with the stress transformation equations. <a href="#fig-12.10" class="quarto-xref">Figure&nbsp;<span>12.10</span></a> shows the variation of normal stress σ<sub>x’</sub> with angle θ. A similar graph could be drawn for τ<sub>x’y’</sub>. Based on the equations and the plots, we know that the max and min stresses will occur at angles 90° apart from one another.</p>
 <div id="fig-12.10" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-12.10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/CH12 figures/figure 12.7.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="469">
+<img src="images/CH12 figures/figure 12.7.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="354">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12.10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;12.10: Plot showing how normal stress σx’ varies with angle θ.
+Figure&nbsp;12.10: Plot showing how normal stress σ<sub>x’</sub> varies with angle θ.
 </figcaption>
 </figure>
 </div>
-<p>Since these stresses are maximums and minimums (i.e., the slope of the curve is zero at these points) and since the transformation equations derived in <a href="#sec-12.2.1" class="quarto-xref"><span>Section 12.2.1</span></a> are functions in terms of the plane rotation angle θ, we can simply take the derivatives of the two equations and set them equal to zero to find the angles at which we would get the maximum and minimum of each type of stress. Using the second set of transformation equations derived in <a href="#sec-12.2.1" class="quarto-xref"><span>Section 12.2.1</span></a> (though the first set would yield the same results):</p>
+<p>From calculus we know that the maximums and minimums of a function that result from varying a single variable can be found by setting the derivative of the function with respect to that variable equal to 0 and then solving the resulting equation for the variable in question. Plugging the variable back into the original equation gives the corresponding max or min value of the function. This is also equivalent to finding where the slope of the function is equal to 0. Thus, to find the angles for which the normal stress and in-plane shear stresses are at extremes, we can simply set the derivatives of the transformation equations (<a href="#eq-12.1" class="quarto-xref">Equation&nbsp;<span>12.1</span></a> or <a href="#eq-12.2" class="quarto-xref">Equation&nbsp;<span>12.2</span></a>) with respect to θ equal to 0, and solve for the θ values. Using <a href="#eq-12.2" class="quarto-xref">Equation&nbsp;<span>12.2</span></a> (though <a href="#eq-12.1" class="quarto-xref">Equation&nbsp;<span>12.1</span></a> would yield the same results):</p>
 <p><span class="math display">\[
 \begin{aligned}
 &amp; \frac{d \sigma_n}{d \theta}=-\left(\sigma_x-\sigma_y\right) \sin \left(2 \theta_p\right)+2 \tau_{x y} \cos \left(2 \theta_p\right)=0 \\[10pt]
@@ -913,20 +933,20 @@ Figure&nbsp;12.10: Plot showing how normal stress σx’ varies with angle θ.
 \tag{12.4}\]</span></span></p>
 <div class="line-block"><em>where</em><br>
 <em>𝜃<sub>p</sub> = Orientation of one of the principal planes, with respect to the x-axis [</em><span class="math inline">\(^\circ\)</span><em>, rad]</em><br>
-<em>𝜃<sub>s</sub> = Orientation of one of the maximum shear planes, with respect to the x-axis [</em><span class="math inline">\(^\circ\)</span><em>, rad]</em><br>
+<em>𝜃<sub>s</sub> = Orientation of the max or min in-plane shear plane, with respect to the x-axis [</em><span class="math inline">\(^\circ\)</span><em>, rad]</em><br>
 <em>𝜏<sub>xy</sub> = Average shear stress in the xy plane, prior to any transformation [Pa, psi]</em><br>
 <em>𝜎<sub>x</sub> = Average normal stress in the x-direction, prior to any transformation [Pa, psi]</em><br>
 <em>𝜎<sub>y</sub> = Average normal stress in the y-direction, prior to any transformation [Pa, psi]</em></div>
-<p>Once the angles associated with the planes of extreme stresses are determined, they can be substituted into <a href="#eq-12.1" class="quarto-xref">Equation&nbsp;<span>12.1</span></a> or <a href="#eq-12.2" class="quarto-xref">Equation&nbsp;<span>12.2</span></a> along with the stresses in the given plane to find the principal stresses and max/min shear stress.</p>
+<p>Once the angles associated with the planes of extreme stresses are determined, they can be substituted into <a href="#eq-12.1" class="quarto-xref">Equation&nbsp;<span>12.1</span></a> or <a href="#eq-12.2" class="quarto-xref">Equation&nbsp;<span>12.2</span></a> along with the stresses in the given plane to find the principal stresses and max/min in-plane shear stress.</p>
 <p>A few calculation details that it will be helpful to remember are:</p>
 <ol type="1">
-<li><p>The inverse tangent function has two possible solutions. One solution would be the angle that will be reported by a calculator, and the other possible answer is the angle that is that angle plus or minus 180°. So if you use your calculator to solve the tan (2θp) equation, you would take half that to get the first principal angle and then add or subtract 90 degrees to that principal angle to get the second. The same idea applies to finding the two θ<sub>s</sub> angles.</p></li>
+<li><p>The inverse tangent function has two possible solutions. One solution is the angle that will be reported by a calculator, and the other possible answer is the angle that is that angle plus or minus 180°. So if we take the inverse tangent of the expressions of <a href="#eq-12.4" class="quarto-xref">Equation&nbsp;<span>12.4</span></a>, and then divide that result by 2, we get one of the solution angles. Then adding or subtracting 90 degrees to that angle gives the second. This applies for the θ<sub>p</sub> and the θ<sub>s</sub> values</p></li>
 <li><p>By convention, the <em>most positive</em> of the two principal stresses is denoted as σ<sub>1</sub>. The other principal stress is then σ<sub>2</sub>. The angle that produces that σ<sub>1</sub> stress is θ<sub>p1</sub> and the angle that produces σ<sub>2</sub> is θ<sub>p2</sub>.</p></li>
-<li><p>The max and min in-plane shear stresses will always turn out to be equal in magnitude by opposite in sign, or in other words, the minimum shear stress is always the negative of the maximum shear stress. As with the principal planes and stresses, one would need to substitute one of the θ<sub>s</sub> angles into the shear stress transformation equation to determine which angle corresponds to the maximum in-plane shear stress and which corresponds to the minimum.</p></li>
-<li><p>The angles of maximum and minimum shear stresses are 90° apart from each other, and 45° apart from the principal directions. If one principal direction is found to be, for example, 40° then the other principal direction can be determined as either (40° + 90° =) 130° or (40° - 90° =) -50°. The angles of maximum and minimum in-plane shear stress can then be determined as either (40° + 45° =) 95° or (40° - 45° =) - 5°. It is also acceptable to add or subtract 45° from 130° or from – 50°.</p></li>
-<li><p>Given the variety of different of possible correct angles, we will use a convention that principal directions and angles of maximum and minimum shear stress will be calculated in the range – 90° ≤ θ ≤ + 90°.</p></li>
+<li><p>The max and min in-plane shear stresses will always turn out to be equal in magnitude by opposite in sign. In other words, the minimum shear stress is always the negative of the maximum shear stress. As with the principal planes and stresses, one would need to substitute one of the θ<sub>s</sub> angles into the shear stress transformation equation to determine which angle corresponds to the maximum in-plane shear stress and which corresponds to the minimum.</p></li>
+<li><p>The angles of maximum and minimum shear stresses are 90° apart from each other, and 45° apart from the principal directions. For example, if one principal stress is found to be 40°, then the other principal direction can be determined as either (40° + 90°) =130° or (40° - 90° ) = -50°. The angles of maximum and minimum in-plane shear stress can then be determined as either (40° + 45°) = 95° or (40° - 45°) = - 5°. It is also acceptable to add or subtract 45° from 130° or from – 50°.</p></li>
+<li><p>Given the variety of different of possible correct angles, we will use a convention that principal directions and angles of maximum and minimum shear stress will be reported as the ones in the range – 90° ≤ θ ≤ + 90°.</p></li>
 </ol>
-<p>If desired, the principal stresses and max./min. shear stresses can be calculated directly without first finding the principal directions:</p>
+<p>If desired, the principal stresses and max./min. shear stresses can also be calculated directly without first finding the principal directions. The following equations arise from some equation manipulation which will not be detailed here, but can be used generally. Adding the term under the square root will give either the max or min stress and subtracting will give the other.</p>
 <p><span id="eq-12.5"><span class="math display">\[
 \boxed{\begin{gathered}
 \sigma_{1,2}=\frac{\sigma_x+\sigma_y}{2} \pm \sqrt{\left(\frac{\sigma_x-\sigma_y}{2}\right)^2+\tau_{x y}{ }^2} \\[10pt]
@@ -940,11 +960,11 @@ Figure&nbsp;12.10: Plot showing how normal stress σx’ varies with angle θ.
 <em>𝜏<sub>xy</sub> = Average shear stress in the xy plane, prior to any transformation [Pa, psi]</em></div>
 <p>Some useful conclusions that can be drawn simply by studying the principal plane and plane of max/min shear stress equations are as follows:</p>
 <ol type="1">
-<li><p>If the shear stress transformation equation given in <a href="#sec-12.1" class="quarto-xref"><span>Section 12.1</span></a> is set equal to 0 in order to find the plane at which shear stress is equal to 0, we would arrive at the same equation as the Tan(2θ<sub>p</sub>) found above. We can then conclude that <u>shear stress is 0 on the principal planes</u>. It can also be said that if the shear stress is found to be 0 on any given plane, then that plane must be a principal plane.</p></li>
+<li><p>Setting the shear stress transformation equation given in <a href="#eq-12.1" class="quarto-xref">Equation&nbsp;<span>12.1</span></a> or <a href="#eq-12.2" class="quarto-xref">Equation&nbsp;<span>12.2</span></a> equal to 0 results in the same equation for tan(2θ) as the tan (2θ<sub>p</sub>) equation in <a href="#eq-12.4" class="quarto-xref">Equation&nbsp;<span>12.4</span></a>. We can then conclude that <u>shear stress is 0 on the principal planes</u>. It can also be said that if the shear stress is found to be 0 on any given plane, then that plane must be a principal plane.</p></li>
 <li><p>The equation for tan (2θ<sub>s</sub>) is the negative inverse of the equation for tan (2θ<sub>p</sub>). This means that 2θ<sub>s</sub> = 2θ<sub>p</sub> ± 90° or θ<sub>s</sub> = θ<sub>p</sub> ± 45°. Recognizing this can allow one to calculate one set of angles more efficiently once the other is found.</p></li>
-<li><p>If either of the θ<sub>s</sub> angles are substituted into the normal stress transformation equation, the normal stress would work out to be the average stress <span class="math inline">\(\left(\frac{\sigma_x+\sigma_y}{2}\right)\)</span>. Once again, this recognition can help make determining the total stress state on the plane of max/min shear stress more efficient.</p></li>
+<li><p>When either of the θ<sub>s</sub> angles are substituted into the normal stress transformation equation, the normal stress will always work out to be the average stress <span class="math inline">\(\left(\frac{\sigma_x+\sigma_y}{2}\right)\)</span>. Once again, this recognition can help make determining the total stress state on the plane of in-plane max/min shear stress more efficient.</p></li>
 </ol>
-<p><a href="#exm-12.3" class="quarto-xref">Example&nbsp;<span>12.3</span></a> demonstrates the calculation of the principal stresses, the maximum in-plane shear stress, and the orientations that these stresses occur at.</p>
+<p><a href="#exm-12.3" class="quarto-xref">Example&nbsp;<span>12.3</span></a> demonstrates the calculation of the principal stresses, the maximum in-plane shear stress, and the planes at which these stresses occur.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -961,7 +981,7 @@ Example 12.3
 <p><span class="theorem-title"><strong>Example 12.3</strong></span> &nbsp;</p>
 <p>
 </p>
-<p>The state of plane stress at a point is represented by the stress element below. Determine the principal stresses and the maximum in-plane shear stress and draw the corresponding stress elements.</p>
+<p>The general stress state at a point in the xy plane is represented by the stress element below. Determine the principal stresses and the maximum in-plane shear stress. Then draw the stress element rotated to one of the principal planes and the plane of max or min in-plane shear stress.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/CH12 figures/example 12.3 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="346"></p>
@@ -979,60 +999,49 @@ Solution
 </div>
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Following the steps given at the end of <a href="#sec-12.2" class="quarto-xref"><span>Section 12.2</span></a>:</p>
 <ol type="1">
-<li><p>Find the principal planes using<br>
-<span class="math display">\[
-\begin{aligned}
-&amp; \operatorname{tan}\left(2 \theta_p\right)=\frac{2 \tau_{x y}}{\left(\sigma_x-\sigma_y\right)} \\
-\end{aligned}
-\]</span><br>
-<br>
-With σ<sub>x</sub> = -80 MPa, σ<sub>y</sub> = 50 MPa, and τ<sub>xy</sub> = -25 MPa, we get:</p>
+<li><p>Find the principal planes, substituting σ<sub>x</sub> = -80 MPa, σ<sub>y</sub> = 50 MPa, and τ<sub>xy</sub> = -25 MPa into <a href="#eq-12.4" class="quarto-xref">Equation&nbsp;<span>12.4</span></a><br>
+</p>
 <p><span class="math display">\[
 \begin{aligned}\tan (2\theta_p)&amp;=\frac{2\tau_{xy}}{(\sigma_x-\sigma_y)}\\[10pt]
-&amp;=\frac{2*-25 MPa}{(-80 MPa - 50 MPa)}\\[10pt]
+&amp;=\frac{2\ (-25 MPa)}{(-80 MPa - 50 MPa)}\\[10pt]
 &amp;=.3846\end{aligned}
 \]</span></p>
 <p><span class="math display">\[
-2\theta_p=tan^{-1}(.3846) = 21.038^\circ\\
+2\theta_p=tan^{-1}(.3846) = 21.038^\circ\\[10pt]
 \theta_p=10.52^\circ
 \]</span></p>
 <p>So one of the principal angles is 𝜃<sub>p</sub> = 10.52°.</p>
 <p>The other angle is then θ<sub>p</sub> = 10.52° + 90° = 100.52°</p>
 <p>Thus, the principal plane angles are 10.52° and 100.52°.</p></li>
-<li><p>Subbing θ<sub>p</sub> = 10.52° into:<br>
-<span class="math display">\[
-\begin{aligned}
-&amp; \sigma_n=\frac{\sigma_x+\sigma_y}{2}+\frac{\sigma_x-\sigma_y}{2} \cos (2 \theta)+\tau_{x y} \sin (2 \theta) \\
-\end{aligned}
-\]</span></p>
-<p>gives:</p>
+<li><p>Subbing θ<sub>p</sub> = 10.52° into <a href="#eq-12.2" class="quarto-xref">Equation&nbsp;<span>12.2</span></a> gives:</p>
 <p><span class="math display">\[
-\begin{aligned}&amp; \sigma_{n_1}=\frac{-80{~MPa}+50{~MPa}}{2}+\frac{-80{~MPa}-50{~MPa}}{2}\cos(2*10.52^\circ)-25{~MPa}*\sin(2*10.52^\circ) \\[10pt]
-&amp; \sigma_{n_1}=-84.65{~MPa} \\\end{aligned}
+\begin{aligned}
+\sigma_n&amp;=\frac{\sigma_x+\sigma_y}{2}+\frac{\sigma_x-\sigma_y}{2} \cos (2 \theta)+\tau_{x y} \sin (2 \theta) \\[10 pt]
+&amp;=\frac{-80{~MPa}+50{~MPa}}{2}+\frac{-80{~MPa}-50{~MPa}}{2}\cos(2*10.52^\circ)-25{~MPa}*\sin(2*10.52^\circ) \\[10pt]
+&amp; =-84.65{~MPa} \\\end{aligned}
 \]</span></p>
 <p>and subbing θ<sub>p</sub> = 100.52° into the same equation gives:</p>
 <p><span class="math display">\[
-\begin{aligned}&amp; \sigma_{n_2}=\frac{-80{~MPa}+50{~MPa}}{2}+\frac{-80{~MPa}-50{~MPa}}{2}\cos(2*100.52^\circ)-25{~MPa}*\sin(2*100.52^\circ) \\[10pt]
-&amp; \sigma_{n_2}=54.65{~MPa}\end{aligned}
+\begin{aligned}&amp; \sigma_{n}=\frac{-80{~MPa}+50{~MPa}}{2}+\frac{-80{~MPa}-50{~MPa}}{2}\cos(2*100.52^\circ)-25{~MPa}*\sin(2*100.52^\circ) \\[10pt]
+&amp; \sigma_{n}=54.65{~MPa}\end{aligned}
 \]</span></p>
 <p>Since 54.7 MPa is the more positive of the two principal stresses, σ<sub>1</sub> = 54.7 MPa and σ<sub>2</sub> = -84.7 MPa.</p>
 <p>Based on the above results, we know that rotating the stress element counterclockwise by 10.52° results in σ<sub>2</sub> = -84.7 MPa on the x’ face and σ<sub>1</sub> = 54.7 MPa on the y’ face.<br>
 <br>
 Conversely, if the stress element is rotated counterclockwise by 100.52°, the stress on the x’ face would be 54.7 MPa and the stress on the y’ face would be -84.7 MPa.</p>
-<p>Drawing the stress element rotated to the principal plane θ<sub>p</sub> = 10.52°:</p>
-<p><img src="images/chapter 12 figure edits/example 12.3 part 2.png" class="img-fluid" width="354"></p>
-<p>Notice that the stress element looks the same no matter which angle is used for the rotation. Also note that the shear stress on the principal plane is 0.</p></li>
+<p>The element rotated to the principal planes is shown below:</p>
+<p><img src="images/chapter 12 figure updates 8.18.25/example 12.3 part 2.png" class="img-fluid" width="404"></p>
+<p>Notice that the stress element looks the same no matter which angle is used for the rotation. Also note that we know from the discussion at the end of <a href="#sec-12.3" class="quarto-xref"><span>Section 12.3</span></a> that the shear stress on the principal plane is 0.</p></li>
 <li><p>Next we will find the planes of max/min in-plane shear planes as well as the corresponding shear stresses. We could use:<br>
 <span class="math display">\[
 \tan (2\theta_s)=-\frac{(\sigma_x-\sigma_y)}{2 \tau_{x y}}
 \]</span></p>
-<p>But since we already have the θ<sub>p</sub> angles, we can also more easily use:</p>
+<p>but since we already have the θ<sub>p</sub> angles, we can also more easily use:</p>
 <p><span class="math display">\[
 \theta_S=\theta_p \pm 45^\circ
 \]</span></p>
-<p>We can choose either θ<sub>p</sub> angle to add and subtract the 45° to and from. The final orientation of the element would be the same. Since it is generally easier to visualize angle rotations smaller in magnitude than 90°, we will use the smaller θ<sub>p</sub> value,</p>
+<p>We can choose either θ<sub>p</sub> angle to add and subtract the 45° to and from. The final orientation of the element would be the same either way. Since it is generally easier to visualize angle rotations smaller in magnitude than 90°, we will use the smaller θ<sub>p</sub> value.</p>
 <p><br>
 So θ<sub>s</sub> = 10.52° +/- 45° = 55.5° and -34.5°.</p></li>
 <li><p>Subbing θ<sub>s</sub> = 55.5° into:<br>
@@ -1041,28 +1050,29 @@ So θ<sub>s</sub> = 10.52° +/- 45° = 55.5° and -34.5°.</p></li>
 \]</span></p>
 <p>gives <span class="math display">\[
 \begin{aligned}
-&amp;\tau_{nt}=-\frac{-80{~MPa}-50{~MPa}}{2}\sin(2*55.5^\circ)-25{~MPa}\cos(2*55.5^\circ)\\
-&amp;\tau_{nt}=69.6{~MPa}
+\tau_{nt}&amp;=-\frac{-80{~MPa}-50{~MPa}}{2}\sin(2*55.5^\circ)-25{~MPa}\cos(2*55.5^\circ)\\[10pt]
+&amp;=69.6{~MPa}
 \end{aligned}
 \]</span></p>
 <p>Since this is a positive value, we know that this is the max in-plane shear stress and that θ<sub>s</sub> = -34.5° should give τ<sub>nt</sub> = -69.6 MPa = τ<sub>min</sub> (in-plane).</p>
-<p>If we rotate the stress element counterclockwise by 55.5°, we would draw a positive shear stress and if we rotate it clockwise 34.5°, we would draw a negative shear stress.</p></li>
+<p>If we rotate the stress element counterclockwise by 55.5°, we would draw a positive shear stress and if we rotate it clockwise by 34.5°, we would draw a negative shear stress.</p></li>
 <li><p>The normal stress on the plane of max/min in-plane shear stress is:<br>
 <span class="math display">\[
 \begin{aligned}
-&amp;\sigma=\sigma_{avg}=\frac{\left(\sigma_x+\sigma_y\right)}{2}\\
-&amp;\sigma_{avg}=\frac{-80{~MPa}+50{~MPa}}{2}\\
-&amp;\sigma_{avg}=-15{~MPa}
+\sigma&amp;=\sigma_{avg}=\frac{\left(\sigma_x+\sigma_y\right)}{2}\\[10pt]
+&amp;=\frac{-80{~MPa}+50{~MPa}}{2}\\[10pt]
+&amp;=-15{~MPa}
 \end{aligned}
 \]</span></p></li>
 </ol>
-<p>Drawing the stress rotated to the planes of max/min shear stress:</p>
+<p>Drawing the stress element rotated to the planes of max/min in-plane shear stress:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/chapter 12 figure edits/exampler 12.3 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="359"></p>
+<p><img src="images/chapter 12 figure updates 8.18.25/example 12.3 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="382"></p>
 </figure>
 </div>
 <p>Once again, notice that the stress element looks fundamentally the same regardless of which θ<sub>s</sub> angle is used.</p>
+<p><strong>Answers:</strong></p>
 <p><strong>θ<sub>p1</sub> = 100.52° and θ<sub>p2</sub> = 10.52°</strong></p>
 <p><strong>σ<sub>1</sub> = 54.7 MPa and σ<sub>2</sub> = - 84.7 MPa</strong></p>
 <p><strong>θ<sub>s</sub> = 55.5° and -34.5°</strong></p>
@@ -1088,11 +1098,11 @@ Step-by-step: Principal Stresses and max/min shear stress
 <div class="callout-body-container callout-body">
 <p>Given a general stress state (σx, σy, and τxy) at a point in the x-y plane where x is the horizontal axis positive to the right and y is the vertical axis positive upwards:</p>
 <ol type="1">
-<li><p>Use the tan(2θ<sub>p</sub>) equation to find the planes of principal stresses. The angle reported by the calculator provides twice one of the angles. The other is determined by adding or subtracting 90° from the first.</p></li>
+<li><p>Use the tan(2θ<sub>p</sub>) equation to find the planes of principal stresses. One of the principal angles is found using the inverse tan function on the calculator. The other will be 90° from that one.</p></li>
 <li><p>Substitute the two θ<sub>p</sub> angles into the σ<sub>n</sub> transformation equation to determine the principal stresses. The most positive of the two is deemed σ<sub>1</sub> and the other is σ<sub>2</sub>. Alternatively, only sub one of the angles into the stress transformation to get one of the principal stresses. The other principal stress can be calculated using stress invariance.</p></li>
 <li><p>Use the tan(2θ<sub>s</sub>) equation to find the planes of max/min in-plane shear stress. Alternatively, add/subtract 45° to one of the principal plane angles.</p></li>
-<li><p>Substitute one of the θs angles into the τ<sub>nt</sub> equation to determine whether it leads to the max in-plane shear stress or the min. The other angle will lead to a shear stress of equal magnitude but opposite sign.</p></li>
-<li><p>Calculate the average stress. This stress is the normal stress on the x’ and y’ faces when the element is rotated to the planes of max/min in-plane shear stress.</p></li>
+<li><p>Substitute one of the θ<sub>s</sub> angles into the τ<sub>nt</sub> equation to determine whether it leads to the max in-plane shear stress or the min in-plane shear stress. The other angle will lead to a shear stress of equal magnitude but opposite sign.</p></li>
+<li><p>Calculate the average stress. This stress is the normal stress on the x’ and y’ faces when the stress element is rotated to the planes of max/min in-plane shear stress.</p></li>
 </ol>
 </div>
 </div>
@@ -1104,7 +1114,7 @@ Step-by-step: Principal Stresses and max/min shear stress
 <summary>
 Click to expand
 </summary>
-<p>As an alternative to using equations to determine principal planes and stresses as well as max/min shear planes and stresses, one can use a graphical method known as Mohr’s Circle. This method is based on the fact that the stress transformation equations are actually parametric equations of a circle. The perimeter of the circle consists of coordinate points that correspond to normal stress on the horizontal axis and shear stress on the vertical axis. The advantage of using Mohr’s Circle is that it does not involve needing to recall equations and can be quick and efficient to use with some practice.</p>
+<p>As an alternative to using equations to determine principal planes and stresses as well as max/min shear planes and stresses, one can use a graphical method known as Mohr’s Circle. This method is based on the fact that the stress transformation equations are actually parametric equations of a circle. The perimeter of the circle consists of coordinate points that correspond to normal stress on the horizontal axis and shear stress on the vertical axis. The advantage of using Mohr’s Circle is that it does not involve needing to recall equations and can be quick and efficient to use with some practice. It is also used more extensively in more advanced topics on material behavior.</p>
 <p>To illustrate the construction of Mohr’s circle, we will use the reference stress state element in <a href="#fig-12.11" class="quarto-xref">Figure&nbsp;<span>12.11</span></a>.</p>
 <div id="fig-12.11" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
@@ -1116,11 +1126,15 @@ Figure&nbsp;12.11: Reference stress state element
 </figcaption>
 </figure>
 </div>
-<p>Now we can take the following steps (the fully constructed circle can be found in <a href="#fig-12.16" class="quarto-xref">Figure&nbsp;<span>12.16</span></a>):</p>
+<p>Now we can take the following steps (reference the fully constructed circle in <a href="#fig-12.16" class="quarto-xref">Figure&nbsp;<span>12.16</span></a> for each step):</p>
 <ol type="1">
-<li><p>To start, draw a set of coordinate axes where normal stress will be on the horizontal axis and shear stress will be on horizontal axis. Note in <a href="#fig-12.14" class="quarto-xref">Figure&nbsp;<span>12.14</span></a> that the shear stress is labeled with a (CW) for clockwise on the positive side and a (CCW) for counterclockwise on the negative side. The reason is explained in step 2 below.</p></li>
-<li><p>Plot the <u>x-point.</u> The x-point represents the stresses applied to the x-face of the stress element, as shown in <a href="#fig-12.12" class="quarto-xref">Figure&nbsp;<span>12.12</span></a>, with coordinates (𝜎<sub>x</sub>, 𝜏<sub>xy</sub>). The normal stress coordinate is positive if tensile and negative if compressive. The sign of the shear stress coordinate depends on the direction of rotation that the shear stress on the x-face will cause. If it causes the element to rotate clockwise, it is positive, and if causes the element to rotate counterclockwise, it is negative..</p>
-<p>On the stress element in <a href="#fig-12.11" class="quarto-xref">Figure&nbsp;<span>12.11</span></a>, the normal stress on the x-face is tensile and the upwards shear stress tends to cause the element to rotate counterclockwise, so the x-point is (+σ<sub>x</sub>, -τ<sub>xy</sub>).</p>
+<li><p>To start, draw a set of coordinate axes where normal stress will be on the horizontal axis and shear stress will be on vertical axis. Note in the figures containing the circle below, the shear stress axis is labeled with a (CW) for clockwise on the positive side and a (CCW) for counterclockwise on the negative side. The reason is explained in step 2 below.</p></li>
+<li><p>Plot the <u>x-point.</u></p>
+<p>The x-point represents the stresses applied to the x-face of the stress element, as shown in <a href="#fig-12.12" class="quarto-xref">Figure&nbsp;<span>12.12</span></a>, with coordinates (𝜎<sub>x</sub>, 𝜏<sub>xy</sub>).</p>
+<ul>
+<li><p>The normal stress coordinate is positive if tensile and negative if compressive.</p></li>
+<li><p>The sign of the shear stress coordinate depends on the direction of rotation that the shear stress on the x-face will cause. If it causes the element to rotate clockwise, it is considered a positive coordinate, and if causes the element to rotate counterclockwise, it is negative..</p>
+<p>On the stress element in <a href="#fig-12.11" class="quarto-xref">Figure&nbsp;<span>12.11</span></a>, the normal stress on the x-face is tensile and the upwards shear stress tends to cause the element to rotate counterclockwise, so the x-point is (+σ<sub>x</sub>, -τ<sub>xy</sub>). This point is shown plotted in <a href="#fig-12.14" class="quarto-xref">Figure&nbsp;<span>12.14</span></a>.</p>
 <div id="fig-12.12" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-12.12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1131,7 +1145,9 @@ Figure&nbsp;12.12: Stresses applied to positive x-face form the x-point.
 </figcaption>
 </figure>
 </div></li>
-<li><p>Plot the <u>y-point</u>. Similarly to the x-point, the y-point generally consists of coordinates (𝜎<sub>y</sub>, 𝜏<sub>xy</sub>). The sign convention is the same as for the x-point, but the sign of the shear stress coordinate depends on the rotation caused by the shear stress on the positive y-face. As illustrated in <a href="#fig-12.13" class="quarto-xref">Figure&nbsp;<span>12.13</span></a> for the stress element given in <a href="#fig-12.11" class="quarto-xref">Figure&nbsp;<span>12.11</span></a>, the normal stress on the y face is tensile and the rightwards shear stress tends to cause the element to rotate clockwise, so the y-point is (+σ<sub>y</sub>, +τ<sub>xy</sub>).</p></li>
+</ul></li>
+<li><p>Plot the <u>y-point</u>.</p>
+<p>Similarly to the x-point, the y-point consists of coordinates (𝜎<sub>y</sub>, 𝜏<sub>xy</sub>). The sign convention is the same as that described for the x-point. As illustrated in <a href="#fig-12.13" class="quarto-xref">Figure&nbsp;<span>12.13</span></a> for the stress element given in <a href="#fig-12.11" class="quarto-xref">Figure&nbsp;<span>12.11</span></a>, the normal stress on the y face is tensile and the rightwards shear stress tends to cause the element to rotate clockwise, so the y-point is (+σ<sub>y</sub>, +τ<sub>xy</sub>). This point is shown plotted in <a href="#fig-12.14" class="quarto-xref">Figure&nbsp;<span>12.14</span></a>.</p></li>
 </ol>
 <div id="fig-12.13" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -1143,43 +1159,42 @@ Figure&nbsp;12.13: Stresses applied to positive y-face form the xy-point.
 </figcaption>
 </figure>
 </div>
-<div id="fig-12.14" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="369">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-12.14-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/chapter 12 figure edits/figure 12.14.png" id="fig-12.14" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" width="369">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-12.14-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;12.14
-</figcaption>
-</figure>
-</div>
 <ol start="4" type="1">
-<li><p>Draw the circle around the diameter formed by connecting the x- and y-points.The center of the circle is the average normal stress:</p>
+<li><p>Draw the circle around the diameter formed by connecting the x- and y-points.The center of the circle is the average normal stress and will be denoted with the letter C:</p>
 <p><span class="math display">\[
 C=(\frac{\sigma_x+\sigma_y}{2},0)
 \]</span></p>
-<p>Note that use of the variable “C” below refers to the average nomal stress, <span class="math inline">\(\frac{\sigma+\sigma_y}{2}\)</span> .</p>
-<p>Note that the radial line that goes from C to the x-point represents the reference x-axis and the radius from C to the y-point represents the reference y-axis.</p></li>
-<li><p>The radius, R, can be determined using of the Pythagorean Theorem on the triangle formed between C, σ<sub>x</sub>, and the x-point.<br>
-<span class="math display">\[
-R=\sqrt{\left(\sigma_x-C\right)^2+\tau_{x y}^2}
-\]</span></p>
-<div id="fig-12.15" class="quarto-float quarto-figure quarto-figure-center anchored" width="479">
+<p>Note that the radial line that goes from C to the x-point represents the reference x-axis and the radius from C to the y-point represents the reference y-axis.</p>
+<div id="fig-12.14" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-12.15-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/chapter 12 figure edits/figure 12.15.png" id="fig-12.15" class="img-fluid figure-img" width="479">
+<div aria-describedby="fig-12.14-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/chapter 12 figure edits/figure 12.14.png" class="img-fluid figure-img" width="449">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-12.15-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;12.15
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12.14-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.14: Mohr’s circle with the x-point, y-point, and center point plotted
 </figcaption>
 </figure>
 </div></li>
-<li><p>Recalling that the shear stress is zero on the principal plane, we can see that principal plane is simply the normal stress axis. Thus, we can identify σ<sub>1</sub> to be the point on the right extreme of the circle and σ<sub>2</sub> to be the point on the left extreme of the circle (see figure):</p>
+<li><p>The radius of the circle, R, can be determined using of the Pythagorean Theorem on the triangle formed between C, σ<sub>x</sub>, and the x-point:<br>
+<span class="math display">\[
+R=\sqrt{\left(\sigma_x-C\right)^2+\tau_{x y}^2}
+\]</span></p>
+<div id="fig-12.15" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-12.15-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/chapter 12 figure edits/figure 12.15.png" class="img-fluid figure-img" width="490">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12.15-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.15: The radius of the circle can be found using Pythagorean Theorem
+</figcaption>
+</figure>
+</div></li>
+<li><p>Recalling that the shear stress is zero on the principal plane, we can see that principal plane is simply the normal stress axis. Thus, we can identify σ<sub>1</sub> to be the point on the right extreme of the circle and σ<sub>2</sub> to be the point on the left extreme of the circle.</p>
 <p><span class="math display">\[
 \sigma_1=C+R\\
 \sigma_2=C-R\\
 \]</span></p>
-<p>These points can be found on <a href="#fig-12.13" class="quarto-xref">Figure&nbsp;<span>12.13</span></a>.</p></li>
+<p>These points can be found on <a href="#fig-12.16" class="quarto-xref">Figure&nbsp;<span>12.16</span></a>.</p></li>
 <li><p>The max and min in-plane shear stress is at the bottom and top of the circle, respectively:</p>
 <p><span class="math display">\[
 \tau_{max}=+R\\
@@ -1190,13 +1205,14 @@ Figure&nbsp;12.15
 <p>Since that plane passes through the center of the circle, we can confirm that the normal stress on the plane of max/min shear stress is <span class="math inline">\(\mathrm{C}=\sigma_{avg}=\frac{\sigma_x+\sigma_y}{2}\)</span>.</p>
 <p>These points can be found on <a href="#fig-12.16" class="quarto-xref">Figure&nbsp;<span>12.16</span></a>.</p></li>
 <li><p>Rotations around the circle represent twice the actual amount of rotation between planes. Furthermore, rotations counterclockwise from the x-point are positive angles and rotations clockwise from the x-point are negative angles.</p>
-<p>Thus, the angle between the principal plane and the x-point on the circle is 2θp. This angle can be determined by applying right triangle trigonometry principles to the right triangle used to find the radius:<br>
+<p>Thus, the angle between the principal plane and the x-point on the circle is 2θp. This angle can be determined by applying right triangle trigonometry principles to the same right triangle used to find the radius:<br>
 <span class="math display">\[
 \tan (2 \theta p)=\frac{\tau_{x y}}{\sigma_x-C}
 \]</span><br>
-Looking at <a href="#fig-12.16" class="quarto-xref">Figure&nbsp;<span>12.16</span></a>, we can see that in this case, the 2𝜃<sub>p</sub> angle is a counterclockwise rotation from the reference x-axis to the principal axis, so if we were to draw the stress element rotated counterclockwise to 𝜃<sub>p</sub> , 𝜎<sub>1</sub> would be drawn on the x’ face and 𝜎<sub>2</sub> would be drawn on the y’ face.</p></li>
+</p>
+<p>Looking at <a href="#fig-12.16" class="quarto-xref">Figure&nbsp;<span>12.16</span></a>, we can see that in this case, the 2𝜃<sub>p</sub> angle is a counterclockwise rotation from the reference x-axis to the principal axis. If we were to draw the stress element rotated counterclockwise to 𝜃<sub>p</sub> , 𝜎<sub>1</sub> would be drawn on the x’ face and 𝜎<sub>2</sub> would be drawn on the y’ face.</p></li>
 <li><p>The angle to the plane of max/min in-plane shear stress, θ<sub>s</sub>, can be found in a similar manner. Visual inspection shows that 2θ<sub>s</sub> will be the complement of 2θ<sub>p</sub>. Recalling the convention used to apply sign to the shear stress coordinate, the angle that goes from the reference x-axis to the negative side of the shear stress axis will correspond to the rotation that results in the maximum in-plane shear stress and vice versa.</p>
-<p>Once these quantities are known, the use of the circle to perform stress transformations at arbitrary planes requires making similar trigonometric calculations. This process is better illustrated in <a href="#exm-12.4" class="quarto-xref">Example&nbsp;<span>12.4</span></a>.</p></li>
+<p>Once these quantities are known, the use of the circle to perform stress transformations at arbitrary planes requires making similar trigonometric calculations.</p></li>
 </ol>
 <div id="fig-12.16" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
@@ -1225,10 +1241,10 @@ Example 12.4
 <p><span class="theorem-title"><strong>Example 12.4</strong></span> &nbsp;</p>
 <p>
 </p>
-<p>For the stress state given by on stress element below, use Mohr’s Circle to find:</p>
+<p>For the general stress state in the xy plane represented on the stress element below, use Mohr’s Circle to find:</p>
 <p>a) The principal planes and principal stresses. Sketch the stress element rotated to these planes.</p>
-<p>b) The max in-plane shear stress and the plane at which it acts. Sketch the stress element rotated to this plane.</p>
-<p>c) The stress state on the plane on which the stress element is rotated clockwise 40°. Sketch the stress element rotated to this plane.</p>
+<p>b) The max in-plane shear stress and the plane on which it acts. Sketch the stress element rotated to this plane.</p>
+<p>c) The stress state on the plane rotated clockwise 40°. Sketch the stress element rotated to this plane.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/CH12 figures/example 12.4 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="320"></p>
@@ -1246,16 +1262,19 @@ Solution
 </div>
 <div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>For parts a and b, follow the steps given in <a href="#sec-12.3" class="quarto-xref"><span>Section 12.3</span></a>:</p>
+<p>For parts a and b, follow the steps given in <a href="#sec-12.4" class="quarto-xref"><span>Section 12.4</span></a> to construct the circle.</p>
+<p>Illustrations of partially done Mohr’s circle are provided at various intermediate steps. The complete circle with values can be found at the end of step 9.</p>
 <ol type="1">
-<li><p>The step of drawing the axes will be done as a part of step 3.</p></li>
-<li><p>Identify and plot the x-point: Looking at the positive x-face, the normal stress is compressive, so the horizontal coordinate will be -60 MPa. The shear stress arrow is upwards, which would tend to rotate the element counterclockwise, so the vertical coordinate will be negative, or -30 MPa. The x-point is then (-60,-30) MPa.</p>
+<li><p>Draw the σ and τ axes.</p></li>
+<li><p>Identify and plot the x-point:</p>
+<p>Looking at the positive x-face, the normal stress is compressive, so the horizontal coordinate will be -60 MPa. The shear stress arrow is pointed upwards, which would tend to rotate the element counterclockwise, so the vertical coordinate will be negative, or -30 MPa. The x-point is then (-60,-30) MPa.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/CH12 figures/example 12.4 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="373"></p>
 </figure>
 </div></li>
-<li><p>Identify and plot the y-point: Looking at the positive y-face, the normal stress is tensile, so the horizontal coordinate will be +15 MPa. The shear stress arrow is to the right, which would tend to rotate the element clockwise, so the vertical coordinate will be positive, or +30 MPa. The y-point is then (15,30) MPa.</p>
+<li><p>Identify and plot the y-point:</p>
+<p>Looking at the positive y-face, the normal stress is tensile, so the horizontal coordinate will be +15 MPa. The shear stress arrow is to the right, which would tend to rotate the element clockwise, so the vertical coordinate will be positive, or +30 MPa. The y-point is then (15,30) MPa.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/CH12 figures/example 12.4 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="374"></p>
@@ -1268,120 +1287,150 @@ Solution
 &amp;C=\frac{-60{~MPa}+15{~MPa}}{2}\\
 &amp;C=-22.5{~MPa}
 \end{aligned}
-\]</span></p>
-<p><img src="images/chapter 12 figure edits/example 12.4 part 4.png" class="img-fluid" width="439"></p></li>
-<li><p>The radius of the circle is:</p></li>
+\]</span></p></li>
+<li><p>Find the radius of the circle, R.</p>
+<p>Note that since the given loading involves negative normal stresses, we will use absolute values when calculating distances and lengths:</p></li>
 </ol>
 <p><span class="math display">\[
 \begin{aligned}
-&amp;R=\sqrt{(\sigma_x-C)^2+\tau_{xy}^2}\\[10pt]
-&amp;R=\sqrt{(-60{~MPa}-(-22.5{~MPa}))^2+(30{~MPa})^2}\\[10pt]
+&amp;R=\sqrt{(|\sigma_x|-|C|)^2+\tau_{xy}^2}\\[10pt]
+&amp;R=\sqrt{(60{~MPa}-22.5{~MPa})^2+(30{~MPa})^2}\\[10pt]
 &amp;R=48.02{~MPa}
 \end{aligned}
 \]</span></p>
-<p>6. We can now find σ<sub>1</sub>, which is the distance from the origin to the rightmost point of the circle on the σ axis. Since C is negative, we can find distance to be:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/chapter 12 figure updates 8.18.25/example 12.4 part 4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="391"></p>
+</figure>
+</div>
+<p>6. Find σ<sub>1</sub> and σ<sub>2</sub>:</p>
+<p>σ<sub>1</sub> is the distance from the origin to the rightmost point of the circle on the σ axis. Noting that C is negative, we will use the absolute value:</p>
 <p><span class="math display">\[
 \begin{aligned}
-&amp;\sigma_1=C+R\\
-&amp;\sigma_1=-22.5{~MPa}+48.02{~MPa}\\
-&amp;\sigma_1=25.52{~MPa}
+\sigma_1&amp;=R-|C|\\[10pt]
+&amp;=48.02\ MPa-22.5{~MPa}\\[10pt]
+&amp;=25.52{~MPa}
 \end{aligned}
 \]</span></p>
-<p>We can find σ<sub>2</sub>, which is the distance from the origin to the leftmost point of the circle on the σ axis. This distance can be expressed as:</p>
+<p>σ<sub>2</sub> is the distance from the origin to the leftmost point of the circle on the σ axis. The distance is calculated by absolute value and the negative sign is applied to the total based on noting by inspection of the circle that σ<sub>2</sub> must be negative.</p>
 <p><span class="math display">\[
 \begin{aligned}
-&amp;\sigma_2=C-R\\
-&amp;\sigma_2=-22.5{~MPa}-48.02{~MPa}\\
-&amp;\sigma_2=-70.52{~MPa}
+\sigma_2&amp;=-(R+|C|)\\[10pt]
+&amp;=-(48.02\ MPa + 22.5{~MPa})\\[10pt]
+&amp;=-70.52{~MPa}
 \end{aligned}
 \]</span></p>
 <ol start="7" type="1">
-<li>The max in-plane shear stress is the bottom most point of the circle which is simply R = 48.02 MPa, or τ<sub>max</sub> (in-plane) = 48.0 MPa.</li>
-</ol>
-<p>The normal stress on this plane is C = -22.5 MPa.</p>
-<ol start="8" type="1">
-<li>Find the principal planes. One of them can be found by using the triangle drawn in the third quadrant of the circle:</li>
+<li><p>Find τ<sub>max</sub> (in-plane) and the corresponding normal stress:</p>
+<p>The max in-plane shear stress is the bottom most point of the circle which is simply R = 48.02 MPa, or τ<sub>max</sub> (in-plane) = 48.0 MPa.</p>
+<p>The normal stress on this plane is C = -22.5 MPa.</p></li>
+<li><p>Find the principal planes:</p>
+<p>One of the principal planes can be found by using the triangle drawn in the third quadrant of the circle (see figure below). The angle in this triangle is twice the angle between the reference x-axis and the principal plane that corresponds to σ<sub>2</sub>.</p>
+<p>Again, absolute values are used to calculate the triangle lengths and signs are assigned to the resulting angles based on visual inspection of clockwise versus counterclockwise rotation.</p></li>
 </ol>
 <p><span class="math display">\[
 \begin{aligned}
-&amp;\tan(2\theta_p)=\frac{\tau_{xy}}{\sigma_x-C}\\
-&amp;\tan(2\theta_p)=\frac{30{~MPa}}{-60{~MPa}-(-22.5{~MPa})}\\
-&amp;\tan(2\theta_p)=-.8\\[20pt]
-&amp;2\theta_p=\tan^{-1}(-.8)\\
-&amp;\theta_p=\frac{-38.66^\circ}{2}\\
-&amp;\theta_p=-19.33^\circ
+\left|\tan(2\theta_{p2})\right|&amp;=\frac{|\tau_{xy}|}{|\sigma_x|-|C|}\\[10pt]
+&amp;=\frac{30{~MPa}}{60{~MPa}-(22.5{~MPa})}\\[10pt]
+&amp;=.8\\[20pt]
+|\theta_{p2}|=19.33^\circ
 \end{aligned}\]</span></p>
-<p>Note the negative angle means this would be a clockwise rotation.</p>
-<p>This principal plane angle brings the x-point to σ<sub>2</sub> , so if we rotate the stress element clockwise 19.33°, σ<sub>2</sub> would be shown on the x’ face.</p>
-<p>The other principal plane is that -19.33° + 90°= 70.67°. This is the angle of rotation for which σ<sub>1</sub> would appear on the rotated x’-face. The positive angle indicates this would be a counterclockwise rotation. Both rotations are shown in the figure below.</p>
+<p>Looking at the circle, we can see that this angle is a clockwise rotation from the reference state, so 𝜃<sub>p2</sub> = - 19.33°. If we rotate the stress element clockwise 19.33°, σ<sub>2</sub> would be shown on the x’ face.</p>
+<p>The other principal plane (<span class="math inline">\(\theta_{p1}\)</span>) is given by half the angle that goes from the reference x-point to σ<sub>1</sub> on the circle.</p>
+<p><span class="math display">\[
+|2\theta_{p1}|=180-|2\theta_{p2}|\\[10pt]
+|\theta_{p1}|=70.67^\circ
+\]</span></p>
+<p>This is the angle of rotation for which σ<sub>1</sub> would appear on the rotated x’-face. It is a counterclockwise rotation, so 𝜃<sub>p1</sub> = +70.67°.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/chapter 12 figure edits/example 12.4 part 5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="302"></p>
+<p><img src="images/chapter 12 figure updates 8.18.25/example 12.4 part 5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="382"></p>
+</figure>
+</div>
+<p>The stress state with the element rotated to both the principal planes is shown below:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/chapter 12 figure updates 8.18.25/example 12.4 part 6.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="358"></p>
 </figure>
 </div>
 <ol start="9" type="1">
-<li>With the θ<sub>p</sub> angles known, we can see that the 2θ<sub>s</sub> = 90 - |2θ<sub>p</sub>| or</li>
+<li><p>Find θ<sub>s</sub>:</p>
+<p>With the θ<sub>p</sub> angles known, we can see that:</p></li>
 </ol>
 <p><span class="math display">\[
 \begin{aligned}
-&amp;2\theta_s=90-|2\theta_p|\\
-&amp;2\theta_{s}=90-|2*-19.33^\circ|\\
-&amp;2\theta_{s}=51.34^\circ\\
+|2\theta_S|&amp;=90-|2\theta_{p2}|\\
+&amp;=90-|2*-19.33^\circ|\\
+&amp;=51.34^\circ\\
 \end{aligned}
 \]</span></p>
-<p>In this case, a counterclockwise rotation of the x-point would bring it to the negative side of the shear stress axis which corresponds to τ<sub>max</sub>, so we can say that θ<sub>s</sub> = 25.67° is the plane of max in-plane shear stress. This rotation is shown in the figure below.</p>
+<p><span class="math display">\[
+|\theta_S|=25.67^\circ\
+\]</span></p>
+<p>Since θ<sub>P2</sub> was used to calculate θ<sub>s,</sub> we get the angle between the x-point and the lower side of the shear stress axis, which is a counterclockwise rotation. The lower side of the shear stress axis actually corresponds to a positive overall shear stress based on the plotting convention used, so we can conclude that:</p>
+<p>τ<sub>max</sub> occurs on the plane θ<sub>s</sub> = +25.67°.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/example 12.4 part 6.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="366"></p>
+<p><img src="images/chapter 12 figure updates 8.18.25/example 12.4 part 7.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="365"></p>
+</figure>
+</div>
+<p>Conversely, the angle between the x-point and the upper part of the shear stress axis is:</p>
+<p><span class="math display">\[\begin{aligned}\
+|2\theta_S|&amp;=90 + |2\theta_{p2}|\\
+&amp;=90+|2*-19.33^\circ|\\
+&amp;=128.66^\circ\\
+\end{aligned}
+\]</span></p>
+<p>This is a clockwise rotation, so τ<sub>min</sub> would occur at θ<sub>s</sub> = -128.66°/2 = -64.33°.</p>
+<p>The stress element rotated to the plane of max shear stress is shown below:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/chapter 12 figure updates 8.18.25/example 12.4 part 8.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="322"></p>
 </figure>
 </div>
 <p>The completed Mohr’s circle:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/chapter 12 figure edits/example 12.4 part 7.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="420"></p>
+<p><img src="images/chapter 12 figure updates 8.18.25/example 12.4 part 9.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
-<p>Part c, stress transformation 40° clockwise:</p>
-<p>Recalling that rotations around the circle are twice the actual rotation, we will draw in a point (denoted as x’) that is rotated 80° clockwise from the x-point. This point has coordinates (σ<sub>x’</sub>, 𝜏<sub>xy’</sub>). Since we know from step 7 that the x-point is 38.66° below σ<sub>2</sub>, we find that x’ is 80° – 38.66° = 41.34° above σ<sub>2</sub>.</p>
+<p><strong>Part c, stress transformation 40° clockwise:</strong></p>
+<p>Recalling that rotations around the circle are twice the actual rotation of the plane, we will draw in a point (denoted as x’) that is rotated 80° clockwise from the reference x-point. This point has coordinates (σ<sub>x’</sub>, 𝜏<sub>xy’</sub>). Since we know from step 7 that the x-point is 38.66° below σ<sub>2</sub> on the circle, we find that x’ is 80° – 38.66° = 41.34° above σ<sub>2</sub>.</p>
+<p>The y’ point is similarly drawn diagonally opposed to the x’ point, or at an 80° clockwise rotation from the reference y-point.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH12 figures/example 12.4 part 8a.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="550"></p>
+<p><img src="images/chapter 12 figure updates 8.18.25/example 12.4 part 10.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
-<p>Since x’ has a negative σ coordinate, we know that the normal stress on the x’ face is compressive. Since x’ has a positive τ coordinate, the shear stress arrow on the x’ face would tend to rotate the element clockwise, which corresponds to a negative shear stress.</p>
-<p>Using trigonometry based on the circle, 𝜏<sub>x’y’</sub> is:</p>
+<p>Since the x’ point has a negative σ coordinate, we know that the normal stress on the x’ face is compressive. Using trigonometry based on the circle:</p>
 <p><span class="math display">\[
-\begin{aligned}
-&amp;\tau_{x^\prime y^\prime}=-R\sin(41.34^\circ)\\
-&amp;\tau_{x^\prime y^\prime}=-48.02{~MPa}*\sin(41.34^\circ)\\
-&amp;\tau_{x^\prime y^\prime}=-31.72{~MPa}
-\end{aligned}
-\]</span>and the normal stress on the x’ face is:</p>
-<p><span class="math display">\[
-\begin{aligned}
-&amp;\sigma_{x^\prime}=C-R\cos(28.66^\circ)\\
-&amp;\sigma_{x^\prime}=-22.5{~MPa}-48.02{~MPa}*\cos(41.34^\circ)\\
-&amp;\sigma_{x^\prime}=-58.57{~MPa}
-\end{aligned}
+\begin{aligned}\sigma_{x^\prime}&amp;=-(|C|+R\cos(28.66^\circ))\\[10pt]
+&amp;=-(22.5{~MPa}+48.02{~MPa}(\cos(41.34^\circ)))\\[10pt]
+&amp;=-58.57{~MPa}\end{aligned}
 \]</span></p>
 <p>The normal stress on the y’ face can be similarly found:</p>
 <p><span class="math display">\[
+\begin{aligned}\sigma_{y^\prime}&amp;=R\cos(41.34^\circ)-|C|\\[10pt]&amp;=48.02{~MPa}*\cos(41.36^\circ)-22.5\ MPa\\[10pt]&amp;=13.57{~MPa}\end{aligned}
+\]</span></p>
+<p>Since x’ has a positive τ coordinate, the shear stress arrow on the x’ face would tend to rotate the element clockwise, which corresponds to a negative shear stress.</p>
+<p>Using trigonometry based on the circle:</p>
+<p><span class="math display">\[
 \begin{aligned}
-&amp;\sigma_{y^\prime}=C+R\cos(41.34^\circ)\\
-&amp;\sigma_{y^\prime}=-22.5{~MPa}+48.02{~MPa}*\cos(41.36^\circ)\\
-&amp;\sigma_{y^\prime}=13.57{~MPa}
+\tau_{x^\prime y^\prime}&amp;=-(R\sin(41.34^\circ))\\[10pt]
+&amp;=-(48.02{~MPa}*\sin(41.34^\circ))\\[10pt]
+&amp;=-31.72{~MPa}
 \end{aligned}
 \]</span></p>
 <p>The rotated stress element is shown below:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/chapter 12 figure edits/example 12.4 part 9.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="308"></p>
+<p><img src="images/chapter 12 figure updates 8.18.25/example 12.4 part 11.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="256"></p>
 </figure>
 </div>
 <p><strong>Answers:</strong></p>
 <p><strong>σ<sub>1</sub> = 25.5 MPa on the principal plane θ<sub>p</sub> = 70.67°</strong></p>
 <p><strong>σ<sub>2</sub> = -70.5 MPa on the principal plane θ<sub>p</sub> = -19.33°</strong></p>
-<p><strong>τ<sub>max</sub> (in-plane) = 48.0 MPa on the plane θ<sub>s</sub> = 51.34°</strong></p>
+<p><strong>τ<sub>max</sub> (in-plane) = 48.0 MPa on the plane θ<sub>s</sub> = 25.66°</strong></p>
 <p>On the plane rotated 40° clockwise from the given plane:</p>
 <p><strong>σ<sub>x’</sub> = -58.6 MPa</strong></p>
 <p><strong>σ<sub>y’</sub> = 13.57 MPa</strong></p>
@@ -1401,26 +1450,26 @@ Solution
 <summary>
 Click to expand
 </summary>
-<p>Many materials yield or fail in shear rather than normal stress, so knowing the absolute maximum shear stress the material is subjected to is important. The methods discussed in Sections 12.2 and 12.3 provide the maximum in-plane shear stress that arises from rotations in the 2D plane (rotation around the z-axis in <a href="#fig-12.17" class="quarto-xref">Figure&nbsp;<span>12.17</span></a>). However, as discussed in <a href="#sec-12.2" class="quarto-xref"><span>Section 12.2</span></a>, the actual maximum shear stress may result from an out of plane rotation (rotation around the x or y axes in <a href="#fig-12.17" class="quarto-xref">Figure&nbsp;<span>12.17</span></a>). To account for this potential circumstance, we need to evaluate a 3D stress element despite the fact that we are still restricting analysis to 2D stress states.</p>
+<p>Many materials yield or fail in shear rather than normal stress, so knowing the absolute maximum shear stress the material is subjected to is important. The methods discussed in <a href="#sec-12.3" class="quarto-xref"><span>Section 12.3</span></a> and <a href="#sec-12.4" class="quarto-xref"><span>Section 12.4</span></a> provide the maximum in-plane shear stress that arises from rotations in the 2D plane (rotation around the z-axis in <a href="#fig-12.17" class="quarto-xref">Figure&nbsp;<span>12.17</span></a>). However, as discussed in <a href="#sec-12.3" class="quarto-xref"><span>Section 12.3</span></a>, the actual maximum shear stress may result from an out of plane rotation (rotation around the x or y axes in <a href="#fig-12.17" class="quarto-xref">Figure&nbsp;<span>12.17</span></a>). To account for this potential circumstance, we need to evaluate a 3D stress element despite the fact that we are still restricting analysis to 2D stress states.</p>
 <p>For the sake of this discussion, we will consider a reference stress state with stresses only in the xy plane, though it could generally be any other 2D plane. To further simplify the discussion, we will say that the stress element is already rotated around the z-axis to the principal stress state such that σ<sub>x</sub> = σ<sub>1</sub> and σ<sub>y</sub> =σ<sub>2</sub>. The resulting 3D stress cube and representations of the xz and yz planes are shown in <a href="#fig-12.17" class="quarto-xref">Figure&nbsp;<span>12.17</span></a>. Given the plane stress restriction, 𝜏<sub>xz</sub> =𝜏<sub>yz</sub> =0, which means that the xz and yz planes are also at principal stress states. Designating the principal stress in the z direction to be σ<sub>3</sub>, we can see that the principal stresses in the xz plane are σ<sub>2</sub> and σ<sub>3</sub> and the principal stresses in the yz plane are σ<sub>1</sub> and σ<sub>3</sub>. For the reference stress state (plane stress), σ<sub>3</sub> = 0 on all planes.</p>
 <p>As the stress cube rotates around the x-axis, σ<sub>z</sub> will vary between 0 at 𝜃 =0° and σ<sub>2</sub> at 𝜃 = 90°. Meanwhile, σ<sub>y</sub> will vary in the opposite way and σ<sub>x</sub> will remain unchanged. Similarly, as the stress cube rotates around the y axis, σ<sub>z</sub> will vary between 0 at 𝜃 =0° and σ<sub>1</sub> at 𝜃 = 90° while σ<sub>x</sub> varies in the opposite way and σ<sub>y</sub> remains unchanged.</p>
 <div id="fig-12.17" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-12.17-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/chapter 12 figure edits/figure 12.17.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
+<img src="images/chapter 12 figure updates 8.18.25/figure 12.17.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12.17-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;12.17: 3D stress element with stress acting in only 2 or the 3 principal directions.
 </figcaption>
 </figure>
 </div>
-<p>We can draw Mohr’s circle for each of the three planes in <a href="#fig-12.17" class="quarto-xref">Figure&nbsp;<span>12.17</span></a> on one plot. Just as the ciricle represents rotation of the stress element around the z-axis for stresses in the xy plane, if represents rotation around the y axis for the xz plane and rotation around the x axis for the yz plane. We will consider three cases:</p>
+<p>We can draw Mohr’s circle for each of the three planes in <a href="#fig-12.17" class="quarto-xref">Figure&nbsp;<span>12.17</span></a> on one plot. Just as the circle represents rotation of the stress element around the z-axis for stresses in the xy plane, it represents rotation around the y axis for the xz plane and rotation around the x axis for the yz plane. We will consider three cases:</p>
 <ol type="1">
 <li><p>σ<sub>1</sub> and σ<sub>2</sub> are both positive</p></li>
 <li><p>σ<sub>1</sub> and σ<sub>2</sub> are both negative</p></li>
 <li><p>σ<sub>1</sub> and σ<sub>2</sub> have opposite signs</p></li>
 </ol>
-<p><strong>Case 1:</strong></p>
+<p><strong>Case 1:</strong> σ<sub>1</sub> and σ<sub>2</sub> are both positive</p>
 <p>Referring to <a href="#fig-12.18" class="quarto-xref">Figure&nbsp;<span>12.18</span></a>, the larger inner circle is Mohr’s circle for the x-y plane as can be noted by the fact that the max and min normal stresses on that circle are σ<sub>1</sub> and σ<sub>2</sub>, respectively. The smaller inner circle is Mohr’s circle for the y-z plane which has 0 and σ<sub>2</sub> at the extremes. The largest circle is Mohr’s circle for the xz plane which has 0 and σ<sub>1</sub> at the extremes. We can see in this case that the largest shear stress is given by the radius of the largest circle which is σ<sub>1</sub>/2.</p>
 <p>So in the case that σ<sub>1</sub> and σ<sub>2</sub> are both positive, the absolute max shear stress is:</p>
 <p><span class="math display">\[
@@ -1433,12 +1482,12 @@ Figure&nbsp;12.17: 3D stress element with stress acting in only 2 or the 3 princ
 <img src="images/chapter 12 figure edits/figure 12.18.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="323">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-12.18-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;12.18: The three planes represented on Mohr’s circle for the case where both the principal stresses in the xy plane are positive.
+Figure&nbsp;12.18: The three planes represented on Mohr’s circle for the case where both the in plane principal stresses in the xy plane are positive.
 </figcaption>
 </figure>
 </div>
-<p><strong>Case 2:</strong></p>
-<p>Referring to <a href="#fig-12.19" class="quarto-xref">Figure&nbsp;<span>12.19</span></a>, all the statements made in Case 1 still hold true except that the radius of the largest circle is now σ<sub>2</sub>/2.</p>
+<p><strong>Case 2:</strong> σ<sub>1</sub> and σ<sub>2</sub> are both negative</p>
+<p>Referring to <a href="#fig-12.19" class="quarto-xref">Figure&nbsp;<span>12.19</span></a>, all the statements made in Case 1 still hold true except that now the largest circle is that of the yz plane for which the radius is σ<sub>2</sub>/2.</p>
 <p>So in the case that σ<sub>1</sub> and σ<sub>2</sub> are both negative, the absolute max shear stress is:</p>
 <p><span class="math display">\[
 \tau_{(\max )absolute}=\left|\frac{\sigma_2}{2}\right|
@@ -1453,8 +1502,8 @@ Figure&nbsp;12.19: The three planes represented on Mohr’s circle for the case 
 </figcaption>
 </figure>
 </div>
-<p><strong>Case 3:</strong></p>
-<p>Referring to <a href="#fig-12.20" class="quarto-xref">Figure&nbsp;<span>12.20</span></a>, this case is different than the other two because in this case, the Mohr’s circle for the xy plane is the largest circle. This means that the absolute max shear stress and the maximum in-plane shear stress are the same.</p>
+<p><strong>Case 3:</strong> σ<sub>1</sub> and σ<sub>2</sub> have opposite signs</p>
+<p>Referring to <a href="#fig-12.20" class="quarto-xref">Figure&nbsp;<span>12.20</span></a>, we can see that in this case, the Mohr’s circle for the xy plane is the largest circle. This means that the absolute max shear stress and the maximum in-plane shear stress are the same.</p>
 <p>So in the case that σ<sub>1</sub> and σ<sub>2</sub> are opposite in sign, the absolute max shear stress is:</p>
 <p><span class="math display">\[
 \tau_{(\max )absolute}=\left|\frac{\sigma_1-\sigma_2}{2}\right|
@@ -1518,9 +1567,15 @@ Key takeaways
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Stress transformation equations can be used to take stresses calculated in a specific plane and determine the stresses on a different plane of interest. These types of transformation calculations could be necessary when multiple planes of interest are involved such as when material properties vary with direction or off axis connections are used. Mohr’s Circle provides a more graphical method that can also be used and requires minimal need to recall equations.</p>
-<p>One can also use specific equations or Mohr’s Circle to determine the planes of max/min normal stress and shear stress and the corresponding stress values.</p>
-<p>For planar (2D) loading conditions, principal (max/min normal stresses) stresses will not be affected by out of plane rotations, so those values can be calculated in the given plane. However, to determine the absolute max/min shear stress, out of plane rotations must be considered. The determination of the absolute max or min shear stress can ultimately be made based on the signs and values of the principal stresses.</p>
+<ul>
+<li><p>Stress transformation equations can be used to take stresses calculated in a specific plane and determine the stresses on a different plane of interest.</p></li>
+<li><p>Mohr’s Circle is a more graphical method that can also be used and requires minimal need to recall equations.</p></li>
+<li><p>One can also use equations or Mohr’s Circle to determine the planes of max/min normal stress and shear stress and the corresponding stress values.</p>
+<ul>
+<li><p>For planar (2D) loading conditions, principal stresses (max/min normal stresses) will not be affected by out of plane rotations, so those values can be calculated in the given plane.</p></li>
+<li><p>However, to determine the absolute max/min shear stress, out of plane rotations must be considered. The determination of the absolute max or min shear stress can ultimately be made based on the signs and values of the in-plane principal stresses and including the out of plane principal stress to be 0.</p></li>
+</ul></li>
+</ul>
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
@@ -1541,7 +1596,7 @@ Key equations
 &amp; \sigma_x+\sigma_y=\sigma_{x^{\prime}}+\sigma_{y^{\prime}}
 \end{aligned}
 \]</span></p>
-<p>Or</p>
+<p>or</p>
 <p><span class="math display">\[
 \begin{aligned}
 &amp; \sigma_n=\frac{\sigma_x+\sigma_y}{2}+\frac{\sigma_x-\sigma_y}{2} \cos (2 \theta)+\tau_{x y} \sin (2 \theta) \\
@@ -1561,7 +1616,7 @@ Key equations
 &amp; tan\left(2 \theta_s\right)=-\frac{\left(\sigma_x-\sigma_y\right)}{2 \tau_{x y}} \\
 &amp; \theta_s=\theta_p \pm 45^{\circ} \\
 &amp; \tau_{(max)in-plane}=\sqrt{\left(\frac{\sigma_x-\sigma_y}{2}\right)^2+\tau_{x y}^2}=\left|\frac{\sigma_1-\sigma_2}{2}\right| \\
-&amp; \sigma_{average}=\left(\frac{\sigma_x+\sigma_y}{2}\right)
+&amp; \sigma = \sigma_{average}=\left(\frac{\sigma_x+\sigma_y}{2}\right)
 \end{aligned}
 \]</span></p>
 <p><strong>Absolute max shear stress</strong></p>
@@ -1589,7 +1644,7 @@ Key equations
 Click to expand
 </summary>
 <p><strong>Figures</strong></p>
-<p>All figures in this chapter were created by Kindred Grey in 2025 and released under a CC BY-NC-SA license, except for:</p>
+<p>All figures in this chapter were created by Kindred Grey in 2025 and released under a CC BY license, except for:</p>
 <ul>
 <li>Figure 12.1: A pressurized duct is fabricated with welding in a helical pattern. Sneha Davison. 2024. CC BY-NC-SA.</li>
 </ul>
