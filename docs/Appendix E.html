@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.29">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Appendix E — Centroids and Area Moment of Inertia for Common Shapes – Strength of Materials</title>
+<title>Appendix E — Centroids and Second Moment of Area for Common Shapes – Strength of Materials</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,18 +33,19 @@ ul.task-list li input[type="checkbox"] {
 <link href="./Appendix D.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-748b535e376f14d4692bf2b2e5fd6380.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-e1aa288a8a6a3aa5f7fec8175f5023de.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-d13a72f20fc3c7f792e67513fe0bf82c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-e1aa288a8a6a3aa5f7fec8175f5023de.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-9dc9d438c90c12071cf8507e319c8f8e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-afd7089187cf7d32efec5ee34a48d68f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-9dc9d438c90c12071cf8507e319c8f8e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -87,7 +88,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -260,6 +261,7 @@ window.Quarto = {
       toggleColorMode(toAlternate);
       setStyleSentinel(toAlternate);
       toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
     };
     // Switch to dark mode if need be
     if (hasAlternateSentinel()) {
@@ -276,7 +278,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Appendix A.html">Appendices</a></li><li class="breadcrumb-item"><a href="./Appendix E.html"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Centroids and Area Moment of Inertia for Common Shapes</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Appendix A.html">Appendices</a></li><li class="breadcrumb-item"><a href="./Appendix E.html"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Centroids and Second Moment of Area for Common Shapes</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -289,7 +291,9 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Strength of Materials</a> 
         <div class="sidebar-tools-main">
@@ -436,7 +440,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Appendix E.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Centroids and Area Moment of Inertia for Common Shapes</span></span></a>
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Centroids and Second Moment of Area for Common Shapes</span></span></a>
   </div>
 </li>
       </ul>
@@ -451,8 +455,8 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#centroid-coordinates-for-common-shapes" id="toc-centroid-coordinates-for-common-shapes" class="nav-link active" data-scroll-target="#centroid-coordinates-for-common-shapes"><span class="header-section-number">E.1</span> Centroid coordinates for common shapes</a></li>
-  <li><a href="#area-moment-of-inertia-for-common-shapes" id="toc-area-moment-of-inertia-for-common-shapes" class="nav-link" data-scroll-target="#area-moment-of-inertia-for-common-shapes"><span class="header-section-number">E.2</span> Area Moment of Inertia for common shapes</a></li>
+  <li><a href="#centroid-coordinates-for-common-shapes" id="toc-centroid-coordinates-for-common-shapes" class="nav-link active" data-scroll-target="#centroid-coordinates-for-common-shapes"><span class="header-section-number">E.1</span> Centroid Coordinates for Common Shapes</a></li>
+  <li><a href="#second-moment-of-area-for-common-shapes" id="toc-second-moment-of-area-for-common-shapes" class="nav-link" data-scroll-target="#second-moment-of-area-for-common-shapes"><span class="header-section-number">E.2</span> Second Moment of Area for Common Shapes</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
@@ -461,9 +465,9 @@ window.Quarto = {
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Appendix A.html">Appendices</a></li><li class="breadcrumb-item"><a href="./Appendix E.html"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Centroids and Area Moment of Inertia for Common Shapes</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Appendix A.html">Appendices</a></li><li class="breadcrumb-item"><a href="./Appendix E.html"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Centroids and Second Moment of Area for Common Shapes</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-centroids-moments-inertia" class="quarto-section-identifier">Appendix E — Centroids and Area Moment of Inertia for Common Shapes</span></h1>
+<h1 class="title"><span id="sec-centroids-moments-inertia" class="quarto-section-identifier">Appendix E — Centroids and Second Moment of Area for Common Shapes</span></h1>
 </div>
 
 
@@ -481,15 +485,15 @@ window.Quarto = {
 
 
 <section id="centroid-coordinates-for-common-shapes" class="level2" data-number="E.1">
-<h2 data-number="E.1" class="anchored" data-anchor-id="centroid-coordinates-for-common-shapes"><span class="header-section-number">E.1</span> Centroid coordinates for common shapes</h2>
+<h2 data-number="E.1" class="anchored" data-anchor-id="centroid-coordinates-for-common-shapes"><span class="header-section-number">E.1</span> Centroid Coordinates for Common Shapes</h2>
 <div class="grid">
 <div class="g-col-7">
 <table class="table-hover caption-top table">
 <colgroup>
-<col style="width: 50%">
-<col style="width: 15%">
-<col style="width: 15%">
-<col style="width: 17%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -529,8 +533,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="area-moment-of-inertia-for-common-shapes" class="level2" data-number="E.2">
-<h2 data-number="E.2" class="anchored" data-anchor-id="area-moment-of-inertia-for-common-shapes"><span class="header-section-number">E.2</span> Area Moment of Inertia for common shapes</h2>
+<section id="second-moment-of-area-for-common-shapes" class="level2" data-number="E.2">
+<h2 data-number="E.2" class="anchored" data-anchor-id="second-moment-of-area-for-common-shapes"><span class="header-section-number">E.2</span> Second Moment of Area for Common Shapes</h2>
 <div class="grid">
 <div class="g-col-7">
 <table class="table-hover caption-top table">
@@ -659,13 +663,14 @@ Click to expand
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

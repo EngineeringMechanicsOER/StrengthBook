@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.29">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -34,18 +34,19 @@ ul.task-list li input[type="checkbox"] {
 <link href="./Appendix C.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-748b535e376f14d4692bf2b2e5fd6380.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-e1aa288a8a6a3aa5f7fec8175f5023de.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-d13a72f20fc3c7f792e67513fe0bf82c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-e1aa288a8a6a3aa5f7fec8175f5023de.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-9dc9d438c90c12071cf8507e319c8f8e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-afd7089187cf7d32efec5ee34a48d68f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-9dc9d438c90c12071cf8507e319c8f8e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -88,7 +89,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -261,6 +262,7 @@ window.Quarto = {
       toggleColorMode(toAlternate);
       setStyleSentinel(toAlternate);
       toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
     };
     // Switch to dark mode if need be
     if (hasAlternateSentinel()) {
@@ -290,7 +292,9 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Strength of Materials</a> 
         <div class="sidebar-tools-main">
@@ -437,7 +441,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Appendix E.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Centroids and Area Moment of Inertia for Common Shapes</span></span></a>
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Centroids and Second Moment of Area for Common Shapes</span></span></a>
   </div>
 </li>
       </ul>
@@ -452,8 +456,8 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#commonly-used-orders-of-magnitude" id="toc-commonly-used-orders-of-magnitude" class="nav-link active" data-scroll-target="#commonly-used-orders-of-magnitude"><span class="header-section-number">D.1</span> Commonly used orders of magnitude</a></li>
-  <li><a href="#commonly-used-units-in-this-text" id="toc-commonly-used-units-in-this-text" class="nav-link" data-scroll-target="#commonly-used-units-in-this-text"><span class="header-section-number">D.2</span> Commonly used units in this text</a></li>
+  <li><a href="#commonly-used-orders-of-magnitude" id="toc-commonly-used-orders-of-magnitude" class="nav-link active" data-scroll-target="#commonly-used-orders-of-magnitude"><span class="header-section-number">D.1</span> Commonly Used Orders of Magnitude</a></li>
+  <li><a href="#commonly-used-units-in-this-text" id="toc-commonly-used-units-in-this-text" class="nav-link" data-scroll-target="#commonly-used-units-in-this-text"><span class="header-section-number">D.2</span> Commonly Used Units in This Text</a></li>
   </ul>
 </nav>
     </div>
@@ -481,13 +485,13 @@ window.Quarto = {
 
 
 <section id="commonly-used-orders-of-magnitude" class="level2" data-number="D.1">
-<h2 data-number="D.1" class="anchored" data-anchor-id="commonly-used-orders-of-magnitude"><span class="header-section-number">D.1</span> Commonly used orders of magnitude</h2>
+<h2 data-number="D.1" class="anchored" data-anchor-id="commonly-used-orders-of-magnitude"><span class="header-section-number">D.1</span> Commonly Used Orders of Magnitude</h2>
 <table class="table-striped caption-top table">
 <colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
+<col style="width: 28%">
+<col style="width: 13%">
+<col style="width: 13%">
+<col style="width: 42%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -508,7 +512,7 @@ window.Quarto = {
 <td>10<sup>9</sup> = 1,000,000,000</td>
 <td>Giga</td>
 <td>G</td>
-<td>1 Gigabyte = 1GB = 1 x 10<sup>9</sup> bytes</td>
+<td>1 Gigabyte = 1 GB = 1 x 10<sup>9</sup> bytes</td>
 </tr>
 <tr class="odd">
 <td>10<sup>6</sup> = 1,000,000</td>
@@ -550,10 +554,10 @@ window.Quarto = {
 </table>
 </section>
 <section id="commonly-used-units-in-this-text" class="level2" data-number="D.2">
-<h2 data-number="D.2" class="anchored" data-anchor-id="commonly-used-units-in-this-text"><span class="header-section-number">D.2</span> Commonly used units in this text</h2>
+<h2 data-number="D.2" class="anchored" data-anchor-id="commonly-used-units-in-this-text"><span class="header-section-number">D.2</span> Commonly Used Units in This Text</h2>
 <table class="table-striped caption-top table">
 <colgroup>
-<col style="width: 19%">
+<col style="width: 20%">
 <col style="width: 16%">
 <col style="width: 30%">
 <col style="width: 31%">
@@ -568,13 +572,13 @@ window.Quarto = {
 </thead>
 <tbody>
 <tr class="odd">
-<td>1<sup>st</sup> Moment of Area (Q)</td>
+<td>First Moment of Area (Q)</td>
 <td>meters<sup>3</sup> (m<sup>3</sup>)</td>
 <td>inches<sup>3</sup> (in.<sup>3</sup>)</td>
 <td>1 in.<sup>3</sup> = 1.639 x 10<sup>-5</sup> m<sup>3</sup></td>
 </tr>
 <tr class="even">
-<td>2<sup>nd</sup> Moment of Area (I)</td>
+<td>Second Moment of Area (I)</td>
 <td>meters<sup>4</sup> (m<sup>4</sup>)</td>
 <td>inches<sup>4</sup> (in.<sup>4</sup>)</td>
 <td>1 in.<sup>4</sup> = 4.162 x 10<sup>-7</sup> m<sup>4</sup></td>
@@ -718,13 +722,14 @@ window.Quarto = {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -1073,8 +1078,8 @@ window.Quarto = {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./Appendix E.html" class="pagination-link" aria-label="Centroids and Area Moment of Inertia for Common Shapes">
-        <span class="nav-page-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Centroids and Area Moment of Inertia for Common Shapes</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./Appendix E.html" class="pagination-link" aria-label="Centroids and Second Moment of Area for Common Shapes">
+        <span class="nav-page-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Centroids and Second Moment of Area for Common Shapes</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.29">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -33,18 +33,19 @@ ul.task-list li input[type="checkbox"] {
 <link href="./Chapter 1.html" rel="next">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-748b535e376f14d4692bf2b2e5fd6380.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-e1aa288a8a6a3aa5f7fec8175f5023de.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-d13a72f20fc3c7f792e67513fe0bf82c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-e1aa288a8a6a3aa5f7fec8175f5023de.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-9dc9d438c90c12071cf8507e319c8f8e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-afd7089187cf7d32efec5ee34a48d68f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-9dc9d438c90c12071cf8507e319c8f8e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -231,6 +232,7 @@ ul.task-list li input[type="checkbox"] {
       toggleColorMode(toAlternate);
       setStyleSentinel(toAlternate);
       toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
     };
     // Switch to dark mode if need be
     if (hasAlternateSentinel()) {
@@ -260,7 +262,9 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Strength of Materials</a> 
         <div class="sidebar-tools-main">
@@ -407,7 +411,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Appendix E.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Centroids and Area Moment of Inertia for Common Shapes</span></span></a>
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Centroids and Second Moment of Area for Common Shapes</span></span></a>
   </div>
 </li>
       </ul>
@@ -431,14 +435,11 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#approach-and-features" id="toc-approach-and-features" class="nav-link" data-scroll-target="#approach-and-features">Approach and Features</a></li>
   <li><a href="#organization" id="toc-organization" class="nav-link" data-scroll-target="#organization">Organization</a></li>
   </ul></li>
-  <li><a href="#acknowledgments" id="toc-acknowledgments" class="nav-link" data-scroll-target="#acknowledgments"><strong>Acknowledgments</strong></a></li>
-  <li><a href="#available-formats" id="toc-available-formats" class="nav-link" data-scroll-target="#available-formats">Available Formats</a>
+  <li><a href="#about-open-educational-resources-oer" id="toc-about-open-educational-resources-oer" class="nav-link" data-scroll-target="#about-open-educational-resources-oer"><strong>About Open Educational Resources (OER)</strong></a>
   <ul class="collapse">
-  <li><a href="#book" id="toc-book" class="nav-link" data-scroll-target="#book"><strong>Book</strong></a></li>
+  <li><a href="#about-this-book" id="toc-about-this-book" class="nav-link" data-scroll-target="#about-this-book"><strong>About This Book</strong></a></li>
   <li><a href="#question-bank" id="toc-question-bank" class="nav-link" data-scroll-target="#question-bank"><strong>Question Bank</strong></a></li>
-  <li><a href="#forthcoming-in-2026" id="toc-forthcoming-in-2026" class="nav-link" data-scroll-target="#forthcoming-in-2026"><strong>Forthcoming in 2026</strong></a></li>
   </ul></li>
-  <li><a href="#helpful-links" id="toc-helpful-links" class="nav-link" data-scroll-target="#helpful-links"><strong>Helpful Links</strong></a></li>
   <li><a href="#copyright-information" id="toc-copyright-information" class="nav-link" data-scroll-target="#copyright-information"><strong>Copyright Information</strong></a></li>
   </ul>
 </nav>
@@ -509,7 +510,7 @@ ul.task-list li input[type="checkbox"] {
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Learning Objectives
+<span class="screen-reader-only">Note</span>Learning Objectives
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -521,12 +522,12 @@ Learning Objectives
 </div>
 <p>Chapters are organized into short sections. When opening a chapter, the learning objectives and Introduction section will be visible, while the other chapter sections are collapsed. Each section is independently expandable to aid navigation. Sections include explanatory text and worked examples for practice. Worked examples are green. They include an initial expandable box containing the problem statement, and a separately expandable box containing the worked solution. Student may choose to access the solution at any time, or attempt the problem themselves before checking their solution against the worked example.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Worked Example - This block is expandable
+<span class="screen-reader-only">Tip</span>Worked Example - This block is expandable
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -537,12 +538,12 @@ Worked Example - This block is expandable
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solution - This block is expandable
+<span class="screen-reader-only">Tip</span>Solution - This block is expandable
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -559,7 +560,7 @@ Solution - This block is expandable
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Step-by-step
+<span class="screen-reader-only">Warning</span>Step-by-step
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -583,41 +584,24 @@ Step-by-step
 <p>Finally, buckling of columns is considered as a potential failure mode. Students wrap up the course with a reminder that both stress and deformation must be considered and that anything they work on must satisfactorily resist both.</p>
 </section>
 </section>
-<section id="acknowledgments" class="level2">
-<h2 class="anchored" data-anchor-id="acknowledgments"><strong>Acknowledgments</strong></h2>
-<p>The creation of this Open Educational Resource (OER) was supported by a <a href="https://vivalib.org/va/open/grants">VIVA Open Grant</a>. The Virginia General Assembly has provided funds to support the VIVA Open Grant Program through <a href="https://vivalib.org/viva/homepage">VIVA</a>, Virginia’s Academic Library Consortium, a program of the State Council of Higher Education. The VIVA Open Grant Program aims to improve academic success for Virginia students by eliminating the costs of textbooks and other course materials and providing day one access to materials while also empowering faculty to create resources tailored to individual course needs and pedagogical goals. The program provides financial and publishing support services without content oversight.</p>
-<p>The authors would like to thank Shaghayegh Bagheri, Jacob Moore, Joao Soares, and a fourth person who preferred to remain anonymous. Their time, effort, and thoughtful feedback as peer reviewers made a meaningful impact on the quality of this textbook.</p>
-</section>
-<section id="available-formats" class="level2">
-<h2 class="anchored" data-anchor-id="available-formats">Available Formats</h2>
-<section id="book" class="level3">
-<h3 class="anchored" data-anchor-id="book"><strong>Book</strong></h3>
+<section id="about-open-educational-resources-oer" class="level2">
+<h2 class="anchored" data-anchor-id="about-open-educational-resources-oer"><strong>About Open Educational Resources (OER)</strong></h2>
+<p>OER are free teaching and learning materials that are licensed to allow for revision and reuse. They can be fully self-contained textbooks, videos, quizzes, learning modules, and more. OER are distinct from free online resources in that they permit others to use, copy, distribute, modify, or reuse the content. The legal permission to modify and customize OER to meet the specific learning objectives of a particular course make them a useful pedagogical tool.</p>
+<section id="about-this-book" class="level3">
+<h3 class="anchored" data-anchor-id="about-this-book"><strong>About This Book</strong></h3>
 <p><em>Strength of Materials</em> is an open textbook. You are welcome to freely use, adapt, and share this book with attribution according to the Creative Commons Attribution NonCommercial ShareAlike 4.0 (<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">CC BY-NC-SA 4.0</a>) license. This license allows customization and redistribution that is “not primarily intended for or directed toward commercial advantage or monetary compensation.” If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original. All figures in this book are licensed under Creative Commons licenses or used under fair use. Please see the end-of-chapter references for license information for each figure before reuse.</p>
-<p>If you are interested in making your own version of this book, check out the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">book’s license</a> and information on <a href="https://wiki.creativecommons.org/wiki/Recommended_practices_for_attribution">recommended practices for attribution</a>.</p>
 </section>
 <section id="question-bank" class="level3">
 <h3 class="anchored" data-anchor-id="question-bank"><strong>Question Bank</strong></h3>
-<p>This book has an accompanying set of <a href="https://engineeringmechanicsoer.github.io/StrengthOfMaterialsExercises/">practice questions</a>. These questions are a mix of (1) new questions generated by the author team, and (2) adapted questions from Kurt Gramoll’s Eng Mechanics question bank [accessible via the <a href="https://apps.apple.com/us/app/eng-mechanics/id1526030024">Apple Store</a> or <a href="https://play.google.com/store/apps/details?id=air.com.gramago.engProbME&amp;pli=1">Google Play</a>].</p>
+<p>This book has an accompanying set of practice questions [forthcoming].</p>
+<p>These questions are a mix of (1) new questions generated by the author team, and (2) adapted questions from Kurt Gramoll’s Eng Mechanics question bank [accessible via the<a href="https://apps.apple.com/us/app/eng-mechanics/id1526030024">Apple Store</a> or<a href="https://play.google.com/store/apps/details?id=air.com.gramago.engProbME&amp;pli=1">Google Play</a>].</p>
 </section>
-<section id="forthcoming-in-2026" class="level3">
-<h3 class="anchored" data-anchor-id="forthcoming-in-2026"><strong>Forthcoming in 2026</strong></h3>
-<ul>
-<li><p>A print version, made available for purchase through Amazon</p></li>
-<li><p>A PDF version</p></li>
-<li><p>An EPUB version</p></li>
-</ul>
-</section>
-</section>
-<section id="helpful-links" class="level2">
-<h2 class="anchored" data-anchor-id="helpful-links"><strong>Helpful Links</strong></h2>
-<p><strong>Are you reviewing or adopting this book for a course?</strong> Please help us understand your use by filling out <a href="https://bit.ly/interest_strengthofmaterials"><strong>this form</strong></a>.</p>
-<p><strong>Error reporting.</strong> If you spot an error in this book, please let us know by filling out <a href="https://bit.ly/reporterror_strengthofmaterials">this form</a>. You can view known errata <a href="https://bit.ly/errata_strengthofmaterials">here</a>.</p>
 </section>
 <section id="copyright-information" class="level2">
 <h2 class="anchored" data-anchor-id="copyright-information"><strong>Copyright Information</strong></h2>
-<p><strong>© James Lord, Amy Richardson, Sneha Davison, and David Dillard, 2025.</strong></p>
+<p><strong>© James Lord, Amy Richardson, Sneha Davison, and David Dillard 2025.</strong></p>
 <p>Strength of Materials by James Lord, Amy Richardson, Sneha Davison, and David Dillard is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License, except where otherwise noted.</p>
-<p><strong>You are free</strong> to copy, share, adapt, remix, transform, and build on the material for any purpose as long as you follow the terms of the license: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" class="uri">https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en</a></p>
+<p><strong>You are free</strong> to copy, share, adapt, remix, transform, and build on the material for any purpose as long as you follow the terms of the license:<a href="https://creativecommons.org/licenses/by-sa/4.0/"></a><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" class="uri">https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en</a></p>
 <p><strong>You must</strong>:</p>
 <ul>
 <li><p>Attribute—You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.</p></li>
@@ -628,8 +612,18 @@ Step-by-step
 <li><p>NonCommercial—You may not use the material for commercial purposes.</p></li>
 <li><p>Additional restrictions—You may not add any legal terms or technological measures that legally restrict others from doing anything the license permits.</p></li>
 </ul>
-<p><strong>Peer review</strong>: This book has undergone single-anonymous peer review by four reviewers.</p>
-<p><strong>Accessibility statement</strong>: Virginia Tech is committed to making its publications accessible in accordance with the Americans with Disabilities Act of 1990. The text, images, and links are tagged structurally and include alternative text, which allows for machine readability. Virginia Tech Publishing is continuously working to improve accessibility and welcomes any feedback from readers.</p>
+<p><strong>Suggested citation</strong>: Lord, James; Richardson, Amy; Davison, Sneha; and Dillard, David (2025). Strength of Materials. Blacksburg: Virginia Tech Department of Engineering. https://doi.org/10.21061/strengthofmaterials. Licensed with CC BY-NC-SA 4.0. <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" class="uri">https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en</a>.</p>
+<p><strong>Publisher</strong>: This work is published by the Virginia Tech Department of Engineering in association with Virginia Tech Publishing and the Open Education Initiative.</p>
+<p><em>Virginia Tech Department of Engineering Education</em></p>
+<p>345 Goodwin Hall (MC 0218), 635 Prices Fork Rd, Blacksburg, VA 24061</p>
+<p><em>Virginia Tech Publishing</em></p>
+<p>560 Drillfield Drive Blacksburg, VA 24061 USA</p>
+<p>publishing@vt.edu</p>
+<p><em>Open Education Initiative</em></p>
+<p>560 Drillfield Drive Blacksburg, VA 24061 USA</p>
+<p>openeducation@vt.edu</p>
+<p><strong>Peer review</strong>: This book has undergone single-blind peer review.</p>
+<p><strong>Accessibility statement</strong>: Virginia Tech is committed to making its publications accessible in accordance with the Americans with Disabilities Act of 1990. Virginia Tech Publishing is committed to continuous improvement regarding accessibility. The text, images, and links in the PDF versions of this text are tagged structurally and include alternative text, which allows for machine readability. Please contact publishing@vt.edu if you are a person with a disability and have suggestions to make this book more accessible.</p>
 
 
 </section>
@@ -699,13 +693,14 @@ Step-by-step
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

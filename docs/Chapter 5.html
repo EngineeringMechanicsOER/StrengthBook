@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.29">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -34,18 +34,19 @@ ul.task-list li input[type="checkbox"] {
 <link href="./Chapter 4.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-748b535e376f14d4692bf2b2e5fd6380.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-e1aa288a8a6a3aa5f7fec8175f5023de.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-d13a72f20fc3c7f792e67513fe0bf82c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-e1aa288a8a6a3aa5f7fec8175f5023de.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-9dc9d438c90c12071cf8507e319c8f8e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-afd7089187cf7d32efec5ee34a48d68f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-9dc9d438c90c12071cf8507e319c8f8e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -88,7 +89,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -261,6 +262,7 @@ window.Quarto = {
       toggleColorMode(toAlternate);
       setStyleSentinel(toAlternate);
       toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
     };
     // Switch to dark mode if need be
     if (hasAlternateSentinel()) {
@@ -290,7 +292,9 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Strength of Materials</a> 
         <div class="sidebar-tools-main">
@@ -437,7 +441,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Appendix E.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Centroids and Area Moment of Inertia for Common Shapes</span></span></a>
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Centroids and Second Moment of Area for Common Shapes</span></span></a>
   </div>
 </li>
       </ul>
@@ -452,8 +456,7 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#sec-5.1" id="toc-sec-5.1" class="nav-link" data-scroll-target="#sec-5.1"><span class="header-section-number">5.1</span> Axial Stress</a></li>
+  <li><a href="#sec-5.1" id="toc-sec-5.1" class="nav-link active" data-scroll-target="#sec-5.1"><span class="header-section-number">5.1</span> Axial Stress</a></li>
   <li><a href="#sec-5.2" id="toc-sec-5.2" class="nav-link" data-scroll-target="#sec-5.2"><span class="header-section-number">5.2</span> Stress Concentrations</a>
   <ul class="collapse">
   <li><a href="#saint-venants-principle" id="toc-saint-venants-principle" class="nav-link" data-scroll-target="#saint-venants-principle"><span class="header-section-number">5.2.1</span> Saint-Venant’s Principle</a></li>
@@ -497,12 +500,12 @@ window.Quarto = {
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Learning Objectives
+<span class="screen-reader-only">Note</span>Learning Objectives
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>Explain stress concentrations and calculate maximum stress based on geometry</li>
+<li>Explain stress concentrations and use geometry to calculate maximum stress</li>
 <li>Calculate axial deformation in a bar subjected to axial load</li>
 <li>Determine deformation in a series of parallel bars</li>
 <li>Define statically indeterminate problems and solve them using knowledge of deformation</li>
@@ -510,28 +513,20 @@ Learning Objectives
 </ul>
 </div>
 </div>
-<section id="introduction" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="introduction">Introduction</h2>
-<details open="">
-<summary>
-Click to expand
-</summary>
-<p>In this chapter we’ll take a closer look at the effects of axial loading. Axial loads are those applied perpendicular to the cross-section of an object (<a href="#fig-5.1" class="quarto-xref">Figure&nbsp;<span>5.1</span></a>) and such loads affect the object in several ways.</p>
-<div id="fig-5.1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<p>This chapter takes a closer look at the effects of axial loading. Axial loads are those applied perpendicular to the cross-section of an object (<a href="#fig-5.1" class="quarto-xref">Figure&nbsp;<span>5.1</span></a>). Such loads affect the object in several ways.</p>
+<div id="fig-5.1" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Horizontally oriented rectangular solid with its longer dimension labeled A to indicate the axial direction. Equal and opposite forces labeled F are applied along this axial direction: F acts leftward on the hidden left face and rightward on the visible right face, both centered and perpendicular to the faces. The square cross-sectional face on the right has side length labeled T, indicating the transverse direction." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-5.1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/PNGs/Figure 5.1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="361">
+<img src="images/PNGs/Figure 5.1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Horizontally oriented rectangular solid with its longer dimension labeled A to indicate the axial direction. Equal and opposite forces labeled F are applied along this axial direction: F acts leftward on the hidden left face and rightward on the visible right face, both centered and perpendicular to the faces. The square cross-sectional face on the right has side length labeled T, indicating the transverse direction." width="361">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-5.1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5.1: Axial loads act perpendicular to the cross-section. They cause normal stress on the cross-section and normal strains in both the axial (A) and transverse (T) directions.
 </figcaption>
 </figure>
 </div>
-<p>Axial loads create axial stresses, which we have already seen in <a href="Chapter 2.html#sec-2.1" class="quarto-xref"><span>Section 2.1</span></a> and we’ll revisit briefly in <a href="#sec-5.1" class="quarto-xref"><span>Section 5.1</span></a>. We previously considered the average normal stress in a cross-section, but the geometry of the cross-section can cause large localized stresses much higher than the average. We’ll discuss these stress concentrations in <a href="#sec-5.2" class="quarto-xref"><span>Section 5.2</span></a>.</p>
-<p>This text is concerned with both stress and deformation, so in <a href="#sec-5.3" class="quarto-xref"><span>Section 5.3</span></a> we’ll explore the deformation caused by axial loads. We’ll extend this to a special case of axial deformation involving parallel bars in <a href="#sec-5.4" class="quarto-xref"><span>Section 5.4</span></a>, before using our knowledge of axial deformation to help us solve statically indeterminate problems in <a href="#sec-5.5" class="quarto-xref"><span>Section 5.5</span></a>. These are problems where the equilibrium equations are not sufficient to determine the reaction and internal forces.</p>
-<p>Finally we’ll investigate the effects of temperature in <a href="#sec-5.6" class="quarto-xref"><span>Section 5.6</span></a>. As the temperature of an object changes it will expand or contract. Thus there can be deformation even in the absence of any applied forces.</p>
-</details>
-</section>
+<p>Axial loads create axial stresses, as seen in <a href="Chapter 2.html#sec-2.1" class="quarto-xref"><span>Section 2.1</span></a> and revisited briefly in <a href="#sec-5.1" class="quarto-xref"><span>Section 5.1</span></a>. We previously considered the average normal stress in a cross-section, but the geometry of the cross-section can cause large localized stresses much higher than the average. These stress concentrations are discussed in <a href="#sec-5.2" class="quarto-xref"><span>Section 5.2</span></a>.</p>
+<p>This text is concerned with both stress and deformation, so <a href="#sec-5.3" class="quarto-xref"><span>Section 5.3</span></a> explores the deformation caused by axial loads. This extends to a special case of axial deformation involving parallel bars in <a href="#sec-5.4" class="quarto-xref"><span>Section 5.4</span></a>, before we apply our knowledge of axial deformation to solve statically indeterminate problems in <a href="#sec-5.5" class="quarto-xref"><span>Section 5.5</span></a>. These are problems where the equilibrium equations are insufficient to determine the reaction and internal forces.</p>
+<p>Finally we’ll investigate the effects of temperature in <a href="#sec-5.6" class="quarto-xref"><span>Section 5.6</span></a>. As the temperature of an object changes, the object expands or contracts. Thus deformation can occur even in the absence of any applied forces.</p>
 <section id="sec-5.1" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="sec-5.1"><span class="header-section-number">5.1</span> Axial Stress</h2>
 <details>
@@ -539,11 +534,11 @@ Figure&nbsp;5.1: Axial loads act perpendicular to the cross-section. They cause 
 Click to expand
 </summary>
 <p>Axial loads create axial stresses, also known as normal stresses. As discussed in <a href="Chapter 2.html#sec-2.1" class="quarto-xref"><span>Section 2.1</span></a>, the average normal stress is calculated from</p>
-<p><span class="math display">\[ \boxed {\sigma=\frac{N}{A}} \]</span></p>
-<div class="line-block"><em>where</em><br>
+<p><span class="math display">\[ \boxed {\sigma=\frac{N}{A}}\text{ ,} \]</span></p>
+<div class="line-block">where<br>
 <em>𝜎 = Average normal stress [Pa, psi]</em><br>
-<em>N = Internal normal force [N, lb]</em></div>
-<p><em>A = Cross-sectional area [m<sup>2</sup>, in.<sup>2</sup>]</em></p>
+<em>N = Internal normal force [N, lb]</em><br>
+<em>A = Cross-sectional area [m<sup>2</sup>, in.<sup>2</sup>]</em></div>
 </details>
 </section>
 <section id="sec-5.2" class="level2" data-number="5.2">
@@ -554,22 +549,22 @@ Click to expand
 </summary>
 <section id="saint-venants-principle" class="level3" data-number="5.2.1">
 <h3 data-number="5.2.1" class="anchored" data-anchor-id="saint-venants-principle"><span class="header-section-number">5.2.1</span> Saint-Venant’s Principle</h3>
-<p>The normal stress discussed in the previous section is averaged over the cross-section and assumes that stresses (and therefore strains) at the cross-section are uniform. In reality stresses and strains can vary across a cross-section, especially if the cross-section is close to an applied load, a support, or a change in geometry. At these points localized stress concentrations occur, leading to large, localized stresses and strains. The intensity of these concentrations depends on the type of loading, support, or geometry (<a href="#fig-5.2" class="quarto-xref">Figure&nbsp;<span>5.2</span></a>).</p>
-<div id="fig-5.2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<p>The normal stress mentioned in the introductory section is averaged over the cross-section and assumes that stresses (and therefore strains) at the cross-section are uniform. In reality stresses and strains can vary across a cross-section, especially if the cross-section is close to an applied load, a support, or a change in geometry. At these points localized stress concentrations occur, leading to large, localized stresses and strains. The intensity of these concentrations depends on the type of loading, support, or geometry (<a href="#fig-5.2" class="quarto-xref">Figure&nbsp;<span>5.2</span></a>).</p>
+<div id="fig-5.2" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Two plates modeled in finite element software. Two rectangular plates are shown for comparison under uniaxial tension, both displayed using color stress contours labeled in psi. In the top image, the solid plate has no holes. The left edge is fixed, and uniform tensile forces are applied on the right edge. The stress distribution is nearly uniform across the plate, showing an average normal stress of about 333 psi, indicated mostly by green coloring on the legend scale. There are no significant stress concentrations. In the bottom image, the same plate includes a circular hole near the center. The left edge is fixed, and the right edge is again pulled in tension. The stress contours show a clear concentration around the hole, highest along the horizontal sides of the hole and lowest along the vertical sides. Far from the hole, the stresses return to about 333 psi, matching the uniform plate. Both plots include a color legend from blue (0 psi) to red (1,000 psi), showing the range of normal stress magnitudes." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-5.2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/chapter 5 figure edits after review/figure 5.2.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
+<img src="images/chapter 5 figure edits after review/figure 5.2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Two plates modeled in finite element software. Two rectangular plates are shown for comparison under uniaxial tension, both displayed using color stress contours labeled in psi. In the top image, the solid plate has no holes. The left edge is fixed, and uniform tensile forces are applied on the right edge. The stress distribution is nearly uniform across the plate, showing an average normal stress of about 333 psi, indicated mostly by green coloring on the legend scale. There are no significant stress concentrations. In the bottom image, the same plate includes a circular hole near the center. The left edge is fixed, and the right edge is again pulled in tension. The stress contours show a clear concentration around the hole, highest along the horizontal sides of the hole and lowest along the vertical sides. Far from the hole, the stresses return to about 333 psi, matching the uniform plate. Both plots include a color legend from blue (0 psi) to red (1,000 psi), showing the range of normal stress magnitudes.">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-5.2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.2: Each bar has a fixed support on the left, a cross-section of 30 in.², and is subjected to a force of 10,000 lb. The top bar is uniform and experiences a uniform average normal stress of <span class="math inline">\(\sigma=\frac{10000}{30}=333\)</span> psi at all points, except those close to the support and load. The bottom bar experiences the same stress at most points, but significantly higher stress concentrations close to the hole.
+Figure&nbsp;5.2: Each bar has a fixed support on the left, a cross-section of 30 in.², and is subjected to a force of 10,000 lb. The top bar is uniform and experiences a uniform average normal stress of <span class="math inline">\(\sigma=\frac{10,000}{30}=333\)</span> psi at all points, except those close to the support and load. The bottom bar experiences the same stress at most points, but significantly higher stress concentrations close to the hole.
 </figcaption>
 </figure>
 </div>
-<p>However, these effects disappear a certain distance away from the force, support, or local geometry. It is therefore acceptable to assume uniform stress and strain (as we have been so far) provided that we also assume our cross-section is a sufficient distance away from these points. This is known as Saint-Venant’s principle, which can be formally stated as “The stresses and strains created at a point in a body by two statically equivalent loads are equivalent at points sufficiently far removed from the applied load” (<a href="#fig-5.3" class="quarto-xref">Figure&nbsp;<span>5.3</span></a>).</p>
-<div id="fig-5.3" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<p>However, these effects disappear a certain distance away from the force, support, or local geometry, so it is acceptable to assume uniform stress and strain (as we have done so far) provided that we also assume our cross-section is a sufficient distance away from these points. This is known as Saint-Venant’s principle, which can be formally stated thus: “The stresses and strains created at a point in a body by two statically equivalent loads are equivalent at points sufficiently far removed from the applied load” (<a href="#fig-5.3" class="quarto-xref">Figure&nbsp;<span>5.3</span></a>).</p>
+<div id="fig-5.3" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Four diagrams demonstrating static equivalence and internal force distribution in axial systems. In the top-left diagram, a fixed-end horizontal bar is subjected to three 20 kip forces acting to the right. A vertical dashed line indicates a cut at the midpoint of the bar. The corresponding bottom-left diagram shows the free-body diagram of the right segment after the cut: the three 20 kip forces continue to act to the right on the right end, and an internal force of 60 kips acts to the left on the cut face at the left end of the segment. The top-right diagram shows the same bar, but the three 20 kip forces are replaced with a single equivalent 60 kip force acting to the right. A dashed line again indicates a cut at the midpoint. The bottom-right diagram shows the free-body diagram of the right segment: a 60 kip force acts to the right on the right end, and an internal force of 60 kips acts to the left on the cut face at the left end." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-5.3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/PNGs/Figure 5.3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="565">
+<img src="images/PNGs/Figure 5.3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Four diagrams demonstrating static equivalence and internal force distribution in axial systems. In the top-left diagram, a fixed-end horizontal bar is subjected to three 20 kip forces acting to the right. A vertical dashed line indicates a cut at the midpoint of the bar. The corresponding bottom-left diagram shows the free-body diagram of the right segment after the cut: the three 20 kip forces continue to act to the right on the right end, and an internal force of 60 kips acts to the left on the cut face at the left end of the segment. The top-right diagram shows the same bar, but the three 20 kip forces are replaced with a single equivalent 60 kip force acting to the right. A dashed line again indicates a cut at the midpoint. The bottom-right diagram shows the free-body diagram of the right segment: a 60 kip force acts to the right on the right end, and an internal force of 60 kips acts to the left on the cut face at the left end." width="565">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-5.3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5.3: Two statically equivalent loads applied to a bar. Close to the point of application there will be localized stresses and deformations, but at a cross-section sufficiently far away from the applied loads the internal effects are equivalent.
@@ -579,43 +574,43 @@ Figure&nbsp;5.3: Two statically equivalent loads applied to a bar. Close to the 
 </section>
 <section id="stress-concentrations-around-changes-in-geometry" class="level3" data-number="5.2.2">
 <h3 data-number="5.2.2" class="anchored" data-anchor-id="stress-concentrations-around-changes-in-geometry"><span class="header-section-number">5.2.2</span> Stress Concentrations Around Changes in Geometry</h3>
-<p>More advanced courses will use the theory of elasticity to study the areas of variable stress and strain, but for now we’ll continue to apply Saint-Venant’s principle and assume that our cross-sections are sufficiently far away from the applied loads that we don’t need to consider these stress concentrations. We will however address the question of stress concentrations around changes in geometry here. We’ll study two specific examples; holes and fillets. <a href="#fig-5.2" class="quarto-xref">Figure&nbsp;<span>5.2</span></a> shows an example of the stress concentrations around a hole. <a href="#fig-5.4" class="quarto-xref">Figure&nbsp;<span>5.4</span></a> shows an example of the stress concentrations around a fillet. A fillet is a rounded corner used to help transition between two geometries.</p>
-<div id="fig-5.4" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<p>More advanced courses use the theory of elasticity to study the areas of variable stress and strain, but for now we’ll continue to apply Saint-Venant’s principle and assume that our cross-sections are sufficiently far away from the applied loads to eliminate the need to consider these stress concentrations. Here, however, the focus is on the question of stress concentrations around changes in geometry. We’ll study two specific examples; holes and fillets. <a href="#fig-5.2" class="quarto-xref">Figure&nbsp;<span>5.2</span></a> shows an example of the stress concentrations around a hole. <a href="#fig-5.4" class="quarto-xref">Figure&nbsp;<span>5.4</span></a> shows an example of the stress concentrations around a fillet, which is a rounded corner used to help transition between two geometries.</p>
+<div id="fig-5.4" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Finite element model of a 3D stepped bar under uniaxial tension, shown with color stress contours labeled in psi. The bar transitions smoothly from a larger rectangular cross-section on the left to a smaller rectangular cross-section on the right, connected by a rounded fillet at the step. The left face of the larger section is fixed, and the right face of the smaller section is loaded in tension through evenly spaced arrows. A color legend from blue (0 psi) to red (1,000 psi) represents the normal stress in the X-direction. Most of the larger section appears darker green, indicating lower stress. The smaller section is shown in lighter green, representing higher stress due to its reduced cross-sectional area. The curved fillet region between the two sections displays red and blue contours, highlighting the local stress concentration caused by the change in geometry." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-5.4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/PNGs/Figure 5.4.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
+<img src="images/PNGs/Figure 5.4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Finite element model of a 3D stepped bar under uniaxial tension, shown with color stress contours labeled in psi. The bar transitions smoothly from a larger rectangular cross-section on the left to a smaller rectangular cross-section on the right, connected by a rounded fillet at the step. The left face of the larger section is fixed, and the right face of the smaller section is loaded in tension through evenly spaced arrows. A color legend from blue (0 psi) to red (1,000 psi) represents the normal stress in the X-direction. Most of the larger section appears darker green, indicating lower stress. The smaller section is shown in lighter green, representing higher stress due to its reduced cross-sectional area. The curved fillet region between the two sections displays red and blue contours, highlighting the local stress concentration caused by the change in geometry.">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-5.4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.4: The fillet helps prevent a sharp corner but still causes stress concentrations. The bar has a thickness of 3 in. The height of the smaller section is 6 in. and the larger section is 10 in. The applied load is 10,000 kips, so the average normal stress in the smaller section is 556 psi and in the larger section is 333 psi. The maximum stress at the fillet however is 973 psi.
+Figure&nbsp;5.4: The fillet helps prevent a sharp corner but still causes stress concentrations. The bar has a thickness of 3 in. The height of the smaller section is 6 in. and the larger section is 10 in. The applied load is 10,000 kips, so the average normal stress in the smaller section is 556 psi and in the larger section is 333 psi. The maximum stress at the fillet, however, is 973 psi.
 </figcaption>
 </figure>
 </div>
-<p>Fully modeling these stress concentrations is very complicated, but for our purposes it is sufficient to find only the maximum stress that occurs around these stress concentrations. These can be significantly larger than the average stress we have been calculating, and can cause localized failure even if the average stress is below the yield stress for the material. The maximum stress can be found simply by multiplying the average stress by a stress concentration factor, K.</p>
+<p>Fully modeling these stress concentrations is very complicated, but for our purposes it is sufficient to find only the maximum stress that occurs around these stress concentrations. These can be significantly larger than the average stress we have been calculating and can cause localized failure even if the average stress is below the yield stress for the material. The maximum stress can be found simply by multiplying the average stress by a stress concentration factor, K.</p>
 <p><span id="eq-5.1"><span class="math display">\[
-\boxed{\sigma_{max}=K \sigma_{avg}}
+\boxed{\sigma_{max}=K \sigma_{avg}}\text{ ,}
 \tag{5.1}\]</span></span></p>
-<div class="line-block"><em>where</em><br>
+<div class="line-block">where<br>
 <em>𝜎<sub>max</sub> = Maximum normal stress [Pa, psi]</em><br>
-<em>K = Stress concentrtion factor</em></div>
-<p><em>𝜎<sub>avg</sub> = Average normal stress [Pa, psi]</em></p>
+<em>K = Stress concentration factor</em><br>
+<em>𝜎<sub>avg</sub> = Average normal stress [Pa, psi]</em></div>
 <p>This stress concentration factor depends on the geometry at hand and can be found from curves in design handbooks. <a href="#fig-5.5" class="quarto-xref">Figure&nbsp;<span>5.5</span></a> shows curves for holes and fillets. The average normal stress is calculated at whichever plane gives the largest value. For the case with a hole, this is the plane passing through the center of the hole. For the case with a fillet, this is a plane passing through the smaller segment of the member. See <a href="#exm-5.1" class="quarto-xref">Example&nbsp;<span>5.1</span></a> and <a href="#exm-5.2" class="quarto-xref">Example&nbsp;<span>5.2</span></a> to see how these curves can be used.</p>
-<div id="fig-5.5" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<div id="fig-5.5" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Two charts that compare stress concentration factors for tension members with geometric changes. On the left, a flat plate with a central circular hole is shown in the inset. The plate has a total width D, a hole of diameter d, and thickness t, with equal tensile loads P applied at both ends. The inset also includes the equations: K = sigma sub max / sigma sub avg and sigma sub average = P / [t × (D − d)]. The vertical axis shows the stress concentration factor K, and the horizontal axis shows the ratio d / D. The single curve starts near K = 3 when d / D = 0 and gradually decreases toward about K = 2 as d / D increases, showing that larger holes relative to plate width lead to lower stress concentration factors. On the right, the inset shows a stepped bar with a fillet radius r connecting a large diameter D to a smaller diameter d. The inset also includes the equations: K = sigma sub max / sigma sub average and sigma sub average = P / (t × d). The vertical axis again shows K, and the horizontal axis shows the ratio r / d. Several colored curves represent different diameter ratios (D/d = 1.10, 1.20, 1.30, 1.50, and 2.00). Each curve decreases as r / d increases, indicating that larger fillet radii reduce stress concentration. For a given r / d, higher D/d ratios correspond to higher K values, meaning that a sharper diameter change produces greater stress concentration." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-5.5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/chapter 5 figure edits after review/figure 5.5.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
+<img src="images/chapter 5 figure edits after review/figure 5.5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Two charts that compare stress concentration factors for tension members with geometric changes. On the left, a flat plate with a central circular hole is shown in the inset. The plate has a total width D, a hole of diameter d, and thickness t, with equal tensile loads P applied at both ends. The inset also includes the equations: K = sigma sub max / sigma sub avg and sigma sub average = P / [t × (D − d)]. The vertical axis shows the stress concentration factor K, and the horizontal axis shows the ratio d / D. The single curve starts near K = 3 when d / D = 0 and gradually decreases toward about K = 2 as d / D increases, showing that larger holes relative to plate width lead to lower stress concentration factors. On the right, the inset shows a stepped bar with a fillet radius r connecting a large diameter D to a smaller diameter d. The inset also includes the equations: K = sigma sub max / sigma sub average and sigma sub average = P / (t × d). The vertical axis again shows K, and the horizontal axis shows the ratio r / d. Several colored curves represent different diameter ratios (D/d = 1.10, 1.20, 1.30, 1.50, and 2.00). Each curve decreases as r / d increases, indicating that larger fillet radii reduce stress concentration. For a given r / d, higher D/d ratios correspond to higher K values, meaning that a sharper diameter change produces greater stress concentration.">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-5.5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.5: Graphs showing how the stress concentration factor, K changes based on the geometry of the object.
+Figure&nbsp;5.5: Graphs showing how the stress concentration factor, K, changes according to the geometry of the object.
 </figcaption>
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example 5.1
+<span class="screen-reader-only">Tip</span>Example 5.1
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -625,19 +620,20 @@ Example 5.1
 <p><span class="theorem-title"><strong>Example 5.1</strong></span> &nbsp;</p>
 <p>
 </p>
-<p>A hole is drilled through a steel plate to allow two components to be bolted together. The plate has the dimensions shown and is 15 mm thick. If the plate is subjected to an axial load of P = 50 kN, determine the maximum stress in the plate if the hole diameter d = 20 mm.</p>
+<p>A hole is drilled through a steel plate to allow two components to be bolted together. The plate has the dimensions shown and is 15 mm thick. The plate is subjected to an axial load of P = 50 kN.</p>
+<p>Determine the maximum stress in the plate if the hole diameter is d = 20 mm.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/PNGs/Example 5.1 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="348"></p>
+<p><img src="images/PNGs/Example 5.1 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Horizontally oriented rectangular plate measuring 1000 mm in length and 100 mm in height is shown under axial tension, with force P applied outward at both ends. A small circular hole is located at the center of the plate, with its diameter labeled as d." width="348"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solution
+<span class="screen-reader-only">Tip</span>Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -646,16 +642,16 @@ Solution
 <p>Start by calculating the average normal stress in the plate at the location of the hole. The cross-section is a rectangle with a base of 15 mm (0.015 m) and a height of 100 mm (0.1 m), with a 20 mm (0.02 m) diameter hole cut out.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/PNGs/Example 5.1 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="185"></p>
+<p><img src="images/PNGs/Example 5.1 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Vertical cross-section of a rectangular plate measuring 100 mm in height and 15 mm in width. A shaded region in the center, bounded by horizontal dashed lines at the top and bottom, represents the vertical projection of a centered circular hole. This shaded area measures 20 mm in height and corresponds to the hole shown in the original plate from Example 5.1." width="185"></p>
 </figure>
 </div>
 <p><span class="math display">\[
-\sigma_{a v g}=\frac{N}{A}=\frac{50000{~N}}{0.015{~m} *(0.1-0.02){~m}}=41.7{~MPa}
+\sigma_{a v g}=\frac{N}{A}=\frac{50,000{~N}}{0.015{~m} *(0.1-0.02){~m}}=41.7{~MPa}
 \]</span></p>
-<p>Determine the ratio <span class="math inline">\(\frac{d}{D}\)</span> where d = hole diameter and D = Height of the cross-section. Use the appropriate stress concentration curve to read off the stress concentration factor K for this geometry.</p>
+<p>Determine the ratio <span class="math inline">\(\frac{d}{D}\)</span>, where d = hole diameter and D = height of the cross-section. Use the appropriate stress concentration curve to read off the stress concentration factor K for this geometry.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/Example 5.1 part 3 NEW.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="385"></p>
+<p><img src="images/Example 5.1 part 3 NEW.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Graph of stress concentration factor K versus hole ratio d/D. The x-axis (0 to 0.8) is d/D (hole diameter to height of the cross section). The y-axis (2 to 3) is K = sigma sub max / sigma sub nom. A blue curve decreases as d/D increases. A red marker at d/D ≈ 0.2 indicates K ≈ 2.5. An inset shows a rectangular plate with a central hole under tension, labeled D (height of the cross section), d (hole diameter), and t (thickness), with K = sigma sub max / sigma sub nom and sigma sub nom = P / [ t (D − d) ]." width="385"></p>
 </figure>
 </div>
 <p><span class="math display">\[
@@ -676,12 +672,12 @@ Solution
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example 5.2
+<span class="screen-reader-only">Tip</span>Example 5.2
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -691,29 +687,30 @@ Example 5.2
 <p><span class="theorem-title"><strong>Example 5.2</strong></span> &nbsp;</p>
 <p>
 </p>
-<p>A 1-inch-thick connecting rod in an engine assembly has the dimensions shown. If the maximum allowable stress in the rod is 40 ksi, determine the maximum axial load that may be applied to the rod.</p>
+<p>A 1 in. thick connecting rod in an engine assembly has the dimensions shown. The maximum allowable stress in the rod is 40 ksi.</p>
+<p>Determine the maximum axial load that may be applied to the rod.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/chapter 5 figure edits after review/example 5.2 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="443"></p>
+<p><img src="images/chapter 5 figure edits after review/example 5.2 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Two-dimensional top view of a key-shaped mechanical part. The part has a narrow arm on the left and a wider, rounded head on the right. The narrow arm contains a small circular hole with a 2-inch diameter, centered within its 4-inch width. The arm gradually widens into the head, which contains a larger central circular hole with a 6-inch diameter. The full width of the head is labeled as 8 inches. A fillet with a 1-inch radius is indicated at the transition between the narrow arm and the wider head." width="443"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solution
+<span class="screen-reader-only">Tip</span>Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The connecting rod has two holes and a fillet. We can start by determining which of these geometries experiences the largest maximum stress, in terms of applied load P. For each geometry, calculate the average normal stress and then use the appropriate stress concentration curve to determine the maximum normal stress.</p>
+<p>The connecting rod has two holes and a fillet. We can start by determining which of these geometries experiences the largest maximum stress, considering applied load P. For each geometry, calculate the average normal stress and then use the appropriate stress concentration curve to determine the maximum normal stress.</p>
 <p>For the smaller circle:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/Example 5.2 part 2 NEW.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="413"></p>
+<p><img src="images/Example 5.2 part 2 NEW.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Graph with the y-axis labeled &quot;Stress-concentration factor K&quot; (ranging from 2 to 3) and the x-axis labeled &quot;Ratio d over D&quot; (ranging from 0 to 0.8). A red vertical line intersects the x-axis at approximately d/D = 0.5, and a red horizontal line intersects the curve at K ≈ 2.15. The blue curve shows that K decreases as the d/D ratio increases. An inset in the top corner shows a rectangular plate with a central hole under tension, labeled with D (plate height), d (hole diameter), and t (thickness). The equation K = sigma sub max / sigma sub nom is shown, with sigma sub nom = P / [ t × (D − d) ]." width="413"></p>
 </figure>
 </div>
 <p><span class="math display">\[
@@ -727,7 +724,7 @@ Solution
 <p>For the larger circle:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/Example 5.2 part 3 NEW.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="431"></p>
+<p><img src="images/Example 5.2 part 3 NEW.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Graph similar to Image 2, with the same axes and decreasing blue curve. A red horizontal line is drawn just above K = 2.0, at K ≈ 2.05, and a red vertical line intersects the x-axis at d/D = 0.75. The same inset diagram appears in the top-right corner, showing the rectangular plate with hole and formula as described in Image 2." width="431"></p>
 </figure>
 </div>
 <p><span class="math display">\[
@@ -741,7 +738,7 @@ Solution
 <p>For the fillet:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/PNGs/Example 5.2 part 4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="421"></p>
+<p><img src="images/PNGs/Example 5.2 part 4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Graph with the y-axis labeled &quot;Stress-concentration factor K&quot; and the x-axis labeled &quot;Ratio r over d,&quot; ranging from 0 to 0.30. Several curves are plotted, each representing a different D/d ratio (1.10, 1.20, 1.30, 1.50, and 2.00). Higher D/d curves are positioned higher, indicating that for a given r/d value, a higher D/d ratio results in a greater stress concentration factor K. A red vertical line intersects r/d ≈ 0.25, and a red horizontal line intersects K ≈ 1.82 for a D over d ratio equal to 2. An inset in the top-right corner shows a key-shaped part with a central notch and fillet radius r, along with labels D (cross-section height), d (hole diameter), and force arrows labeled P pointing outward on both ends. The formula K = sigma sub max / sigma sub nom is shown, with sigma sub nom = P / (t × d)." width="421"></p>
 </figure>
 </div>
 <p><span class="math display">\[
@@ -753,8 +750,8 @@ Solution
 &amp; \sigma_{max}=K \sigma_{avg}=1.82 * 0.25 P=0.455 P
 \end{aligned}
 \]</span></p>
-<p>The largest stress is at the small hole, where 𝜎<sub>max</sub> = 1.075<em>P</em>.</p>
-<p>Since the maximum allowable stress is 40 ksi, <span class="math inline">\(40{~ksi}=1.075 P \quad\rightarrow\quad P=\frac{40{~ksi}}{1.075}=37.2{~kips}\)</span></p>
+<p>The largest stress is at the small hole, where σ<sub>max</sub> = 1.075P.</p>
+<p>Since the maximum allowable stress is 40 ksi, <span class="math inline">\(40{~ksi}=1.075 P \quad\rightarrow\quad P=\frac{40{~ksi}}{1.075}=37.2{~kips}\)</span>.</p>
 </div>
 </div>
 </div>
@@ -762,21 +759,21 @@ Solution
 </div>
 </div>
 </div>
-<p>It should be apparent from these examples that sharp corners and tight radii lead to high stress concentrations. When designing parts it is best to use smooth, flowing transitions where possible and avoid sharp corners in order to minimize stress concentrations.</p>
+<p>Apparent from these examples is that sharp corners and tight radii lead to high stress concentrations. When designing parts, it is best to use smooth, flowing transitions where possible and avoid sharp corners to minimize stress concentrations.</p>
 <div class="callout callout-style-default callout-warning no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Step-by-step: Stress concentrations
+<span class="screen-reader-only">Warning</span>Step-by-Step: Stress Concentrations
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li><p>Calculate the average normal stress using <span class="math inline">\(\sigma_{avg}=\frac{N}{A}\)</span>. Do this at the hole or at the thinner section of the fillet.</p></li>
 <li><p>Use the appropriate stress concentration curve to determine the stress concentration factor, K, for the given geometry.</p></li>
-<li><p>Calculate the maximum stress from <span class="math inline">\(\sigma_{max}=K \sigma_{avg}\)</span></p></li>
+<li><p>Calculate the maximum stress from <span class="math inline">\(\sigma_{max}=K \sigma_{avg}\)</span>.</p></li>
 </ol>
 </div>
 </div>
@@ -790,46 +787,46 @@ Step-by-step: Stress concentrations
 Click to expand
 </summary>
 <p>Consider a simple bar of uniform cross-section subjected to an axial force (<a href="#fig-5.6" class="quarto-xref">Figure&nbsp;<span>5.6</span></a>).</p>
-<div id="fig-5.6" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<div id="fig-5.6" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Horizontal rectangular bar under axial tension. Equal and opposite horizontal forces labeled F are applied at both ends, indicating a pulling force. Below the bar, a horizontal dimension line labeled L represents the original length of the bar." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-5.6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/PNGs/Figure 5.6.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="335">
+<img src="images/PNGs/Figure 5.6.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Horizontal rectangular bar under axial tension. Equal and opposite horizontal forces labeled F are applied at both ends, indicating a pulling force. Below the bar, a horizontal dimension line labeled L represents the original length of the bar." width="335">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-5.6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5.6: A bar of uniform cross-section, A, and length, L, subjected to axial load, F.
 </figcaption>
 </figure>
 </div>
-<p>Assuming elastic behavior, we have equations for stress and strain, as well as Hooke’s law which relates the two equations:</p>
+<p>Assuming elastic behavior, we have equations for stress and strain, as well as Hooke’s law, which relates the two equations.</p>
 <p><span class="math display">\[
 \begin{aligned} &amp; \sigma=\frac{F}{A} \\ &amp; \varepsilon_{long}=\frac{\Delta L}{L} \\ &amp; \sigma=E \varepsilon_{long}\end{aligned}
 \]</span></p>
-<p>Replacing the stress and strain terms in Hooke’s law:</p>
+<p>Replace the stress and strain terms in Hooke’s law.</p>
 <p><span class="math display">\[
 \frac{F}{A}=E \frac{\Delta L}{L}
 \]</span></p>
-<p>Rearranging:</p>
+<p>Rearrange the equation.</p>
 <p><span class="math display">\[
 \Delta L=\frac{F L}{A E}
 \]</span></p>
-<p>This equation can be used to directly find the change in length of an object subjected to an axial load.</p>
-<p>In practice, there may be multiple axial loads applied to the bar. The cross-sectional area may change at different points along the bar, or perhaps there could be different materials with different elastic moduli connected in series to form the bar. In any of these cases we can split the bar into sections where each section has a constant F, A, and E. We can calculate the change in length of each section separately and sum them to find the total. See <a href="#exm-5.3" class="quarto-xref">Example&nbsp;<span>5.3</span></a> for deformation of a simple bar subjected to a single load, and <a href="#exm-5.4" class="quarto-xref">Example&nbsp;<span>5.4</span></a> for a problem involving multiple segments of a bar.</p>
+<p>This last equation can be used to directly find the change in length of an object subjected to an axial load.</p>
+<p>In practice, multiple axial loads may be applied to the bar. The cross-sectional area may change at different points along the bar, or perhaps different materials with different elastic moduli are connected in series to form the bar. In any of these cases we can split the bar into sections where each section has a constant F, A, and E. We can calculate the change in length of each section separately and sum them to find the total. See <a href="#exm-5.3" class="quarto-xref">Example&nbsp;<span>5.3</span></a> for deformation of a simple bar subjected to a single load and <a href="#exm-5.4" class="quarto-xref">Example&nbsp;<span>5.4</span></a> for a problem involving multiple segments of a bar.</p>
 <p><span id="eq-5.2"><span class="math display">\[
-\boxed{\Delta L=\sum \frac{F L}{A E}}
+\boxed{\Delta L=\sum \frac{F L}{A E}}\text{ ,}
 \tag{5.2}\]</span></span></p>
-<div class="line-block"><em>where</em><br>
+<div class="line-block">where<br>
 <em>ΔL = Change in length [m, in.]</em><br>
-<em>F = internal axial load [N, lb]</em><br>
+<em>F = Internal axial load [N, lb]</em><br>
 <em>L = Original length [m, in.]</em><br>
 <em>A = Cross-sectional area [m<sup>2</sup>, in.<sup>2</sup>]</em><br>
 <em>E = Elastic modulus [Pa, psi]</em></div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example 5.3
+<span class="screen-reader-only">Tip</span>Example 5.3
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -839,30 +836,31 @@ Example 5.3
 <p><span class="theorem-title"><strong>Example 5.3</strong></span> &nbsp;</p>
 <p>
 </p>
-<p>A wooden beam (E = 12 GPa) of length L = 6 m has a rectangular cross-section of base b = 50 mm and height h = 80 mm. The beam is subjected to a tensile load P = 30 kN as shown. Determine the change in length of the beam.</p>
+<p>A wooden beam (E = 12 GPa) of length L = 6 m has a rectangular cross-section of base b = 50 mm and height h = 80 mm. The beam is subjected to a tensile load P = 30 kN as shown.</p>
+<p>Determine the change in length of the beam.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/chapter 5 figure edits after review/example 5.3 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="378"></p>
+<p><img src="images/chapter 5 figure edits after review/example 5.3 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Horizontal rectangular bar is fixed to a wall on the left side and extends 6 meters to the right. A red arrow labeled 30 kN points rightward at the free end, indicating an external axial force." width="378"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solution
+<span class="screen-reader-only">Tip</span>Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>We can find the change in length of the beam using <span class="math inline">\(\Delta L = \Sigma\frac{FL}{AE}\)</span>.</p>
-<p>Here there is only one load applied and the beam is made of a single material with a uniform cross-section, so F, A, and E are constant.</p>
-<p>We can find the internal load in the beam by cutting a cross-section and drawing a free body diagram.</p>
+<p>Here only one load is applied and the beam is made of a single material with a uniform cross-section, so F, A, and E are constant.</p>
+<p>We next find the internal load in the beam by cutting a cross-section and drawing a free body diagram (FBD).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/chapter 5 figure edits after review/example 5.3 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="362"></p>
+<p><img src="images/chapter 5 figure edits after review/example 5.3 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="The same bar is shown with a vertical dashed line on the left side, representing a cut made anywhere before the 30 kN force. This is the free-body diagram of the right segment. A 30 kN force points rightward at the right end, and a red arrow labeled F points leftward at the cut face on the left, representing the internal axial force." width="362"></p>
 </figure>
 </div>
 <p><span class="math display">\[
@@ -871,7 +869,7 @@ Solution
 F &amp;=30~kN
 \end{aligned}
 \]</span></p>
-<p>The beam has a rectangular cross-section so the area is given by:</p>
+<p>The beam has a rectangular cross-section so the area is given by</p>
 <p><span class="math display">\[
 \begin{aligned}
 A&amp;=bh\\
@@ -879,7 +877,7 @@ A&amp;=bh\\
 &amp;=0.004~m^2
 \end{aligned}
 \]</span></p>
-<p>We are given L = 6 m and E = 12 GPa, so the change in length of the beam is given by:</p>
+<p>We are given L = 6 m and E = 12 GPa, so the change in length of the beam is given by</p>
 <p><span class="math display">\[
 \begin{aligned}
 \Delta L &amp;= \frac{FL}{AE}\\
@@ -888,7 +886,7 @@ A&amp;=bh\\
 &amp;=3.75~mm
 \end{aligned}
 \]</span></p>
-<p>The beam gets longer by 3.75 mm.</p>
+<p>The beam lengthens by 3.75 mm.</p>
 </div>
 </div>
 </div>
@@ -897,12 +895,12 @@ A&amp;=bh\\
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example 5.4
+<span class="screen-reader-only">Tip</span>Example 5.4
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -912,29 +910,30 @@ Example 5.4
 <p><span class="theorem-title"><strong>Example 5.4</strong></span> &nbsp;</p>
 <p>
 </p>
-<p>A component is made by welding together 2 circular rods. Rod (1) is made of steel (E = 29 x 10<sup>6</sup> psi) and is hollow, with an outer diameter of 4 in. and an inner diameter of 2 in. Rod (2) is made of copper (E = 17 x 10<sup>6</sup> psi) and is solid, with a diameter of 5 in. If the component is subjected to the axial loads shown, determine the total deformation of the component.</p>
+<p>A component is made by welding together two circular rods. Rod 1 is made of steel (E = 29 x 10<sup>6</sup> psi) and is hollow, with an outer diameter of 4 in. and an inner diameter of 2 in. Rod 2 is made of copper (E = 17 x 10<sup>6</sup> psi) and is solid, with a diameter of 5 in.</p>
+<p>If the component is subjected to the axial loads shown, determine the total deformation of the component.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/Figure updates 4.23.25/example 5.4 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="490"></p>
+<p><img src="images/Figure updates 4.23.25/example 5.4 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="A stepped axial bar is shown horizontally, with a narrow segment on the left and a thicker segment on the right. The narrow segment, labeled segment (1), is 9 inches long. The thicker segment, labeled segment (2), is 14 inches long and ends in a fixed support on the far right. A leftward force of 60 kips is applied at the far left end of segment (1). A rightward force of 80 kips is applied on segment (2), located 4 inches to the right of the junction with segment (1) and 10 inches to the left of the fixed end." width="490"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solution
+<span class="screen-reader-only">Tip</span>Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>We can find the change in length of the component using <span class="math inline">\(\Delta L=\sum \frac{F L}{A E}\)</span>.</p>
-<p>First, break the component into three segments and determine the internal load in each segment. The first segment covers the 9-inch steel rod. After the first 9 inches of the component, both the cross-sectional area and elastic modulus change so a second segment is needed. This segment covers the next 4 inches. At this point the loading changes, so a third segment is required to cover the final 10 inches of the component.</p>
+<p>First, break the component into three segments and determine the internal load in each segment. The first segment covers the 9 in. steel rod. After the first 9 in. of the component, both the cross-sectional area and elastic modulus change, so a second segment is needed. This segment covers the next 4 in. At this point the loading changes, so a third segment is required to cover the final 10 in. of the component.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/Figure updates 4.23.25/example 5.4 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="466"></p>
+<p><img src="images/Figure updates 4.23.25/example 5.4 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Three free-body diagrams of bar segments are shown stacked vertically. The top diagram shows a cut from segment (1), representing the left portion of the bar. It includes a leftward external force of 60 kips on the far left end and an internal rightward force labeled N sub 1 at the cut face, marked by a vertical dashed line. The middle diagram shows a cut from segment (2), just before the applied 80 kip force, representing the left portion of segment (2) (i.e., after the junction). It includes a leftward force of 60 kips on the left end and an internal rightward force labeled N sub 2 at the dashed cut face. The bottom diagram shows the full bar without the fixed support, representing the left segment of the complete free-body diagram (cut just before the fixed end). It includes a leftward force of 60 kips at the far left end, a rightward force of 80 kips applied 4 inches to the right of the junction, and an internal rightward force labeled N sub 3 at the far right cut face, marked by a vertical dashed line." width="466"></p>
 </figure>
 </div>
 <p><span class="math display">\[
@@ -953,17 +952,17 @@ A_2=\pi*(2.5^2){~in.}^2=19.6{~in.}^2
 \]</span></p>
 <p>Deformation of segment 1:</p>
 <p><span class="math display">\[
-\Delta L_1=\frac{60000{~lb} * 9{~in.}}{9.42{~in.}^2 * 29 \times 10^6\frac{lb}{in^2}}=0.00198{~in.}
+\Delta L_1=\frac{60,000{~lb} * 9{~in.}}{9.42{~in.}^2 * 29 \times 10^6\frac{lb}{in^2}}=0.00198{~in.}
 \]</span></p>
 <p>Deformation of segment 2:</p>
 <p><span class="math display">\[
-\Delta L_2=\frac{60000{~lb} * 4{~in.}}{19.6{~in.}^2 * 17 \times 10^6\frac{lb}{in.^2}}=0.000719{~in} .
+\Delta L_2=\frac{60,000{~lb} * 4{~in.}}{19.6{~in.}^2 * 17 \times 10^6\frac{lb}{in.^2}}=0.000719{~in} .
 \]</span></p>
 <p>Deformation of segment 3:</p>
 <p><span class="math display">\[
-\Delta L_3=\frac{-20000{~lb} * 10{~in.}}{19.6{~in.}^2 * 17 \times 10^6\frac{lb}{in.^2}}=-0.000599{~in.}
+\Delta L_3=\frac{-20,000{~lb} * 10{~in.}}{19.6{~in.}^2 * 17 \times 10^6\frac{lb}{in.^2}}=-0.000599{~in.}
 \]</span></p>
-<p>Note that segment 3 is in compression and so gets shorter, while segments 1 and 2 are in tension and so get longer. The total deformation in the component is simply the sum of these three deformations.</p>
+<p>Note that segment 3 is in compression and therefore becomes shorter, while segments 1 and 2 are in tension and therefore become longer. The total deformation in the component is simply the sum of these three deformations.</p>
 <p><span class="math display">\[
 \Delta L=0.00198{~in.}+0.000719{~in.}-0.000599{~in.}=0.002{~in.}
 \]</span></p>
@@ -980,15 +979,15 @@ A_2=\pi*(2.5^2){~in.}^2=19.6{~in.}^2
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Step-by-step: Axial deformation
+<span class="screen-reader-only">Warning</span>Step-by-Step: Axial Deformation
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li><p>Split the bar into sections of constant F, A, and E. Any time any of these terms changes, begin a new section.</p></li>
+<li><p>Split the bar into sections of constant F, A, and E. Any time any term changes, begin a new section.</p></li>
 <li><p>Determine the length of each section.</p></li>
 <li><p>Calculate the change in length of each section using <span class="math inline">\(\Delta L=\frac{F L}{A E}\)</span>.</p></li>
-<li><p>Determine the total change in length by summing the change in length of each section. Remember some sections may elongate while others contract.</p></li>
+<li><p>Determine the total change in length by summing the change in length of each section. Remember that some sections may elongate while others contract.</p></li>
 </ol>
 </div>
 </div>
@@ -1000,42 +999,42 @@ Step-by-step: Axial deformation
 <summary>
 Click to expand
 </summary>
-<p>Sometimes a structure will have more than one axially loaded member. In such cases there are multiple bars that will experience a change in length and the amount of deformation won’t necessarily be the same in each member. The deformable members are generally connected by a rigid (nondeformable) beam. These problems generally involve a little geometry alongside our deformation equation (<a href="#fig-5.7" class="quarto-xref">Figure&nbsp;<span>5.7</span></a>).</p>
-<div id="fig-5.7" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<p>Sometimes a structure has more than one axially loaded member. In such cases multiple bars will experience a change in length and the amount of deformation won’t necessarily be the same in each member. The deformable members are generally connected by a rigid (nondeformable) beam. These problems generally involve a little geometry alongside the deformation equation (<a href="#fig-5.7" class="quarto-xref">Figure&nbsp;<span>5.7</span></a>).</p>
+<div id="fig-5.7" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Two diagrams comparing the original configuration of a structural frame with its potential deformed shape. The top diagram shows a horizontal beam extending from point A to point B, with point C located between them, closer to point A. The beam is supported from above by two vertical bars labeled (1) and (2), which are fixed at the top and extend downward to the beam. The original lengths of the bars are labeled L sub 1 and L sub 2. A uniformly distributed load W is applied downward from point C to point B. The bottom diagram shows the same frame with possible deformation under the load. The beam is shown detached from supports at points A and B to highlight the displacements of the vertical bars. The beam tilts slightly downward to the southeast, with displacements labeled ΔL sub 1 for bar (1) and ΔL sub 2 for bar (2), marked by dashed vertical lines extending downward from the original bar lengths. The distributed load W remains applied from point C to point B, as in the top diagram." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-5.7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/PNGs/Figure 5.7.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="360">
+<img src="images/PNGs/Figure 5.7.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Two diagrams comparing the original configuration of a structural frame with its potential deformed shape. The top diagram shows a horizontal beam extending from point A to point B, with point C located between them, closer to point A. The beam is supported from above by two vertical bars labeled (1) and (2), which are fixed at the top and extend downward to the beam. The original lengths of the bars are labeled L sub 1 and L sub 2. A uniformly distributed load W is applied downward from point C to point B. The bottom diagram shows the same frame with possible deformation under the load. The beam is shown detached from supports at points A and B to highlight the displacements of the vertical bars. The beam tilts slightly downward to the southeast, with displacements labeled ΔL sub 1 for bar (1) and ΔL sub 2 for bar (2), marked by dashed vertical lines extending downward from the original bar lengths. The distributed load W remains applied from point C to point B, as in the top diagram." width="360">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-5.7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.7: Rigid beam AB is attached to deformable poles 1 and 2. The poles may deform different amounts so point A is displaced by amount ΔL<sub>1</sub>, point B by amount ΔL<sub>2</sub>, and point C by an amount in between these two values.
+Figure&nbsp;5.7: Rigid beam AB is attached to deformable poles 1 and 2. The poles may deform different amounts, so point A is displaced by amount ΔL<sub>1</sub>, point B by amount ΔL<sub>2</sub>, and point C by an amount in between these two values.
 </figcaption>
 </figure>
 </div>
-<p>By identifying the force in each member through equilibrium, we may calculate the deformation of each member separately using:</p>
+<p>By identifying the force in each member through equilibrium, we may calculate the deformation of each member separately by using</p>
 <p><span class="math display">\[
-\Delta L=\frac{F L}{A E}
+\Delta L=\frac{F L}{A E}\text{.}
 \]</span></p>
-<p>Once the change in length of each member is known, we can find the displacement at different points on the rigid beam through simple geometry of the rigid beam (<a href="#fig-5.8" class="quarto-xref">Figure&nbsp;<span>5.8</span></a>). This process is demonstrated in <a href="#exm-5.5" class="quarto-xref">Example&nbsp;<span>5.5</span></a>.</p>
-<div id="fig-5.8" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<p>Once each member’s change in length is known, use simple geometry to find the displacement at different points on the rigid beam (<a href="#fig-5.8" class="quarto-xref">Figure&nbsp;<span>5.8</span></a>). This process is demonstrated in <a href="#exm-5.5" class="quarto-xref">Example&nbsp;<span>5.5</span></a>.</p>
+<div id="fig-5.8" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The top diagram shows a horizontal beam supported by two vertical bars labeled (1) and (2), both originally the same length. Under loading, bar (2) undergoes vertical displacement, illustrated by a dashed vertical line extending downward from its original position. This causes the beam to tilt diagonally in the southeast direction, shown with a dashed outline of the displaced beam. The vertical displacement of bar (2) is labeled ΔL sub 2, indicating the downward movement of point B. The bottom diagram represents the same deformation using geometry and similar triangles. Points A, C, and B are connected by a diagonal dashed line sloping downward to the southeast, representing the tilted beam. A horizontal line is drawn beneath it to represent the original, undeformed beam length, labeled L, with point A at the left end. The distance from point A to point C is labeled L sub AC. The vertical displacement between the original and deformed positions of point C is labeled ΔL sub C, and the vertical displacement at point B is labeled ΔL sub 2." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-5.8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/PNGs/Figure 5.8.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="329">
+<img src="images/PNGs/Figure 5.8.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="The top diagram shows a horizontal beam supported by two vertical bars labeled (1) and (2), both originally the same length. Under loading, bar (2) undergoes vertical displacement, illustrated by a dashed vertical line extending downward from its original position. This causes the beam to tilt diagonally in the southeast direction, shown with a dashed outline of the displaced beam. The vertical displacement of bar (2) is labeled ΔL sub 2, indicating the downward movement of point B. The bottom diagram represents the same deformation using geometry and similar triangles. Points A, C, and B are connected by a diagonal dashed line sloping downward to the southeast, representing the tilted beam. A horizontal line is drawn beneath it to represent the original, undeformed beam length, labeled L, with point A at the left end. The distance from point A to point C is labeled L sub AC. The vertical displacement between the original and deformed positions of point C is labeled ΔL sub C, and the vertical displacement at point B is labeled ΔL sub 2." width="329">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-5.8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5.8: Beam deflection in the case where only bar 2 deforms. Point B will deflect downward by amount ΔL<sub>2</sub>. The deflection at point C can be determined through geometry.
 </figcaption>
 </figure>
 </div>
-<p>The deflection of point C will be somewhere between the deflection at A and the deflection at B. Assuming there is no deflection at A and assuming that the deflections (and therefore the angle at A) are small, we can use similar triangles to find:</p>
+<p>The deflection of point C will be somewhere between the deflection at A and the deflection at B. Assuming that there is no deflection at A and that the deflections (and thus the angle at A) are small, use similar triangles to find</p>
 <p><span class="math display">\[
-\frac{\Delta L_C}{L_{A C}}=\frac{\Delta L_2}{L} \rightarrow \Delta L_C=\Delta L_2 \frac{L_{A C}}{L}\]</span></p>
-<p>If there is a deflection at point A (<a href="#fig-5.9" class="quarto-xref">Figure&nbsp;<span>5.9</span></a>) this simply becomes:</p>
+\frac{\Delta L_C}{L_{A C}}=\frac{\Delta L_2}{L} \rightarrow \Delta L_C=\Delta L_2 \frac{L_{A C}}{L}\text{.}\]</span></p>
+<p>If a deflection exists at point A (<a href="#fig-5.9" class="quarto-xref">Figure&nbsp;<span>5.9</span></a>), this simply becomes</p>
 <p><span class="math display">\[
-\Delta L_C=\Delta L_1+\left(\Delta L_2-\Delta L_1\right) \frac{L_{A C}}{L}\]</span></p>
-<div id="fig-5.9" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+\Delta L_C=\Delta L_1+\left(\Delta L_2-\Delta L_1\right) \frac{L_{A C}}{L}\text{.}\]</span></p>
+<div id="fig-5.9" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Horizontal line segment labeled A–C–B representing the original position of a structural element. Below it, the same A–C–B line is shown rotated clockwise (south east direction) in black dashed lines, representing its displaced configuration. A green dashed horizontal line extends from point A to the original position of point B align vertically with its displaced position. The vertical distance between the original and displaced position of point A is labeled ΔL sub 1. The vertical distance from the original position of point B to its displaced position is divided into ΔL sub 1 and ΔL sub 2 - ΔL sub 1, indicating additional downward displacement." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-5.9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/PNGs/Figure 5.9.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="379">
+<img src="images/PNGs/Figure 5.9.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Horizontal line segment labeled A–C–B representing the original position of a structural element. Below it, the same A–C–B line is shown rotated clockwise (south east direction) in black dashed lines, representing its displaced configuration. A green dashed horizontal line extends from point A to the original position of point B align vertically with its displaced position. The vertical distance between the original and displaced position of point A is labeled ΔL sub 1. The vertical distance from the original position of point B to its displaced position is divided into ΔL sub 1 and ΔL sub 2 - ΔL sub 1, indicating additional downward displacement." width="379">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-5.9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5.9: Similar triangles for calculating deflection at a point when both bars experience a change in length.
@@ -1043,12 +1042,12 @@ Figure&nbsp;5.9: Similar triangles for calculating deflection at a point when bo
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example 5.5
+<span class="screen-reader-only">Tip</span>Example 5.5
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1058,28 +1057,29 @@ Example 5.5
 <p><span class="theorem-title"><strong>Example 5.5</strong></span> &nbsp;</p>
 <p>
 </p>
-<p>A rigid beam is supported by two non-rigid poles and subjected to a distributed load w = 75 kN/m. Pole 1 is made of steel (E = 200 GPa) and has a diameter of 30 mm. Pole 2 is made of cast iron (E = 70 GPa) and has a diameter of 50 mm. Determine the deflection at point C of the rigid beam.</p>
+<p>A rigid beam is supported by two nonrigid poles and subjected to a distributed load w = 75 kN/m. Pole 1 is made of steel (E = 200 GPa) and has a diameter of 30 mm. Pole 2 is made of cast iron (E = 70 GPa) and has a diameter of 50 mm.</p>
+<p>Determine the deflection at point C of the rigid beam.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/PNGs/Example 5.4 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="307"></p>
+<p><img src="images/PNGs/Example 5.4 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Horizontal beam AB is supported by two vertical columns. Column (1), on the left, is 5 m tall; Column (2), on the right, is 3 m tall. The total beam length is 12 m, divided into AC (4 m) and CB (8 m), with point C between A and B. A uniformly distributed vertical load W is applied downward along CB." width="307"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solution
+<span class="screen-reader-only">Tip</span>Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Although the beam is rigid, poles 1 and 2 will both elongate. We can find the force in each pole by drawing a free body diagram and applying equilibrium equations.</p>
+<p>Although the beam is rigid, poles 1 and 2 will both elongate. We can find the force in each pole by drawing an FBD and applying equilibrium equations.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/PNGs/Example 5.4 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="245"></p>
+<p><img src="images/PNGs/Example 5.4 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="The beam AB is shown isolated in a horizontal position. Upward support reactions are labeled F sub 1 at point A and F sub 2 at point B. A concentrated downward force of 600 kilonewtons is applied at a point 8 meters to the right of A (or 4 meters to the left of B)." width="245"></p>
 </figure>
 </div>
 <p><span class="math display">\[
@@ -1088,23 +1088,23 @@ Solution
 \sum F_y=F_1-600{~kN}+400{~kN}=0 \quad\rightarrow\quad F_1=200{~kN}
 \end{gathered}
 \]</span></p>
-<p>We can then calculate the change in length of each pole.</p>
+<p>We can then calculate each pole’s change in length.</p>
 <p><span class="math display">\[
 \begin{aligned}
-\Delta L_1 &amp; =\frac{F_1 L_1}{A_1 E_1}=\frac{200000{~N} * 5{~m}}{\pi * (0.015{~in.})^2 * 200 * 10^9\frac{N}{m^2}}=0.00707{~m}=7.07{~mm} \\
-\Delta L_2 &amp; =\frac{F_2 L_2}{A_2 E_2}=\frac{400000{~N} * 3{~m}}{\pi * (0.025{~in.})^2 * 70 * 10^9\frac{N}{m^2}}=0.00873{~m}=8.73{~mm}
+\Delta L_1 &amp; =\frac{F_1 L_1}{A_1 E_1}=\frac{200,000{~N} * 5{~m}}{\pi * (0.015{~in.})^2 * 200 * 10^9\frac{N}{m^2}}=0.00707{~m}=7.07{~mm} \\
+\Delta L_2 &amp; =\frac{F_2 L_2}{A_2 E_2}=\frac{400,000{~N} * 3{~m}}{\pi * (0.025{~in.})^2 * 70 * 10^9\frac{N}{m^2}}=0.00873{~m}=8.73{~mm}
 \end{aligned}
 \]</span></p>
-<p>To determine the deflection at point C, first determine that point B has deflected (8.73 mm – 7.07 mm) = 1.66 mm more than point A.</p>
+<p>To determine the deflection at point C, first determine that point B has deflected: (8.73 mm – 7.07 mm) = 1.66 mm more than point A.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/PNGs/Example 5.4 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="311"></p>
+<p><img src="images/PNGs/Example 5.4 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Two lines are shown: a dashed horizontal line for the original, undeformed beam AB (A-C-B) and a solid black line for the deformed beam A′-C′-B′ sloping downward from left to right (southeast direction). Point A has moved downward 7.07 mm; point B, 8.73 mm. The vertical distance between C and C′ is labeled ΔL sub C, indicating the relative vertical displacement due to the difference in movement between A and B." width="311"></p>
 </figure>
 </div>
 <p>We can find how much more point C has deflected than point A by using similar triangles.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/PNGs/Example 5.4 part 4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="253"></p>
+<p><img src="images/PNGs/Example 5.4 part 4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="The deformed beam A′B′ is shown as a solid black line connecting points A′, C′, and B′. A horizontal dashed line extends from point A′ to the original (undeformed) position of point B, highlighting the beam’s rotation. The beam has rotated downward in a clockwise direction, as shown by the slanted orientation of line A′B′. The vertical distance from C′ to the dashed reference line is labeled ΔL sub C slash A, representing the displacement of point C relative to the straight line connecting A′ to B′. The horizontal spans are: A′ to undeformed C is 4 meters, C to B is 8 meters, and the total vertical drop from A′ to B′ is 1.66 millimeters." width="253"></p>
 </figure>
 </div>
 <p><span class="math display">\[
@@ -1112,7 +1112,7 @@ Solution
 \]</span></p>
 <p>So point C deflects 0.553 mm more than point A, which is a total deflection at point C of</p>
 <p><span class="math display">\[
-\Delta L_C=7.07{~mm}+0.553{~mm}=7.62{~mm}
+\Delta L_C=7.07{~mm}+0.553{~mm}=7.62{~mm}\text{.}
 \]</span></p>
 </div>
 </div>
@@ -1127,7 +1127,7 @@ Solution
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Step-by-step: Deformation in series of bars
+<span class="screen-reader-only">Warning</span>Step-by-Step: Deformation in Series of Bars
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1146,38 +1146,38 @@ Step-by-step: Deformation in series of bars
 <summary>
 Click to expand
 </summary>
-<p>A statically indeterminate problem is one which has more unknowns than we have equilibrium equations to solve for those unknowns. This is an issue because it prevents us from finding the internal loads and we therefore can’t calculate stress or deformation.</p>
-<p>We’ll study two types of statically indeterminate problems. In the first type there will be additional supports beyond those needed to maintain equilibrium. These are known as redundant supports and they are quite common in practice (<a href="#fig-5.10" class="quarto-xref">Figure&nbsp;<span>5.10</span></a>).</p>
-<div id="fig-5.10" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<p>A statically indeterminate problem is one that has more unknowns than we have equilibrium equations to solve for them. This issue prevents us from finding the internal loads, and so we cannot calculate stress or deformation.</p>
+<p>There are two types of statically indeterminate problems. The first type has additional supports beyond those needed to maintain equilibrium. These are known as redundant supports and are quite common in practice (<a href="#fig-5.10" class="quarto-xref">Figure&nbsp;<span>5.10</span></a>).</p>
+<div id="fig-5.10" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A long cable-stayed bridge spans across a wide valley with multiple tall piers supporting the deck. The bridge features vertical pylons from which multiple diagonal cables fan out symmetrically to support the roadway." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-5.10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/PNGs/architecture-bridge-suspension-bridge-france-pillar-landmark-759379-pxhere.com.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img">
+<img src="images/PNGs/architecture-bridge-suspension-bridge-france-pillar-landmark-759379-pxhere.com.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="A long cable-stayed bridge spans across a wide valley with multiple tall piers supporting the deck. The bridge features vertical pylons from which multiple diagonal cables fan out symmetrically to support the roadway.">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-5.10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5.10: An example of redundancy on a suspension bridge. There are multiple supports and multiple cables at each support, such that if one cable fails the entire structure does not collapse.
 </figcaption>
 </figure>
 </div>
-<p>In such problems, it is not possible to determine all of the reaction forces using equilibrium alone. However, we can use our knowledge of deformation to help. If a member is held between two supports then its total deformation must be zero. Since the change in length depends on the internal force in the member, this constraint introduces an additional equation to use alongside the equilibrium equations. There are two possible approaches here.</p>
-<p><strong>Approach 1</strong>: To determine the reaction force at the redundant support, begin by removing the redundant support from the problem and determining the deformation that would occur if the support was not there. Then replace the reaction force at the support, which will cause the member to deform in the opposite direction (<a href="#fig-5.11" class="quarto-xref">Figure&nbsp;<span>5.11</span></a>).</p>
-<div id="fig-5.11" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<p>In such problems, determining all the reaction forces using equilibrium alone isn’t possible. However, we can use our knowledge of deformation to help. If a member is held between two supports, then its total deformation must be zero. Since the change in length depends on the internal force in the member, this constraint introduces an additional equation to use alongside the equilibrium equations. Two approaches are possible here.</p>
+<p><strong>Approach 1</strong>: To determine the reaction force at the redundant support, begin by removing the redundant support from the problem and determining the deformation that would occur without the support. Then replace the reaction force at the support, which will cause the member to deform in the opposite direction (<a href="#fig-5.11" class="quarto-xref">Figure&nbsp;<span>5.11</span></a>).</p>
+<div id="fig-5.11" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Four subfigures labeled (a) through (d) show a horizontal bar composed of a larger left segment and a smaller right segment. In subfigure (a) the bar is fixed between two rigid supports at both ends. In (b) the same bar is shown as a free body diagram: a rightward force F acts at the interface between segments, with leftward reaction forces F sub A at the left end and F sub B at the right end. In subfigure (c) the right support is removed, leaving the smaller segment’s end free so the bar can elongate under F. In (d) The right support is replaced with an equivalent leftward force F sub B, causing the bar to contract." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-5.11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/PNGs/Figure 5.11.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="519">
+<img src="images/PNGs/Figure 5.11.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Four subfigures labeled (a) through (d) show a horizontal bar composed of a larger left segment and a smaller right segment. In subfigure (a) the bar is fixed between two rigid supports at both ends. In (b) the same bar is shown as a free body diagram: a rightward force F acts at the interface between segments, with leftward reaction forces F sub A at the left end and F sub B at the right end. In subfigure (c) the right support is removed, leaving the smaller segment’s end free so the bar can elongate under F. In (d) The right support is replaced with an equivalent leftward force F sub B, causing the bar to contract." width="519">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-5.11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5.11: (a) A bar held between two rigid supports. (b) A free body diagram of the beam reveals that there are two unknowns but only one equilibrium equation. (c) Removing one of the supports allows the bar to elongate. (d) Replacing the support force causes the bar to contract.
 </figcaption>
 </figure>
 </div>
-<p>The sum of these two deformations must equal the actual deformation of the member. If the member is held between two rigid supports, the total deformation will be zero. If there is a small gap or the supports allow a certain amount of movement, the total deformation will be equal to the size of this gap. <a href="#exm-5.6" class="quarto-xref">Example&nbsp;<span>5.6</span></a> shows this process applied to a bar made of 2 materials.</p>
+<p>The sum of these two deformations must equal the member’s actual deformation. If the member is held between two rigid supports, the total deformation will be zero. If there is a small gap or the supports allow a certain amount of movement, the total deformation will be equal to the size of this gap. <a href="#exm-5.6" class="quarto-xref">Example&nbsp;<span>5.6</span></a> shows this process applied to a bar made of two materials.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example 5.6
+<span class="screen-reader-only">Tip</span>Example 5.6
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1187,47 +1187,49 @@ Example 5.6
 <p><span class="theorem-title"><strong>Example 5.6</strong></span> &nbsp;</p>
 <p>
 </p>
-<p>A 15-foot-tall concrete (E = 4,000 ksi) column has a square cross-section of 6 in. by 6 in. A 10-foot-tall-copper (E = 17,000 ksi) cylinder with an outer diameter of 4 in. and in inner diameter of 3 in. is attached to the top of the concrete. The structure is fixed between two supports. A force of 25 kips is applied as shown. Determine the average normal stress in each material.</p>
+<p>A 15 ft tall concrete (E = 4,000 ksi) column has a square cross-section of 6 in. x 6 in. A 10-foot-tall-copper (E = 17,000 ksi) cylinder with an outer diameter of 4 in. and inner diameter of 3 in. is attached to the top of the concrete. The structure is fixed between two supports. A force of 25 kips is applied as shown.</p>
+<p>Determine the average normal stress in each material.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/PNGs/Example 5.5 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="182"></p>
+<p><img src="images/PNGs/Example 5.5 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="A vertically oriented stepped column with two segments of different widths. The upper segment is 10 feet tall and 4 inches wide, and the lower segment is 15 feet tall and 6 inches wide. The column is fixed at both the top and bottom ends. A downward vertical force of 25 kips is applied at the junction between the two segments." width="182"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solution
+<span class="screen-reader-only">Tip</span>Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>To determine the internal force in each material, we first need to find the reaction forces at the supports. We would usually draw a free body diagram and apply equilibrium equations to find these forces. However, this won’t work here because the problem is statically indeterminate.</p>
+<p>To determine the internal force in each material, first find the reaction forces at the supports. Usually we draw an FBD and apply equilibrium equations to find these forces. However, this won’t work here because the problem is statically indeterminate.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/PNGs/Example 5.5 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="111"></p>
+<p><img src="images/PNGs/Example 5.5 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="A free-body diagram of the same column with both supports replaced by reaction forces. An upward force labeled F sub 1 is shown at the top of the upper segment, and an upward force labeled F sub 2 is shown at the base of the lower segment. The 25-kip downward force is applied at the same junction." width="111"></p>
 </figure>
 </div>
 <p><span class="math display">\[
 \sum F_y=F_1+F_2-25{~kips}=0 \quad\rightarrow\quad F_1+F_2=25{~kips}
 \]</span></p>
-<p>To solve the statically indeterminate problem, remove one of the supports and allow the structure to deform. Either support may be removed. Let’s remove the top support. In this scenario there is no load in the copper cylinder and there is a compressive load of 25 kips in the concrete column.</p>
+<p>To solve this statically indeterminate problem, remove one of the supports and allow the structure to deform. Either support may be removed.</p>
+<p>Remove the top support. In this scenario there is no load in the copper cylinder and there is a compressive load of 25 kips in the concrete column.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/PNGs/Example 5.5 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="210"></p>
+<p><img src="images/PNGs/Example 5.5 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="The column fixed only at the bottom, with the top support removed. The 25-kip downward force is applied at the junction, allowing the structure to compress." width="210"></p>
 </figure>
 </div>
-<p>The total deformation of the structure in this scenario is:</p>
+<p>The total deformation of the structure in this scenario is</p>
 <p><span class="math display">\[
-\Delta L=\sum \frac{F L}{A E}=0-\frac{(25{~kips}) *(15 * 12){~in.}}{(6 * 6){~in.}^2 *(4,000)\frac{kips}{in.^2}}=-0.03125{~in}
+\Delta L=\sum \frac{F L}{A E}=0-\frac{(25{~kips}) *(15 * 12){~in.}}{(6 * 6){~in.}^2 *(4,000)\frac{kips}{in.^2}}=-0.03125{~in}\text{.}
 \]</span></p>
-<p>Then replace force F<sub>1</sub> and calculate the deformation caused by this force. Since the force is applied at the top of the structure, both the concrete and the copper will elongate.</p>
+<p>Then replace force F<sub>1</sub> and calculate the deformation caused by this force. Because force is applied at the top of the structure, both the concrete and the copper elongate.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/PNGs/Example 5.5 part 4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="210"></p>
+<p><img src="images/PNGs/Example 5.5 part 4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="The bottom of the column remains fixed, and the top support is replaced by an upward force labeled F sub 1 applied at the top of the 10-foot upper segment. This force causes both segments to elongate under tension." width="210"></p>
 </figure>
 </div>
 <p><span class="math display">\[
@@ -1239,13 +1241,13 @@ Solution
 <p><span class="math display">\[
 -0.03125{~in.}+0.002534 F_1=0 \quad\rightarrow\quad F_1=12.3{~kips}
 \]</span></p>
-<p>Returning to our equilibrium equation, we can also find force F<sub>2</sub>.</p>
+<p>Returning to the equilibrium equation, also find force F<sub>2</sub>.</p>
 <p><span class="math display">\[
 F_1+F_2=25{~kips} \\
 12.3{~kips}+F_2=25{~kips} \\
 F_2=12.7{~kips}
 \]</span></p>
-<p>The internal force in the copper cylinder will be 12.3 kips and the internal force in the concrete column will be 12.7 kips. Finally, calculate the stress in each material. Note from our original free body diagram that the copper cylinder is in tension while the concrete column is in compression. We’ll introduce a negative sign here to indicate compressive stress in the concrete.</p>
+<p>The internal force in the copper cylinder is 12.3 kips, and the internal force in the concrete column is 12.7 kips. Finally, calculate the stress in each material. Note from your original FBD that the copper cylinder is in tension and the concrete column is in compression. Introduce a negative sign here to indicate compressive stress in the concrete.</p>
 <p><span class="math display">\[
 \begin{aligned}
 &amp; \sigma_{copper}=\frac{N_1}{A_1}=\frac{12.3{~kips}}{\pi(2^2-1.5^2){~in.}^2}=2.24 {~ksi} \\
@@ -1259,31 +1261,31 @@ F_2=12.7{~kips}
 </div>
 </div>
 </div>
-<p><strong>Approach 2</strong>: An alternate approach is to start by noting that the total deformation of the bar must be zero. In the case shown in <a href="#fig-5.12" class="quarto-xref">Figure&nbsp;<span>5.12</span></a>, we can say that the deformation of segment 1 plus the deformation of segment 2 must add up to zero.</p>
-<div id="fig-5.12" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<p><strong>Approach 2</strong>: An alternative approach is to start by noting that the total deformation of the bar must be zero. In the case shown in <a href="#fig-5.12" class="quarto-xref">Figure&nbsp;<span>5.12</span></a>, the deformation of segment 1 plus the deformation of segment 2 must add up to zero.</p>
+<div id="fig-5.12" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The image contains two subfigures labeled (a) and (b), both illustrating the second approach where the total deformation of the bar must be zero. In diagram (a), a two-segment axial bar is shown fixed at both ends. A rightward force labeled F is applied at the interface between the two segments. In diagram (b), the same two-part bar is shown isolated (with supports removed). The same rightward force F is applied at the junction between the segments. Additionally, a leftward force labeled F sub A is applied at the left end, representing the reaction at the left support, and a rightward force labeled F sub B is applied at the right end, representing the reaction at the right support." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-5.12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/PNGs/Figure 5.12.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
+<img src="images/PNGs/Figure 5.12.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="The image contains two subfigures labeled (a) and (b), both illustrating the second approach where the total deformation of the bar must be zero. In diagram (a), a two-segment axial bar is shown fixed at both ends. A rightward force labeled F is applied at the interface between the two segments. In diagram (b), the same two-part bar is shown isolated (with supports removed). The same rightward force F is applied at the junction between the segments. Additionally, a leftward force labeled F sub A is applied at the left end, representing the reaction at the left support, and a rightward force labeled F sub B is applied at the right end, representing the reaction at the right support.">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-5.12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5.12: (a) A bar held between two rigid supports. (b) A free body diagram of the bar.
 </figcaption>
 </figure>
 </div>
-<p>The internal load in segment 1 is FA and the internal load in segment 2 is FB, so there are currently two unknowns. We may use an equilibrium equation to solve for these two unknowns simultaneously.</p>
+<p>The internal load in segment 1 is F<sub>A</sub> and the internal load in segment 2 is F<sub>B</sub>, so there are currently two unknowns. We may use an equilibrium equation to solve for these two unknowns simultaneously.</p>
 <p><span class="math display">\[
 \begin{aligned} &amp; \frac{F_A L_1}{A_1 E_1}+\frac{F_B L_2}{A_2 E_2}=0 \\
 \\
 &amp; F-F_A-F_B=0\end{aligned}
 \]</span></p>
-<p><a href="#exm-5.7" class="quarto-xref">Example&nbsp;<span>5.7</span></a> re-solves <a href="#exm-5.6" class="quarto-xref">Example&nbsp;<span>5.6</span></a> using this method instead.</p>
+<p><a href="#exm-5.7" class="quarto-xref">Example&nbsp;<span>5.7</span></a> solves <a href="#exm-5.6" class="quarto-xref">Example&nbsp;<span>5.6</span></a> using this method instead.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example 5.7
+<span class="screen-reader-only">Tip</span>Example 5.7
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1293,28 +1295,29 @@ Example 5.7
 <p><span class="theorem-title"><strong>Example 5.7</strong></span> &nbsp;</p>
 <p>
 </p>
-<p>A 15-foot-tall concrete (E = 4,000 ksi) column has a square cross-section of 6 in. by 6 in. A 10-foot-tall-copper (E = 17,000 ksi) cylinder with an outer diameter of 4 in. and in inner diameter of 3 in. is attached to the top of the concrete. The structure is fixed between two supports. A force of 25 kips is applied as shown. Determine the average normal stress in each material.</p>
+<p>A 15 ft tall concrete (E = 4,000 ksi) column has a square cross-section of 6 in. x 6 in. A 10 ft tall copper (E = 17,000 ksi) cylinder with an outer diameter of 4 in. and inner diameter of 3 in. is attached to the top of the concrete. The structure is fixed between two supports. A force of 25 kips is applied as shown.</p>
+<p>Determine the average normal stress in each material.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/PNGs/Example 5.6 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="162"></p>
+<p><img src="images/PNGs/Example 5.6 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="A vertically oriented stepped column with two segments of different widths. The upper segment is 10 feet tall and 4 inches wide, and the lower segment is 15 feet tall and 6 inches wide. The column is fixed at both the top and bottom ends. A downward vertical force of 25 kips is applied at the junction between the two segments." width="162"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solution
+<span class="screen-reader-only">Tip</span>Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-17" class="callout-17-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>As before, begin with an equilibrium equation that relates the support loads to the applied load. In this equation we use the convention that forces pointing upwards are positive and forces pointing downwards are negative.</p>
+<p>As before, begin with an equilibrium equation that relates the support loads to the applied load. In this equation we use the convention that forces pointing upward are positive and those pointing downward are negative.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/PNGs/Example 5.6 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="85"></p>
+<p><img src="images/PNGs/Example 5.6 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="A free-body diagram of the same column with both supports replaced by reaction forces. An upward force labeled F sub 1 is shown at the top of the upper segment, and an upward force labeled F sub 2 is shown at the base of the lower segment. The 25-kip downward force is applied at the same junction." width="85"></p>
 </figure>
 </div>
 <p><span class="math display">\[
@@ -1323,11 +1326,11 @@ Solution
 &amp; F_1+F_2=25{~kips}
 \end{aligned}
 \]</span></p>
-<p>This bar consists of 2 segments – the copper cylinder (segment 1) and the concrete column (segment 2). Since the bar is held between two rigid supports, the total deformation of these two segments must sum to zero. Note that in this diagram segment 1 is in tension while segment 2 is in compression. We must be consistent with the sign convention that tension is positive and compression is negative.</p>
+<p>This bar consists of two segments: the copper cylinder (segment 1) and the concrete column (segment 2). Since the bar is held between two rigid supports, the total deformation of these two segments must sum to zero. Note that in this diagram segment 1 is in tension and segment 2 is in compression. Remember to be consistent with the sign convention that tension is positive and compression is negative.</p>
 <p><span class="math display">\[
 \frac{F_1 L_1}{A_1 E_1}-\frac{F_2 L_2}{A_2 E_2}=0
 \]</span></p>
-<p>Here F1 and F2 are the internal forces in segments 1 and 2 of the bar. These will be the same as the reaction loads at the supports that we are trying to solve for.</p>
+<p>Here F<sub>1</sub> and F<sub>2</sub> are the internal forces in segments 1 and 2 of the bar. These will be the same as the reaction loads at the supports that we are trying to solve for.</p>
 <p><span class="math display">\[
 \frac{F_1 *(10 * 12){~in.}}{\pi(2^2-1.5^2){~in.}^2 *(17,000)\frac{kips}{in.^2}}-\frac{F_2 *(15 * 12){~in.}}{(6 * 6){~in.}^2 *(4,000)\frac{kips}{in.^2}}=0
 \]</span></p>
@@ -1338,7 +1341,7 @@ F_1=25{~kips}-F_2 \\
 \frac{(25-F_2){~kips} *(10 * 12){~in.}}{\pi(2^2-1.5^2){~in.}^2 *(17,000)\frac{kips}{in.^2}}-\frac{F_2 *(15 * 12){in.}}{(6 * 6){in.}^2 *(4,000)\frac{kips}{in.^2}}=0
 \end{gathered}
 \]</span></p>
-<p>Then simplify and solve for force F2.</p>
+<p>Simplify and solve for force F<sub>2</sub>.</p>
 <p><span class="math display">\[
 \begin{gathered}
 0.0321-0.001284 F_2-0.00125 F_2=0 \\
@@ -1346,11 +1349,11 @@ F_1=25{~kips}-F_2 \\
 F_2=12.7 {~kips}
 \end{gathered}
 \]</span></p>
-<p>Then use the equilibrium equation again to find F1.</p>
+<p>Then use the equilibrium equation again to find F<sub>1</sub>.</p>
 <p><span class="math display">\[
 F_1=25{~kips}-12.7{~kips}=12.3{~kips}
 \]</span></p>
-<p>These are the same reactions that we found in <a href="#exm-5.6" class="quarto-xref">Example&nbsp;<span>5.6</span></a> when we solved this problem using the other approach. From here we can find the stress in each material as before, noting again from our diagram that segment 2 is in compression.</p>
+<p>These are the same reactions found in <a href="#exm-5.6" class="quarto-xref">Example&nbsp;<span>5.6</span></a> when we solved this problem using the other approach. From here find the stress in each material as before, noting again from the diagram that segment 2 is in compression.</p>
 <p><span class="math display">\[
 \begin{aligned}
 &amp; \sigma_{copper}=\frac{N_1}{A_1}=\frac{12.3{~kips}}{\pi(2^2-1.5^2){~in.}^2}=2.24 {~ksi} \\
@@ -1364,25 +1367,25 @@ F_1=25{~kips}-12.7{~kips}=12.3{~kips}
 </div>
 </div>
 </div>
-<p>The second type of indeterminate problem involves two materials bonded together in parallel. In these problems it’s possible to find the reactions at the supports, but not possible to find the internal force in each material using only equilibrium (<a href="#fig-5.13" class="quarto-xref">Figure&nbsp;<span>5.13</span></a>).</p>
-<div id="fig-5.13" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<p>The second type of indeterminate problem involves two materials bonded together in parallel. In these problems it is possible to find the reactions at the supports, but not possible to find the internal force in each material using only equilibrium (<a href="#fig-5.13" class="quarto-xref">Figure&nbsp;<span>5.13</span></a>).</p>
+<div id="fig-5.13" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The top diagram shows a rectangular block divided horizontally into three equal sections by two dashed blue lines. The top layer is labeled (1), and the middle (thicker shaded) section is labeled (2). The top and bottom layers are equal in size. Equal horizontal forces labeled F are applied at both ends of the block, indicating axial loading. The bottom diagram shows the block cut vertically in half, with the left segment isolated in a free-body diagram. A leftward force F is applied on the left face, while two rightward forces labeled F sub 1 and F sub 2 are applied separately along the same horizontal line, representing internal force distribution across the layers." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-5.13-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/PNGs/Figure 5.13.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="283">
+<img src="images/PNGs/Figure 5.13.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="The top diagram shows a rectangular block divided horizontally into three equal sections by two dashed blue lines. The top layer is labeled (1), and the middle (thicker shaded) section is labeled (2). The top and bottom layers are equal in size. Equal horizontal forces labeled F are applied at both ends of the block, indicating axial loading. The bottom diagram shows the block cut vertically in half, with the left segment isolated in a free-body diagram. A leftward force F is applied on the left face, while two rightward forces labeled F sub 1 and F sub 2 are applied separately along the same horizontal line, representing internal force distribution across the layers." width="283">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-5.13-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.13: When two materials in parallel are subjected to force F, the force is split between the two materials (F<sub>1</sub> and F<sub>2</sub>). By equilibrium F<sub>1</sub> + F<sub>2</sub> = F but this is not sufficient to find the force in each material.
+Figure&nbsp;5.13: When two materials in parallel are subjected to force F, the force is split between the two materials (F<sub>1</sub> and F<sub>2</sub>). By equilibrium F<sub>1</sub> + F<sub>2</sub> = F, but this is not sufficient to find the force in each material.
 </figcaption>
 </figure>
 </div>
-<p>We have one equilibrium equation but two unknown internal forces. However, since the materials are bonded together we can say that they must deform by the same amount. By setting the deformation for each material equal to each other we can define a second equation that involves the two internal forces and, combined with the equilibrium equation, we can now solve for both internal forces. See <a href="#exm-5.8" class="quarto-xref">Example&nbsp;<span>5.8</span></a> for a demonstration.</p>
+<p>We have one equilibrium equation but two unknown internal forces. However, since the materials are bonded together, they must deform by the same amount. By setting the deformation the same for each material, we can define a second equation that involves the two internal forces and, combined with the equilibrium equation, now solve for both internal forces. See <a href="#exm-5.8" class="quarto-xref">Example&nbsp;<span>5.8</span></a> for a demonstration.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example 5.8
+<span class="screen-reader-only">Tip</span>Example 5.8
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1392,44 +1395,45 @@ Example 5.8
 <p><span class="theorem-title"><strong>Example 5.8</strong></span> &nbsp;</p>
 <p>
 </p>
-<p>A 20-ft-tall concrete (E = 4,000 ksi) column has a square cross-section 6 inches on each side. It is reinforced by six pieces of steel (E = 30,000 ksi) rebar that extend through the length of the column. Each has a diameter of 0.5 inches. The column is subjected to a compressive load of 70 kips. Determine the stress in each material.</p>
+<p>A 20 ft tall concrete (E = 4,000 ksi) column has a square cross-section 6 in. on each side. It is reinforced by six pieces of steel (E = 30,000 ksi) rebar that extend through the column’s length. Each has a diameter of 0.5 in. The column is subjected to a compressive load of 70 kips.</p>
+<p>Determine the stress in each material.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/PNGs/Example 5.7 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="177"></p>
+<p><img src="images/PNGs/Example 5.7 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="A 3D rectangular concrete column is shown with a height of 20 feet and a square base of 6 inches by 6 inches. The top face of the column displays six small black circles, labeled as 6 x 0.5-inch diameter, representing reinforcing steel rods embedded within the concrete." width="177"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solution
+<span class="screen-reader-only">Tip</span>Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-19" class="callout-19-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The 70 kips force will be split between the two materials. We need to find the force in each material before we can calculate the stress. Start by cutting a cross-section through the column, drawing a free body diagram, and writing an equilibrium equation.</p>
+<p>The 70 kips force will be split between the two materials. We need to find the force in each material before we can calculate the stress. Start by cutting a cross-section through the column, drawing an FBD, and writing an equilibrium equation.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/PNGs/Example 5.7 copy.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="91"></p>
+<p><img src="images/PNGs/Example 5.7 copy.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="A square cross section of the column is shown with a downward vertical force of 70 kips applied at the top center. Two upward vertical forces, labeled F sub C and F sub S, act from below the column, representing the resisting forces from concrete and steel respectively." width="91"></p>
 </figure>
 </div>
 <p><span class="math display">\[
 \sum F_y= F_C+F_S=70{~kips}
 \]</span></p>
-<p>This problem is statically indeterminate, since we have two unknowns and only one equilibrium equation. However, since the two materials are bonded together we can say that they must both deform the same amount.</p>
+<p>This problem is statically indeterminate, since we have two unknowns and only one equilibrium equation. However, because the two materials are bonded together, they must both deform the same amount.</p>
 <p><span class="math display">\[
 \Delta L_C=\Delta L_S
 \]</span></p>
-<p>Since we know <span class="math inline">\(\Delta L=\frac{F L}{A E}\)</span></p>
+<p>Since we know <span class="math inline">\(\Delta L=\frac{F L}{A E}\)</span>,</p>
 <p><span class="math display">\[
-\frac{F_C L_C}{A_C E_C}=\frac{F_S L_S}{A_S E_S}
+\frac{F_C L_C}{A_C E_C}=\frac{F_S L_S}{A_S E_S}\text{.}
 \]</span></p>
 <p>The length of both materials is 20 ft, so this term will cancel.</p>
-<p>Although the steel is 6 individual pieces, it’s fine to determine the total area of the steel and the total force in the steel. The total area of the steel is <span class="math inline">\(A_S=6 * \pi * (0.25{~in.})^2=1.178{~in}^2\)</span></p>
-<p>For the area of the concrete, calculate the area of the square and then remove the area of the 6 rebar rods.</p>
+<p>Although the steel comprises six individual pieces, it is fine to determine the total area of the steel and the total force in the steel. The total area of the steel is <span class="math inline">\(A_S=6 * \pi * (0.25{~in.})^2=1.178{~in.}^2\)</span>.</p>
+<p>For the area of the concrete, calculate the area of the square and then remove the area of the six rebar rods.</p>
 <p><span class="math display">\[
 A_C=(6 * 6){~in.}^2-1.178{~in.^2}=34.82{~in.}^2
 \]</span></p>
@@ -1450,8 +1454,8 @@ F_C=3.941 F_S
 &amp;F_S=14.2{~kips}
 \end{aligned}
 \]</span></p>
-<p>Then since <span class="math inline">\(F_C=3.941 F_S \quad\rightarrow\quad F_C=3.941 * 14.2{~kips}=55.8{~kips}\)</span></p>
-<p>Now that we know the force in each material, we can calculate the stress in each material.</p>
+<p>Then since <span class="math inline">\(F_C=3.941 F_S \quad\rightarrow\quad F_C=3.941 * 14.2{~kips}=55.8{~kips}\)</span>.</p>
+<p>Now that we know the force in each material, calculate the stress in each material.</p>
 <p><span class="math display">\[
 \begin{aligned}
 &amp; \sigma_S=\frac{14.2{~kips}}{1.178{~in.}^2}=12.0{~ksi} \\
@@ -1471,7 +1475,7 @@ F_C=3.941 F_S
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Step-by-step: Statically indeterminate axial problems
+<span class="screen-reader-only">Warning</span>Step-by-Step: Statically Indeterminate Axial Problems
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1479,16 +1483,16 @@ Step-by-step: Statically indeterminate axial problems
 <p>Approach 1:</p>
 <ol type="1">
 <li>Write out equilibrium equations. There will be too many unknowns, so put these to one side for now.</li>
-<li>Remove one of the supports and calculate the amount of deformation that would occur if the support wasn’t there using <span class="math inline">\(\Delta L_1=\sum \frac{F L}{A E}\)</span></li>
-<li>Replace the force from the removed support and determine the deformation, <span class="math inline">\(\Delta L_2\)</span>, caused by this force in terms of the force itself.</li>
-<li>Set <span class="math inline">\(\Delta L_1 + \Delta L_2\)</span> equal to the total allowed deformation for the bar and use this to solve for the unknown force at the redundant support.</li>
+<li>Remove one of the supports and calculate the amount of deformation that would occur if the support were not there, using <span class="math inline">\(\Delta L_1=\sum \frac{F L}{A E}\)</span>.</li>
+<li>Replace the force from the removed support and determine the deformation, ΔL<sub>2</sub>, caused by this force in terms of the force itself.</li>
+<li>Set ΔL<sub>1</sub> + ΔL<sub>2</sub> equal to the total allowed deformation for the bar and use this to solve for the unknown force at the redundant support.</li>
 <li>Now that one force is known, use the equilibrium equations to determine the other unknown forces.</li>
 </ol>
 <p>Approach 2:</p>
 <ol type="1">
-<li>Draw a free body diagram of the entire structure and write out the relevant equilibrium equations. For axial loads this will just be one sum of force equation, either horizontally or vertically depending on the applied loading.</li>
-<li>Write an equation saying that the total deformation in each segment of the bar must sum to the total deformation of the bar (zero if the bar is held between two rigid supports). A new segment must be made any time the internal load, cross-sectional area, or material changes.</li>
-<li>This deformation equation will involve the same two unknowns as the equilibrium equation. Solve these equations simultaneously to find the reaction loads at the supports</li>
+<li>Draw an FBD of the entire structure and write out the relevant equilibrium equations. For axial loads this will be just one sum of force equation, either horizontal or vertical depending on the applied loading.</li>
+<li>Write an equation in which the total deformation in each segment of the bar must sum to the total deformation of the bar (zero if the bar is held between two rigid supports). A new segment must be made any time the internal load, cross-sectional area, or material changes.</li>
+<li>This deformation equation involves the same two unknowns as the equilibrium equation. Solve these equations simultaneously to find the reaction loads at the supports.</li>
 </ol>
 <p><strong>Problems with two materials in parallel</strong></p>
 <ol type="1">
@@ -1506,20 +1510,20 @@ Step-by-step: Statically indeterminate axial problems
 <summary>
 Click to expand
 </summary>
-<p>So far, we’ve studied the effects of axial forces on an object and how they create stresses and deformations. Temperature changes will also cause an object to deform. As seen in <a href="Chapter 4.html#sec-4.6" class="quarto-xref"><span>Section 4.6</span></a>, the strain due to temperature can be predicted by:</p>
+<p>So far we’ve studied the effects of axial forces on an object and how they create stresses and deformations. Temperature changes will also cause an object to deform. As seen in <a href="Chapter 4.html#sec-4.6" class="quarto-xref"><span>Section 4.6</span></a>, the strain due to temperature can be predicted by</p>
 <p><span class="math display">\[
-\varepsilon_T=\alpha \Delta T
+\varepsilon_T=\alpha \Delta T\text{.}
 \]</span></p>
 <p>As before, strain is dimensionless. The coefficient of thermal expansion is a material constant that can be looked up in handbooks or in <a href="Appendix C.html" class="quarto-xref"><span>Appendix C</span></a>. Note that for a given change in temperature, the thermal strain will be the same in the axial and transverse directions.</p>
-<p>Since strain is also defined as <span class="math inline">\(\varepsilon=\frac{\Delta L}{L}\)</span>, we can also predict the deformation due to a change in temperature:</p>
+<p>Since strain is also defined as <span class="math inline">\(\varepsilon=\frac{\Delta L}{L}\)</span>, we can also predict the deformation resulting from a change in temperature.</p>
 <p><span class="math display">\[
 \varepsilon_T=\alpha \Delta T=\frac{\Delta L}{L} \quad\rightarrow\quad \Delta L=\alpha \Delta T L
 \]</span></p>
-<p>If the object is free to expand or contract this doesn’t cause any issues and is easy to account for. Many real applications will include a small gap to allow for changes in length due to temperature changes (<a href="#fig-5.14" class="quarto-xref">Figure&nbsp;<span>5.14</span></a>). It is even possible that an object is subjected to both a physical force and a temperature change and the total change in length is simply the sum of these effects:</p>
+<p>That the object is free to expand or contract doesn’t cause any issues and is easy to account for. Many real applications include a small gap to allow for changes in length due to temperature changes (<a href="#fig-5.14" class="quarto-xref">Figure&nbsp;<span>5.14</span></a>). It is even possible that an object is subjected to both a physical force and a temperature change and that the total change in length is simply the sum of these effects.</p>
 <p><span id="eq-5.3"><span class="math display">\[
-\boxed{\Delta L=\Delta L_F+\Delta L_T=\frac{F L}{A E}+\alpha \Delta T L}
+\boxed{\Delta L=\Delta L_F+\Delta L_T=\frac{F L}{A E}+\alpha \Delta T L}\text{ ,}
 \tag{5.3}\]</span></span></p>
-<div class="line-block"><em>where</em><br>
+<div class="line-block">where<br>
 <em>∆L = Change in length [m, in.]</em><br>
 <em>∆L<sub>F</sub> = Change in length due to applied load [m, in.]</em><br>
 <em>∆L<sub>T</sub> = Change in length due to temperature change [m, in.]</em><br>
@@ -1529,76 +1533,76 @@ Click to expand
 <em>E = Elastic modulus [Pa, psi]</em><br>
 <em>𝛼 = Coefficient of thermal expansion</em> <span class="math inline">\(\left[\frac{1}{^\circ C}, \frac{1}{^\circ F}\right]\)</span><br>
 <em>∆T = Change in temperature</em> <span class="math inline">\([^\circ C, ^\circ F]\)</span></div>
-<div id="fig-5.14" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<div id="fig-5.14" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A close-up view of an expansion joint on a concrete bridge deck. The image shows a series of interlocking metal plates with evenly spaced gaps, embedded in the surface of the road to accommodate thermal expansion and contraction." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-5.14-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/5.14 newer.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="492">
+<img src="images/5.14 newer.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="A close-up view of an expansion joint on a concrete bridge deck. The image shows a series of interlocking metal plates with evenly spaced gaps, embedded in the surface of the road to accommodate thermal expansion and contraction." width="492">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-5.14-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5.14: Expansion joint on a bridge, allowing for thermal expansion and contraction of the bridge as temperature changes through the year.
 </figcaption>
 </figure>
 </div>
-<p>However if we do not design a gap, or if the gap is not large enough, then the object is not free to expand or contract. As the member pushes or pulls on its supports, a physical force is created. This in turn creates a stress in the object and these stresses can be very large. Such problems are statically indeterminate as the force applied on the member by the support is unknown and can’t be found using only equilibrium. Solving these problems is very similar to solving the first type of statically indeterminate problem. First, remove a support and determine the amount of deformation that would occur due to the change in temperature if the object were free to deform. Then replace the force from the removed support, which will cause the object to deform in the other direction. The sum of these two deformations will equal the total deformation of the member as before. <a href="#exm-5.9" class="quarto-xref">Example&nbsp;<span>5.9</span></a> works through a statically indeterminate thermal expansion problem.</p>
+<p>However if we do not design a gap, or if the gap isn’t large enough, then the object is not free to expand or contract. As the member pushes or pulls on its supports, a physical force is created. This in turn creates a stress in the object, and these stresses can be very large. Such problems are statically indeterminate because the force the support applies on the member is unknown and cannot be found using only equilibrium.</p>
+<p>Solving these problems is very similar to solving the first type of statically indeterminate problem. First, remove a support and determine the amount of deformation that would occur as a result of the change in temperature if the object were free to deform. Then replace the force from the removed support, which will cause the object to deform in the other direction. The sum of these two deformations will equal the total deformation of the member as before. <a href="#exm-5.9" class="quarto-xref">Example&nbsp;<span>5.9</span></a> works through a statically indeterminate thermal expansion problem.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example 5.9
+<span class="screen-reader-only">Tip</span>Example 5.9
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-23" class="callout-23-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div id="exm-5.9" class="theorem example">
-<p><span class="theorem-title"><strong>Example 5.9</strong></span> Steel (E = 200 GPa, α = 11.7 x 10-6 /°C) train rails are laid end-to-end. Each rail is 20 meters long. A small section of this track is shown below. The rails are laid in winter when the temperature is 0° C. In summer, the maximum temperature is 40°C. Determine the compressive stress in the rail as a result of the temperature change if:</p>
-<p>(a) In a particular section of track, the rails are laid with no gap between them.</p>
-<p>(b) In another section, the rails have a 5-mm-gap between them.</p>
+<p><span class="theorem-title"><strong>Example 5.9</strong></span> Steel (E = 200 GPa, α = 11.7 x 10<sup>-6</sup> /°C) train rails are laid end-to-end. Each rail is 20 m long. A small section of this track is shown below. The rails are laid in winter when the temperature is 0 °C. In summer, the maximum temperature is 40 °C.</p>
+<p>Determine the compressive stress in the rail as a result of the temperature change if</p>
+<p>a. In a particular section of track, the rails are laid with no gap between them.</p>
+<p>b. In another section, the rails have a 5 mm gap between them.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/PNGs/Example 5.8.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="416"></p>
+<p><img src="images/PNGs/Example 5.8.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Three railway track segments, each 20 meters long, are shown laid horizontally on a brown platform labeled &quot;ground.&quot; The segments are separated by two small labeled gaps, indicating space left to accommodate thermal expansion." width="416"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solution
+<span class="screen-reader-only">Tip</span>Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-22" class="callout-22-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>(a)</p>
-<p>First determine the deformation of each rail that would occur if it was free to expand.</p>
+<p>a. First determine the deformation of each rail that would occur if it were free to expand.</p>
 <p><span class="math display">\[
 \Delta L_T=\alpha \Delta T L=11.7 \times 10^{-6}/^\circ{C} * 40^\circ{C} * 20{~m}=0.00936{~m}
 \]</span></p>
-<p>Since each rail will contact the rail next to it as it tries to expand, each rail will experience a compressive force. This force causes compression in the rail.</p>
+<p>Since each rail contacts the rail next to it as it tries to expand, each rail will experience a compressive force. This force causes compression in the rail.</p>
 <p><span class="math display">\[
 \Delta L=-\frac{F L}{A E}
 \]</span></p>
-<p>The actual deformation of each rail must be zero since they are in contact end-to-end. Thus, these deformations must sum to zero.</p>
+<p>The actual deformation of each rail must be zero, given that the rails are in contact end-to-end. Thus these deformations must sum to zero.</p>
 <p><span class="math display">\[
 0.00936{~m}-\frac{F * 20{~m}}{A * 200 * 10^9{~Pa}}=0
 \]</span></p>
-<p>Although we don’t know the cross-sectional area of the rail, we can replace <span class="math inline">\(\sigma=\frac{F}{A}\)</span></p>
+<p>Although we don’t know the cross-sectional area of the rail, we can replace <span class="math inline">\(\sigma=\frac{F}{A}\)</span>.</p>
 <p><span class="math display">\[
 \begin{gathered}
 0.00936{~m}-\sigma * \frac{20{~m}}{200 * 10^9{~Pa}}=0 \\
 \sigma=\frac{0.00936{~m} * 200 * 10^9{~Pa}}{20{~m}}=93.6{~MPa}
 \end{gathered}
 \]</span></p>
-<p>(b)</p>
-<p>In this case we again begin by determining the deformation of each rail that would occur if it was free to expand.</p>
+<p>b. In this case again begin by determining the deformation of each rail that would occur if it were free to expand.</p>
 <p><span class="math display">\[
 \Delta L_T=\alpha \Delta T L=11.7 \times 10^{-6}/^\circ{C} * 40^\circ{C} * 20{~m}=0.00936{~m}
 \]</span></p>
-<p>Each rail would expand 9.36 mm, but the gap between rails is only 5 mm so the rails close this gap and make contact, which means there will again be some compressive stress. Set up the deformation equation as in part (a), but this time the deformation is 5 mm (0.005 m) instead of zero.</p>
+<p>Each rail would expand 9.36 mm, but the gap between rails is only 5 mm, so the rails close this gap and make contact, which means there will again be some compressive stress. Set up the deformation equation as in part (a), but this time the deformation is 5 mm (0.005 m) instead of zero.</p>
 <p><span class="math display">\[
 0.00936{~m}-\frac{F * 20{~m}}{A * 200 * 10^9{~Pa}}=0.005{~m}
 \]</span></p>
@@ -1624,13 +1628,13 @@ Solution
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Step-by-step: Thermal deformation
+<span class="screen-reader-only">Warning</span>Step-by-Step: Thermal Deformation
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li>Remove one of the supports and calculate the total deformation that would occur if the support wasn’t there using <span class="math inline">\(\Delta L_T=\alpha \Delta T L\)</span> for thermal deformation and <span class="math inline">\(\Delta L=\frac{F L}{A E}\)</span> for any applied axial loads.</li>
-<li>If the total deformation causes the member to contact a support that prevents some of the deformation, replace the force from the removed support and determine the deformation caused by this force in terms of the force itself using <span class="math inline">\(\Delta L=\frac{F L}{A E}\)</span>.</li>
+<li>Remove one of the supports and calculate the total deformation that would occur if the support were not there, using <span class="math inline">\(\Delta L_T=\alpha \Delta T L\)</span> for thermal deformation and <span class="math inline">\(\Delta L=\frac{F L}{A E}\)</span> for any applied axial loads.</li>
+<li>If the total deformation causes the member to contact a support that prevents some of the deformation, replace the force from the removed support and determine the deformation caused by this force in terms of the force itself, using <span class="math inline">\(\Delta L=\frac{F L}{A E}\)</span>.</li>
 <li>Sum these deformations and set them equal to the total allowed deformation. Use this equation to solve for the force at the redundant support.</li>
 <li>Use equilibrium to determine the force at any other supports.</li>
 </ol>
@@ -1650,15 +1654,15 @@ Click to expand
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Key takeaways
+<span class="screen-reader-only">Note</span>Key Takeaways
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>Axial loads cause normal stresses. While we generally calculate the average normal stress, stress concentrations occur close to applied loads, supports, and changes in geometry.</p>
 <p>These stress concentrations can be large and cause localized failure even if the average stress is within acceptable limits. Modeling stress concentration is beyond the scope of this course, but we can determine maximum stresses for different geometries using stress concentration curves.</p>
 <p>It is often desirable to limit the total change in length of a bar subjected to axial loads. Change in length can be predicted directly.</p>
-<p>In practice, it is useful to leave a gap to allow for change in length. If a change in length is prevented from happening, this creates a stress in the bar.</p>
-<p>Changes in temperature will also cause axial deformation of a bar, known as thermal deformation. Thermal deformation can lead to a physical stress in the bar if the deformation is prevented from occurring by a support.</p>
+<p>Leaving a gap to allow for change in length is useful in practice. If a change in length is prevented from happening, this creates a stress in the bar.</p>
+<p>Changes in temperature also cause axial deformation of a bar, known as thermal deformation. Thermal deformation can lead to a physical stress in the bar if a support prevents the deformation from occurring.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
@@ -1667,26 +1671,26 @@ Key takeaways
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Key equations
+<span class="screen-reader-only">Note</span>Key Equations
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Stress concentrations</p>
+<p>Stress concentrations:</p>
 <p><span class="math display">\[
 \sigma_{avg}=\frac{N}{A}
 \]</span></p>
 <p><span class="math display">\[
 \sigma_{max}=K \sigma_{avg}
 \]</span></p>
-<p>Axial deformation</p>
+<p>Axial deformation:</p>
 <p><span class="math display">\[
 \Delta L=\frac{F L}{A E}
 \]</span></p>
-<p>Thermal strain</p>
+<p>Thermal strain:</p>
 <p><span class="math display">\[
 \varepsilon_T=\alpha \Delta T
 \]</span></p>
-<p>Thermal deformation</p>
+<p>Thermal deformation:</p>
 <p><span class="math display">\[
 \Delta L=\alpha \Delta T L
 \]</span></p>
@@ -1701,13 +1705,13 @@ Key equations
 Click to expand
 </summary>
 <p><strong>Figures</strong></p>
-<p>All figures in this chapter were created by Kindred Grey in 2025 and released under a CC BY license, except for:</p>
+<p>All figures in this chapter were created by Kindred Grey in 2025 and released under a CC BY license, except for</p>
 <ul>
 <li><p>Figure 5.2: Each bar has a fixed support on the left, a cross-section of 30 in.², and is subjected to a force of 10,000 lb. James Lord. 2024. CC BY-NC-SA.</p></li>
 <li><p>Figure 5.4: The fillet helps prevent a sharp corner but still causes stress concentrations. James Lord. 2024. CC BY-NC-SA.</p></li>
-<li><p>Figure 5.5: Graphs showing how the stress concentration factor, K changes based on the geometry of the object. Adapted under fair use by Kindred Grey from Figures 5.14 and 5.15 in Philpot, T.A. (2020) Mechanics of Materials, 4th Edition, Wiley.</p></li>
-<li><p>Example 5.1: First and second image: Kindred Grey. 2024. CC BY-NC-SA. Third image: Adapted under fair use by Kindred Grey from Figures 5.14 and 5.15 in Philpot, T.A. (2020) Mechanics of Materials, 4th Edition, Wiley.</p></li>
-<li><p>Example 5.2: First image: Kindred Grey. 2024. CC BY-NC-SA. Second, third, and fourth image: Adapted under fair use by Kindred Grey from Figures 5.14 and 5.15 in Philpot, T.A. (2020) Mechanics of Materials, 4th Edition, Wiley.</p></li>
+<li><p>Figure 5.5: Graphs showing how the stress concentration factor, K, changes according to the geometry of the object. Adapted under fair use by Kindred Grey from Figures 5.14 and 5.15 in Philpot, T.A. (2020) Mechanics of Materials, 4th Edition, Wiley.</p></li>
+<li><p>Example 5.1: First and second image: Kindred Grey. 2024. CC BY. Third image: Adapted under fair use by Kindred Grey from Figures 5.14 and 5.15 in Philpot, T.A. (2020) Mechanics of Materials, 4th Edition, Wiley.</p></li>
+<li><p>Example 5.2: First image: Kindred Grey. 2024. CC BY. Second, third, and fourth image: Adapted under fair use by Kindred Grey from Figures 5.14 and 5.15 in Philpot, T.A. (2020) Mechanics of Materials, 4th Edition, Wiley.</p></li>
 <li><p>Figure 5.10: An example of redundancy on a suspension bridge. Unknown author. 2017. Public domain. <a href="https://pxhere.com/en/photo/759379" class="uri">https://pxhere.com/en/photo/759379</a>.</p></li>
 <li><p>Figure 5.14: Expansion joint on a bridge, allowing for thermal expansion and contraction of the bridge as temperature changes through the year. James Lord. 2024. CC BY-NC-SA.</p></li>
 </ul>
@@ -1781,13 +1785,14 @@ Click to expand
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

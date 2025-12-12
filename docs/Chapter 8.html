@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.29">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -34,18 +34,19 @@ ul.task-list li input[type="checkbox"] {
 <link href="./Chapter 7.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-748b535e376f14d4692bf2b2e5fd6380.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-e1aa288a8a6a3aa5f7fec8175f5023de.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-d13a72f20fc3c7f792e67513fe0bf82c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-e1aa288a8a6a3aa5f7fec8175f5023de.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-9dc9d438c90c12071cf8507e319c8f8e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-afd7089187cf7d32efec5ee34a48d68f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-9dc9d438c90c12071cf8507e319c8f8e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -88,7 +89,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -261,6 +262,7 @@ window.Quarto = {
       toggleColorMode(toAlternate);
       setStyleSentinel(toAlternate);
       toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
     };
     // Switch to dark mode if need be
     if (hasAlternateSentinel()) {
@@ -290,7 +292,9 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Strength of Materials</a> 
         <div class="sidebar-tools-main">
@@ -437,7 +441,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Appendix E.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Centroids and Area Moment of Inertia for Common Shapes</span></span></a>
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Centroids and Second Moment of Area for Common Shapes</span></span></a>
   </div>
 </li>
       </ul>
@@ -452,9 +456,8 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#sec-8.1" id="toc-sec-8.1" class="nav-link" data-scroll-target="#sec-8.1"><span class="header-section-number">8.1</span> Centroid</a></li>
-  <li><a href="#sec-8.2" id="toc-sec-8.2" class="nav-link" data-scroll-target="#sec-8.2"><span class="header-section-number">8.2</span> 2<sup>nd</sup> Moment of Areas</a></li>
+  <li><a href="#sec-8.1" id="toc-sec-8.1" class="nav-link active" data-scroll-target="#sec-8.1"><span class="header-section-number">8.1</span> Centroid</a></li>
+  <li><a href="#sec-8.2" id="toc-sec-8.2" class="nav-link" data-scroll-target="#sec-8.2"><span class="header-section-number">8.2</span> Second Moment of Area</a></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
@@ -489,88 +492,82 @@ window.Quarto = {
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Learning Objectives
+<span class="screen-reader-only">Note</span>Learning Objectives
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>Define the centroids of areas.</li>
-<li>Locate the centroid using composite parts.</li>
-<li>Explain the principles behind determining the second moment of area (moment of inertia).</li>
-<li>Apply the parallel-axis theorem to analyze the transformation of moments of inertia.</li>
+<li>Define the centroids of areas</li>
+<li>Locate the centroid using composite parts</li>
+<li>Explain the principles behind determining the second moment of area</li>
+<li>Apply the parallel axis theorem to analyze the transformation of the second moment of area</li>
 </ul>
 </div>
 </div>
-<section id="introduction" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="introduction">Introduction</h2>
-<details open="">
-<summary>
-Click to expand
-</summary>
-<p>As we found in previous chapters, geometric cross-section properties are critical to calculating stresses and deformations for members subjected to axial and torsional loads. The same is true for finding stresses and deflections in beams subjected to shear and bending loads. This chapter describes methods for finding section properties necessary to calculate the stress and deflection in beams. Specifically, the centroid and the second moment of area.</p>
-<p>You likely were presented with these topics in Statics, so this chapter is designed to be a review. <a href="#sec-8.1" class="quarto-xref"><span>Section 8.1</span></a> will review centroids and <a href="#sec-8.2" class="quarto-xref"><span>Section 8.2</span></a> will review area moments of inertia (also known as the 2<sup>nd</sup> moment of area).</p>
-<div id="fig-8.1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<p>As previous chapters have shown, geometric cross-section properties are critical to calculating stresses and deformations for members subjected to axial and torsional loads. The same is true for finding stresses and deflections in beams subjected to shear and bending loads. This chapter describes methods for finding section properties necessary to calculate the stress and deflection in beams—specifically, the centroid and the second moment of area (also known as moment of inertia and area moment of inertia).</p>
+<p>You likely were presented with these topics in statics, so this chapter is designed to be a review. <a href="#sec-8.1" class="quarto-xref"><span>Section 8.1</span></a> reviews centroids, and <a href="#sec-8.2" class="quarto-xref"><span>Section 8.2</span></a> reviews second moment of area.</p>
+<div id="fig-8.1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Isometric view of a modular concrete barrier segment embedded in the road shoulder. A cutaway section reveals internal reinforcement and the interlocking profile that resists lateral vehicle impact and maintains alignment along the highway edge.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-8.1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/figure 8.1 (new).jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="430">
+<img src="images/figure 8.1 (new).jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Isometric view of a modular concrete barrier segment embedded in the road shoulder. A cutaway section reveals internal reinforcement and the interlocking profile that resists lateral vehicle impact and maintains alignment along the highway edge." width="430">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-8.1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;8.1: Isometric view of concrete barriers used in roadway construction.
 </figcaption>
 </figure>
 </div>
-</details>
-</section>
 <section id="sec-8.1" class="level2" data-number="8.1">
 <h2 data-number="8.1" class="anchored" data-anchor-id="sec-8.1"><span class="header-section-number">8.1</span> Centroid</h2>
 <details>
 <summary>
 Click to expand
 </summary>
-<p>An object possesses weight due to the gravitational force acting on its constituent particles. The collective effect of these forces yields the total weight of the object, which is concentrated at a single point known as the <strong>center of gravity</strong>. If the object is comprised of a homogenous (constant density) material, then the center of gravity is the same as the geometric center or centroid. In this section, we will focus our discussions on the centroid of an area for common structural shapes. For a more comprehensive discussion on the center of gravity, the center of mass, calculating centroids using integration, and distributed loads, see the <a href="https://engineeringstatics.org/Chapter_07-center-of-mass.html">Engineering Statics</a> book by Baker and Haynes.</p>
-<p>The location of the centroid of an area is the point where the first moment of area equals zero. The first moment of area about a point is calculated by multiplying the area by the perpendicular distance to the point. The centroid of an area can be found by splitting the area into a number (i) of discrete parts, summing the moment of area for these discrete parts, and then dividing by the sum of the area. We can use these weighted averages to find the location <span class="math inline">\((\bar{X}, \bar{Y})\)</span> of the centroid of the area:</p>
+<p>An object possesses weight as a result of the gravitational force acting on its constituent particles. The collective effect of these forces yields the total weight of the object, which is concentrated at a single point known as the center of gravity. If the object is composed of a homogenous (constant density) material, then the center of gravity is the same as the geometric center or centroid.</p>
+<p>The discussion in this section focuses on the centroid of an area for common structural shapes. For a more comprehensive discussion on the center of gravity, the center of mass, calculating centroids using integration, and distributed loads, see the book <a href="https://engineeringstatics.org/Chapter_07-center-of-mass.html"><em>Engineering Statics</em></a> by Baker and Haynes.</p>
+<p>The location of the centroid of an area is the point where the first moment of area equals zero. The first moment of area about a point is calculated by multiplying the area by the perpendicular distance to the point. The centroid of an area can be found by splitting the area into a number (i) of discrete parts, summing the moment of area for these discrete parts, and then dividing by the sum of the area. These weighted averages enable us to find the location <span class="math inline">\((\bar{X}, \bar{Y})\)</span> of the centroid of the area.</p>
 <p><span id="eq-8.1"><span class="math display">\[
 \boxed{\begin{aligned}
 &amp;\bar{X}=\frac{\sum \bar{x}_i A_i}{\sum A_i} \\
 \\
 &amp;\bar{Y}=\frac{\sum \bar{y}_i A_i}{\sum A_i}
-\end{aligned}}
+\end{aligned}}\text{ ,}
 \tag{8.1}\]</span></span></p>
-<div class="line-block"><em>where</em><br>
+<div class="line-block">where<br>
 <span class="math inline">\(\bar{X}, \bar{Y}\)</span> <em>= Centroid coordinates of the overall area [m, in.]</em><br>
-<span class="math inline">\(\bar{x}_i, \bar{y}_i\)</span> <em>= Centroid coordinates of each discrete area [m, in.]</em></div>
-<p><span class="math inline">\(A_i\)</span> <em>= Area of each discrete area [m<sup>2</sup>, in.<sup>2</sup>]</em></p>
-<p>We can find centroids of simple shapes easily by utilizing symmetry. When a shape possesses an axis of symmetry, each point on one side of the axis corresponds to another point symmetrically located on the opposite side. The distances between these mirrored points and the line of symmetry will sum to zero because they will be equal in magnitude but opposite in sign. This is true for every point in the shape, so the numerator of <a href="#eq-8.1" class="quarto-xref">Equation&nbsp;<span>8.1</span></a> (the first moment of area) will be zero. Therefore, if a shape features a line of symmetry, its centroid must coincide with this line. In cases where a shape exhibits multiple lines of symmetry, the centroid is located at their intersection, as shown in <a href="#fig-8.2" class="quarto-xref">Figure&nbsp;<span>8.2</span></a>.</p>
-<div id="fig-8.2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<span class="math inline">\(\bar{x}_i, \bar{y}_i\)</span> <em>= Centroid coordinates of each discrete area [m, in.]</em><br>
+<span class="math inline">\(A_i\)</span> <em>= Area of each discrete area [m<sup>2</sup>, in.<sup>2</sup>]</em></div>
+<p>We can find centroids of simple shapes easily by utilizing symmetry. When a shape possesses an axis of symmetry, each point on one side of the axis corresponds to another point symmetrically located on the opposite side. The distances between these mirrored points and the line of symmetry sum to zero because they are equal in magnitude but opposite in sign. This is true for every point in the shape, so the numerator of <a href="#eq-8.1" class="quarto-xref">Equation&nbsp;<span>8.1</span></a> (the first moment of area) will be zero. Therefore, if a shape features a line of symmetry, its centroid must coincide with this line.</p>
+<p>In cases where a shape exhibits multiple lines of symmetry, the centroid is located at their intersection, as shown in <a href="#fig-8.2" class="quarto-xref">Figure&nbsp;<span>8.2</span></a>.</p>
+<div id="fig-8.2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Three gray shapes centered with dashed symmetry axes: an equilateral triangle, a rectangle, and a C-shaped rectangular section. The triangle has three symmetry axes meeting at its centroid, the rectangle has two perpendicular axes through its center, and the C-shape has one horizontal axis through its centroid.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-8.2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/CH 8 PNGs/figure 8.2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="355">
+<img src="images/CH 8 PNGs/figure 8.2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Three gray shapes centered with dashed symmetry axes: an equilateral triangle, a rectangle, and a C-shaped rectangular section. The triangle has three symmetry axes meeting at its centroid, the rectangle has two perpendicular axes through its center, and the C-shape has one horizontal axis through its centroid." width="355">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-8.2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;8.2: Centroids lie upon axes of symmetry.
+Figure&nbsp;8.2: Centroids lie on axes of symmetry.
 </figcaption>
 </figure>
 </div>
-<p>In this text, we will use common shapes or a composite of common shapes for our cross-sections. <a href="Appendix E.html" class="quarto-xref"><span>Appendix E</span></a> includes the location of the centroid of some common shapes. Part of <a href="Appendix E.html" class="quarto-xref"><span>Appendix E</span></a> is reproduced in <a href="#fig-8.3" class="quarto-xref">Figure&nbsp;<span>8.3</span></a>. Each row of the table includes a common shape with the centroid marked, and simple formulas for determining the x- and y-coordinates of the centroid and calculating the area of the shape.</p>
-<div id="fig-8.3" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<p>This text uses common shapes or a composite of common shapes for cross-sections. The location of the centroid of some common shapes can be found in <a href="Appendix E.html" class="quarto-xref"><span>Appendix E</span></a>, part of which is reproduced in <a href="#fig-8.3" class="quarto-xref">Figure&nbsp;<span>8.3</span></a>. Each row of the table includes a common shape with the centroid marked and provides simple formulas for determining the centroid’s x and y coordinates and calculating the area of the shape.</p>
+<div id="fig-8.3" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="A right triangle is shown with base b and height h, shaded gray, with point O at the bottom-left corner representing the origin. The centroid, labeled c, is located one-third of the base from the left side and one-third of the height above the base. These centroid coordinates are marked as x bar = b/3 and y bar = h/3, shown on the figure and listed in a table. A dashed line extends from point O to the centroid c to illustrate this location. The table includes four columns: shape, x bar, y bar, and area. For the right triangle, the area is given as ½ b h.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-8.3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/Updated appendices figures/figure 8.3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="616">
+<img src="images/Updated appendices figures/figure 8.3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="A right triangle is shown with base b and height h, shaded gray, with point O at the bottom-left corner representing the origin. The centroid, labeled c, is located one-third of the base from the left side and one-third of the height above the base. These centroid coordinates are marked as x bar = b/3 and y bar = h/3, shown on the figure and listed in a table. A dashed line extends from point O to the centroid c to illustrate this location. The table includes four columns: shape, x bar, y bar, and area. For the right triangle, the area is given as ½ b h." width="616">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-8.3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;8.3: Reproduction of one of the shapes in <a href="Appendix E.html" class="quarto-xref"><span>Appendix E</span></a>. <a href="Appendix E.html" class="quarto-xref"><span>Appendix E</span></a> includes a sketch of the area with the centroid marked, formulas for determining the x- and y-coordinates of the centroid, and a formula for calculating the area of the shape.
+Figure&nbsp;8.3: Reproduction of a shape in <a href="Appendix E.html" class="quarto-xref"><span>Appendix E</span></a>. <a href="Appendix E.html" class="quarto-xref"><span>Appendix E</span></a> includes a sketch of the area with the centroid marked, formulas for determining the centroid’s x and y coordinates, and a formula for calculating the area of the shape.
 </figcaption>
 </figure>
 </div>
-<p>Often, structural sections are combinations of these standard shapes called composite sections. As long as we know the location of the centroid of each shape that comprises the section, we will not need to use integration to find the location of the overall sections’ centroid. We can use <a href="#eq-8.1" class="quarto-xref">Equation&nbsp;<span>8.1</span></a> in conjunction with the table in <a href="Appendix E.html" class="quarto-xref"><span>Appendix E</span></a> to find the location of the centroid for composite shapes.</p>
-<p><a href="#exm-8.1" class="quarto-xref">Example&nbsp;<span>8.1</span></a>, <a href="#exm-8.2" class="quarto-xref">Example&nbsp;<span>8.2</span></a>, and <a href="#exm-8.3" class="quarto-xref">Example&nbsp;<span>8.3</span></a> demonstrate the process for determing the centroid coordinates of composite areas.</p>
+<p>Often structural sections are combinations of these standard shapes. These types of sections are called composite sections. As long as we know the location of the centroid of each shape in the section, we do not need to use integration to find the location of the section’s overall centroid. We can use <a href="#eq-8.1" class="quarto-xref">Equation&nbsp;<span>8.1</span></a> in conjunction with the table in <a href="Appendix E.html" class="quarto-xref"><span>Appendix E</span></a> to find the location of the centroid for composite shapes.</p>
+<p><a href="#exm-8.1" class="quarto-xref">Example&nbsp;<span>8.1</span></a>, <a href="#exm-8.2" class="quarto-xref">Example&nbsp;<span>8.2</span></a>, and <a href="#exm-8.3" class="quarto-xref">Example&nbsp;<span>8.3</span></a> demonstrate the process for determining the centroid coordinates of composite areas.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example 8.1
+<span class="screen-reader-only">Tip</span>Example 8.1
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -583,29 +580,29 @@ Example 8.1
 <p>Find the centroid of the shape below.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH 8 PNGs/example 8.1 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="252"></p>
+<p><img src="images/CH 8 PNGs/example 8.1 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="T-shaped composite section with overall dimensions. The top flange is horizontal, 9 inches wide and 1.5 inches tall. The vertical stem is centered beneath the flange, 3 inches wide and 4.5 inches tall. The entire section is shaded gray to indicate it is solid." width="252"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solution
+<span class="screen-reader-only">Tip</span>Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>For this T-section, we notice that it is symmetric about the y-axis. This means we will not need to calculate the centroid in the x direction because we know it will be on that y-axis. We only need to find the distance in the y direction, <span class="math inline">\(\bar{Y}\)</span>.</p>
+<p>Notice that this T section is symmetric about the y-axis. This means that calculating the centroid in the x direction is unnecessary because we know it will be on that y-axis. We need only find the distance in the y direction, <span class="math inline">\(\bar{Y}\)</span>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH 8 PNGs/example 8.1 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="245"></p>
+<p><img src="images/CH 8 PNGs/example 8.1 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Same T-shaped composite section divided into two rectangles labeled 1 and 2. Rectangle 1 is the vertical stem, and Rectangle 2 is the horizontal flange. A black point labeled RP marks the reference point at the bottom left corner of the stem. Dimensions remain the same: the stem is 3 inches wide and 4.5 inches tall, and the flange is 9 inches wide and 1.5 inches tall." width="245"></p>
 </figure>
 </div>
-<p>The first thing we need to do is establish a coordinate system where the origin is our reference point, RP. In this example we chose the bottom left corner of the section so that all of our y distances will be positive.</p>
-<p>We then divide the section into simpler shapes where we know the location of the centroid. In this case we chose two rectangles, labeled 1 and 2 in the figure.</p>
+<p>The first thing to do is establish a coordinate system where the origin is the reference point, RP. In this example we chose the bottom left corner of the section so that all y distances will be positive.</p>
+<p>The second step is to divide the section into simpler shapes where we know the location of the centroid. In this case we chose two rectangles, labeled 1 and 2 in the figure.</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -636,19 +633,20 @@ Solution
 </tr>
 </tbody>
 </table>
-<p>Next, we will create a table with columns titled Shape, <span class="math inline">\(A\)</span> (in.<sup>2</sup>), <span class="math inline">\(\bar{y}\)</span> (in.), and <span class="math inline">\(A\bar{y}\)</span> (in.<sup>3</sup>). We have two shapes so there will be two rows in our table. The first column, Area, is the area of the individual shape. The second column, <span class="math inline">\(\bar{y}\)</span>, is the perpendicular distance in the y-direction from the RP to the centroid of that shape. For example, for shape 1 the <span class="math inline">\(\bar{y_1}\)</span> would be half of 4.5 inches since the bottom of shape 1 aligns with the RP. However, for shape 2 the <span class="math inline">\(\bar{y_2}\)</span> would be 4.5 inches plus one half of 1.5 inches. This is because we need to ensure that we are measuring from the RP as illustrated below.</p>
+<p>Next is to create a table with columns titled Shape, <span class="math inline">\(A\)</span> (in.<sup>2</sup>), <span class="math inline">\(\bar{y}\)</span> (in.), and <span class="math inline">\(A\bar{y}\)</span> (in.<sup>3</sup>). Given two shapes, there will be two rows in the table. Column A is the area of the individual shape. Column <span class="math inline">\(\bar{y}\)</span> is the perpendicular distance in the y direction from the RP to the centroid of that shape. For example, for shape 1 the <span class="math inline">\(\bar{y_1}\)</span> would be half of 4.5 in. since the bottom of shape 1 aligns with the RP. However, for shape 2 the <span class="math inline">\(\bar{y_2}\)</span> would be 4.5 in. plus one half of 1.5 in. This formula ensures measuring from the RP as illustrated here.</p>
 <p><span class="math display">\[
 \bar{Y}=\frac{101.25{~in.^3}}{27{~in.^2}}=3.75{~in.} ~~\text{from bottom}
 \]</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH 8 PNGs/example 8.1 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="481"></p>
+<p><img src="images/CH 8 PNGs/example 8.1 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="The T-shaped section divided into two parts, labeled 1 for the vertical stem and 2 for the horizontal flange. The reference point RP is at the bottom-left corner of the stem. Vertical distances from RP to the centroids of each rectangle are marked: the centroid of rectangle 1 is located 2.25 inches above RP (half of 4.5 inches), and the centroid of rectangle 2 is 5.25 inches above RP (4.5 inches plus half of 1.5 inches = 0.75 inches). These centroid heights are labeled 𝑦̄ sub 1 and 𝑦̄ sub 2 respectively." width="481"></p>
 </figure>
 </div>
-<p>Finally, to calculate the centroid coordinates, we will utilize <a href="#eq-8.1" class="quarto-xref">Equation&nbsp;<span>8.1</span></a> by summing the last column and the second column in our table. We found the centroid to be 3.75 inches from the reference point in the y-direction and on the line of symmetry in the x-direction. The figure below show the location of the centroid for this T section.</p>
+<p>Finally, to calculate the centroid coordinates, use <a href="#eq-8.1" class="quarto-xref">Equation&nbsp;<span>8.1</span></a> by summing the last column and the second column in the table. Using this approach we found the centroid to be 3.75 in. from the reference point in the y direction and on the line of symmetry in the x direction.</p>
+<p>The following figure shows the location of the centroid for this T section.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH 8 PNGs/example 8.1 part 4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="350"></p>
+<p><img src="images/CH 8 PNGs/example 8.1 part 4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="The T-shaped section with its overall centroid marked by a solid black dot at the intersection of dashed centroidal axes. The vertical axis is centered horizontally through the 9-inch flange, and the horizontal axis crosses the stem 3.75 inches above the reference point RP at the bottom-left of the stem. To the right, the value y bar = 3.75 in is noted, indicating the distance from RP to the overall centroid of the composite section." width="350"></p>
 </figure>
 </div>
 </div>
@@ -659,12 +657,12 @@ Solution
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example 8.2
+<span class="screen-reader-only">Tip</span>Example 8.2
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -674,39 +672,40 @@ Example 8.2
 <p><span class="theorem-title"><strong>Example 8.2</strong></span> &nbsp;</p>
 <p>
 </p>
-<p>Find the centroid of the shape below.</p>
+<p>Find the centroid of the illustrated shape.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH 8 PNGs/example 8.2 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="280"></p>
+<p><img src="images/CH 8 PNGs/example 8.2 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Symmetric I-shaped cross section, symmetric about the vertical y-axis but not about the horizontal x-axis. A vertical centroidal axis is labeled y, and a horizontal axis labeled x is drawn at the base of the section. The top flange is 180 mm wide and 40 mm high. The central web is 20 mm wide and 140 mm high. The bottom flange is 100 mm wide and 40 mm high. All components are vertically aligned and centered along the y-axis." width="280"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solution
+<span class="screen-reader-only">Tip</span>Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>For this section, we notice that it is symmetric about the y-axis, similar to <a href="#exm-8.1" class="quarto-xref">Example&nbsp;<span>8.1</span></a>. This means that we will not need to calculate the centroid in the x direction because we know it will be on that y-axis. We only need to find the distance in the y direction, <span class="math inline">\(\bar{Y}\)</span>.</p>
-<p>The first thing we need to do is establish a coordinate system whose origin is our reference point, RP. In this example, we chose the bottom of the section along the y-axis so that all of our y distances will be positive.</p>
-<p>We then divide the section into simpler shapes for which we know the centroid’s location. In this case, we chose three rectangles labeled 1, 2, and 3 in the figure.</p>
+<p>Notice that this section is symmetric about the y-axis, similar to <a href="#exm-8.1" class="quarto-xref">Example&nbsp;<span>8.1</span></a>. This means calculating the centroid in the x direction is unnecessary because we know it will be on that y-axis. We need only find the distance in the y direction, <span class="math inline">\(\bar{Y}\)</span>.</p>
+<p>The first thing to do is establish a coordinate system whose origin is the reference point, RP. In this example, we chose the bottom of the section along the y-axis so that all y distances will be positive.</p>
+<p>The second task is to divide the section into simpler shapes for which we know the centroid’s location. In this case we chose three rectangles labeled 1, 2, and 3 in the figure.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH 8 PNGs/example 8.2 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="284"></p>
+<p><img src="images/CH 8 PNGs/example 8.2 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="I-shaped cross-section divided into three rectangles: Rectangle 1 is the bottom flange, 100 mm wide and 40 mm high; Rectangle 2 is the central web, 20 mm wide and 140 mm high; and Rectangle 3 is the top flange, 180 mm wide and 40 mm high. The reference point (RP) is at the midpoint of the bottom base of Rectangle 1, on the x-axis." width="284"></p>
 </figure>
 </div>
-<p>Next, we will create a table with columns titled Shape, <span class="math inline">\(A\)</span> (mm<sup>2</sup>), <span class="math inline">\(\bar{y}\)</span> (mm), and <span class="math inline">\(A\bar{y}\)</span> (mm<sup>3</sup>). We have three shapes, so there will be three rows. The first column, Area, is the area of the individual shape. The second column, <span class="math inline">\(\bar{y}\)</span>, is the perpendicular distance in the y-direction from the RP to the centroid of that shape. The figure below shows how the <span class="math inline">\(\bar{y}\)</span> for each shape is calculated.</p>
+<p>Next, we will create a table with columns titled Shape, <span class="math inline">\(A\)</span> (mm<sup>2</sup>), <span class="math inline">\(\bar{y}\)</span> (mm), and <span class="math inline">\(A\bar{y}\)</span> (mm<sup>3</sup>). Given three shapes, there will be three rows. The first column, A, is the area of the individual shape. The second column, <span class="math inline">\(\bar{y}\)</span>, is the perpendicular distance in the y direction from the RP to the centroid of that shape.</p>
+<p>The figure below shows how the <span class="math inline">\(\bar{y}\)</span> for each shape is calculated.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH 8 PNGs/example 8.2 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="384"></p>
+<p><img src="images/CH 8 PNGs/example 8.2 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="I-shaped section divided into three labeled rectangles. Rectangle 1 at the bottom has a centroid located 20 mm above the reference point (RP), calculated as one-half of its 40 mm height and labeled as y bar sub 1. Rectangle 2, the vertical web, has a centroid located 110 mm above RP, found by adding 40 mm (height of rectangle 1) and half of its 140 mm height and labeled as ybar sub 2. Rectangle 3 at the top has a centroid located 200 mm above RP, determined by summing 40 mm (height of rectangle 1), 140 mm (height of rectangle 2), and half of its own 40 mm height and labeled as y bar sub 3. All y bar distances are clearly labeled with dotted projection lines extending from each centroid to the RP baseline." width="384"></p>
 </figure>
 </div>
-<p>Find centroid (x̄=0 due to symmetry).</p>
+<p>Next is to find the centroid (x̄ = 0 due to symmetry).</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 18%">
@@ -749,14 +748,15 @@ Solution
 </tr>
 </tbody>
 </table>
-<p>Finally, to calculate the centroid coordinates, we will utilize <a href="#eq-8.1" class="quarto-xref">Equation&nbsp;<span>8.1</span></a> by summing the second and last columns in our table.</p>
+<p>Finally, to calculate the centroid coordinates, use <a href="#eq-8.1" class="quarto-xref">Equation&nbsp;<span>8.1</span></a> by summing the table’s second and last columns.</p>
 <p><span class="math display">\[
 \bar{Y}=\frac{1,828,000{~mm^3}}{14,000{~mm^2}}=130.6{~mm} ~~\text{from bottom}
 \]</span></p>
-<p>We found the centroid to be 130.6 mm from the reference point in the y-direction and on the line of symmetry in the x-direction. The figure below shows the location of the centroid for this section.</p>
+<p>Using this approach we found the centroid to be 130.6 mm from the reference point in the y direction and on the line of symmetry in the x direction.</p>
+<p>The figure below shows the location of the centroid for this section.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH 8 PNGs/example 8.2 part 4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="366"></p>
+<p><img src="images/CH 8 PNGs/example 8.2 part 4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="I-shaped section with overall dimensions: 180 mm wide at the top, 100 mm wide at the bottom, and a central web 140 mm tall. The reference point (RP) is at the midpoint of the bottom base. A vertical dimension line extends from RP to the centroidal axis, located 130.57 mm above RP. This axis is drawn along the vertical centerline of the section, marking the final calculated centroid position." width="366"></p>
 </figure>
 </div>
 </div>
@@ -767,12 +767,12 @@ Solution
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example 8.3
+<span class="screen-reader-only">Tip</span>Example 8.3
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -785,54 +785,53 @@ Example 8.3
 <p>Find the centroid of the shape below.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH 8 PNGs/example 8.3 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="497"></p>
+<p><img src="images/CH 8 PNGs/example 8.3 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Composite shape consisting of a rectangle on the left, a right triangle attached on the right with its hypotenuse sloping northeast, and a circular cutout inside the rectangle. The rectangle is 8 inches wide and 8 inches tall. The triangle shares the same 8-inch height and extends 6 inches further to the right. The circular cutout is centered 4 inches from the left edge and 4 inches from the bottom, with its radius labeled. A coordinate system is overlaid with the origin at the bottom-right corner of the rectangle and axes labeled x and y. The y-axis passes vertically through the right edge of the rectangle." width="497"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solution
+<span class="screen-reader-only">Tip</span>Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>This section does not have any axis of symmetry, so we will need to find both the <span class="math inline">\(\bar{x}\)</span> and the <span class="math inline">\(\bar{y}\)</span>. We first need to establish a coordinate system whose origin is our reference point, RP. In this example, we will use the coordinate axis in the problem to illustrate when <span class="math inline">\(\bar{x}\)</span> will be negative.</p>
-<p>We then divide the section into simpler shapes for which we know the centroid’s location (<a href="Appendix E.html" class="quarto-xref"><span>Appendix E</span></a>.). In this case, we will break this up into the square, triangle, and circle labeled 1, 2, and 3 in the figure. Note that the circle is a hole, and the area will be represented as negative.</p>
+<p>This section has no axis of symmetry, so we must find both the <span class="math inline">\(\bar{x}\)</span> and the <span class="math inline">\(\bar{y}\)</span>. The first task is to establish a coordinate system whose origin is the reference point, RP. In this example, the coordinate axis in the problem illustrates when <span class="math inline">\(\bar{x}\)</span> will be negative.</p>
+<p>The second task is to divide the section into simpler shapes for which we know the centroid’s location (<a href="Appendix E.html" class="quarto-xref"><span>Appendix E</span></a>). In this case we will break this up into the square, triangle, and circle labeled 1, 2, and 3 in the figure. Note that the circle is a hole and the area will be represented as negative.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH 8 PNGs/example 8.3 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="487"></p>
+<p><img src="images/CH 8 PNGs/example 8.3 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Composite shape divided into three labeled regions. Region 1 is a rectangle on the left, 8 inches wide and 8 inches tall. Region 2 is a right triangle on the right, also 8 inches tall with a 6-inch base. Region 3 is a circular cutout inside Region 1, centered 4 inches from the left edge and 4 inches from the bottom edge. A coordinate system is overlaid with the origin at the bottom-right corner of the rectangle. The x-axis runs along the bottom edge, and the y-axis passes vertically through the right edge of the rectangle where the rectangle and triangle meet." width="487"></p>
 </figure>
 </div>
-<p>Next, we will create a table with columns titled Shape, <span class="math inline">\(A\)</span> (in<sup>2</sup>), <span class="math inline">\(\bar{x}\)</span> (in), <span class="math inline">\(\bar{y}\)</span> (in), and <span class="math inline">\(A\bar{y}\)</span> (in<sup>3</sup>). We have three shapes so there will be three rows. The first column, Area, is the area of the individual shape. The second column, <span class="math inline">\(\bar{x}\)</span>, is the perpendicular distance in the x-direction from the RP to the centroid of that shape. The figure below shows how the <span class="math inline">\(\bar{x}\)</span> for each shape is calculated.</p>
+<p>Next is to create a table with columns titled Shape, <span class="math inline">\(A\)</span> (in<sup>2</sup>), <span class="math inline">\(\bar{x}\)</span> (in), <span class="math inline">\(\bar{y}\)</span> (in), and <span class="math inline">\(A\bar{y}\)</span> (in<sup>3</sup>). Given three shapes, there are three rows. The first column, A, is the area of the individual shape. The second column, <span class="math inline">\(\bar{x}\)</span>, is the perpendicular distance in the x direction from the RP to the centroid of that shape.</p>
+<p>The figure below shows how the <span class="math inline">\(\bar{x}\)</span> for each shape is calculated.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH 8 PNGs/example 8.3 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="496"></p>
+<p><img src="images/CH 8 PNGs/example 8.3 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Composite shape divided into three labeled regions. Region 1 is a rectangle on the left, 8 inches wide and 8 inches tall. Region 2 is a right triangle on the right, also 8 inches tall with a 6-inch base. Region 3 is a circular cutout inside Region 1, centered 4 inches from the left edge and 4 inches from the bottom edge. A coordinate system is overlaid with the origin at the bottom-right corner of the rectangle. The x-axis runs along the bottom edge, and the y-axis passes vertically through the right edge of the rectangle where the rectangle and triangle meet. A black point labeled RP marks the reference point at this intersection of the x- and y-axes, lying at the junction of the rectangle and triangle. Green dimension lines indicate x-bar distances for each region: Region 1 has x-bar sub 1 = 4 inches from the y-axis, Region 3 has x-bar sub 3 = 4 inches from the y-axis, and Region 2 has x-bar sub 2 = 2 inches from the y-axis, equal to one-third of its 6-inch base." width="496"></p>
 </figure>
 </div>
 <p>The figure below shows how the <span class="math inline">\(\bar{y}\)</span> for each shape is calculated.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH 8 PNGs/example 8.3 part 4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="498"></p>
+<p><img src="images/CH 8 PNGs/example 8.3 part 4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Same composite shape with three regions: a left rectangle (Region 1), a right triangle (Region 2), and a circular cutout centered within the rectangle (Region 3). The reference point RP is marked as a black dot at the intersection of the x- and y-axes, located at the bottom corner where the rectangle and triangle meet. Vertical centroid distances from RP are labeled: Region 1 has y-bar sub 1 = 4 inches, Region 3 has y-bar sub 3 = 4 inches, and Region 2 has y-bar sub 2 = 16/3 inches, found by subtracting one-third of 8 from 8." width="498"></p>
 </figure>
 </div>
-<p>Finally, to calculate the centroid coordinates, we will utilize <a href="#eq-8.1" class="quarto-xref">Equation&nbsp;<span>8.1</span></a> by summing the Area, <span class="math inline">\(A\bar{x}\)</span>, and <span class="math inline">\(A\bar{y}\)</span> columns see the table below.</p>
+<p>Finally, to calculate the centroid coordinates, use <a href="#eq-8.1" class="quarto-xref">Equation&nbsp;<span>8.1</span></a> by summing the A, <span class="math inline">\(A\bar{x}\)</span>, and <span class="math inline">\(A\bar{y}\)</span> columns shown in the table below.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 8%">
-<col style="width: 8%">
-<col style="width: 11%">
+<col style="width: 9%">
 <col style="width: 14%">
-<col style="width: 18%">
-<col style="width: 14%">
-<col style="width: 17%">
+<col style="width: 16%">
+<col style="width: 20%">
+<col style="width: 16%">
+<col style="width: 20%">
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><strong>Shape</strong></td>
 <td><strong>Shape</strong></td>
 <td><span class="math inline">\(A{~(in.^2)}\)</span></td>
 <td><span class="math inline">\(\bar{x}{~(in.)}\)</span></td>
@@ -841,7 +840,6 @@ Solution
 <td><span class="math inline">\(A\bar{y}{~(in.^3)}\)</span></td>
 </tr>
 <tr class="even">
-<td></td>
 <td>1</td>
 <td>64</td>
 <td>-4</td>
@@ -850,7 +848,6 @@ Solution
 <td>256</td>
 </tr>
 <tr class="odd">
-<td></td>
 <td>2</td>
 <td>24</td>
 <td>2</td>
@@ -859,7 +856,6 @@ Solution
 <td>128</td>
 </tr>
 <tr class="even">
-<td></td>
 <td>3</td>
 <td>-4π</td>
 <td>-4</td>
@@ -869,12 +865,11 @@ Solution
 </tr>
 <tr class="odd">
 <td></td>
+<td><span class="math inline">\(\sum A\)</span> = 75.4</td>
 <td></td>
-<td><span class="math inline">\(\sum A\)</span>=75.4</td>
+<td><span class="math inline">\(\sum A\bar{x}\)</span>= -258.3</td>
 <td></td>
-<td><span class="math inline">\(\sum A\bar{x}\)</span>=-258.3</td>
-<td></td>
-<td><span class="math inline">\(\sum A\bar{y}\)</span>=333.7</td>
+<td><span class="math inline">\(\sum A\bar{y}\)</span>= 333.7</td>
 </tr>
 </tbody>
 </table>
@@ -884,10 +879,11 @@ Solution
 &amp; \bar{Y}=\frac{\sum A \bar{y}}{\sum A}=\frac{333.7{~in.^3}}{75.4{~in.^2}} \quad\rightarrow\quad \bar{Y}=4.43 \mathrm{in}
 \end{aligned}
 \]</span></p>
-<p>We found the centroid to be -2.09 inches in the x-direction from the reference point, this indicates that the centroid will be to the left of the y-axis. The y-component of the centroid is 4.43 inches in the y-direction from the reference point. The figure below shows the location of the centroid for this section.</p>
+<p>Using this approach, we calculated the centroid to be -2.09 in. in the x direction from the reference point, which indicates it will be to the left of the y-axis. The y component of the centroid is 4.43 in. in the y direction from the reference point.</p>
+<p>The figure below shows the location of the centroid for this section.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/chapter 8 figure edits post review/example 8.3 part 5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="505"></p>
+<p><img src="images/chapter 8 figure edits post review/example 8.3 part 5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="The composite shape consists of a rectangle and triangle forming a continuous area with a circular hole cut from the rectangular region. The reference point (RP) is at the bottom-right corner where the rectangle and triangle meet. Dashed red lines indicate the horizontal and vertical centroid axes. A solid red dot marks the centroid, located 2.09 inches to the left of RP and 4.43 inches above RP." width="505"></p>
 </figure>
 </div>
 </div>
@@ -903,16 +899,16 @@ Solution
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Step-by-step: Finding the Centroid of Composite Sections
+<span class="screen-reader-only">Warning</span>Step-by-Step: Finding the Centroid of Composite Sections
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>To find the location of the centroid of a composite section where the location of the centroid is known for each part of the composite section, use the following procedure:</p>
+<p>To find the location of the composite section’s centroid where the location of each part’s centroid is known, use the following procedure:</p>
 <ol type="1">
-<li>Establish a coordinate axis where the origin is the reference point (RP). This will be where the centroid will be measured.</li>
-<li>Break the overall section up into simpler shapes where the location of the centroid of each shape is known. It is helpful here to sketch this. If the section has a hole, include the hole as a shape with a negative area. Remember to take advantage of symmetry. If the overall section is symmetric about an axis, you already know the location of the centroid in that direction as it is on that axis.</li>
-<li>Determine the Area (A), the perpendicular distance from the y-axis (<span class="math inline">\(\bar{x}\)</span>), and the perpendicular distance from the x-axis (<span class="math inline">\(\bar{y}\)</span>) to the centroid of each shape. As sections become more complex, it might be advantageous to arrange these values in tabular form (see examples in this section).</li>
-<li>Apply <a href="#eq-8.1" class="quarto-xref">Equation&nbsp;<span>8.1</span></a> to find the overall section’s centroid, (<span class="math inline">\(\bar{X}, \bar{Y}\)</span>). Remember that this location is measured from the RP you established in step 1.</li>
+<li>Establish a coordinate axis where the origin is the reference point (RP). This is where the centroid will be measured.</li>
+<li>Break up the overall section into simpler shapes where the location of the centroid of each shape is known. It is helpful here to sketch this. If the section has a hole, include the hole as a shape with a negative area. Remember to take advantage of symmetry. If the overall section is symmetric about an axis, you already know the location of the centroid in that direction as it is on that axis.</li>
+<li>Determine the area (A), the perpendicular distance from the y-axis (<span class="math inline">\(\bar{x}\)</span>), and the perpendicular distance from the x-axis (<span class="math inline">\(\bar{y}\)</span>) to the centroid of each shape. As sections become more complex, it might be advantageous to arrange these values in tabular form, as shown in this section.</li>
+<li>Apply <a href="#eq-8.1" class="quarto-xref">Equation&nbsp;<span>8.1</span></a> to find the section’s overall centroid, (<span class="math inline">\(\bar{X}, \bar{Y}\)</span>). Remember that this location is measured from the RP established in step 1.</li>
 <li>Check that your answer is reasonable. Imagine any straight line that passes through the centroid. There should be an equal amount of area on each side of this line. Mark the centroid location on the composite area and check that this appears roughly accurate.</li>
 </ol>
 </div>
@@ -920,12 +916,12 @@ Step-by-step: Finding the Centroid of Composite Sections
 </details>
 </section>
 <section id="sec-8.2" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="sec-8.2"><span class="header-section-number">8.2</span> 2<sup>nd</sup> Moment of Areas</h2>
+<h2 data-number="8.2" class="anchored" data-anchor-id="sec-8.2"><span class="header-section-number">8.2</span> Second Moment of Area</h2>
 <details>
 <summary>
 Click to expand
 </summary>
-<p>Another important geometric property needed to calculate stresses in beams is the Moment of Inertia of the Area (2<sup>nd</sup> moment of area). Similar to our discussion of centroids, you likely were presented this topic in Statics so this chapter is designed to be a review. By definition, the second moment of area or moment of inertia depicted in <a href="#fig-8.4" class="quarto-xref">Figure&nbsp;<span>8.4</span></a> is defined as:</p>
+<p>Another important geometric property needed to calculate stresses in beams is the second moment of area (also known as moment of inertia and area moment of inertia). You likely encountered this topic in statics, as you did the topic of centroids, so this section is designed as a review. By definition the second moment of area depicted in <a href="#fig-8.4" class="quarto-xref">Figure&nbsp;<span>8.4</span></a> is</p>
 <p><span id="eq-8.2"><span class="math display">\[
 \boxed{\begin{aligned}
 &amp;I_x=\int_A y^2 d A \\
@@ -933,67 +929,68 @@ Click to expand
 &amp;I_z=J=\int_A r^2 d A \\
 \end{aligned}}
 \tag{8.2}\]</span></span></p>
-<div id="fig-8.4" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<div id="fig-8.4" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Shaded irregular area A in the first quadrant, bounded by a smooth closed curve. A small rectangular differential element dA is marked inside the region, with coordinates defined by x (distance from the y-axis) and y (distance from the x-axis). A black vector r extends from the origin (0,0) to the center of dA, pointing northeast, representing the radial distance to that differential area.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-8.4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/CH 8 PNGs/figure 8.4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="439">
+<img src="images/CH 8 PNGs/figure 8.4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Shaded irregular area A in the first quadrant, bounded by a smooth closed curve. A small rectangular differential element dA is marked inside the region, with coordinates defined by x (distance from the y-axis) and y (distance from the x-axis). A black vector r extends from the origin (0,0) to the center of dA, pointing northeast, representing the radial distance to that differential area." width="439">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-8.4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;8.4: Moments of inertia of an area dA.
+Figure&nbsp;8.4: Second moment of area about dA.
 </figcaption>
 </figure>
 </div>
-<p>In this text, we will use common shapes or a composite of common shapes for our cross-sections. <a href="Appendix E.html" class="quarto-xref"><span>Appendix E</span></a> includes formulas to calculate the moment of inertia. Part of <a href="Appendix E.html" class="quarto-xref"><span>Appendix E</span></a> is reproduced in <a href="#fig-8.5" class="quarto-xref">Figure&nbsp;<span>8.5</span></a>. Each row of the table includes a common shape with the centroid marked, and formulas for determining the moment of inertia of the area about the x-, y-, and z-centroidal axes. Note that these equations are valid only for the axes passing through the centroid of the area and are written as <span class="math inline">\(\overline{I_{x^{\prime}}}\)</span>, <span class="math inline">\(\overline{I_{y^{\prime}}}\)</span>, and J respectively. The bar notation is used to signify that the moment of inertia is being calculated around the centroidal axes.</p>
-<div id="fig-8.5" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<p>Keep in mind that this text uses common shapes or a composite of common shapes for cross-sections. <a href="Appendix E.html" class="quarto-xref"><span>Appendix E</span></a> includes formulas to calculate the second moment of area. Part of <a href="Appendix E.html" class="quarto-xref"><span>Appendix E</span></a> is reproduced in <a href="#fig-8.5" class="quarto-xref">Figure&nbsp;<span>8.5</span></a>. Each row of the table includes a common shape with the centroid marked and with formulas for determining the second moment of area about the centroidal axes x, y, and z. Note that these equations are valid only for the axes passing through the area’s centroid and are written as <span class="math inline">\(\overline{I_{x^{\prime}}}\)</span>, <span class="math inline">\(\overline{I_{y^{\prime}}}\)</span>, and J respectively. The bar notation is used to signify that the second moment of area is being calculated around the centroidal axes.</p>
+<div id="fig-8.5" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Table with three columns labeled Shape, I sub x, and I sub y. In the Shape column, a shaded horizontal rectangle with base b and height h is shown. Its centroid is marked as point c. Two coordinate systems are drawn: the original axes x and y intersect at the bottom-left corner, and the centroidal axes x′ and y′ intersect at the centroid c. In the I sub x column, the values are listed: I sub x equals b times h cubed over 3, and below it, I bar sub x prime equals b times h cubed over 12. In the I sub y column, the values are listed: I sub y equals h times b cubed over 3, and below it, I bar sub y prime equals h times b cubed over 12.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-8.5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/Updated appendices figures/figure 8.5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="699">
+<img src="images/Updated appendices figures/figure 8.5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Table with three columns labeled Shape, I sub x, and I sub y. In the Shape column, a shaded horizontal rectangle with base b and height h is shown. Its centroid is marked as point c. Two coordinate systems are drawn: the original axes x and y intersect at the bottom-left corner, and the centroidal axes x′ and y′ intersect at the centroid c. In the I sub x column, the values are listed: I sub x equals b times h cubed over 3, and below it, I bar sub x prime equals b times h cubed over 12. In the I sub y column, the values are listed: I sub y equals h times b cubed over 3, and below it, I bar sub y prime equals h times b cubed over 12." width="699">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-8.5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;8.5: Reproduction of one of the shapes in <a href="Appendix E.html" class="quarto-xref"><span>Appendix E</span></a>. <a href="Appendix E.html" class="quarto-xref"><span>Appendix E</span></a> includes a sketch of the area with the centroid marked, and formulas for determining the moment of inertia of the area about the x-, y-, and z-centroidal axes.
+Figure&nbsp;8.5: Reproduction of a shape in <a href="Appendix E.html" class="quarto-xref"><span>Appendix E</span></a>. <a href="Appendix E.html" class="quarto-xref"><span>Appendix E</span></a> includes a sketch of the area with the centroid marked and formulas for determining the second moment of area about the centroidal axes x, y, and z.
 </figcaption>
 </figure>
 </div>
-<p>As noted previously, structural sections are often combinations of these standard shapes called composite sections. Similar to calculating centroids we will break these composite sections into common shapes and find the moment of inertia of these individual shapes.&nbsp; When we calculate each individual shape’s moment of inertia, we need to ensure that they are all about the same axis. The <strong>parallel axis theorem</strong> provides a method for calculating the moment of inertia of an area about an axis parallel to an axis passing through the centroid, given that the moment of inertia about the latter axis is known.</p>
-<p>To establish the parallel axis theorem, we will examine the moment of inertia <em>I</em> of an area <em>A</em> relative to an axis <em>x</em>, as illustrated in <a href="#fig-8.6" class="quarto-xref">Figure&nbsp;<span>8.6</span></a>.</p>
-<div id="fig-8.6" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<p>As noted previously, structural sections, called composite sections, are often combinations of these standard shapes. As with calculating centroids, we break these composite sections into common shapes and find the second moment of area of these individual shapes. When calculating each individual shape’s second moment of area, we must ensure that they are all about the same axis.</p>
+<p>The parallel axis theorem provides a method for calculating the second moment of area about an axis parallel to an axis passing through the centroid, given that the second moment of area about the latter axis is known.</p>
+<p>To establish the parallel axis theorem, we’ll next examine the second moment of area about A relative to an axis x, as illustrated in <a href="#fig-8.6" class="quarto-xref">Figure&nbsp;<span>8.6</span></a>.</p>
+<div id="fig-8.6" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="A shaded irregular area A is shown in the first quadrant of an x–y coordinate system with the origin at the bottom left. Inside the region, a small differential area element dA is marked. Its position is defined by local coordinates x′ and y′ from a secondary x′–y′ system centered at the shape’s centroid. The element lies x′ units to the right and y′ units above this local origin. Green arrows mark distances dx and dy, representing the horizontal and vertical distances from the global origin to the centroid of the area. The centroid is located dx to the right and dy upward from the global origin.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-8.6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/chapter 8 figure edits post review/figure 8.6.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="414">
+<img src="images/chapter 8 figure edits post review/figure 8.6.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="A shaded irregular area A is shown in the first quadrant of an x–y coordinate system with the origin at the bottom left. Inside the region, a small differential area element dA is marked. Its position is defined by local coordinates x′ and y′ from a secondary x′–y′ system centered at the shape’s centroid. The element lies x′ units to the right and y′ units above this local origin. Green arrows mark distances dx and dy, representing the horizontal and vertical distances from the global origin to the centroid of the area. The centroid is located dx to the right and dy upward from the global origin." width="414">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-8.6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;8.6: The moment of inertia of an area A about an axis x can be derived from its moment of inertia about the centroidal axis x’ through a computation involving the distance dy between the axes.
+Figure&nbsp;8.6: The second moment of area about A about an axis x can be derived from its second moment of area about the centroidal axis x’ through a computation involving the distance dy between the axes.
 </figcaption>
 </figure>
 </div>
-<p>The centroid of the area is at C, where the x’-y’ axis is drawn; note that x’ is parallel to x and y’ is parallel to y. The x-y’ axes will be termed the centroidal axes and a distance of dx and dy from the x-y axes, respectively. The distance between the element dA and the x’-axis is denoted as y’. Now we have <span class="math inline">\(y=y^{\prime}+d_y\)</span>. Substituting into <a href="#eq-8.2" class="quarto-xref">Equation&nbsp;<span>8.2</span></a>, we have:</p>
+<p>The centroid of the area is at C, where the x’-y’ axis is drawn; note that x’ is parallel to x and y’ is parallel to y. The x-y’ axes will be termed the centroidal axes and are at a distance of d<sub>x</sub> and d<sub>y</sub> from the x-y axes respectively. The distance between the element dA and the x’-axis is denoted as y’. The result is <span class="math inline">\(y=y^{\prime}+d_y\)</span>. Substituting into <a href="#eq-8.2" class="quarto-xref">Equation&nbsp;<span>8.2</span></a> yields</p>
 <p><span class="math display">\[
 \begin{aligned}
 &amp; I_x=\int\left(y^{\prime}+d_y\right)^2 d A \\
 &amp; I_x=\int\left(y^{\prime}\right)^2 d A+2 d_y \int y^{\prime} d A+d_y^2 \int d A
-\end{aligned}
+\end{aligned}\text{ .}
 \]</span></p>
-<p>The first integral represents the moment of inertia about the centroidal axis x’. The second integral is zero since the centroid is located on the x’ axis (i.e., <span class="math inline">\(\int y^{\prime} d A\)</span> represents the first moment of area about the x’ centroidal axis, which is zero as discussed in <a href="#sec-8.1" class="quarto-xref"><span>Section 8.1</span></a>). The last integral represents the total area, A. So we have:</p>
+<p>The first integral represents the second moment of area about the centroidal axis x’. The second integral is zero since the centroid is located on the x’-axis (i.e., <span class="math inline">\(\int y^{\prime} d A\)</span> represents the first moment of area about the x’ centroidal axis, which is zero, as discussed in <a href="#sec-8.1" class="quarto-xref"><span>Section 8.1</span></a>). The last integral represents the total area, A. So the resulting equation is</p>
 <p><span id="eq-8.3"><span class="math display">\[
-\boxed{I_x=\overline{I_{x^{\prime}}}+A d_y^2}
+\boxed{I_x=\overline{I_{x^{\prime}}}+A d_y^2}\text{ .}
 \tag{8.3}\]</span></span></p>
-<p>A similar process is used to find an expression for I<sub>y</sub>:</p>
+<p>A similar process is used to find an expression for I<sub>y</sub>.</p>
 <p><span id="eq-8.4"><span class="math display">\[
-\boxed{I_y=\overline{I_{y^{\prime}}}+A d_x^2}
+\boxed{I_y=\overline{I_{y^{\prime}}}+A d_x^2}\text{ ,}
 \tag{8.4}\]</span></span></p>
-<div class="line-block"><em>where</em><br>
-<em>I<sub>x</sub>, I<sub>y</sub> = the moment of inertia of an area with respect to a given axis [m<sup>4</sup>, in.<sup>4</sup>]</em><br>
-<span class="math inline">\(\overline{I_{x^{\prime}}}\)</span> <em>,</em> <span class="math inline">\(\overline{I_{y^{\prime}}}\)</span> <em>= moment of inertia of that area with respect to a parallel axis passing through the centroid of the area [m<sup>4</sup>, in.<sup>4</sup>]</em><br>
-<em>A = area [m<sup>2</sup>, in.<sup>2</sup>]</em></div>
-<p><em>d<sub>x</sub>, d<sub>y</sub> = perpendicular distance between the given axis and the parallel centroidal axis [m, in.]</em></p>
-<p>While the parallel axis theorem can be used to calculate the area moment of inertia around any pair of axes, we will primarily focus on calculating the area moment of inertia around the centroidal axes of a composite area. It is this term which will be used in <a href="Chapter 9.html" class="quarto-xref"><span>Chapter 9</span></a> and <a href="Chapter 10.html" class="quarto-xref"><span>Chapter 10</span></a> when calculating bending stresses and shear stresses. <a href="#exm-8.4" class="quarto-xref">Example&nbsp;<span>8.4</span></a>, <a href="#exm-8.5" class="quarto-xref">Example&nbsp;<span>8.5</span></a>, and <a href="#exm-8.6" class="quarto-xref">Example&nbsp;<span>8.6</span></a> demonstrate the use of the parallel axis theorem to find the area moments of inertia for the composite areas from the earlier examples about their centroidal axes.</p>
+<div class="line-block">where<br>
+<em>I<sub>x</sub>, I<sub>y</sub> = Second moment of area with respect to a given axis [m<sup>4</sup>, in.<sup>4</sup>]</em><br>
+<span class="math inline">\(\overline{I_{x^{\prime}}}\)</span> <em>,</em> <span class="math inline">\(\overline{I_{y^{\prime}}}\)</span> <em>= Second moment of area with respect to a parallel axis passing through the centroid of the area [m<sup>4</sup>, in.<sup>4</sup>]</em><br>
+<em>A = Area [m<sup>2</sup>, in.<sup>2</sup>]</em><br>
+<em>d<sub>x</sub>, d<sub>y</sub> = Perpendicular distance between the given axis and the parallel centroidal axis [m, in.]</em></div>
+<p>While the parallel axis theorem can be used to calculate the second moment of area around any pair of axes, here the focus is primarily on calculating the second moment of area around the centroidal axes of a composite region (this is this term used in <a href="Chapter 9.html" class="quarto-xref"><span>Chapter 9</span></a> and <a href="Chapter 10.html" class="quarto-xref"><span>Chapter 10</span></a> when calculating bending stresses and shear stresses). <a href="#exm-8.4" class="quarto-xref">Example&nbsp;<span>8.4</span></a>, <a href="#exm-8.5" class="quarto-xref">Example&nbsp;<span>8.5</span></a>, and <a href="#exm-8.6" class="quarto-xref">Example&nbsp;<span>8.6</span></a> demonstrate using the parallel axis theorem to find the second moment of area for the composite areas from the earlier examples about their centroidal axes.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example 8.4
+<span class="screen-reader-only">Tip</span>Example 8.4
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1003,37 +1000,39 @@ Example 8.4
 <p><span class="theorem-title"><strong>Example 8.4</strong></span> &nbsp;</p>
 <p>
 </p>
-<p>Determine the I<sub>x</sub> the shaded area with respect to the section’s centroid.</p>
+<p>Determine the I<sub>x</sub> of the shaded area with respect to the section’s centroid.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH 8 PNGs/example 8.4 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="310"></p>
+<p><img src="images/CH 8 PNGs/example 8.4 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="T-shaped composite section with overall dimensions. The top flange is horizontal, 9 inches wide and 1.5 inches tall. The vertical stem is centered beneath the flange, 3 inches wide and 4.5 inches tall. The entire section is shaded gray to indicate it is solid." width="310"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solution
+<span class="screen-reader-only">Tip</span>Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Since we want to find the moment of inertia in the x direction with respect to the section’s centroid, we first need to calculate the centroid. We did this in <a href="#exm-8.1" class="quarto-xref">Example&nbsp;<span>8.1</span></a>, the results are shown below.</p>
+<p>To find the second moment of area in the x direction with respect to the section’s centroid, first calculate the centroid. We did this in <a href="#exm-8.1" class="quarto-xref">Example&nbsp;<span>8.1</span></a>, with the results as shown below.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH 8 PNGs/example 8.4 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="390"></p>
+<p><img src="images/CH 8 PNGs/example 8.4 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="T-shaped section with its overall centroid marked by a solid black dot at the intersection of dashed centroidal axes. The vertical axis is centered horizontally through the 9-inch flange, and the horizontal axis crosses the stem 3.75 inches above the reference point RP at the bottom-left of the stem. To the right, the value y bar = 3.75 in is noted, indicating the distance from RP to the overall centroid of the composite section." width="390"></p>
 </figure>
 </div>
-<p>We found that the centroid is located 3.75 inches from the bottom of the section. The next step is to break the section into common shapes as noted in the figure below.</p>
+<p>We found that the centroid is located 3.75 in. from the bottom of the section.</p>
+<p>The next step is to break the section into common shapes.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH 8 PNGs/example 8.4 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="357"></p>
+<p><img src="images/CH 8 PNGs/example 8.4 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Same T-shaped composite section divided into two rectangles labeled 1 and 2. Rectangle 1 is the vertical stem, and Rectangle 2 is the horizontal flange. A black point labeled RP marks the reference point at the bottom left corner of the stem. Dimensions remain the same: the stem is 3 inches wide and 4.5 inches tall, and the flange is 9 inches wide and 1.5 inches tall." width="357"></p>
 </figure>
 </div>
-<p>The formulas for moment of inertia of each shape are with respect to the shape’s centroid not the overall section’s centroid. We will need to make and adjustment using the parallel-axis theorem to transform the rotational axis from the shape’s centroid to the section’s centroid. We will present this method in terms of a table.</p>
+<p>The formula for the second moment of area of a shape are with respect to the shape’s centroid, not to the section’s overall centroid. Make a necessary adjustment using the parallel axis theorem to transform the rotational axis from the shape’s centroid to the section’s centroid. Do this for each shape in the section.</p>
+<p>Present this method in terms of a table as shown.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 12%">
@@ -1077,14 +1076,14 @@ Solution
 <td></td>
 <td></td>
 <td></td>
-<td>I<sub>x</sub>=86.0625 in<sup>4</sup></td>
+<td>I<sub>x</sub>=86.0625 in.<sup>4</sup></td>
 </tr>
 </tbody>
 </table>
-<p>The calculation and visualizations for each d<sub>y</sub> term are shown in the figure below</p>
+<p>The figure below shoes the calculation and visualizations for each d<sub>y</sub> term.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH 8 PNGs/example 8.4 part 4.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="images/CH 8 PNGs/example 8.4 part 4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="T-shaped composite section with all key dimensions and labeled points. The bottom vertical stem is 4.5 inches tall and 3 inches wide. The top horizontal flange is 1.5 inches tall and 9 inches wide. A black dot labeled RP is at the bottom-left corner of the stem. Another black dot marks the centroid of the entire T-section, located 3.75 inches above RP. The centroid of Section 1, the stem, is 2.25 inches above RP. The centroid of Section 2, the flange, is 5.25 inches above RP. Horizontal dashed lines extend from each section’s centroid, intersecting with the vertical dashed line through the overall centroid. The vertical distance from the overall centroid to Section 1 is labeled dy sub 1 and equals 3.75 minus 2.25, or 1.5 inches. The distance from the overall centroid to Section 2 is labeled dy sub 2 and equals 5.25 minus 3.75, also 1.5 inches." width="659"></p>
 </figure>
 </div>
 </div>
@@ -1095,12 +1094,12 @@ Solution
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example 8.5
+<span class="screen-reader-only">Tip</span>Example 8.5
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1110,37 +1109,39 @@ Example 8.5
 <p><span class="theorem-title"><strong>Example 8.5</strong></span> &nbsp;</p>
 <p>
 </p>
-<p>Determine the I<sub>x</sub> and I<sub>y</sub> of the shaded area with respect to the shapes centroid.</p>
+<p>Determine the I<sub>x</sub> and I<sub>y</sub> of the shaded area with respect to the shape’s centroid.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH 8 PNGs/example 8.5 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="289"></p>
+<p><img src="images/CH 8 PNGs/example 8.5 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Symmetric I-shaped cross section, symmetric about the vertical y-axis but not about the horizontal x-axis. A vertical centroidal axis is labeled y, and a horizontal axis labeled x is drawn at the base of the section. The top flange is 180 mm wide and 40 mm high. The central web is 20 mm wide and 140 mm high. The bottom flange is 100 mm wide and 40 mm high. All components are vertically aligned and centered along the y-axis." width="289"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solution
+<span class="screen-reader-only">Tip</span>Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Since we want to find the moment of inertia in the x and y directions with respect to the section’s centroid, we first need to calculate the centroid. We did this in <a href="#exm-8.2" class="quarto-xref">Example&nbsp;<span>8.2</span></a>, the results are shown below.</p>
+<p>To find the second moment of area in the x and y directions with respect to the section’s overall centroid, first calculate the centroid. We did this in <a href="#exm-8.2" class="quarto-xref">Example&nbsp;<span>8.2</span></a>, with the results shown below.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH 8 PNGs/example 8.5 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="358"></p>
+<p><img src="images/CH 8 PNGs/example 8.5 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="I-shaped section with overall dimensions: 180 mm wide at the top, 100 mm wide at the bottom, and a central web 140 mm tall. The reference point (RP) is at the midpoint of the bottom base. A vertical dimension line extends from RP to the centroidal axis, located 130.57 mm above RP, labeled as y bar. This axis is drawn along the vertical centerline of the section, marking the final calculated centroid position." width="358"></p>
 </figure>
 </div>
-<p>We found that the centroid is located 130.6 mm from the bottom of the section and on the y-axis. The next step is to break the section into common shapes as noted in the figure below.</p>
+<p>We found that the centroid is located 130.6 mm from the bottom of the section and on the y-axis.</p>
+<p>The next step is to break the section into common shapes.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH 8 PNGs/example 8.5 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="318"></p>
+<p><img src="images/CH 8 PNGs/example 8.5 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="I-shaped cross-section divided into three rectangles: Rectangle 1 is the bottom flange, 100 mm wide and 40 mm high; Rectangle 2 is the central web, 20 mm wide and 140 mm high; and Rectangle 3 is the top flange, 180 mm wide and 40 mm high. The reference point (RP) is at the midpoint of the bottom base of Rectangle 1, on the x-axis." width="318"></p>
 </figure>
 </div>
-<p>The formulas for moment of inertia of each shape are with respect to the shape’s centroid not the overall section’s centroid. We will need to make and adjustment using the parallel-axis theorem to transform the rotational axis from the shape’s centroid to the section’s centroid. We will present this method in terms of a table, first for I<sub>x</sub>.</p>
+<p>The formula for the second moment of area of a shape are with respect to the shape’s centroid, not to the section’s overall centroid. Make a necessary adjustment using the parallel axis theorem to transform the rotational axis from the shape’s centroid to the section’s centroid. Do this for each shape in the section.</p>
+<p>Present this method in terms of a table, first for I<sub>x</sub>.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 11%">
@@ -1198,13 +1199,13 @@ Solution
 </tr>
 </tbody>
 </table>
-<p>The calculation and visualizations for each d<sub>y</sub> term are shown in the figure below.</p>
+<p>The calculation and visualizations for each d<sub>y</sub> term are as shown in the figure.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH 8 PNGs/example 8.5 part 4.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="images/CH 8 PNGs/example 8.5 part 4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="I-shaped cross-section made of three labeled rectangles. Rectangle 1 is at the bottom with a height of 40 mm; its centroid is located 20 mm above the reference point, or RP, calculated as one-half of its height. Rectangle 2 is the vertical web with a height of 140 mm; its centroid is located 110 mm above RP, found by adding 40 mm from Rectangle 1 and one-half of 140 mm. Rectangle 3 is at the top with a height of 40 mm; its centroid is located 200 mm above RP, calculated by adding 40 mm for Rectangle 1, 140 mm for Rectangle 2, and one-half of 40 mm. The vertical distances from each rectangle’s centroid to the overall centroid, located at 130.57 mm, are labeled. The distance from Rectangle 1’s centroid to the overall centroid is labeled as dy sub 1 and equals 130.57 minus 20, 110.57 mm. The distance from Rectangle 2’s centroid to the overall centroid is labeled as dy sub 2 and equals 130.57 minus 110, 20.57 mm. The distance from Rectangle 3’s centroid to the overall centroid is labeled as dy sub 3 and equals 200 minus 130.57, 69.43 mm."></p>
 </figure>
 </div>
-<p>We will do the same process to calculate I<sub>y</sub>.</p>
+<p>Use the same process to calculate I<sub>y</sub>.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 12%">
@@ -1262,7 +1263,7 @@ Solution
 </tr>
 </tbody>
 </table>
-<p>Notice that the values for d<sub>x</sub> are all zero when calculating I<sub>y</sub>. This is because the centroid of each shape coincides with the centroid of the entire section therefore the distance between them is zero.</p>
+<p>Notice that all the values for d<sub>x</sub> are zero when calculating I<sub>y</sub>. This is because the centroid of each shape coincides with the centroid of the entire section, so the distance between them is zero.</p>
 </div>
 </div>
 </div>
@@ -1271,12 +1272,12 @@ Solution
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example 8.6
+<span class="screen-reader-only">Tip</span>Example 8.6
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1289,46 +1290,46 @@ Example 8.6
 <p>Determine the I<sub>x</sub> and I<sub>y</sub> of the shaded area with respect to the shape’s centroid.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH 8 PNGs/example 8.6 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="404"></p>
+<p><img src="images/CH 8 PNGs/example 8.6 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Composite shape consisting of a rectangle on the left, a right triangle attached on the right with its hypotenuse sloping northeast, and a circular cutout inside the rectangle. The rectangle is 8 inches wide and 8 inches tall. The triangle shares the same 8-inch height and extends 6 inches further to the right. The circular cutout is centered 4 inches from the left edge and 4 inches from the bottom, with its radius labeled. A coordinate system is overlaid with the origin at the bottom-right corner of the rectangle and axes labeled x and y. The y-axis passes vertically through the right edge of the rectangle." width="404"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solution
+<span class="screen-reader-only">Tip</span>Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Since we want to find the moment of inertia in the x and y directions with respect to the section’s centroid, we first need to calculate the centroid. We did this in <a href="#exm-8.3" class="quarto-xref">Example&nbsp;<span>8.3</span></a>, the results are shown below.</p>
+<p>To find the second moment of area in the x and y directions with respect to the section’s overall centroid, first calculate the centroid. We did this in <a href="#exm-8.3" class="quarto-xref">Example&nbsp;<span>8.3</span></a>, with the results as shown.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/chapter 8 figure edits post review/example 8.6 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="398"></p>
+<p><img src="images/chapter 8 figure edits post review/example 8.6 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="The composite shape consists of a rectangle and triangle forming a continuous area with a circular hole cut from the rectangular region. The reference point (RP) is at the bottom-right corner where the rectangle and triangle meet. Dashed red lines indicate the horizontal and vertical centroid axes. A solid red dot marks the centroid, located 2.09 inches to the left of RP and 4.43 inches above RP."></p>
 </figure>
 </div>
-<p>We found that the centroid is located 2.09 inches to the left of the y-axis and 4.43 inches up from the x-axis. The next step is to break the section into common shapes (<a href="Appendix E.html" class="quarto-xref"><span>Appendix E</span></a>.) as noted in the figure below. Notice that shape 3 is a hole so we will need to subtract the moment of inertia and area.</p>
+<p>We found that the centroid is located 2.09 in. to the left of the y-axis and 4.43 in. up from the x-axis.</p>
+<p>The next step is to break up the section into common shapes (see <a href="Appendix E.html" class="quarto-xref"><span>Appendix E</span></a>) as shown in the following figure. Note that shape 3 is a hole, so we need to subtract the area and second moment of area.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH 8 PNGs/example 8.6 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="545"></p>
+<p><img src="images/CH 8 PNGs/example 8.6 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Composite shape divided into three labeled regions. Region 1 is a rectangle on the left, 8 inches wide and 8 inches tall. Region 2 is a right triangle on the right, also 8 inches tall with a 6-inch base. Region 3 is a circular cutout inside Region 1, centered 4 inches from the left edge and 4 inches from the bottom edge. A coordinate system is overlaid with the origin at the bottom-right corner of the rectangle. The x-axis runs along the bottom edge, and the y-axis passes vertically through the right edge of the rectangle where the rectangle and triangle meet." width="545"></p>
 </figure>
 </div>
-<p>The formulas for moment of inertia of each shape are with respect to the shape’s centroid not the overall section’s centroid. We will need to make and adjustment using the parallel-axis theorem to transform the rotational axis from the shape’s centroid to the section’s centroid.&nbsp; We will present this method in terms of a table, first for I<sub>x</sub> then I<sub>y</sub>.</p>
+<p>The formula for the second moment of area of a shape are with respect to the shape’s centroid, not to the section’s overall centroid. Make a necessary adjustment using the parallel axis theorem to transform the rotational axis from the shape’s centroid to the section’s centroid. Do this for each shape.</p>
+<p>Present this method in terms of a table, first for I<sub>x</sub> then I<sub>y</sub>.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 15%">
-<col style="width: 19%">
-<col style="width: 15%">
-<col style="width: 25%">
+<col style="width: 13%">
+<col style="width: 16%">
+<col style="width: 21%">
+<col style="width: 16%">
+<col style="width: 28%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Shape</th>
 <th>Shape</th>
 <th><span class="math inline">\(A{~(in.^2)}\)</span></th>
 <th><span class="math inline">\(I_x{~(in.^4)}\)</span></th>
@@ -1338,7 +1339,6 @@ Solution
 </thead>
 <tbody>
 <tr class="odd">
-<td></td>
 <td>1</td>
 <td>64</td>
 <td><p>(1/12)(8)(8)<sup>3</sup> =</p>
@@ -1348,7 +1348,6 @@ Solution
 <p>353.1</p></td>
 </tr>
 <tr class="even">
-<td></td>
 <td>2</td>
 <td>24</td>
 <td><p>(1/36)(6)(8)<sup>3</sup> =</p>
@@ -1358,7 +1357,6 @@ Solution
 <p>104.7</p></td>
 </tr>
 <tr class="odd">
-<td></td>
 <td>3</td>
 <td>-4π</td>
 <td><p>(-π/4)(2)<sup>4</sup> =</p>
@@ -1372,23 +1370,20 @@ Solution
 <td></td>
 <td></td>
 <td></td>
-<td></td>
-<td>I<sub>x</sub> = 442.9 in<sup>4</sup></td>
+<td>I<sub>x</sub> = 442.9 in.<sup>4</sup></td>
 </tr>
 </tbody>
 </table>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 15%">
-<col style="width: 19%">
-<col style="width: 15%">
-<col style="width: 25%">
+<col style="width: 13%">
+<col style="width: 16%">
+<col style="width: 21%">
+<col style="width: 16%">
+<col style="width: 28%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Shape</th>
 <th>Shape</th>
 <th><span class="math inline">\(A{~(in.^2)}\)</span></th>
 <th><span class="math inline">\(I_y{~(in.^4)}\)</span></th>
@@ -1398,7 +1393,6 @@ Solution
 </thead>
 <tbody>
 <tr class="odd">
-<td></td>
 <td>1</td>
 <td>64</td>
 <td><p>(1/12)(8)(8)<sup>3</sup> =</p>
@@ -1408,7 +1402,6 @@ Solution
 <p>362.1</p></td>
 </tr>
 <tr class="even">
-<td></td>
 <td>2</td>
 <td>24</td>
 <td><p>(1/36)(8)(6)<sup>3</sup> =</p>
@@ -1418,7 +1411,6 @@ Solution
 <p>97.1</p></td>
 </tr>
 <tr class="odd">
-<td></td>
 <td>3</td>
 <td>-4π</td>
 <td><p>(-π/4)(2)<sup>4</sup> =</p>
@@ -1432,15 +1424,14 @@ Solution
 <td></td>
 <td></td>
 <td></td>
-<td></td>
-<td>I<sub>y</sub> = 442.5 in<sup>4</sup></td>
+<td>I<sub>y</sub> = 442.5 in.<sup>4</sup></td>
 </tr>
 </tbody>
 </table>
-<p>The calculation and visualizations for each d<sub>x</sub> and d<sub>y</sub> terms are shown in the figure below.</p>
+<p>The calculation and visualizations for each d<sub>x</sub> and d<sub>y</sub> term are as shown in the figure.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/chapter 8 figure edits post review/example 8.6 part 4.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="images/chapter 8 figure edits post review/example 8.6 part 4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Composite shape divided into three labeled regions. Region one is a rectangle on the left side, measuring 8 inches in width and 8 inches in height. Region two is a right triangle located on the right side, also 8 inches tall with a base of 6 inches. Region three is a circular cutout inside region one, centered 4 inches from the left edge and 4 inches from the bottom edge of the rectangle. A coordinate system is overlaid on the shape, with the origin placed at the bottom-right corner of the rectangle. The x-axis extends horizontally along the bottom edge, while the y-axis runs vertically through the right edge of the rectangle where it meets the triangle.A black point labeled as the reference point, or RP, marks the intersection of the x- and y-axes at the junction between the rectangle and the triangle. A red dot represents the centroid of the entire composite shape, located 2.09 inches to the left and 4.43 inches above the reference point. Each subregion is labeled with the corresponding horizontal and vertical distances between its centroid and the overall centroid. For region one (the rectangle) and region three (the circular cutout), the horizontal distance d sub x one and d sub x three are equal to 4 minus 2.09, which is 1.91 inches. The vertical distances d sub y one and d sub y three are both equal to 4.43 minus 4, 0.43 inches.For region two (the triangle), the horizontal distance d sub x two is equal to one-third of 6, added to 2.09, resulting in 4.09 inches. The vertical distance d sub y two is equal to sixteen divided by 3 minus 4.43, resulting in approximately 0.90 inches." width="808"></p>
 </figure>
 </div>
 </div>
@@ -1456,17 +1447,17 @@ Solution
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Step-by-step: Finding the Moment of Inertia
+<span class="screen-reader-only">Warning</span>Step-by-Step: Finding the Second Moment of Area
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Use the following steps to find the moment of inertia of a composite section:</p>
+<p>Use the following steps to find the second moment of area of a composite section:</p>
 <ol type="1">
-<li>Determine where you are taking the moment of inertia, about a reference axis or the centroidal axis. If it is about the centroidal axis, calculate the location of the centroid.</li>
-<li>Break the overall section up into simpler shapes where the location of the centroid of each shape is known. It is helpful here to sketch this. If the section has a hole, include the hole as a shape with a negative inertia.</li>
-<li>Implement the parallel-axis theorem for each individual shape.</li>
-<li>Indicate the perpendicular distance from the centroid of each part to the axis that you are calculating the moment of inertia about.</li>
-<li>The moment of inertia of the section about an axis is the sum of the composite parts about the same axis.</li>
+<li>Determine whether you are taking the second moment of area about a reference axis or the centroidal axis. If it is about the centroidal axis, calculate the location of the centroid.</li>
+<li>Break up the overall section into simpler shapes where the location of the centroid of each shape is known. It is helpful here to sketch this. If the section has a hole, include the hole as a shape with a negative inertia.</li>
+<li>Implement the parallel axis theorem for each individual shape.</li>
+<li>Indicate the perpendicular distance from each part’s centroid to the axis about which you are calculating the second moment of area.</li>
+<li>The second moment of area of the section about an axis is the sum of the composite parts about the same axis.</li>
 </ol>
 </div>
 </div>
@@ -1484,17 +1475,17 @@ Click to expand
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Key Takeaways
+<span class="screen-reader-only">Note</span>Key Takeaways
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <ul>
 <li><p>The centroid represents the geometric center of a shape.</p></li>
-<li><p>The center of gravity will be the same as the centroid only if the material is uniform (homogenous).</p></li>
-<li><p>The centroid will be located on any axis of symmetry for the section.</p></li>
-<li><p>In some cases, the centroid of a shape is not located within the shape itself (as shown in the rightmost section in <a href="#fig-8.2" class="quarto-xref">Figure&nbsp;<span>8.2</span></a>).</p></li>
-<li><p>The moment of inertia represents a geometric property of an area and is occasionally termed as the second moment of the area about an axis, as it involves squaring the distance from the axis to each element of the area.</p></li>
-<li><p>The parallel-axis theorem is used to compute the moment of inertia of composite sections.</p></li>
+<li><p>The center of gravity is the same as the centroid only if the material is uniform (homogenous).</p></li>
+<li><p>The centroid is located on any axis of symmetry for the section.</p></li>
+<li><p>In some cases the centroid of a shape is not located within the shape itself (as shown in the rightmost section in <a href="#fig-8.2" class="quarto-xref">Figure&nbsp;<span>8.2</span></a>).</p></li>
+<li><p>The second moment of area represents a geometric property of an area and is occasionally termed the moment of inertia or the area moment of inertia about an axis because it involves squaring the distance from the axis to each element of the area.</p></li>
+<li><p>The parallel axis theorem is used to compute the second moment of area of composite sections.</p></li>
 </ul>
 </div>
 </div>
@@ -1504,18 +1495,18 @@ Key Takeaways
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Key Equations
+<span class="screen-reader-only">Note</span>Key Equations
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Centroid Formulas</p>
+<p>Centroid formulas:</p>
 <p><span class="math display">\[
 \bar{X}=\frac{\sum \bar{x}_i A_i}{\sum A_i}
 \]</span></p>
 <p><span class="math display">\[
 \bar{Y}=\frac{\sum \bar{y}_i A_i}{\sum A_i}
 \]</span></p>
-<p>Moment of Inertia (Second Moment of Area)</p>
+<p>Second moment of area (moment of inertia):</p>
 <p><span class="math display">\[
 I_x=\int_A y^2 d A
 \]</span></p>
@@ -1525,7 +1516,7 @@ I_y=\int_A x^2 d A
 <p><span class="math display">\[
 I_z=J=\int_A r^2 d A
 \]</span></p>
-<p>Parallel Axis Theorem</p>
+<p>Parallel axis theorem:</p>
 <p><span class="math display">\[
 I_x=\overline{I_{x^{\prime}}}+A d_y^2
 \]</span></p>
@@ -1543,7 +1534,7 @@ I_y=\overline{I_{y^{\prime}}}+A d_x^2
 Click to expand
 </summary>
 <p><strong>Figures</strong></p>
-<p>All figures in this chapter were created by Kindred Grey in 2025 and released under a CC BY license, except for:</p>
+<p>All figures in this chapter were created by Kindred Grey in 2025 and released under a CC BY license, except for</p>
 <ul>
 <li>Figure 8.1: Isometric view of concrete barriers used in roadway construction. Pushcreativity. 2008. CC BY-SA 3.0. <a href="https://commons.wikimedia.org/wiki/File:Concrete_step_barrier_3D_cross_section.jpg" class="uri">https://commons.wikimedia.org/wiki/File:Concrete_step_barrier_3D_cross_section.jpg</a>.</li>
 </ul>
@@ -1617,13 +1608,14 @@ Click to expand
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
