@@ -14,17 +14,11 @@ editor: visual
 -   Perform stress transformation on these stresses
 :::
 
-## Introduction {.unnumbered}
+Pressure vessels are storage tanks that are used for storing fluids at high pressure and must therefore be designed to resist this pressure. They are commonly found in factories, power plants, vehicles, and even your own home. @fig-13.1 shows some common applications.
 
-<details open>
+![Some common examples of pressure vessels. (A) standard home water heater; (B) industrial compressed gas storage; (C) propellant tank for aerospace applications; (D) butane tank for home use.](images/CH13%20PNGs/figure%2013.1.png){#fig-13.1 fig-alt="Four labeled photographs of pressure vessels. Image A shows a vertical cylindrical residential water heater with warning labels, control valves, and a vent pipe extending from the top. Image B shows two large horizontal cylindrical industrial pressure vessels stacked on a steel support frame outdoors, weathered with rust and mineral deposits, and connected to an external piping system. Image C shows a spherical stainless steel pressure vessel mounted inside a laboratory or industrial test frame, with attached pipes, gauges, and instrumentation. Image D shows a small portable propane tank with a pressure regulator and safety label, placed inside a storage compartment with metal grating beneath it." fig-align="center" width="502"}
 
-<summary>Click to expand</summary>
-
-Pressure vessels are storage tanks that are used for storing fluids at high pressure and they must be designed to resist this pressure. They are commonly found in factories, power plants, vehicles, and even your own home. @fig-13.1 shows some common applications.
-
-![Some common examples of pressure vessels. (A) standard home water heater; (B) industrial compressed gas storage; (C) propellant tank for aerospace applications; (D) butane tank for home use.](images/CH13%20PNGs/figure%2013.1.png){#fig-13.1 fig-align="center" width="502"}
-
-Pressure vessels are necessarily hollow, and a thin-walled pressure vessel is one where the ratio:
+Pressure vessels are necessarily hollow, and a thin-walled pressure vessel is one where ratio
 
 $$
 \frac{\text { Inner radius }}{\text { Wall thickness }}>10
@@ -32,16 +26,14 @@ $$
 
 This implies that the wall thickness is relatively small compared to the vessel radius. This simplifies our analysis in two ways:
 
-1.  We can assume that stresses in the vessel walls are uniform across the thickness of the wall
-2.  We can ignore stress in the radial direction (perpendicular to the vessel wall)
+1.  We can assume that stresses in the vessel walls are uniform across the thickness of the wall.
+2.  We can ignore stress in the radial direction (perpendicular to the vessel wall).
 
-The internal pressure P is typically reported as the gage pressure, which is defined as the internal pressure minus the atmospheric pressure. This allows us to calculate the stresses directly without needing to account for atmospheric pressure. As we’ll see in this chapter, stresses are generated in the walls of thin-walled pressure vessels in two directions known as the axial stress and hoop stress (@fig-13.2). There is a 3^rd^ stress in the radial direction but this is very small compared to the other stresses and is assumed to be zero in this text.
+The internal pressure P is typically reported as the gauge pressure, which is defined as the internal pressure minus the atmospheric pressure. This allows us to calculate the stresses directly without needing to account for atmospheric pressure. As we’ll see in this chapter, stresses are generated in the walls of thin-walled pressure vessels in two directions known as the axial stress and hoop stress (@fig-13.2). There is a third stress in the radial direction, but this is small relative to the other stresses and is assumed to be zero in this text.
 
-![A stress element on the wall of a thin-walled pressure vessel. Stresses exist in the axial and hoop directions. The radial stress is very small in comparison and is assumed to be zero.](images/april%2029%20figure%20update%20-%2013.2.png){#fig-13.2 fig-align="center" width="425"}
+![A stress element on the wall of a thin-walled pressure vessel. Stresses exist in the axial and hoop directions. The radial stress is very small in comparison and is assumed to be zero.](images/april%2029%20figure%20update%20-%2013.2.png){#fig-13.2 fig-alt="Small, slightly curved differential stress element drawn on the wall of a thin-walled horizontal cylindrical pressure vessel shown in longitudinal section. The stress element has three labeled normal stresses: sigma sub hoop, acting vertically upward and downward around the vessel’s circumference; sigma sub axial, acting horizontally along the cylinder’s length (forward and backward); and sigma sub radial is approximately 0, acting radially outward from the wall, indicating zero radial stress at the surface. All stress arrows are shown in red." fig-align="center" width="425"}
 
-As seen in @fig-13.1, thin-walled pressure vessels are commonly either cylindrical or spherical. @sec-13.1 will discuss the stresses in cylindrical vessels. @sec-13.2 will discuss the stresses in spherical vessels.
-
-</details>
+@fig-13.1 shows that thin-walled pressure vessels are commonly either cylindrical or spherical. @sec-13.1 discusses the stresses in cylindrical vessels. @sec-13.2 discusses the stresses in spherical vessels.
 
 ## Cylindrical Pressure Vessels {#sec-13.1}
 
@@ -49,73 +41,71 @@ As seen in @fig-13.1, thin-walled pressure vessels are commonly either cylindric
 
 <summary>Click to expand</summary>
 
-The equations stresses in the wall of a cylindrical pressure vessel can be derived with the help of a free body diagram. Let’s cut a cross-section through our vessel to expose the fluid inside (@fig-13.3).
+The equations for stresses in the wall of a cylindrical pressure vessel can be derived with the help of a free body diagram (FBD). A first step is to cut a cross-section through the vessel of interest to expose the fluid inside (@fig-13.3).
 
-![Cross-section through the cylindrical vessel showing the axial stress in the walls (𝜎𝐴) and the fluid pressure P.](images/CH13%20PNGs/figure%2013.3.png){#fig-13.3 fig-align="center" width="381"}
+![Cross-section through the cylindrical vessel showing the axial stress in the walls (𝜎~𝐴~) and the fluid pressure P](images/CH13%20PNGs/figure%2013.3.png){#fig-13.3 fig-alt="Longitudinal view of a thin-walled cylindrical pressure vessel under internal pressure. A circular cross-section is shown at the right end as a dashed ellipse. Several red arrows labeled sigma sub A act radially outward from the inner surface along the vessel wall, representing axial normal stress caused by the internal pressure. A single thick blue arrow labeled P points leftward toward the center of the circular cross-section, indicating the direction of the internal fluid pressure." fig-align="center" width="381"}
 
-There will be an axial stress from the internal fluid pressure (P) and an axial stress in the walls of the vessel (𝜎~𝐴~). Since $\text{stress}=\frac{\text { force }}{\text { area }}$ we can determine the two forces. The fluid pressure acts over a circular area $A=\pi r_i^2$. The stress in the walls acts over an area equal to the circumference of the vessel multiplied by the wall thickness, $A=2 \pi r_i t$.
+There will be an axial stress from the internal fluid pressure (P) and an axial stress in the walls of the vessel (𝜎~𝐴~). Since $\text{stress}=\frac{\text { force }}{\text { area }}$, we can determine the two forces. The fluid pressure acts over a circular area $A=\pi r_i^2$. The stress in the walls acts over an area equal to the circumference of the vessel multiplied by the wall thickness, $A=2 \pi r_i t$.
 
-By equilibrium:
+By equilibrium we calculate the following:
 
 $$
 \sum F_x=\left(\sigma_A\right)\left(2 \pi r_i t\right)-(P)\left(\pi r_i^2\right)=0 \\
 $$
 
 $$
-\boxed{\sigma_A=\frac{P r_i}{2 t}}
+\boxed{\sigma_A=\frac{P r_i}{2 t}}\text{ ,}
 $$ {#eq-13.1}
 
-| *where*
+| where
 | *𝜎~𝐴~ = Axial stress in the wall of the vessel \[Pa, psi\]*
 | *P = Fluid pressure inside the vessel \[Pa, psi\]*
-| *ri = Inner radius of the vessel \[m, in.\]*
+| *r~i~ = Inner radius of the vessel \[m, in.\]*
+| *t = Wall thickness of the vessel \[m, in.\]*
 
-*t = Wall thickness of the vessel \[m, in.\]*
+Similarly, there will be a stress in the lateral direction, referred to as the hoop stress 𝜎~H~. A vertical cross-section (@fig-13.4) is cut to derive an equation for this stress.
 
-Similarly, there will be a stress in the lateral direction, referred to as the hoop stress 𝜎~H~. Let’s cut a vertical cross-section (@fig-13.4) to derive an equation for this stress.
-
-![Cross-section through the cylindrical vessel showing the hoop stress in the walls (𝜎~H~) and the fluid pressure P.](images/CH13%20PNGs/figure%2013.4.png){#fig-13.4 fig-align="center" width="414"}
+![Cross-section through the cylindrical vessel showing the hoop stress in the walls (𝜎~H~) and the fluid pressure P](images/CH13%20PNGs/figure%2013.4.png){#fig-13.4 fig-alt="3D quarter-section of a thin-walled cylindrical pressure vessel, oriented in an xyz coordinate system. The x-axis is horizontal, the y-axis is vertical, and the z-axis points out of the page. The vessel is cut vertically to expose the cross-sectional interior (same vessel of Figure 13.3). A thick blue arrow labeled P points inward toward the exposed interior face of the cylinder, representing internal pressure acting radially. Red arrows labeled sigma sub h point outward from the curved shell wall, indicating hoop stress acting circumferentially on the thin walls. Geometric parameters are labeled: t for wall thickness, r sub i for the vessel’s inner radius, and L for the segment length along the x-axis." fig-align="center" width="414"}
 
 There will again be a stress from the internal fluid pressure (P) and a stress in the walls of the vessel (𝜎~H~). The fluid pressure acts over an area of $A=2 r_i L$. The stress in the walls acts over an area of $A=2 t L$.
 
-By equilibrium:
+By equilibrium we calculate the following:
 
 $$
 \sum F_x=\left(\sigma_H\right)(2 t L)-(P)\left(2 r_i L\right)=0 \\
 $$
 
 $$
-\boxed{\sigma_H=\frac{P r_i}{t}}
+\boxed{\sigma_H=\frac{P r_i}{t}}\text{ ,}
 $$ {#eq-13.2}
 
-| *where*
+| where
 | *𝜎~H~ = Hoop stress in the wall of the vessel \[Pa, psi\]*
 | *P = Fluid pressure inside the vessel \[Pa, psi\]*
 | *r~i~ = Inner radius of the vessel \[m, in.\]*
+| *t = Wall thickness of the vessel \[m, in.\]*
 
-*t = Wall thickness of the vessel \[m, in.\]*
+Since the radial stress is assumed to be zero, the axial and hoop stresses represent a state of plane stress such as discussed in @sec-stress-transformation. Further, since there is no shear stress, the axial and hoop stresses represent the principal stresses. Because the hoop stress is the larger of thes stresses, it is the first principal stress (𝜎~1~). The axial stress is the second principal stress (𝜎~2~). The third principal stress acts in the radial direction and has already been assumed to be zero. @fig-13.5 shows a plane stress element representing the stresses in the wall of a cylindrical thin-walled pressure vessel.
 
-Since the radial stress is assumed to be zero, the axial and hoop stresses represent a state of plane stress such as those discussed in @sec-stress-transformation. Further, since there is no shear stress, the axial and hoop stresses represent the principal stresses. Since the hoop stress is larger, this is the first principal stress (𝜎~1~). The axial stress is the second principal stress (𝜎~2~). The third principal stress acts in the radial direction and has already been assumed to be zero. @fig-13.5 shows a plane stress element representing the stresses in the wall of a cylindrical thin-walled pressure vessel.
+![The hoop stress represents the first principal stress 𝜎~1~. The axial stress represents the second principal stress 𝜎~2~. There is no shear stress.](images/CH13%20PNGs/figure%2013.5.png){#fig-13.5 fig-alt="3D cylindrical pressure vessel oriented horizontally along the x-axis, with the global coordinate system labeled x, y, and z, where the x-axis is horizontal, the y-axis is vertical, and the z-axis points out of the page. A small curved square stress element is shown on the outer surface of the cylinder. Two sets of red arrows represent the principal stresses: horizontal arrows pointing outward from the left and right edges are labeled sigma sub A = sigma sub 2, indicating axial stress along the cylinder’s axis (x-direction); vertical arrows pointing upward and downward from the top and bottom edges are labeled sigma sub H = sigma sub 1, indicating hoop stress acting around the circumference of the vessel. The right end of the vessel is shown as a circular cross-section outlined by a dashed ellipse, with an arrow extending from its center to indicate the x-axis orientation." fig-align="center" width="497"}
 
-![The hoop stress represents the first principal stress 𝜎~1~. The axial stress represents the second principal stress 𝜎~2~. There is no shear stress.](images/CH13%20PNGs/figure%2013.5.png){#fig-13.5 fig-align="center" width="497"}
+Using the methods presented in @sec-stress-transformation, we may perform stress transformation on these stresses. @fig-13.6 shows Mohr’s circle for the in-plane and out-of-plane stresses.
 
-By the methods of @sec-stress-transformation we may perform stress transformation on these stresses. @fig-13.6 shows Mohr’s Circle for the in-plane and out-of-plane stresses.
+![Mohr’s circle for the stresses in the walls of a cylindrical thin-walled pressure vessel, showing principal stresses 𝜎~1~ and 𝜎~2~. The third principal stress 𝜎~3~ = 0.](images/CH13%20PNGs/figure%2013.6.png){#fig-13.6 fig-alt="Plotted Mohr’s circle on orthogonal axes: the horizontal axis is labeled sigma (normal stress) increasing to the right, and the vertical axis is labeled tau (shear stress) increasing upward. Three shaded circles are shown. The largest Mohr’s circle spans from 0 to sigma sub 1 on the sigma-axis. Two smaller semicircles are nested inside it: one spans from 0 to sigma sub 2, and the other from sigma sub 2 to sigma sub 1, representing stress transformations on different principal planes. The two smaller circles are tangent to each other at sigma sub 2, and the largest circle is tangent to them at 0 on the left and at sigma sub 1 on the right. A vertical dashed line extends from the midpoint between sigma sub 2 and sigma sub 1 up to the top of the right smaller semicircle and is labeled tau sub max in-plane. Another longer vertical dashed line extends from sigma sub 2 downward to the bottom of the largest circle and is labeled tau sub max abs. Points at 0, sigma sub 2, and sigma sub 1 are marked with black dots on the sigma-axis." fig-align="center" width="403"}
 
-![Mohr’s Circle for the stresses in the walls of a cylindrical thin-walled pressure vessel, showing principal stresses 𝜎~1~ and 𝜎~2~. The 3rd principal stress 𝜎~3~ = 0.](images/CH13%20PNGs/figure%2013.6.png){#fig-13.6 fig-align="center" width="403"}
-
-Since the two principal stresses are positive and the third principal stress is zero it should be apparent that the maximum in plane shear stress can be determined as:
+Since the two principal stresses are positive and the third principal stress is zero, it should be apparent that the maximum in-plane shear stress can be determined as
 
 $$
 \tau_{max~in~plane}=\frac{\sigma_1-\sigma_2}{2}
 $$
 
-It should also be apparent that the maximum out-of-plane shear stress will be larger and can be calculated from @eq-12.4:
+It should also be apparent that the maximum out-of-plane shear stress will be larger and can be calculated from @eq-12.4.
 
 $$
 \tau_{(max)absolute}=\left|\frac{\sigma_{max}-\sigma_{min}}{2}\right|=\frac{\sigma_1}{2}
 $$
 
-@exm-13.1 demonstrates calculation of the principal stresses and maximum in-plane shear stress for a cylindrical thin-walled pressure vessel. @exm-13.2 combines the content from this section with stress transformation from @sec-stress-transformation in order to find the stresses at specific orientations.
+@exm-13.1 demonstrates calculation of the principal stresses and maximum in-plane shear stress for a cylindrical thin-walled pressure vessel. @exm-13.2 combines the content from this section with stress transformation from @sec-stress-transformation to find the stresses at specific orientations.
 
 ::::: {.callout-tip collapse="true" icon="false"}
 ## Example 13.1
@@ -125,7 +115,9 @@ $$
 
 </p>
 
-A cylindrical pressure vessel has an outer diameter of 8 ft and a wall thickness of 2 inches. The vessel contains propane at a gage pressure of 250 psi. Determine the principal stresses and maximum in-plane shear stress in the walls of the vessel.
+A cylindrical pressure vessel has an outer diameter of 8 ft and a wall thickness of 2 in. The vessel contains propane at a gauge pressure of 250 psi.
+
+Determine the principal stresses and maximum in-plane shear stress in the walls of the vessel.
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Solution
@@ -145,7 +137,7 @@ $$
 \end{aligned}
 $$
 
-Since there is no shear stress, these are the principal stresses.
+Since there is no shear stress, there are two principal stresses.
 
 $$
 \begin{aligned}
@@ -154,7 +146,7 @@ $$
 \end{aligned}
 $$
 
-Finally, the maximum in-plane shear stress can be found from:
+Finally, the maximum in-plane shear stress can be found from
 
 $$
 \tau_{max~in~plane}=\frac{\sigma_1-\sigma_2}{2}=\frac{5,750{~psi}-2,875{~psi}}{2}=1,438{~psi}
@@ -171,14 +163,16 @@ $$
 
 </p>
 
-A cylindrical pressure vessel is made by welding steel plate at an angle of 𝜃=25° as shown. The vessel has an outer diameter of 1.5 m and a wall thickness of 40 mm. The vessel contains fluid at a gage pressure of 5 MPa. Determine the normal stress perpendicular to the weld and the shear stress parallel to the weld.
+A cylindrical pressure vessel is made by welding a steel plate at an angle of 𝜃 = 25° as shown. The vessel has an outer diameter of 1.5 m and a wall thickness of 40 mm. The vessel contains fluid at a gauge pressure of 5 MPa.
 
-![](images/figure%20edits%20chapter%2013%204.23.25/example%2013.2.png){fig-align="center" width="352"}
+Determine the normal stress perpendicular to the weld and the shear stress parallel to the weld.
+
+![](images/figure%20edits%20chapter%2013%204.23.25/example%2013.2.png){fig-alt="Front view of a horizontal cylindrical solid shaft with diagonal weld lines running northeast around its surface at a uniform angle. A dashed arc marks an angle theta (θ), measured from the horizontal axis to the weld line." fig-align="center" width="352"}
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Solution
 
-First determine the inner radius of the vessel. Wall thickness 𝑡 = 40 𝑚𝑚 = 0.04 𝑚.
+First determine the inner radius of the vessel. Wall thickness 𝑡 = 40 mm = 0.04 m.
 
 Outer radius, $r_o = \frac{1.5{~m}}{2} =0.75{~m}$
 
@@ -189,15 +183,15 @@ Now calculate the axial and hoop stresses.
 $$
 \begin{aligned}
 & \sigma_A=\frac{Pr_i}{2t}=\frac{5{~MPa} * 0.71{~m}}{2 * 0.04{~m}}=44.4{~MPa} \\
-& \sigma_H=\frac{Pr_i}{t}=\frac{5{~MPa} * 0.71{`m}}{0.04{~m}}=88.8{~MPa}
+& \sigma_H=\frac{Pr_i}{t}=\frac{5{~MPa} * 0.71{m}}{0.04{~m}}=88.8{~MPa}
 \end{aligned}
 $$
 
-By the methods of @sec-12.1 we can calculate the normal stress perpendicular to the weld. Draw a stress element of a point on the pressure vessel. The axial stress will act horizontally and the hoop stress vertically for this element.
+Using the methods shown in @sec-12.1, calculate the normal stress perpendicular to the weld. Draw a stress element of a point on the pressure vessel. The axial stress will act horizontally and the hoop stress vertically for this element.
 
-![](images/CH13%20PNGs/example%2013.2%20part%202.png){fig-align="center" width="313"}
+![](images/CH13%20PNGs/example%2013.2%20part%202.png){fig-alt="Square stress element. Red arrows represent the original normal stresses: a vertical pair labeled 88.8 MPa acts upward and downward at the center of the top and bottom edges, and a horizontal pair labeled 44.4 MPa acts leftward and rightward at the center of the left and right edges. A dotted horizontal reference line passes through the center of the element. Two blue arrows represent the transformed stresses acting on the weld line: one labeled sigma sub x′ points downward and to the right (southeast direction), and another labeled tau sub x′ y′ points upward and to the right (northeast direction). An angle θ is shown between the horizontal axis (aligned with the 44.4 MPa stress) and the arrow labeled tau sub x′ y′." fig-align="center" width="313"}
 
-The weld is at an angle of 25° measured counter-clockwise from horizontal. The normal stress perpendicular to this weld is therefore at an angle of 65° clockwise from horizontal. We can determine the normal stress at this orientation from:
+The weld is at an angle of 25° measured counterclockwise from horizontal. The normal stress perpendicular to this weld is therefore at an angle of 65° clockwise from horizontal. Determine the normal stress at this orientation from
 
 $$
 \begin{gathered}
@@ -208,7 +202,7 @@ $$
 \end{gathered}
 $$
 
-The shear stress occurs parallel to the weld at an angle of 25° counter-clockwise from the horizontal. We can determine the shear stress at this orientation from:
+The shear stress occurs parallel to the weld at an angle of 25° counterclockwise from the horizontal. Determine the shear stress at this orientation from
 
 $$
 \begin{gathered}
@@ -223,13 +217,13 @@ $$
 :::::
 
 ::: {.callout-warning icon="false"}
-## Step-by-step: Cylindrical thin-walled pressure vessels
+## Step-by-Step: Cylindrical Thin-Walled Pressure Vessels
 
-1.  Determine the inner radius, wall thickness, and internal gage pressure for the vessel
+1.  Determine the inner radius, wall thickness, and internal gauge pressure for the vessel.
 
-2.  Calculate the axial $\left(\sigma_A=\frac{P r_i}{2 t}\right)$ and hoop $\left(\sigma_H=\frac{P r_i}{t}\right)$ stresses—these are the principal stresses
+2.  Calculate the axial $\left(\sigma_A=\frac{P r_i}{2 t}\right)$ and hoop $\left(\sigma_H=\frac{P r_i}{t}\right)$ stresses—these are the principal stresses.
 
-3.  Perform any stress transformation calculations as required
+3.  Perform any stress transformation calculations as required.
 :::
 
 </details>
@@ -242,36 +236,35 @@ $$
 
 A spherical vessel will yield the same cross-section regardless of the axis it is cut along (@fig-13.7). The stress in the walls of a spherical vessel is the same as the axial stress in a cylindrical vessel.
 
-By equilibrium:
+By equilibrium calculate the following:
 
 $$
 \sum F_x=\left(\sigma_A\right)\left(2 \pi r_i t\right)-(P)\left(\pi r_i^2\right)=0 
 $$
 
 $$
-\boxed{\sigma_A=\frac{P r_i}{2 t}}
+\boxed{\sigma_A=\frac{P r_i}{2 t}}\text{ ,}
 $$ {#eq-13.3}
 
-| *where*
+| where
 | *𝜎~A~ = Axial stress in the wall of the vessel \[Pa, psi\]*
 | *P = Fluid pressure inside the vessel \[Pa, psi\]*
 | *r~i~ = Inner radius of the vessel \[m, in.\]*
+| *t = Wall thickness of the vessel \[m, in.\]*
 
-*t = Wall thickness of the vessel \[m, in.\]*
+![Cross-section through the spherical vessel showing the axial stress in the walls (𝜎~A~) and the fluid pressure P](images/CH13%20PNGs/figure%2013.7.png){#fig-13.7 fig-alt="Cross-sectional view of a thin-walled hemispherical pressure vessel from the left where the part of the left front is shown and the cross section is visible on the right. A large blue arrow labeled P points leftward on the center of the circular cross section, representing internal pressure acting on the curved inner surface. Several red arrows labeled sigma sub A point rightward, indicating uniform axial normal stress across the wall thickness. The inner radius r sub i and wall thickness t are marked with green dimension lines where the inner radius is from the center of the cross section to the wall of the vessel." fig-align="center" width="274"}
 
-![Cross-section through the spherical vessel showing the axial stress in the walls (𝜎~A~) and the fluid pressure P.](images/CH13%20PNGs/figure%2013.7.png){#fig-13.7 fig-align="center" width="274"}
+In this case the same stress exists in both principal directions. Again assume that the radial stress is zero, meaning that these stresses again form a state of plane stress (@fig-13.8). There is again no shear stress, so these stresses are the principal stresses.Thus the two principal stresses here are the same.
 
-In this case, the same stress exists in both principal directions. We will again assume that the radial stress is zero, meaning that these stresses again form a state of plane stress (@fig-13.8). There is again no shear stress, so these stresses are the principal stresses. In this case, the two principal stresses are the same.
+![Spherical vessels experience the same axial stress in both principal directions. There is no shear stress.](images/CH13%20PNGs/figure%2013.8.png){#fig-13.8 fig-alt="Spherical pressure vessel shown in cross section with a small curved square stress element located on the outer surface of the wall. Four red arrows extend outward from the element in orthogonal directions, representing uniform biaxial stresses. Horizontal arrows point outward from the centers of the left and right faces, and vertical arrows point outward from the top and bottom faces. All stresses are labeled sigma sub A, equal to sigma sub 1 and sigma sub 2, indicating that the principal stresses are equal in magnitude and act in both directions." fig-align="center" width="246"}
 
-![Spherical vessels experience the same axial stress in both principal directions. There is no shear stress.](images/CH13%20PNGs/figure%2013.8.png){#fig-13.8 fig-align="center" width="246"}
+Note that these principal stresses are equal to 𝜎~2~ in the cylindrical vessel. As such, spherical vessels are stronger than cylindrical vessels because the axial stress ($\sigma_2$) is half the hoop stress ($\sigma_1$) and there is no hoop stress in a spherical vessel. However, because spherical vessels are more expensive to manufacture, cylindrical vessels remain very common.
 
-Note that these principal stresses are equal to 𝜎~2~ in the cylindrical vessel. As such, spherical vessels are stronger than cylindrical vessels because the axial stress ($\sigma_2$) is half of the hoop stress ($\sigma_1$) and there is no hoop stress is a spherical vessel. However, spherical vessels are more expensive to manufacture so cylindrical vessels are still very common.
+We may again use the methods employed in @sec-stress-transformation to perform stress transformation. @fig-13.9 shows Mohr’s circle for the in-plane and out-of-plane stresses.
 
-We may again use the methods of @sec-stress-transformation to perform stress transformation. @fig-13.9 shows Mohr’s Circle for the in-plane and out-of-plane stresses.
+![Mohr’s circle for the stresses in the walls of a spherical thin-walled pressure vessel. Principal stresses 𝜎~1~ = 𝜎~2~, and the in-plane circle reduces to a single point. The third principal stress is 𝜎~3~ = 0.](images/CH13%20PNGs/figure%2013.9.png){#fig-13.9 fig-alt="Mohr’s circle plotted on sigma-tau axes, where the horizontal axis is labeled sigma (normal stress) and the vertical axis is labeled tau (shear stress). A large shaded circle spans from the origin (0) on the left to a point labeled sigma sub 1, sigma sub 2 on the right (equal stresses), with its center located midway between these two points. A vertical dashed line extends downward from the circle’s center to its lowest point and is labeled tau sub max abs, representing the absolute maximum shear stress." fig-align="center" width="418"}
 
-![Mohr’s Circle for the stresses in the walls of a spherical thin-walled pressure vessel. Principal stresses 𝜎~1~ = 𝜎~2~ and the in-plane circle reduces to a single point. The 3rd principal stress 𝜎~3~ = 0.](images/CH13%20PNGs/figure%2013.9.png){#fig-13.9 fig-align="center" width="418"}
-
-This time 𝜎~1~ = 𝜎~2~ and so the in-plane Mohr’s Circle reduces to a single point. The maximum in-plane shear stress is therefore zero. The maximum out-of-plane shear stress can be calculated from:
+This time 𝜎~1~ = 𝜎~2~ and so the in-plane Mohr’s circle reduces to a single point. The maximum in-plane shear stress is therefore zero. The maximum out-of-plane shear stress can be calculated from
 
 $$
 \tau_{(max)absolute}=\frac{\sigma_1}{2}
@@ -287,7 +280,9 @@ $$
 
 </p>
 
-A spherical pressure vessel is made of steel with a yield strength of 250 MPa. The vessel has an outer diameter of 4 meters and a wall thickness of 25 mm. If the factor of safety with respect to yield is 2.5, determine the maximum allowable gage pressure of the fluid within the vessel.
+A spherical pressure vessel is made of steel with a yield strength of 250 MPa. The vessel has an outer diameter of 4 m and a wall thickness of 25 mm.
+
+If the factor of safety with respect to yield is 2.5, determine the maximum allowable gauge pressure of the fluid within the vessel.
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Solution
@@ -304,13 +299,13 @@ $$
 \sigma_{allow}=\frac{250{~MPa}}{2.5}=100{~MPa}
 $$
 
-Spherical vessels experience the same stress in both directions:
+Spherical vessels experience the same stress in both directions.
 
 $$
 \sigma_A=\frac{P r_i}{2 t}
 $$
 
-Rearrange this equation to solve for P:
+Rearrange the equation to solve for P.
 
 $$
 \begin{gathered}
@@ -324,11 +319,11 @@ $$
 :::::
 
 ::: {.callout-warning icon="false"}
-## Step-by-step: **Spherical thin-walled pressure vessels**
+## Step-by-Step: **Spherical thin-walled pressure vessels**
 
-1.  Determine the inner radius, wall thickness, and internal gage pressure for the vessel
-2.  Calculate the axial stress $\left(\sigma_A=\frac{P r_i}{2 t}\right)$. This stress will be the same in both the horizontal and vertical directions
-3.  Perform any stress transformation calculations as required
+1.  Determine the inner radius, wall thickness, and internal gauge pressure for the vessel.
+2.  Calculate the axial stress $\left(\sigma_A=\frac{P r_i}{2 t}\right)$. This stress will be the same in the horizontal and vertical directions.
+3.  Perform any stress transformation calculations as required.
 :::
 
 </details>
@@ -340,19 +335,19 @@ $$
 <summary>Click to expand</summary>
 
 ::: {.callout-note icon="false"}
-## Key takeaways
+## Key Takeaways
 
-Pressure vessels contain fluids at high pressure. A thin walled pressure vessel is one where $\frac{\text { Inner radius }}{\text { Wall thickness }}>10$.
+Pressure vessels contain fluids at high pressure. A thin-walled pressure vessel is one where $\frac{\text { Inner radius }}{\text { Wall thickness }}>10$.
 
-For thin walled pressure vessels, the stresses in the vessel walls are assumed to be constant across the thickness of the wall and the stress in the radial direction is assumed to be zero. The stresses created in the axial and hoop directions by the fluid pressure are the principal stresses.
+For thin-walled pressure vessels, the stresses in the vessel walls are assumed to be constant across the thickness of the wall and the stress in the radial direction is assumed to be zero. The stresses fluid pressure creates in the axial and hoop directions are the principal stresses.
 
-Pressure vessels are commonly cylindrical or spherical. Cylindrical vessels experience both axial and hoop stresses. The axial stress is half of the hoop stress. Spherical vessels experience only an axial stress. As such, spherical vessels experience less stress than cylindrical vessels.
+Pressure vessels are commonly cylindrical or spherical. Cylindrical vessels experience both axial and hoop stresses. The axial stress is half the hoop stress. Spherical vessels experience only an axial stress. As such, spherical vessels experience less stress than cylindrical vessels.
 
-There is no shear stress generated in the axial and hoop directions. However, stress transformation can be used to determine both in-plane and out-of-plane shear stresses.
+No shear stress is generated in the axial and hoop directions. However, stress transformation can help determine both in-plane and out-of-plane shear stresses.
 :::
 
 ::: {.callout-note icon="false"}
-## Key equations
+## Key Equations
 
 **Cylindrical thin-walled pressure vessels**
 
@@ -405,7 +400,7 @@ $$
 
 **Figures**
 
-All figures in this chapter were created by Kindred Grey in 2025 and released under a CC BY license, except for:
+All figures in this chapter were created by Kindred Grey in 2025 and released under a CC BY license, except for
 
 -   Figure 13.1: Some common examples of pressure vessels. A: Tomwsulcer. 2013. Public domain. <https://commons.wikimedia.org/wiki/File:Hot_water_heater_with_pipe.jpg>. B: James Lord. 2024. CC BY-NC-SA. C: NASA. 2009. No known copyright restrictions. <https://flic.kr/p/93mnwD>. D: James Lord. 2024. CC BY-NC-SA.
 

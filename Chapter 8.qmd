@@ -8,25 +8,17 @@ editor: visual
 ::: {.callout-note icon="false"}
 ## Learning Objectives
 
--   Define the centroids of areas.
--   Locate the centroid using composite parts.
--   Explain the principles behind determining the second moment of area (moment of inertia).
--   Apply the parallel-axis theorem to analyze the transformation of moments of inertia.
+-   Define the centroids of areas
+-   Locate the centroid using composite parts
+-   Explain the principles behind determining the second moment of area
+-   Apply the parallel axis theorem to analyze the transformation of the second moment of area
 :::
 
-## Introduction {.unnumbered}
+As previous chapters have shown, geometric cross-section properties are critical to calculating stresses and deformations for members subjected to axial and torsional loads. The same is true for finding stresses and deflections in beams subjected to shear and bending loads. This chapter describes methods for finding section properties necessary to calculate the stress and deflection in beams—specifically, the centroid and the second moment of area (also known as moment of inertia and area moment of inertia).
 
-<details open>
+You likely were presented with these topics in statics, so this chapter is designed to be a review. @sec-8.1 reviews centroids, and @sec-8.2 reviews second moment of area.
 
-<summary>Click to expand</summary>
-
-As we found in previous chapters, geometric cross-section properties are critical to calculating stresses and deformations for members subjected to axial and torsional loads. The same is true for finding stresses and deflections in beams subjected to shear and bending loads. This chapter describes methods for finding section properties necessary to calculate the stress and deflection in beams. Specifically, the centroid and the second moment of area.
-
-You likely were presented with these topics in Statics, so this chapter is designed to be a review. @sec-8.1 will review centroids and @sec-8.2 will review area moments of inertia (also known as the 2^nd^ moment of area).
-
-![Isometric view of concrete barriers used in roadway construction.](images/figure%208.1%20(new).jpeg){#fig-8.1 fig-align="center" width="430"}
-
-</details>
+![Isometric view of concrete barriers used in roadway construction.](images/figure%208.1%20(new).jpeg){#fig-8.1 fig-alt="Isometric view of a modular concrete barrier segment embedded in the road shoulder. A cutaway section reveals internal reinforcement and the interlocking profile that resists lateral vehicle impact and maintains alignment along the highway edge." fig-align="center" width="430"}
 
 ## Centroid {#sec-8.1}
 
@@ -34,35 +26,38 @@ You likely were presented with these topics in Statics, so this chapter is desig
 
 <summary>Click to expand</summary>
 
-An object possesses weight due to the gravitational force acting on its constituent particles. The collective effect of these forces yields the total weight of the object, which is concentrated at a single point known as the **center of gravity**. If the object is comprised of a homogenous (constant density) material, then the center of gravity is the same as the geometric center or centroid. In this section, we will focus our discussions on the centroid of an area for common structural shapes. For a more comprehensive discussion on the center of gravity, the center of mass, calculating centroids using integration, and distributed loads, see the [Engineering Statics](https://engineeringstatics.org/Chapter_07-center-of-mass.html) book by Baker and Haynes.
+An object possesses weight as a result of the gravitational force acting on its constituent particles. The collective effect of these forces yields the total weight of the object, which is concentrated at a single point known as the center of gravity. If the object is composed of a homogenous (constant density) material, then the center of gravity is the same as the geometric center or centroid.
 
-The location of the centroid of an area is the point where the first moment of area equals zero. The first moment of area about a point is calculated by multiplying the area by the perpendicular distance to the point. The centroid of an area can be found by splitting the area into a number (i) of discrete parts, summing the moment of area for these discrete parts, and then dividing by the sum of the area. We can use these weighted averages to find the location $(\bar{X}, \bar{Y})$ of the centroid of the area:
+The discussion in this section focuses on the centroid of an area for common structural shapes. For a more comprehensive discussion on the center of gravity, the center of mass, calculating centroids using integration, and distributed loads, see the book [*Engineering Statics*](https://engineeringstatics.org/Chapter_07-center-of-mass.html) by Baker and Haynes.
+
+The location of the centroid of an area is the point where the first moment of area equals zero. The first moment of area about a point is calculated by multiplying the area by the perpendicular distance to the point. The centroid of an area can be found by splitting the area into a number (i) of discrete parts, summing the moment of area for these discrete parts, and then dividing by the sum of the area. These weighted averages enable us to find the location $(\bar{X}, \bar{Y})$ of the centroid of the area.
 
 $$
 \boxed{\begin{aligned}
 &\bar{X}=\frac{\sum \bar{x}_i A_i}{\sum A_i} \\
 \\
 &\bar{Y}=\frac{\sum \bar{y}_i A_i}{\sum A_i}
-\end{aligned}}
+\end{aligned}}\text{ ,}
 $$ {#eq-8.1}
 
-| *where*
+| where
 | $\bar{X}, \bar{Y}$ *= Centroid coordinates of the overall area \[m, in.\]*
 | $\bar{x}_i, \bar{y}_i$ *= Centroid coordinates of each discrete area \[m, in.\]*
+| $A_i$ *= Area of each discrete area \[m^2^, in.^2^\]*
 
-$A_i$ *= Area of each discrete area \[m^2^, in.^2^\]*
+We can find centroids of simple shapes easily by utilizing symmetry. When a shape possesses an axis of symmetry, each point on one side of the axis corresponds to another point symmetrically located on the opposite side. The distances between these mirrored points and the line of symmetry sum to zero because they are equal in magnitude but opposite in sign. This is true for every point in the shape, so the numerator of @eq-8.1 (the first moment of area) will be zero. Therefore, if a shape features a line of symmetry, its centroid must coincide with this line.
 
-We can find centroids of simple shapes easily by utilizing symmetry. When a shape possesses an axis of symmetry, each point on one side of the axis corresponds to another point symmetrically located on the opposite side. The distances between these mirrored points and the line of symmetry will sum to zero because they will be equal in magnitude but opposite in sign. This is true for every point in the shape, so the numerator of @eq-8.1 (the first moment of area) will be zero. Therefore, if a shape features a line of symmetry, its centroid must coincide with this line. In cases where a shape exhibits multiple lines of symmetry, the centroid is located at their intersection, as shown in @fig-8.2.
+In cases where a shape exhibits multiple lines of symmetry, the centroid is located at their intersection, as shown in @fig-8.2.
 
-![Centroids lie upon axes of symmetry.](images/CH%208%20PNGs/figure%208.2.png){#fig-8.2 fig-align="center" width="355"}
+![Centroids lie on axes of symmetry.](images/CH%208%20PNGs/figure%208.2.png){#fig-8.2 fig-alt="Three gray shapes centered with dashed symmetry axes: an equilateral triangle, a rectangle, and a C-shaped rectangular section. The triangle has three symmetry axes meeting at its centroid, the rectangle has two perpendicular axes through its center, and the C-shape has one horizontal axis through its centroid." fig-align="center" width="355"}
 
-In this text, we will use common shapes or a composite of common shapes for our cross-sections. @sec-centroids-moments-inertia includes the location of the centroid of some common shapes. Part of @sec-centroids-moments-inertia is reproduced in @fig-8.3. Each row of the table includes a common shape with the centroid marked, and simple formulas for determining the x- and y-coordinates of the centroid and calculating the area of the shape.
+This text uses common shapes or a composite of common shapes for cross-sections. The location of the centroid of some common shapes can be found in @sec-centroids-moments-inertia, part of which is reproduced in @fig-8.3. Each row of the table includes a common shape with the centroid marked and provides simple formulas for determining the centroid's x and y coordinates and calculating the area of the shape.
 
-![Reproduction of one of the shapes in @sec-centroids-moments-inertia. @sec-centroids-moments-inertia includes a sketch of the area with the centroid marked, formulas for determining the x- and y-coordinates of the centroid, and a formula for calculating the area of the shape.](images/Updated%20appendices%20figures/figure%208.3.png){#fig-8.3 fig-align="center" width="616"}
+![Reproduction of a shape in @sec-centroids-moments-inertia. @sec-centroids-moments-inertia includes a sketch of the area with the centroid marked, formulas for determining the centroid's x and y coordinates, and a formula for calculating the area of the shape.](images/Updated%20appendices%20figures/figure%208.3.png){#fig-8.3 fig-alt="A right triangle is shown with base b and height h, shaded gray, with point O at the bottom-left corner representing the origin. The centroid, labeled c, is located one-third of the base from the left side and one-third of the height above the base. These centroid coordinates are marked as x bar = b/3 and y bar = h/3, shown on the figure and listed in a table. A dashed line extends from point O to the centroid c to illustrate this location. The table includes four columns: shape, x bar, y bar, and area. For the right triangle, the area is given as ½ b h." fig-align="center" width="616"}
 
-Often, structural sections are combinations of these standard shapes called composite sections. As long as we know the location of the centroid of each shape that comprises the section, we will not need to use integration to find the location of the overall sections’ centroid. We can use @eq-8.1 in conjunction with the table in @sec-centroids-moments-inertia to find the location of the centroid for composite shapes.
+Often structural sections are combinations of these standard shapes. These types of sections are called composite sections. As long as we know the location of the centroid of each shape in the section, we do not need to use integration to find the location of the section's overall centroid. We can use @eq-8.1 in conjunction with the table in @sec-centroids-moments-inertia to find the location of the centroid for composite shapes.
 
-@exm-8.1, @exm-8.2, and @exm-8.3 demonstrate the process for determing the centroid coordinates of composite areas.
+@exm-8.1, @exm-8.2, and @exm-8.3 demonstrate the process for determining the centroid coordinates of composite areas.
 
 ::::: {.callout-tip collapse="true" icon="false"}
 ## Example 8.1
@@ -74,18 +69,18 @@ Often, structural sections are combinations of these standard shapes called comp
 
 Find the centroid of the shape below.
 
-![](images/CH%208%20PNGs/example%208.1%20part%201.png){fig-align="center" width="252"}
+![](images/CH%208%20PNGs/example%208.1%20part%201.png){fig-alt="T-shaped composite section with overall dimensions. The top flange is horizontal, 9 inches wide and 1.5 inches tall. The vertical stem is centered beneath the flange, 3 inches wide and 4.5 inches tall. The entire section is shaded gray to indicate it is solid." fig-align="center" width="252"}
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Solution
 
-For this T-section, we notice that it is symmetric about the y-axis. This means we will not need to calculate the centroid in the x direction because we know it will be on that y-axis. We only need to find the distance in the y direction, $\bar{Y}$.
+Notice that this T section is symmetric about the y-axis. This means that calculating the centroid in the x direction is unnecessary because we know it will be on that y-axis. We need only find the distance in the y direction, $\bar{Y}$.
 
-![](images/CH%208%20PNGs/example%208.1%20part%202.png){fig-align="center" width="245"}
+![](images/CH%208%20PNGs/example%208.1%20part%202.png){fig-alt="Same T-shaped composite section divided into two rectangles labeled 1 and 2. Rectangle 1 is the vertical stem, and Rectangle 2 is the horizontal flange. A black point labeled RP marks the reference point at the bottom left corner of the stem. Dimensions remain the same: the stem is 3 inches wide and 4.5 inches tall, and the flange is 9 inches wide and 1.5 inches tall." fig-align="center" width="245"}
 
-The first thing we need to do is establish a coordinate system where the origin is our reference point, RP. In this example we chose the bottom left corner of the section so that all of our y distances will be positive.
+The first thing to do is establish a coordinate system where the origin is the reference point, RP. In this example we chose the bottom left corner of the section so that all y distances will be positive.
 
-We then divide the section into simpler shapes where we know the location of the centroid. In this case we chose two rectangles, labeled 1 and 2 in the figure.
+The second step is to divide the section into simpler shapes where we know the location of the centroid. In this case we chose two rectangles, labeled 1 and 2 in the figure.
 
 | Shape | $A{~(in.^2)}$ | $\bar{y}{~(in.)}$ | $A\bar{y}{~(in.^3)}$   |
 |-------|---------------|-------------------|------------------------|
@@ -93,17 +88,19 @@ We then divide the section into simpler shapes where we know the location of the
 | 2     | 13.5          | 5.25              | 70.875                 |
 |       | $\sum A$=27   |                   | $\sum A\bar{y}$=101.25 |
 
-Next, we will create a table with columns titled Shape, $A$ (in.^2^), $\bar{y}$ (in.), and $A\bar{y}$ (in.^3^). We have two shapes so there will be two rows in our table. The first column, Area, is the area of the individual shape. The second column, $\bar{y}$, is the perpendicular distance in the y-direction from the RP to the centroid of that shape. For example, for shape 1 the $\bar{y_1}$ would be half of 4.5 inches since the bottom of shape 1 aligns with the RP. However, for shape 2 the $\bar{y_2}$ would be 4.5 inches plus one half of 1.5 inches. This is because we need to ensure that we are measuring from the RP as illustrated below.
+Next is to create a table with columns titled Shape, $A$ (in.^2^), $\bar{y}$ (in.), and $A\bar{y}$ (in.^3^). Given two shapes, there will be two rows in the table. Column A is the area of the individual shape. Column $\bar{y}$ is the perpendicular distance in the y direction from the RP to the centroid of that shape. For example, for shape 1 the $\bar{y_1}$ would be half of 4.5 in. since the bottom of shape 1 aligns with the RP. However, for shape 2 the $\bar{y_2}$ would be 4.5 in. plus one half of 1.5 in. This formula ensures measuring from the RP as illustrated here.
 
 $$
 \bar{Y}=\frac{101.25{~in.^3}}{27{~in.^2}}=3.75{~in.} ~~\text{from bottom}
 $$
 
-![](images/CH%208%20PNGs/example%208.1%20part%203.png){fig-align="center" width="481"}
+![](images/CH%208%20PNGs/example%208.1%20part%203.png){fig-alt="The T-shaped section divided into two parts, labeled 1 for the vertical stem and 2 for the horizontal flange. The reference point RP is at the bottom-left corner of the stem. Vertical distances from RP to the centroids of each rectangle are marked: the centroid of rectangle 1 is located 2.25 inches above RP (half of 4.5 inches), and the centroid of rectangle 2 is 5.25 inches above RP (4.5 inches plus half of 1.5 inches = 0.75 inches). These centroid heights are labeled 𝑦̄ sub 1 and 𝑦̄ sub 2 respectively." fig-align="center" width="481"}
 
-Finally, to calculate the centroid coordinates, we will utilize @eq-8.1 by summing the last column and the second column in our table. We found the centroid to be 3.75 inches from the reference point in the y-direction and on the line of symmetry in the x-direction. The figure below show the location of the centroid for this T section.
+Finally, to calculate the centroid coordinates, use @eq-8.1 by summing the last column and the second column in the table. Using this approach we found the centroid to be 3.75 in. from the reference point in the y direction and on the line of symmetry in the x direction.
 
-![](images/CH%208%20PNGs/example%208.1%20part%204.png){fig-align="center" width="350"}
+The following figure shows the location of the centroid for this T section.
+
+![](images/CH%208%20PNGs/example%208.1%20part%204.png){fig-alt="The T-shaped section with its overall centroid marked by a solid black dot at the intersection of dashed centroidal axes. The vertical axis is centered horizontally through the 9-inch flange, and the horizontal axis crosses the stem 3.75 inches above the reference point RP at the bottom-left of the stem. To the right, the value y bar = 3.75 in is noted, indicating the distance from RP to the overall centroid of the composite section." fig-align="center" width="350"}
 :::
 ::::
 :::::
@@ -116,26 +113,28 @@ Finally, to calculate the centroid coordinates, we will utilize @eq-8.1 by summi
 
 </p>
 
-Find the centroid of the shape below.
+Find the centroid of the illustrated shape.
 
-![](images/CH%208%20PNGs/example%208.2%20part%201.png){fig-align="center" width="280"}
+![](images/CH%208%20PNGs/example%208.2%20part%201.png){fig-alt="Symmetric I-shaped cross section, symmetric about the vertical y-axis but not about the horizontal x-axis. A vertical centroidal axis is labeled y, and a horizontal axis labeled x is drawn at the base of the section. The top flange is 180 mm wide and 40 mm high. The central web is 20 mm wide and 140 mm high. The bottom flange is 100 mm wide and 40 mm high. All components are vertically aligned and centered along the y-axis." fig-align="center" width="280"}
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Solution
 
-For this section, we notice that it is symmetric about the y-axis, similar to @exm-8.1. This means that we will not need to calculate the centroid in the x direction because we know it will be on that y-axis. We only need to find the distance in the y direction, $\bar{Y}$.
+Notice that this section is symmetric about the y-axis, similar to @exm-8.1. This means calculating the centroid in the x direction is unnecessary because we know it will be on that y-axis. We need only find the distance in the y direction, $\bar{Y}$.
 
-The first thing we need to do is establish a coordinate system whose origin is our reference point, RP. In this example, we chose the bottom of the section along the y-axis so that all of our y distances will be positive.
+The first thing to do is establish a coordinate system whose origin is the reference point, RP. In this example, we chose the bottom of the section along the y-axis so that all y distances will be positive.
 
-We then divide the section into simpler shapes for which we know the centroid's location. In this case, we chose three rectangles labeled 1, 2, and 3 in the figure.
+The second task is to divide the section into simpler shapes for which we know the centroid's location. In this case we chose three rectangles labeled 1, 2, and 3 in the figure.
 
-![](images/CH%208%20PNGs/example%208.2%20part%202.png){fig-align="center" width="284"}
+![](images/CH%208%20PNGs/example%208.2%20part%202.png){fig-alt="I-shaped cross-section divided into three rectangles: Rectangle 1 is the bottom flange, 100 mm wide and 40 mm high; Rectangle 2 is the central web, 20 mm wide and 140 mm high; and Rectangle 3 is the top flange, 180 mm wide and 40 mm high. The reference point (RP) is at the midpoint of the bottom base of Rectangle 1, on the x-axis." fig-align="center" width="284"}
 
-Next, we will create a table with columns titled Shape, $A$ (mm^2^), $\bar{y}$ (mm), and $A\bar{y}$ (mm^3^). We have three shapes, so there will be three rows. The first column, Area, is the area of the individual shape. The second column, $\bar{y}$, is the perpendicular distance in the y-direction from the RP to the centroid of that shape. The figure below shows how the $\bar{y}$ for each shape is calculated.
+Next, we will create a table with columns titled Shape, $A$ (mm^2^), $\bar{y}$ (mm), and $A\bar{y}$ (mm^3^). Given three shapes, there will be three rows. The first column, A, is the area of the individual shape. The second column, $\bar{y}$, is the perpendicular distance in the y direction from the RP to the centroid of that shape.
 
-![](images/CH%208%20PNGs/example%208.2%20part%203.png){fig-align="center" width="384"}
+The figure below shows how the $\bar{y}$ for each shape is calculated.
 
-Find centroid (x̄=0 due to symmetry).
+![](images/CH%208%20PNGs/example%208.2%20part%203.png){fig-alt="I-shaped section divided into three labeled rectangles. Rectangle 1 at the bottom has a centroid located 20 mm above the reference point (RP), calculated as one-half of its 40 mm height and labeled as y bar sub 1. Rectangle 2, the vertical web, has a centroid located 110 mm above RP, found by adding 40 mm (height of rectangle 1) and half of its 140 mm height and labeled as ybar sub 2. Rectangle 3 at the top has a centroid located 200 mm above RP, determined by summing 40 mm (height of rectangle 1), 140 mm (height of rectangle 2), and half of its own 40 mm height and labeled as y bar sub 3. All y bar distances are clearly labeled with dotted projection lines extending from each centroid to the RP baseline." fig-align="center" width="384"}
+
+Next is to find the centroid (x̄ = 0 due to symmetry).
 
 +--------------+-----------------+------------------+---------------------------+
 | Shape        | $A{~(mm^2)}$    | $\bar{y}{~(mm)}$ | $A\bar{y}{~(mm^3)}$       |
@@ -149,15 +148,17 @@ Find centroid (x̄=0 due to symmetry).
 |              | $\sum A$=14,000 |                  | $\sum A\bar{y}$=1,828,000 |
 +--------------+-----------------+------------------+---------------------------+
 
-Finally, to calculate the centroid coordinates, we will utilize @eq-8.1 by summing the second and last columns in our table.
+Finally, to calculate the centroid coordinates, use @eq-8.1 by summing the table's second and last columns.
 
 $$
 \bar{Y}=\frac{1,828,000{~mm^3}}{14,000{~mm^2}}=130.6{~mm} ~~\text{from bottom}
 $$
 
-We found the centroid to be 130.6 mm from the reference point in the y-direction and on the line of symmetry in the x-direction. The figure below shows the location of the centroid for this section.
+Using this approach we found the centroid to be 130.6 mm from the reference point in the y direction and on the line of symmetry in the x direction.
 
-![](images/CH%208%20PNGs/example%208.2%20part%204.png){fig-align="center" width="366"}
+The figure below shows the location of the centroid for this section.
+
+![](images/CH%208%20PNGs/example%208.2%20part%204.png){fig-alt="I-shaped section with overall dimensions: 180 mm wide at the top, 100 mm wide at the bottom, and a central web 140 mm tall. The reference point (RP) is at the midpoint of the bottom base. A vertical dimension line extends from RP to the centroidal axis, located 130.57 mm above RP. This axis is drawn along the vertical centerline of the section, marking the final calculated centroid position." fig-align="center" width="366"}
 :::
 ::::
 :::::
@@ -172,38 +173,40 @@ We found the centroid to be 130.6 mm from the reference point in the y-direction
 
 Find the centroid of the shape below.
 
-![](images/CH%208%20PNGs/example%208.3%20part%201.png){fig-align="center" width="497"}
+![](images/CH%208%20PNGs/example%208.3%20part%201.png){fig-alt="Composite shape consisting of a rectangle on the left, a right triangle attached on the right with its hypotenuse sloping northeast, and a circular cutout inside the rectangle. The rectangle is 8 inches wide and 8 inches tall. The triangle shares the same 8-inch height and extends 6 inches further to the right. The circular cutout is centered 4 inches from the left edge and 4 inches from the bottom, with its radius labeled. A coordinate system is overlaid with the origin at the bottom-right corner of the rectangle and axes labeled x and y. The y-axis passes vertically through the right edge of the rectangle." fig-align="center" width="497"}
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Solution
 
-This section does not have any axis of symmetry, so we will need to find both the $\bar{x}$ and the $\bar{y}$. We first need to establish a coordinate system whose origin is our reference point, RP. In this example, we will use the coordinate axis in the problem to illustrate when $\bar{x}$ will be negative.
+This section has no axis of symmetry, so we must find both the $\bar{x}$ and the $\bar{y}$. The first task is to establish a coordinate system whose origin is the reference point, RP. In this example, the coordinate axis in the problem illustrates when $\bar{x}$ will be negative.
 
-We then divide the section into simpler shapes for which we know the centroid's location (@sec-centroids-moments-inertia.). In this case, we will break this up into the square, triangle, and circle labeled 1, 2, and 3 in the figure. Note that the circle is a hole, and the area will be represented as negative.
+The second task is to divide the section into simpler shapes for which we know the centroid's location (@sec-centroids-moments-inertia). In this case we will break this up into the square, triangle, and circle labeled 1, 2, and 3 in the figure. Note that the circle is a hole and the area will be represented as negative.
 
-![](images/CH%208%20PNGs/example%208.3%20part%202.png){fig-align="center" width="487"}
+![](images/CH%208%20PNGs/example%208.3%20part%202.png){fig-alt="Composite shape divided into three labeled regions. Region 1 is a rectangle on the left, 8 inches wide and 8 inches tall. Region 2 is a right triangle on the right, also 8 inches tall with a 6-inch base. Region 3 is a circular cutout inside Region 1, centered 4 inches from the left edge and 4 inches from the bottom edge. A coordinate system is overlaid with the origin at the bottom-right corner of the rectangle. The x-axis runs along the bottom edge, and the y-axis passes vertically through the right edge of the rectangle where the rectangle and triangle meet." fig-align="center" width="487"}
 
-Next, we will create a table with columns titled Shape, $A$ (in^2^), $\bar{x}$ (in), $\bar{y}$ (in), and $A\bar{y}$ (in^3^). We have three shapes so there will be three rows. The first column, Area, is the area of the individual shape. The second column, $\bar{x}$, is the perpendicular distance in the x-direction from the RP to the centroid of that shape. The figure below shows how the $\bar{x}$ for each shape is calculated.
+Next is to create a table with columns titled Shape, $A$ (in^2^), $\bar{x}$ (in), $\bar{y}$ (in), and $A\bar{y}$ (in^3^). Given three shapes, there are three rows. The first column, A, is the area of the individual shape. The second column, $\bar{x}$, is the perpendicular distance in the x direction from the RP to the centroid of that shape.
 
-![](images/CH%208%20PNGs/example%208.3%20part%203.png){fig-align="center" width="496"}
+The figure below shows how the $\bar{x}$ for each shape is calculated.
+
+![](images/CH%208%20PNGs/example%208.3%20part%203.png){fig-alt="Composite shape divided into three labeled regions. Region 1 is a rectangle on the left, 8 inches wide and 8 inches tall. Region 2 is a right triangle on the right, also 8 inches tall with a 6-inch base. Region 3 is a circular cutout inside Region 1, centered 4 inches from the left edge and 4 inches from the bottom edge. A coordinate system is overlaid with the origin at the bottom-right corner of the rectangle. The x-axis runs along the bottom edge, and the y-axis passes vertically through the right edge of the rectangle where the rectangle and triangle meet. A black point labeled RP marks the reference point at this intersection of the x- and y-axes, lying at the junction of the rectangle and triangle. Green dimension lines indicate x-bar distances for each region: Region 1 has x-bar sub 1 = 4 inches from the y-axis, Region 3 has x-bar sub 3 = 4 inches from the y-axis, and Region 2 has x-bar sub 2 = 2 inches from the y-axis, equal to one-third of its 6-inch base." fig-align="center" width="496"}
 
 The figure below shows how the $\bar{y}$ for each shape is calculated.
 
-![](images/CH%208%20PNGs/example%208.3%20part%204.png){fig-align="center" width="498"}
+![](images/CH%208%20PNGs/example%208.3%20part%204.png){fig-alt="Same composite shape with three regions: a left rectangle (Region 1), a right triangle (Region 2), and a circular cutout centered within the rectangle (Region 3). The reference point RP is marked as a black dot at the intersection of the x- and y-axes, located at the bottom corner where the rectangle and triangle meet. Vertical centroid distances from RP are labeled: Region 1 has y-bar sub 1 = 4 inches, Region 3 has y-bar sub 3 = 4 inches, and Region 2 has y-bar sub 2 = 16/3 inches, found by subtracting one-third of 8 from 8." fig-align="center" width="498"}
 
-Finally, to calculate the centroid coordinates, we will utilize @eq-8.1 by summing the Area, $A\bar{x}$, and $A\bar{y}$ columns see the table below.
+Finally, to calculate the centroid coordinates, use @eq-8.1 by summing the A, $A\bar{x}$, and $A\bar{y}$ columns shown in the table below.
 
-+-----------+-----------+---------------+-------------------+------------------------+-------------------+-----------------------+
-| **Shape** | **Shape** | $A{~(in.^2)}$ | $\bar{x}{~(in.)}$ | $A\bar{x}{~(in.^3)}$   | $\bar{y}{~(in.)}$ | $A\bar{y}{~(in.^3)}$  |
-+-----------+-----------+---------------+-------------------+------------------------+-------------------+-----------------------+
-|           | 1         | 64            | -4                | -256                   | 4                 | 256                   |
-+-----------+-----------+---------------+-------------------+------------------------+-------------------+-----------------------+
-|           | 2         | 24            | 2                 | 48                     | (2/3)(8) = 16/3   | 128                   |
-+-----------+-----------+---------------+-------------------+------------------------+-------------------+-----------------------+
-|           | 3         | -4π           | -4                | 16π                    | 4                 | -16π                  |
-+-----------+-----------+---------------+-------------------+------------------------+-------------------+-----------------------+
-|           |           | $\sum A$=75.4 |                   | $\sum A\bar{x}$=-258.3 |                   | $\sum A\bar{y}$=333.7 |
-+-----------+-----------+---------------+-------------------+------------------------+-------------------+-----------------------+
++-----------+-----------------+-------------------+-------------------------+-------------------+------------------------+
+| **Shape** | $A{~(in.^2)}$   | $\bar{x}{~(in.)}$ | $A\bar{x}{~(in.^3)}$    | $\bar{y}{~(in.)}$ | $A\bar{y}{~(in.^3)}$   |
++-----------+-----------------+-------------------+-------------------------+-------------------+------------------------+
+| 1         | 64              | -4                | -256                    | 4                 | 256                    |
++-----------+-----------------+-------------------+-------------------------+-------------------+------------------------+
+| 2         | 24              | 2                 | 48                      | (2/3)(8) = 16/3   | 128                    |
++-----------+-----------------+-------------------+-------------------------+-------------------+------------------------+
+| 3         | -4π             | -4                | 16π                     | 4                 | -16π                   |
++-----------+-----------------+-------------------+-------------------------+-------------------+------------------------+
+|           | $\sum A$ = 75.4 |                   | $\sum A\bar{x}$= -258.3 |                   | $\sum A\bar{y}$= 333.7 |
++-----------+-----------------+-------------------+-------------------------+-------------------+------------------------+
 
 $$
 \begin{aligned}
@@ -212,34 +215,36 @@ $$
 \end{aligned}
 $$
 
-We found the centroid to be -2.09 inches in the x-direction from the reference point, this indicates that the centroid will be to the left of the y-axis. The y-component of the centroid is 4.43 inches in the y-direction from the reference point. The figure below shows the location of the centroid for this section.
+Using this approach, we calculated the centroid to be -2.09 in. in the x direction from the reference point, which indicates it will be to the left of the y-axis. The y component of the centroid is 4.43 in. in the y direction from the reference point.
 
-![](images/chapter%208%20figure%20edits%20post%20review/example%208.3%20part%205.png){fig-align="center" width="505"}
+The figure below shows the location of the centroid for this section.
+
+![](images/chapter%208%20figure%20edits%20post%20review/example%208.3%20part%205.png){fig-alt="The composite shape consists of a rectangle and triangle forming a continuous area with a circular hole cut from the rectangular region. The reference point (RP) is at the bottom-right corner where the rectangle and triangle meet. Dashed red lines indicate the horizontal and vertical centroid axes. A solid red dot marks the centroid, located 2.09 inches to the left of RP and 4.43 inches above RP." fig-align="center" width="505"}
 :::
 ::::
 :::::
 
 ::: {.callout-warning icon="false"}
-## Step-by-step: Finding the Centroid of Composite Sections
+## Step-by-Step: Finding the Centroid of Composite Sections
 
-To find the location of the centroid of a composite section where the location of the centroid is known for each part of the composite section, use the following procedure:
+To find the location of the composite section's centroid where the location of each part's centroid is known, use the following procedure:
 
-1.  Establish a coordinate axis where the origin is the reference point (RP). This will be where the centroid will be measured.
-2.  Break the overall section up into simpler shapes where the location of the centroid of each shape is known. It is helpful here to sketch this. If the section has a hole, include the hole as a shape with a negative area. Remember to take advantage of symmetry. If the overall section is symmetric about an axis, you already know the location of the centroid in that direction as it is on that axis.
-3.  Determine the Area (A), the perpendicular distance from the y-axis ($\bar{x}$), and the perpendicular distance from the x-axis ($\bar{y}$) to the centroid of each shape. As sections become more complex, it might be advantageous to arrange these values in tabular form (see examples in this section).
-4.  Apply @eq-8.1 to find the overall section’s centroid, ($\bar{X}, \bar{Y}$). Remember that this location is measured from the RP you established in step 1.
+1.  Establish a coordinate axis where the origin is the reference point (RP). This is where the centroid will be measured.
+2.  Break up the overall section into simpler shapes where the location of the centroid of each shape is known. It is helpful here to sketch this. If the section has a hole, include the hole as a shape with a negative area. Remember to take advantage of symmetry. If the overall section is symmetric about an axis, you already know the location of the centroid in that direction as it is on that axis.
+3.  Determine the area (A), the perpendicular distance from the y-axis ($\bar{x}$), and the perpendicular distance from the x-axis ($\bar{y}$) to the centroid of each shape. As sections become more complex, it might be advantageous to arrange these values in tabular form, as shown in this section.
+4.  Apply @eq-8.1 to find the section’s overall centroid, ($\bar{X}, \bar{Y}$). Remember that this location is measured from the RP established in step 1.
 5.  Check that your answer is reasonable. Imagine any straight line that passes through the centroid. There should be an equal amount of area on each side of this line. Mark the centroid location on the composite area and check that this appears roughly accurate.
 :::
 
 </details>
 
-## 2^nd^ Moment of Areas {#sec-8.2}
+## Second Moment of Area {#sec-8.2}
 
 <details>
 
 <summary>Click to expand</summary>
 
-Another important geometric property needed to calculate stresses in beams is the Moment of Inertia of the Area (2^nd^ moment of area). Similar to our discussion of centroids, you likely were presented this topic in Statics so this chapter is designed to be a review. By definition, the second moment of area or moment of inertia depicted in @fig-8.4 is defined as:
+Another important geometric property needed to calculate stresses in beams is the second moment of area (also known as moment of inertia and area moment of inertia). You likely encountered this topic in statics, as you did the topic of centroids, so this section is designed as a review. By definition the second moment of area depicted in @fig-8.4 is
 
 $$
 \boxed{\begin{aligned}
@@ -249,47 +254,48 @@ $$
 \end{aligned}}
 $$ {#eq-8.2}
 
-![Moments of inertia of an area dA.](images/CH%208%20PNGs/figure%208.4.png){#fig-8.4 fig-align="center" width="439"}
+![Second moment of area about dA.](images/CH%208%20PNGs/figure%208.4.png){#fig-8.4 fig-alt="Shaded irregular area A in the first quadrant, bounded by a smooth closed curve. A small rectangular differential element dA is marked inside the region, with coordinates defined by x (distance from the y-axis) and y (distance from the x-axis). A black vector r extends from the origin (0,0) to the center of dA, pointing northeast, representing the radial distance to that differential area." fig-align="center" width="439"}
 
-In this text, we will use common shapes or a composite of common shapes for our cross-sections. @sec-centroids-moments-inertia includes formulas to calculate the moment of inertia. Part of @sec-centroids-moments-inertia is reproduced in @fig-8.5. Each row of the table includes a common shape with the centroid marked, and formulas for determining the moment of inertia of the area about the x-, y-, and z-centroidal axes. Note that these equations are valid only for the axes passing through the centroid of the area and are written as $\overline{I_{x^{\prime}}}$, $\overline{I_{y^{\prime}}}$, and J respectively. The bar notation is used to signify that the moment of inertia is being calculated around the centroidal axes.
+Keep in mind that this text uses common shapes or a composite of common shapes for cross-sections. @sec-centroids-moments-inertia includes formulas to calculate the second moment of area. Part of @sec-centroids-moments-inertia is reproduced in @fig-8.5. Each row of the table includes a common shape with the centroid marked and with formulas for determining the second moment of area about the centroidal axes x, y, and z. Note that these equations are valid only for the axes passing through the area's centroid and are written as $\overline{I_{x^{\prime}}}$, $\overline{I_{y^{\prime}}}$, and J respectively. The bar notation is used to signify that the second moment of area is being calculated around the centroidal axes.
 
-![Reproduction of one of the shapes in @sec-centroids-moments-inertia. @sec-centroids-moments-inertia includes a sketch of the area with the centroid marked, and formulas for determining the moment of inertia of the area about the x-, y-, and z-centroidal axes.](images/Updated%20appendices%20figures/figure%208.5.png){#fig-8.5 fig-align="center" width="699"}
+![Reproduction of a shape in @sec-centroids-moments-inertia. @sec-centroids-moments-inertia includes a sketch of the area with the centroid marked and formulas for determining the second moment of area about the centroidal axes x, y, and z.](images/Updated%20appendices%20figures/figure%208.5.png){#fig-8.5 fig-alt="Table with three columns labeled Shape, I sub x, and I sub y. In the Shape column, a shaded horizontal rectangle with base b and height h is shown. Its centroid is marked as point c. Two coordinate systems are drawn: the original axes x and y intersect at the bottom-left corner, and the centroidal axes x′ and y′ intersect at the centroid c. In the I sub x column, the values are listed: I sub x equals b times h cubed over 3, and below it, I bar sub x prime equals b times h cubed over 12. In the I sub y column, the values are listed: I sub y equals h times b cubed over 3, and below it, I bar sub y prime equals h times b cubed over 12." fig-align="center" width="699"}
 
-As noted previously, structural sections are often combinations of these standard shapes called composite sections. Similar to calculating centroids we will break these composite sections into common shapes and find the moment of inertia of these individual shapes.  When we calculate each individual shape's moment of inertia, we need to ensure that they are all about the same axis. The **parallel axis theorem** provides a method for calculating the moment of inertia of an area about an axis parallel to an axis passing through the centroid, given that the moment of inertia about the latter axis is known.
+As noted previously, structural sections, called composite sections, are often combinations of these standard shapes. As with calculating centroids, we break these composite sections into common shapes and find the second moment of area of these individual shapes. When calculating each individual shape's second moment of area, we must ensure that they are all about the same axis.
 
-To establish the parallel axis theorem, we will examine the moment of inertia *I* of an area *A* relative to an axis *x*, as illustrated in @fig-8.6.
+The parallel axis theorem provides a method for calculating the second moment of area about an axis parallel to an axis passing through the centroid, given that the second moment of area about the latter axis is known.
 
-![The moment of inertia of an area A about an axis x can be derived from its moment of inertia about the centroidal axis x' through a computation involving the distance dy between the axes.](images/chapter%208%20figure%20edits%20post%20review/figure%208.6.png){#fig-8.6 fig-align="center" width="414"}
+To establish the parallel axis theorem, we'll next examine the second moment of area about A relative to an axis x, as illustrated in @fig-8.6.
 
-The centroid of the area is at C, where the x’-y’ axis is drawn; note that x’ is parallel to x and y’ is parallel to y. The x-y’ axes will be termed the centroidal axes and a distance of dx and dy from the x-y axes, respectively. The distance between the element dA and the x’-axis is denoted as y’. Now we have $y=y^{\prime}+d_y$. Substituting into @eq-8.2, we have:
+![The second moment of area about A about an axis x can be derived from its second moment of area about the centroidal axis x' through a computation involving the distance dy between the axes.](images/chapter%208%20figure%20edits%20post%20review/figure%208.6.png){#fig-8.6 fig-alt="A shaded irregular area A is shown in the first quadrant of an x–y coordinate system with the origin at the bottom left. Inside the region, a small differential area element dA is marked. Its position is defined by local coordinates x′ and y′ from a secondary x′–y′ system centered at the shape’s centroid. The element lies x′ units to the right and y′ units above this local origin. Green arrows mark distances dx and dy, representing the horizontal and vertical distances from the global origin to the centroid of the area. The centroid is located dx to the right and dy upward from the global origin." fig-align="center" width="414"}
+
+The centroid of the area is at C, where the x’-y’ axis is drawn; note that x’ is parallel to x and y’ is parallel to y. The x-y’ axes will be termed the centroidal axes and are at a distance of d~x~ and d~y~ from the x-y axes respectively. The distance between the element dA and the x’-axis is denoted as y’. The result is $y=y^{\prime}+d_y$. Substituting into @eq-8.2 yields
 
 $$
 \begin{aligned}
 & I_x=\int\left(y^{\prime}+d_y\right)^2 d A \\
 & I_x=\int\left(y^{\prime}\right)^2 d A+2 d_y \int y^{\prime} d A+d_y^2 \int d A
-\end{aligned}
+\end{aligned}\text{ .}
 $$
 
-The first integral represents the moment of inertia about the centroidal axis x’. The second integral is zero since the centroid is located on the x’ axis (i.e., $\int y^{\prime} d A$ represents the first moment of area about the x’ centroidal axis, which is zero as discussed in @sec-8.1). The last integral represents the total area, A. So we have:
+The first integral represents the second moment of area about the centroidal axis x’. The second integral is zero since the centroid is located on the x’-axis (i.e., $\int y^{\prime} d A$ represents the first moment of area about the x’ centroidal axis, which is zero, as discussed in @sec-8.1). The last integral represents the total area, A. So the resulting equation is
 
 $$
-\boxed{I_x=\overline{I_{x^{\prime}}}+A d_y^2}
+\boxed{I_x=\overline{I_{x^{\prime}}}+A d_y^2}\text{ .}
 $$ {#eq-8.3}
 
-A similar process is used to find an expression for I~y~:
+A similar process is used to find an expression for I~y~.
 
 $$
-\boxed{I_y=\overline{I_{y^{\prime}}}+A d_x^2}
+\boxed{I_y=\overline{I_{y^{\prime}}}+A d_x^2}\text{ ,}
 $$ {#eq-8.4}
 
-| *where*
-| *I~x~, I~y~ = the moment of inertia of an area with respect to a given axis \[m^4^, in.^4^\]*
-| $\overline{I_{x^{\prime}}}$ *,* $\overline{I_{y^{\prime}}}$ *= moment of inertia of that area with respect to a parallel axis passing through the centroid of the area \[m^4^, in.^4^\]*
-| *A = area \[m^2^, in.^2^\]*
+| where
+| *I~x~, I~y~ = Second moment of area with respect to a given axis \[m^4^, in.^4^\]*
+| $\overline{I_{x^{\prime}}}$ *,* $\overline{I_{y^{\prime}}}$ *= Second moment of area with respect to a parallel axis passing through the centroid of the area \[m^4^, in.^4^\]*
+| *A = Area \[m^2^, in.^2^\]*
+| *d~x~, d~y~ = Perpendicular distance between the given axis and the parallel centroidal axis \[m, in.\]*
 
-*d~x~, d~y~ = perpendicular distance between the given axis and the parallel centroidal axis \[m, in.\]*
-
-While the parallel axis theorem can be used to calculate the area moment of inertia around any pair of axes, we will primarily focus on calculating the area moment of inertia around the centroidal axes of a composite area. It is this term which will be used in @sec-bending-loads and @sec-shear-loads when calculating bending stresses and shear stresses. @exm-8.4, @exm-8.5, and @exm-8.6 demonstrate the use of the parallel axis theorem to find the area moments of inertia for the composite areas from the earlier examples about their centroidal axes.
+While the parallel axis theorem can be used to calculate the second moment of area around any pair of axes, here the focus is primarily on calculating the second moment of area around the centroidal axes of a composite region (this is this term used in @sec-bending-loads and @sec-shear-loads when calculating bending stresses and shear stresses). @exm-8.4, @exm-8.5, and @exm-8.6 demonstrate using the parallel axis theorem to find the second moment of area for the composite areas from the earlier examples about their centroidal axes.
 
 ::::: {.callout-tip collapse="true" icon="false"}
 ## Example 8.4
@@ -299,22 +305,26 @@ While the parallel axis theorem can be used to calculate the area moment of iner
 
 </p>
 
-Determine the I~x~ the shaded area with respect to the section’s centroid.
+Determine the I~x~ of the shaded area with respect to the section’s centroid.
 
-![](images/CH%208%20PNGs/example%208.4%20part%201.png){fig-align="center" width="310"}
+![](images/CH%208%20PNGs/example%208.4%20part%201.png){fig-alt="T-shaped composite section with overall dimensions. The top flange is horizontal, 9 inches wide and 1.5 inches tall. The vertical stem is centered beneath the flange, 3 inches wide and 4.5 inches tall. The entire section is shaded gray to indicate it is solid." fig-align="center" width="310"}
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Solution
 
-Since we want to find the moment of inertia in the x direction with respect to the section’s centroid, we first need to calculate the centroid. We did this in @exm-8.1, the results are shown below.
+To find the second moment of area in the x direction with respect to the section’s centroid, first calculate the centroid. We did this in @exm-8.1, with the results as shown below.
 
-![](images/CH%208%20PNGs/example%208.4%20part%202.png){fig-align="center" width="390"}
+![](images/CH%208%20PNGs/example%208.4%20part%202.png){fig-alt="T-shaped section with its overall centroid marked by a solid black dot at the intersection of dashed centroidal axes. The vertical axis is centered horizontally through the 9-inch flange, and the horizontal axis crosses the stem 3.75 inches above the reference point RP at the bottom-left of the stem. To the right, the value y bar = 3.75 in is noted, indicating the distance from RP to the overall centroid of the composite section." fig-align="center" width="390"}
 
-We found that the centroid is located 3.75 inches from the bottom of the section. The next step is to break the section into common shapes as noted in the figure below.
+We found that the centroid is located 3.75 in. from the bottom of the section.
 
-![](images/CH%208%20PNGs/example%208.4%20part%203.png){fig-align="center" width="357"}
+The next step is to break the section into common shapes.
 
-The formulas for moment of inertia of each shape are with respect to the shape’s centroid not the overall section’s centroid. We will need to make and adjustment using the parallel-axis theorem to transform the rotational axis from the shape’s centroid to the section’s centroid. We will present this method in terms of a table.
+![](images/CH%208%20PNGs/example%208.4%20part%203.png){fig-alt="Same T-shaped composite section divided into two rectangles labeled 1 and 2. Rectangle 1 is the vertical stem, and Rectangle 2 is the horizontal flange. A black point labeled RP marks the reference point at the bottom left corner of the stem. Dimensions remain the same: the stem is 3 inches wide and 4.5 inches tall, and the flange is 9 inches wide and 1.5 inches tall." fig-align="center" width="357"}
+
+The formula for the second moment of area of a shape are with respect to the shape’s centroid, not to the section’s overall centroid. Make a necessary adjustment using the parallel axis theorem to transform the rotational axis from the shape’s centroid to the section’s centroid. Do this for each shape in the section.
+
+Present this method in terms of a table as shown.
 
 +-----------+---------------+---------------------+---------------+-----------------------------+
 | Shape     | $A{~(in.^2)}$ | $I_x{~(in.^4)}$     | $d_y{~(in.)}$ | $I_x+Ad_y^2{~(in.^4)}$      |
@@ -327,12 +337,12 @@ The formulas for moment of inertia of each shape are with respect to the shape�
 |           |               |                     |               |                             |
 |           | 13.5          | 2.53125             |               | 32.90625                    |
 +-----------+---------------+---------------------+---------------+-----------------------------+
-|           |               |                     |               | I~x~=86.0625 in^4^          |
+|           |               |                     |               | I~x~=86.0625 in.^4^         |
 +-----------+---------------+---------------------+---------------+-----------------------------+
 
-The calculation and visualizations for each d~y~ term are shown in the figure below
+The figure below shoes the calculation and visualizations for each d~y~ term.
 
-![](images/CH%208%20PNGs/example%208.4%20part%204.png){fig-align="center"}
+![](images/CH%208%20PNGs/example%208.4%20part%204.png){fig-alt="T-shaped composite section with all key dimensions and labeled points. The bottom vertical stem is 4.5 inches tall and 3 inches wide. The top horizontal flange is 1.5 inches tall and 9 inches wide. A black dot labeled RP is at the bottom-left corner of the stem. Another black dot marks the centroid of the entire T-section, located 3.75 inches above RP. The centroid of Section 1, the stem, is 2.25 inches above RP. The centroid of Section 2, the flange, is 5.25 inches above RP. Horizontal dashed lines extend from each section’s centroid, intersecting with the vertical dashed line through the overall centroid. The vertical distance from the overall centroid to Section 1 is labeled dy sub 1 and equals 3.75 minus 2.25, or 1.5 inches. The distance from the overall centroid to Section 2 is labeled dy sub 2 and equals 5.25 minus 3.75, also 1.5 inches." fig-align="center" width="659"}
 :::
 ::::
 :::::
@@ -345,22 +355,26 @@ The calculation and visualizations for each d~y~ term are shown in the figure be
 
 </p>
 
-Determine the I~x~ and I~y~ of the shaded area with respect to the shapes centroid.
+Determine the I~x~ and I~y~ of the shaded area with respect to the shape's centroid.
 
-![](images/CH%208%20PNGs/example%208.5%20part%201.png){fig-align="center" width="289"}
+![](images/CH%208%20PNGs/example%208.5%20part%201.png){fig-alt="Symmetric I-shaped cross section, symmetric about the vertical y-axis but not about the horizontal x-axis. A vertical centroidal axis is labeled y, and a horizontal axis labeled x is drawn at the base of the section. The top flange is 180 mm wide and 40 mm high. The central web is 20 mm wide and 140 mm high. The bottom flange is 100 mm wide and 40 mm high. All components are vertically aligned and centered along the y-axis." fig-align="center" width="289"}
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Solution
 
-Since we want to find the moment of inertia in the x and y directions with respect to the section’s centroid, we first need to calculate the centroid. We did this in @exm-8.2, the results are shown below.
+To find the second moment of area in the x and y directions with respect to the section’s overall centroid, first calculate the centroid. We did this in @exm-8.2, with the results shown below.
 
-![](images/CH%208%20PNGs/example%208.5%20part%202.png){fig-align="center" width="358"}
+![](images/CH%208%20PNGs/example%208.5%20part%202.png){fig-alt="I-shaped section with overall dimensions: 180 mm wide at the top, 100 mm wide at the bottom, and a central web 140 mm tall. The reference point (RP) is at the midpoint of the bottom base. A vertical dimension line extends from RP to the centroidal axis, located 130.57 mm above RP, labeled as y bar. This axis is drawn along the vertical centerline of the section, marking the final calculated centroid position." fig-align="center" width="358"}
 
-We found that the centroid is located 130.6 mm from the bottom of the section and on the y-axis. The next step is to break the section into common shapes as noted in the figure below.
+We found that the centroid is located 130.6 mm from the bottom of the section and on the y-axis.
 
-![](images/CH%208%20PNGs/example%208.5%20part%203.png){fig-align="center" width="318"}
+The next step is to break the section into common shapes.
 
-The formulas for moment of inertia of each shape are with respect to the shape’s centroid not the overall section’s centroid. We will need to make and adjustment using the parallel-axis theorem to transform the rotational axis from the shape’s centroid to the section’s centroid. We will present this method in terms of a table, first for I~x~.
+![](images/CH%208%20PNGs/example%208.5%20part%203.png){fig-alt="I-shaped cross-section divided into three rectangles: Rectangle 1 is the bottom flange, 100 mm wide and 40 mm high; Rectangle 2 is the central web, 20 mm wide and 140 mm high; and Rectangle 3 is the top flange, 180 mm wide and 40 mm high. The reference point (RP) is at the midpoint of the bottom base of Rectangle 1, on the x-axis." fig-align="center" width="318"}
+
+The formula for the second moment of area of a shape are with respect to the shape’s centroid, not to the section’s overall centroid. Make a necessary adjustment using the parallel axis theorem to transform the rotational axis from the shape’s centroid to the section’s centroid. Do this for each shape in the section.
+
+Present this method in terms of a table, first for I~x~.
 
 +-----------+---------------+----------------------+--------------+--------------------------------+
 | Shape     | $A{~(in.^2)}$ | $I_x{~(in.^3)}$      | $d_y{~(mm)}$ | $I_x+Ad_y^2{~(mm^4)}$          |
@@ -380,11 +394,11 @@ The formulas for moment of inertia of each shape are with respect to the shape�
 |           |               |                      |              | I~x~ = 90,862,095 mm^4^        |
 +-----------+---------------+----------------------+--------------+--------------------------------+
 
-The calculation and visualizations for each d~y~ term are shown in the figure below.
+The calculation and visualizations for each d~y~ term are as shown in the figure.
 
-![](images/CH%208%20PNGs/example%208.5%20part%204.png){fig-align="center"}
+![](images/CH%208%20PNGs/example%208.5%20part%204.png){fig-alt="I-shaped cross-section made of three labeled rectangles. Rectangle 1 is at the bottom with a height of 40 mm; its centroid is located 20 mm above the reference point, or RP, calculated as one-half of its height. Rectangle 2 is the vertical web with a height of 140 mm; its centroid is located 110 mm above RP, found by adding 40 mm from Rectangle 1 and one-half of 140 mm. Rectangle 3 is at the top with a height of 40 mm; its centroid is located 200 mm above RP, calculated by adding 40 mm for Rectangle 1, 140 mm for Rectangle 2, and one-half of 40 mm. The vertical distances from each rectangle’s centroid to the overall centroid, located at 130.57 mm, are labeled. The distance from Rectangle 1’s centroid to the overall centroid is labeled as dy sub 1 and equals 130.57 minus 20, 110.57 mm. The distance from Rectangle 2’s centroid to the overall centroid is labeled as dy sub 2 and equals 130.57 minus 110, 20.57 mm. The distance from Rectangle 3’s centroid to the overall centroid is labeled as dy sub 3 and equals 200 minus 130.57, 69.43 mm." fig-align="center"}
 
-We will do the same process to calculate I~y~.
+Use the same process to calculate I~y~.
 
 +-----------+--------------+----------------------+--------------+-----------------------------+
 | Shape     | $A{~(mm^2)}$ | $I_y{~(mm^4)}$       | $d_x{~(mm)}$ | $I_y+Ad_x^2{~(mm^4)}$       |
@@ -404,7 +418,7 @@ We will do the same process to calculate I~y~.
 |           |              |                      |              | I~y~ = 22,866,667 mm^4^     |
 +-----------+--------------+----------------------+--------------+-----------------------------+
 
-Notice that the values for d~x~ are all zero when calculating I~y~. This is because the centroid of each shape coincides with the centroid of the entire section therefore the distance between them is zero.
+Notice that all the values for d~x~ are zero when calculating I~y~. This is because the centroid of each shape coincides with the centroid of the entire section, so the distance between them is zero.
 :::
 ::::
 :::::
@@ -419,74 +433,78 @@ Notice that the values for d~x~ are all zero when calculating I~y~. This is beca
 
 Determine the I~x~ and I~y~ of the shaded area with respect to the shape's centroid.
 
-![](images/CH%208%20PNGs/example%208.6%20part%201.png){fig-align="center" width="404"}
+![](images/CH%208%20PNGs/example%208.6%20part%201.png){fig-alt="Composite shape consisting of a rectangle on the left, a right triangle attached on the right with its hypotenuse sloping northeast, and a circular cutout inside the rectangle. The rectangle is 8 inches wide and 8 inches tall. The triangle shares the same 8-inch height and extends 6 inches further to the right. The circular cutout is centered 4 inches from the left edge and 4 inches from the bottom, with its radius labeled. A coordinate system is overlaid with the origin at the bottom-right corner of the rectangle and axes labeled x and y. The y-axis passes vertically through the right edge of the rectangle." fig-align="center" width="404"}
 
 ::: {.callout-tip collapse="true" icon="false"}
 ## Solution
 
-Since we want to find the moment of inertia in the x and y directions with respect to the section’s centroid, we first need to calculate the centroid. We did this in @exm-8.3, the results are shown below.
+To find the second moment of area in the x and y directions with respect to the section’s overall centroid, first calculate the centroid. We did this in @exm-8.3, with the results as shown.
 
-![](images/chapter%208%20figure%20edits%20post%20review/example%208.6%20part%202.png){fig-align="center" width="398"}
+![](images/chapter%208%20figure%20edits%20post%20review/example%208.6%20part%202.png){fig-alt="The composite shape consists of a rectangle and triangle forming a continuous area with a circular hole cut from the rectangular region. The reference point (RP) is at the bottom-right corner where the rectangle and triangle meet. Dashed red lines indicate the horizontal and vertical centroid axes. A solid red dot marks the centroid, located 2.09 inches to the left of RP and 4.43 inches above RP." fig-align="center"}
 
-We found that the centroid is located 2.09 inches to the left of the y-axis and 4.43 inches up from the x-axis. The next step is to break the section into common shapes (@sec-centroids-moments-inertia.) as noted in the figure below. Notice that shape 3 is a hole so we will need to subtract the moment of inertia and area.
+We found that the centroid is located 2.09 in. to the left of the y-axis and 4.43 in. up from the x-axis.
 
-![](images/CH%208%20PNGs/example%208.6%20part%203.png){fig-align="center" width="545"}
+The next step is to break up the section into common shapes (see @sec-centroids-moments-inertia) as shown in the following figure. Note that shape 3 is a hole, so we need to subtract the area and second moment of area.
 
-The formulas for moment of inertia of each shape are with respect to the shape’s centroid not the overall section’s centroid. We will need to make and adjustment using the parallel-axis theorem to transform the rotational axis from the shape’s centroid to the section’s centroid.  We will present this method in terms of a table, first for I~x~ then I~y~.
+![](images/CH%208%20PNGs/example%208.6%20part%203.png){fig-alt="Composite shape divided into three labeled regions. Region 1 is a rectangle on the left, 8 inches wide and 8 inches tall. Region 2 is a right triangle on the right, also 8 inches tall with a 6-inch base. Region 3 is a circular cutout inside Region 1, centered 4 inches from the left edge and 4 inches from the bottom edge. A coordinate system is overlaid with the origin at the bottom-right corner of the rectangle. The x-axis runs along the bottom edge, and the y-axis passes vertically through the right edge of the rectangle where the rectangle and triangle meet." fig-align="center" width="545"}
 
-+----------+----------+---------------+-------------------+---------------+--------------------------+
-| Shape    | Shape    | $A{~(in.^2)}$ | $I_x{~(in.^4)}$   | $d_y{~(in.)}$ | $I_x+Ad_y^2{~(in.^4)}$   |
-+==========+==========+===============+===================+===============+==========================+
-|          | 1        | 64            | (1/12)(8)(8)^3^ = | 0.43          | 341.3 + (64)(0.43)^2^ =  |
-|          |          |               |                   |               |                          |
-|          |          |               | 341.3             |               | 353.1                    |
-+----------+----------+---------------+-------------------+---------------+--------------------------+
-|          | 2        | 24            | (1/36)(6)(8)^3^ = | 0.90          | 85.3 + (24)(0.9)^2^ =    |
-|          |          |               |                   |               |                          |
-|          |          |               | 85.3              |               | 104.7                    |
-+----------+----------+---------------+-------------------+---------------+--------------------------+
-|          | 3        | -4π           | (-π/4)(2)^4^ =    | 0.43          | -12.6 + (-4π)(0.43)^2^ = |
-|          |          |               |                   |               |                          |
-|          |          |               | -12.6             |               | -14.9                    |
-+----------+----------+---------------+-------------------+---------------+--------------------------+
-|          |          |               |                   |               | I~x~ = 442.9 in^4^       |
-+----------+----------+---------------+-------------------+---------------+--------------------------+
+The formula for the second moment of area of a shape are with respect to the shape’s centroid, not to the section’s overall centroid. Make a necessary adjustment using the parallel axis theorem to transform the rotational axis from the shape’s centroid to the section’s centroid. Do this for each shape.
 
-+----------+----------+---------------+-------------------+---------------+--------------------------+
-| Shape    | Shape    | $A{~(in.^2)}$ | $I_y{~(in.^4)}$   | $d_x{~(in.)}$ | $I_y+Ad_x^2{~(in.^4)}$   |
-+==========+==========+===============+===================+===============+==========================+
-|          | 1        | 64            | (1/12)(8)(8)^3^ = | 0.57          | 341.3 + (64)(0.57)^2^ =  |
-|          |          |               |                   |               |                          |
-|          |          |               | 341.3             |               | 362.1                    |
-+----------+----------+---------------+-------------------+---------------+--------------------------+
-|          | 2        | 24            | (1/36)(8)(6)^3^ = | 1.43          | 48 + (24)(1.43)^2^ =     |
-|          |          |               |                   |               |                          |
-|          |          |               | 48                |               | 97.1                     |
-+----------+----------+---------------+-------------------+---------------+--------------------------+
-|          | 3        | -4π           | (-π/4)(2)^4^ =    | 0.57          | -12.6 + (-4π)(0.57)^2^ = |
-|          |          |               |                   |               |                          |
-|          |          |               | -12.6             |               | -16.7                    |
-+----------+----------+---------------+-------------------+---------------+--------------------------+
-|          |          |               |                   |               | I~y~ = 442.5 in^4^       |
-+----------+----------+---------------+-------------------+---------------+--------------------------+
+Present this method in terms of a table, first for I~x~ then I~y~.
 
-The calculation and visualizations for each d~x~ and d~y~ terms are shown in the figure below.
++------------+---------------+-------------------+---------------+--------------------------+
+| Shape      | $A{~(in.^2)}$ | $I_x{~(in.^4)}$   | $d_y{~(in.)}$ | $I_x+Ad_y^2{~(in.^4)}$   |
++============+===============+===================+===============+==========================+
+| 1          | 64            | (1/12)(8)(8)^3^ = | 0.43          | 341.3 + (64)(0.43)^2^ =  |
+|            |               |                   |               |                          |
+|            |               | 341.3             |               | 353.1                    |
++------------+---------------+-------------------+---------------+--------------------------+
+| 2          | 24            | (1/36)(6)(8)^3^ = | 0.90          | 85.3 + (24)(0.9)^2^ =    |
+|            |               |                   |               |                          |
+|            |               | 85.3              |               | 104.7                    |
++------------+---------------+-------------------+---------------+--------------------------+
+| 3          | -4π           | (-π/4)(2)^4^ =    | 0.43          | -12.6 + (-4π)(0.43)^2^ = |
+|            |               |                   |               |                          |
+|            |               | -12.6             |               | -14.9                    |
++------------+---------------+-------------------+---------------+--------------------------+
+|            |               |                   |               | I~x~ = 442.9 in.^4^      |
++------------+---------------+-------------------+---------------+--------------------------+
 
-![](images/chapter%208%20figure%20edits%20post%20review/example%208.6%20part%204.png){fig-align="center"}
++------------+---------------+-------------------+---------------+--------------------------+
+| Shape      | $A{~(in.^2)}$ | $I_y{~(in.^4)}$   | $d_x{~(in.)}$ | $I_y+Ad_x^2{~(in.^4)}$   |
++============+===============+===================+===============+==========================+
+| 1          | 64            | (1/12)(8)(8)^3^ = | 0.57          | 341.3 + (64)(0.57)^2^ =  |
+|            |               |                   |               |                          |
+|            |               | 341.3             |               | 362.1                    |
++------------+---------------+-------------------+---------------+--------------------------+
+| 2          | 24            | (1/36)(8)(6)^3^ = | 1.43          | 48 + (24)(1.43)^2^ =     |
+|            |               |                   |               |                          |
+|            |               | 48                |               | 97.1                     |
++------------+---------------+-------------------+---------------+--------------------------+
+| 3          | -4π           | (-π/4)(2)^4^ =    | 0.57          | -12.6 + (-4π)(0.57)^2^ = |
+|            |               |                   |               |                          |
+|            |               | -12.6             |               | -16.7                    |
++------------+---------------+-------------------+---------------+--------------------------+
+|            |               |                   |               | I~y~ = 442.5 in.^4^      |
++------------+---------------+-------------------+---------------+--------------------------+
+
+The calculation and visualizations for each d~x~ and d~y~ term are as shown in the figure.
+
+![](images/chapter%208%20figure%20edits%20post%20review/example%208.6%20part%204.png){fig-alt="Composite shape divided into three labeled regions. Region one is a rectangle on the left side, measuring 8 inches in width and 8 inches in height. Region two is a right triangle located on the right side, also 8 inches tall with a base of 6 inches. Region three is a circular cutout inside region one, centered 4 inches from the left edge and 4 inches from the bottom edge of the rectangle. A coordinate system is overlaid on the shape, with the origin placed at the bottom-right corner of the rectangle. The x-axis extends horizontally along the bottom edge, while the y-axis runs vertically through the right edge of the rectangle where it meets the triangle.A black point labeled as the reference point, or RP, marks the intersection of the x- and y-axes at the junction between the rectangle and the triangle. A red dot represents the centroid of the entire composite shape, located 2.09 inches to the left and 4.43 inches above the reference point. Each subregion is labeled with the corresponding horizontal and vertical distances between its centroid and the overall centroid. For region one (the rectangle) and region three (the circular cutout), the horizontal distance d sub x one and d sub x three are equal to 4 minus 2.09, which is 1.91 inches. The vertical distances d sub y one and d sub y three are both equal to 4.43 minus 4, 0.43 inches.For region two (the triangle), the horizontal distance d sub x two is equal to one-third of 6, added to 2.09, resulting in 4.09 inches. The vertical distance d sub y two is equal to sixteen divided by 3 minus 4.43, resulting in approximately 0.90 inches." fig-align="center" width="808"}
 :::
 ::::
 :::::
 
 ::: {.callout-warning icon="false"}
-## Step-by-step: Finding the Moment of Inertia
+## Step-by-Step: Finding the Second Moment of Area
 
-Use the following steps to find the moment of inertia of a composite section:
+Use the following steps to find the second moment of area of a composite section:
 
-1.  Determine where you are taking the moment of inertia, about a reference axis or the centroidal axis. If it is about the centroidal axis, calculate the location of the centroid.
-2.  Break the overall section up into simpler shapes where the location of the centroid of each shape is known. It is helpful here to sketch this. If the section has a hole, include the hole as a shape with a negative inertia.
-3.  Implement the parallel-axis theorem for each individual shape.
-4.  Indicate the perpendicular distance from the centroid of each part to the axis that you are calculating the moment of inertia about.
-5.  The moment of inertia of the section about an axis is the sum of the composite parts about the same axis.
+1.  Determine whether you are taking the second moment of area about a reference axis or the centroidal axis. If it is about the centroidal axis, calculate the location of the centroid.
+2.  Break up the overall section into simpler shapes where the location of the centroid of each shape is known. It is helpful here to sketch this. If the section has a hole, include the hole as a shape with a negative inertia.
+3.  Implement the parallel axis theorem for each individual shape.
+4.  Indicate the perpendicular distance from each part's centroid to the axis about which you are calculating the second moment of area.
+5.  The second moment of area of the section about an axis is the sum of the composite parts about the same axis.
 :::
 
 </details>
@@ -502,21 +520,21 @@ Use the following steps to find the moment of inertia of a composite section:
 
 -   The centroid represents the geometric center of a shape.
 
--   The center of gravity will be the same as the centroid only if the material is uniform (homogenous).
+-   The center of gravity is the same as the centroid only if the material is uniform (homogenous).
 
--   The centroid will be located on any axis of symmetry for the section.
+-   The centroid is located on any axis of symmetry for the section.
 
--   In some cases, the centroid of a shape is not located within the shape itself (as shown in the rightmost section in @fig-8.2).
+-   In some cases the centroid of a shape is not located within the shape itself (as shown in the rightmost section in @fig-8.2).
 
--   The moment of inertia represents a geometric property of an area and is occasionally termed as the second moment of the area about an axis, as it involves squaring the distance from the axis to each element of the area.
+-   The second moment of area represents a geometric property of an area and is occasionally termed the moment of inertia or the area moment of inertia about an axis because it involves squaring the distance from the axis to each element of the area.
 
--   The parallel-axis theorem is used to compute the moment of inertia of composite sections.
+-   The parallel axis theorem is used to compute the second moment of area of composite sections.
 :::
 
 ::: {.callout-note icon="false"}
 ## Key Equations
 
-Centroid Formulas
+Centroid formulas:
 
 $$
 \bar{X}=\frac{\sum \bar{x}_i A_i}{\sum A_i}
@@ -526,7 +544,7 @@ $$
 \bar{Y}=\frac{\sum \bar{y}_i A_i}{\sum A_i}
 $$
 
-Moment of Inertia (Second Moment of Area)
+Second moment of area (moment of inertia):
 
 $$
 I_x=\int_A y^2 d A
@@ -540,7 +558,7 @@ $$
 I_z=J=\int_A r^2 d A
 $$
 
-Parallel Axis Theorem
+Parallel axis theorem:
 
 $$
 I_x=\overline{I_{x^{\prime}}}+A d_y^2
@@ -561,7 +579,7 @@ $$
 
 **Figures**
 
-All figures in this chapter were created by Kindred Grey in 2025 and released under a CC BY license, except for:
+All figures in this chapter were created by Kindred Grey in 2025 and released under a CC BY license, except for
 
 -   Figure 8.1: Isometric view of concrete barriers used in roadway construction. Pushcreativity. 2008. CC BY-SA 3.0. <https://commons.wikimedia.org/wiki/File:Concrete_step_barrier_3D_cross_section.jpg>.
 
