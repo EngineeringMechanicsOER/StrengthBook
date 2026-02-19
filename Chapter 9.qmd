@@ -239,7 +239,7 @@ $$
 Now calculate stress at each of the three points requested. Start with the top.
 
 $$
-\sigma_{top}=\frac{(30*10^3Nm)(0.15m)}{1.8*10^{-4}*m^4}=25 MPa
+\sigma_{top}=-\frac{(30*10^3~Nm)(0.15~m)}{1.8*10^{-4}~m^4}=-25~MPa
 $$
 
 A complete answer must include magnitude, units, and tension or compression. The magnitude is 25, the units will be MPa. To determine the tension or compression look at the sign of the internal moment and where along the section you are calculating the bending stress. In this example the moment is positive and we calculated the stress at the top of the section.
@@ -249,7 +249,7 @@ The calculation shows the bending stress to be in compression.
 ![](images/chapter%209%20figure%20updates/example%209.1%20new%20part%202.png){fig-alt="Curved beam segment with a thick blue shaded cross section. The beam bends concave upward, with the inner curve labeled Compression and the outer curve labeled Tension. The diagram illustrates positive bending, where the top fibers are in compression and the bottom fibers are in tension." fig-align="center" width="265"}
 
 $$
-\sigma_{top}=25MPa (C)
+\sigma_{top}=25~MPa~~(C)
 $$
 
 Note that as long as care is taken to use the correct signs for M and y (both positive in this case), the answer will come out with the correct sign (negative in this case, which indicates compression).
@@ -257,19 +257,21 @@ Note that as long as care is taken to use the correct signs for M and y (both po
 Next calculate the normal stress at the bottom of the beam. In this case all the values (M, y, and I) are the same, so the magnitude of the stress is the same (25 MPa). What changes is the type of stress (tension or compression). Since in this example the moment is positive and we calculated the stress at the bottom of the beam, the stress will be in tension.
 
 $$
-\sigma_{BTM}=25MPa(T)
+\sigma_{btm}=-\frac{(30*10^3~Nm)(-0.15~m)}{1.8*10^{-4}~m^4}=25~MPa\\
+\\
+\sigma_{btm}=25~MPa~~(T)
 $$
 
 Finally, calculate the stress at point A, which is located 100 mm from the top of the section. The y value measures from the neutral axis (centroid), so use y = 50 mm.
 
 $$
-\sigma_{A}=\frac{(30*10^3Nm)(0.05m)}{1.8*10^{-4}*m^4}=8.33 MPa
+\sigma_{A}=\frac{(30*10^3~Nm)(0.05~m)}{1.8*10^{-4}~m^4}=8.33~MPa
 $$
 
 As before, evaluate whether the stress is in tension or compression. Since point A is above the neutral axis and the moment is positive, the stress at point A will be in compression.
 
 $$
-\sigma_A=8.33MPa(C)
+\sigma_A=8.33~MPa~~(C)
 $$
 :::
 ::::
@@ -283,7 +285,7 @@ $$
 
 </p>
 
-A beam with the shown cross section is subjected to a positive moment of 50 k·in.
+A beam with the shown cross section is subjected to a positive moment of 50 kip·in.
 
 Calculate the normal stress at the top, bottom, and interface between flange and web.
 
@@ -301,7 +303,7 @@ Next determine the beam properties, which are the centroid and the second moment
 ![](images/CH9%20PNGs/Example%209.1%20part%203.png){fig-alt="Same T-shaped composite section divided into two rectangles labeled 1 and 2. Rectangle 1 is the vertical stem, and Rectangle 2 is the horizontal flange. A black point labeled RP marks the reference point at the bottom left corner of the stem. Dimensions remain the same: the stem is 3 inches wide and 4.5 inches tall, and the flange is 9 inches wide and 1.5 inches tall." fig-align="center" width="270"}
 
 | Shape | $A {~(in.^2})$ | $\bar{y}{~(in.})$ | $A\bar{y}{~(in.^3})$ | $I_x{~(in.^4})$ | $d_y{~(in.})$ | $I_x+Ad_y^2{~(in.^4})$ |
-|----------|----------|----------|----------|----------|----------|----------|
+|----|----|----|----|----|----|----|
 | 1 | 13.5 | 2.25 | 30.375 | 22.78125 | 1.5 | 53.15625 |
 | 2 | 13.5 | 5.25 | 70.875 | 2.53125 | 1.5 | 32.90625 |
 |  | $\sum A$ = 27 |  | $\sum A\bar{y}$ = 101.25 |  |  | $\sum I_{x}$ = 86.0625 |
@@ -410,7 +412,7 @@ Find the centroid ($\bar{x} = 0$ due to symmetry).
 | 1     | 4,000             | 20               | 80,000                      |
 | 2     | 2,800             | 110              | 308,000                     |
 | 3     | 7,200             | 200              | 1,440,000                   |
-|       | $\sum A$ = 14,000 |                  | $\sum A\bar{y}$ = 1,888,000 |
+|       | $\sum A$ = 14,000 |                  | $\sum A\bar{y}$ = 1,828,000 |
 
 $\bar{Y}=130.6{~mm}~~\text{from bottom}$
 
@@ -680,7 +682,7 @@ Use this value to determine the required dimensions of the cross-section. Recall
 $$
 \begin{gathered}
 S_{min}=0.015625{~m^3}=\frac{b h^2}{6}=\frac{b(2 b)^2}{6}=\frac{4 b^3}{6}=\frac{2}{3} b^3 \\
-b^2=\frac{3}{2} * 0.015625{~m^3}=0.0234375{~m^3} \\
+b^3=\frac{3}{2} * 0.015625{~m^3}=0.0234375{~m^3} \\
 b=~^3\sqrt{0.0234375}=0.286{~m} \\
 b=286{~mm} \\
 h=2b=2 * 286=572{~mm}
