@@ -257,9 +257,11 @@ Note that as long as care is taken to use the correct signs for M and y (both po
 Next calculate the normal stress at the bottom of the beam. In this case all the values (M, y, and I) are the same, so the magnitude of the stress is the same (25 MPa). What changes is the type of stress (tension or compression). Since in this example the moment is positive and we calculated the stress at the bottom of the beam, the stress will be in tension.
 
 $$
+\begin{gathered}
 \sigma_{btm}=-\frac{(30*10^3~Nm)(-0.15~m)}{1.8*10^{-4}~m^4}=25~MPa\\
 \\
 \sigma_{btm}=25~MPa~~(T)
+\end{gathered}
 $$
 
 Finally, calculate the stress at point A, which is located 100 mm from the top of the section. The y value measures from the neutral axis (centroid), so use y = 50 mm.
@@ -294,7 +296,7 @@ Calculate the normal stress at the top, bottom, and interface between flange and
 ::: {.callout-tip collapse="true" icon="false"}
 ## Solution
 
-Start with the internal moment, which is given in the problem statement as +50k·in. The positive moment indicates that the beam is bending concave up, with compression above the neutral axis and tension below.
+Start with the internal moment, which is given in the problem statement as +50 kip·in. The positive moment indicates that the beam is bending concave up, with compression above the neutral axis and tension below.
 
 ![](images/CH9%20PNGs/Example%209.1%20part%202.png){fig-alt="Curved beam segment with a thick blue shaded cross section. The beam bends concave upward, with the inner curve labeled Compression and the outer curve labeled Tension. The diagram illustrates positive bending, where the top fibers are in compression and the bottom fibers are in tension." fig-align="center" width="267"}
 
@@ -303,7 +305,7 @@ Next determine the beam properties, which are the centroid and the second moment
 ![](images/CH9%20PNGs/Example%209.1%20part%203.png){fig-alt="Same T-shaped composite section divided into two rectangles labeled 1 and 2. Rectangle 1 is the vertical stem, and Rectangle 2 is the horizontal flange. A black point labeled RP marks the reference point at the bottom left corner of the stem. Dimensions remain the same: the stem is 3 inches wide and 4.5 inches tall, and the flange is 9 inches wide and 1.5 inches tall." fig-align="center" width="270"}
 
 | Shape | $A {~(in.^2})$ | $\bar{y}{~(in.})$ | $A\bar{y}{~(in.^3})$ | $I_x{~(in.^4})$ | $d_y{~(in.})$ | $I_x+Ad_y^2{~(in.^4})$ |
-|----|----|----|----|----|----|----|
+|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
 | 1 | 13.5 | 2.25 | 30.375 | 22.78125 | 1.5 | 53.15625 |
 | 2 | 13.5 | 5.25 | 70.875 | 2.53125 | 1.5 | 32.90625 |
 |  | $\sum A$ = 27 |  | $\sum A\bar{y}$ = 101.25 |  |  | $\sum I_{x}$ = 86.0625 |
