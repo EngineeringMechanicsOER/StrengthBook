@@ -2,17 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.27">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>2&nbsp; Stress – Strength of Materials</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -36,19 +42,18 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-9dc9d438c90c12071cf8507e319c8f8e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-afd7089187cf7d32efec5ee34a48d68f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-9dc9d438c90c12071cf8507e319c8f8e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-401a889286c5821173c2f4aa5e879f43.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-9dd2f8e1bf8419b432835d0eea0bc284.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-401a889286c5821173c2f4aa5e879f43.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -90,10 +95,10 @@ gtag('config', 'G-7SWQ89TD9D', { 'anonymize_ip': true});
 document.addEventListener('DOMContentLoaded', function () {
 cookieconsent.run({
   "notice_banner_type":"simple",
-  "consent_type":"implied",
+  "consent_type":"express",
   "palette":"light",
   "language":"en",
-  "page_load_consent_levels":["strictly-necessary","functionality","tracking","targeting"],
+  "page_load_consent_levels":["strictly-necessary"],
   "notice_banner_reject_button_hide":false,
   "preferences_center_close_button_hide":false,
   "website_name":"",
@@ -106,7 +111,7 @@ cookieconsent.run({
   
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -549,10 +554,8 @@ window.Quarto = {
 Click to expand
 </summary>
 <p>Average normal stress is defined as the internal normal force divided by the cross-sectional area of the body. By convention, it is represented by the Greek letter sigma (σ). Stress increases as the force increases or as the cross-sectional area decreases.</p>
-<p><span id="eq-2.1"><span class="math display">\[
-\boxed
-{\sigma=\frac{N}{A}}\text{ ,}
-\tag{2.1}\]</span></span></p>
+<p><span id="eq-2.1"><span class="math display">\[\boxed
+{\sigma=\frac{N}{A}}\text{ ,} \tag{2.1}\]</span></span></p>
 <div class="line-block">where<br>
 <em>𝜎 = Average normal stress [Pa, psi]</em><br>
 <em>N = Internal normal force [N, lb]</em><br>
@@ -627,25 +630,19 @@ Figure&nbsp;2.2: The internal load is equally distributed over the cross-section
 <p><img src="images/Updated CH2 examples/example 2.1 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="A free body diagram of the same cylindrical column with a horizontal cut through it. A downward force arrow labeled F is shown on the top of the column, and an upward internal force arrow labeled N is shown at the cut surface, representing the internal normal force resisting the external load." width="113"></p>
 </figure>
 </div>
-<p><span class="math display">\[
-\begin{aligned}
+<p><span class="math display">\[\begin{aligned}
 \sum F_y = &amp;{~} N-F = 0\\
 \sum F_y = &amp;{~}N-65{~kips}=0\\
 &amp;N = 65{~kips}
-\end{aligned}
-\]</span></p>
+\end{aligned}\]</span></p>
 <p>Recall that 65 kips = 65,000 lb. It is acceptable to keep the force in kips and calculate the stress in units of <span class="math inline">\(\frac{kips}{in^2}=ksi\)</span>.</p>
 <p>The column has a circular cross-section of area <span class="math inline">\(A=\pi r^2=\pi(2)^2=4 \pi{~in.}^2\)</span>.</p>
 <p>The average normal stress can now be found from</p>
-<p><span class="math display">\[
-\sigma=\frac{N}{A}=\frac{65{~kips}}{4 \pi{~in.}^2}=5.17{~ksi}\text{.}
-\]</span></p>
+<p><span class="math display">\[\sigma=\frac{N}{A}=\frac{65{~kips}}{4 \pi{~in.}^2}=5.17{~ksi}\text{.}\]</span></p>
 <ol start="2" type="1">
 <li>Use the average normal stress equation again, but this time the stress is known to be 4 ksi. The loading has not changed, so the internal normal force will continue to be 65 kips.</li>
 </ol>
-<p><span class="math display">\[
-\sigma=\frac{N}{A} \rightarrow A=\frac{N}{\sigma}=\frac{65{~kips}}{4{~ksi}}=16.25 {~in.}^2
-\]</span></p>
+<p><span class="math display">\[\sigma=\frac{N}{A} \rightarrow A=\frac{N}{\sigma}=\frac{65{~kips}}{4{~ksi}}=16.25 {~in.}^2\]</span></p>
 <p>Since <span class="math inline">\(A=\pi r^2\)</span>, we can find <span class="math inline">\(r=\sqrt{\frac{A}{\pi}}=\sqrt{\frac{16.25{~in.}^2}{\pi}}=2.27{~in}\)</span>.</p>
 <p>Then <span class="math inline">\(d=2 r=2 * 2.27{~in.}=4.55{~in.}\)</span></p>
 <p>Note that this is the minimum required diameter to ensure the average normal stress doesn’t exceed 4 ksi. If the diameter is any smaller than this, the stress will exceed the 4 ksi limit.</p>
@@ -693,12 +690,10 @@ Figure&nbsp;2.2: The internal load is equally distributed over the cross-section
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>We can calculate average normal stress using <span class="math inline">\(\sigma=\frac{N}{A}\)</span>, so we need to find the area of each pipe and the normal force in each pipe. This can be completed in any order. Starting with the areas, calculate as follows:</p>
-<p><span class="math display">\[
-\begin{aligned}
+<p><span class="math display">\[\begin{aligned}
 &amp; A_1=\pi\left(0.035^2-0.02^2\right)=0.00259{~m}^2 \\
 &amp; A_2=\pi\left(0.055^2-0.03^2\right)=0.00668{~m}^2
-\end{aligned}
-\]</span></p>
+\end{aligned}\]</span></p>
 <p>The internal loads can be found by cutting a cross-section through each pipe, drawing a free body diagram, and writing an equilibrium equation.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -710,12 +705,10 @@ Figure&nbsp;2.2: The internal load is equally distributed over the cross-section
 <p><img src="images/chapter 2 figure edits april 2025/example 2.2 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Free body diagram of blocks 1 and 2, cut before the end of block 2 (before the application of F sub 3). The left side of the cut is shown. A vertical dashed line indicates the cut, located in block 2 to the right of the connection between the two blocks. On block 1, a force of 40 kilonewtons (F sub 1) acts horizontally to the right at the left end, and a force of 70 kilonewtons (F sub 2) acts horizontally to the left at the connection with block 2. On block 2, an internal normal force labeled N sub 2 acts horizontally to the right at the cut face." width="365"></p>
 </figure>
 </div>
-<p><span class="math display">\[
-\begin{aligned}
+<p><span class="math display">\[\begin{aligned}
 &amp;\sum F_x=40{~kN}-N_1=0 \quad \rightarrow \quad N_1=40{~kN} \\
 &amp;\sum F_x=40{~kN}-70{~kN}+N_2=0 \quad \rightarrow \quad N_2=30{~kN}
-\end{aligned}
-\]</span></p>
+\end{aligned}\]</span></p>
 <p>Note that we may choose to draw the internal load in either tension or compression. The answer must be compared to the FBD. A positive answer from the equilibrium equation indicates that the direction drawn on the FBD is correct. Although both answers here are positive, the FBD shows that N<sub>1</sub> is drawn in compression and N<sub>2</sub> is drawn in tension. These positive answers indicate that the drawings are correct. N<sub>1</sub> is 40 kN in compression and N<sub>2</sub> is 30 kN in tension.</p>
 <p>Note also that it is acceptable to draw an FBD of either side of the cross-section. This doesn’t change the result. Perhaps drawing the right-hand side of section 2 would have been an easier approach.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -723,17 +716,13 @@ Figure&nbsp;2.2: The internal load is equally distributed over the cross-section
 <p><img src="images/chapter 2 figure edits april 2025/example 2.2 part 4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Free body diagram of block 2. The block is cut near its midpoint with a vertical dashed line on the left side, and the right side of the cut is shown. An internal normal force labeled N sub 2 acts horizontally to the left at the cut face. On the right end of the block, an external force of 30 kilonewtons (F sub 3) acts horizontally to the right. This diagram shows that the same internal normal force (N sub 2) obtained in the previous diagram can also be derived by analyzing the opposite side of the cut." width="357"></p>
 </figure>
 </div>
-<p><span class="math display">\[
-\sum F_x=30{~kN}+N_2=0 \quad \rightarrow \quad N_2=30{~kN}
-\]</span></p>
+<p><span class="math display">\[\sum F_x=30{~kN}+N_2=0 \quad \rightarrow \quad N_2=30{~kN}\]</span></p>
 <p>We again find that N<sub>2</sub> is 30 kN in tension. You may always choose to draw either one side of a cross-section or the other. Make sure to include everything on the chosen side of your cut, all the way to the end of the structure (e.g., don’t stop at the weld).</p>
 <p>Now that the areas and internal loads are known, we can calculate the internal normal stresses.</p>
-<p><span class="math display">\[
-\begin{gathered}
+<p><span class="math display">\[\begin{gathered}
 \sigma_1=\frac{N_1}{A_1}=\frac{-40,000{~N}}{0.00259{~m}^2}=-15.4{~MPa} \\
 \sigma_2=\frac{N_2}{A_2}=\frac{30,000{~N}}{0.00668{~m}^2}=4.49{~MPa}
-\end{gathered}
-\]</span></p>
+\end{gathered}\]</span></p>
 </div>
 </div>
 </div>
@@ -779,9 +768,7 @@ Figure&nbsp;2.3: (A) External loads F creating (B), an internal normal force (N)
 </figure>
 </div>
 <p>Although the basic definition of average normal stress and average shear stress is the same—force divided by area—there are some differences. To differentiate which stress we’re talking about, we denote shear stress by the Greek letter tau (τ).</p>
-<p><span id="eq-2.2"><span class="math display">\[
-\boxed{\tau=\frac{V}{A}}\text{ ,}
-\tag{2.2}\]</span></span></p>
+<p><span id="eq-2.2"><span class="math display">\[\boxed{\tau=\frac{V}{A}}\text{ ,} \tag{2.2}\]</span></span></p>
 <div class="line-block">where<br>
 <em>τ = Average shear stress [Pa, psi]</em><br>
 <em>V = Internal shear force [N, lb]</em><br>
@@ -831,27 +818,19 @@ Figure&nbsp;2.3: (A) External loads F creating (B), an internal normal force (N)
 <p><img src="images/chapter 2 figure edits april 2025/example 2.3 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Free body diagram of a partially cut rectangular beam, showing the left segment up to 30 feet. A uniformly distributed load is applied along the top, along with its statically equivalent concentrated load labeled “200 × 30 = 6000 lb.” An upward external force of 15,000 pounds acts at the far left end. A vertical dashed line marks a cut 30 feet from the left end, with internal forces at the cut face: a downward shear force labeled V and a counterclockwise moment labeled M." width="391"></p>
 </figure>
 </div>
-<p><span class="math display">\[
-\sum F_y=15,000{~lb}-6,000{~lb}-V=0 \quad \rightarrow \quad V=9,000{~lb}
-\]</span></p>
+<p><span class="math display">\[\sum F_y=15,000{~lb}-6,000{~lb}-V=0 \quad \rightarrow \quad V=9,000{~lb}\]</span></p>
 <p>Note that an internal bending moment is also necessary to maintain equilibrium. We could find M by summing moments about any point, but the step is not required to solve this problem.</p>
 <p>The shear stress can now be calculated.</p>
-<p><span class="math display">\[
-\tau=\frac{V}{A}=\frac{9,000{~lb}}{60{~in.}^2}=150{~psi}
-\]</span></p>
+<p><span class="math display">\[\tau=\frac{V}{A}=\frac{9,000{~lb}}{60{~in.}^2}=150{~psi}\]</span></p>
 <p>At x = 80 ft:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/chapter 2 figure edits april 2025/example 2.3 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Free body diagram of a partially cut rectangular beam, showing the left segment up to 80 feet. A uniformly distributed load is applied along the top, with its statically equivalent concentrated load labeled “200 × 80 = 16000 lb.” An upward external force of 15,000 pounds acts at the far left end. A vertical dashed line marks a cut 80 feet from the left end, with internal resultants at the cut face: a downward shear force labeled V and a counterclockwise moment labeled M." width="389"></p>
 </figure>
 </div>
-<p><span class="math display">\[
-\sum F_y=15,000{~lb}-16,000{~lb}-V=0 \quad \rightarrow \quad V=-1,000{~lb}
-\]</span></p>
+<p><span class="math display">\[\sum F_y=15,000{~lb}-16,000{~lb}-V=0 \quad \rightarrow \quad V=-1,000{~lb}\]</span></p>
 <p>The negative sign here simply indicates that V is acting in the opposite direction of that drawn in the FBD. It can be discarded here because we are calculating the magnitude of the average shear stress at each point.</p>
-<p><span class="math display">\[
-\tau=\frac{V}{A}=\frac{1,000{~lb}}{60{~in.}^2}=16.7{~psi}
-\]</span></p>
+<p><span class="math display">\[\tau=\frac{V}{A}=\frac{1,000{~lb}}{60{~in.}^2}=16.7{~psi}\]</span></p>
 </div>
 </div>
 </div>
@@ -958,9 +937,7 @@ Figure&nbsp;2.5: Circular column sitting upon a rectangular foundation. Contact 
 </figure>
 </div>
 <p>One common situation is contact between two curved edges, such as the bolt in <a href="#fig-2.6" class="quarto-xref">Figure&nbsp;<span>2.6</span></a>. In this situation it is common to use the projected contact area between the curved surfaces, which forms a rectangle of base d and height t.</p>
-<p><span class="math display">\[
-A=d*t
-\]</span></p>
+<p><span class="math display">\[A=d*t\]</span></p>
 <p>This greatly simplifies the calculation but again represents an average value for the contact or bearing stress. See <a href="#exm-2.5" class="quarto-xref">Example&nbsp;<span>2.5</span></a> for a problem involving the bearing stress between a bolt and a plate.</p>
 <div id="fig-2.6" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Diagram illustrating bearing stress calculation between curved surfaces using a projected rectangular contact area. On the left, a side view of a bolt shows the region of contact highlighted in blue. On the right, an angled rectangular plate (or block) pointing southeast contains a curved cut out slightly before its midpoint, representing the surface where the bolt presses against the inner face of a hole. A rectangular patch is projected outward from the curved surface, representing the effective contact area used to calculate bearing stress. The rectangle is labeled with dimensions d (bolt diameter) and t (plate thickness)." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
@@ -1015,13 +992,9 @@ Figure&nbsp;2.6: When calculating the bearing stress between curved surfaces, pr
 </div>
 <p>The force between the pin and the bar will be <span class="math inline">\(F=50~kN = 50,000~N\)</span>.</p>
 <p>The projected contact area between the pin and the plate can be found from the diameter of the pin <span class="math inline">\((80~mm=0.08~m)\)</span> multiplied by the thickness of the plate <span class="math inline">\((30~mm=0.03~m)\)</span>.</p>
-<p><span class="math display">\[
-A=d*t=0.08*0.03=0.0024~m^2
-\]</span></p>
+<p><span class="math display">\[A=d*t=0.08*0.03=0.0024~m^2\]</span></p>
 <p>Now we can calculate the bearing stress.</p>
-<p><span class="math display">\[
-\sigma=\frac{50,000~N}{0.0024~m^2}=20.8*10^6~Pa=20.8~MPa
-\]</span></p>
+<p><span class="math display">\[\sigma=\frac{50,000~N}{0.0024~m^2}=20.8*10^6~Pa=20.8~MPa\]</span></p>
 </div>
 </div>
 </div>
@@ -1067,16 +1040,12 @@ Figure&nbsp;2.7: (A) External loads, F, will create (B) an internal normal force
 </figure>
 </div>
 <p>In this scenario, to maintain equilibrium the internal load must still be equal and opposite to the external load, but because the cross-section is cut at an angle, this internal load is neither parallel nor perpendicular to the cross-section. Therefore, it is not entirely a normal force or a shear force. However, the internal force may be broken into components that are perpendicular and parallel to the cross-section.</p>
-<p><span class="math display">\[
-\begin{aligned}
+<p><span class="math display">\[\begin{aligned}
 &amp; N=P \sin (\theta) \\
 &amp; V=P \cos (\theta)
-\end{aligned}
-\]</span></p>
+\end{aligned}\]</span></p>
 <p>The area used to calculate the average normal and shear stresses must be the area of the inclined plane (<a href="#fig-2.8" class="quarto-xref">Figure&nbsp;<span>2.8</span></a>). Setting up a right-angled triangle enables us to find the area of the plane, A<sub>p</sub>.</p>
-<p><span class="math display">\[
-A_p=\frac{A}{\sin (\theta)}
-\]</span></p>
+<p><span class="math display">\[A_p=\frac{A}{\sin (\theta)}\]</span></p>
 <p>We can then calculate average normal stress.</p>
 <p><span id="eq-2.3"><span class="math display">\[\boxed{\sigma=\frac{N}{A_p}=\frac{P \sin (\theta)}{\frac{A}{\sin (\theta)}}=\frac{P \sin ^2(\theta)}{A}} \tag{2.3}\]</span></span></p>
 <p>We can calculate average shear stress from</p>
@@ -1144,33 +1113,25 @@ Figure&nbsp;2.8: When calculating the stresses on an inclined plane, it is impor
 </figure>
 </div>
 <p>Use equilibrium equations to determine the internal forces. It will be easiest to define axes parallel and perpendicular to the inclined plane.</p>
-<p><span class="math display">\[
-\begin{aligned}
+<p><span class="math display">\[\begin{aligned}
 \sum F_{x^{\prime}}= F \cos (\theta)-V=0 \\
 \sum F_{y^{\prime}}= N-F \sin (\theta)=0
-\end{aligned}
-\]</span></p>
+\end{aligned}\]</span></p>
 <p>With F = 30 kN and θ = 40°, these can be solved for.</p>
-<p><span class="math display">\[
-\begin{aligned}
+<p><span class="math display">\[\begin{aligned}
 \sum F_{x^{\prime}}= 30{~kN} \cos (40^{\circ})-V=0 \\
 V = 23.0{~kN}\\
 \sum F_{y^{\prime}}= N-30{~kN} \sin (40^{\circ})=0\\
 N=19.3{~kN}
-\end{aligned}
-\]</span></p>
+\end{aligned}\]</span></p>
 <p>N = 19.3 kN and V = 23.0 kN.</p>
 <p>Next, determine the cross-sectional area of the inclined plane.</p>
-<p><span class="math display">\[
-A_p=\frac{A}{\sin (\theta)}
-\]</span>With <span class="math inline">\(A = 0.05{~m}*0.02{~m} = 0.001{~m}^2\)</span> and <span class="math inline">\(θ = 40°\)</span>, <span class="math inline">\(Ap = 0.00156{~m}^2\)</span>.</p>
+<p><span class="math display">\[A_p=\frac{A}{\sin (\theta)}\]</span> With <span class="math inline">\(A = 0.05{~m}*0.02{~m} = 0.001{~m}^2\)</span> and <span class="math inline">\(θ = 40°\)</span>, <span class="math inline">\(Ap = 0.00156{~m}^2\)</span>.</p>
 <p>Finally, determine the average normal stress and the average shear stress.</p>
-<p><span class="math display">\[
-\begin{aligned}
+<p><span class="math display">\[\begin{aligned}
 \sigma &amp; =\frac{N}{A_p}=\frac{19,300{~N}}{0.00156{~m}^2}=12.4 \times 10^6 \frac{{N}}{m^2}=12.4{~MPa} \\
 \tau &amp; =\frac{V}{A_p}=\frac{23,000{~N}}{0.00156{~m}^2}=14.8 \times 10^6 \frac{\mathrm{N}}{m^2}=14.8{~MPa}
-\end{aligned}
-\]</span></p>
+\end{aligned}\]</span></p>
 </div>
 </div>
 </div>
@@ -1234,24 +1195,16 @@ Click to expand
 </div>
 <div class="callout-body-container callout-body">
 <p>Average normal stress:</p>
-<p><span class="math display">\[
-\sigma=\frac{N}{A}
-\]</span></p>
+<p><span class="math display">\[\sigma=\frac{N}{A}\]</span></p>
 <p>Average shear stress:</p>
-<p><span class="math display">\[
-\tau=\frac{V}{A}
-\]</span></p>
+<p><span class="math display">\[\tau=\frac{V}{A}\]</span></p>
 <p>Bearing stress:</p>
-<p><span class="math display">\[
-\sigma=\frac{N}{A}
-\]</span></p>
+<p><span class="math display">\[\sigma=\frac{N}{A}\]</span></p>
 <p>Average stresses on an inclined plane:</p>
-<p><span class="math display">\[
-\begin{aligned}
+<p><span class="math display">\[\begin{aligned}
 \sigma &amp; =\frac{P \sin ^2(\theta)}{A} \\
 \tau &amp; =\frac{P \sin (\theta) \cos (\theta)}{A}
-\end{aligned}
-\]</span></p>
+\end{aligned}\]</span></p>
 </div>
 </div>
 </details>

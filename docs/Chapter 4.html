@@ -2,17 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.27">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>4&nbsp; Mechanical Properties of Materials – Strength of Materials</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -36,19 +42,18 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-9dc9d438c90c12071cf8507e319c8f8e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-afd7089187cf7d32efec5ee34a48d68f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-9dc9d438c90c12071cf8507e319c8f8e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-401a889286c5821173c2f4aa5e879f43.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-9dd2f8e1bf8419b432835d0eea0bc284.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-401a889286c5821173c2f4aa5e879f43.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -90,10 +95,10 @@ gtag('config', 'G-7SWQ89TD9D', { 'anonymize_ip': true});
 document.addEventListener('DOMContentLoaded', function () {
 cookieconsent.run({
   "notice_banner_type":"simple",
-  "consent_type":"implied",
+  "consent_type":"express",
   "palette":"light",
   "language":"en",
-  "page_load_consent_levels":["strictly-necessary","functionality","tracking","targeting"],
+  "page_load_consent_levels":["strictly-necessary"],
   "notice_banner_reject_button_hide":false,
   "preferences_center_close_button_hide":false,
   "website_name":"",
@@ -106,7 +111,7 @@ cookieconsent.run({
   
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -567,13 +572,9 @@ Click to expand
 </summary>
 <p>A common method of measuring mechanical properties of materials is the tensile test, which involves placing a cylinder or bar of material in a load frame (such as shown in <a href="#fig-4.1" class="quarto-xref">Figure&nbsp;<span>4.1</span></a> (A)) and subjecting the specimen to tensile loading. A specimen (such as shown in <a href="#fig-4.1" class="quarto-xref">Figure&nbsp;<span>4.1</span></a> (B)) is mounted in grips that are then separated at a prescribed displacement rate. Because of the likelihood of failures at the grip due to concentrations of stress, specimens are typically “waisted” to form dog bone or dumbbell shapes. Large fillets are used to reduce stress concentrations associated with the different areas (see <a href="Chapter 5.html#sec-5.2" class="quarto-xref"><span>Section 5.2</span></a>), and failure typically occurs within the narrowed region of the specimen because of the smaller cross-sectional area. This region is often referred to as the gauge length, as this becomes the area of interest for the specimen.</p>
 <p>The applied tensile load is steadily increased and along with the deformation of the specimen is measured and recorded at regular intervals. To determine deformation, a device such as a mechanical extensometer—see <a href="#fig-4.1" class="quarto-xref">Figure&nbsp;<span>4.1</span></a> (C)—is mounted on the specimen. The specimen produces a uniform uniaxial stress state within its gauge region. For each data point, the load is used to calculate the average normal stress from <a href="Chapter 2.html#eq-2.1" class="quarto-xref">Equation&nbsp;<span>2.1</span></a>.</p>
-<p><span class="math display">\[
-\sigma=\frac{N}{A}
-\]</span></p>
+<p><span class="math display">\[\sigma=\frac{N}{A}\]</span></p>
 <p>The deformation is used to calculate the average normal strain from <a href="Chapter 3.html#eq-3.1" class="quarto-xref">Equation&nbsp;<span>3.1</span></a>, where ΔL is the deformation measured by the strain gauge over the active length of the extensometer, L.</p>
-<p><span class="math display">\[
-\varepsilon=\frac{\Delta L}{L}
-\]</span></p>
+<p><span class="math display">\[\varepsilon=\frac{\Delta L}{L}\]</span></p>
 <p>These quantities are essential in engineering design because properties from appropriate tests on laboratory specimens may be used to predict the behavior of much more complex engineering components.</p>
 <div id="fig-4.1" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Three labeled visuals related to a tensile test, arranged horizontally from left to right as A, B, and C. Picture A (left) shows a universal testing machine with a mounted touchscreen control panel. Picture B (center) displays four different tensile test specimens, each with a narrowed middle section to promote failure at the center. Picture C (right) shows a close-up view of a circular specimen gripped in the testing machine, with an extensometer attached to measure deformation during the test." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
@@ -664,14 +665,10 @@ Click to expand
 <p>The slope of the linear region of this stress-strain diagram represents an important material property known as the elastic modulus (also known as Young’s modulus or the modulus of elasticity), so designated by <a href="https://en.wikipedia.org/wiki/Thomas_Young_(scientist)">E. Thomas Young</a> (1773-1829), a British scientist who noted the proportionality between applied force and extension, which he recorded as <em>ut tensio sic vis</em>, meaning “as is the extension, so is the force.”</p>
 <p>The elastic modulus can be thought of as a measure of stiffness of the material. A high elastic modulus for stiff materials is represented by a steep slope—that is, a large increase in stress with only a small increase in strain. A low elastic modulus for soft materials is represented by a shallow slope, indicating a small increase in stress but a large increase in strain.</p>
 <p>The linear elastic region of material response is of enormous importance for most engineering structures. Loading significantly beyond this proportional limit can result in pronounced yielding and permanent deformation that is often unacceptable, unless one is using this deformation to absorb energy (as in an automobile frame involved in collision). The elastic modulus is illustrated in <a href="#fig-4.5" class="quarto-xref">Figure&nbsp;<span>4.5</span></a>, which plots a portion of the normal stress versus normal strain, for example, from a tensile test.</p>
-<p><span class="math display">\[
-E=\frac{\sigma}{\varepsilon}
-\]</span></p>
+<p><span class="math display">\[E=\frac{\sigma}{\varepsilon}\]</span></p>
 <p>Since strain is unitless, elastic modulus will have the same units as stress (Pa or psi).</p>
 <p>This relationship is more commonly called Hooke’s law, and written as</p>
-<p><span id="eq-4.1"><span class="math display">\[
-\boxed{\sigma=E \varepsilon}\text{ ,}
-\tag{4.1}\]</span></span></p>
+<p><span class="math display">\[\boxed{\sigma=E \varepsilon}\text{ ,}\]</span> {#eq-4.1}</p>
 <div class="line-block">where<br>
 <em>𝜎 = Average normal stress [Pa, psi]</em><br>
 <em>E = Elastic modulus [Pa, psi]</em><br>
@@ -730,20 +727,12 @@ Figure&nbsp;4.5: Illustration of the initial linear elastic portions of the stre
 <p><img src="images/CH4 PNGs/example 4.1 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Free-body diagram of the right portion of the welded bar, isolated by a vertical dashed cut through member AB. A leftward normal force labeled N is applied at the cut face. To the right of the cut, the bar transitions into a thinner segment. A 200 kN force acts rightward at the interface between the thick and thin segments, and a 100 kN force acts rightward at the far right end of the bar." width="386"></p>
 </figure>
 </div>
-<p><span class="math display">\[
-\sum F_x= 100{~kN}+200{~kN}-N=0 \quad\rightarrow\quad N=300{~kN}
-\]</span></p>
+<p><span class="math display">\[\sum F_x= 100{~kN}+200{~kN}-N=0 \quad\rightarrow\quad N=300{~kN}\]</span></p>
 <p>Calculate the normal stress.</p>
-<p><span class="math display">\[
-\sigma=\frac{N}{A}=\frac{300,000{~kN}}{\pi(0.025)^2{~m}^2}=152.8{~MPa}
-\]</span></p>
+<p><span class="math display">\[\sigma=\frac{N}{A}=\frac{300,000{~kN}}{\pi(0.025)^2{~m}^2}=152.8{~MPa}\]</span></p>
 <p>Calculate the normal strain.</p>
-<p><span class="math display">\[
-\varepsilon=\frac{\Delta L}{L}=\frac{4{~mm}}{5,000{~mm}}=0.0008
-\]</span></p>
-<p>Use Hooke’s law to calculate the elastic modulus. <span class="math display">\[
-E=\frac{\sigma}{\varepsilon}=\frac{152.8 \times 10^6{~Pa}}{0.0008}=191{~GPa}
-\]</span></p>
+<p><span class="math display">\[\varepsilon=\frac{\Delta L}{L}=\frac{4{~mm}}{5,000{~mm}}=0.0008\]</span></p>
+<p>Use Hooke’s law to calculate the elastic modulus. <span class="math display">\[E=\frac{\sigma}{\varepsilon}=\frac{152.8 \times 10^6{~Pa}}{0.0008}=191{~GPa}\]</span></p>
 </div>
 </div>
 </div>
@@ -778,9 +767,7 @@ E=\frac{\sigma}{\varepsilon}=\frac{152.8 \times 10^6{~Pa}}{0.0008}=191{~GPa}
 Click to expand
 </summary>
 <p>When you stretch a rubber band, you’ll notice that the band gets longer in the direction of the applied force, but the width of the band decreases. That is, a normal strain occurs in the axial (length) direction and also in the lateral (width or thickness) direction. These normal strains couple in perpendicular directions. Poisson’s ratio is the material property that describes the proportional relationship between axial and lateral strains. Named after <a href="https://en.wikipedia.org/wiki/Sim%C3%A9on_Denis_Poisson">Siméon Denis Poisson</a> (1781-1840), the French mathematician and physicist, Poisson’s ratio is defined as the negative of the lateral strain divided by the axial strain for a uniaxially loaded material. It may be expressed as</p>
-<p><span id="eq-4.2"><span class="math display">\[
-\boxed{\nu=-\frac{\varepsilon_{lateral}}{\varepsilon_{axial}}}\text{ ,}
-\tag{4.2}\]</span></span></p>
+<p><span class="math display">\[\boxed{\nu=-\frac{\varepsilon_{lateral}}{\varepsilon_{axial}}}\text{ ,}\]</span> {#eq-4.2}</p>
 <div class="line-block">where<br>
 <em>𝜈 = Poisson’s ratio</em><br>
 <em>𝜀<sub>lateral</sub> = Lateral normal strain</em><br>
@@ -835,9 +822,7 @@ Figure&nbsp;4.6: Illustration of axial and lateral strains for (A) Tensile loadi
 <div class="callout-body-container callout-body">
 <p>The longitudinal strain is given as ε<sub>longitudinal</sub> = 0.005.</p>
 <p>The lateral strain is determined from the reduction in diameter divided by the original diameter and is negative because it is contracting.</p>
-<p><span class="math display">\[
-\varepsilon_{lateral}=-\frac{0.02~mm}{10~mm}=-0.002
-\]</span></p>
+<p><span class="math display">\[\varepsilon_{lateral}=-\frac{0.02~mm}{10~mm}=-0.002\]</span></p>
 <p>Poisson’s ratio is then easily determined as</p>
 <p><span class="math display">\[\nu=-\frac{\varepsilon_{lateral}}{\varepsilon_{axial}}=-\frac{-0.002}{0.005}=0.4\]</span></p>
 </div>
@@ -873,9 +858,7 @@ Figure&nbsp;4.6: Illustration of axial and lateral strains for (A) Tensile loadi
 Click to expand
 </summary>
 <p>In addition to considering normal stresses and strains, engineers require an understanding of the relationship between shear stresses and shear strains. Like the tensile test for normal stress and strain, a shear test can be performed to produce a diagram of shear stress against shear strain. The slope of a shear stress versus shear strain diagram is referred to as the shear modulus or modulus of rigidity and is designated by G. The corresponding slope of a shear stress versus shear strain plot is referred to as the shear modulus or modulus of rigidity, as shown in <a href="#fig-4.7" class="quarto-xref">Figure&nbsp;<span>4.7</span></a> (B).</p>
-<p><span id="eq-4.3"><span class="math display">\[
-\boxed{\tau=G \gamma}\text{ ,}
-\tag{4.3}\]</span></span></p>
+<p><span class="math display">\[\boxed{\tau=G \gamma}\text{ ,}\]</span> {#eq-4.3}</p>
 <div class="line-block">where<br>
 <em>𝜏 = Shear stress [Pa, psi]</em><br>
 <em>G = Shear modulus or modulus of rigidity [Pa, psi]</em><br>
@@ -891,9 +874,7 @@ Figure&nbsp;4.7: Illustration of the initial linear elastic portions of the stre
 </figure>
 </div>
 <p>Noted that the elastic modulus, the shear modulus, and Poisson’s ratio are not independent of each other. For isotropic materials, only two are independent, linear elastic properties; knowing any two allows us to calculate the others. It can be shown that</p>
-<p><span id="eq-4.4"><span class="math display">\[
-\boxed{G=\frac{E}{2(1+v)}}\text{ ,}
-\tag{4.4}\]</span></span></p>
+<p><span class="math display">\[\boxed{G=\frac{E}{2(1+v)}}\text{ ,}\]</span> {#eq-4.4}</p>
 <div class="line-block">where<br>
 <em>G = Shear modulus or modulus of rigidity [Pa, psi]</em><br>
 <em>E = Elastic modulus [Pa, psi]</em><br>
@@ -936,24 +917,18 @@ Figure&nbsp;4.7: Illustration of the initial linear elastic portions of the stre
 <div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>First determine the shear stress.</p>
-<p><span class="math display">\[
-\begin{aligned}
+<p><span class="math display">\[\begin{aligned}
 &amp;A=L^2=(0.01~m)^2 \\
 &amp;\tau=\frac{V}{A} \\
 &amp; \tau=\frac{5{~N}}{(0.01{~m})^2}=50{~kPa} \\
-\end{aligned}
-\]</span></p>
+\end{aligned}\]</span></p>
 <p>Then determine the shear strain.</p>
-<p><span class="math display">\[
-\begin{aligned}
+<p><span class="math display">\[\begin{aligned}
 &amp; \gamma = \frac{\Delta x}{L}\\
 &amp; \gamma=\frac{0.3{~mm}}{10{~mm}}=0.03 \\
-\end{aligned}
-\]</span></p>
+\end{aligned}\]</span></p>
 <p>Finally, calculate the shear modulus.</p>
-<p><span class="math display">\[
-G=\frac{\tau}{\gamma}=50{~kPa}/0.03=1.667{~MPa}
-\]</span></p>
+<p><span class="math display">\[G=\frac{\tau}{\gamma}=50{~kPa}/0.03=1.667{~MPa}\]</span></p>
 </div>
 </div>
 </div>
@@ -990,17 +965,11 @@ Click to expand
 <p>Other factors in addition to relationships arising between load, stress, and strain, can affect dimensional changes of materials as well as changes in the stresses present in a structure. Most materials will expand, for example, when their temperature is increased. Many engineering structures will experience significant temperature variations during their life, beginning with thermal processes involved in their manufacture, cyclic temperature changes (e.g., day/night or summer/winter), or because of their usage, such as an engine block heating up or cooling down. Although dimensional changes from temperature often appear to be quite small, they can lead to significant changes in stress state, and in fact numerous failures result not from applied mechanical loading but from thermal exposure issues. Though beyond the current scope, dimensional changes can also result from other environmental factors, such as the expansion of a material as water is absorbed, or from the application of electric fields for materials that exhibit piezoelectric properties.</p>
 <p>Vibrational energy of atoms increases as temperature increases, typically leading to slightly greater atomic separation distances. This expansion leads to dimensional changes in the material, and the behavior is characterized by the material’s coefficient of thermal expansion (CTE). The linear CTE is often designated by <span class="math inline">\(\alpha\)</span> and is defined as the change in strain per unit change in temperature. As with the other material properties discussed in this chapter, ⍺ is assumed to be constant for any given material.</p>
 <p>The CTE is independent of direction in isotropic materials. We can determine the CTE by heating or cooling a specimen and measuring the resulting strain (ε) or dimensional change and recording the change in temperature (ΔT).</p>
-<p><span class="math display">\[
-\alpha=\frac{\varepsilon}{\Delta T}=\frac{\frac{\Delta L}{L}}{\Delta T}\text{,}
-\]</span></p>
+<p><span class="math display">\[\alpha=\frac{\varepsilon}{\Delta T}=\frac{\frac{\Delta L}{L}}{\Delta T}\text{,}\]</span></p>
 <p>where <span class="math inline">\(\Delta T=T_{final}-T_{initial}\)</span>. Since strain is unitless, CTE has units of <span class="math inline">\(\frac{1}{{ }^{\circ} \mathrm{C}}\)</span> or <span class="math inline">\(\frac{1}{{ }^{\circ} F}\)</span>. Knowing the CTE enables us to easily determine the strain expected when a material is subjected to a temperature change of ΔT.</p>
-<p><span id="eq-4.5"><span class="math display">\[
-\boxed{\varepsilon_T=\alpha \cdot \Delta T}
-\tag{4.5}\]</span></span></p>
+<p><span class="math display">\[\boxed{\varepsilon_T=\alpha \cdot \Delta T}\]</span> {#eq-4.5}</p>
 <p>Or dimensional changes can be determined as</p>
-<p><span id="eq-4.6"><span class="math display">\[
-\boxed{\Delta L=\alpha \cdot \Delta T \cdot L}\text{ ,}
-\tag{4.6}\]</span></span></p>
+<p><span class="math display">\[\boxed{\Delta L=\alpha \cdot \Delta T \cdot L}\text{ ,}\]</span> {#eq-4.6}</p>
 <div class="line-block">where<br>
 <em>𝜀<sub>T</sub> = Thermal strain</em><br>
 <em>𝛼 = Coefficient of thermal expansion</em> <span class="math inline">\(\left[\frac{1}{^\circ C},\frac{1}{^\circ F}\right]\)</span><br>
@@ -1109,37 +1078,29 @@ Figure&nbsp;4.9: 2D view of the x-y plane of a 3D stress element.
 </figure>
 </div>
 <p>Given the concept of Poisson’s ratio, recognize that a normal stress in one direction creates normal strains in all three directions (x, y, and z). We have reviewed this in responding to the application of a uniaxial stress state—a normal stress applied in only one direction. For example, a normal stress in the x direction means there will be a normal strain in the x direction and also in the y and z directions.</p>
-<p><span class="math display">\[
-\begin{aligned}
+<p><span class="math display">\[\begin{aligned}
 &amp; \varepsilon_x=\frac{\sigma_x}{E} \\
 &amp; \varepsilon_y=-v \varepsilon_x=-\frac{\nu \sigma_x}{E} \\
 &amp; \varepsilon_z=-\nu \varepsilon_x=-\frac{\nu \sigma_x}{E}
-\end{aligned}
-\]</span></p>
+\end{aligned}\]</span></p>
 <p>Most engineering structures, however, involve more complex stress states, in which stresses may be applied in the x, y, and z directions. We refer to these as multiaxial stress states. We can define similar equations for a normal stress applied in the y direction.</p>
-<p><span class="math display">\[
-\begin{aligned}
+<p><span class="math display">\[\begin{aligned}
 &amp; \varepsilon_y=\frac{\sigma_y}{E} \\
 &amp; \varepsilon_x=-\nu \varepsilon_y=-\frac{\nu \sigma_y}{E} \\
 &amp; \varepsilon_z=-\nu \varepsilon_y=-\frac{\nu \sigma_y}{E}
-\end{aligned}
-\]</span></p>
+\end{aligned}\]</span></p>
 <p>And we can do likewise for a normal stress applied in the z direction.</p>
-<p><span class="math display">\[
-\begin{aligned}
+<p><span class="math display">\[\begin{aligned}
 &amp; \varepsilon_z=\frac{\sigma_z}{E} \\
 &amp; \varepsilon_x=-\nu \varepsilon_z=-\frac{\nu \sigma_z}{E} \\
 &amp; \varepsilon_y=-\nu \varepsilon_z=-\frac{\nu \sigma_z}{E}
-\end{aligned}
-\]</span></p>
+\end{aligned}\]</span></p>
 <p>If loads are applied in all three directions simultaneously, we can determine the overall strain in each direction by simply adding together the above components.</p>
-<p><span id="eq-4.7"><span class="math display">\[
-\boxed{\begin{aligned}
+<p><span class="math display">\[\boxed{\begin{aligned}
 &amp; \varepsilon_x=\frac{\sigma_x}{E}-\frac{\nu \sigma_y}{E}-\frac{\nu \sigma_z}{E}=\frac{1}{E}\left[\sigma_x-\nu\left(\sigma_y+\sigma_z\right)\right] \\
 &amp; \varepsilon_y=\frac{1}{E}\left[\sigma_y-\nu\left(\sigma_x+\sigma_z\right)\right] \\
 &amp; \varepsilon_z=\frac{1}{E}\left[\sigma_z-\nu\left(\sigma_x+\sigma_y\right)\right]
-\end{aligned}}\text{ ,}
-\tag{4.7}\]</span></span></p>
+\end{aligned}}\text{ ,}\]</span> {#eq-4.7}</p>
 <div class="line-block">where<br>
 <em>𝜀<sub>x</sub>, 𝜀<sub>y</sub>, 𝜀<sub>z</sub> = Normal strain in the x, y, and z directions</em><br>
 <em>𝜎<sub>x</sub>, 𝜎<sub>y</sub>, 𝜎<sub>z</sub> = Normal stress in the x, y, and z directions [Pa, psi]</em><br>
@@ -1148,13 +1109,11 @@ Figure&nbsp;4.9: 2D view of the x-y plane of a 3D stress element.
 <p>This is the generalized Hooke’s law for the three-dimensional state of stress. <a href="#exm-4.5" class="quarto-xref">Example&nbsp;<span>4.5</span></a> demonstrates the application of the generalized Hooke’s law to a problem with stresses acting in the x, y, and z directions.</p>
 <p>Similarly, normal strains are written with a single subscript as ε<sub>x</sub>, ε<sub>y</sub>, and ε<sub>z</sub>, whereas shear strains are written with two subscripts as 𝛾<sub>xy</sub> = 𝛾<sub>yx</sub>, 𝛾<sub>xz</sub> = 𝛾<sub>zx</sub>, and 𝛾<sub>yz</sub> = 𝛾<sub>zy</sub>.</p>
 <p>The relationships between shear stresses and strains do not change in isotropic materials subjected to additional other stress components, so</p>
-<p><span id="eq-4.8"><span class="math display">\[
-\boxed{\begin{aligned}
+<p><span class="math display">\[\boxed{\begin{aligned}
 &amp; \gamma_{xy}=\frac{\tau_{xy}}{G} \\
 &amp; \gamma_{yz}=\frac{\tau_{yz}}{G} \\
 &amp; \gamma_{xz}=\frac{\tau_{xz}}{G}
-\end{aligned}}\text{ ,}
-\tag{4.8}\]</span></span></p>
+\end{aligned}}\text{ ,}\]</span> {#eq-4.8}</p>
 <div class="line-block">where<br>
 <em>𝛾<sub>xy</sub>, 𝛾<sub>yz</sub>, 𝛾<sub>xz</sub> = Shear strains</em><br>
 <em>𝜏<sub>xy</sub>, 𝜏<sub>yz</sub>, 𝜏<sub>xz</sub> = Shear stresses [Pa, psi]</em><br>
@@ -1195,15 +1154,13 @@ Figure&nbsp;4.9: 2D view of the x-y plane of a 3D stress element.
 <div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>First, note that a compressive stress acts in all directions, so σ<sub>x</sub> = σ<sub>y</sub> = σ<sub>z</sub> = -10 MPa. We can choose any one of the generalized Hooke’s law equations to determine the strain in the corresponding direction, but note that all normal strains will be the same.</p>
-<p><span class="math display">\[
-\begin{aligned}
+<p><span class="math display">\[\begin{aligned}
 &amp; \varepsilon_x=\frac{1}{E}\left[\sigma_x-v\left(\sigma_y+\sigma_z\right)\right] \\
 &amp; \varepsilon=\frac{-\sigma}{E}[1-2 v] \\
 &amp; \varepsilon=\frac{-10 {~MPa}}{3{~GPa}}[1-2*0.38]=-0.0008=-0.08 \% \\
 &amp; \varepsilon = \frac{\Delta L}{L}\\
 &amp; \Delta L = \varepsilon L=-0.0008*50 {~mm}=-0.04{~mm}
-\end{aligned}
-\]</span></p>
+\end{aligned}\]</span></p>
 <p>If we used the simple uniaxial Hooke’s law, σ = Eε, we would erroneously obtain a strain of <span class="math inline">\(\varepsilon=\frac{\sigma}{E}=\frac{-10~MPa}{3~GPa}=-0.033=-0.33\%\)</span> and a change in length of –0.167 mm, more than four times the correct answer!</p>
 </div>
 </div>
@@ -1238,9 +1195,7 @@ Figure&nbsp;4.9: 2D view of the x-y plane of a 3D stress element.
 Click to expand
 </summary>
 <p>Safety is of primary importance in engineering practice, and various engineering principles and codes are built on the necessity of considering the safety of products we design. Using the methods in this book, we can predict the stresses in a component. Rather than allowing the maximum anticipated stress to equal the failure stress, however, we apply a factor of safety (FS) such that the maximum allowable stress in the component is only a fraction of the failure stress. The factor of safety varies depending on the application, consequences of failure, uncertainty around loading, industry standards, and many other factors.</p>
-<p><span id="eq-4.9"><span class="math display">\[
-\boxed{\sigma_{allow}=\frac{\sigma_{fail}}{FS}}\text{ ,}
-\tag{4.9}\]</span></span></p>
+<p><span class="math display">\[\boxed{\sigma_{allow}=\frac{\sigma_{fail}}{FS}}\text{ ,}\]</span> {#eq-4.9}</p>
 <div class="line-block">where<br>
 <em>𝜎<sub>allow</sub> = Allowable stress [Pa, psi]</em><br>
 <em>𝜎<sub>fail</sub> = Failure stress [Pa, psi]</em><br>
@@ -1283,16 +1238,10 @@ Click to expand
 <div id="callout-17" class="callout-17-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>First determine the normal force in the wire caused by the mass.</p>
-<p><span class="math display">\[
-N=40{~kg} * 9.81~\frac{{m}}{{s}^2}=392~\frac{{kg} \cdot {m}}{{s}^2}=392{~N} \\
-\]</span>The stress in the wire can be calculated from</p>
-<p><span class="math display">\[
-\sigma=\frac{N}{A}=\frac{392{~N}}{\pi*(0.001{~m})^2}=124.8{~MPa}
-\]</span></p>
+<p><span class="math display">\[N=40{~kg} * 9.81~\frac{{m}}{{s}^2}=392~\frac{{kg} \cdot {m}}{{s}^2}=392{~N} \\\]</span> The stress in the wire can be calculated from</p>
+<p><span class="math display">\[\sigma=\frac{N}{A}=\frac{392{~N}}{\pi*(0.001{~m})^2}=124.8{~MPa}\]</span></p>
 <p>Since the failure stress in the wire is 200 MPa, the factor of safety can be determined from</p>
-<p><span class="math display">\[
-FS=\frac{\sigma_{fail}}{\sigma_{allow}}=\frac{200{~MPa}}{124.8{~MPa}}=1.60
-\]</span></p>
+<p><span class="math display">\[FS=\frac{\sigma_{fail}}{\sigma_{allow}}=\frac{200{~MPa}}{124.8{~MPa}}=1.60\]</span></p>
 </div>
 </div>
 </div>
@@ -1332,23 +1281,17 @@ FS=\frac{\sigma_{fail}}{\sigma_{allow}}=\frac{200{~MPa}}{124.8{~MPa}}=1.60
 <div id="callout-19" class="callout-19-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Use the failure stress and factor of safety to determine the allowable stress in the column.</p>
-<p><span class="math display">\[
-\sigma_{allow}=\frac{\sigma_{fail}}{FS}=\frac{1,200~psi}{2.5}=480~psi
-\]</span></p>
+<p><span class="math display">\[\sigma_{allow}=\frac{\sigma_{fail}}{FS}=\frac{1,200~psi}{2.5}=480~psi\]</span></p>
 <p>Next, determine the required cross-sectional area of the column so that the stress does not exceed 480 psi.</p>
-<p><span class="math display">\[
-\begin{aligned}
+<p><span class="math display">\[\begin{aligned}
 \sigma&amp;=\frac{N}{A} \\
 A&amp;=\frac{N}{\sigma} \\
 &amp;=\frac{3,000~lb}{480~psi} \\
 &amp;=6.25~in.^2
-\end{aligned}
-\]</span></p>
+\end{aligned}\]</span></p>
 <p>Finally, determine the dimension of each side of the square cross-section.</p>
-<p><span class="math display">\[
-A=L^2 \\
-L=\sqrt{A}=\sqrt{6.25} = 2.5~ in.
-\]</span></p>
+<p><span class="math display">\[A=L^2 \\
+L=\sqrt{A}=\sqrt{6.25} = 2.5~ in.\]</span></p>
 <p>The column cross-section must be at least 2.5 in. on each side so that the stress doesn’t exceed the allowable stress of 480 psi.</p>
 <p>We may safely make the dimension larger than 2.5 in., which reduces the stress further but also increases weight and cost. We may not make the dimension any smaller than 2.5 in., as this will result in a stress greater than 480 psi.</p>
 </div>
@@ -1414,46 +1357,28 @@ Click to expand
 </div>
 <div class="callout-body-container callout-body">
 <p>Hooke’s law:</p>
-<p><span class="math display">\[
-\sigma=E \varepsilon_{long}
-\]</span></p>
+<p><span class="math display">\[\sigma=E \varepsilon_{long}\]</span></p>
 <p>Poisson’s ratio:</p>
-<p><span class="math display">\[
-\nu=-\frac{\varepsilon_{lat}}{\varepsilon_{long}}
-\]</span></p>
+<p><span class="math display">\[\nu=-\frac{\varepsilon_{lat}}{\varepsilon_{long}}\]</span></p>
 <p>Shear stress and strain:</p>
-<p><span class="math display">\[
-\tau=G \gamma
-\]</span></p>
+<p><span class="math display">\[\tau=G \gamma\]</span></p>
 <p>Relationship between E, G, and <span class="math inline">\(\nu\)</span>:</p>
-<p><span class="math display">\[
-G=\frac{E}{2(1+\nu)}
-\]</span></p>
+<p><span class="math display">\[G=\frac{E}{2(1+\nu)}\]</span></p>
 <p>Thermal strain:</p>
-<p><span class="math display">\[
-\varepsilon=\alpha \Delta T
-\]</span></p>
-<p><span class="math display">\[
-\Delta L=\alpha\Delta TL
-\]</span></p>
+<p><span class="math display">\[\varepsilon=\alpha \Delta T\]</span></p>
+<p><span class="math display">\[\Delta L=\alpha\Delta TL\]</span></p>
 <p>Generalized Hooke’s law:</p>
-<p><span class="math display">\[
-\begin{aligned}
+<p><span class="math display">\[\begin{aligned}
 &amp; \varepsilon_x=\frac{1}{E}\left[\sigma_x-v\left(\sigma_y+\sigma_z\right)\right] \\
 &amp; \varepsilon_y=\frac{1}{E}\left[\sigma_y-v\left(\sigma_x+\sigma_z\right)\right] \\
 &amp; \varepsilon_z=\frac{1}{E}\left[\sigma_z-v\left(\sigma_x+\sigma_y\right)\right]
-\end{aligned}
-\]</span></p>
-<p><span class="math display">\[
-{\begin{aligned}
+\end{aligned}\]</span></p>
+<p><span class="math display">\[{\begin{aligned}
 &amp; \gamma_{xy}=\frac{\tau_{xy}}{G} \\
 &amp; \gamma_{yz}=\frac{\tau_{yz}}{G} \\
 &amp; \gamma_{xz}=\frac{\tau_{xz}}{G}
-\end{aligned}}
-\]</span> Factor of safety:</p>
-<p><span class="math display">\[
-FS=\frac{\sigma_{fail}}{\sigma_{allow}}
-\]</span></p>
+\end{aligned}}\]</span> Factor of safety:</p>
+<p><span class="math display">\[FS=\frac{\sigma_{fail}}{\sigma_{allow}}\]</span></p>
 </div>
 </div>
 </details>

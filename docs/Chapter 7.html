@@ -2,17 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.27">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>7&nbsp; Beams – Strength of Materials</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -36,19 +42,18 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-9dc9d438c90c12071cf8507e319c8f8e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-afd7089187cf7d32efec5ee34a48d68f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-9dc9d438c90c12071cf8507e319c8f8e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-401a889286c5821173c2f4aa5e879f43.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-9dd2f8e1bf8419b432835d0eea0bc284.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-401a889286c5821173c2f4aa5e879f43.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -90,10 +95,10 @@ gtag('config', 'G-7SWQ89TD9D', { 'anonymize_ip': true});
 document.addEventListener('DOMContentLoaded', function () {
 cookieconsent.run({
   "notice_banner_type":"simple",
-  "consent_type":"implied",
+  "consent_type":"express",
   "palette":"light",
   "language":"en",
-  "page_load_consent_levels":["strictly-necessary","functionality","tracking","targeting"],
+  "page_load_consent_levels":["strictly-necessary"],
   "notice_banner_reject_button_hide":false,
   "preferences_center_close_button_hide":false,
   "website_name":"",
@@ -106,7 +111,7 @@ cookieconsent.run({
   
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -543,7 +548,7 @@ window.Quarto = {
 </ul>
 </div>
 </div>
-<div id="fig-7.1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="The left image shows a construction site with large steel or timber beams casting angular shadows onto a gravel surface, viewed from a low angle beneath the structure. The center image depicts a close-up of a wooden roof truss system with diagonal and vertical members joined by metal plates, set against a clear blue sky. The right image features the iconic Fallingwater house by Frank Lloyd Wright, with cantilevered concrete balconies projecting over a waterfall, surrounded by forest.">
+<div id="fig-7.1" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The left image shows a construction site with large steel or timber beams casting angular shadows onto a gravel surface, viewed from a low angle beneath the structure. The center image depicts a close-up of a wooden roof truss system with diagonal and vertical members joined by metal plates, set against a clear blue sky. The right image features the iconic Fallingwater house by Frank Lloyd Wright, with cantilevered concrete balconies projecting over a waterfall, surrounded by forest." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-7.1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/CH7 PNGs/7.1 new.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="The left image shows a construction site with large steel or timber beams casting angular shadows onto a gravel surface, viewed from a low angle beneath the structure. The center image depicts a close-up of a wooden roof truss system with diagonal and vertical members joined by metal plates, set against a clear blue sky. The right image features the iconic Fallingwater house by Frank Lloyd Wright, with cantilevered concrete balconies projecting over a waterfall, surrounded by forest.">
@@ -558,7 +563,7 @@ Figure&nbsp;7.1: Examples of structural beams
 <p><a href="#sec-7.1" class="quarto-xref"><span>Section 7.1</span></a> reviews how to find the internal shear force and bending moments at a specific point in a beam using equilibrium. <a href="#sec-7.2" class="quarto-xref"><span>Section 7.2</span></a> discusses relationships between the applied load, the internal shear force, and the internal bending moment.</p>
 <p>Then follows a discussion of a more general approach to visualizing the internal shear force and bending moment at different points in a beam using diagrams of these. <a href="#sec-7.3" class="quarto-xref"><span>Section 7.3</span></a> explores how to draw these diagrams using an equilibrium method. Then <a href="#sec-7.4" class="quarto-xref"><span>Section 7.4</span></a> provides an alternative graphical method for drawing these diagrams.</p>
 <p>Before presenting methods for finding internal shear and moments of beams, we need to establish a sign convention to provide consistency and act as a guide to interpreting our results. Note that anytime you start a new project or subject, you should ensure that a sign convention is established.</p>
-<div id="fig-7.2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Internal shear and bending moment effects on a beam. The top row shows two rectangular segments with vertical shear forces (V and V′) and internal moments (M and M′) acting in opposing directions. The middle image shows a rectangular beam with dashed outlines on both sides indicating deformation due to internal shear forces, with vertical arrows showing opposing shear (V) at the cut sections. The bottom image shows the same beam with a parabolic dashed outline indicating displacement due to bending, with clockwise and counterclockwise internal moments (M) applied at both ends.">
+<div id="fig-7.2" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Internal shear and bending moment effects on a beam. The top row shows two rectangular segments with vertical shear forces (V and V′) and internal moments (M and M′) acting in opposing directions. The middle image shows a rectangular beam with dashed outlines on both sides indicating deformation due to internal shear forces, with vertical arrows showing opposing shear (V) at the cut sections. The bottom image shows the same beam with a parabolic dashed outline indicating displacement due to bending, with clockwise and counterclockwise internal moments (M) applied at both ends." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-7.2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/CH7 PNGs/figure 7.3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Internal shear and bending moment effects on a beam. The top row shows two rectangular segments with vertical shear forces (V and V′) and internal moments (M and M′) acting in opposing directions. The middle image shows a rectangular beam with dashed outlines on both sides indicating deformation due to internal shear forces, with vertical arrows showing opposing shear (V) at the cut sections. The bottom image shows the same beam with a parabolic dashed outline indicating displacement due to bending, with clockwise and counterclockwise internal moments (M) applied at both ends." width="286">
@@ -682,7 +687,7 @@ M_L=17{~kip}\cdot{ft}
 Click to expand
 </summary>
 <p>There is a relationship between loading, shear, and moment—and as shown later in this text, slope and deflection—in a beam. Consider the beam in <a href="#fig-7.3" class="quarto-xref">Figure&nbsp;<span>7.3</span></a>, which is subjected to a distributed load, w per unit length.</p>
-<div id="fig-7.3" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="A beam AB is shown with a variable distributed load w applied along its entire length. Point A on the left end has a pinned support, and point B on the right end has a roller support. Along the beam, a small shaded portion is highlighted; the distance from point A to the start of the shaded portion is labeled x, and the width of the shaded portion is labeled Δx. Below the beam, a free body diagram of this differential element Δx is shown. On the left face of the element, an internal shear force V acts upward and an internal moment M acts clockwise. On the right face, the internal shear force is labeled V+ΔV downward, and the internal moment is labeled M+ΔM counterclockwise. A vertical distributed force ΔF=wΔx acts downward across the top of the element.">
+<div id="fig-7.3" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A beam AB is shown with a variable distributed load w applied along its entire length. Point A on the left end has a pinned support, and point B on the right end has a roller support. Along the beam, a small shaded portion is highlighted; the distance from point A to the start of the shaded portion is labeled x, and the width of the shaded portion is labeled Δx. Below the beam, a free body diagram of this differential element Δx is shown. On the left face of the element, an internal shear force V acts upward and an internal moment M acts clockwise. On the right face, the internal shear force is labeled V+ΔV downward, and the internal moment is labeled M+ΔM counterclockwise. A vertical distributed force ΔF=wΔx acts downward across the top of the element." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-7.3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/CH7 PNGs/figure 7.4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="A beam AB is shown with a variable distributed load w applied along its entire length. Point A on the left end has a pinned support, and point B on the right end has a roller support. Along the beam, a small shaded portion is highlighted; the distance from point A to the start of the shaded portion is labeled x, and the width of the shaded portion is labeled Δx. Below the beam, a free body diagram of this differential element Δx is shown. On the left face of the element, an internal shear force V acts upward and an internal moment M acts clockwise. On the right face, the internal shear force is labeled V+ΔV downward, and the internal moment is labeled M+ΔM counterclockwise. A vertical distributed force ΔF=wΔx acts downward across the top of the element." width="372">
@@ -722,7 +727,7 @@ d V=w d x
 </section>
 <section id="relationship-between-shear-and-moment" class="level3" data-number="7.2.2">
 <h3 data-number="7.2.2" class="anchored" data-anchor-id="relationship-between-shear-and-moment"><span class="header-section-number">7.2.2</span> Relationship Between Shear and Moment</h3>
-<div id="fig-7.4" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="A free body diagram of a differential beam element with width Δx is shown. A small rectangular segment is centered, with a downward distributed force labeled ΔF=wΔx acting on its top. On the left face, an internal shear force V acts upward and an internal moment M acts clockwise. On the right face, an internal shear force V+ΔV acts downward and an internal moment M+ΔM acts counterclockwise. The width of the element is labeled Δx beneath the rectangle.">
+<div id="fig-7.4" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A free body diagram of a differential beam element with width Δx is shown. A small rectangular segment is centered, with a downward distributed force labeled ΔF=wΔx acting on its top. On the left face, an internal shear force V acts upward and an internal moment M acts clockwise. On the right face, an internal shear force V+ΔV acts downward and an internal moment M+ΔM acts counterclockwise. The width of the element is labeled Δx beneath the rectangle." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-7.4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/CH7 PNGs/figure 7.5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="A free body diagram of a differential beam element with width Δx is shown. A small rectangular segment is centered, with a downward distributed force labeled ΔF=wΔx acting on its top. On the left face, an internal shear force V acts upward and an internal moment M acts clockwise. On the right face, an internal shear force V+ΔV acts downward and an internal moment M+ΔM acts counterclockwise. The width of the element is labeled Δx beneath the rectangle." width="199">
@@ -757,7 +762,7 @@ d M=V d x
 <section id="using-calculus-knowledge-to-build-shear-and-moment-diagrams" class="level3" data-number="7.2.3">
 <h3 data-number="7.2.3" class="anchored" data-anchor-id="using-calculus-knowledge-to-build-shear-and-moment-diagrams"><span class="header-section-number">7.2.3</span> Using Calculus Knowledge to Build Shear and Moment Diagrams</h3>
 <p>In a basic sense, the relationship between load, shear, and moment can be described as in <a href="#fig-7.5" class="quarto-xref">Figure&nbsp;<span>7.5</span></a>.</p>
-<div id="fig-7.5" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="A vertical relationship chart is shown with three terms aligned in the center: &quot;Load&quot; at the top, &quot;Shear&quot; in the middle, and &quot;Moment&quot; at the bottom. A thick black downward arrow labeled &quot;Integrate&quot; is positioned to the left, indicating that integrating moves from Load to Shear to Moment. A thick black upward arrow labeled &quot;Derivate&quot; is positioned to the right, indicating that differentiating moves from Moment to Shear to Load.">
+<div id="fig-7.5" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A vertical relationship chart is shown with three terms aligned in the center: &quot;Load&quot; at the top, &quot;Shear&quot; in the middle, and &quot;Moment&quot; at the bottom. A thick black downward arrow labeled &quot;Integrate&quot; is positioned to the left, indicating that integrating moves from Load to Shear to Moment. A thick black upward arrow labeled &quot;Derivate&quot; is positioned to the right, indicating that differentiating moves from Moment to Shear to Load." data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-7.5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/CH7 PNGs/figure 5.6.png" class="quarto-figure quarto-figure-center figure-img" alt="A vertical relationship chart is shown with three terms aligned in the center: &quot;Load&quot; at the top, &quot;Shear&quot; in the middle, and &quot;Moment&quot; at the bottom. A thick black downward arrow labeled &quot;Integrate&quot; is positioned to the left, indicating that integrating moves from Load to Shear to Moment. A thick black upward arrow labeled &quot;Derivate&quot; is positioned to the right, indicating that differentiating moves from Moment to Shear to Load." width="197" height="101">
