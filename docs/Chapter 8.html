@@ -564,13 +564,11 @@ Click to expand
 <p>An object possesses weight as a result of the gravitational force acting on its constituent particles. The collective effect of these forces yields the total weight of the object, which is concentrated at a single point known as the center of gravity. If the object is composed of a homogenous (constant density) material, then the center of gravity is the same as the geometric center or centroid.</p>
 <p>The discussion in this section focuses on the centroid of an area for common structural shapes. For a more comprehensive discussion on the center of gravity, the center of mass, calculating centroids using integration, and distributed loads, see the book <a href="https://engineeringstatics.org/Chapter_07-center-of-mass.html"><em>Engineering Statics</em></a> by Baker and Haynes.</p>
 <p>The location of the centroid of an area is the point where the first moment of area equals zero. The first moment of area about a point is calculated by multiplying the area by the perpendicular distance to the point. The centroid of an area can be found by splitting the area into a number (i) of discrete parts, summing the moment of area for these discrete parts, and then dividing by the sum of the area. These weighted averages enable us to find the location <span class="math inline">\((\bar{X}, \bar{Y})\)</span> of the centroid of the area.</p>
-<p><span id="eq-8.1"><span class="math display">\[
-\boxed{\begin{aligned}
+<p><span id="eq-8.1"><span class="math display">\[\boxed{\begin{aligned}
 &amp;\bar{X}=\frac{\sum \bar{x}_i A_i}{\sum A_i} \\
 \\
 &amp;\bar{Y}=\frac{\sum \bar{y}_i A_i}{\sum A_i}
-\end{aligned}}\text{ ,}
-\tag{8.1}\]</span></span></p>
+\end{aligned}}\text{ ,} \tag{8.1}\]</span></span></p>
 <div class="line-block">where<br>
 <span class="math inline">\(\bar{X}, \bar{Y}\)</span> <em>= Centroid coordinates of the overall area [m, in.]</em><br>
 <span class="math inline">\(\bar{x}_i, \bar{y}_i\)</span> <em>= Centroid coordinates of each discrete area [m, in.]</em><br>
@@ -673,9 +671,7 @@ Figure&nbsp;8.3: Reproduction of a shape in <a href="Appendix E.html" class="qua
 </tbody>
 </table>
 <p>Next is to create a table with columns titled Shape, <span class="math inline">\(A\)</span> (in.<sup>2</sup>), <span class="math inline">\(\bar{y}\)</span> (in.), and <span class="math inline">\(A\bar{y}\)</span> (in.<sup>3</sup>). Given two shapes, there will be two rows in the table. Column A is the area of the individual shape. Column <span class="math inline">\(\bar{y}\)</span> is the perpendicular distance in the y direction from the RP to the centroid of that shape. For example, for shape 1 the <span class="math inline">\(\bar{y_1}\)</span> would be half of 4.5 in. since the bottom of shape 1 aligns with the RP. However, for shape 2 the <span class="math inline">\(\bar{y_2}\)</span> would be 4.5 in. plus one half of 1.5 in. This formula ensures measuring from the RP as illustrated here.</p>
-<p><span class="math display">\[
-\bar{Y}=\frac{101.25{~in.^3}}{27{~in.^2}}=3.75{~in.} ~~\text{from bottom}
-\]</span></p>
+<p><span class="math display">\[\bar{Y}=\frac{101.25{~in.^3}}{27{~in.^2}}=3.75{~in.} ~~\text{from bottom}\]</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/CH 8 PNGs/example 8.1 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="The T-shaped section divided into two parts, labeled 1 for the vertical stem and 2 for the horizontal flange. The reference point RP is at the bottom-left corner of the stem. Vertical distances from RP to the centroids of each rectangle are marked: the centroid of rectangle 1 is located 2.25 inches above RP (half of 4.5 inches), and the centroid of rectangle 2 is 5.25 inches above RP (4.5 inches plus half of 1.5 inches = 0.75 inches). These centroid heights are labeled 𝑦̄ sub 1 and 𝑦̄ sub 2 respectively." width="481"></p>
@@ -747,10 +743,10 @@ Figure&nbsp;8.3: Reproduction of a shape in <a href="Appendix E.html" class="qua
 <p>Next is to find the centroid (x̄ = 0 due to symmetry).</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 18%">
-<col style="width: 21%">
-<col style="width: 23%">
-<col style="width: 34%">
+<col style="width: 10%">
+<col style="width: 24%">
+<col style="width: 26%">
+<col style="width: 39%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -788,9 +784,7 @@ Figure&nbsp;8.3: Reproduction of a shape in <a href="Appendix E.html" class="qua
 </tbody>
 </table>
 <p>Finally, to calculate the centroid coordinates, use <a href="#eq-8.1" class="quarto-xref">Equation&nbsp;<span>8.1</span></a> by summing the table’s second and last columns.</p>
-<p><span class="math display">\[
-\bar{Y}=\frac{1,828,000{~mm^3}}{14,000{~mm^2}}=130.6{~mm} ~~\text{from bottom}
-\]</span></p>
+<p><span class="math display">\[\bar{Y}=\frac{1,828,000{~mm^3}}{14,000{~mm^2}}=130.6{~mm} ~~\text{from bottom}\]</span></p>
 <p>Using this approach we found the centroid to be 130.6 mm from the reference point in the y direction and on the line of symmetry in the x direction.</p>
 <p>The figure below shows the location of the centroid for this section.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -824,7 +818,7 @@ Figure&nbsp;8.3: Reproduction of a shape in <a href="Appendix E.html" class="qua
 <p>Find the centroid of the shape below.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH 8 PNGs/example 8.3 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Composite shape consisting of a rectangle on the left, a right triangle attached on the right with its hypotenuse sloping northeast, and a circular cutout inside the rectangle. The rectangle is 8 inches wide and 8 inches tall. The triangle shares the same 8-inch height and extends 6 inches further to the right. The circular cutout is centered 4 inches from the left edge and 4 inches from the bottom, with its radius labeled. A coordinate system is overlaid with the origin at the bottom-right corner of the rectangle and axes labeled x and y. The y-axis passes vertically through the right edge of the rectangle." width="497"></p>
+<p><img src="images/Examples 8.3 and 8.6/example 8.3 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Composite shape consisting of a rectangle on the left, a right triangle attached on the right with its hypotenuse sloping northeast, and a circular cutout inside the rectangle. The rectangle is 8 inches wide and 8 inches tall. The triangle shares the same 8-inch height and extends 6 inches further to the right. The circular cutout is centered 4 inches from the left edge and 4 inches from the bottom, with its radius labeled. A coordinate system is overlaid with the origin at the bottom-right corner of the rectangle and axes labeled x and y. The y-axis passes vertically through the right edge of the rectangle." width="497"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -843,31 +837,31 @@ Figure&nbsp;8.3: Reproduction of a shape in <a href="Appendix E.html" class="qua
 <p>The second task is to divide the section into simpler shapes for which we know the centroid’s location (<a href="Appendix E.html" class="quarto-xref"><span>Appendix E</span></a>). In this case we will break this up into the square, triangle, and circle labeled 1, 2, and 3 in the figure. Note that the circle is a hole and the area will be represented as negative.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH 8 PNGs/example 8.3 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Composite shape divided into three labeled regions. Region 1 is a rectangle on the left, 8 inches wide and 8 inches tall. Region 2 is a right triangle on the right, also 8 inches tall with a 6-inch base. Region 3 is a circular cutout inside Region 1, centered 4 inches from the left edge and 4 inches from the bottom edge. A coordinate system is overlaid with the origin at the bottom-right corner of the rectangle. The x-axis runs along the bottom edge, and the y-axis passes vertically through the right edge of the rectangle where the rectangle and triangle meet." width="487"></p>
+<p><img src="images/Examples 8.3 and 8.6/example 8.3 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Composite shape divided into three labeled regions. Region 1 is a rectangle on the left, 8 inches wide and 8 inches tall. Region 2 is a right triangle on the right, also 8 inches tall with a 6-inch base. Region 3 is a circular cutout inside Region 1, centered 4 inches from the left edge and 4 inches from the bottom edge. A coordinate system is overlaid with the origin at the bottom-right corner of the rectangle. The x-axis runs along the bottom edge, and the y-axis passes vertically through the right edge of the rectangle where the rectangle and triangle meet." width="493"></p>
 </figure>
 </div>
 <p>Next is to create a table with columns titled Shape, <span class="math inline">\(A\)</span> (in<sup>2</sup>), <span class="math inline">\(\bar{x}\)</span> (in), <span class="math inline">\(\bar{y}\)</span> (in), and <span class="math inline">\(A\bar{y}\)</span> (in<sup>3</sup>). Given three shapes, there are three rows. The first column, A, is the area of the individual shape. The second column, <span class="math inline">\(\bar{x}\)</span>, is the perpendicular distance in the x direction from the RP to the centroid of that shape.</p>
 <p>The figure below shows how the <span class="math inline">\(\bar{x}\)</span> for each shape is calculated.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH 8 PNGs/example 8.3 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Composite shape divided into three labeled regions. Region 1 is a rectangle on the left, 8 inches wide and 8 inches tall. Region 2 is a right triangle on the right, also 8 inches tall with a 6-inch base. Region 3 is a circular cutout inside Region 1, centered 4 inches from the left edge and 4 inches from the bottom edge. A coordinate system is overlaid with the origin at the bottom-right corner of the rectangle. The x-axis runs along the bottom edge, and the y-axis passes vertically through the right edge of the rectangle where the rectangle and triangle meet. A black point labeled RP marks the reference point at this intersection of the x- and y-axes, lying at the junction of the rectangle and triangle. Green dimension lines indicate x-bar distances for each region: Region 1 has x-bar sub 1 = 4 inches from the y-axis, Region 3 has x-bar sub 3 = 4 inches from the y-axis, and Region 2 has x-bar sub 2 = 2 inches from the y-axis, equal to one-third of its 6-inch base." width="496"></p>
+<p><img src="images/Examples 8.3 and 8.6/example 8.3 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Composite shape divided into three labeled regions. Region 1 is a rectangle on the left, 8 inches wide and 8 inches tall. Region 2 is a right triangle on the right, also 8 inches tall with a 6-inch base. Region 3 is a circular cutout inside Region 1, centered 4 inches from the left edge and 4 inches from the bottom edge. A coordinate system is overlaid with the origin at the bottom-right corner of the rectangle. The x-axis runs along the bottom edge, and the y-axis passes vertically through the right edge of the rectangle where the rectangle and triangle meet. A black point labeled RP marks the reference point at this intersection of the x- and y-axes, lying at the junction of the rectangle and triangle. Green dimension lines indicate x-bar distances for each region: Region 1 has x-bar sub 1 = 4 inches from the y-axis, Region 3 has x-bar sub 3 = 4 inches from the y-axis, and Region 2 has x-bar sub 2 = 2 inches from the y-axis, equal to one-third of its 6-inch base." width="495"></p>
 </figure>
 </div>
 <p>The figure below shows how the <span class="math inline">\(\bar{y}\)</span> for each shape is calculated.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH 8 PNGs/example 8.3 part 4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Same composite shape with three regions: a left rectangle (Region 1), a right triangle (Region 2), and a circular cutout centered within the rectangle (Region 3). The reference point RP is marked as a black dot at the intersection of the x- and y-axes, located at the bottom corner where the rectangle and triangle meet. Vertical centroid distances from RP are labeled: Region 1 has y-bar sub 1 = 4 inches, Region 3 has y-bar sub 3 = 4 inches, and Region 2 has y-bar sub 2 = 16/3 inches, found by subtracting one-third of 8 from 8." width="498"></p>
+<p><img src="images/Examples 8.3 and 8.6/example 8.3 part 4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Same composite shape with three regions: a left rectangle (Region 1), a right triangle (Region 2), and a circular cutout centered within the rectangle (Region 3). The reference point RP is marked as a black dot at the intersection of the x- and y-axes, located at the bottom corner where the rectangle and triangle meet. Vertical centroid distances from RP are labeled: Region 1 has y-bar sub 1 = 4 inches, Region 3 has y-bar sub 3 = 4 inches, and Region 2 has y-bar sub 2 = 16/3 inches, found by subtracting one-third of 8 from 8." width="501"></p>
 </figure>
 </div>
 <p>Finally, to calculate the centroid coordinates, use <a href="#eq-8.1" class="quarto-xref">Equation&nbsp;<span>8.1</span></a> by summing the A, <span class="math inline">\(A\bar{x}\)</span>, and <span class="math inline">\(A\bar{y}\)</span> columns shown in the table below.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 9%">
-<col style="width: 14%">
 <col style="width: 16%">
-<col style="width: 20%">
 <col style="width: 16%">
-<col style="width: 20%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -912,17 +906,15 @@ Figure&nbsp;8.3: Reproduction of a shape in <a href="Appendix E.html" class="qua
 </tr>
 </tbody>
 </table>
-<p><span class="math display">\[
-\begin{aligned}
+<p><span class="math display">\[\begin{aligned}
 &amp; \bar{X}=\frac{\sum A \bar{x}}{\sum A}=\frac{-157.7{~in.^3}}{75.4{~in.^2}} \quad\rightarrow\quad \bar{X}=-2.09{~in} \\
 &amp; \bar{Y}=\frac{\sum A \bar{y}}{\sum A}=\frac{333.7{~in.^3}}{75.4{~in.^2}} \quad\rightarrow\quad \bar{Y}=4.43 \mathrm{in}
-\end{aligned}
-\]</span></p>
+\end{aligned}\]</span></p>
 <p>Using this approach, we calculated the centroid to be -2.09 in. in the x direction from the reference point, which indicates it will be to the left of the y-axis. The y component of the centroid is 4.43 in. in the y direction from the reference point.</p>
 <p>The figure below shows the location of the centroid for this section.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/chapter 8 figure edits post review/example 8.3 part 5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="The composite shape consists of a rectangle and triangle forming a continuous area with a circular hole cut from the rectangular region. The reference point (RP) is at the bottom-right corner where the rectangle and triangle meet. Dashed red lines indicate the horizontal and vertical centroid axes. A solid red dot marks the centroid, located 2.09 inches to the left of RP and 4.43 inches above RP." width="505"></p>
+<p><img src="images/Examples 8.3 and 8.6/example 8.3 part 5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="The composite shape consists of a rectangle and triangle forming a continuous area with a circular hole cut from the rectangular region. The reference point (RP) is at the bottom-right corner where the rectangle and triangle meet. Dashed red lines indicate the horizontal and vertical centroid axes. A solid red dot marks the centroid, located 2.09 inches to the left of RP and 4.43 inches above RP." width="504"></p>
 </figure>
 </div>
 </div>
@@ -961,13 +953,11 @@ Figure&nbsp;8.3: Reproduction of a shape in <a href="Appendix E.html" class="qua
 Click to expand
 </summary>
 <p>Another important geometric property needed to calculate stresses in beams is the second moment of area (also known as moment of inertia and area moment of inertia). You likely encountered this topic in statics, as you did the topic of centroids, so this section is designed as a review. By definition the second moment of area depicted in <a href="#fig-8.4" class="quarto-xref">Figure&nbsp;<span>8.4</span></a> is</p>
-<p><span id="eq-8.2"><span class="math display">\[
-\boxed{\begin{aligned}
+<p><span id="eq-8.2"><span class="math display">\[\boxed{\begin{aligned}
 &amp;I_x=\int_A y^2 d A \\
 &amp;I_y=\int_A x^2 d A \\
 &amp;I_z=J=\int_A r^2 d A \\
-\end{aligned}}
-\tag{8.2}\]</span></span></p>
+\end{aligned}} \tag{8.2}\]</span></span></p>
 <div id="fig-8.4" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Shaded irregular area A in the first quadrant, bounded by a smooth closed curve. A small rectangular differential element dA is marked inside the region, with coordinates defined by x (distance from the y-axis) and y (distance from the x-axis). A black vector r extends from the origin (0,0) to the center of dA, pointing northeast, representing the radial distance to that differential area.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-8.4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1003,20 +993,14 @@ Figure&nbsp;8.6: The second moment of area about A about an axis x can be derive
 </figure>
 </div>
 <p>The centroid of the area is at C, where the x’-y’ axis is drawn; note that x’ is parallel to x and y’ is parallel to y. The x-y’ axes will be termed the centroidal axes and are at a distance of d<sub>x</sub> and d<sub>y</sub> from the x-y axes respectively. The distance between the element dA and the x’-axis is denoted as y’. The result is <span class="math inline">\(y=y^{\prime}+d_y\)</span>. Substituting into <a href="#eq-8.2" class="quarto-xref">Equation&nbsp;<span>8.2</span></a> yields</p>
-<p><span class="math display">\[
-\begin{aligned}
+<p><span class="math display">\[\begin{aligned}
 &amp; I_x=\int\left(y^{\prime}+d_y\right)^2 d A \\
 &amp; I_x=\int\left(y^{\prime}\right)^2 d A+2 d_y \int y^{\prime} d A+d_y^2 \int d A
-\end{aligned}\text{ .}
-\]</span></p>
+\end{aligned}\text{ .}\]</span></p>
 <p>The first integral represents the second moment of area about the centroidal axis x’. The second integral is zero since the centroid is located on the x’-axis (i.e., <span class="math inline">\(\int y^{\prime} d A\)</span> represents the first moment of area about the x’ centroidal axis, which is zero, as discussed in <a href="#sec-8.1" class="quarto-xref"><span>Section 8.1</span></a>). The last integral represents the total area, A. So the resulting equation is</p>
-<p><span id="eq-8.3"><span class="math display">\[
-\boxed{I_x=\overline{I_{x^{\prime}}}+A d_y^2}\text{ .}
-\tag{8.3}\]</span></span></p>
+<p><span id="eq-8.3"><span class="math display">\[\boxed{I_x=\overline{I_{x^{\prime}}}+A d_y^2}\text{ .} \tag{8.3}\]</span></span></p>
 <p>A similar process is used to find an expression for I<sub>y</sub>.</p>
-<p><span id="eq-8.4"><span class="math display">\[
-\boxed{I_y=\overline{I_{y^{\prime}}}+A d_x^2}\text{ ,}
-\tag{8.4}\]</span></span></p>
+<p><span id="eq-8.4"><span class="math display">\[\boxed{I_y=\overline{I_{y^{\prime}}}+A d_x^2}\text{ ,} \tag{8.4}\]</span></span></p>
 <div class="line-block">where<br>
 <em>I<sub>x</sub>, I<sub>y</sub> = Second moment of area with respect to a given axis [m<sup>4</sup>, in.<sup>4</sup>]</em><br>
 <span class="math inline">\(\overline{I_{x^{\prime}}}\)</span> <em>,</em> <span class="math inline">\(\overline{I_{y^{\prime}}}\)</span> <em>= Second moment of area with respect to a parallel axis passing through the centroid of the area [m<sup>4</sup>, in.<sup>4</sup>]</em><br>
@@ -1074,11 +1058,11 @@ Figure&nbsp;8.6: The second moment of area about A about an axis x can be derive
 <p>Present this method in terms of a table as shown.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 13%">
+<col style="width: 8%">
 <col style="width: 16%">
-<col style="width: 22%">
+<col style="width: 23%">
 <col style="width: 16%">
-<col style="width: 30%">
+<col style="width: 31%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1183,11 +1167,11 @@ Figure&nbsp;8.6: The second moment of area about A about an axis x can be derive
 <p>Present this method in terms of a table, first for I<sub>x</sub>.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 11%">
+<col style="width: 8%">
+<col style="width: 16%">
+<col style="width: 23%">
 <col style="width: 15%">
-<col style="width: 22%">
-<col style="width: 14%">
-<col style="width: 32%">
+<col style="width: 33%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1247,11 +1231,11 @@ Figure&nbsp;8.6: The second moment of area about A about an axis x can be derive
 <p>Use the same process to calculate I<sub>y</sub>.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 13%">
+<col style="width: 8%">
 <col style="width: 15%">
-<col style="width: 23%">
+<col style="width: 24%">
 <col style="width: 15%">
-<col style="width: 30%">
+<col style="width: 31%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1329,7 +1313,7 @@ Figure&nbsp;8.6: The second moment of area about A about an axis x can be derive
 <p>Determine the I<sub>x</sub> and I<sub>y</sub> of the shaded area with respect to the shape’s centroid.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH 8 PNGs/example 8.6 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Composite shape consisting of a rectangle on the left, a right triangle attached on the right with its hypotenuse sloping northeast, and a circular cutout inside the rectangle. The rectangle is 8 inches wide and 8 inches tall. The triangle shares the same 8-inch height and extends 6 inches further to the right. The circular cutout is centered 4 inches from the left edge and 4 inches from the bottom, with its radius labeled. A coordinate system is overlaid with the origin at the bottom-right corner of the rectangle and axes labeled x and y. The y-axis passes vertically through the right edge of the rectangle." width="404"></p>
+<p><img src="images/Examples 8.3 and 8.6/example 8.6 part 1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Composite shape consisting of a rectangle on the left, a right triangle attached on the right with its hypotenuse sloping northeast, and a circular cutout inside the rectangle. The rectangle is 8 inches wide and 8 inches tall. The triangle shares the same 8-inch height and extends 6 inches further to the right. The circular cutout is centered 4 inches from the left edge and 4 inches from the bottom, with its radius labeled. A coordinate system is overlaid with the origin at the bottom-right corner of the rectangle and axes labeled x and y. The y-axis passes vertically through the right edge of the rectangle." width="527"></p>
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -1347,25 +1331,25 @@ Figure&nbsp;8.6: The second moment of area about A about an axis x can be derive
 <p>To find the second moment of area in the x and y directions with respect to the section’s overall centroid, first calculate the centroid. We did this in <a href="#exm-8.3" class="quarto-xref">Example&nbsp;<span>8.3</span></a>, with the results as shown.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/chapter 8 figure edits post review/example 8.6 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="The composite shape consists of a rectangle and triangle forming a continuous area with a circular hole cut from the rectangular region. The reference point (RP) is at the bottom-right corner where the rectangle and triangle meet. Dashed red lines indicate the horizontal and vertical centroid axes. A solid red dot marks the centroid, located 2.09 inches to the left of RP and 4.43 inches above RP."></p>
+<p><img src="images/Examples 8.3 and 8.6/example 8.6 part 2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="The composite shape consists of a rectangle and triangle forming a continuous area with a circular hole cut from the rectangular region. The reference point (RP) is at the bottom-right corner where the rectangle and triangle meet. Dashed red lines indicate the horizontal and vertical centroid axes. A solid red dot marks the centroid, located 2.09 inches to the left of RP and 4.43 inches above RP."></p>
 </figure>
 </div>
 <p>We found that the centroid is located 2.09 in. to the left of the y-axis and 4.43 in. up from the x-axis.</p>
 <p>The next step is to break up the section into common shapes (see <a href="Appendix E.html" class="quarto-xref"><span>Appendix E</span></a>) as shown in the following figure. Note that shape 3 is a hole, so we need to subtract the area and second moment of area.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/CH 8 PNGs/example 8.6 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Composite shape divided into three labeled regions. Region 1 is a rectangle on the left, 8 inches wide and 8 inches tall. Region 2 is a right triangle on the right, also 8 inches tall with a 6-inch base. Region 3 is a circular cutout inside Region 1, centered 4 inches from the left edge and 4 inches from the bottom edge. A coordinate system is overlaid with the origin at the bottom-right corner of the rectangle. The x-axis runs along the bottom edge, and the y-axis passes vertically through the right edge of the rectangle where the rectangle and triangle meet." width="545"></p>
+<p><img src="images/Examples 8.3 and 8.6/example 8.6 part 3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Composite shape divided into three labeled regions. Region 1 is a rectangle on the left, 8 inches wide and 8 inches tall. Region 2 is a right triangle on the right, also 8 inches tall with a 6-inch base. Region 3 is a circular cutout inside Region 1, centered 4 inches from the left edge and 4 inches from the bottom edge. A coordinate system is overlaid with the origin at the bottom-right corner of the rectangle. The x-axis runs along the bottom edge, and the y-axis passes vertically through the right edge of the rectangle where the rectangle and triangle meet."></p>
 </figure>
 </div>
 <p>The formula for the second moment of area of a shape are with respect to the shape’s centroid, not to the section’s overall centroid. Make a necessary adjustment using the parallel axis theorem to transform the rotational axis from the shape’s centroid to the section’s centroid. Do this for each shape.</p>
 <p>Present this method in terms of a table, first for I<sub>x</sub> then I<sub>y</sub>.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 13%">
-<col style="width: 16%">
-<col style="width: 21%">
-<col style="width: 16%">
-<col style="width: 28%">
+<col style="width: 8%">
+<col style="width: 17%">
+<col style="width: 22%">
+<col style="width: 17%">
+<col style="width: 30%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1415,11 +1399,11 @@ Figure&nbsp;8.6: The second moment of area about A about an axis x can be derive
 </table>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 13%">
-<col style="width: 16%">
-<col style="width: 21%">
-<col style="width: 16%">
-<col style="width: 28%">
+<col style="width: 8%">
+<col style="width: 17%">
+<col style="width: 22%">
+<col style="width: 17%">
+<col style="width: 30%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1470,7 +1454,7 @@ Figure&nbsp;8.6: The second moment of area about A about an axis x can be derive
 <p>The calculation and visualizations for each d<sub>x</sub> and d<sub>y</sub> term are as shown in the figure.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/chapter 8 figure edits post review/example 8.6 part 4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Composite shape divided into three labeled regions. Region one is a rectangle on the left side, measuring 8 inches in width and 8 inches in height. Region two is a right triangle located on the right side, also 8 inches tall with a base of 6 inches. Region three is a circular cutout inside region one, centered 4 inches from the left edge and 4 inches from the bottom edge of the rectangle. A coordinate system is overlaid on the shape, with the origin placed at the bottom-right corner of the rectangle. The x-axis extends horizontally along the bottom edge, while the y-axis runs vertically through the right edge of the rectangle where it meets the triangle.A black point labeled as the reference point, or RP, marks the intersection of the x- and y-axes at the junction between the rectangle and the triangle. A red dot represents the centroid of the entire composite shape, located 2.09 inches to the left and 4.43 inches above the reference point. Each subregion is labeled with the corresponding horizontal and vertical distances between its centroid and the overall centroid. For region one (the rectangle) and region three (the circular cutout), the horizontal distance d sub x one and d sub x three are equal to 4 minus 2.09, which is 1.91 inches. The vertical distances d sub y one and d sub y three are both equal to 4.43 minus 4, 0.43 inches.For region two (the triangle), the horizontal distance d sub x two is equal to one-third of 6, added to 2.09, resulting in 4.09 inches. The vertical distance d sub y two is equal to sixteen divided by 3 minus 4.43, resulting in approximately 0.90 inches." width="808"></p>
+<p><img src="images/Examples 8.3 and 8.6/example 8.6 part 4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Composite shape divided into three labeled regions. Region one is a rectangle on the left side, measuring 8 inches in width and 8 inches in height. Region two is a right triangle located on the right side, also 8 inches tall with a base of 6 inches. Region three is a circular cutout inside region one, centered 4 inches from the left edge and 4 inches from the bottom edge of the rectangle. A coordinate system is overlaid on the shape, with the origin placed at the bottom-right corner of the rectangle. The x-axis extends horizontally along the bottom edge, while the y-axis runs vertically through the right edge of the rectangle where it meets the triangle.A black point labeled as the reference point, or RP, marks the intersection of the x- and y-axes at the junction between the rectangle and the triangle. A red dot represents the centroid of the entire composite shape, located 2.09 inches to the left and 4.43 inches above the reference point. Each subregion is labeled with the corresponding horizontal and vertical distances between its centroid and the overall centroid. For region one (the rectangle) and region three (the circular cutout), the horizontal distance d sub x one and d sub x three are equal to 4 minus 2.09, which is 1.91 inches. The vertical distances d sub y one and d sub y three are both equal to 4.43 minus 4, 0.43 inches.For region two (the triangle), the horizontal distance d sub x two is equal to one-third of 6, added to 2.09, resulting in 4.09 inches. The vertical distance d sub y two is equal to sixteen divided by 3 minus 4.43, resulting in approximately 0.90 inches."></p>
 </figure>
 </div>
 </div>
@@ -1539,29 +1523,15 @@ Click to expand
 </div>
 <div class="callout-body-container callout-body">
 <p>Centroid formulas:</p>
-<p><span class="math display">\[
-\bar{X}=\frac{\sum \bar{x}_i A_i}{\sum A_i}
-\]</span></p>
-<p><span class="math display">\[
-\bar{Y}=\frac{\sum \bar{y}_i A_i}{\sum A_i}
-\]</span></p>
+<p><span class="math display">\[\bar{X}=\frac{\sum \bar{x}_i A_i}{\sum A_i}\]</span></p>
+<p><span class="math display">\[\bar{Y}=\frac{\sum \bar{y}_i A_i}{\sum A_i}\]</span></p>
 <p>Second moment of area (moment of inertia):</p>
-<p><span class="math display">\[
-I_x=\int_A y^2 d A
-\]</span></p>
-<p><span class="math display">\[
-I_y=\int_A x^2 d A
-\]</span></p>
-<p><span class="math display">\[
-I_z=J=\int_A r^2 d A
-\]</span></p>
+<p><span class="math display">\[I_x=\int_A y^2 d A\]</span></p>
+<p><span class="math display">\[I_y=\int_A x^2 d A\]</span></p>
+<p><span class="math display">\[I_z=J=\int_A r^2 d A\]</span></p>
 <p>Parallel axis theorem:</p>
-<p><span class="math display">\[
-I_x=\overline{I_{x^{\prime}}}+A d_y^2
-\]</span></p>
-<p><span class="math display">\[
-I_y=\overline{I_{y^{\prime}}}+A d_x^2
-\]</span></p>
+<p><span class="math display">\[I_x=\overline{I_{x^{\prime}}}+A d_y^2\]</span></p>
+<p><span class="math display">\[I_y=\overline{I_{y^{\prime}}}+A d_x^2\]</span></p>
 </div>
 </div>
 </details>

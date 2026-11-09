@@ -8,9 +8,9 @@ editor: visual
 ::: {.callout-note icon="false"}
 ## Learning Objectives
 
--   Determine total normal stress resulting from combinations of normal forces, bending moments, and pressure
--   Determine total shear stress when transverse loads in one or both transverse directions are combined with torsional loads
--   Determine the general stress state when any combination of the above is applied and use those results to determine principal stresses and principal stress planes
+- Determine total normal stress resulting from combinations of normal forces, bending moments, and pressure
+- Determine total shear stress when transverse loads in one or both transverse directions are combined with torsional loads
+- Determine the general stress state when any combination of the above is applied and use those results to determine principal stresses and principal stress planes
 :::
 
 This chapter uses all the previously discussed concepts to determine the total normal stress and the total shear stress for a body subjected to various types of loading simultaneously. Axial forces (@sec-axial-loading), bending moments (@sec-bending-loads), and pressure (@sec-thin-walled-pressure-vessels) may be applied in various combinations to give total normal stress. Transverse loads (@sec-shear-loads) in multiple directions and torsion (@sec-torsional-loading) can combine to give total shear stress.
@@ -57,9 +57,7 @@ In the following sections we will express equations in terms of these generic di
 
 Previous chapters considered individual sources of longitudinal normal stress: axial loads (@sec-axial-loading), bending loads (@sec-bending-loads), and pressure loads (@sec-thin-walled-pressure-vessels). With all three of these forms of loading present we can express the generalized equation for total longitudinal stress as
 
-$$
-\sigma_L =\frac{\sum F_L}{A}+\sigma_{bending}+\frac{p r}{2 t}\text{ ,}
-$$
+$$\sigma_L =\frac{\sum F_L}{A}+\sigma_{bending}+\frac{p r}{2 t}\text{ ,}$$
 
 | where
 | *𝜎~L~ = Total normal stress in the longitudinal direction \[Pa, psi\]*
@@ -83,9 +81,7 @@ Of the three types of longitudinal normal stress, bending stress tends to be the
 
 @sec-9.3 derived an equation for bending stress in the x direction based on bending around the cross-sectional axes y and z. That equation is
 
-$$
-\sigma_x=-\frac{M_z y}{I_z}+\frac{M_y z}{I_y}
-$$
+$$\sigma_x=-\frac{M_z y}{I_z}+\frac{M_y z}{I_y}$$
 
 The minus sign in front of the M~z~ term and the plus sign in front of the M~y~ term are part of the derived equation. When the correct signs for M~z~, M~y~, y, and z are inserted, the correct sign of the stress is obtained (positive for tensile and negative for compressive). Note that @sec-bending-loads considered no other cross-sectional axes so that focus on the general concept of bending stress could be more easily maintained.
 
@@ -93,9 +89,8 @@ When the cross-sectional axes are not y and z, we apply the same general form of
 
 Given this information, we can then reframe the bending stress equation in a generalized form.
 
-$$
-\boxed{{\sigma_{(bending)}= \pm\left|\frac{M_V\ d_H}{I_V}\right| \pm\left|\frac{M_H\ d_V}{I_H}\right|}}\text{ ,}
-$$ {#eq-14.1}
+$$\boxed{{\sigma_{(bending)}= \pm\left|\frac{M_V\ d_H}{I_V}\right| \pm\left|\frac{M_H\ d_V}{I_H}\right|}}\text{ ,}$$
+ {#eq-14.1}
 
 | where
 | *𝜎(~bending)~ = Bending stress in the longitudinal direction \[Pa, psi\]*
@@ -130,7 +125,7 @@ If visualization is difficult, use the following tool (refer to @fig-14.6):
 
 1.  Draw the cross-section as viewed from the free end or cut end toward the origin. For example, in the case of the columns in @fig-14.4 and @fig-14.5, we would draw the top-down view of the cross-section.
 2.  Draw the bending moment arrows around the V-axis and H-axis on the sketch of the cross-section. Exaggerate the arrows so they are drawn all the way across.
-    -   Make sure to draw the bending moment arrows such that they cross over (or in front of) the bending axis (as opposed to under or behind).
+    - Make sure to draw the bending moment arrows such that they cross over (or in front of) the bending axis (as opposed to under or behind).
 3.  The side the arrowhead points to is the compressive side, and the side the tail of the arrow is on is the tensile side.
 
 This approach is demonstrated for the bending stress calculation in @exm-14.1.
@@ -158,23 +153,17 @@ Determine the bending stress at points P and Q.
 
 2\. Write the general bending stress equation and eliminate unnecessary terms.
 
-$$
-\sigma_L= \pm\left|\frac{M_H\ d_V}{I_H}\right| \pm\left|\frac{M_V\ d_H}{I_V}\right|
-$$
+$$\sigma_L= \pm\left|\frac{M_H\ d_V}{I_H}\right| \pm\left|\frac{M_V\ d_H}{I_V}\right|$$
 
 Looking at the cross-section, we can see that the cross-sectional vertical axis is the z-axis and the cross-sectional horizontal axis is the x-axis. The longitudinal axis is the y-axis.
 
-$$
-\sigma_y= \pm\left|\frac{(M_z)\ (d_x)}{I_z}\right| \pm\left|\frac{(M_x)\ (d_z)}{I_x}\right|
-$$
+$$\sigma_y= \pm\left|\frac{(M_z)\ (d_x)}{I_z}\right| \pm\left|\frac{(M_x)\ (d_z)}{I_x}\right|$$
 
 **Evaluating point P:**
 
 Because P is on the centroidal z-axis, d~x~ = 0, and the general bending stress equation reduces to
 
-$$
-\sigma_y= \pm\left|\frac{(M_x)\ (d_z)}{I_x}\right|
-$$
+$$\sigma_y= \pm\left|\frac{(M_x)\ (d_z)}{I_x}\right|$$
 
 3\. Assess the sign.
 
@@ -192,21 +181,17 @@ d~z~ = radius = 16 mm
 
 I~x~ =$\frac{\pi}{64}d^4=\frac{\pi}{64}(32mm)^4=51.47\times10^3mm^4$
 
-$$
-\begin{aligned}
+$$\begin{aligned}
 \sigma_{y_P}&=-\frac{376,000{~N}\cdot{mm}\ (16mm)}{51.47 \times 10^{3}{~mm}^4}\\[10pt]
 &=-117{~N/mm^2}\\[10pt]
 &=-117\ MPa
-\end{aligned}
-$$
+\end{aligned}$$
 
 **Evaluating Point Q:**
 
 Because point Q is on the centroidal x-axis, d~z~ = 0, so the general bending stress equation reduces to
 
-$$
-\sigma_{y_Q}=\pm\left|\frac{(M_z)\ (d_x)}{I_z}\right|
-$$
+$$\sigma_{y_Q}=\pm\left|\frac{(M_z)\ (d_x)}{I_z}\right|$$
 
 3\. Assess the sign.
 
@@ -224,13 +209,11 @@ d~x~ = radius = 16 mm
 
 For the circular cross-section, I~z~ = I~x~ = 51.47 x 10^3^ mm^4^.
 
-$$
-\begin{aligned}
+$$\begin{aligned}
 \sigma_{y_Q}&=\frac{204,000{~N}\cdot{mm}*(16{~mm})}{51.47 \times 10^{3}{~mm}^4}\\[10pt]
 &=63.4\ N/mm^2\\[10pt]
 &=63.4{~MPa}
-\end{aligned}
-$$
+\end{aligned}$$
 
 **Answer:**
 
@@ -251,15 +234,12 @@ The vertical support pole is subjected to normal forces from the weights of the 
 
 The total normal stress in the longitudinal direction, σ~L~, at any given point on the pole would be given by
 
-$$
-\sigma_L =\frac{\sum F_L}{A}+\sigma_{bending}
-$$
+$$\sigma_L =\frac{\sum F_L}{A}+\sigma_{bending}$$
 
 In terms of the general axes discussed in @sec-14.1, and substituting in @eq-14.1 for the bending stress, we have
 
-$$
-\boxed{{\sigma_L= \pm\left|\frac{F_L}{A}\right| \pm\left|\frac{M_V\ d_H}{I_V}\right| \pm\left|\frac{M_H\ d_V}{I_H}\right|}}\text{ ,}
-$$ {#eq-14.2}
+$$\boxed{{\sigma_L= \pm\left|\frac{F_L}{A}\right| \pm\left|\frac{M_V\ d_H}{I_V}\right| \pm\left|\frac{M_H\ d_V}{I_H}\right|}}\text{ ,}$$
+ {#eq-14.2}
 
 | where
 | *𝜎~𝐿~ = Bending stress in the longitudinal direction \[Pa, psi\]*
@@ -314,15 +294,11 @@ Remember when calculating reaction moments to calculate moments about the centro
 
 2\. Write the generalized normal stress equation and eliminate unnecessary terms.
 
-$$
-\sigma_L= \pm\left|\frac{F_L}{A}\right| \pm\left|\frac{M_V\ d_H}{I_V}\right| \pm\left|\frac{M_H\ d_V}{I_H}\right|
-$$
+$$\sigma_L= \pm\left|\frac{F_L}{A}\right| \pm\left|\frac{M_V\ d_H}{I_V}\right| \pm\left|\frac{M_H\ d_V}{I_H}\right|$$
 
 Here the longitudinal axis is the y-axis. The vertical axis of the cross-section is the z-axis, and the horizontal axis is the x-axis. With M~Rx~ = 0, we have
 
-$$
-\sigma_y= \pm\left|\frac{R_y}{A}\right| \pm\left|\frac{M_{Rz}\ d_x}{I_z}\right|
-$$
+$$\sigma_y= \pm\left|\frac{R_y}{A}\right| \pm\left|\frac{M_{Rz}\ d_x}{I_z}\right|$$
 
 3\. Assess signs.
 
@@ -350,23 +326,17 @@ d~x~ for point P = x distance between P and the z-axis = 2 in.
 
 d~x~ for point Q = x distance between Q and the z-axis = 4 in.
 
-$$
-I_z = \frac{1}{12}bh^3=\frac{1}{12}(6{~in.})(8{~in.})^3 = 256{~in.^4}
-$$
+$$I_z = \frac{1}{12}bh^3=\frac{1}{12}(6{~in.})(8{~in.})^3 = 256{~in.^4}$$
 
 Evaluate point P.
 
-$$
-\sigma_{yP}=-\left|\frac{125{~lb}}{48{~in.^2}}\right|+\left|\frac{(125{~lb}\cdot{in.})(2{~in.})}{256{~in.^4}}\right| \\
-\sigma_{yP}=-1.63{~psi}
-$$
+$$\sigma_{yP}=-\left|\frac{125{~lb}}{48{~in.^2}}\right|+\left|\frac{(125{~lb}\cdot{in.})(2{~in.})}{256{~in.^4}}\right| \\
+\sigma_{yP}=-1.63{~psi}$$
 
 Evaluate point Q.
 
-$$
-\sigma_{yQ}=-\left|\frac{125{~lb}}{48{~in.^2}}\right|-\left|\frac{(125{~lb}\cdot{in.})(4{~in.})}{256{~in.^4}}\right| \\
-\sigma_{yQ}=-4.56{~psi}
-$$
+$$\sigma_{yQ}=-\left|\frac{125{~lb}}{48{~in.^2}}\right|-\left|\frac{(125{~lb}\cdot{in.})(4{~in.})}{256{~in.^4}}\right| \\
+\sigma_{yQ}=-4.56{~psi}$$
 
 The negative answers indicate that the stress at both points is overall compressive.
 
@@ -406,33 +376,23 @@ Draw an FBD above the cut as shown.
 
 The reaction forces R~z~ and R~x~ are 0 by inspection, and the reaction moment M~Ry~ is also zero by inspection since the only applied force acts in the y direction.
 
-$$
-\begin{aligned}\sum F_y=180 kN - R_y=0\quad\rightarrow\quad R_y=180 kN\end{aligned}
-$$
+$$\begin{aligned}\sum F_y=180 kN - R_y=0\quad\rightarrow\quad R_y=180 kN\end{aligned}$$
 
-$$
-\begin{aligned}\sum M_x&=\sum\pm(Fy*z)+\sum\pm(Fz*y)+M_{Rx}\\[10pt]&=(180{~kN}*50{~mm})+M_{Rx}=0 \quad\rightarrow\quad M_{Rx}=-9,000{~kN}\cdot{mm} \end{aligned}
-$$
+$$\begin{aligned}\sum M_x&=\sum\pm(Fy*z)+\sum\pm(Fz*y)+M_{Rx}\\[10pt]&=(180{~kN}*50{~mm})+M_{Rx}=0 \quad\rightarrow\quad M_{Rx}=-9,000{~kN}\cdot{mm} \end{aligned}$$
 
-$$
-\begin{aligned}\sum M_z&=\sum\pm(F_x*y)+\sum\pm(F_y*x)+M_{Rz}=0\\[10pt]&=(180kN*40mm)+M_{Rz}=0\quad\rightarrow\quad M_{Rz}=-7,200\ kN\cdot mm\end{aligned}
-$$
+$$\begin{aligned}\sum M_z&=\sum\pm(F_x*y)+\sum\pm(F_y*x)+M_{Rz}=0\\[10pt]&=(180kN*40mm)+M_{Rz}=0\quad\rightarrow\quad M_{Rz}=-7,200\ kN\cdot mm\end{aligned}$$
 
 2\. Write the generalized normal stress equation.
 
 Apply the generalized normal stress equation (with the pressure term omitted).
 
-$$
-\sigma_{L}= \pm\left|\frac{F_L}{A}\right| \pm\left|\frac{M_V d_H}{I_V}\right| \pm\left|\frac{M_H d_V}{I_H}\right|
-$$
+$$\sigma_{L}= \pm\left|\frac{F_L}{A}\right| \pm\left|\frac{M_V d_H}{I_V}\right| \pm\left|\frac{M_H d_V}{I_H}\right|$$
 
 In this case the longitudinal axis of the post is the y-axis, the vertical axis of the cross-section is the z-axis, and the horizontal axis of the cross-section is the x-axis. Thus
 
-$$
-\begin{aligned}
+$$\begin{aligned}
 &\sigma_{yA}=\pm\left|\frac{R_y}{A}\right|\pm\left|\frac{M_z d_x}{I_z}\right|\pm\left|\frac{M_x d_z}{I_x}\right| \\
-\end{aligned}
-$$
+\end{aligned}$$
 
 3\. Assess the signs.
 
@@ -447,8 +407,7 @@ The bending shapes that correspond to the two bending moments are shown here alo
 4\. Calculate.
 
 $$\sigma_{yA}=\left|\frac{R_y}{A}\right|-\left|\frac{M_z d_x}{I_z}\right|+\left|\frac{M_x d_z}{I_x}\right| \\
-\sigma_{yA}=\left|\frac{180,000{~N}}{(0.2{~m})(0.15{~m})}\right|- \left|\frac{(7,200{~N}\cdot{m})(0.085{~m})}{\frac{1}{12}(0.15{~m})(0.2 {~m})^3}\right|+\left| \frac{(9,000{~N}\cdot{m})(0.075{~m})}{\frac{1}{12}(0.2{~m})(0.15{~m})^3}\right| \\[20pt]\sigma_{y A}=11.9 ~MPa
-$$
+\sigma_{yA}=\left|\frac{180,000{~N}}{(0.2{~m})(0.15{~m})}\right|- \left|\frac{(7,200{~N}\cdot{m})(0.085{~m})}{\frac{1}{12}(0.15{~m})(0.2 {~m})^3}\right|+\left| \frac{(9,000{~N}\cdot{m})(0.075{~m})}{\frac{1}{12}(0.2{~m})(0.15{~m})^3}\right| \\[20pt]\sigma_{y A}=11.9 ~MPa$$
 
 The stress works out to be positive and therefore tensile.
 
@@ -492,28 +451,20 @@ Thus, we don't need to calculate moment reactions.
 
 Calculate the reaction force in the y direction.
 
-$$
-\sum F_z=R_z-18{~kN}=0 \quad\rightarrow\quad R_z=18{~kN}
-$$
+$$\sum F_z=R_z-18{~kN}=0 \quad\rightarrow\quad R_z=18{~kN}$$
 
 2\. Write the general normal stress equation and eliminate unnecessary terms. Note that the pressure loading will contribute to the longitudinal normal stress and will also result in normal stress in the cross-sectional directions (hoop stress).
 
-$$
-\sigma_L= \pm\left|\frac{F_L}{A}\right| \pm\left|\frac{M_V d_H}{I_V}\right| \pm\left|\frac{M_H d_V}{I_H}\right| + \frac{p r}{2 t}
-$$
+$$\sigma_L= \pm\left|\frac{F_L}{A}\right| \pm\left|\frac{M_V d_H}{I_V}\right| \pm\left|\frac{M_H d_V}{I_H}\right| + \frac{p r}{2 t}$$
 
-$$
-\sigma_{V}=\sigma_{H}=\sigma_{hoop}=\frac{pr}{t}
-$$
+$$\sigma_{V}=\sigma_{H}=\sigma_{hoop}=\frac{pr}{t}$$
 
 In this problem the longitudinal direction is the z direction and the cross-sectional directions are x and y. Eliminate both bending stress terms, as discussed in step 1.
 
-$$
-\begin{aligned}
+$$\begin{aligned}
 \sigma_{zK} = \pm\left|\frac{R_z}{A}\right| + \frac{p r}{2 t} \\[10pt]
 \sigma_{x} =\sigma_y=\frac{p r}{t}
-\end{aligned}
-$$
+\end{aligned}$$
 
 3\. Assess signs.
 
@@ -521,17 +472,13 @@ According to the equilibrium analysis, R~z~ points toward the cut section, so th
 
 4\. Calculate stress.
 
-$$
-\begin{aligned}
+$$\begin{aligned}
 \sigma_{zK}&=-\left|\frac{R_z}{A}\right|+\frac{pr}{2t} \\[10pt]
 &=-\frac{18,000{~N}}{\pi\left(0.1^2-0.09^2\right){~m^2}}+\frac{(1,500,000{~Pa})(0.1{~m})}{2(0.01{~m})} \\[10pt]
 &=4.48{~MPa}
-\end{aligned}
-$$
+\end{aligned}$$
 
-$$
-\sigma_x=\frac{pr}{t}=\frac{(1,500,000{~Pa})(0.1{~m})}{0.01{~m}}=15{~MPa}
-$$
+$$\sigma_x=\frac{pr}{t}=\frac{(1,500,000{~Pa})(0.1{~m})}{0.01{~m}}=15{~MPa}$$
 
 5\. Sketch the stress element, noting that point K is in the x-z plane.
 
@@ -545,27 +492,23 @@ $$
 
 1.  Cut the structure at the point of interest and determine the internal reactions.
 
-    -   The sum of the forces in the longitudinal direction will give the total normal force.
+    - The sum of the forces in the longitudinal direction will give the total normal force.
 
-    -   The sum of the moments about each of the cross-sectional centroidal axes will give the bending moments: M~V~ about the vertical cross-sectional axis and M~H~ about the horizontal cross-sectional axis.
+    - The sum of the moments about each of the cross-sectional centroidal axes will give the bending moments: M~V~ about the vertical cross-sectional axis and M~H~ about the horizontal cross-sectional axis.
 
 2.  Write the general normal stress equation for the longitudinal and cross-sectional directions and eliminate unnecessary terms (i.e., terms from loading that is not applied or that doesn't affect the point in question).
 
-    $$
-    \sigma_L= \pm\left|\frac{F_L}{A}\right| \pm\left|\frac{M_V d_H}{I_V}\right| \pm\left|\frac{M_H d_V}{I_H}\right| + \frac{p r}{2 t}
-    $$
+    $$\sigma_L= \pm\left|\frac{F_L}{A}\right| \pm\left|\frac{M_V d_H}{I_V}\right| \pm\left|\frac{M_H d_V}{I_H}\right| + \frac{p r}{2 t}$$
 
-    $$
-    \sigma_{V}=\sigma_{H}=\sigma_{hoop}=\frac{pr}{t}
-    $$
+    $$\sigma_{V}=\sigma_{H}=\sigma_{hoop}=\frac{pr}{t}$$
 
 3.  Assess signs, assigning a positive sign to tensile terms and a negative sign to compressive terms.
 
-    -   For longitudinal forces this is determined by whether the internal normal reaction force points to the cut section (compression) or away from it (tensile).
+    - For longitudinal forces this is determined by whether the internal normal reaction force points to the cut section (compression) or away from it (tensile).
 
-    -   For bending moments assess by visualizing whether the point will be on the inside part of the bend (compression) or outside part of the bend (tension). Drawing the bending moment arrow on the cross-section can be helpful in making this determination.
+    - For bending moments assess by visualizing whether the point will be on the inside part of the bend (compression) or outside part of the bend (tension). Drawing the bending moment arrow on the cross-section can be helpful in making this determination.
 
-    -   Internal pressure is always positive.
+    - Internal pressure is always positive.
 
 4.  Substitute values and signs from steps 1 and 3 into the equations from step 2.
 
@@ -586,9 +529,7 @@ Shear stress due to torsion was discussed in @sec-torsional-loading while shear 
 
 As discussed in @sec-6.1, shear stress due to torsion in a circular shaft can be calculated as @eq-6.1.
 
-$$
-\tau_{(torsional)}=\pm\left|\frac{T \rho}{J}\right|\text{ ,}
-$$
+$$\tau_{(torsional)}=\pm\left|\frac{T \rho}{J}\right|\text{ ,}$$
 
 | where
 | $T=Torque=\sum M_L$ \[N*·*m, lb*·*in.\]
@@ -625,9 +566,8 @@ When applying the transverse shear stress equations for specific directions of s
 
 Using the same reference axes as in the general normal stress equation—H for horizontal cross-sectional axis and V for vertical cross-sectional axis—the transverse shear stress equation can be written as follows:
 
-$$
-\boxed{{\tau_{(transverse)}= \pm\left|\frac{V_H Q_V}{I_V t_V}\right| \pm\left|\frac{V_V Q_H}{I_H t_H}\right|}}\text{ ,}
-$$ {#eq-14.3}
+$$\boxed{{\tau_{(transverse)}= \pm\left|\frac{V_H Q_V}{I_V t_V}\right| \pm\left|\frac{V_V Q_H}{I_H t_H}\right|}}\text{ ,}$$
+ {#eq-14.3}
 
 | where
 | *𝜏~(transverse)~ = Transverse shear stress at point of interest \[Pa, psi\]*
@@ -666,7 +606,7 @@ Now we can consider the case of bodies simultaneously subjected to both torsion 
 
 2.  Torque is the internal moment about the longitudinal axis.
 
-    -   Also recall that torsion is only considered for circular cross-sections.
+    - Also recall that torsion is only considered for circular cross-sections.
 
 The total shear stress acts in the plane of the point of interest. It can be calculated as
 
@@ -717,23 +657,17 @@ Before proceeding with equilibrium calculations, note that we are sked to find o
 
 The shear forces are the forces in the cross-sectional directions (R~x~ and R~z~). Find them by applying the force equilibrium equations.
 
-$$
-\begin{aligned}& \sum F_x=R_x+1,500 lb=0\quad\rightarrow\quad R_x=V_x=-1,500 lb \\& \sum F_z=R_z+900{~lb}=0 \quad\rightarrow\quad R_z=V_z=-900{~lb}\end{aligned}
-$$
+$$\begin{aligned}& \sum F_x=R_x+1,500 lb=0\quad\rightarrow\quad R_x=V_x=-1,500 lb \\& \sum F_z=R_z+900{~lb}=0 \quad\rightarrow\quad R_z=V_z=-900{~lb}\end{aligned}$$
 
 The torque is the moment about the longitudinal axis (M~Ry~). Find it by applying the moment equilibrium equation for the y-axis. Note that on the FBD the direction of M~Ry~ is assumed to act counterclockwise around the y-axis when viewed from the positive end to the negative (right to left).
 
-$$
-\sum M_y=M_{Ry}+(900{~lb})(18{~in.})=0 \quad\rightarrow\quad M_{Ry}=T=-16,200{~lb\ in} \\
-$$
+$$\sum M_y=M_{Ry}+(900{~lb})(18{~in.})=0 \quad\rightarrow\quad M_{Ry}=T=-16,200{~lb\ in} \\$$
 
 The negative result means the torque at the cut side of the FBD acts clockwise around the y-axis when viewed from the positive side toward the negative (right to left).
 
 2\. Write the general shear stress equation and eliminate unnecessary terms.
 
-$$
-\tau= \pm\left|\frac{T \rho}{J}\right| \pm\left|\frac{V_H Q_V}{I_V t_V}\right| \pm\left|\frac{V_V Q_H}{I_H t_H}\right|
-$$
+$$\tau= \pm\left|\frac{T \rho}{J}\right| \pm\left|\frac{V_H Q_V}{I_V t_V}\right| \pm\left|\frac{V_V Q_H}{I_H t_H}\right|$$
 
 The horizontal axis of the cross-section is the x-axis and the vertical axis is the z-axis.
 
@@ -741,9 +675,7 @@ Point K is on the y-z plane. Since point K is on the x-axis, it will not experie
 
 Point J is on the x-y plane. Since point J is on z-axis, it will not experience shear stress from V~z~.
 
-$$
-\tau_{Kyz}= \pm\left|\frac{T \rho}{J}\right| \pm\left|\frac{V_z Q_x}{I_x t_x}\right|
-$$
+$$\tau_{Kyz}= \pm\left|\frac{T \rho}{J}\right| \pm\left|\frac{V_z Q_x}{I_x t_x}\right|$$
 
 $$\tau_{Jxy}= \pm\left|\frac{T \rho}{J}\right| \pm\left|\frac{V_x Q_z}{I_z t_z}\right|$$
 
@@ -763,11 +695,9 @@ R~x~ was found to act in the negative x direction, so it will act upward on the 
 
 The result is
 
-$$\tau_{Kyz}= -\frac{T \rho}{J}+\frac{V_z Q_x}{I_x t_x}
-$$
+$$\tau_{Kyz}= -\frac{T \rho}{J}+\frac{V_z Q_x}{I_x t_x}$$
 
-$$\tau_{Jxy}= \frac{T \rho}{J} +\frac{V_x Q_z}{I_z t_z}
-$$
+$$\tau_{Jxy}= \frac{T \rho}{J} +\frac{V_x Q_z}{I_z t_z}$$
 
 ![](images/chapter%2014%20figure%20edits/example%2014.5%20part%203.png){fig-alt="A three-dimensional view of a cylindrical shaft with labeled square stress elements. One square element is located near the top of the circular face and includes point J. Another square element is located on the side face of the cylinder, touching the right-mid edge of the circular face, and includes point K. In this top figure, the front circular face of the shaft is visible. The cylinder’s local coordinate axes are shown, with the x-axis pointing out of the page, the y-axis directed horizontally, and the z-axis vertically upward. A curved blue arrow in the counterclockwise direction, labeled M sub R y, indicates the internal moment about the y-axis acting around the cylinder’s circumference." fig-align="center" width="277"}
 
@@ -777,17 +707,11 @@ $$
 
 For a circular cross-section:
 
-$$
-Q_x=Q_z=\frac{1}{12}d^3=\frac{1}{12}(6.70\ in)^3=25.06\ in^3
-$$
+$$Q_x=Q_z=\frac{1}{12}d^3=\frac{1}{12}(6.70\ in)^3=25.06\ in^3$$
 
-$$
-I_x=I_z=\frac{\pi}{64}d^4=\frac{\pi}{64}(6.7\ in)^4=98.92
-$$
+$$I_x=I_z=\frac{\pi}{64}d^4=\frac{\pi}{64}(6.7\ in)^4=98.92$$
 
-$$
-J=\frac{\pi}{32}d^4=\frac{\pi}{32}(6.7\ in)^4=197.83\ in^4
-$$
+$$J=\frac{\pi}{32}d^4=\frac{\pi}{32}(6.7\ in)^4=197.83\ in^4$$
 
 For point K:
 
@@ -795,16 +719,13 @@ $$\begin{aligned}\tau_{Kyz}&= -\frac{T \rho}{J}+\frac{V_z Q_x}{I_x t_x}\\[10pt]
 &=\frac{(-16,200\ lb\ in)(\frac{6.70\ in}{2})}{197.83\ in^4}+\frac{(900\ lb)(25.06\ in^3)}{(98.92\ in^4)(6.70\ in)}\\[10pt]
 &=-274.3\ psi+34.04\ psi\\[10pt]
 &=-240.3\ psi
-\end{aligned}
-$$
+\end{aligned}$$
 
 For point J, the torsional shear stress will have the same magnitude.
 
-$$
-\begin{aligned}\tau_{Jxy}&=274.3\ psi+\frac{(1,500\ lb)(25.06\ in^3)}{(98.92\ in^4)(6.7\ in)}\\
+$$\begin{aligned}\tau_{Jxy}&=274.3\ psi+\frac{(1,500\ lb)(25.06\ in^3)}{(98.92\ in^4)(6.7\ in)}\\
 &=331.0\ psi
-\end{aligned}
-$$
+\end{aligned}$$
 
 **Answer:**
 
@@ -846,19 +767,13 @@ Similarly, the bending moments M~Rx~ and M~Ry~ are not necessary to find for thi
 
 Since both of the applied forces pass through the centroidal z-axis, M~Rz~ = T = 0. Find the internal shear forces using force equilibrium equations.
 
-$$
-\sum F_x=R_x-94\ kN=0\quad\rightarrow\quad R_x=V_x=94\ kN
-$$
+$$\sum F_x=R_x-94\ kN=0\quad\rightarrow\quad R_x=V_x=94\ kN$$
 
-$$
-\sum F_y=R_y+78\ kN=0\quad\rightarrow\quad R_y=V_y=-78\ kN
-$$
+$$\sum F_y=R_y+78\ kN=0\quad\rightarrow\quad R_y=V_y=-78\ kN$$
 
 2\. Write the general shear stress equation and eliminate unnecessary terms. Ignoring the torsion term since T = 0 (and we have a noncircular cross-section), the general shear stress equation can be written
 
-$$
-\tau= \pm\left|\frac{V_H Q_V}{I_V t_V}\right| \pm\left|\frac{V_V Q_H}{I_H t_H}\right|\text{ ,}
-$$
+$$\tau= \pm\left|\frac{V_H Q_V}{I_V t_V}\right| \pm\left|\frac{V_V Q_H}{I_H t_H}\right|\text{ ,}$$
 
 where the horizontal axis of the cross-section is the y–axis and the vertical axis of the cross section is the x-axis.
 
@@ -866,12 +781,9 @@ Recall that @sec-14.3.2 noted that since point P is on the bottom edge of the cr
 
 This leaves us with
 
-$$\tau_{Pyz}=\pm \left|\frac{V_y\ Qx}{I_x\ t_x}\right|
-$$
+$$\tau_{Pyz}=\pm \left|\frac{V_y\ Qx}{I_x\ t_x}\right|$$
 
-$$
-\tau_{Sxz}=\pm \left|\frac{V_x\ Qy}{I_y\ t_y}\right|
-$$
+$$\tau_{Sxz}=\pm \left|\frac{V_x\ Qy}{I_y\ t_y}\right|$$
 
 3\. Assess the signs.
 
@@ -881,13 +793,11 @@ Point P is on the x-y plane and point S is on the x-z plane. Both stress element
 
 V~y~ was found to act in the negative y direction, so it is drawn directed to the left at the bottom of the P stress element. This results in a positive shear stress for point P.
 
-$$\tau_{Pyz}=\frac{V_y\ Q_x}{I_x\ t_x}
-$$
+$$\tau_{Pyz}=\frac{V_y\ Q_x}{I_x\ t_x}$$
 
 V~x~ was found to act in the positive x direction, so it is drawn directed to the left at the bottom of the S stress element. This results in a negative shear stress for point S.
 
-$$\tau_{Sxz}=-\frac{V_x\ Q_y}{I_y\ t_y}
-$$
+$$\tau_{Sxz}=-\frac{V_x\ Q_y}{I_y\ t_y}$$
 
 ![](images/chapter%2014%20figure%20updates%208.18.25/example%2014.6%20part%203.png){fig-alt="Square stress element containing point P, a horizontal axis labeled y extends rightward from the center of the right face of the square and a vertical axis labeled z extends vertically upwards from the center of the top face. A shear force labeled V sub y is shown as a leftward-pointing arrow acting parallel to to the bottom edge of the square ( shown a bit bottom of the bottom edge)." fig-align="center" width="204"}
 
@@ -895,49 +805,33 @@ $$
 
 4\. Calculate stress.
 
-$$
-V_H = V_y = 78{~kN}
-$$
+$$V_H = V_y = 78{~kN}$$
 
-$$
-V_V = V_x = 94{~kN}
-$$
+$$V_V = V_x = 94{~kN}$$
 
-$$
-I_H=I_y=\frac{1}{12}(160{~mm})(120{~mm})^3=23.04 \times 10^6{~mm}^4=23.04 \times 10^{-6}{~m}^4
-$$
+$$I_H=I_y=\frac{1}{12}(160{~mm})(120{~mm})^3=23.04 \times 10^6{~mm}^4=23.04 \times 10^{-6}{~m}^4$$
 
-$$
-I_V=I_x=\frac{1}{12}(160{~mm})^3(120{~mm})=40.96 \times10^6{~mm}^4=40.96 \times 10^{-6}{~m}^4
-$$
+$$I_V=I_x=\frac{1}{12}(160{~mm})^3(120{~mm})=40.96 \times10^6{~mm}^4=40.96 \times 10^{-6}{~m}^4$$
 
 For point P we need Q~x~ and t~x~. Cutting vertically through point P on the cross-section produces
 
-$$
-\begin{aligned}&Q_x=A'y'=\frac{1}{2}(160{~mm})(120{~mm})*\left(\frac{1}{2}\right)(80{~mm})=384,000{~mm}^3=384 \times 10^{-6}{~m}^3\\[10pt]
+$$\begin{aligned}&Q_x=A'y'=\frac{1}{2}(160{~mm})(120{~mm})*\left(\frac{1}{2}\right)(80{~mm})=384,000{~mm}^3=384 \times 10^{-6}{~m}^3\\[10pt]
 &t_x=120\ mm = .12\ m
-\end{aligned}
-$$
+\end{aligned}$$
 
 ![](images/chapter%2014%20figure%20updates%208.18.25/example%2014.6%20part%205.png){fig-alt="Right segment of a vertical cut passing through point P. The right half of the rectangular cross section is visible, with point P located along the bottom edge. The diagram is titled “To find Q sub x for point P.” A horizontal shear force labeled V sub y acts rightward from the centroid of the section. A vertical dashed line passes through point P near the bottom left corner, representing the cut. The region to the right of this line is labeled “A prime, to the right of cut.” The horizontal distance from point P to the midpoint of this region is labeled y prime. The rectangular cross section has a vertical height of 120 millimeters and a horizontal width of 80 millimeters." fig-align="center" width="231"}
 
 For point S we need Q~y~ and t~y~. Cutting horizontally through point S on the cross-section produces
 
-$$
-\begin{aligned}&Q_y=A'x'=(160{~mm})(30{~mm})*(60{~mm}-15{~mm})=216,000{~mm}^3=216 \times 10^{-6}{~m}^3\\[10pt]&t_y=160\ mm=.16\ m\end{aligned}
-$$
+$$\begin{aligned}&Q_y=A'x'=(160{~mm})(30{~mm})*(60{~mm}-15{~mm})=216,000{~mm}^3=216 \times 10^{-6}{~m}^3\\[10pt]&t_y=160\ mm=.16\ m\end{aligned}$$
 
 ![](images/chapter%2014%20figure%20updates%208.18.25/example%2014.6%20part%206.png){fig-alt="Horizontal rectangular cross section with a width of 160 millimeters and a height of 120 millimeters. Point S is shown on the right edge, located 30 millimeters above the bottom right corner. The diagram is titled “To find Q sub y for point S.” A horizontal dashed line passing through point S represents the cut through the section. The region below the dashed line is labeled A prime, and its centroid is marked at the midpoint with a horizontal coordinate labeled y bar prime. In the region above the cut, another point is marked near the middle of the width but positioned slightly lower, labeled y. The vertical distance between points y and y bar prime is labeled x prime." fig-align="center" width="312"}
 
 So the resulting equations are
 
-$$
-\tau_{Pyz}=\frac{V_y Q_x}{I_x t_x}=\frac{(78,000{~N})(384 \times 10^{-6}{~m}^3)}{(40.96 \times 10^{-6}{~m}^4)(0.12{~m})}=6.09{~MPa}
-$$
+$$\tau_{Pyz}=\frac{V_y Q_x}{I_x t_x}=\frac{(78,000{~N})(384 \times 10^{-6}{~m}^3)}{(40.96 \times 10^{-6}{~m}^4)(0.12{~m})}=6.09{~MPa}$$
 
-$$
-\tau_{Sxz}=-\frac{V_x Q_y}{I_y t_y}=-\frac{(94,000{~N})(216 \times 10^{-6}{~m}^3)}{(23.04 \times 10^{-6}{~m}^4)(0.16{~m})}=-5.51{~MPa}
-$$
+$$\tau_{Sxz}=-\frac{V_x Q_y}{I_y t_y}=-\frac{(94,000{~N})(216 \times 10^{-6}{~m}^3)}{(23.04 \times 10^{-6}{~m}^4)(0.16{~m})}=-5.51{~MPa}$$
 
 **Answer:**
 
@@ -955,9 +849,7 @@ $$
 
 2.  Write the generalized shear stress equation and eliminate unnecessary terms (e.g., terms from loading that are not applied or that don't affect the point in question).
 
-    $$
-    \tau= \pm\left|\frac{T \rho}{J}\right| \pm\left|\frac{V_H Q_V}{I_V t_V}\right| \pm\left|\frac{V_V Q_H}{I_H t_H}\right|
-    $$
+    $$\tau= \pm\left|\frac{T \rho}{J}\right| \pm\left|\frac{V_H Q_V}{I_V t_V}\right| \pm\left|\frac{V_V Q_H}{I_H t_H}\right|$$
 
     Remember that if the point in question is on an edge through which the transverse shear force passes, the shear stress at that point from that direction of shear force will be 0.
 
@@ -1021,27 +913,19 @@ As noted in the previous example, M~Ry~ = 0 by inspection, but it would not cont
 
 Thus the only bending moment reaction to calculate is M~Ry~. Do this using the moment equilibrium equation for the y-axis.
 
-$$
-\begin{aligned}\sum M_y&=(-94{~kN})(150{~mm})+M_{Ry}=0\\ &=-14,100{~kN\ mm}+M_{Ry}=0\quad\rightarrow\quad M_{Ry}=14,100{~kN\ mm}\end{aligned}
-$$
+$$\begin{aligned}\sum M_y&=(-94{~kN})(150{~mm})+M_{Ry}=0\\ &=-14,100{~kN\ mm}+M_{Ry}=0\quad\rightarrow\quad M_{Ry}=14,100{~kN\ mm}\end{aligned}$$
 
 2\. Write the generalized normal stress equation (noting that there is no pressure loading).
 
-$$
-\sigma_{L}= \pm\left|\frac{F_L}{A}\right| \pm\left|\frac{M_V d_H}{I_V}\right| \pm\left|\frac{M_H d_V}{I_H}\right|\\
-$$
+$$\sigma_{L}= \pm\left|\frac{F_L}{A}\right| \pm\left|\frac{M_V d_H}{I_V}\right| \pm\left|\frac{M_H d_V}{I_H}\right|\\$$
 
 From the top down view of the cross-section shown, we see that the vertical axis of the cross–section is the x-axis and the horizontal axis is the y-axis. The z-axis is the axis perpendicular to the cut surface, so it is the longitudinal axis. The generalized normal stress equation can be rewritten with the given axes.
 
-$$
-\sigma_z=\pm\left|\frac{R_z}{A}\right|\pm\left|\frac{(M_{Rx})(d_y)}{I_x}\right|\pm\left|\frac{(M_{Ry})(d_x)}{I_y}\right|
-$$
+$$\sigma_z=\pm\left|\frac{R_z}{A}\right|\pm\left|\frac{(M_{Rx})(d_y)}{I_x}\right|\pm\left|\frac{(M_{Ry})(d_x)}{I_y}\right|$$
 
 With R~z~ = 0 and point P located on the x-axis (see discussion in step 1), the equation can be reduced to
 
-$$
-\sigma_{Pz}=\pm \left |\frac{(M_{Ry})\ (x)}{I_y}\right| 
-$$
+$$\sigma_{Pz}=\pm \left |\frac{(M_{Ry})\ (x)}{I_y}\right| $$
 
 3\. Assess the sign.
 
@@ -1057,13 +941,11 @@ So $\sigma_{Pz}=+\frac{(M_{Ry})\ (d_x)}{I_y}$.
 
 Recalling $I_y = 23.04 \times 10^{-6}{~m^4}$ from @exm-14.6, note that the normal stress at P is then
 
-$$
-\begin{aligned}
+$$\begin{aligned}
 \sigma_{Pz}&=\frac{(M_{Ry})( d_x)}{I_y}\\[10pt]
 &=\frac{14,100{~N}\cdot{m}\ (0.06{~m})}{23.04 \times 10^{-6}{~m^4}}\\[10pt]
 &=36.77{~MPa}
-\end{aligned}
-$$
+\end{aligned}$$
 
 **To complete the second task:**
 
@@ -1073,30 +955,24 @@ Now find the principal stresses and max/min shear stress. Start by representing 
 
 We can use the simplified version of the principal stress and the max/min shear equation (@eq-12.5); however, these equations were generally written for stresses in the x-y plane.
 
-$$
-\begin{aligned}
+$$\begin{aligned}
 & \sigma_{1,2}=\frac{\sigma_x+\sigma_y}{2} \pm \sqrt{\left(\frac{\sigma_x-\sigma_y}{2}\right)^2+\tau_{x y}{ }^2} \\[10pt]
 & \tau_{\max , \min }= \pm \sqrt{\left(\frac{\sigma_x-\sigma_y}{2}\right)^2+\tau_{x y}{ }^2}
-\end{aligned}
-$$
+\end{aligned}$$
 
 In this problem point P is on the y-z plane. Based on the discussion at the end of @sec-12.2.2., we can replace the x subscripts with y and the y subscripts with z. Thus the equations become
 
-$$
-\begin{aligned}
+$$\begin{aligned}
 \sigma_{1,2}&=\frac{\sigma_y+\sigma_z}{2}\pm\sqrt{\left(\frac{\sigma_y-\sigma_z}{2}\right)^2+\tau_{yz}^2}\\[10pt]
 &=\frac{0+36.77{~MPa}}{2} \pm \sqrt{\left(\frac{0-36.77{~MPa}}{2}\right)^2+(6.094{~MPa})^2}\\[10pt]
 &=37.75{~MPa}, -0.984{~MPa} \\
-\end{aligned}
-$$
+\end{aligned}$$
 
-$$
-\begin{aligned}
+$$\begin{aligned}
 \tau &=\pm\sqrt{\left(\frac{\sigma_y-\sigma_z}{2}\right)^2+\tau_{yz}^2}\\[10pt]
 &=\pm\sqrt{\left(\frac{0-36.77 MPa}{2}\right)^2+(6.094 MPa)^2}\\[10pt]
 &=\pm 19.37 MPa
-\end{aligned}
-$$
+\end{aligned}$$
 
 **Answer:**
 
@@ -1126,51 +1002,45 @@ The overall general stress state for any given point on a loaded body is found b
 
 The combined normal stress at a point comes from normal forces, bending stress, and pressure.
 
--   Normal forces are those perpendicular to the cross-section where the point in question is located. These are also the forces in the longitudinal direction.
+- Normal forces are those perpendicular to the cross-section where the point in question is located. These are also the forces in the longitudinal direction.
 
-    -   Normal forces that pull on the body are tensile (positive).
+  - Normal forces that pull on the body are tensile (positive).
 
-    -   Normal forces that push on the body are compressive (negative).
+  - Normal forces that push on the body are compressive (negative).
 
--   The bending moment contribution to normal stress comes from bending moments around the centroidal cross-sectional axes.
+- The bending moment contribution to normal stress comes from bending moments around the centroidal cross-sectional axes.
 
-    -   In bending, visualizing the bending shape of a body can determine if a point will be in tension or compression. A point that is located on the outside part of the bend will be in tension and a point on the inside part of the bend will be in compression.
+  - In bending, visualizing the bending shape of a body can determine if a point will be in tension or compression. A point that is located on the outside part of the bend will be in tension and a point on the inside part of the bend will be in compression.
 
-    -   Alternatively, use the visual aid described in @sec-14.1 to help determine if the bending results in tension or compression.
+  - Alternatively, use the visual aid described in @sec-14.1 to help determine if the bending results in tension or compression.
 
--   Both normal forces and bending moments will result in normal stress in the longitudinal direction with respect to the location of the cross-section.
+- Both normal forces and bending moments will result in normal stress in the longitudinal direction with respect to the location of the cross-section.
 
 Pressure will result in normal stress in two directions (hoop and longitudinal/axial).
 
--   The longitudinal stress will combine with the normal stress from normal forces and bending moments to result in an overall longitudinal stress.
+- The longitudinal stress will combine with the normal stress from normal forces and bending moments to result in an overall longitudinal stress.
 
--   The hoop stress will be the only normal stress in the cross-sectional directions for the situations considered in this text.
+- The hoop stress will be the only normal stress in the cross-sectional directions for the situations considered in this text.
 
--   Stress from internal pressure will always be tensile.
+- Stress from internal pressure will always be tensile.
 
 The combined shear stress at a point comes from torsion and transverse shear forces.
 
--   The torsional moment is the moment about the longitudinal axis.
+- The torsional moment is the moment about the longitudinal axis.
 
--   The transverse shear forces lead in the directions of the cross-sectional axes.
+- The transverse shear forces lead in the directions of the cross-sectional axes.
 
--   The signs for shear stress are determined by drawing the stress element and considering the direction of the internal torque or shear force on the element's cut edge relative to the positive and negative faces.
+- The signs for shear stress are determined by drawing the stress element and considering the direction of the internal torque or shear force on the element's cut edge relative to the positive and negative faces.
 :::
 
 ::: {.callout-note icon="false"}
 ## Key Equations
 
-$$
-\sigma_L= \pm\left|\frac{F_L}{A}\right| \pm\left|\frac{M_V d_H}{I_V}\right| \pm\left|\frac{M_H d_V}{I_H}\right|+\frac{p r}{2 t}
-$$
+$$\sigma_L= \pm\left|\frac{F_L}{A}\right| \pm\left|\frac{M_V d_H}{I_V}\right| \pm\left|\frac{M_H d_V}{I_H}\right|+\frac{p r}{2 t}$$
 
-$$
-\sigma_{hoop}=\sigma_V=\sigma_H=\frac{p r}{t}
-$$
+$$\sigma_{hoop}=\sigma_V=\sigma_H=\frac{p r}{t}$$
 
-$$
-\tau= \pm\left|\frac{T c}{J}\right| \pm\left|\frac{V_H Q_V}{I_V t_V}\right| \pm\left|\frac{V_V Q_H}{I_H t_H}\right|
-$$
+$$\tau= \pm\left|\frac{T c}{J}\right| \pm\left|\frac{V_H Q_V}{I_V t_V}\right| \pm\left|\frac{V_V Q_H}{I_H t_H}\right|$$
 
 where
 

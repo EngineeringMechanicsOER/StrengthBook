@@ -8,9 +8,9 @@ editor: visual
 ::: {.callout-note icon="false"}
 ## Learning Objectives
 
--   Describe column buckling behavior
--   Construct the equation known as Euler’s formula for columns
--   Differentiate end conditions to calculate an appropriate effective length
+- Describe column buckling behavior
+- Construct the equation known as Euler’s formula for columns
+- Differentiate end conditions to calculate an appropriate effective length
 :::
 
 Until now our focus has been primarily on meeting strength and deflection criteria. While these aspects are crucial, it's equally important to ensure a structure's stability. This chapter therefore delves into the stability analysis of long and slender members subjected to compressive loading, commonly referred to as columns. Some examples are shown in @fig-15.1. When the compressive load reaches a critical point, columns may undergo sudden sideways deflection, a phenomenon known as buckling. After buckling, a column is unable to support any further load. This chapter focuses on long, slender, homogeneous, axial compression members, otherwise known as columns.
@@ -39,48 +39,34 @@ We can consider stability by using a simplified model of a pinned-pinned column.
 
 Since θ is small
 
-$$
-\sin \theta \sim \theta \text { and } \tan \theta \sim \theta
-$$
+$$\sin \theta \sim \theta \text { and } \tan \theta \sim \theta$$
 
 Consequently
 
-$$
-\Delta=\theta \frac{L}{2} \text { and } 2 P_x=2 P \theta
-$$
+$$\Delta=\theta \frac{L}{2} \text { and } 2 P_x=2 P \theta$$
 
 Using the spring restoring force equation F = kΔ, then substituting in for Δ, results in
 
-$$
-F=k \theta \frac{L}{2}
-$$
+$$F=k \theta \frac{L}{2}$$
 
 If the spring restoring force is greater than the axial force, then equilibrium is stable.
 
-$$
-\begin{aligned}
+$$\begin{aligned}
 & F>P \\
 & k \theta \frac{L}{2}>2 P \theta
-\end{aligned}
-$$
+\end{aligned}$$
 
 The θ cancels out, and we can solve for P.
 
-$$
-P<\frac{k L}{4}
-$$
+$$P<\frac{k L}{4}$$
 
 Similarly, we can solve for the expression for unstable equilibrium F \< P.
 
-$$
-P>\frac{k L}{4}
-$$
+$$P>\frac{k L}{4}$$
 
 The point at which F = P is crucial because it is the line between stable and unstable equilibrium. This is known as the critical load P~cr~.
 
-$$
-P_{c r}=\frac{k L}{4}
-$$
+$$P_{c r}=\frac{k L}{4}$$
 
 Thus if the load P exceeds P~cr~, the system will be unstable. If P is less than P~cr~, the system will be stable. P~cr~ is used in the next section to determine the buckling load of columns.
 
@@ -92,63 +78,47 @@ As mentioned in earlier sections, members can fail due to material yielding or f
 
 Columns are similar to beams rotated 90°, so we can use what we already know about the elastic curve.
 
-$$
-\frac{d^2 y}{d x^2}=\frac{M}{E I}
-$$
+$$\frac{d^2 y}{d x^2}=\frac{M}{E I}$$
 
 We can use the FBD in @fig-15.4 (C) to sum moments about any point on the lower column section.
 
-$$
-\begin{aligned}
+$$\begin{aligned}
 & \sum M=0=M+P y \\
 & M=-P y
-\end{aligned}
-$$
+\end{aligned}$$
 
 We can now substitute this expression into the elastic curve equation.
 
-$$
-\begin{aligned}
+$$\begin{aligned}
 & \frac{d^2 y}{d x^2}=\frac{-P y}{E I} \\
 & \frac{d^2 y}{d x^2}+\left(\frac{P}{E I}\right) y=0
-\end{aligned}
-$$
+\end{aligned}$$
 
 This is a linear, homogeneous, second-order differential equation with constant coefficients, which has a general solution of
 
-$$
-y=C_1 \sin \left(\sqrt{\frac{P}{E I}} x\right)+C_2 \cos \left(\sqrt{\frac{P}{E I}} x\right)
-$$
+$$y=C_1 \sin \left(\sqrt{\frac{P}{E I}} x\right)+C_2 \cos \left(\sqrt{\frac{P}{E I}} x\right)$$
 
 The two constants, C~1~ and C~2~, can be determined by imploring boundary conditions. Since y = 0 at x = 0 and y = 0 when x = L, the first condition results in
 
-$$
-\begin{aligned}
+$$\begin{aligned}
 &0 =C_1(0)+C_2(1) \\
 & C_2 =0
-\end{aligned}
-$$
+\end{aligned}$$
 
 The second boundary condition, x = L when y = 0, results in
 
-$$
-0=C_1 \sin \left(\sqrt{\frac{P}{E I}} x\right)+0
-$$
+$$0=C_1 \sin \left(\sqrt{\frac{P}{E I}} x\right)+0$$
 
 The equation is satisfied if C~1~ = 0. However, this is a trivial solution that implies y = 0 and there is no lateral deflection. For the nontrivial solution, the sine function must be equal to zero, which requires
 
-$$
-\begin{aligned}
+$$\begin{aligned}
 &\sqrt{\frac{P}{E I}} L=n \pi \\
 & \text {where } n=1, 2, 3, 4,...
-\end{aligned}
-$$
+\end{aligned}$$
 
 The smallest value of P occurs when n = 1; substituting this and rearranging gives us Euler’s formula
 
-$$
-\boxed{P_{c r}=\frac{\pi^2 E I}{L^2}}\text{ ,}
-$$ {#eq-15.1}
+$$\boxed{P_{c r}=\frac{\pi^2 E I}{L^2}}\text{ ,}$$ {#eq-15.1}
 
 | where
 | *P~cr~ = Critical axial load on the column just before it buckles \[N, lb\]. (This load must be less than the load that would cause the stress in the column to exceed the yield stress; otherwise due to yield stress the column will fail before it buckles.)*
@@ -170,15 +140,11 @@ Columns pinned at both ends with circular or square cross-sections (equal second
 
 The Euler buckling equation can be used to calculate the critical stress for a column by setting I = Ar^2^, where A is the cross-sectional area and r is the radius of gyration. For a more comprehensive discussion on the radius of gyration, see the [*Engineering Statics*](https://engineeringstatics.org/radius-of-gyration-sec.html) book by Baker and Haynes.
 
-$$
-\sigma_{c r}=\frac{P_{c r}}{A}=\frac{\pi^2 E\left(A r^2\right)}{A L^2}
-$$
+$$\sigma_{c r}=\frac{P_{c r}}{A}=\frac{\pi^2 E\left(A r^2\right)}{A L^2}$$
 
 Rearranging produces
 
-$$
-\boxed{\sigma_{c r}=\frac{\pi^2 E}{\left(\frac{L}{r}\right)^2}}\text{ ,}
-$$ {#eq-15.2}
+$$\boxed{\sigma_{c r}=\frac{\pi^2 E}{\left(\frac{L}{r}\right)^2}}\text{ ,}$$ {#eq-15.2}
 
 | where
 | *σ~cr~ = Critical stress on the column just before it buckles \[Pa, psi\]. (This stress must be less than that of the yield stress; otherwise due to yield stress the column will fail before it buckles.)*
@@ -215,44 +181,36 @@ First consult the table in @sec-geometric-properties-of-standard-beams to get th
 
 ![](images/CH15s%20PNGs/example%2015.1%20part%202.png){fig-alt="Cross-sectional geometry of an I-beam with labeled dimensions: an overall height of 10.5 inches, a flange width of 5.81 inches, a flange thickness of 0.510 inches, and a web thickness of 0.30 inches." fig-align="center" width="303"}
 
-$$
-\begin{aligned}
+$$\begin{aligned}
 & A=8.84{~in.}^2 \\
 & I_x=170{~in.}^4 \\
 & r_y=4.38{~in.} \\
 & I_y=16.7{~in.}^4 \\
 & r_y=1.37{~in.}
-\end{aligned}
-$$
+\end{aligned}$$
 
 Then start by calculating the critical load using Euler’s buckling formula. Note that we can confidently say that this column will buckle about the y-axis since the second moment of area in the y direction is the smallest.
 
-$$
-\begin{aligned}
+$$\begin{aligned}
 & P_{cr}=\frac{\pi^2 E I}{L^2}=\frac{\pi^2(29,000{~ksi})(16.7{~in.}^4)}{\left(8{~ft}* 12\frac{in.}{ft}\right)^2} \\
 & P_{cr}=518.6{~kips}
-\end{aligned}
-$$
+\end{aligned}$$
 
 This represents the load at which any increase in applied load will cause the column to buckle.
 
 Next calculate the stress associated with this critical load.
 
-$$
-\sigma_{c r}=\frac{P_{cr}}{A}=\frac{518.6{~kips}}{8.84{~in.^2}}=58.7{~ksi}
-$$
+$$\sigma_{c r}=\frac{P_{cr}}{A}=\frac{518.6{~kips}}{8.84{~in.^2}}=58.7{~ksi}$$
 
 Since this stress is larger than the yield stress of the steel (σ~y~ = 50 ksi), the column will not buckle first. It will fail due to yielding.
 
 Calculate the force using the stress of an axial member formula discussed in @sec-stress.
 
-$$
-\begin{aligned}
+$$\begin{aligned}
 &\sigma_{cr} =\frac{P}{A} \\
 & 50{~ksi} =\frac{P}{8.84{~in.}^2} \\
 &p =442{~kips}
-\end{aligned}
-$$
+\end{aligned}$$
 :::
 ::::
 :::::
@@ -285,46 +243,34 @@ Let’s consider the case where a column is fixed at one end and free at the oth
 
 We can now write the differential equation using the elastic curve equation.
 
-$$
-\begin{aligned}
+$$\begin{aligned}
 & E I \frac{d^2 y}{d x^2}=P(\delta-y) \\
 & \frac{d^2 y}{d x^2}+\left(\frac{P}{E I}\right) y=\left(\frac{P}{E I}\right) \delta
-\end{aligned}
-$$
+\end{aligned}$$
 
 Since the right side is not equal to zero, this equation is nonhomogeneous (note this differs from the earlier derivation for the pinned-pinned connection). There will be a particular and complementary solution.
 
-$$
-y=C_1 \sin \left(\sqrt{\frac{P}{E I} x}\right)+C_2 \cos \left(\sqrt{\frac{P}{E I} x}\right)+\delta
-$$
+$$y=C_1 \sin \left(\sqrt{\frac{P}{E I} x}\right)+C_2 \cos \left(\sqrt{\frac{P}{E I} x}\right)+\delta$$
 
 We can now employ boundary conditions to solve for the constants. At x = 0, y = 0, so C~2~ = δ. Also at x = 0, dy/dx = 0, so C~1~ = 0. This leads us to the following deflection curve:
 
-$$
-y=\delta\left(1-\cos \left(\sqrt{\frac{P}{E I}} x\right)\right)
-$$
+$$y=\delta\left(1-\cos \left(\sqrt{\frac{P}{E I}} x\right)\right)$$
 
 At the free end of the column, x = L, we know that y = δ, and therefore
 
-$$
-0=\delta \cos \left(\sqrt{\frac{P}{E I} L}\right)
-$$
+$$0=\delta \cos \left(\sqrt{\frac{P}{E I} L}\right)$$
 
 The trivial solution δ = 0 shows that no matter what the P value, no buckling will occur. Thus
 
-$$
-\begin{aligned}
+$$\begin{aligned}
 & 0=\cos \left(\sqrt{\frac{P}{E I} L}\right) \\
 & \sqrt{\frac{P}{E I}} L=\frac{n \pi}{2} \\
 & \text{where n=1, 3, 5,...}
-\end{aligned}
-$$
+\end{aligned}$$
 
 The smallest critical load happens at n = 1 and results in
 
-$$
-P_{c r}=\frac{\pi^2 E I}{(2 L)^2}
-$$
+$$P_{c r}=\frac{\pi^2 E I}{(2 L)^2}$$
 
 Other support conditions can be derived in a similar manner.
 
@@ -334,15 +280,11 @@ The critical load equation for a fixed-free column differs from a pinned-pinned 
 
 Other common end conditions also relate L to L~e~. A general equation applies to any support condition by replacing the effective length with KL, where K is the effective length factor.
 
-$$
-\boxed{P_{c r}=\frac{\pi^2 E I}{(K L)^2}}
-$$ {#eq-15.3}
+$$\boxed{P_{c r}=\frac{\pi^2 E I}{(K L)^2}}$$ {#eq-15.3}
 
 and
 
-$$
-\boxed{\sigma_{c r}=\frac{\pi^2 E}{\left(\frac{K L}{r}\right)^2}}
-$$ {#eq-15.4}
+$$\boxed{\sigma_{c r}=\frac{\pi^2 E}{\left(\frac{K L}{r}\right)^2}}$$ {#eq-15.4}
 
 Find the effective length factor, K, below each of the end conditions in @fig-15.9.
 
@@ -367,33 +309,27 @@ Consult the table in @sec-geometric-properties-of-standard-beams to find the sec
 
 ![](images/CH15s%20PNGs/example%2015.2%20part%202.png){fig-alt="Cross-sectional geometry of an I-beam with labeled dimensions: an overall height of 10.5 inches, a flange width of 5.81 inches, a flange thickness of 0.510 inches, and a web thickness of 0.30 inches." fig-align="center" width="306"}
 
-$$
-\begin{aligned}
+$$\begin{aligned}
 & A=8.84{~in.}^2 \\
 & I_x=170{~in.}^4 \\
 & r_y=4.38{~in.} \\
 & I_y=16.7{~in.}^4 \\
 & r_y=1.37{~in.}
-\end{aligned}
-$$
+\end{aligned}$$
 
 Start by calculating the critical load using Euler’s buckling formula. Note that we can confidently say that this column will buckle about the y-axis since the second moment of area in the y-direction is the smallest. Use K = 2 for a fixed-free column.
 
-$$
-\begin{aligned}
+$$\begin{aligned}
 & P_{cr}=\frac{\pi^2 E I}{(k L)^2}=\frac{\pi^2(29,000{~ksi})(16.7{~in.^4})}{\left(2*8{~ft}*12~\frac{in.}{ft}\right)^2} \\
 & P_{c r}=129.7{~kips} \\
 &
-\end{aligned}
-$$
+\end{aligned}$$
 
 This represents the load at which any increase in applied load will cause the column to buckle.
 
 Calculate the stress associated with this critical load.
 
-$$
-\sigma_{c r}=\frac{P_{cr}}{A}=\frac{129.7{~kips}}{8.84{~in.^2}}=14.7{~ksi}
-$$
+$$\sigma_{c r}=\frac{P_{cr}}{A}=\frac{129.7{~kips}}{8.84{~in.^2}}=14.7{~ksi}$$
 
 Since this stress is smaller than the yield stress of the steel (σ~y~ = 50 ksi), the column will buckle first at a critical load of 129.7 kips.
 :::
@@ -417,15 +353,13 @@ If the column is 25 ft long, has fixed-pinned end conditions, is braced at the m
 
 ![](images/CH15s%20PNGs/example%2015.3.png){fig-alt="Vertical column with a total height of 25 feet and a lateral brace located at mid-height, dividing the column into two equal 12.5-foot segments. The column has pinned connections at both the top and bottom, and the mid-height brace provides intermediate restraint that improves buckling resistance." fig-align="center" width="199"}
 
-$$
-\begin{aligned}
+$$\begin{aligned}
 & A=14.6{~in.}^2 \\
 & I_x=391{~in.}^4 \\
 & r_y=5.18{~in.} \\
 & I_y=56.3{~in.}^4 \\
 & r_y=1.96{~in.}
-\end{aligned}
-$$
+\end{aligned}$$
 
 ![](images/CH15s%20PNGs/example%2015.3%20copy.png){fig-alt="Cross-sectional geometry of an I-beam with labeled dimensions: an overall height of 12.2 inches, a flange width of 8.08 inches, a flange thickness of 0.64 inches, and a web thickness of 0.37 inches." fig-align="center" width="305"}
 
@@ -435,13 +369,11 @@ Start by calculating the critical load using Euler’s buckling formula. The bra
 
 **Strong axis**
 
-$$
-\begin{aligned}
+$$\begin{aligned}
 & P_{cr}=\frac{\pi^2 E I}{(KL)^2}=\frac{\pi^2(29,000{~ksi})(391{~in.}^4)}{\left(0.7*25{~ft}*~12~\frac{in.}{ft}\right)^2} \\
 & P_{c r}=2,538{~kips} \\
 &
-\end{aligned}
-$$
+\end{aligned}$$
 
 Use the general form of Euler’s buckling equation. Since the end supports are pinned-fixed, use K = 0.7. The critical load in the strong direction is calculated to be 2,538 kips.
 
@@ -449,23 +381,19 @@ Compare this to buckling about the weak axis. The values of I, K, and L will cha
 
 **Weak axis**
 
-$$
-\begin{aligned}
+$$\begin{aligned}
 & P_{cr}=\frac{\pi^2 EI}{(KL)^2}=\frac{\pi^2(29,000{~ksi})(56.3{~in.^4})}{\left(1*12.5{~ft}*12\frac{in.}{ft}\right)^2} \\
 & P_{c r}=716{~kips} \\
-\end{aligned}
-$$
+\end{aligned}$$
 
 The critical load in the weak direction is calculated to be 716 kips. This means that if the column were to buckle, it would be about the weak axis since this load was smaller. Because the critical buckling load is greater than the 650 kip applied load, the column is adequate. However, you also need to calculate the load that would cause yielding of the steel.
 
 **Yield**
 
-$$
-\begin{aligned}
+$$\begin{aligned}
 \sigma_{yield}=\frac{P}{4} \quad\rightarrow\quad &P=(50{~ksi})(14.6{~in.^2}) \\
 & P_{yield}=730{~kips}
-\end{aligned}
-$$
+\end{aligned}$$
 
 Given a yielding load of 730 kips, the column is adequate for a 650 kip load. Failure would first occur by buckling in the weak direction if the load were increased to 716 kips. Note that we did not apply any safety factors. In civil engineering, design codes for steel columns designate how to apply safety factors to the loading and the capacity.
 
@@ -473,12 +401,10 @@ What would happen to the capacity of the columns if the brace were not there? To
 
 **No brace**
 
-$$
-\begin{aligned}
+$$\begin{aligned}
 & P_{cr}=\frac{\pi^2 E I}{(KL)^2}=\frac{\pi^2(29,000{~ksi})(56.3{in.^4})}{\left(0.7*25{~ft}*12~\frac{in.}{ft}\right)^2} \\
 & P_{c r}=365{~kips} \\
-\end{aligned}
-$$
+\end{aligned}$$
 
 Notice how much lower this is than the braced condition. If the column were not braced, it would be inadequate for the applied load.
 :::
@@ -510,13 +436,13 @@ Notice how much lower this is than the braced condition. If the column were not 
 ::: {.callout-note icon="false"}
 **Key Takeaways**
 
--   Structural members that are long, slender, and subjected to compressive axial loads are categorized as columns.
+- Structural members that are long, slender, and subjected to compressive axial loads are categorized as columns.
 
--   In addition to checking stress and deflection, engineers need to check buckling as a form of member failure.
+- In addition to checking stress and deflection, engineers need to check buckling as a form of member failure.
 
--   The critical load refers to the maximum axial load a column can withstand just before buckling occurs.
+- The critical load refers to the maximum axial load a column can withstand just before buckling occurs.
 
--   The effective length is the distance on the column between the points where the moment is zero. This accounts for various end conditions.
+- The effective length is the distance on the column between the points where the moment is zero. This accounts for various end conditions.
 :::
 
 ::: {.callout-note icon="false"}
@@ -524,15 +450,11 @@ Notice how much lower this is than the braced condition. If the column were not 
 
 Euler’s buckling formula (general case):
 
-$$
-P_{c r}=\frac{\pi^2 E I}{(K L)^2}
-$$
+$$P_{c r}=\frac{\pi^2 E I}{(K L)^2}$$
 
 Critical stress formula (general case):
 
-$$
-\sigma_{c r}=\frac{\pi^2 E}{\left(\frac{K L}{r}\right)^2}
-$$
+$$\sigma_{c r}=\frac{\pi^2 E}{\left(\frac{K L}{r}\right)^2}$$
 :::
 
 </details>
@@ -547,10 +469,10 @@ $$
 
 All figures in this chapter were created by Kindred Grey in 2025 and released under a CC BY license, except for
 
--   Figure 15.1: Examples of columns. A: Unknown author. 2020. Pixabay license. <https://pixabay.com/photos/bridge-tunnel-columns-structure-5441571/>. B: ds_30. 2020. Pixabay license. <https://pixabay.com/photos/buildings-concrete-construction-4839276/>. C: G41rn8. 2009. CC BY-SA. [https://commons.wikimedia.org/wiki/File:Hangzhou_2009_1794.jpg](https://commons.wikimedia.org/wiki/File:Hangzhou_2009_1794.jpg.).
+- Figure 15.1: Examples of columns. A: Unknown author. 2020. Pixabay license. <https://pixabay.com/photos/bridge-tunnel-columns-structure-5441571/>. B: ds_30. 2020. Pixabay license. <https://pixabay.com/photos/buildings-concrete-construction-4839276/>. C: G41rn8. 2009. CC BY-SA. [https://commons.wikimedia.org/wiki/File:Hangzhou_2009_1794.jpg](https://commons.wikimedia.org/wiki/File:Hangzhou_2009_1794.jpg.).
 
--   Figure 15.2: Buckling of a ruler. Amy Richardson. 2024. CC BY-NC-SA.
+- Figure 15.2: Buckling of a ruler. Amy Richardson. 2024. CC BY-NC-SA.
 
--   Figure 15.6: Buckling of wooden studs. scottnj. 2010. CC BY-NC-ND. <https://flic.kr/p/8heJAn>.
+- Figure 15.6: Buckling of wooden studs. scottnj. 2010. CC BY-NC-ND. <https://flic.kr/p/8heJAn>.
 
 </details>
